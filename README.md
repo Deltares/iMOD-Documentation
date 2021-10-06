@@ -2,6 +2,12 @@
 imod-documentation
 ==================
 
+**This is a work in progress.**
+
+This documentation is written as reStructuredText (`.rst`). 
+This might take some getting used to, but instructions
+can be found [here](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html). 
+
 Local build
 -----------
 
@@ -18,4 +24,16 @@ Then to build call `cd` into the directory and call:
 tox -e build
 ```
 
-**This is a work in progress.**
+The docs will be generated at:
+`.\.tox\docs_out\`
+
+Tips
+----
+Visual Studio Code has a 
+[reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) 
+to render reStructuredText on the side in the editor.
+
+Once it is installed, you can press **CTRL + K V** to render a 
+preview on the side.
+
+This allows for writing the documentation with a preview at runtime.
