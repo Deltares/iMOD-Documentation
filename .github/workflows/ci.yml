@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install mamba
-        uses: mamba-org/provision-with-micromamba@main
-
       - name: Test and build with tox
         run: |
           pip install tox
