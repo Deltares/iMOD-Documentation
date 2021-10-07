@@ -1,6 +1,6 @@
-################
+****************
 iMOD QGIS plugin
-################
+****************
 
 The iMOD plugin extends QGIS functionalities to assist with groundwater modeling.
 
