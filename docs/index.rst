@@ -17,3 +17,5 @@ Sections
    :titlesonly:
 
    qgis_index
+   viewer_index
+   python_index
