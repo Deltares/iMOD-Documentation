@@ -1,8 +1,14 @@
 *******************
 Manual installation
 *******************
-Currently, no stable installer has been created, so instead the 
-plugin can be installed following the following steps:
+
+**NOTE: These are install instructions preceding the first release**
+
+Currently, no stable installer has been created, 
+only a batch script ``setup.bat``, 
+that does the steps described further.
+If this batch script fails (as it often does), 
+you can try the following steps manually:
 
 ^^^^^^^^^^^^^^^^^^
 1. Installing QGIS
@@ -19,7 +25,7 @@ After downloading the QGIS setup, run it.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Installing python dependencies
+2. Installing python dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The iMOD plugin has a couple of dependencies that are currently not
 distributed with the plugin. To install them, follow these steps:
