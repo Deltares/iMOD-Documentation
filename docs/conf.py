@@ -15,9 +15,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "iMOD-QGIS Plugin"
+project = "iMOD6 Suite"
 copyright = "Deltares"
-author = "Huite Bootsma & Joeri van Engelen"
+author = "Huite Bootsma, Joeri van Engelen, Luit-Jan Slooten & Joachim Hunink"
 
 # -- General configuration ---------------------------------------------------
 
