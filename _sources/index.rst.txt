@@ -3,7 +3,8 @@ iMOD6 Suite
 ###########
 
 The iMOD6 suite provides tools to efficiently build and visualize
-regional tools. It currently consists of three components:
+regional groundwater models. 
+It currently consists of three components:
 
 * iMOD QGIS Plugin
 * iMOD 3D Viewer
