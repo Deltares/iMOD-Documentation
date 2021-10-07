@@ -18,7 +18,7 @@ install [tox](https://pypi.org/project/tox).
 conda install -c conda-forge tox
 ```
 
-Then to build call `cd` into the directory and call:
+Then to build `cd` into the directory and call:
 
 ```console
 tox -e build
@@ -33,7 +33,10 @@ Visual Studio Code has a
 [reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) 
 to render reStructuredText on the side in the editor.
 
-Once it is installed, you can press **CTRL + K V** to render a 
-preview on the side.
+Next step is installing the required python packages 
+`sphinx`, `sphinx-gallery`, `pydata-sphinx-theme` 
+in a local python environment.
 
-This allows for writing the documentation with a preview at runtime.
+Once everything is installed, 
+you can press **CTRL+K CTRL+R** to render a 
+preview on the side. This allows for writing the documentation with a preview at runtime.
