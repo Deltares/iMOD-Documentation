@@ -19,12 +19,12 @@ Configuration
    Change it to to US settings (that’s generally the safest default).
    You will need to restart QGIS before this has effect.
 
-  .. image:: screenshots/qgis-language-settings.png
+  .. image:: screenshots/qgis/qgis-language-settings.png
 
 2. Start up QGIS, go to "Plugins > Manage and Install plugins > Installed". 
    Make sure the iMOD plugin is ticked.
 
-   .. image:: screenshots/qgis-installed-plugins.png
+   .. image:: screenshots/qgis/qgis-installed-plugins.png
 
 
 Functionality
@@ -54,11 +54,11 @@ and see which points have data defined within a certain time frame.
 
 * Press "Add" to load the file into the Qgis explorer.
 
-.. figure:: screenshots/ipf-reader.png
+.. figure:: screenshots/qgis/ipf-reader.png
 
     The Open IPF widget. 
 
-.. figure:: screenshots/temporal-controller.png
+.. figure:: screenshots/qgis/temporal-controller.png
 
     The temporal controller panel and map canvas of Qgis. 
     The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.
@@ -112,7 +112,7 @@ Currently only UGRID meshes and IPF borelog files are supported.
 * "Load legend" transfer legend in Qgis map layer to fence diagram and/or mesh data in the 3D viewer 
   for the selected variable in the Qgis map canvas.
   
-.. image:: screenshots/3d-viewer.png
+.. image:: screenshots/qgis/3d-viewer.png
 
 .. note:: 
 
@@ -158,12 +158,12 @@ The buttons in the widget change, depending on which data type is being selected
 * The "Export" button allows you to export your plot to an image file (.png, .jpg etc.),
   a vector file (.svg for Inkscape), or a .csv to allow for plotting in different software.
 
-.. figure:: screenshots/time-series-points.png
+.. figure:: screenshots/qgis/time-series-points.png
 
     The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps.
     The yellow points on the map canvas indicate the selected points.
 
-.. figure:: screenshots/time-series-mesh.png
+.. figure:: screenshots/qgis/time-series-mesh.png
 
     The Time series widget and map canvas for a mesh.
 
@@ -211,7 +211,7 @@ The functionality of each component is explained below.
     * Right-click the plotting window to set zoom options.
     * You can click the small "A" in the bottom left corner to reset zoom.
 
-.. figure:: screenshots/cross-section.png
+.. figure:: screenshots/qgis/cross-section.png
 
     The "Cross-section" widget and map canvas. 
     An example is shown in which layer ids are plotted as colors,
@@ -230,7 +230,7 @@ The NHI data provides datasets with different kinds of services:
 
 You can use the search bar to search for datasets of your liking.
 
-.. figure:: screenshots/add-nhi-data.png
+.. figure:: screenshots/qgis/add-nhi-data.png
 
     The "Add NHI window"
 
