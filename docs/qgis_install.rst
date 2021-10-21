@@ -94,6 +94,11 @@ Installing the OSGeo4W QGIS installation
   TIP: Maximize the screen to see the package names
 - After downloading an installing, check *Finish*
 
+.. figure:: screenshots/qgis/osgeo4w-select-packages.png
+
+  The *Select packages* screen enlarged. If you click *Skip*, 
+  a version number should appear in the column *New*.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Putting the plugin files in the right folder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
