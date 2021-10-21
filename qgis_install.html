@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Manual installation &#8212; iMOD6 Suite  documentation</title>
+    <title>Install &#8212; iMOD6 Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -99,7 +99,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Manual installation
+   Install
   </a>
  </li>
  <li class="toctree-l1">
@@ -133,19 +133,36 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installing-python-dependencies">
-   2. Installing python dependencies
+  <a class="reference internal nav-link" href="#a-installing-with-the-deltares-setup">
+   2a. Installing with the Deltares setup
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-and-copy-the-imod-qgis-plugin">
-   3. Download and copy the iMOD QGIS plugin
+  <a class="reference internal nav-link" href="#b-installing-from-the-qgis-plugin-repository">
+   2b. Installing from the QGIS plugin repository
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#optional-connect-to-the-imod-3d-viewer">
-   4. Optional: Connect to the iMOD 3D viewer
+  <a class="reference internal nav-link" href="#c-manually-download-and-copy-the-imod-qgis-plugin">
+   2c. Manually download and copy the iMOD QGIS plugin
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extra-installing-the-qgis-plugin-system-wide">
+   Extra: Installing the QGIS plugin system-wide
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-the-osgeo4w-qgis-installation">
+     Installing the OSGeo4W QGIS installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#putting-the-plugin-files-in-the-right-folder">
+     Putting the plugin files in the right folder
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -168,58 +185,108 @@
               
               <div>
                 
-  <section id="manual-installation">
-<h1>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h1>
+  <section id="install">
+<h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
 <p><strong>NOTE: These are install instructions preceding the first release</strong></p>
-<p>Currently, no stable installer has been created,
-only a batch script <code class="docutils literal notranslate"><span class="pre">setup.bat</span></code>,
-that does the steps described further.
-If this batch script fails (as it often does),
-you can try the following steps manually:</p>
+<p>There are multiple ways to install the QGIS plugin, described under sections 2a, 2b, 2c.
+Each of these, however, require the user to install QGIS.
+To install the QGIS plugin, we recommend running the iMOD6 GUI installer (2a),
+which will both install the iMOD6 3D viewer, as well as the iMOD QGIS plugin</p>
 <section id="installing-qgis">
 <h2>1. Installing QGIS<a class="headerlink" href="#installing-qgis" title="Permalink to this headline">¶</a></h2>
 <p>You can download the standalone QGIS setup
 <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">on the QGIS website</a>
-currently we have developed with QGIS 3.16.
-But tested it on versions 3.18 and 3.20 as well.
-Older versions are not tested,
-but any version prior to QGIS 3.14 will probably fail
-due to recent changes in the Mesh backend.</p>
-<p>After downloading the QGIS setup, run it.</p>
+We recommend downloading the LTR (Long Term Release) version here.
+After downloading the QGIS setup, run it.</p>
+<p>This installs a user installation of QGIS, which is sufficient in most cases.
+For a system wide installation, see <a class="reference internal" href="#system-wide"><span class="std std-ref">Extra: Installing the QGIS plugin system-wide</span></a>.</p>
 </section>
-<section id="installing-python-dependencies">
-<h2>2. Installing python dependencies<a class="headerlink" href="#installing-python-dependencies" title="Permalink to this headline">¶</a></h2>
-<p>The iMOD plugin has a couple of dependencies that are currently not
-distributed with the plugin. To install them, follow these steps:</p>
-<p>Open the OSGeo4W Shell that is provided with QGIS and type
-the following two commands:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&gt; py3_env</span>
-<span class="go">&gt; pip install declxml pandas pyqtgraph==0.11.1</span>
-</pre></div>
+<section id="a-installing-with-the-deltares-setup">
+<h2>2a. Installing with the Deltares setup<a class="headerlink" href="#a-installing-with-the-deltares-setup" title="Permalink to this headline">¶</a></h2>
+<p>Run the .msi you can download here:
+–link here–</p>
+<p>Make sure the box “Install QGIS plugin” is ticked.</p>
+</section>
+<section id="b-installing-from-the-qgis-plugin-repository">
+<h2>2b. Installing from the QGIS plugin repository<a class="headerlink" href="#b-installing-from-the-qgis-plugin-repository" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The iMOD plugin is not added to the QGIS plugin repository yet,
+this will work in the future.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">py3_env</span></code> will temporarily set the QGIS python installation in your PATH within this shell.
-<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&lt;...&gt;</span></code> will install all necessary packages in your QGIS python installation.</p>
+<p>In Qgis, navigate to “Plugins &gt; Manage and Install Plugins &gt; All”.
+In the search bar, type: “iMOD plugin”.
+Select the iMOD plugin, and click “Install”</p>
 </section>
-<section id="download-and-copy-the-imod-qgis-plugin">
-<h2>3. Download and copy the iMOD QGIS plugin<a class="headerlink" href="#download-and-copy-the-imod-qgis-plugin" title="Permalink to this headline">¶</a></h2>
+<section id="c-manually-download-and-copy-the-imod-qgis-plugin">
+<h2>2c. Manually download and copy the iMOD QGIS plugin<a class="headerlink" href="#c-manually-download-and-copy-the-imod-qgis-plugin" title="Permalink to this headline">¶</a></h2>
 <p>Download the iMOD QGIS plugin code from the <a class="reference external" href="https://github.com/Deltares/imod-qgis">Github page</a></p>
 <p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imod</span></code> folder to your QGIS plugin directory.
 This is probably located in your Appdata folder.
 In windows it is something such as:
 <code class="docutils literal notranslate"><span class="pre">c:\Users\%USER%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins</span></code></p>
 <p>If you cannot find the folder, follow <a class="reference external" href="https://gis.stackexchange.com/a/274312">these instructions</a>.</p>
+<p>In Qgis, make sure under “Plugins &gt; Manage and Install Plugins &gt; Installed” that the checkbox “iMOD plugin” is checked.</p>
 </section>
-<section id="optional-connect-to-the-imod-3d-viewer">
-<h2>4. Optional: Connect to the iMOD 3D viewer<a class="headerlink" href="#optional-connect-to-the-imod-3d-viewer" title="Permalink to this headline">¶</a></h2>
-<p>To be able to use the iMOD 3D viewer from the iMOD QGIS plugin,
-you still need to :</p>
-<p>1. Download the viewer <a class="reference external" href="https://dpcbuild.deltares.nl/project/iMOD6_IModGui?mode=builds">at Deltares’ Team City</a>.
-It currently is only available to Deltares employees.</p>
-<p>2. Let the plugin know where the viewer is located.
-If you ran the iMOD GUI installer, the viewer is probably installed here:
-<code class="docutils literal notranslate"><span class="pre">c:\Progam</span> <span class="pre">Files\Deltares\IMOD6</span> <span class="pre">GUI</span></code>.
-To configure the QGIS pulgin, <code class="docutils literal notranslate"><span class="pre">cd</span></code> to the its’ folder and run:</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">configure_plugin.py</span> <span class="pre">/path/to/viewer/location/imod.exe</span></code></p>
+<section id="extra-installing-the-qgis-plugin-system-wide">
+<span id="system-wide"></span><h2>Extra: Installing the QGIS plugin system-wide<a class="headerlink" href="#extra-installing-the-qgis-plugin-system-wide" title="Permalink to this headline">¶</a></h2>
+<p>There are cases where a system-wide QGIS installation is required, for example on computational servers, where multiple users need to use the software.
+Requiring each user to install the plugin themselves can be a burden.</p>
+<p>This requires the following steps:</p>
+<ol class="arabic simple">
+<li><p>Installing the OSGeo4W QGIS installation</p></li>
+<li><p>Putting the plugin files in the right folder.</p></li>
+</ol>
+<section id="installing-the-osgeo4w-qgis-installation">
+<h3>Installing the OSGeo4W QGIS installation<a class="headerlink" href="#installing-the-osgeo4w-qgis-installation" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>Download the OSGeo4W installer from the
+<a class="reference external" href="https://qgis.org/en/site/forusers/download.html">QGIS website</a></p></li>
+<li><p>Right-click <code class="docutils literal notranslate"><span class="pre">osgeo4w-setup.exe</span></code> and click <em>Run as administrator</em></p></li>
+<li><p>At the starting screen, choose <em>Advanced Install</em></p></li>
+<li><p>In the <em>Choose Installation Type</em> screen,
+choose <em>Install from Internet</em> if you have access to the internet,
+this will download the files to a folder called something like:
+<code class="docutils literal notranslate"><span class="pre">%APPDATA%\Local\Temp\http%3a%2f%2fdownload.osgeo.org%2fosgeo4w%2fv2%2f\</span></code></p>
+<p>You can use this folder to <em>Install from Local Directory</em> later (for example on a restricted server)</p>
+</li>
+<li><p>In <em>Choose Installation Directory</em> check <em>All Users</em></p></li>
+<li><p>In “Select Local Package Directory”, you can leave the default options</p></li>
+<li><dl class="simple">
+<dt>If you previously checked “Install from Internet”:</dt><dd><ul class="simple">
+<li><p>in the <em>Select Connection Type</em>, choose <em>Direct Connection</em></p></li>
+<li><p>in <em>Choose Download Sites</em>, choose <a class="reference external" href="http://download.osgeo.org">http://download.osgeo.org</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>In the <em>Select Packages</em> screen, make sure the following components are installed:</dt><dd><ul class="simple">
+<li><p>under <em>Desktop</em>, <em>qgis: QGIS Desktop</em>.</p></li>
+<li><p>under <em>Libs</em>, <em>python3-pandas</em></p></li>
+</ul>
+</dd>
+</dl>
+<p>A component will be installed if there is a version number in the “New” column
+(If <em>Skip</em> change this by clicking the cell with <em>Skip</em> in it).</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TIP: Maximize the screen to see the package names</p>
+</div>
+<ul class="simple">
+<li><p>After downloading an installing, check <em>Finish</em></p></li>
+</ul>
+</section>
+<section id="putting-the-plugin-files-in-the-right-folder">
+<h3>Putting the plugin files in the right folder<a class="headerlink" href="#putting-the-plugin-files-in-the-right-folder" title="Permalink to this headline">¶</a></h3>
+<p>Download the iMOD QGIS plugin code from the <a class="reference external" href="https://github.com/Deltares/imod-qgis">Github page</a></p>
+<p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imod</span></code> folder to your QGIS plugin directory.
+This is probably located in your Appdata folder.
+In windows it is something such as:
+<code class="docutils literal notranslate"><span class="pre">c:\OSGeo4W\apps\qgis\python\plugins\imod</span></code></p>
+</section>
 </section>
 </section>
 
