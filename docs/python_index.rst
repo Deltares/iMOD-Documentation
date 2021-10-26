@@ -35,3 +35,4 @@ Sections
 
    python_install
    python_getting_started
+   python_howdoi
