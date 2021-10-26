@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>iMOD6 Suite &#8212; iMOD6 Suite  documentation</title>
+    <title>iMOD &#8212; iMOD6 Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -115,6 +115,16 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imod-suite">
+   iMOD Suite
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imod5">
+   iMOD5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sections">
    Sections
   </a>
@@ -140,16 +150,50 @@
               
               <div>
                 
-  <section id="imod6-suite">
-<h1>iMOD6 Suite<a class="headerlink" href="#imod6-suite" title="Permalink to this headline">¶</a></h1>
-<p>The iMOD6 suite provides tools to efficiently build and visualize
-regional groundwater models.
-It currently consists of three components:</p>
+  <section id="imod">
+<h1>iMOD<a class="headerlink" href="#imod" title="Permalink to this headline">¶</a></h1>
+<p>The iMOD suite provides tools to efficiently build and visualize
+groundwater models.</p>
+<p>Deltares is working to integrate and improve our groundwater software.
+Therefore iMOD is extended with a new iMOD Suite to link to the latest
+developments on the MODFLOW and on the changing requirements in the field
+of groundwatermodelling. Important technological innovations will be developed
+in the new iMOD Suite. iMOD5 combines the proven technology and the experience
+of for groundwatermodelling simulations and visualisation.</p>
+<p>This Suite include different modules with supports modelling with
+MODFLOW 6, including unstructured meshes, visualisation in QGIS with
+a smart and fast plugin and 3D viewer, and a python package for transparent and
+reproducible modelling process.</p>
+<p>The proven technology and expertise of iMOD is consolidated in the
+iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
+and MODFLOW6 and can be coupled to the unsaturated zone model MetaSWAP.
+The model input and output can be visualised in the fast interactive viewer.</p>
+<img alt="_images/overview.png" src="_images/overview.png" />
+<section id="imod-suite">
+<h2>iMOD Suite<a class="headerlink" href="#imod-suite" title="Permalink to this headline">¶</a></h2>
+<p>It currently consists of three modules:</p>
 <ul class="simple">
-<li><p>iMOD QGIS Plugin</p></li>
-<li><p>iMOD 3D Viewer</p></li>
-<li><p>iMOD python</p></li>
+<li><p>iMOD QGIS Plugin
+QGIS plugin for visualisation of model input and output with tool for
+cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID
+and ipf’s.</p></li>
+<li><p>iMOD 3D Viewer
+3D Viewer for interactive 3D visualisation of input and output. Supports UGRID
+file format.</p></li>
+<li><p>iMOD python
+An Python package to support MODFLOW groundwater modeling. It makes it easy
+to go from your raw data to a fully defined MODFLOW model, with the aim
+to make this process reproducable.
+Supports:
+* USGS MODFLOW 6, structured and unstructerd grids, no advanced stress packages yet (LAK, MAW, SFR, UZF)
+* iMODFLOW (iMOD5)
+* iMOD-WQ (iMOD5), which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)</p></li>
 </ul>
+</section>
+<section id="imod5">
+<h2>iMOD5<a class="headerlink" href="#imod5" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://oss.deltares.nl/nl/web/imod">https://oss.deltares.nl/nl/web/imod</a></p>
+</section>
 <section id="sections">
 <h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
