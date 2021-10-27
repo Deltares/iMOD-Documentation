@@ -12,7 +12,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+# Circumvent this problem: https://github.com/actions/checkout/issues/165
+      - name: Checkout code with LFS cache
+        uses: nschloe/action-checkout-with-lfs-cache@v1
 
       - name: Test and build with tox
         run: |
