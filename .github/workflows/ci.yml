@@ -35,7 +35,9 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: .tox/docs_latex/imod-doc.tex
+          working_directory: .tox/docs_latex
           args: -pdf -dvi- -ps-
+          latexmk_use_xelatex: true
         
       - uses: actions/upload-artifact@v2
         with:
