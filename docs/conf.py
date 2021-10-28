@@ -17,7 +17,7 @@
 
 project = "iMOD6 Suite"
 copyright = "Deltares"
-author = "Huite Bootsma, Joeri van Engelen, Luit-Jan Slooten & Joachim Hunink"
+author = "The iMOD development team"
 
 # -- General configuration ---------------------------------------------------
 
@@ -109,34 +109,39 @@ html_logo = "_static/deltares-white.svg"
 htmlhelp_basename = "imod_qgis_doc"
 
 
-# -- Options for LaTeX output ------------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
+# -----------------------------------------------------------------------------
+# LaTeX output
+# -----------------------------------------------------------------------------
 
 # Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [(master_doc,)]
+# (source start file, target name, title, author, document class [howto/manual]).
+_stdauthor = "Written by {}".format(author)
+latex_documents = [
+    ("index", "imod-doc.tex", "iMOD Suite", _stdauthor, "manual"),
+]
+
+# Not available on many systems:
+latex_use_xindy = False
+
+# The name of an image file (relative to this directory) to place at the top of
+# the title page.
+latex_logo = "./_static/iMOD_logo.eps"
+
+# Documents to append as an appendix to all manuals.
+# latex_appendices = []
+
+# If false, no module index is generated.
+latex_domain_indices = False
+
+# fix issues with Unicode characters
+latex_engine = "xelatex"
 
 
 # -- Options for manual page output ------------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [(master_doc, "imod-qgis", "iMOD QGIS Plugin Documentation", [author], 1)]
+man_pages = [(master_doc, "imod-suite", "iMOD Suite Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
@@ -147,11 +152,11 @@ man_pages = [(master_doc, "imod-qgis", "iMOD QGIS Plugin Documentation", [author
 texinfo_documents = [
     (
         master_doc,
-        "imod-qgis",
-        "iMOD QGIS Plugin Documentation",
+        "imod-suite",
+        "iMOD Suite Documentation",
         author,
-        "imod-qgis",
-        "iMOG QGIS Plugin",
+        "imod-suite",
+        "iMOD Suite Documentation",
         "Miscellaneous",
     )
 ]
