@@ -27,11 +27,35 @@ tox -e build
 The docs will be generated at:
 `.\.tox\docs_out\`
 
+Local build PDF
+---------------
+
+To build PDFs locally on Windows, make sure you have 
+[MiKTeX](https://miktex.org/download) and [Perl](https://strawberryperl.com/) installed. 
+
+First run the command:
+
+```console
+tox -e build_latex
+```
+
+This will convert the .rst files to LaTeX files.
+
+Consequently, run:
+
+```console
+cd .tox/docs_latex
+make
+```
+
+It will throw you a few warnings, but there should not be any 
+showstoppers.
+
 Tips
 ----
 Visual Studio Code has a 
 [reStructuredText extension](https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext) 
-to render reStructuredText on the side in the editor.
+to render reStructuredText as html on the side in the editor.
 
 Next step is installing the required python packages 
 `sphinx`, `sphinx-gallery`, `pydata-sphinx-theme` 
