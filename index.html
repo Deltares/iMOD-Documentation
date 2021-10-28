@@ -157,41 +157,67 @@ groundwater models.</p>
 <p>Deltares is working to integrate and improve our groundwater software.
 Therefore iMOD is extended with a new iMOD Suite to link to the latest
 developments on the MODFLOW and on the changing requirements in the field
-of groundwatermodelling. Important technological innovations will be developed
-in the new iMOD Suite. iMOD5 combines the proven technology and the experience
-of for groundwatermodelling simulations and visualisation.</p>
-<p>This Suite include different modules with supports modelling with
-MODFLOW 6, including unstructured meshes, visualisation in QGIS with
-a smart and fast plugin and 3D viewer, and a python package for transparent and
-reproducible modelling process.</p>
+of groundwatermodelling, most pressing currently the support
+of unstructured grids.</p>
+<p>Therefore we created the new iMOD Suite to aid pre- and post-processing
+unstructured groundwater models.
+Furthermore, a second goal of this suite was to better connect to
+the latest developments in the data science ecosystem, by utilizing:</p>
+<ul class="simple">
+<li><p>Existing data format conventions (NetCDF, UGRID) instead of
+developing new ones, allowing more user flexibility to find the right
+tools for the right job.</p></li>
+<li><p>Widely used and tested software (QGIS) to which we add our extension,
+instead of creating complete programs ourselves.</p></li>
+<li><p>Modern programming languages (C++ and Python) that
+allow connecting to a big and lively software ecoystem.</p></li>
+</ul>
+<p>Important technological innovations will be developed
+in the new iMOD Suite, whereas iMOD5 will be maintained the coming years,
+because of its proven technology
+for groundwatermodelling simulations and visualisation,
+but will see no big new feature developments.</p>
+<p>The iMOD Suite offers different modules which support modelling with
+MODFLOW 6 (including unstructured meshes), visualisation in QGIS,
+a brand-new 3D viewer, and a python package for a transparent and
+reproducible modelling workflow.</p>
 <p>The proven technology and expertise of iMOD is consolidated in the
 iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
-and MODFLOW6 and can be coupled to the unsaturated zone model MetaSWAP.
+and structured MODFLOW6 and can be coupled to the unsaturated zone
+model MetaSWAP.
 The model input and output can be visualised in the fast interactive viewer.</p>
 <img alt="_images/overview.png" src="_images/overview.png" />
 <section id="imod-suite">
 <h2>iMOD Suite<a class="headerlink" href="#imod-suite" title="Permalink to this headline">¶</a></h2>
-<p>It currently consists of three modules:</p>
+<p>The suite currently consists of three modules:</p>
 <ul class="simple">
-<li><p>iMOD QGIS Plugin
+<li><p><a class="reference internal" href="qgis_index.html"><span class="doc">iMOD QGIS Plugin</span></a>:
 QGIS plugin for visualisation of model input and output with tool for
 cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID
 and ipf’s.</p></li>
-<li><p>iMOD 3D Viewer
-3D Viewer for interactive 3D visualisation of input and output. Supports UGRID
+<li><p><a class="reference internal" href="viewer_index.html"><span class="doc">iMOD 3D Viewer</span></a>:
+A 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID
 file format.</p></li>
-<li><p>iMOD python
+<li><p><a class="reference internal" href="python_index.html"><span class="doc">iMOD python</span></a>:
 An Python package to support MODFLOW groundwater modeling. It makes it easy
 to go from your raw data to a fully defined MODFLOW model, with the aim
 to make this process reproducable.
-Supports:
-* USGS MODFLOW 6, structured and unstructerd grids, no advanced stress packages yet (LAK, MAW, SFR, UZF)
-* iMODFLOW (iMOD5)
-* iMOD-WQ (iMOD5), which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)</p></li>
+Supports:</p>
+<ul>
+<li><p>USGS MODFLOW 6, structured and unstructerd grids,
+not all advanced stress packages yet (LAK, MAW, SFR),
+and only the groundwater flow packages.</p></li>
+<li><p>iMODFLOW (computational code provided with iMOD5)</p></li>
+<li><p>iMOD-WQ (computational code provided with iMOD5),
+which integrates the SEAWAT (density-dependent groundwater flow)
+and MT3DMS (multi-species reactive transport calculations)</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="imod5">
 <h2>iMOD5<a class="headerlink" href="#imod5" title="Permalink to this headline">¶</a></h2>
+<p>The documentation of iMOD5 can be found here:</p>
 <p><a class="reference external" href="https://oss.deltares.nl/nl/web/imod">https://oss.deltares.nl/nl/web/imod</a></p>
 </section>
 <section id="sections">
