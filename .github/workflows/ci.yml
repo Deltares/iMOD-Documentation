@@ -41,5 +41,5 @@ jobs:
         
       - uses: actions/upload-artifact@v2
         with:
-          name: PDF
+          name: imod-doc
           path: .tox/docs_latex/imod-doc.pdf
