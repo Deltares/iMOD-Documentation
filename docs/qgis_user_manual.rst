@@ -252,22 +252,22 @@ You can use the search bar to search for datasets of your liking.
 
 
 
-.. |ipf-reader| image:: screenshots/qgis/icons/ipf-reader.svg
+.. |ipf-reader| image:: screenshots/qgis/icons/ipf-reader.png
    :width: 40px
    :height: 40px
 
-.. |3d-viewer| image:: screenshots/qgis/icons/3d-viewer.svg
+.. |3d-viewer| image:: screenshots/qgis/icons/3d-viewer.png
    :width: 40px
    :height: 40px
 
-.. |time-series| image:: screenshots/qgis/icons/time-series.svg
+.. |time-series| image:: screenshots/qgis/icons/time-series.png
    :width: 40px
    :height: 40px
 
-.. |cross-section| image:: screenshots/qgis/icons/cross-section.svg
+.. |cross-section| image:: screenshots/qgis/icons/cross-section.png
    :width: 40px
    :height: 40px
 
-.. |nhi-data| image:: screenshots/qgis/icons/NHI-portal.svg
+.. |nhi-data| image:: screenshots/qgis/icons/NHI-portal.png
    :width: 40px
    :height: 40px
