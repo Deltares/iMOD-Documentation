@@ -89,8 +89,9 @@ Known issues
 ------------
 * Links to images online can fail when building the PDF with LaTeX.
 
-* LaTeX has trouble getting the BoundingBox from an `.svg` file 
-you want to include. A workaround is converting it to a `.eps` file, 
+* LaTeX cannot use a `.svg` file you want to include. 
+This is a 
+[known issue](https://github.com/sphinx-doc/sphinx/issues/9376) 
+with LaTeX. 
+A workaround is converting it to a `.png` file, 
 for example with [Inkscape](https://inkscape.org/). 
-Specifying the `:width:` and `:height:` under the `.. image::` 
-directive in the `.rst` file might also fix this (UNTESTED).
