@@ -26,22 +26,29 @@ Configuration
 
    .. image:: screenshots/qgis/qgis-installed-plugins.png
 
+If the installation and configuration was succesful, 
+the plugin should be visible in your toolbar.
+
+   .. figure:: screenshots/qgis/imod-toolbar.png
+
+     The iMOD plugin toolbar
+
 
 Functionality
 #############
 
-The QGIS plugin currently consists of six widgets, of which the functionality
+The QGIS plugin currently consists of five widgets, 
+of which the functionality
 will be described in the next section:
 
 * Open IPF
 * 3D Viewer
 * Time Series
 * Cross section
-* NetCDF Manager
 * Add NHI data
 
-Open IPF
---------
+|ipf-reader| Open IPF
+----------------------
 Open IPF file and lets QGIS interpret it as a regular shapefile with points. 
 Required to interpret timeseries in the Time Series widget, 
 as well as to visualize borelogs in Cross section and 3D Viewer widget.
@@ -63,8 +70,8 @@ and see which points have data defined within a certain time frame.
     The temporal controller panel and map canvas of Qgis. 
     The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.
 
-3D Viewer
----------
+|3d-viewer| 3D Viewer 
+---------------------
 The 3D viewer widget creates a connection between Qgis and the iMOD 3D viewer. 
 It allows you to make selections in Qgis and forward them to the 3D viewer.
 Note that there are two perquisites for the iMOD viewer to correctly render mesh data:
@@ -78,19 +85,9 @@ Note that there are two perquisites for the iMOD viewer to correctly render mesh
 This means that not all data that can be loaded in Qgis as mesh can be viewed in the 3D viewer.
 Currently only UGRID meshes and IPF borelog files are supported.
 
-* Use the top left box to select the mesh layer/ipf file you want to inspect in the 3D viewer.
-  
-* "Draw fence diagram" allows to draw lines on the map canvas which can be forwared to the 3D viewer to draw a fence diagram.
-  Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.
+* Use the selection box at the top to select the mesh layer/ipf file you want to inspect in the 3D viewer.
 
-* "Clear fence diagram" clears all lines from the map canvas
-  
-* "Draw extent" allows you to click and drag a box that allows you to set a bounding box.
-  The iMOD viewer will only load the data within this boundary box, 
-  which can be useful when exploring specific areas in large datasets.
-  Drawing an bounding box will update the "Extent" widget.
-
-* The "Extent" widget allows the user to manually set the bounding box by 
+* The "Extent" group allows the user to manually set the bounding box by 
   editing the numbers under "North", "East", "South", and "West",
   and more:
 
@@ -102,15 +99,29 @@ Currently only UGRID meshes and IPF borelog files are supported.
 
   * "Map canvas extent" sets the bounding box to the map canvas
   
-* "Start iMOD viewer" starts the iMOD viewer and immediately loads the data selected in the widget.
+* The "Select" group contains a set of buttons to spatially select data to be forwarded to the 3D viewer
 
-* "Load mesh data" remove previous data from viewer and load new mesh data in it.
+  * The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwared to the 3D viewer to draw a fence diagram.
+    Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.
+
+  * The "Clear fence diagram" button clears all lines from the map canvas
   
-* "Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer 
-  and renders a fence diagram.
+  * The "Draw extent" buttons allows you to click and drag a box that allows you to set a bounding box.
+    The iMOD viewer will only load the data within this boundary box, 
+    which can be useful when exploring specific areas in large datasets.
+    Drawing an bounding box will update the "Extent" widget.
 
-* "Load legend" transfer legend in Qgis map layer to fence diagram and/or mesh data in the 3D viewer 
-  for the selected variable in the Qgis map canvas.
+* The "View" group contains a set of buttons to interact with the 3D viewer
+
+  * "Start iMOD viewer" starts the iMOD viewer and immediately loads the data selected in the widget.
+
+  * "Load mesh data" remove previous data from viewer and load new mesh data in it.
+  
+  * "Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer 
+    and renders a fence diagram.
+
+  * "Load legend" transfers legend in the Qgis map layer to fence diagram and/or mesh data in the 3D viewer 
+    for the selected variable in the Qgis map canvas.
   
 .. image:: screenshots/qgis/3d-viewer.png
 
@@ -121,8 +132,8 @@ Currently only UGRID meshes and IPF borelog files are supported.
     As of now, the widget does not understand changes made by the user in the 3D viewer.
     It only supports "one-way traffic" towards the viewer.
 
-Time Series
------------
+|time-series| Time Series
+-------------------------
 The Time Series widget visualizes time series stored in IPF files or mesh data 
 in a graph window. You can freely zoom and drag the graph in this window.
 Sometimes you lose your view of the lines by dragging too fast;
@@ -167,8 +178,8 @@ The buttons in the widget change, depending on which data type is being selected
 
     The Time series widget and map canvas for a mesh.
 
-Cross-section
--------------
+|cross-section| Cross-section 
+-----------------------------
 The cross-section widget allows you to draw cross-sections of both mesh and raster data.
 Note that the widget expects that the vertical axis is stored as variables 
 :code:`top_layer_*` and :code:`bottom_layer_*`. 
@@ -218,8 +229,8 @@ The functionality of each component is explained below.
     and borelogs are plotted as bars.
 
 
-Add NHI-data
-------------
+|nhi-data| Add NHI-data
+-----------------------
 Opens up a window to select data from the NHI portal to load directly in QGIS.
 The NHI is the `Netherlands Hydrological Instrument <https://www.nhi.nu/>`_ .
 The NHI data provides datasets with different kinds of services:
@@ -238,3 +249,25 @@ You can use the search bar to search for datasets of your liking.
     
     Experience has shown that sometimes these services 
     are hard to reach and data cannot be loaded.
+
+
+
+.. |ipf-reader| image:: screenshots/qgis/icons/ipf-reader.svg
+   :width: 40px
+   :height: 40px
+
+.. |3d-viewer| image:: screenshots/qgis/icons/3d-viewer.svg
+   :width: 40px
+   :height: 40px
+
+.. |time-series| image:: screenshots/qgis/icons/time-series.svg
+   :width: 40px
+   :height: 40px
+
+.. |cross-section| image:: screenshots/qgis/icons/cross-section.svg
+   :width: 40px
+   :height: 40px
+
+.. |nhi-data| image:: screenshots/qgis/icons/NHI-portal.svg
+   :width: 40px
+   :height: 40px
