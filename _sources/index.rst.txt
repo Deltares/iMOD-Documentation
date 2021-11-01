@@ -37,12 +37,19 @@ reproducible modelling workflow.
 
 .. figure:: screenshots/index/NHI-zz_cross-section.png
 
-  Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD Qgis plugin.
-  The example shows the top layer of the NHI fresh-salt.
+  Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD QGIS plugin.
+  The example shows the chlorine concentrations computed 
+  by the `NHI fresh-salt model 
+  <https://gitlab.com/deltares/imod/nhi-fresh-salt>`_.
 
 .. figure:: screenshots/index/NHI-zz_3d_viewer.png
 
-  The NHI fresh-salt model plotted in the new 3D viewer.
+  The chlorine concentrations computed by the 
+  `NHI fresh-salt model 
+  <https://gitlab.com/deltares/imod/nhi-fresh-salt>`_
+  for the province of Zeeland, plotted in the new iMOD 3D viewer. 
+  The top layer is made opaque, creating the pretty mist effect in 
+  the creek ridges. The brown cilinders indicate borelog locations.
 
 The proven technology and expertise of iMOD is consolidated in the 
 iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
