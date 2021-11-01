@@ -38,6 +38,7 @@ reproducible modelling workflow.
 .. figure:: screenshots/index/NHI-zz_cross-section.png
 
   Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD Qgis plugin.
+  The example shows the top layer of the NHI fresh-salt.
 
 .. figure:: screenshots/index/NHI-zz_3d_viewer.png
 
