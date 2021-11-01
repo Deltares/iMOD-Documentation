@@ -35,6 +35,14 @@ MODFLOW 6 (including unstructured meshes), visualisation in QGIS,
 a brand-new 3D viewer, and a python package for a transparent and 
 reproducible modelling workflow. 
 
+.. figure:: screenshots/index/NHI-zz_cross-section.png
+
+  Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD Qgis plugin.
+
+.. figure:: screenshots/index/NHI-zz_3d_viewer.png
+
+  The NHI fresh-salt model plotted in the new 3D viewer.
+
 The proven technology and expertise of iMOD is consolidated in the 
 iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
 and structured MODFLOW6 and can be coupled to the unsaturated zone 
@@ -86,3 +94,4 @@ Sections
    qgis_index
    viewer_index
    python_index
+   workflow_index
