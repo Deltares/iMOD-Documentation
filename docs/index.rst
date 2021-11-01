@@ -44,12 +44,10 @@ reproducible modelling workflow.
 
 .. figure:: screenshots/index/NHI-zz_3d_viewer.png
 
-  The chlorine concentrations computed by the 
-  `NHI fresh-salt model 
-  <https://gitlab.com/deltares/imod/nhi-fresh-salt>`_
+  The chlorine concentrations computed by the NHI-fresh-salt model.
   for the province of Zeeland, plotted in the new iMOD 3D viewer. 
-  The top layer is made opaque, creating the pretty mist effect in 
-  the creek ridges. The brown cilinders indicate borelog locations.
+  The top layer is made opaque, 
+  creating the pretty mist effect in the creek ridges.
 
 The proven technology and expertise of iMOD is consolidated in the 
 iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
