@@ -15,4 +15,4 @@ Sections
 .. toctree::
    :titlesonly:
 
-   worfklow_wq
+   workflow_wq
