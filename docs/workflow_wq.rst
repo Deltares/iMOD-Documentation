@@ -50,6 +50,7 @@ how_to_look_like_a_pro.html>`_)
 and call the following lines of code:
 
 .. code-block:: console
+    
     ./path/to/iMOD-WQ.exe ./FreshwaterLens.run
 
 This will run the iMOD-WQ model, and should not take more than 10 seconds.
