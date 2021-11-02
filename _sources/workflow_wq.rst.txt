@@ -29,7 +29,7 @@ the sides have a fixed concentration (``bnd = -1``)
 of 35 (``sconc = 35.``) in the top layer.
 This creates freshwater lens along the strip.
 
-.. literalinclude:: examples/wq/create_input.py
+.. literalinclude:: scripts/wq/create_input.py
     :caption: create_wq_input.py
     :language: python
 
@@ -69,7 +69,7 @@ and converting them to other data formats in Python.
 In this example we convert the output to a UGRID file, 
 which can be read by QGIS.
 
-.. literalinclude:: examples/wq/convert_output.py
+.. literalinclude:: scripts/wq/convert_output.py
     :caption: convert_output.py
     :language: python
 

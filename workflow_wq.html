@@ -206,6 +206,112 @@ to a data format supported by QGIS (UGRID)</p></li>
 the sides have a fixed concentration (<code class="docutils literal notranslate"><span class="pre">bnd</span> <span class="pre">=</span> <span class="pre">-1</span></code>)
 of 35 (<code class="docutils literal notranslate"><span class="pre">sconc</span> <span class="pre">=</span> <span class="pre">35.</span></code>) in the top layer.
 This creates freshwater lens along the strip.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">create_wq_input.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="kn">import</span> <span class="nn">imod</span>
+
+
+<span class="c1"># Discretization</span>
+<span class="n">nrow</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># number of rows</span>
+<span class="n">ncol</span> <span class="o">=</span> <span class="mi">40</span>  <span class="c1"># number of columns</span>
+<span class="n">nlay</span> <span class="o">=</span> <span class="mi">15</span>  <span class="c1"># number of layers</span>
+
+<span class="n">dz</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">dx</span> <span class="o">=</span> <span class="mi">250</span>
+<span class="n">dy</span> <span class="o">=</span> <span class="o">-</span><span class="n">dx</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">ncol</span><span class="p">,</span> <span class="n">dx</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="n">dy</span> <span class="o">*</span> <span class="n">ncol</span><span class="p">,</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="o">-</span><span class="n">dy</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+
+<span class="c1"># setup ibound</span>
+<span class="n">bnd</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+        <span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">nlay</span><span class="p">),</span>
+        <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="n">dx</span><span class="p">,</span>
+        <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="n">dy</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">dims</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># set constant heads</span>
+<span class="n">bnd</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">bnd</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">28</span><span class="p">:</span><span class="mi">40</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+
+<span class="c1"># set up tops and bottoms</span>
+<span class="n">top1D</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nlay</span> <span class="o">*</span> <span class="n">dz</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="o">-</span><span class="n">dz</span><span class="p">),</span> <span class="p">{</span><span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nlay</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)},</span> <span class="p">(</span><span class="s2">&quot;layer&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">top3D</span> <span class="o">=</span> <span class="n">top1D</span> <span class="o">*</span> <span class="n">xr</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">bnd</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+<span class="n">bot</span> <span class="o">=</span> <span class="n">top3D</span> <span class="o">-</span> <span class="n">dz</span>
+
+<span class="c1"># Defining the starting concentrations</span>
+<span class="n">sconc</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">nlay</span><span class="p">,</span> <span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="mf">35.0</span><span class="p">),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span>
+        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span>
+        <span class="s2">&quot;layer&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nlay</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+        <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="n">dx</span><span class="p">,</span>
+        <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="n">dy</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="n">dims</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="n">sconc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:,</span> <span class="mi">13</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="c1"># Defining the recharge rates</span>
+<span class="n">rch_rate</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">nrow</span><span class="p">,</span> <span class="n">ncol</span><span class="p">),</span> <span class="mf">0.0</span><span class="p">),</span>
+    <span class="n">coords</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="s2">&quot;dx&quot;</span><span class="p">:</span> <span class="n">dx</span><span class="p">,</span> <span class="s2">&quot;dy&quot;</span><span class="p">:</span> <span class="n">dy</span><span class="p">},</span>
+    <span class="n">dims</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="n">rch_rate</span><span class="p">[:,</span> <span class="mi">13</span><span class="p">:</span><span class="mi">27</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.001</span>
+
+<span class="n">rch_conc</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">full_like</span><span class="p">(</span><span class="n">rch_rate</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+
+
+<span class="c1"># Finally, we build the model.</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">SeawatModel</span><span class="p">(</span><span class="s2">&quot;FreshwaterLens&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;bas&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">BasicFlow</span><span class="p">(</span>
+    <span class="n">ibound</span><span class="o">=</span><span class="n">bnd</span><span class="p">,</span> <span class="n">top</span><span class="o">=</span><span class="n">top3D</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">bottom</span><span class="o">=</span><span class="n">bot</span><span class="p">,</span> <span class="n">starting_head</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;lpf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">LayerPropertyFlow</span><span class="p">(</span>
+    <span class="n">k_horizontal</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">k_vertical</span><span class="o">=</span><span class="mf">20.0</span><span class="p">,</span> <span class="n">specific_storage</span><span class="o">=</span><span class="mf">0.0</span>
+<span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;btn&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">BasicTransport</span><span class="p">(</span>
+    <span class="n">icbund</span><span class="o">=</span><span class="n">bnd</span><span class="p">,</span> <span class="n">starting_concentration</span><span class="o">=</span><span class="n">sconc</span><span class="p">,</span> <span class="n">porosity</span><span class="o">=</span><span class="mf">0.35</span>
+<span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;adv&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">AdvectionTVD</span><span class="p">(</span><span class="n">courant</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;dsp&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">Dispersion</span><span class="p">(</span><span class="n">longitudinal</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">diffusion_coefficient</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;vdf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">VariableDensityFlow</span><span class="p">(</span><span class="n">density_concentration_slope</span><span class="o">=</span><span class="mf">0.71</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;rch&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">RechargeHighestActive</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="n">rch_rate</span><span class="p">,</span> <span class="n">concentration</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;pcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">PreconditionedConjugateGradientSolver</span><span class="p">(</span>
+    <span class="n">max_iter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">inner_iter</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">hclose</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span> <span class="n">rclose</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">relax</span><span class="o">=</span><span class="mf">0.98</span><span class="p">,</span> <span class="n">damp</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;gcg&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">GeneralizedConjugateGradientSolver</span><span class="p">(</span>
+    <span class="n">max_iter</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span>
+    <span class="n">inner_iter</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
+    <span class="n">cclose</span><span class="o">=</span><span class="mf">1.0e-6</span><span class="p">,</span>
+    <span class="n">preconditioner</span><span class="o">=</span><span class="s2">&quot;mic&quot;</span><span class="p">,</span>
+    <span class="n">lump_dispersion</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;oc&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">wq</span><span class="o">.</span><span class="n">OutputControl</span><span class="p">(</span><span class="n">save_head_idf</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">save_concentration_idf</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">time_discretization</span><span class="p">(</span><span class="n">times</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;1900-01-01T00:00&quot;</span><span class="p">,</span> <span class="s2">&quot;2000-01-01T00:00&quot;</span><span class="p">])</span>
+
+<span class="c1"># Now we write the model, including runfile:</span>
+<span class="n">m</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;FreshwaterLens&quot;</span><span class="p">)</span>
+<span class="c1"># You can run the model using the command prompt and the iMOD-WQ executable</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="running-the-model">
 <h2>2. Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
@@ -230,14 +336,63 @@ Therefore iMOD-python allows for reading these IDF files
 and converting them to other data formats in Python.</p>
 <p>In this example we convert the output to a UGRID file,
 which can be read by QGIS.</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">convert_output.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imod</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+
+<span class="c1"># We assume that this script is located in the same directory</span>
+<span class="c1"># as in create_wq_input.py.</span>
+<span class="c1"># We provide a UNIX style global path</span>
+<span class="c1"># to select all IDF files in the conc directory.</span>
+<span class="n">conc_path</span> <span class="o">=</span> <span class="s2">&quot;./results/conc/*.IDF&quot;</span>
+<span class="n">bottom_path</span> <span class="o">=</span> <span class="s2">&quot;./FreshwaterLens/bas/bottom*.idf&quot;</span>
+<span class="n">top_path</span> <span class="o">=</span> <span class="s2">&quot;./FreshwaterLens/bas/top.idf&quot;</span>
+
+<span class="c1"># Open the IDF files.</span>
+<span class="n">conc</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">idf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">conc_path</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">bottom</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">idf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">bottom_path</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="n">surface</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">idf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">top_path</span><span class="p">)</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="c1"># Reconstruct vertical discretization</span>
+<span class="c1"># We need this as IDFs do not store vertical discretization</span>
+<span class="n">surface</span> <span class="o">=</span> <span class="n">surface</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">## Create 3D array of tops</span>
+<span class="c1">### Roll bottom one layer downward: the bottom of a layer is top of next layer</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">bottom</span><span class="o">.</span><span class="n">roll</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">roll_coords</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1">### Remove layer 1</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">layer</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="c1">### Add surface as layer 1</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">surface</span><span class="p">,</span> <span class="n">top</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="s2">&quot;layer&quot;</span><span class="p">)</span>
+<span class="c1">### Reorder dimensions</span>
+<span class="n">top</span> <span class="o">=</span> <span class="n">top</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="s2">&quot;layer&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">)</span>
+
+<span class="c1"># Merge into dataset</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">([</span><span class="n">conc</span><span class="p">,</span> <span class="n">top</span><span class="p">,</span> <span class="n">bottom</span><span class="p">])</span>
+
+<span class="c1"># Create MDAL supported UGRID</span>
+<span class="c1"># NOTE: This requires iMOD-python v1.0(?)</span>
+<span class="n">ds_ugrid</span> <span class="o">=</span> <span class="n">imod</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">to_ugrid2d</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+
+<span class="c1">#%% Due to a bug in MDAL, we have to encode the times as floats</span>
+<span class="c1"># instead of integers</span>
+<span class="c1"># until this is fixed: https://github.com/lutraconsulting/MDAL/issues/348</span>
+<span class="n">ds_ugrid</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">encoding</span><span class="p">[</span><span class="s2">&quot;dtype&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float64</span>
+
+<span class="n">ds_ugrid</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s2">&quot;./results/output_ugrid.nc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="viewing-the-results-in-qgis">
 <h2>4. Viewing the results in QGIS<a class="headerlink" href="#viewing-the-results-in-qgis" title="Permalink to this headline">¶</a></h2>
 <p>Start QGIS and open the <code class="docutils literal notranslate"><span class="pre">./results/output_ugrid.nc</span></code> file as a mesh.</p>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id3">
 <img alt="_images/load_mesh.png" src="_images/load_mesh.png" />
 <figcaption>
-<p><span class="caption-text">Where to find the action to load a mesh layer</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Where to find the action to load a mesh layer</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>You can select the variable to plot on the map canvas by right-clicking the
@@ -246,21 +401,21 @@ which can be read by QGIS.</p>
 <p>Next select which variable to plot in the group selection screen by
 clicking the color ramp next to the variable name, which will render
 the variable on the map canvas.</p>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id4">
 <img alt="_images/group_selection.png" src="_images/group_selection.png" />
 <figcaption>
 <p><span class="caption-text">Where to find the group selection screen.
 Here you can select the variables to be plotted.
-The red circle indicates where the color ramp symbol can be found.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+The red circle indicates where the color ramp symbol can be found.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Colormaps can be set by navigating to the color selection menu</p>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id5">
 <img alt="_images/color_ramp_selection.png" src="_images/color_ramp_selection.png" />
 <figcaption>
 <p><span class="caption-text">The color selection menu, here you can set the colormap that will be used,
 as well as adjusting its binning.
-In these example screenshots we use the colormap “Spectral”.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+In these example screenshots we use the colormap “Spectral”.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>Next, open the iMOD plugin’s cross-section tool <a class="reference internal" href="_images/cross-section.png"><img alt="cross-section" src="_images/cross-section.png" style="width: 40px; height: 40px;" /></a>
@@ -275,10 +430,10 @@ Clicking the small arrow next to the color gradient box in the dialog will
 allow selecting presets.
 We chose “Spectral” and also select “Invert Color Ramp” in the examples,
 but you can select whatever colormap you think is suitable!</p>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id6">
 <img alt="_images/cross-section2.png" src="_images/cross-section2.png" />
 <figcaption>
-<p><span class="caption-text">You should see this if you followed precisely what we did.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">You should see this if you followed precisely what we did.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -296,10 +451,10 @@ to be opened in the 3D viewer.</p>
 <p>Fourth, to plot the data, under the <em>Imported files</em>,
 expand the data selection tree, and under <em>Layered datasets</em>, selecting <em>conc</em>.</p>
 <p>Finally, you can migrate the colormap you used in QGIS by clicking <em>Load legend</em>.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id7">
 <img alt="_images/3d_viewer.png" src="_images/3d_viewer.png" />
 <figcaption>
-<p><span class="caption-text">If you followed the instructions, you should see this.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">If you followed the instructions, you should see this.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
