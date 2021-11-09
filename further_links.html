@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>iMOD Python &#8212; iMOD Suite  documentation</title>
+    <title>Further Links &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Install" href="python_install.html" />
-    <link rel="prev" title="User Manual" href="viewer_user_manual.html" />
+    <link rel="prev" title="A conceptual fresh-salt model" href="workflow_wq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -73,8 +72,8 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="python_index.html">
   iMOD Python
  </a>
 </li>
@@ -85,8 +84,8 @@
  </a>
 </li>
 
-<li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="further_links.html">
+<li class="toctree-l1 current active nav-item">
+ <a class="current reference internal nav-link" href="#">
   Further Links
  </a>
 </li>
@@ -113,24 +112,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
-    <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="python_install.html">
-   Install
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_getting_started.html">
-   Getting started
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="python_howdoi.html">
-   How do I
-  </a>
- </li>
-</ul>
-
+    
   </div>
 </nav>
             </div>
@@ -150,8 +132,18 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sections">
-   Sections
+  <a class="reference internal nav-link" href="#videos">
+   Videos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practical-tips">
+   Practical Tips
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#source-code">
+   Source Code
   </a>
  </li>
 </ul>
@@ -175,32 +167,33 @@
               
               <div>
                 
-  <section id="imod-python">
-<h1>iMOD Python<a class="headerlink" href="#imod-python" title="Permalink to this headline">¶</a></h1>
-<p>The imod Python package is designed to help you in your MODFLOW groundwater modeling efforts.
-It makes it easy to go from your raw data to a fully defined MODFLOW model, with the aim to make this process reproducable.
-Whether you want to build a simple 2D conceptual model, or a complex 3D regional model with millions of cells,
-imod-python scales automatically by making use of <a class="reference external" href="https://dask.org/">dask</a>.</p>
-<p>By building on top of popular Python packages like <a class="reference external" href="http://xarray.pydata.org/">xarray</a>, <a class="reference external" href="http://pandas.pydata.org/">pandas</a>,
-<a class="reference external" href="https://rasterio.readthedocs.io/en/latest/">rasterio</a> and <a class="reference external" href="http://geopandas.org/">geopandas</a>, a lot of functionality comes
-for free.</p>
-<p>Currently we support the creation of the following MODFLOW-based models:</p>
+  <section id="further-links">
+<h1>Further Links<a class="headerlink" href="#further-links" title="Permalink to this headline">¶</a></h1>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h2>
+<p>A list of videos which are iMOD Suite related are shown below.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model">USGS MODFLOW 6</a>, currently only the Groundwater Flow packages</p></li>
-<li><p><a class="reference external" href="https://oss.deltares.nl/web/imod">iMODFLOW</a></p></li>
-<li><p><a class="reference external" href="https://oss.deltares.nl/web/imod">iMOD-WQ</a>, which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)</p></li>
+<li><p><a class="reference external" href="https://vimeo.com/507476122">DSD 2020 with explanation iMOD-python and 3D viewer</a></p></li>
 </ul>
-<p>Documentation: <a class="reference external" href="https://imod.xyz/">https://imod.xyz/</a></p>
-<p>Source code: <a class="reference external" href="https://gitlab.com/deltares/imod/imod-python">https://gitlab.com/deltares/imod/imod-python</a></p>
-<section id="sections">
-<h2>Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="python_install.html">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_getting_started.html">Getting started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python_howdoi.html">How do I</a></li>
+</section>
+<section id="practical-tips">
+<h2>Practical Tips<a class="headerlink" href="#practical-tips" title="Permalink to this headline">¶</a></h2>
+<p>We also maintain documentation with general practical and technical tips.
+It varies from fixing specific Powershell errors to a full explanation on how
+to do proper version control of both your data and scripts with Git and DVC.</p>
+<p><a class="reference external" href="https://deltares.gitlab.io/imod/imod-practical-tips/">iMOD Practical tips</a></p>
+</section>
+<section id="source-code">
+<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
+<p>Below is the list of repositories that contain
+the source code of the individual components.
+You can raise issues, or suggest changes, here.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Deltares/iMOD-Documentation">iMOD Documentation Github</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Deltares/imod-qgis">iMOD QGIS plugin Github</a></p></li>
+<li><p><a class="reference external" href="https://github.com/Deltares/imod-gui">iMOD 3D Viewer Github</a></p></li>
+<li><p><a class="reference external" href="https://gitlab.com/deltares/imod/imod-python">iMOD Python Gitlab</a></p></li>
 </ul>
-</div>
 </section>
 </section>
 
@@ -210,19 +203,12 @@ for free.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="viewer_user_manual.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="workflow_wq.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">User Manual</p>
+            <p class="prev-next-title">A conceptual fresh-salt model</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="python_install.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Install</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
               
