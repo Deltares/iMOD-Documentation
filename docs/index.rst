@@ -101,3 +101,4 @@ Sections
    viewer_index
    python_index
    workflow_index
+   further_links
