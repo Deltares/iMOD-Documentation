@@ -2,7 +2,13 @@
 iMOD 3D Viewer
 **************
 
---General description of viewer capabilities here --
+The iMOD 3D viewer can visualize unstructured grids (UGRID)
+as well as structured grids (``.idf``) in 3D. 
+To fully utilize the functionality of the 3D viewer,
+the iMOD QGIS plugin is required as well.
+
+.. image:: screenshots/viewer_index/example-dommel.png
+   :width: 600px
 
 --------
 Sections
