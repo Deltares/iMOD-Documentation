@@ -11,7 +11,7 @@ you will receive a download link via e-mail within only a few minutes.
 Unzip the zipfile, which includes the viewer installer.
 Double click the `.msi` file.
 
-This will open up the first screen.
+This will open up the first screen of the setup wizard.
 
 .. figure:: screenshots/viewer_installation/wizard_start.png
 
