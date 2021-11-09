@@ -1,3 +1,5 @@
+.. _viewer-install:
+
 *******
 Install
 *******

@@ -2,7 +2,7 @@
 Install
 *******
 
-**NOTE: These are install instructions preceding the first release**
+**NOTE: These are install instructions for the beta release**
 
 There are multiple ways to install the QGIS plugin, described under sections 2a, 2b, 2c.
 Each of these, however, require the user to install QGIS. 
@@ -23,10 +23,12 @@ For a system wide installation, see :ref:`system-wide`.
 ======================================
 2a. Installing with the Deltares setup
 ======================================
-Run the .msi you can download here:
---link here--
+Run the .msi you can download `on the Deltares download
+portal <https://download.deltares.nl/en/download/imod-viewer/>`_
 
-Make sure the box "Install QGIS plugin" is ticked.
+Follow the installation instructions for 
+:ref:`the viewer install <viewer-install>`, 
+and make sure to do a *Complete* install.
 
 ==============================================
 2b. Installing from the QGIS plugin repository
@@ -35,8 +37,8 @@ Make sure the box "Install QGIS plugin" is ticked.
     The iMOD plugin is not added to the QGIS plugin repository yet, 
     this will work in the future.
 
-In Qgis, navigate to "Plugins > Manage and Install Plugins > All". 
-In the search bar, type: "iMOD plugin".
+In Qgis, navigate to *Plugins > Manage and Install Plugins > All*. 
+In the search bar, type: "*iMOD*".
 Select the iMOD plugin, and click "Install"
 
 ===================================================
