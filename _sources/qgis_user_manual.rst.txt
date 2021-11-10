@@ -6,10 +6,6 @@
 User Manual
 ***********
 
-This is a preliminary user manual of the functionality of the iMOD6 plugin.
-As the plugin is still in development, significant changes might be made 
-to the described functionality here.
-
 Configuration
 #############
 

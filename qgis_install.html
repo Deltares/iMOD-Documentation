@@ -207,8 +207,8 @@
 <p><strong>NOTE: These are install instructions for the beta release</strong></p>
 <p>There are multiple ways to install the QGIS plugin, described under sections 2a, 2b, 2c.
 Each of these, however, require the user to install QGIS.
-To install the QGIS plugin, we recommend running the iMOD6 GUI installer (2a),
-which will both install the iMOD6 3D viewer, as well as the iMOD QGIS plugin</p>
+To install the QGIS plugin, we recommend running the iMOD Viewer installer (2a),
+which will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin</p>
 <section id="installing-qgis">
 <h2>1. Installing QGIS<a class="headerlink" href="#installing-qgis" title="Permalink to this headline">¶</a></h2>
 <p>You can download the standalone QGIS setup
@@ -228,24 +228,23 @@ and make sure to do a <em>Complete</em> install.</p>
 </section>
 <section id="b-installing-from-the-qgis-plugin-repository">
 <h2>2b. Installing from the QGIS plugin repository<a class="headerlink" href="#b-installing-from-the-qgis-plugin-repository" title="Permalink to this headline">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The iMOD plugin is not added to the QGIS plugin repository yet,
-this will work in the future.</p>
-</div>
 <p>In Qgis, navigate to <em>Plugins &gt; Manage and Install Plugins &gt; All</em>.
 In the search bar, type: “<em>iMOD</em>”.
-Select the iMOD plugin, and click “Install”</p>
+Select the iMOD plugin, and click “Install”.</p>
+<p>This does not install the iMOD 3D Viewer;
+so for 3D viewing functionality, follow step <strong>2a</strong>,
+but instead select a <em>Minimal</em> install.</p>
 </section>
 <section id="c-manually-download-and-copy-the-imod-qgis-plugin">
 <h2>2c. Manually download and copy the iMOD QGIS plugin<a class="headerlink" href="#c-manually-download-and-copy-the-imod-qgis-plugin" title="Permalink to this headline">¶</a></h2>
 <p>Download the iMOD QGIS plugin code from the <a class="reference external" href="https://github.com/Deltares/imod-qgis">Github page</a></p>
-<p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imod</span></code> folder to your QGIS plugin directory.
+<p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imodqgis</span></code> folder to your QGIS plugin directory.
 This is probably located in your Appdata folder.
 In windows it is something such as:
 <code class="docutils literal notranslate"><span class="pre">c:\Users\%USER%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins</span></code></p>
 <p>If you cannot find the folder, follow <a class="reference external" href="https://gis.stackexchange.com/a/274312">these instructions</a>.</p>
-<p>In Qgis, make sure under “Plugins &gt; Manage and Install Plugins &gt; Installed” that the checkbox “iMOD plugin” is checked.</p>
+<p>In Qgis, make sure under <em>Plugins &gt; Manage and Install Plugins &gt; Installed</em>
+that the checkbox <em>iMOD</em> is checked.</p>
 </section>
 <section id="extra-installing-the-qgis-plugin-system-wide">
 <span id="system-wide"></span><h2>Extra: Installing the QGIS plugin system-wide<a class="headerlink" href="#extra-installing-the-qgis-plugin-system-wide" title="Permalink to this headline">¶</a></h2>
@@ -308,10 +307,10 @@ a version number should appear in the column <em>New</em>.</span><a class="heade
 <section id="putting-the-plugin-files-in-the-right-folder">
 <h3>Putting the plugin files in the right folder<a class="headerlink" href="#putting-the-plugin-files-in-the-right-folder" title="Permalink to this headline">¶</a></h3>
 <p>Download the iMOD QGIS plugin code from the <a class="reference external" href="https://github.com/Deltares/imod-qgis">Github page</a></p>
-<p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imod</span></code> folder to your QGIS plugin directory.
+<p>Unpack the zip files, and copy the <code class="docutils literal notranslate"><span class="pre">imodqgis</span></code> folder to your QGIS plugin directory.
 This is probably located in your Appdata folder.
 In windows it is something such as:
-<code class="docutils literal notranslate"><span class="pre">c:\OSGeo4W\apps\qgis\python\plugins\imod</span></code></p>
+<code class="docutils literal notranslate"><span class="pre">c:\OSGeo4W\apps\qgis\python\plugins\imodqgis</span></code></p>
 </section>
 </section>
 </section>
