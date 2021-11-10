@@ -90,8 +90,6 @@ The model input and output can be visualised in the fast interactive viewer.
     - iMOD 3D viewer
     - iMOD GUI
 
-.. image:: screenshots/index/overview.png
-
 -----------
 iMOD Suite
 -----------
