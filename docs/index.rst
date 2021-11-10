@@ -55,6 +55,41 @@ and structured MODFLOW6 and can be coupled to the unsaturated zone
 model MetaSWAP. 
 The model input and output can be visualised in the fast interactive viewer. 
 
+.. list-table:: Comparison between iMOD Suite & iMOD 5
+  :header-rows: 1
+  :stub-columns: 1
+
+  * - 
+    - iMOD Suite
+    - iMOD 5
+  * - computational kernels
+    - Modflow 2005, Modflow 6, SEAWAT, MT3DMS
+    - Modflow 2005, Modflow 6, SEAWAT, MT3DMS, MetaSWAP
+  * - file types
+    - NetCDF, UGRID, shp, tiff, idf, ipf, gen
+    - idf, ipf, isg, gen
+  * - grid types
+    - structured & unstructured
+    - structured & nested structured
+  * - scripted pre-processing
+    - iMOD python
+    - iMOD Batch
+  * - interactive pre-processing
+    - (QGIS)
+    - iMOD GUI
+  * - scripted 2D plot
+    - iMOD-python
+    - 
+  * - interactive 2D plot
+    - iMOD QGIS plugin (& QGIS)
+    - iMOD GUI
+  * - scripted 3D plot
+    - iMOD python
+    -  
+  * - interactive 3D plot
+    - iMOD 3D viewer
+    - iMOD GUI
+
 .. image:: screenshots/index/overview.png
 
 -----------
