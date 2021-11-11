@@ -116,11 +116,9 @@ The suite currently consists of three modules:
     which integrates the SEAWAT (density-dependent groundwater flow) 
     and MT3DMS (multi-species reactive transport calculations)
 
-*The following chapters further discuss the different components
-of the iMOD Suite, as well as provide examples on how to use them.*
 
 .. toctree::
-   :titlesonly:
+   :hidden:
 
    qgis_index
    viewer_index

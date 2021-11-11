@@ -21,12 +21,8 @@ Documentation: https://imod.xyz/
 
 Source code: https://gitlab.com/deltares/imod/imod-python
 
---------
-Sections
---------
-
 .. toctree::
-   :titlesonly:
+   :hidden:
 
    python_install
    python_getting_started
