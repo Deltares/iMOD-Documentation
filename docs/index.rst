@@ -25,7 +25,7 @@ the latest developments in the data science ecosystem, by utilizing:
   allow connecting to a big and lively software ecoystem.
 
 Important technological innovations will be developed 
-in the new iMOD Suite, whereas iMOD5 will be maintained the coming years, 
+in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years, 
 because of its proven technology
 for groundwatermodelling simulations and visualisation, 
 but will see no big new feature developments.
@@ -49,11 +49,14 @@ reproducible modelling workflow.
   The top layer is made opaque, 
   creating the pretty mist effect in the creek ridges.
 
-The proven technology and expertise of iMOD is consolidated in the 
-iMOD5 suite. iMOD5 supports structured calculations with MODFLOW2005
+The proven technology and expertise of iMOD is consolidated within 
+iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
 and structured MODFLOW6 and can be coupled to the unsaturated zone 
 model MetaSWAP. 
 The model input and output can be visualised in the fast interactive viewer. 
+`The documentation of iMOD 5 can be found here 
+<https://oss.deltares.nl/nl/web/imod>`_
+.
 
 .. list-table:: Comparison between iMOD Suite & iMOD 5
   :header-rows: 1
@@ -90,9 +93,6 @@ The model input and output can be visualised in the fast interactive viewer.
     - iMOD 3D viewer
     - iMOD GUI
 
------------
-iMOD Suite
------------
 The suite currently consists of three modules:
 
 * :doc:`iMOD QGIS Plugin <qgis_index>`:
@@ -111,21 +111,13 @@ The suite currently consists of three modules:
   * USGS MODFLOW 6, structured and unstructerd grids, 
     not all advanced stress packages yet (LAK, MAW, SFR), 
     and only the groundwater flow packages.
-  * iMODFLOW (computational code provided with iMOD5) 
-  * iMOD-WQ (computational code provided with iMOD5), 
+  * iMODFLOW (computational code provided with iMOD 5) 
+  * iMOD-WQ (computational code provided with iMOD 5), 
     which integrates the SEAWAT (density-dependent groundwater flow) 
     and MT3DMS (multi-species reactive transport calculations)
 
---------
-iMOD5 
---------
-The documentation of iMOD5 can be found here:
-
-https://oss.deltares.nl/nl/web/imod 
-
---------
-Sections
---------
+*The following chapters further discuss the different components
+of the iMOD Suite, as well as provide examples on how to use them.*
 
 .. toctree::
    :titlesonly:
