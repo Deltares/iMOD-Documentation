@@ -8,9 +8,7 @@ This "mix-and-match" capability benefits user flexibility, but it can be a bit d
 Therefore, we have compiled a set of example workflows to help you get started and 
 give you an overview of the Suite's capabilities.
 
---------
-Sections
---------
+**Examples:**
 
 .. toctree::
    :titlesonly:

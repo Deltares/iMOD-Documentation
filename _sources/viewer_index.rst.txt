@@ -10,12 +10,8 @@ the iMOD QGIS plugin is required as well.
 .. image:: screenshots/viewer_index/example-dommel.png
    :width: 600px
 
---------
-Sections
---------
-
 .. toctree::
-   :titlesonly:
+   :hidden:
 
    viewer_install
    viewer_user_manual
