@@ -174,6 +174,11 @@ The buttons in the widget change, depending on which data type is being selected
 
     The Time series widget and map canvas for a mesh.
 
+.. note:: A known issue with a multiple monitor setup is that the grid 
+  behind the plot might be plotted way off. 
+  See the :ref:`known issues section <plot_axis_off>` for more info and 
+  how to fix this.
+
 |cross-section| Cross-section 
 -----------------------------
 The cross-section widget allows you to draw cross-sections of both mesh and raster data.
@@ -223,6 +228,11 @@ The functionality of each component is explained below.
     The "Cross-section" widget and map canvas. 
     An example is shown in which layer ids are plotted as colors,
     and borelogs are plotted as bars.
+
+.. note:: A known issue with a multiple monitor setup is that the grid 
+  behind the plot might be plotted way off. 
+  See the :ref:`known issues section <plot_axis_off>` for more info and 
+  how to fix this.
 
 
 |nhi-data| Add NHI-data
