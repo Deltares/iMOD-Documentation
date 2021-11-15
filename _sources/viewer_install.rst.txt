@@ -64,3 +64,13 @@ This will open the install screen.
 
 Click *Install* and after installation is complete, click *Finalize*.
 You should now be ready to go.
+
+The installer will also create a program shortcut to the pdf with documentation.
+If you open the Windows *Start* window and type "iMOD Suite User Manual" 
+it should pop up.
+
+.. figure:: screenshots/viewer_installation/pdf_program_shortcut.png
+    :width: 500px
+    :figwidth: image
+
+    A program shortcut should created by the installer to the User Manual.

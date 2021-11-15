@@ -17,3 +17,4 @@ Primary components are:
 
    qgis_install
    qgis_user_manual
+   qgis_known_issues

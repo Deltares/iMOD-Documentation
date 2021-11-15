@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Install &#8212; iMOD Suite  documentation</title>
+    <title>Known Issues &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,8 +35,8 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="User Manual" href="viewer_user_manual.html" />
-    <link rel="prev" title="iMOD 3D Viewer" href="viewer_index.html" />
+    <link rel="next" title="iMOD 3D Viewer" href="viewer_index.html" />
+    <link rel="prev" title="User Manual" href="qgis_user_manual.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -61,13 +61,13 @@
   
     <div id="navbar-menu" class="collapse navbar-collapse">
       <ul id="navbar-main-elements" class="navbar-nav">
-        <li class="toctree-l1 nav-item">
+        <li class="toctree-l1 current active nav-item">
  <a class="reference internal nav-link" href="qgis_index.html">
   iMOD QGIS plugin
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
+<li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="viewer_index.html">
   iMOD 3D Viewer
  </a>
@@ -114,14 +114,19 @@
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <div class="bd-toc-item active">
     <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="qgis_install.html">
    Install
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="viewer_user_manual.html">
+  <a class="reference internal" href="qgis_user_manual.html">
    User Manual
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Known Issues
   </a>
  </li>
 </ul>
@@ -138,9 +143,19 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-axis-off">
+   Plot axis off
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -160,68 +175,28 @@
               
               <div>
                 
-  <section id="install">
-<span id="viewer-install"></span><h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
-<p>To install the iMOD Viewer components (3D Viewer &amp; QGIS plugin),
-download the installer
-<a class="reference external" href="https://download.deltares.nl/en/download/imod-viewer/">via this link</a>.
-If the subscription worked correctly,
-you will receive a download link via e-mail within only a few minutes.</p>
-<p>Unzip the zipfile, which includes the viewer installer.
-Double click the <cite>.msi</cite> file.</p>
-<p>This will open up the first screen of the setup wizard.</p>
-<figure class="align-default" id="id1">
-<a class="reference internal image-reference" href="_images/wizard_start.png"><img alt="_images/wizard_start.png" src="_images/wizard_start.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">The starting screen.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>Click <em>Next</em> here, which will open up the next screen, which is the
-license screen.</p>
+  <section id="known-issues">
+<h1>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h1>
+<section id="plot-axis-off">
+<span id="id1"></span><h2>Plot axis off<a class="headerlink" href="#plot-axis-off" title="Permalink to this headline">¶</a></h2>
+<p>In both the Time series widget as the Cross-section widget
+a weird offset in the plot axis can occur when you use a multiple monitor setup.</p>
 <figure class="align-default" id="id2">
-<a class="reference internal image-reference" href="_images/wizard_license.png"><img alt="_images/wizard_license.png" src="_images/wizard_license.png" style="width: 500px;" /></a>
+<img alt="_images/plot_axis_offset.png" src="_images/plot_axis_offset.png" />
 <figcaption>
-<p><span class="caption-text">The license screen</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Notice the y-axis being moved too high and
+the x-axis being scaled weirdly.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Tick the “I accept” tickbox, and click <em>Next</em>.</p>
-<p>This will open up the installation selection screen.</p>
-<figure class="align-default" id="id3">
-<a class="reference internal image-reference" href="_images/wizard_setup_type.png"><img alt="_images/wizard_setup_type.png" src="_images/wizard_setup_type.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">Installation selection type.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>You can select a <em>Minimal</em> or <em>Complete</em> installation here,
-by clicking the respective buttons.</p>
-<p>Note that the QGIS plugin, which comes only with a <em>Complete</em> install,
-is required to use all features of the iMOD viewer.
-These are:</p>
+<p>So far we haven’t been able to fix it in the code,
+so you can fix this as a user by either:</p>
 <ul class="simple">
-<li><p>Drawing fence diagrams</p></li>
-<li><p>Loading only a sub section of the map (useful for large files)</p></li>
-<li><p>Access to more legends.</p></li>
+<li><p>Moving your QGIS application to the <strong>main window</strong> of your monitor setup</p></li>
+<li><p>In Windows, navigate to <em>Settings &gt; Display</em> then under
+<em>Rearrange your displays</em> select the monitor you want to view QGIS on,
+and finally tick the box <em>Make this my main display</em></p></li>
 </ul>
-<p>After selecting the preferred installation type,
-you still have to click <em>Next</em> before installation continues.</p>
-<p>This will open the install screen.</p>
-<figure class="align-default" id="id4">
-<a class="reference internal image-reference" href="_images/wizard_install.png"><img alt="_images/wizard_install.png" src="_images/wizard_install.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">The wizard install screen</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<p>Click <em>Install</em> and after installation is complete, click <em>Finalize</em>.
-You should now be ready to go.</p>
-<p>The installer will also create a program shortcut to the pdf with documentation.
-If you open the Windows <em>Start</em> window and type “iMOD Suite User Manual”
-it should pop up.</p>
-<figure class="align-default" id="id5">
-<a class="reference internal image-reference" href="_images/pdf_program_shortcut.png"><img alt="_images/pdf_program_shortcut.png" src="_images/pdf_program_shortcut.png" style="width: 500px;" /></a>
-<figcaption>
-<p><span class="caption-text">A program shortcut should created by the installer to the User Manual.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</section>
 </section>
 
 
@@ -230,17 +205,17 @@ it should pop up.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="viewer_index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="qgis_user_manual.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">iMOD 3D Viewer</p>
+            <p class="prev-next-title">User Manual</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="viewer_user_manual.html" title="next page">
+    <a class='right-next' id="next-link" href="viewer_index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">User Manual</p>
+        <p class="prev-next-title">iMOD 3D Viewer</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
