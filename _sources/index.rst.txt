@@ -51,7 +51,7 @@ reproducible modelling workflow.
 
 The proven technology and expertise of iMOD is consolidated within 
 iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
-and structured MODFLOW6 and can be coupled to the unsaturated zone 
+and structured MODFLOW 6 and can be coupled to the unsaturated zone 
 model MetaSWAP. 
 The model input and output can be visualised in the fast interactive viewer. 
 `The documentation of iMOD 5 can be found here 
@@ -66,8 +66,8 @@ The model input and output can be visualised in the fast interactive viewer.
     - iMOD Suite
     - iMOD 5
   * - computational kernels
-    - Modflow 2005, Modflow 6, SEAWAT, MT3DMS
-    - Modflow 2005, Modflow 6, SEAWAT, MT3DMS, MetaSWAP
+    - MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS
+    - MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS, MetaSWAP
   * - file types
     - NetCDF, UGRID, shp, tiff, idf, ipf, gen
     - idf, ipf, isg, gen
@@ -115,6 +115,7 @@ The suite currently consists of three modules:
   * iMOD-WQ (computational code provided with iMOD 5), 
     which integrates the SEAWAT (density-dependent groundwater flow) 
     and MT3DMS (multi-species reactive transport calculations)
+
 
 
 .. toctree::
