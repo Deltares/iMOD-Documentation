@@ -116,7 +116,10 @@ The suite currently consists of three modules:
     which integrates the SEAWAT (density-dependent groundwater flow) 
     and MT3DMS (multi-species reactive transport calculations)
 
-
+.. csv-table:: Supported packages iMOD Suite & iMOD 5
+   :file: tables/supported_packages.csv
+   :widths: 15, 40, 40, 40
+   :header-rows: 2
 
 .. toctree::
    :hidden:
