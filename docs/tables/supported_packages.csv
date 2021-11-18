@@ -1,5 +1,4 @@
-,,iMOD Suite,iMOD 5
-Package,Description,support ,support
+Package,Description,iMOD Suite,iMOD 5
 DIS,Structured Discretization,x,x
 DISV,Discretization by Vertices,x,
 DISU,Structured Discretization,,

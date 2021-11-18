@@ -50,7 +50,10 @@ The model input and output can be visualised in the fast interactive viewer.
 
 Important technological innovations will be developed 
 in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years, 
-but will see no big new feature developments.
+but will see no big new feature developments. 
+:ref:`Table 1<table_1>` and :ref:`Table 2<table_2>` provide comparisons
+between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
+respectively.
 
 .. figure:: screenshots/index/NHI-zz_cross-section.png
 
@@ -107,8 +110,8 @@ but will see no big new feature developments.
 
 .. csv-table:: Table 2: Supported MODFLOW6 flow packages in iMOD Suite & iMOD 5
    :file: tables/supported_packages.csv
-   :widths: 15, 40, 40, 40
-   :header-rows: 2
+   :widths: 15, 40, 20, 20
+   :header-rows: 1
 
 .. toctree::
    :hidden:
