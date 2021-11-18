@@ -105,7 +105,7 @@ but will see no big new feature developments.
 
 .. _table_2:
 
-.. csv-table:: Table 2: Supported MODFLOW packages in iMOD Suite & iMOD 5
+.. csv-table:: Table 2: Supported MODFLOW6 flow packages in iMOD Suite & iMOD 5
    :file: tables/supported_packages.csv
    :widths: 15, 40, 40, 40
    :header-rows: 2

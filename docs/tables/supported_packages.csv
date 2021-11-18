@@ -1,12 +1,10 @@
-Groudwater Flow Model,,iMOD Suite,iMOD 5
+,,iMOD Suite,iMOD 5
 Package,Description,support ,support
-MODFLOW,MODFLOW versions,"MODFLOW6, iMODFLOW (based on MF2005)","MODFLOW6, iMODFLOW (based on MF2005)"
 DIS,Structured Discretization,x,x
 DISV,Discretization by Vertices,x,
 DISU,Structured Discretization,,
-IC,Initial Conditions,x,x (SHD for iMODFLOW)
+IC,Initial Conditions,x,x
 OC,Output Control,x,x
-OBS,Observation,x,x
 NPF,Node Property Flow,x,x
 HFB,Horizontal Flow Barrier,x,x
 STO,Storage,x,x
@@ -20,7 +18,7 @@ GHB,General-Head Boundary,x,x
 RCH,Recharge,x,x
 EVT,Evapotranspiration,x,x
 MAW,Multi-Aquifer Well,,
-SFR,Streamflow Routing,,x (only for iMODFLOW)
-LAK,Lake ,,x (only for iMODFLOW)
-UZF,Unsaturated Zone Flow,x,x (only for iMODFLOW)
+SFR,Streamflow Routing,,
+LAK,Lake ,,
+UZF,Unsaturated Zone Flow,x,
 MVR,Water Mover,,
