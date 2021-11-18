@@ -75,22 +75,22 @@ The model input and output can be visualised in the fast interactive viewer.
     - structured & unstructured
     - structured & nested structured
   * - scripted pre-processing
-    - iMOD python
+    - iMOD Python
     - iMOD Batch
   * - interactive pre-processing
     - (QGIS)
     - iMOD GUI
   * - scripted 2D plot
-    - iMOD-python
+    - iMOD Python
     - 
   * - interactive 2D plot
     - iMOD QGIS plugin (& QGIS)
     - iMOD GUI
   * - scripted 3D plot
-    - iMOD python
+    - iMOD Python
     -  
   * - interactive 3D plot
-    - iMOD 3D viewer
+    - iMOD 3D Viewer
     - iMOD GUI
 
 The suite currently consists of three modules:
