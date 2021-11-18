@@ -17,3 +17,4 @@ Examples:
 * resample data to other regular grid
 * resample data to unregular mesh
 * convert idf to URGRID
+* get statistics of a grid per zone
