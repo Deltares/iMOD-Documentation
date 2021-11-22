@@ -1,14 +1,22 @@
 
-imod-documentation
-==================
+iMOD Suite Documentation
+========================
 
 **This is a work in progress.**
+
+[The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Documentation/)
 
 This documentation is written as reStructuredText (`.rst`). 
 This might take some getting used to, but instructions
 can be found [here](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html). 
 
+If you want to contribute to the iMOD Suite documentation,
+please read the [contributing guidelines](CONTRIBUTING.md).
+
 Local build
+===========
+
+Build HTML
 -----------
 
 In order to build the documentation at your local machine,
@@ -27,8 +35,8 @@ tox -e build
 The docs will be generated at:
 `.\.tox\docs_out\`
 
-Local build PDF
----------------
+Build PDF
+---------
 
 To build PDFs locally on Windows, make sure you have 
 [MiKTeX](https://miktex.org/download) and [Perl](https://strawberryperl.com/) installed. 
@@ -63,4 +71,6 @@ in a local python environment.
 
 Once everything is installed, 
 you can press **CTRL+K CTRL+R** to render a 
-preview on the side. This allows for writing the documentation with a preview at runtime.
+preview on the side. 
+This allows for writing the documentation 
+with a HTML preview at runtime.
