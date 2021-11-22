@@ -95,7 +95,7 @@ respectively.
     - iMOD GUI
   * - scripted 2D plot
     - iMOD Python
-    - 
+    - iMOD Batch
   * - interactive 2D plot
     - iMOD QGIS plugin (& QGIS)
     - iMOD GUI
