@@ -104,3 +104,6 @@ This is a
 with LaTeX. 
 A workaround is converting it to a `.png` file, 
 for example with [Inkscape](https://inkscape.org/). 
+
+* Creating subsections in `index.rst` messes up the hierarchy 
+in the generated PDF.
