@@ -53,6 +53,15 @@ Look for the appropriate `.rst` file and change the text here.
 under the `.. toctree::` directive provide the directions to 
 the respective webpages.
 
+### Adapting the index
+
+**DO NOT add headers/sections to index.rst**
+
+Adding headers to the index will mess up the 
+section hierarcy of the generated PDF, which is 
+automatically determined by sphinx 
+(despite looking fine in the HTML).
+
 ### Add a new section as seperate HTML page
 
 Add an extra `.rst` file and make sure to refer to it in the 
