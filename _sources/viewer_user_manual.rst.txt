@@ -2,86 +2,76 @@
 User Manual
 ***********
 
-iMOD6 3D viewer user manual
+iMOD 3D viewer user manual
 ===========================
 
 Contents
 ========
 
-`iMOD6 3D viewer user manual 1 <#imod6-3d-viewer-user-manual>`__
+`iMOD 3D viewer user manual <#imod-3d-viewer-user-manual>`__
 
-`Introduction 2 <#introduction>`__
+`Introduction <#introduction>`__
 
-`Relationship with QGIS 2 <#relationship-with-qgis>`__
+`Relationship with QGIS <#relationship-with-qgis>`__
 
-`Features 2 <#features>`__
+`Features <#features>`__
 
-`General Workings 3 <#general-workings>`__
+`General Workings <#general-workings>`__
 
-`iMOD6 solutions and autosave file
-3 <#imod6-solutions-and-autosave-file>`__
+`iMOD 3D Viewer solutions and autosave file
+<#imod-3d-viewer-solutions-and-autosave-file>`__
 
-`The explorer sidebar 3 <#the-explorer-sidebar>`__
+`The explorer sidebar <#the-explorer-sidebar>`__
 
-`Loading and unloading objects 5 <#loading-and-unloading-objects>`__
+`Loading and unloading objects <#loading-and-unloading-objects>`__
 
-`How to visualize data on a grid 6 <#how-to-visualize-data-on-a-grid>`__
+`How to visualize data on a grid <#how-to-visualize-data-on-a-grid>`__
 
-`Locking mechanism 6 <#locking-mechanism>`__
+`Locking mechanism <#locking-mechanism>`__
 
-`Moving objects in the treeview 7 <#moving-objects-in-the-treeview>`__
+`Moving objects in the treeview <#moving-objects-in-the-treeview>`__
 
-`How to change the active viewer 7 <#how-to-change-the-active-viewer>`__
+`How to change the active viewer <#how-to-change-the-active-viewer>`__
 
-`How to delete an object 8 <#how-to-delete-an-object>`__
+`How to delete an object <#how-to-delete-an-object>`__
 
-`How to move an object from the 2d viewer to the 3d viewer and vice
-versa
-8 <#how-to-move-an-object-from-the-2d-viewer-to-the-3d-viewer-and-vice-versa>`__
+`Using the time-slider <#using-the-time-slider>`__
 
-`Using the time-slider 8 <#using-the-time-slider>`__
+`Property windows <#property-windows>`__
 
-`Property windows 10 <#property-windows>`__
+`How to use clipping <#how-to-use-clipping>`__
 
-`How to use the viewers 11 <#how-to-use-the-viewers>`__
+`How to plot gridlines <#how-to-plot-gridlines>`__
 
-`How to use clipping 12 <#how-to-use-clipping>`__
+`How to change the vertical exaggeration <#how-to-change-the-vertical-exaggeration>`__
 
-`How to plot gridlines 13 <#how-to-plot-gridlines>`__
+`How to change the representation of a grid <#how-to-change-the-representation-of-a-grid>`__
 
-`How to change the vertical exaggeration
-13 <#how-to-change-the-vertical-exaggeration>`__
+`Changing the legend of a ugrid dataset, IDF or fence diagram grid.<#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.>`__
 
-`How to change the representation of a grid
-14 <#how-to-change-the-representation-of-a-grid>`__
+`The legend editor <#the-legend-editor>`__
 
-`Changing the legend of a ugrid dataset, IDF or fence diagram grid.
-15 <#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.>`__
+`Working with IPF files <#working-with-ipf-files>`__
 
-`The legend editor 15 <#the-legend-editor>`__
+`Plotting borehole data <#plotting-borehole-data>`__
 
-`Working with IPF files 17 <#working-with-ipf-files>`__
+`Working with IDF files <#working-with-idf-files>`__
 
-`Plotting borehole data 19 <#plotting-borehole-data>`__
-
-`Working with IDF files 20 <#working-with-idf-files>`__
-
-`IDF file resolution 20 <#idf-file-resolution>`__
+`IDF file resolution <#idf-file-resolution>`__
 
 `Additional representation options for IDF files
 22 <#additional-representation-options-for-idf-files>`__
 
-`Working with shapefiles 23 <#working-with-shapefiles>`__
+`Working with shapefiles <#working-with-shapefiles>`__
 
-`How to inspect dataset values of a cell
-23 <#how-to-inspect-dataset-values-of-a-cell>`__
+`How to inspect dataset values of a cell <#how-to-inspect-dataset-values-of-a-cell>`__
 
-`Layered Ugrids 24 <#layered-ugrids>`__
+`Layered Ugrids <#layered-ugrids>`__
 
 Introduction
 ------------
 
-The iMOD6 3d Viewer is a viewer for grids and datasets. In this manual
+The iMOD 3D Viewer is a viewer for grids and datasets. In this manual
 we consider a **grid** to be a region of space that is subdivided into
 cells. A grid input file contains the geometry of these cells, often as
 a list of vertex coordinates and cell-vertex connections.
@@ -92,7 +82,7 @@ for every cell in the grid. A dataset can have an associated time. In an
 input file, a dataset is usually just a list of values where value
 number N is associated to cell number N in the grid.
 
-The iMOD6 3d Viewer is used for viewing the grids in 3d, and for
+The iMOD 3D Viewer is used for viewing the grids in 3d, and for
 plotting datasets on top of the grids using a color legend. To gain more
 insight in the data, the color legend can be edited, and the values of
 individual cells can be inspected. Slider tools allow viewing the inside
@@ -101,8 +91,8 @@ of 3d bodies.
 Relationship with QGIS 
 ----------------------
 
-The iMOD6 3d Viewer can be used as a standalone or in combination with
-the Deltares iMOD6 QGIS plugin. From this plugin, the viewer can be
+The iMOD 3d Viewer can be used as a standalone or in combination with
+the Deltares QGIS plugin. From this plugin, the viewer can be
 launched, and grids can be loaded into it. Using the QGIS plugin is
 currently the only way to create fence diagrams in the viewer. Also, the
 QGIS plugin allows for specifying a bounding box for ugrid files. When
@@ -112,12 +102,12 @@ ugrid file that is inside the bounding box.
 Features
 --------
 
-The iMOD6 3d Viewer supports visualizing grids in the following file
+The iMOD 3D Viewer supports visualizing grids in the following file
 formats:
 
 -  IDF files. Both equidistant and non-equidistant ugrids are supported.
 
--  Ugrid files. iMOD6 can read ugrids that contain exclusively 2d
+-  Ugrid files. the iMOD 3D Viewer can read ugrids that contain exclusively 2d
    elements such as triangles, quadrilaterals and other polygons. 1d and
    3d elements are not supported. In some cases, a layered grid can be
    encoded as a 2d grid with certain properties. See the Layered Ugrid
@@ -127,7 +117,7 @@ formats:
    unstructured layered grid used in a modflow simulation. Only the grid
    can be loaded; datasets cannot be loaded (yet)
 
-The iMOD6 3d Viewer also supports viewing some non-grid objects.
+The iMOD 3D Viewer also supports viewing some non-grid objects.
 
 -  IPF files. These files contain tables of numeric and text data,
    separated by commas and whitespace, and with a small file header
@@ -143,7 +133,7 @@ The iMOD6 3d Viewer also supports viewing some non-grid objects.
    shapefiles can be show, and only the linestrings, polygons and
    multipolygons in it are imported.
 
-The iMOD6 viewer can show fence diagrams. This only works when used in
+The iMOD 3D Viewer can show fence diagrams. This only works when used in
 combination with the Deltares QGIS plugin
 
  
@@ -151,8 +141,8 @@ combination with the Deltares QGIS plugin
 General Workings 
 ----------------
 
-iMOD6 solutions and autosave file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+iMOD 3D Viewer solutions and autosave file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: screenshots/viewer/image1.png
    :width: 0.97412in
@@ -161,7 +151,7 @@ iMOD6 solutions and autosave file
 Figure 1: file menu options for saving and loading projects.
 
 The list of open files, along with the chosen legends and IPF column
-mappings, can be saved into an iMOD6 solution file. To do this, open the
+mappings, can be saved into an iMOD 3D Viewer solution file. To do this, open the
 file menu and choose “save” or “save as”.
 
 The resulting file can be opened with the “open project file” option.
@@ -172,7 +162,7 @@ mapping. This autosave file therefore reflects the state of the viewer
 more or less recently and is stored in the appdata directory (most
 likely this:
 
-C:\Users\yourname\AppData\Roaming\IMOD6)
+C:\\Users\\yourname\\AppData\\Roaming\\IMOD6)
 
 The explorer sidebar
 ~~~~~~~~~~~~~~~~~~~~
@@ -183,8 +173,7 @@ entries represent the grids and datasets in the file and allow you to
 interact with them (Figure 2).
 
 .. image:: screenshots/viewer/image2.png
-   :width: 6.26806in
-   :height: 5.53125in
+   :width: 7.5in
 
 Figure 2: the explorer sidebar shows the objects that are available for
 viewing as a tree structure
@@ -201,7 +190,7 @@ The layered ugrid is a tree-node that can be expanded or collapsed as
 desired. For all three of these, a **context menu** will appear when a
 right mouse click is performed on it.
 
-The layered ugrid root node is called “Dommel-test-tot.nc”. this
+The layered ugrid root node is called “Dommel-test.nc”. this
 represents the whole ugrid file. This node can be expanded to show the
 following nodes:
 
@@ -250,8 +239,8 @@ sidebar and click the “draw selected layers” button. (|image1|) (Figure
 3).
 
 .. image:: screenshots/viewer/image4.png
-   :width: 6.25764in
-   :height: 4in
+   :width: 7.5in
+
 
 Figure 3: In order to visualize a grid in the viewer, select the grid
 and then press the green button.
@@ -273,11 +262,11 @@ Once visualized, the dataset will appear in boldface in the explorer
 (Figure 4).
 
 .. image:: screenshots/viewer/image5.png
-   :width: 6.26806in
-   :height: 4.5125in
+   :width: 7.5in
 
-Figure 4: the dataset that is visualized is marked in bold in the
-explorer.
+
+Figure 4: the dataset 'water level' is visualized on the grid and is marked in bold in the
+explorer. 
 
 Currently, only datasets that hold scalar values associated to cells can
 be shown.
@@ -312,22 +301,6 @@ order the objects as you see fit.
 To move an item in the treeview, select it with the mouse and then press
 u (up) or d (down) to move the object.
 
-How to change the active viewer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-iMOD6 contains a 2d viewer and a 3d viewer. In the 2d viewer, all grid
-data is projected on the horizontal plane. The camera always points
-straight down. The camera can be moved and it can be rotated around the
-z axis but it always keeps pointing straight down. The 2d viewer
-provides a sort of map-view of a grid.
-
-In the 3d viewer, the grid is rendered in 3d space. The camera position
-not fixed: it can be rotated around any axis and it can be translated.
-
-One can swap between the 2d viewer and the 3d viewer by pressing the
-“2D” and “3D“ tab buttons as indicated in Figure 6.\ |image4|
-
-Figure 6: use the tab buttons to activate the 2d or 3d viewers
 
 How to delete an object
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -340,18 +313,10 @@ redraw button instead. In the explorer, select the grids you want to be
 visualized, and make sure the grids you want to be unloaded are
 unselected. Then press redraw.
 
-How to move an object from the 2d viewer to the 3d viewer and vice versa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-An object can be moved to the viewer it is not on. Right click on it in
-the explorer. Now a context menu appears. Click on “move to other
-viewer” to move the grid to the other viewer. The object is
-automatically removed from the original viewer.
-
 Using the time-slider
 ~~~~~~~~~~~~~~~~~~~~~
 
-Some datasets vary through time. iMOD6 currently supports 2 cases:
+Some datasets vary through time. The iMOD 3D Viewer currently supports 2 cases:
 
 1. the dataset does not have a time associated. In this case it is
    called “invariant” in the UI
@@ -362,22 +327,22 @@ Some datasets vary through time. iMOD6 currently supports 2 cases:
    time.
 
 .. image:: screenshots/viewer/image8.png
-   :width: 7.15709in
-   :height: 3.81325in
+   :width: 7.5in
+
 
 Figure 7: Tools and texts related to time in the UI
 
 Figure 7 shows the location of tools and texts in the UI that help the
 user orientate in and step through the time dimension of datasets. First
-note , displayed in the toolbar. This is the “viewer time”. This is the
+note the time displayed in the top toolbar(1). This is the “viewer time”, the
 time the viewer is currently trying to display. Since the time
 discretization can be different per dataset and we can show different
 datasets and grids simultaneously, it is not guaranteed that all
 datasets currently in the viewer can be shown for this specific time!
 Hence, in the sidebar it is shown at what time the datasets are actually
-diplayed ( , ).
+diplayed (2).
 
-The viewer time can be selected using the slider (). It varies over the
+The viewer time can be selected using the slider. It varies over the
 temporal range of all displayed datasets combined- this means that when
 you display another dataset, the range of the slider could change. The
 scaling of the slider is based on the time indexes, not on the time
@@ -388,17 +353,19 @@ regardless of how much actual time there is between these 3 times.
 
 When there are many times available, the resolution of the slider
 becomes very fine and it can then be more convenient to use the “next
-time”and “previous time” buttons (), which increment and decrement the
+time”and “previous time” buttons, which increment and decrement the
 slider one position. There is also a “rewind” button to move the slider
-to its lowest value( )
+to its lowest value.
 
-Finally, it is possible to animate plots using a “play” button (). This
+Finally, it is possible to animate plots using a “play” button. This
 moves the slider one step forward per second, or slower if updating the
-plot takes longer. The animation can be stopped using the “stop” button
-().
+plot takes longer. The animation can be stopped using the “stop” button.
 
 The decision on what time to display for each dataset is taken as
 follows (see Figure 8):
+
+.. image:: screenshots/viewer/imageTimerules.png
+   :width: 7.5in
 
 Figure 8 Times displayed for different dataset for a given viewer time
 (the vertical line). The blue dots indicate the times at which a dataset
@@ -429,11 +396,10 @@ allows setting some properties as well. Here are a few examples:
 Figure 9: property windows, from left to right for a grid, a layered
 grid and a dataset
 
-How to use the viewers
+How to use the viewer
 ----------------------
 
-In both the 2d viewer and the 3d viewer the following controls work if
-the mouse pointer is in the viewer area:
+The following controls work if the mouse pointer is in the viewer area:
 
 **Spinning the mouse wheel forward:** zooms in
 
@@ -449,7 +415,8 @@ mouse:** this rotates the camera around its lens.
 **Clicking on a grid:** this selects or unselects the grid. When a grid
 is selected, its name appears in red in the explorer. Only one grid can
 be selected at any time. A grid must be selected in order to change its
-legend, or to inspect its cells values.
+legend, or to inspect its cells values. This way of selecting a grid can be slow for larger grids.
+Grids can also be selected by using the context menu of the grid in the sidebar. It has an option "Select in viewer".
 
 **Pressing the “zoom to extent” button (** |image5| **) in the
 toolbar:** zooms out until all the grids that are visualized in the
@@ -461,12 +428,29 @@ In the 3d viewer the following also works:
 camera in a trajectory around the grid. The direction and length of the
 mouse movement determine the amount of camera movement.
 
-.. image:: screenshots/viewer/image11.png
+.. image:: screenshots/viewer/imageViewerControls.png
    :width: 6.26806in
-   :height: 3.32639in
 
-Figure 10: after opening a file the grids in the file appear in the
-explorer bar
+
+Figure 10: Some of the viewer controls are also implemented by buttons. 
+
+**Using the toolbar buttons to control the viewer**
+As shown in figure 10, there are also buttons in the toolbar to control the viewer. From left to
+right in this figure, the buttons do the following
+
+- zoom to extent. use this button to get a top view of the grid, zoomed out so that all of it is visible
+- right(+x). use this button to position the camera so that we look in the +x direction, zoomed out so that the whole 
+  y and z range of the grid is visible.
+- left(-x). use this button to position the camera so that we look in the -x direction, zoomed out so that the whole 
+  y and z range of the grid is visible.
+- front(-y). use this button to position the camera so that we look in the -y direction, zoomed out so that the whole 
+  x and z range of the grid is visible.
+- back(+y). use this button to position the camera so that we look in the +y direction, zoomed out so that the whole 
+  x and z range of the grid is visible.
+- pan. Once this button is pressed, the camera can be dragged. Position the mouse anywhere in the viewer and keep the 
+  left mouse button pressed while dragging. 
+- zoom out.
+- zoom in.
 
 How to use clipping
 ~~~~~~~~~~~~~~~~~~~
@@ -480,8 +464,8 @@ allowing us to see the value of datasets or the grid geometry inside.
 | Then press the clipping button in the toolbar (Figure 11)
 
 .. image:: screenshots/viewer/image12.png
-   :width: 6.26528in
-   :height: 3.71181in
+   :width: 4.5in
+
 
 Figure 11: activate clipping mode by pressing the clipping button in the
 toolbar. Sliders appear in the 3d viewer.
@@ -498,13 +482,13 @@ Figure 12: use sliders to cut model in each direction
 How to plot gridlines
 ~~~~~~~~~~~~~~~~~~~~~
 
-In the 2d viewer, it is possible to plot geographical gridlines on top
-of a grid (Figure 13). **In the 3d viewer this feature only works well
+It is possible to plot geographical gridlines on top
+of a grid (Figure 13). **This feature only works well
 at near-vertical viewing angles.**
 
 .. image:: screenshots/viewer/image14.png
    :width: 6.26528in
-   :height: 3.52292in
+
 
 Figure 13: toggle gridlines with the gridlines button
 
@@ -518,9 +502,8 @@ geological layers may extend for tens or hundreds of kilometers
 horizontally but have a thickness and height variation of tens of
 meters.
 
-To fix this issue, vertical exaggeration can be applied. This is only
-needed in the 3d viewer, as vertical variation is not shown in the 2d
-viewer. The same vertical exaggeration is applied to all the visible
+To fix this issue, vertical exaggeration can be applied. The same vertical 
+exaggeration is applied to all the visible
 grids.
 
 By default, a vertical exaggeration is computed from the grid geometry.
@@ -533,7 +516,6 @@ in the text field above it.(Figure 14)
 
 .. image:: screenshots/viewer/image15.png
    :width: 6.25764in
-   :height: 4.5in
 
 Figure 14: vertical exaggeration slider and text field
 
@@ -545,7 +527,7 @@ wireframes and as point clouds. In wireframe mode, only the edges of the
 cells are drawn, allowing one to look inside the grid. In point cloud
 mode, only points corresponding to the cell centers are shown
 
-To change the representation, select one grid in the 3d viewer. Once
+To change the representation, use the dropdown in the viewer toolbar. Once
 selected, a dropdown appears where the representation can be changed.
 All visible grids get the selected representation.
 
@@ -554,6 +536,9 @@ All visible grids get the selected representation.
    :height: 2.52292in
 
 Figure 15: The 3 representations of a grid
+
+The representation can also be changed from the property window of a grid. Here 
+some other tweaks can also be made, like highlighting cell edges or changing the opacity of the plot. 
 
 Changing the legend of a ugrid dataset, IDF or fence diagram grid.
 ------------------------------------------------------------------
@@ -586,9 +571,7 @@ The legend editor
 ~~~~~~~~~~~~~~~~~
 
 The legend editor consists of 2 tabs: one for continuous legends and one
-for discrete ones
-
-Figure 16 .
+for discrete ones (Figure 16).
 
 This form is more or less self explanatory. You can choose a color scale
 (currently rainbow or blue-white-red). Note that it is possible to save
@@ -624,7 +607,17 @@ than n% of the data in the percentiles legend.
 Note that the percentile calculation does not take cell size into
 account.
 
+Legend sidepane
+~~~~~~~~~~~~~~~
+
+For quick reference, the legend is shown on a retractable sidepane. To open or close it, use the button highlighted in the figure below. 
+
+.. image:: screenshots/viewer/imageSidepane.png
+   :width: 6.25556in
+ 
+
 Working with fence diagrams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fence diagrams have the same user interface as layered ugrid files. They
 have the same layers as the original layered ugrid they cut through, and
@@ -640,7 +633,7 @@ the filename is then displayed in the explorer bar, but the IPF file is
 not yet rendered. To render it, select the IPF’s row in the explorer bar
 and hit the |image7| button.
 
-On import, iMOD6 will attempt to draw a vertical cylinder for each row
+On import, the iMOD 3D Viewer will attempt to draw a vertical cylinder for each row
 in the IPF file’s data block (so excluding the header).
 
 By default, a column called “x”or “X” and “y” or “Y” are used for the
@@ -758,7 +751,7 @@ IPF file (Figure 24).
 
 .. image:: screenshots/viewer/image26.png
    :width: 2.11458in
-   :height: 2.22031in
+
 
 Figure 23: choose the resolution of the IDF file
 
@@ -782,8 +775,8 @@ The corner points of the triangle are the cell-centers of the
 rectangles, and have the elevation of that rectangle.
 
 .. image:: screenshots/viewer/image28.png
-   :width: 6.25in
-   :height: 2.91667in
+   :width: 2.1in
+
 
 Figure 25: context menu for changing representation of an IDF file
 
@@ -853,7 +846,7 @@ Figure 28: dataset values can be inspected with the identify button
 Layered Ugrids
 --------------
 
-iMOD6 currently supports only 2d ugrid files. However, when iMOD6
+The iMOD 3D Viewer currently supports only 2d ugrid files. However, when it
 recognizes that datasets called “layer_1_top” and “layer_1_bot” are
 present (1 being a layer number), it will create a 3d grid using the x
 and y coordinates from the 2d grid, and the top and bottoms from the
@@ -897,9 +890,6 @@ a 3d layered grid
 .. |image3| image:: screenshots/viewer/image3.png
    :width: 0.15625in
    :height: 0.14097in
-.. |image4| image:: screenshots/viewer/image7.png
-   :width: 6.25in
-   :height: 4in
 .. |image5| image:: screenshots/viewer/image10.png
    :width: 0.16535in
    :height: 0.16535in
