@@ -59,8 +59,7 @@ Contents
 
 `IDF file resolution <#idf-file-resolution>`__
 
-`Additional representation options for IDF files
-22 <#additional-representation-options-for-idf-files>`__
+`Additional representation options for IDF files <#additional-representation-options-for-idf-files>`__
 
 `Working with shapefiles <#working-with-shapefiles>`__
 
