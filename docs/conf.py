@@ -116,8 +116,16 @@ htmlhelp_basename = "imod_qgis_doc"
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 _stdauthor = "Written by {}".format(author)
+
 latex_documents = [
     ("index", "imod-doc.tex", "iMOD Suite", _stdauthor, "manual"),
+    (
+        "viewer_install_index",
+        "imod-installation.tex",
+        "iMOD Viewer install guide",
+        _stdauthor,
+        "manual",
+    ),
 ]
 
 # Not available on many systems:
