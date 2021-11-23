@@ -271,8 +271,8 @@ Once visualized, the dataset will appear in boldface in the explorer
    :width: 7.5in
 
 
-Figure 4: the dataset that is visualized is marked in bold in the
-explorer.
+Figure 4: the dataset 'water level' is visualized on the grid and is marked in bold in the
+explorer. 
 
 Currently, only datasets that hold scalar values associated to cells can
 be shown.
@@ -333,22 +333,22 @@ Some datasets vary through time. The iMOD 3D Viewer currently supports 2 cases:
    time.
 
 .. image:: screenshots/viewer/image8.png
-   :width: 7.15709in
-   :height: 3.81325in
+   :width: 7.5in
+
 
 Figure 7: Tools and texts related to time in the UI
 
 Figure 7 shows the location of tools and texts in the UI that help the
 user orientate in and step through the time dimension of datasets. First
-note , displayed in the toolbar. This is the “viewer time”. This is the
+note the time displayed in the top toolbar(1). This is the “viewer time”, the
 time the viewer is currently trying to display. Since the time
 discretization can be different per dataset and we can show different
 datasets and grids simultaneously, it is not guaranteed that all
 datasets currently in the viewer can be shown for this specific time!
 Hence, in the sidebar it is shown at what time the datasets are actually
-diplayed ( , ).
+diplayed (2).
 
-The viewer time can be selected using the slider (). It varies over the
+The viewer time can be selected using the slider. It varies over the
 temporal range of all displayed datasets combined- this means that when
 you display another dataset, the range of the slider could change. The
 scaling of the slider is based on the time indexes, not on the time
@@ -359,17 +359,21 @@ regardless of how much actual time there is between these 3 times.
 
 When there are many times available, the resolution of the slider
 becomes very fine and it can then be more convenient to use the “next
-time”and “previous time” buttons (), which increment and decrement the
+time”and “previous time” buttons, which increment and decrement the
 slider one position. There is also a “rewind” button to move the slider
-to its lowest value( )
+to its lowest value.
 
-Finally, it is possible to animate plots using a “play” button (). This
+Finally, it is possible to animate plots using a “play” button. This
 moves the slider one step forward per second, or slower if updating the
-plot takes longer. The animation can be stopped using the “stop” button
-().
+plot takes longer. The animation can be stopped using the “stop” button.
 
 The decision on what time to display for each dataset is taken as
 follows (see Figure 8):
+
+.. image:: screenshots/viewer/imageTimerules.png
+   :width: 7.5in
+Figure 8: Times displayed for different dataset for a given viewer time (the vertical line). The blue dots indicate the times at which a dataset has values. The red dots indicate the values displayed.
+
 
 Figure 8 Times displayed for different dataset for a given viewer time
 (the vertical line). The blue dots indicate the times at which a dataset
