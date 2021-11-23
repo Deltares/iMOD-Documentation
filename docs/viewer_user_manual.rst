@@ -522,7 +522,6 @@ in the text field above it.(Figure 14)
 
 .. image:: screenshots/viewer/image15.png
    :width: 6.25764in
-   :height: 4.5in
 
 Figure 14: vertical exaggeration slider and text field
 
@@ -534,7 +533,7 @@ wireframes and as point clouds. In wireframe mode, only the edges of the
 cells are drawn, allowing one to look inside the grid. In point cloud
 mode, only points corresponding to the cell centers are shown
 
-To change the representation, select one grid in the 3d viewer. Once
+To change the representation, use the dropdown in the viewer toolbar. Once
 selected, a dropdown appears where the representation can be changed.
 All visible grids get the selected representation.
 
@@ -543,6 +542,9 @@ All visible grids get the selected representation.
    :height: 2.52292in
 
 Figure 15: The 3 representations of a grid
+
+The representation can also be changed from the property window of a grid. Here 
+some other tweaks can also be made, like highlighting cell edges or changing the opacity of the plot. 
 
 Changing the legend of a ugrid dataset, IDF or fence diagram grid.
 ------------------------------------------------------------------
