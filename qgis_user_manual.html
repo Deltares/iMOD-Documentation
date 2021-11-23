@@ -312,7 +312,8 @@ Press the button to start drawing mode. Left-click to start drawing a line; righ
 <li><p>The “Draw extent” buttons allows you to click and drag a box that allows you to set a bounding box.
 The iMOD viewer will only load the data within this boundary box,
 which can be useful when exploring specific areas in large datasets.
-Drawing an bounding box will update the “Extent” widget.</p></li>
+Drawing an bounding box will update the “Extent” widget.
+Right-click to stop drawing the extent.</p></li>
 </ul>
 </li>
 <li><p>The “View” group contains a set of buttons to interact with the 3D viewer</p>
@@ -343,14 +344,30 @@ Sometimes you lose your view of the lines by dragging too fast;
 so to reset your view, you can click on the small “A” in the
 bottom left corner of the graph window.
 The buttons in the widget change, depending on which data type is being selected.</p>
-<ul class="simple">
+<ul>
 <li><p>Use the box on the top left of the widget to select the ipf file or mesh data to plot.</p></li>
 <li><p>“ID column” box allows you to select the column of the attribute table
 that sets the point ID’s to be plotted in the legend.</p></li>
 <li><p>The “Variable” box sets the variable (or variables in case of IPFs) to be plotted.</p></li>
 <li><p>The “Layer” box sets the layers of a mesh to be plotted. Multiple layers can be selected.</p></li>
-<li><p>The “From map” box allows to draw a box to select points to plot in case of point data (IPF),
-or plot data at a point in case of mesh data.</p></li>
+<li><p>The “Select points” box allows selecting points in a dataset to plot.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>When selecting on a IPF,
+left-click and drag a box to select points.
+<em>SHIFT + click</em> to
+add points to the existing selection.
+Press <em>CTRL + ALT + A</em> to deselect all points.
+You can also click <em>Deselect features from all layers</em>
+in QGIS’ selection toolbar.
+To stop selecting, click <em>Pan Map</em> in QGIS’ Map Navigation toolbar,
+or close the Timeseries widget.</p></li>
+<li><p>When selecting on a mesh,
+left-click to select a point on a mesh to plot,
+right-click to stop selecting.</p></li>
+</ul>
+</div></blockquote>
+</li>
 <li><p>The “update on selection checkbox”: when checked on,
 the widget automatically plots newly selected points for point data
 or plots data at the location of the cursor for mesh data.</p></li>
@@ -373,7 +390,8 @@ The yellow points on the map canvas indicate the selected points.</span><a class
 <figure class="align-default" id="id5">
 <img alt="_images/time-series-mesh.png" src="_images/time-series-mesh.png" />
 <figcaption>
-<p><span class="caption-text">The Time series widget and map canvas for a mesh.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">The Time series widget and map canvas for a mesh. The red crosses indicate
+the location of the plotted time-series.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -403,7 +421,8 @@ the cross-section plot is automatically updated when a different moment in time 
 <ol class="arabic simple">
 <li><dl class="simple">
 <dt>The top bar</dt><dd><ul class="simple">
-<li><p>“From map” lets you draw a line on the map, along which a cross-section will be drawn.</p></li>
+<li><p>“Select location” lets you draw a line on the map, along which a cross-section will be drawn.
+Left-click to start and to stop drawing a line. Right-click to stop the selection.</p></li>
 <li><p>When the “Dynamic resolution” checkbox option is switched on,
 the amount of points along which data is sampled for the plot is set to a fixed number
 and resolution varies.

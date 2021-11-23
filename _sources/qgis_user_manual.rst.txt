@@ -106,6 +106,7 @@ Currently only UGRID meshes and IPF borelog files are supported.
     The iMOD viewer will only load the data within this boundary box, 
     which can be useful when exploring specific areas in large datasets.
     Drawing an bounding box will update the "Extent" widget.
+    Right-click to stop drawing the extent.
 
 * The "View" group contains a set of buttons to interact with the 3D viewer
 
@@ -146,8 +147,21 @@ The buttons in the widget change, depending on which data type is being selected
 
 * The "Layer" box sets the layers of a mesh to be plotted. Multiple layers can be selected.
 
-* The "From map" box allows to draw a box to select points to plot in case of point data (IPF),
-  or plot data at a point in case of mesh data.
+* The "Select points" box allows selecting points in a dataset to plot. 
+    
+    * When selecting on a IPF, 
+      left-click and drag a box to select points. 
+      *SHIFT + click* to
+      add points to the existing selection. 
+      Press *CTRL + ALT + A* to deselect all points. 
+      You can also click *Deselect features from all layers*
+      in QGIS' selection toolbar.
+      To stop selecting, click *Pan Map* in QGIS' Map Navigation toolbar,
+      or close the Timeseries widget.
+    
+    * When selecting on a mesh, 
+      left-click to select a point on a mesh to plot, 
+      right-click to stop selecting.
 
 * The "update on selection checkbox": when checked on, 
   the widget automatically plots newly selected points for point data 
@@ -172,7 +186,8 @@ The buttons in the widget change, depending on which data type is being selected
 
 .. figure:: screenshots/qgis/time-series-mesh.png
 
-    The Time series widget and map canvas for a mesh.
+    The Time series widget and map canvas for a mesh. The red crosses indicate
+    the location of the plotted time-series.
 
 .. note:: A known issue with a multiple monitor setup is that the grid 
   behind the plot might be plotted way off. 
@@ -198,7 +213,8 @@ The cross-section widget consists of three component:
 The functionality of each component is explained below.
 
 #. The top bar
-    * "From map" lets you draw a line on the map, along which a cross-section will be drawn.
+    * "Select location" lets you draw a line on the map, along which a cross-section will be drawn.
+      Left-click to start and to stop drawing a line. Right-click to stop the selection.
     * When the "Dynamic resolution" checkbox option is switched on, 
       the amount of points along which data is sampled for the plot is set to a fixed number
       and resolution varies. 
