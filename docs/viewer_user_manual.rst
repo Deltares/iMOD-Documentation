@@ -372,8 +372,6 @@ follows (see Figure 8):
 
 .. image:: screenshots/viewer/imageTimerules.png
    :width: 7.5in
-Figure 8: Times displayed for different dataset for a given viewer time (the vertical line). The blue dots indicate the times at which a dataset has values. The red dots indicate the values displayed.
-
 
 Figure 8 Times displayed for different dataset for a given viewer time
 (the vertical line). The blue dots indicate the times at which a dataset
@@ -423,7 +421,8 @@ mouse:** this rotates the camera around its lens.
 **Clicking on a grid:** this selects or unselects the grid. When a grid
 is selected, its name appears in red in the explorer. Only one grid can
 be selected at any time. A grid must be selected in order to change its
-legend, or to inspect its cells values.
+legend, or to inspect its cells values. This way of selecting a grid can be slow for larger grids.
+Grids can also be selected by using the context menu of the grid in the sidebar. It has an option "Select in viewer".
 
 **Pressing the “zoom to extent” button (** |image5| **) in the
 toolbar:** zooms out until all the grids that are visualized in the
@@ -435,12 +434,29 @@ In the 3d viewer the following also works:
 camera in a trajectory around the grid. The direction and length of the
 mouse movement determine the amount of camera movement.
 
-.. image:: screenshots/viewer/image11.png
+.. image:: screenshots/viewer/imageViewerControls.png
    :width: 6.26806in
-   :height: 3.32639in
 
-Figure 10: after opening a file the grids in the file appear in the
-explorer bar
+
+Figure 10: Some of the viewer controls are also implemented by buttons. 
+
+**Using the toolbar buttons to control the viewer**
+As shown in figure 10, there are also buttons in the toolbar to control the viewer. From left to
+right in this figure, the buttons do the following
+
+- zoom to extent. use this button to get a top view of the grid, zoomed out so that all of it is visible
+- right(+x). use this button to position the camera so that we look in the +x direction, zoomed out so that the whole 
+  y and z range of the grid is visible.
+- left(-x). use this button to position the camera so that we look in the -x direction, zoomed out so that the whole 
+  y and z range of the grid is visible.
+- front(-y). use this button to position the camera so that we look in the -y direction, zoomed out so that the whole 
+  x and z range of the grid is visible.
+- back(+y). use this button to position the camera so that we look in the +y direction, zoomed out so that the whole 
+  x and z range of the grid is visible.
+- pan. Once this button is pressed, the camera can be dragged. Position the mouse anywhere in the viewer and keep the 
+  left mouse button pressed while dragging. 
+- zoom out.
+- zoom in.
 
 How to use clipping
 ~~~~~~~~~~~~~~~~~~~
@@ -454,8 +470,8 @@ allowing us to see the value of datasets or the grid geometry inside.
 | Then press the clipping button in the toolbar (Figure 11)
 
 .. image:: screenshots/viewer/image12.png
-   :width: 6.26528in
-   :height: 3.71181in
+   :width: 4.5in
+
 
 Figure 11: activate clipping mode by pressing the clipping button in the
 toolbar. Sliders appear in the 3d viewer.
@@ -478,7 +494,7 @@ at near-vertical viewing angles.**
 
 .. image:: screenshots/viewer/image14.png
    :width: 6.26528in
-   :height: 3.52292in
+
 
 Figure 13: toggle gridlines with the gridlines button
 
