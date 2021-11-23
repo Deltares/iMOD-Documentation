@@ -577,9 +577,7 @@ The legend editor
 ~~~~~~~~~~~~~~~~~
 
 The legend editor consists of 2 tabs: one for continuous legends and one
-for discrete ones
-
-Figure 16 .
+for discrete ones (Figure 16).
 
 This form is more or less self explanatory. You can choose a color scale
 (currently rainbow or blue-white-red). Note that it is possible to save
@@ -615,7 +613,17 @@ than n% of the data in the percentiles legend.
 Note that the percentile calculation does not take cell size into
 account.
 
+Legend sidepane
+~~~~~~~~~~~~~~~
+
+For quick reference, the legend is shown on a retractable sidepane. To open or close it, use the button highlighted in the figure below. 
+
+.. image:: screenshots/viewer/imageSidepane.png
+   :width: 6.25556in
+ 
+
 Working with fence diagrams
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Fence diagrams have the same user interface as layered ugrid files. They
 have the same layers as the original layered ugrid they cut through, and
@@ -749,7 +757,7 @@ IPF file (Figure 24).
 
 .. image:: screenshots/viewer/image26.png
    :width: 2.11458in
-   :height: 2.22031in
+
 
 Figure 23: choose the resolution of the IDF file
 
@@ -773,8 +781,8 @@ The corner points of the triangle are the cell-centers of the
 rectangles, and have the elevation of that rectangle.
 
 .. image:: screenshots/viewer/image28.png
-   :width: 6.25in
-   :height: 2.91667in
+   :width: 2.1in
+
 
 Figure 25: context menu for changing representation of an IDF file
 
