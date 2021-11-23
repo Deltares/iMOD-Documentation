@@ -8,71 +8,65 @@ iMOD 3D viewer user manual
 Contents
 ========
 
-`iMOD 3D viewer user manual 1 <#imod-3d-viewer-user-manual>`__
+`iMOD 3D viewer user manual <#imod-3d-viewer-user-manual>`__
 
-`Introduction 2 <#introduction>`__
+`Introduction <#introduction>`__
 
-`Relationship with QGIS 2 <#relationship-with-qgis>`__
+`Relationship with QGIS <#relationship-with-qgis>`__
 
-`Features 2 <#features>`__
+`Features <#features>`__
 
-`General Workings 3 <#general-workings>`__
+`General Workings <#general-workings>`__
 
 `iMOD 3D Viewer solutions and autosave file
-3 <#imod-3d-viewer-solutions-and-autosave-file>`__
+<#imod-3d-viewer-solutions-and-autosave-file>`__
 
-`The explorer sidebar 3 <#the-explorer-sidebar>`__
+`The explorer sidebar <#the-explorer-sidebar>`__
 
-`Loading and unloading objects 5 <#loading-and-unloading-objects>`__
+`Loading and unloading objects <#loading-and-unloading-objects>`__
 
-`How to visualize data on a grid 6 <#how-to-visualize-data-on-a-grid>`__
+`How to visualize data on a grid <#how-to-visualize-data-on-a-grid>`__
 
-`Locking mechanism 6 <#locking-mechanism>`__
+`Locking mechanism <#locking-mechanism>`__
 
-`Moving objects in the treeview 7 <#moving-objects-in-the-treeview>`__
+`Moving objects in the treeview <#moving-objects-in-the-treeview>`__
 
-`How to change the active viewer 7 <#how-to-change-the-active-viewer>`__
+`How to change the active viewer <#how-to-change-the-active-viewer>`__
 
-`How to delete an object 8 <#how-to-delete-an-object>`__
+`How to delete an object <#how-to-delete-an-object>`__
 
-`Using the time-slider 8 <#using-the-time-slider>`__
+`Using the time-slider <#using-the-time-slider>`__
 
-`Property windows 10 <#property-windows>`__
+`Property windows <#property-windows>`__
 
-`How to use the viewers 11 <#how-to-use-the-viewers>`__
+`How to use clipping <#how-to-use-clipping>`__
 
-`How to use clipping 12 <#how-to-use-clipping>`__
+`How to plot gridlines <#how-to-plot-gridlines>`__
 
-`How to plot gridlines 13 <#how-to-plot-gridlines>`__
+`How to change the vertical exaggeration <#how-to-change-the-vertical-exaggeration>`__
 
-`How to change the vertical exaggeration
-13 <#how-to-change-the-vertical-exaggeration>`__
+`How to change the representation of a grid <#how-to-change-the-representation-of-a-grid>`__
 
-`How to change the representation of a grid
-14 <#how-to-change-the-representation-of-a-grid>`__
+`Changing the legend of a ugrid dataset, IDF or fence diagram grid.<#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.>`__
 
-`Changing the legend of a ugrid dataset, IDF or fence diagram grid.
-15 <#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.>`__
+`The legend editor <#the-legend-editor>`__
 
-`The legend editor 15 <#the-legend-editor>`__
+`Working with IPF files <#working-with-ipf-files>`__
 
-`Working with IPF files 17 <#working-with-ipf-files>`__
+`Plotting borehole data <#plotting-borehole-data>`__
 
-`Plotting borehole data 19 <#plotting-borehole-data>`__
+`Working with IDF files <#working-with-idf-files>`__
 
-`Working with IDF files 20 <#working-with-idf-files>`__
-
-`IDF file resolution 20 <#idf-file-resolution>`__
+`IDF file resolution <#idf-file-resolution>`__
 
 `Additional representation options for IDF files
 22 <#additional-representation-options-for-idf-files>`__
 
-`Working with shapefiles 23 <#working-with-shapefiles>`__
+`Working with shapefiles <#working-with-shapefiles>`__
 
-`How to inspect dataset values of a cell
-23 <#how-to-inspect-dataset-values-of-a-cell>`__
+`How to inspect dataset values of a cell <#how-to-inspect-dataset-values-of-a-cell>`__
 
-`Layered Ugrids 24 <#layered-ugrids>`__
+`Layered Ugrids <#layered-ugrids>`__
 
 Introduction
 ------------
