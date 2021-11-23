@@ -31,10 +31,18 @@ jobs:
         run: |
           tox -e build_latex
 
-      - name: Compile LaTeX document
+      - name: Compile LaTeX documention
         uses: xu-cheng/latex-action@v2
         with:
           root_file: imod-doc.tex
+          working_directory: .tox/docs_latex
+          args: -pdf -dvi- -ps-
+          latexmk_use_xelatex: true
+
+      - name: Compile LaTeX install guide
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: imod-installation.tex
           working_directory: .tox/docs_latex
           args: -pdf -dvi- -ps-
           latexmk_use_xelatex: true
@@ -42,4 +50,6 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: imod-doc
-          path: .tox/docs_latex/imod-doc.pdf
+          path: |
+            .tox/docs_latex/imod-doc.pdf
+            .tox/docs_latex/imod-installation.pdf
