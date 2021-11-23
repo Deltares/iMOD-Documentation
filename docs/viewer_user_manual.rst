@@ -2,13 +2,13 @@
 User Manual
 ***********
 
-iMOD6 3D viewer user manual
+iMOD 3D viewer user manual
 ===========================
 
 Contents
 ========
 
-`iMOD6 3D viewer user manual 1 <#imod6-3d-viewer-user-manual>`__
+`iMOD 3D viewer user manual 1 <#imod-3d-viewer-user-manual>`__
 
 `Introduction 2 <#introduction>`__
 
@@ -18,8 +18,8 @@ Contents
 
 `General Workings 3 <#general-workings>`__
 
-`iMOD6 solutions and autosave file
-3 <#imod6-solutions-and-autosave-file>`__
+`iMOD 3D Viewer solutions and autosave file
+3 <#imod-3d-viewer-solutions-and-autosave-file>`__
 
 `The explorer sidebar 3 <#the-explorer-sidebar>`__
 
@@ -34,10 +34,6 @@ Contents
 `How to change the active viewer 7 <#how-to-change-the-active-viewer>`__
 
 `How to delete an object 8 <#how-to-delete-an-object>`__
-
-`How to move an object from the 2d viewer to the 3d viewer and vice
-versa
-8 <#how-to-move-an-object-from-the-2d-viewer-to-the-3d-viewer-and-vice-versa>`__
 
 `Using the time-slider 8 <#using-the-time-slider>`__
 
@@ -81,7 +77,7 @@ versa
 Introduction
 ------------
 
-The iMOD6 3d Viewer is a viewer for grids and datasets. In this manual
+The iMOD 3D Viewer is a viewer for grids and datasets. In this manual
 we consider a **grid** to be a region of space that is subdivided into
 cells. A grid input file contains the geometry of these cells, often as
 a list of vertex coordinates and cell-vertex connections.
@@ -92,7 +88,7 @@ for every cell in the grid. A dataset can have an associated time. In an
 input file, a dataset is usually just a list of values where value
 number N is associated to cell number N in the grid.
 
-The iMOD6 3d Viewer is used for viewing the grids in 3d, and for
+The iMOD 3D Viewer is used for viewing the grids in 3d, and for
 plotting datasets on top of the grids using a color legend. To gain more
 insight in the data, the color legend can be edited, and the values of
 individual cells can be inspected. Slider tools allow viewing the inside
@@ -101,8 +97,8 @@ of 3d bodies.
 Relationship with QGIS 
 ----------------------
 
-The iMOD6 3d Viewer can be used as a standalone or in combination with
-the Deltares iMOD6 QGIS plugin. From this plugin, the viewer can be
+The iMOD 3d Viewer can be used as a standalone or in combination with
+the Deltares QGIS plugin. From this plugin, the viewer can be
 launched, and grids can be loaded into it. Using the QGIS plugin is
 currently the only way to create fence diagrams in the viewer. Also, the
 QGIS plugin allows for specifying a bounding box for ugrid files. When
@@ -112,12 +108,12 @@ ugrid file that is inside the bounding box.
 Features
 --------
 
-The iMOD6 3d Viewer supports visualizing grids in the following file
+The iMOD 3D Viewer supports visualizing grids in the following file
 formats:
 
 -  IDF files. Both equidistant and non-equidistant ugrids are supported.
 
--  Ugrid files. iMOD6 can read ugrids that contain exclusively 2d
+-  Ugrid files. the iMOD 3D Viewer can read ugrids that contain exclusively 2d
    elements such as triangles, quadrilaterals and other polygons. 1d and
    3d elements are not supported. In some cases, a layered grid can be
    encoded as a 2d grid with certain properties. See the Layered Ugrid
@@ -127,7 +123,7 @@ formats:
    unstructured layered grid used in a modflow simulation. Only the grid
    can be loaded; datasets cannot be loaded (yet)
 
-The iMOD6 3d Viewer also supports viewing some non-grid objects.
+The iMOD 3D Viewer also supports viewing some non-grid objects.
 
 -  IPF files. These files contain tables of numeric and text data,
    separated by commas and whitespace, and with a small file header
@@ -143,7 +139,7 @@ The iMOD6 3d Viewer also supports viewing some non-grid objects.
    shapefiles can be show, and only the linestrings, polygons and
    multipolygons in it are imported.
 
-The iMOD6 viewer can show fence diagrams. This only works when used in
+The iMOD 3D Viewer can show fence diagrams. This only works when used in
 combination with the Deltares QGIS plugin
 
  
@@ -151,8 +147,8 @@ combination with the Deltares QGIS plugin
 General Workings 
 ----------------
 
-iMOD6 solutions and autosave file
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+iMOD 3D Viewer solutions and autosave file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: screenshots/viewer/image1.png
    :width: 0.97412in
@@ -161,7 +157,7 @@ iMOD6 solutions and autosave file
 Figure 1: file menu options for saving and loading projects.
 
 The list of open files, along with the chosen legends and IPF column
-mappings, can be saved into an iMOD6 solution file. To do this, open the
+mappings, can be saved into an iMOD 3D Viewer solution file. To do this, open the
 file menu and choose “save” or “save as”.
 
 The resulting file can be opened with the “open project file” option.
@@ -172,7 +168,7 @@ mapping. This autosave file therefore reflects the state of the viewer
 more or less recently and is stored in the appdata directory (most
 likely this:
 
-C:\Users\yourname\AppData\Roaming\IMOD6)
+C:\\Users\\yourname\\AppData\\Roaming\\IMOD6)
 
 The explorer sidebar
 ~~~~~~~~~~~~~~~~~~~~
@@ -183,8 +179,7 @@ entries represent the grids and datasets in the file and allow you to
 interact with them (Figure 2).
 
 .. image:: screenshots/viewer/image2.png
-   :width: 6.26806in
-   :height: 5.53125in
+   :width: 7.5in
 
 Figure 2: the explorer sidebar shows the objects that are available for
 viewing as a tree structure
@@ -201,7 +196,7 @@ The layered ugrid is a tree-node that can be expanded or collapsed as
 desired. For all three of these, a **context menu** will appear when a
 right mouse click is performed on it.
 
-The layered ugrid root node is called “Dommel-test-tot.nc”. this
+The layered ugrid root node is called “Dommel-test.nc”. this
 represents the whole ugrid file. This node can be expanded to show the
 following nodes:
 
@@ -250,8 +245,8 @@ sidebar and click the “draw selected layers” button. (|image1|) (Figure
 3).
 
 .. image:: screenshots/viewer/image4.png
-   :width: 6.25764in
-   :height: 4in
+   :width: 7.5in
+
 
 Figure 3: In order to visualize a grid in the viewer, select the grid
 and then press the green button.
@@ -273,8 +268,8 @@ Once visualized, the dataset will appear in boldface in the explorer
 (Figure 4).
 
 .. image:: screenshots/viewer/image5.png
-   :width: 6.26806in
-   :height: 4.5125in
+   :width: 7.5in
+
 
 Figure 4: the dataset that is visualized is marked in bold in the
 explorer.
@@ -312,22 +307,6 @@ order the objects as you see fit.
 To move an item in the treeview, select it with the mouse and then press
 u (up) or d (down) to move the object.
 
-How to change the active viewer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-iMOD6 contains a 2d viewer and a 3d viewer. In the 2d viewer, all grid
-data is projected on the horizontal plane. The camera always points
-straight down. The camera can be moved and it can be rotated around the
-z axis but it always keeps pointing straight down. The 2d viewer
-provides a sort of map-view of a grid.
-
-In the 3d viewer, the grid is rendered in 3d space. The camera position
-not fixed: it can be rotated around any axis and it can be translated.
-
-One can swap between the 2d viewer and the 3d viewer by pressing the
-“2D” and “3D“ tab buttons as indicated in Figure 6.\ |image4|
-
-Figure 6: use the tab buttons to activate the 2d or 3d viewers
 
 How to delete an object
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -340,18 +319,10 @@ redraw button instead. In the explorer, select the grids you want to be
 visualized, and make sure the grids you want to be unloaded are
 unselected. Then press redraw.
 
-How to move an object from the 2d viewer to the 3d viewer and vice versa
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-An object can be moved to the viewer it is not on. Right click on it in
-the explorer. Now a context menu appears. Click on “move to other
-viewer” to move the grid to the other viewer. The object is
-automatically removed from the original viewer.
-
 Using the time-slider
 ~~~~~~~~~~~~~~~~~~~~~
 
-Some datasets vary through time. iMOD6 currently supports 2 cases:
+Some datasets vary through time. The iMOD 3D Viewer currently supports 2 cases:
 
 1. the dataset does not have a time associated. In this case it is
    called “invariant” in the UI
@@ -429,11 +400,10 @@ allows setting some properties as well. Here are a few examples:
 Figure 9: property windows, from left to right for a grid, a layered
 grid and a dataset
 
-How to use the viewers
+How to use the viewer
 ----------------------
 
-In both the 2d viewer and the 3d viewer the following controls work if
-the mouse pointer is in the viewer area:
+The following controls work if the mouse pointer is in the viewer area:
 
 **Spinning the mouse wheel forward:** zooms in
 
@@ -498,8 +468,8 @@ Figure 12: use sliders to cut model in each direction
 How to plot gridlines
 ~~~~~~~~~~~~~~~~~~~~~
 
-In the 2d viewer, it is possible to plot geographical gridlines on top
-of a grid (Figure 13). **In the 3d viewer this feature only works well
+It is possible to plot geographical gridlines on top
+of a grid (Figure 13). **This feature only works well
 at near-vertical viewing angles.**
 
 .. image:: screenshots/viewer/image14.png
@@ -518,9 +488,8 @@ geological layers may extend for tens or hundreds of kilometers
 horizontally but have a thickness and height variation of tens of
 meters.
 
-To fix this issue, vertical exaggeration can be applied. This is only
-needed in the 3d viewer, as vertical variation is not shown in the 2d
-viewer. The same vertical exaggeration is applied to all the visible
+To fix this issue, vertical exaggeration can be applied. The same vertical 
+exaggeration is applied to all the visible
 grids.
 
 By default, a vertical exaggeration is computed from the grid geometry.
@@ -640,7 +609,7 @@ the filename is then displayed in the explorer bar, but the IPF file is
 not yet rendered. To render it, select the IPF’s row in the explorer bar
 and hit the |image7| button.
 
-On import, iMOD6 will attempt to draw a vertical cylinder for each row
+On import, the iMOD 3D Viewer will attempt to draw a vertical cylinder for each row
 in the IPF file’s data block (so excluding the header).
 
 By default, a column called “x”or “X” and “y” or “Y” are used for the
@@ -853,7 +822,7 @@ Figure 28: dataset values can be inspected with the identify button
 Layered Ugrids
 --------------
 
-iMOD6 currently supports only 2d ugrid files. However, when iMOD6
+The iMOD 3D Viewer currently supports only 2d ugrid files. However, when it
 recognizes that datasets called “layer_1_top” and “layer_1_bot” are
 present (1 being a layer number), it will create a 3d grid using the x
 and y coordinates from the 2d grid, and the top and bottoms from the
@@ -897,9 +866,6 @@ a 3d layered grid
 .. |image3| image:: screenshots/viewer/image3.png
    :width: 0.15625in
    :height: 0.14097in
-.. |image4| image:: screenshots/viewer/image7.png
-   :width: 6.25in
-   :height: 4in
 .. |image5| image:: screenshots/viewer/image10.png
    :width: 0.16535in
    :height: 0.16535in
