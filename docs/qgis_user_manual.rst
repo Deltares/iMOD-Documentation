@@ -11,16 +11,20 @@ Configuration
 
 
 1. You probably want to change the language settings in QGIS, 
-   if it defaults to Dutch, it’s "Extra > Opties > Algemeen". 
+   if it defaults to Dutch, it’s *Extra > Opties > Algemeen*. 
    Change it to to US settings (that’s generally the safest default).
    You will need to restart QGIS before this has effect.
 
-  .. image:: screenshots/qgis/qgis-language-settings.png
+  .. figure:: screenshots/qgis/qgis-language-settings.png
 
-2. Start up QGIS, go to "Plugins > Manage and Install plugins > Installed". 
+    The QGIS language settings
+
+2. Start up QGIS, go to *Plugins > Manage and Install plugins > Installed*. 
    Make sure the iMOD plugin is ticked.
 
-   .. image:: screenshots/qgis/qgis-installed-plugins.png
+   .. figure:: screenshots/qgis/qgis-installed-plugins.png
+
+     The QGIS plugin manager. Here you can install and activate plugins.
 
 If the installation and configuration was succesful, 
 the plugin should be visible in your toolbar.
@@ -120,7 +124,9 @@ Currently only UGRID meshes and IPF borelog files are supported.
   * "Load legend" transfers legend in the QGIS map layer to fence diagram and/or mesh data in the 3D viewer 
     for the selected variable in the QGIS map canvas.
   
-.. image:: screenshots/qgis/3d-viewer.png
+.. figure:: screenshots/qgis/3d-viewer.png
+
+  The 3D viewer widget. It will be opened on the right-hand side of the screen.
 
 .. note:: 
 
