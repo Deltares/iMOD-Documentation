@@ -12,6 +12,7 @@ the iMOD QGIS plugin is required as well.
 
 .. toctree::
    :hidden:
+   :numbered:
 
    viewer_install
    viewer_user_manual

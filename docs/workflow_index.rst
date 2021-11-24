@@ -12,5 +12,6 @@ give you an overview of the Suite's capabilities.
 
 .. toctree::
    :titlesonly:
+   :numbered:
 
    workflow_wq

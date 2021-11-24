@@ -115,7 +115,6 @@ respectively.
 
 .. toctree::
    :hidden:
-   :numbered:
 
    qgis_index
    viewer_index

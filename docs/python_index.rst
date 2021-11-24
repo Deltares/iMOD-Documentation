@@ -23,6 +23,7 @@ Source code: https://gitlab.com/deltares/imod/imod-python
 
 .. toctree::
    :hidden:
+   :numbered:
 
    python_install
    python_getting_started
