@@ -215,10 +215,10 @@ When a node is “locked”, the object it represents is no longer
 automatically unloaded when the “draw selected layers” (|image3|) is
 pressed. It can still be moved or deleted through the context menu.
 
-To lock a node, select it and press “L” (lowercase or uppercase) on the
+To lock a node, select it and press *L* (lowercase or uppercase) on the
 keyboard. A padlock icon now appears next to it (:numref:`image6`).
 
-To unlock it, press “O” (lowercase or uppercase) on the keyboard. Now an
+To unlock it, press *O* (lowercase or uppercase) on the keyboard. Now an
 open padlock icon appears.
 
 .. _image6:
@@ -235,7 +235,7 @@ Top level nodes can be moved up and down the treeview, allowing you to
 order the objects as you see fit.
 
 To move an item in the treeview, select it with the mouse and then press
-u (up) or d (down) to move the object.
+*u* (up) or *d* (down) to move the object.
 
 
 How to delete an object
