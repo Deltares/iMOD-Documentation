@@ -215,26 +215,36 @@
 <h2><span class="section-number">2.1. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>You probably want to change the language settings in QGIS,
-if it defaults to Dutch, it’s “Extra &gt; Opties &gt; Algemeen”.
+if it defaults to Dutch, it’s <em>Extra &gt; Opties &gt; Algemeen</em>.
 Change it to to US settings (that’s generally the safest default).
 You will need to restart QGIS before this has effect.</p></li>
 </ol>
 <blockquote>
-<div><img alt="_images/qgis-language-settings.png" src="_images/qgis-language-settings.png" />
+<div><figure class="align-default" id="id1">
+<img alt="_images/qgis-language-settings.png" src="_images/qgis-language-settings.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.1 </span><span class="caption-text">The QGIS language settings</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </div></blockquote>
 <ol class="arabic" start="2">
-<li><p>Start up QGIS, go to “Plugins &gt; Manage and Install plugins &gt; Installed”.
+<li><p>Start up QGIS, go to <em>Plugins &gt; Manage and Install plugins &gt; Installed</em>.
 Make sure the iMOD plugin is ticked.</p>
+<figure class="align-default" id="id2">
 <img alt="_images/qgis-installed-plugins.png" src="_images/qgis-installed-plugins.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.1.2 </span><span class="caption-text">The QGIS plugin manager. Here you can install and activate plugins.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </li>
 </ol>
 <p>If the installation and configuration was succesful,
 the plugin should be visible in your toolbar.</p>
 <blockquote>
-<div><figure class="align-default" id="id1">
+<div><figure class="align-default" id="id3">
 <img alt="_images/imod-toolbar.png" src="_images/imod-toolbar.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.1.1 </span><span class="caption-text">The iMOD plugin toolbar</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 2.1.3 </span><span class="caption-text">The iMOD plugin toolbar</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div></blockquote>
@@ -264,17 +274,17 @@ and see which points have data defined within a certain time frame.</p>
 <li><p>Press the “…” button to select a path to a file (as you would in other QGIS windows).</p></li>
 <li><p>Press “Add” to load the file into the QGIS explorer.</p></li>
 </ul>
-<figure class="align-default" id="id2">
+<figure class="align-default" id="id4">
 <img alt="_images/ipf-reader1.png" src="_images/ipf-reader1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">The Open IPF widget.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 2.2.1 </span><span class="caption-text">The Open IPF widget.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id3">
+<figure class="align-default" id="id5">
 <img alt="_images/temporal-controller.png" src="_images/temporal-controller.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 2.2.2 </span><span class="caption-text">The temporal controller panel and map canvas of QGIS.
-The temporal controller panel is opened by clicking the clock in the “map navigation” toolbar.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+The temporal controller panel is opened by clicking the clock in the “map navigation” toolbar.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -327,7 +337,12 @@ for the selected variable in the QGIS map canvas.</p></li>
 </ul>
 </li>
 </ul>
+<figure class="align-default" id="id6">
 <img alt="_images/3d-viewer1.png" src="_images/3d-viewer1.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.2.3 </span><span class="caption-text">The 3D viewer widget. It will be opened on the right-hand side of the screen.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The 3D Viewer widget does not forward any data to the iMOD 3D viewer,
@@ -380,18 +395,18 @@ when the intervals between data points are not constant.</p></li>
 <li><p>The “Export” button allows you to export your plot to an image file (.png, .jpg etc.),
 a vector file (.svg for Inkscape), or a .csv to allow for plotting in different software.</p></li>
 </ul>
-<figure class="align-default" id="id4">
+<figure class="align-default" id="id7">
 <img alt="_images/time-series-points.png" src="_images/time-series-points.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2.3 </span><span class="caption-text">The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps.
-The yellow points on the map canvas indicate the selected points.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 2.2.4 </span><span class="caption-text">The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps.
+The yellow points on the map canvas indicate the selected points.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id8">
 <img alt="_images/time-series-mesh.png" src="_images/time-series-mesh.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2.4 </span><span class="caption-text">The Time series widget and map canvas for a mesh. The red crosses indicate
-the location of the plotted time-series.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 2.2.5 </span><span class="caption-text">The Time series widget and map canvas for a mesh. The red crosses indicate
+the location of the plotted time-series.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -459,12 +474,12 @@ Useful to plot layer tops or bottoms to show interfaces.</p></li>
 </dl>
 </li>
 </ol>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id9">
 <img alt="_images/cross-section1.png" src="_images/cross-section1.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2.5 </span><span class="caption-text">The “Cross-section” widget and map canvas.
+<p><span class="caption-number">Fig. 2.2.6 </span><span class="caption-text">The “Cross-section” widget and map canvas.
 An example is shown in which layer ids are plotted as colors,
-and borelogs are plotted as bars.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+and borelogs are plotted as bars.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
@@ -486,10 +501,10 @@ The NHI data provides datasets with different kinds of services:</p>
 <li><p>a “Web Coverage Service” (WCS), which provides raster data via the internet.</p></li>
 </ul>
 <p>You can use the search bar to search for datasets of your liking.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id10">
 <img alt="_images/add-nhi-data.png" src="_images/add-nhi-data.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.2.6 </span><span class="caption-text">The “Add NHI window”</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 2.2.7 </span><span class="caption-text">The “Add NHI window”</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <div class="admonition note">
