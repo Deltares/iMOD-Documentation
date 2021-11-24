@@ -78,11 +78,12 @@ General Workings
 iMOD 3D Viewer solutions and autosave file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: screenshots/viewer/image1.png
+.. _image1:
+.. figure:: screenshots/viewer/image1.png
    :width: 0.97412in
    :height: 1.64062in
 
-Figure 1: File menu options for saving and loading projects.
+   File menu options for saving and loading projects.
 
 The list of open files, along with the chosen legends and IPF column
 mappings, can be saved into an iMOD 3D Viewer solution file. To do this, open the
@@ -104,15 +105,16 @@ The explorer sidebar
 When a file is opened- for example a file containing a grid- then
 automatically entries are added to the sidebar of the application. These
 entries represent the grids and datasets in the file and allow you to
-interact with them (Figure 2).
+interact with them (:numref:`image2`).
 
-.. image:: screenshots/viewer/image2.png
+.. _image2:
+.. figure:: screenshots/viewer/image2.png
    :width: 7.5in
 
-Figure 2: The explorer sidebar shows the objects that are available for
-viewing as a tree structure
+   The explorer sidebar shows the objects that are available for
+   viewing as a tree structure
 
-In the example in Figure 2, the content of the explorer sidebar is
+In the example in :numref:`image2`, the content of the explorer sidebar is
 shown. In this example, the sidebar contains a shapefile (a map of the
 waterboards that is used for orientation of the user only); and IPF file
 containing boreholes, and a layered UGRID file.
@@ -169,15 +171,14 @@ Objects can be added to the explorer
 When the second method is used, then the objects appear in the sidebar
 but not in the viewer. They have to be loaded into the viewer in a
 second step. To do that, select the objects you want to see in the
-sidebar and click the “draw selected layers” button. (|image1|) (Figure
-3).
+sidebar and click the “draw selected layers” button. (|image1|) (:numref:`image4`).
 
-.. image:: screenshots/viewer/image4.png
+.. _image4:
+.. figure:: screenshots/viewer/image4.png
    :width: 7.5in
 
-
-Figure 3: In order to visualize a grid in the viewer, select the grid
-and then press the green button.
+   In order to visualize a grid in the viewer, select the grid
+   and then press the green button.
 
 When an object is visualized in the viewer, its name appears in boldface
 in the explorer.
@@ -193,14 +194,14 @@ In order to visualize a dataset on a grid, first visualize the grid
 itself. Then double-click on one of the datasets in the explorer.
 
 Once visualized, the dataset will appear in boldface in the explorer
-(Figure 4).
+(:numref:`image5`).
 
-.. image:: screenshots/viewer/image5.png
+.. _image5:
+.. figure:: screenshots/viewer/image5.png
    :width: 7.5in
 
-
-Figure 4: The dataset 'water level' is visualized on the grid and is marked in bold in the
-explorer. 
+   The dataset 'water level' is visualized on the grid and is marked in bold in the
+   explorer. 
 
 Currently, only datasets that hold scalar values associated to cells can
 be shown.
@@ -215,16 +216,17 @@ automatically unloaded when the “draw selected layers” (|image3|) is
 pressed. It can still be moved or deleted through the context menu.
 
 To lock a node, select it and press “L” (lowercase or uppercase) on the
-keyboard. A padlock icon now appears next to it (Figure 5).
+keyboard. A padlock icon now appears next to it (:numref:`image6`).
 
 To unlock it, press “O” (lowercase or uppercase) on the keyboard. Now an
 open padlock icon appears.
 
-.. image:: screenshots/viewer/image6.png
+.. _image6:
+.. figure:: screenshots/viewer/image6.png
    :width: 4.83333in
    :height: 2.13542in
 
-Figure 5: The padlock icon shows if a node is locked or unlocked
+   The padlock icon shows if a node is locked or unlocked
 
 Moving objects in the treeview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -260,15 +262,15 @@ Some datasets vary through time. The iMOD 3D Viewer currently supports 2 cases:
    actual date-time; we don’t support dimensionless time or unreferenced
    time.
 
-.. image:: screenshots/viewer/image8.png
+.. _image8:
+.. figure:: screenshots/viewer/image8.png
    :width: 7.5in
 
+   Tools and texts related to time in the UI
 
-Figure 7: Tools and texts related to time in the UI
-
-Figure 7 shows the location of tools and texts in the UI that help the
+:numref:`image8` shows the location of tools and texts in the UI that help the
 user orientate in and step through the time dimension of datasets. First
-note the time displayed in the top toolbar(1). This is the “viewer time”, the
+note the time displayed in the top toolbar (1). This is the “viewer time”, the
 time the viewer is currently trying to display. Since the time
 discretization can be different per dataset and we can show different
 datasets and grids simultaneously, it is not guaranteed that all
@@ -296,14 +298,7 @@ moves the slider one step forward per second, or slower if updating the
 plot takes longer. The animation can be stopped using the “stop” button.
 
 The decision on what time to display for each dataset is taken as
-follows (see Figure 8):
-
-.. image:: screenshots/viewer/imageTimerules.png
-   :width: 7.5in
-
-Figure 8: Times displayed for different dataset for a given viewer time
-(the vertical line). The blue dots indicate the times at which a dataset
-has values. The red dots indicate the values displayed.
+follows (see :numref:`_imageTimerules`):
 
 -  invariant datasets are shown regardless of the viewer time’
 
@@ -315,6 +310,14 @@ has values. The red dots indicate the values displayed.
 -  if it has no value at the viewer time and no value earlier than the
    viewer time then the first time after the viewer time is shown.
 
+.. _imageTimerules:
+.. figure:: screenshots/viewer/imageTimerules.png
+   :width: 7.5in
+
+   Times displayed for different dataset for a given viewer time
+   (the vertical line). The blue dots indicate the times at which a dataset
+   has values. The red dots indicate the values displayed.
+
 Property windows
 ~~~~~~~~~~~~~~~~
 
@@ -323,12 +326,13 @@ appears. In it, there is usually a “properties” option which opens a
 form displaying some of the properties of the object- and sometimes it
 allows setting some properties as well. Here are a few examples:
 
-.. image:: screenshots/viewer/image9.png
+.. _image9:
+.. figure:: screenshots/viewer/image9.png
    :width: 6.26806in
    :height: 2.52431in
 
-Figure 9: Property windows, from left to right for a grid, a layered
-grid and a dataset
+   Property windows, from left to right for a grid, a layered
+   grid and a dataset
 
 How to use the viewer
 ----------------------
@@ -362,14 +366,14 @@ In the 3D viewer the following also works:
 camera in a trajectory around the grid. The direction and length of the
 mouse movement determine the amount of camera movement.
 
-.. image:: screenshots/viewer/imageViewerControls.png
+.. _imageViewerControls:
+.. figure:: screenshots/viewer/imageViewerControls.png
    :width: 6.26806in
 
-
-Figure 10: Some of the viewer controls are also implemented by buttons. 
+   Some of the viewer controls are also implemented by buttons. 
 
 **Using the toolbar buttons to control the viewer**
-As shown in figure 10, there are also buttons in the toolbar to control the viewer. From left to
+As shown in :numref:`imageViewerControls`, there are also buttons in the toolbar to control the viewer. From left to
 right in this figure, the buttons do the following
 
 - zoom to extent. use this button to get a top view of the grid, zoomed out so that all of it is visible
@@ -395,36 +399,37 @@ allowing us to see the value of datasets or the grid geometry inside.
 
 | To use clipping, open the 3D viewer and visualize one or more grids on
   it.
-| Then press the clipping button in the toolbar (Figure 11)
+| Then press the clipping button in the toolbar (:numref:`image12`)
 
-.. image:: screenshots/viewer/image12.png
+.. _image12:
+.. figure:: screenshots/viewer/image12.png
    :width: 4.5in
 
-
-Figure 11: Activate clipping mode by pressing the clipping button in the
-toolbar. Sliders appear in the 3D viewer.
+   Activate clipping mode by pressing the clipping button in the
+   toolbar. Sliders appear in the 3D viewer.
 
 Now use the sliders to clip the model. Each slider represents the
 combined range of all the grids in the viewer in one direction.
 
-.. image:: screenshots/viewer/image13.png
+.. _image13:
+.. figure:: screenshots/viewer/image13.png
    :width: 3.92897in
    :height: 2.83333in
 
-Figure 12: Use sliders to cut model in each direction
+   Use sliders to cut model in each direction
 
 How to plot gridlines
 ~~~~~~~~~~~~~~~~~~~~~
 
 It is possible to plot geographical gridlines on top
-of a grid (Figure 13). **This feature only works well
+of a grid (:numref:`image14`). **This feature only works well
 at near-vertical viewing angles.**
 
-.. image:: screenshots/viewer/image14.png
+.. _image14:
+.. figure:: screenshots/viewer/image14.png
    :width: 6.26528in
 
-
-Figure 13: Toggle gridlines with the gridlines button
+   Toggle gridlines with the gridlines button
 
 How to change the vertical exaggeration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -446,18 +451,19 @@ becomes at least 10% of the horizontal variation.
 
 The exaggeration factor can also be set manually. To do so, disable the
 *Use automatic exaggeration of z-axis* slider and enter the desired value
-in the text field above it.(Figure 14)
+in the text field above it (:numref:`image15`).
 
-.. image:: screenshots/viewer/image15.png
+.. _image15:
+.. figure:: screenshots/viewer/image15.png
    :width: 6.25764in
 
-Figure 14: Vertical exaggeration slider and text field
+   Vertical exaggeration slider and text field
 
 How to change the representation of a grid
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the 3D viewer, grids can be visualized as solid bodies (Figure 15); as
-wireframes and as point clouds. In wireframe mode, only the edges of the
+In the 3D viewer, grids can be visualized as solid bodies (:numref:`image16`);
+as wireframes and as point clouds. In wireframe mode, only the edges of the
 cells are drawn, allowing one to look inside the grid. In point cloud
 mode, only points corresponding to the cell centers are shown
 
@@ -465,13 +471,14 @@ To change the representation, use the dropdown in the viewer toolbar. Once
 selected, a dropdown appears where the representation can be changed.
 All visible grids get the selected representation.
 
-.. image:: screenshots/viewer/image16.png
+.. _image16:
+.. figure:: screenshots/viewer/image16.png
    :width: 6.26528in
    :height: 2.52292in
 
-Figure 15: The 3 representations of a grid. 
-Left the *Surface* representation, in the centre *Wireframe*,
-and right the *Point* representation.
+   The 3 representations of a grid. 
+   Left the *Surface* representation, in the centre *Wireframe*,
+   and right the *Point* representation.
 
 The representation can also be changed from the property window of a grid. Here 
 some other tweaks can also be made, like highlighting cell edges or changing the opacity of the plot. 
@@ -507,18 +514,19 @@ The legend editor
 ~~~~~~~~~~~~~~~~~
 
 The legend editor consists of 2 tabs: one for continuous legends and one
-for discrete ones (Figure 16).
+for discrete ones (:numref:`image18`).
 
 This form is more or less self explanatory. You can choose a color scale
 (currently rainbow or blue-white-red). Note that it is possible to save
 a legend in a separate file, or to load a legend from such a file, with
 the *Save* and *Load* buttons.
 
-.. image:: screenshots/viewer/image18.png
+.. _image18:
+.. figure:: screenshots/viewer/image18.png
    :width: 6.26042in
    :height: 4.85903in
 
-Figure 16: The 2 tabs of the legend editor
+   The 2 tabs of the legend editor
 
 When using a percentile legend, colors are assigned to a cell based on
 the percentage of cells that hold a value lower than that of the current
@@ -526,25 +534,25 @@ cell. The color map is distorted to reflect this. For example, when
 using the “heat map” legend, the lowest value is blue, the highest red,
 and the middle of the range is white. When using a heat map with
 percentiles, the white color represents not the middle of the range, but
-the value for which 50% of other values is smaller than itself (Figure
-17). 
+the value for which 50% of other values is smaller than itself 
+(:numref:`image19`). 
 
 For unstructured grids, note that the percentile calculation 
 does not take cell area into account. For example, for a dataset 
 with lot of small cells and a few large cells, the percentile legend
 will be skewed towards the values of the small cells.
 
-
-.. image:: screenshots/viewer/image19.jpeg
+.. _image19:
+.. figure:: screenshots/viewer/image19.jpeg
    :width: 6.25556in
    :height: 2.50556in
 
-Figure 17: Heat map legend with percentiles on and off. Without
-percentiles (left), the white color is the middle of the legend range.
-With percentiles on (right),the color map is distorted and white is now
-the median value (50%) of the dataset. In general, a color that represents *N*%
-of the range in the linear legend, is mapped to the value that is larger
-than *N*% of the data in the percentiles legend.
+   Heat map legend with percentiles on and off. Without
+   percentiles (left), the white color is the middle of the legend range.
+   With percentiles on (right),the color map is distorted and white is now
+   the median value (50%) of the dataset. In general, a color that represents *N*%
+   of the range in the linear legend, is mapped to the value that is larger
+   than *N*% of the data in the percentiles legend.
 
 
 Legend sidepane
@@ -553,7 +561,7 @@ Legend sidepane
 For quick reference, the legend is shown on a retractable sidepane. 
 To open or close it, use the button highlighted in the figure below. 
 
-.. image:: screenshots/viewer/imageSidepane.png
+.. figure:: screenshots/viewer/imageSidepane.png
    :width: 6.25556in
  
 
@@ -584,25 +592,27 @@ respectively.
 
 If these columns are not present or if they contain text data, then the
 first 3 numerical columns are used for x, y and z, and the IPF data is
-plotted as points on these locations (Figure 18).
+plotted as points on these locations (:numref:`image20`).
 
-.. image:: screenshots/viewer/image20.png
+.. _image20:
+.. figure:: screenshots/viewer/image20.png
    :width: 3.34375in
    :height: 2.04167in
 
-Figure 18: When the default column names are not found an error message
-appears.
+   When the default column names are not found an error message
+   appears.
 
 To adjust the column mapping, right click on the IPF’s row in the
 explorer bar and select the “Properties” menu option. Then a window
-appears where the column mapping can be updated(Figure 19).
+appears where the column mapping can be updated (:numref:`image21`).
 
-.. image:: screenshots/viewer/image21.png
+.. _image21:
+.. figure:: screenshots/viewer/image21.png
    :width: 3.54673in
    :height: 4.43662in
 
-Figure 19: Property window allows to choose what IPF columns to use for
-drawing cylinders.
+   Property window allows to choose what IPF columns to use for
+   drawing cylinders.
 
 The z0 and z1 comboboxes will be used for the cylinder’s top and bottoms
 respectively. If the z1 column is not set, then points will be generated
@@ -620,11 +630,12 @@ will be assigned to each IPF file.
 As with overlays, the color and cylinder thickness can be adjusted from
 the context menu of the IPF file.
 
-.. image:: screenshots/viewer/image22.png
+.. _image22:
+.. figure:: screenshots/viewer/image22.png
    :width: 6.26806in
    :height: 3.66597in
 
-Figure 20: Image of an IPF plot with labels, viewed from the top.
+   Image of an IPF plot with labels, viewed from the top.
 
 
 Plotting borehole data
@@ -635,21 +646,22 @@ each row in the IPF file, and when these datafiles contain 1D borehole
 data, then this data can be plotted on the cylinders.
 
 To do that, check the option “Plot data on cylinder” on the IPF property
-form (Figure 21) . Both real number data and string data can be plotted.
+form (:numref:`image23`) . Both real number data and string data can be plotted.
 When the checkbox is checked, a legend the appears on the form proposing
 a color mapping. This legend is either a continuous scale (for real
-numbers) or a string-to-color mapping like in the example in Figure 21.
+numbers) or a string-to-color mapping like in the example in :numref:`image23`.
 The colors can be changed by clicking on a particular color box.
 
 These legends can be saved and loaded as well.
 
-.. image:: screenshots/viewer/image23.png
+.. _image23:
+.. figure:: screenshots/viewer/image23.png
    :width: 6.26806in
    :height: 4.41458in
 
-Figure 21: 1D borehole data can be plotted on cylinders generated from
-the IPF file. Both real number data and string data can be plotted. In
-this example, string data was present in the "Admixture" column
+   1D borehole data can be plotted on cylinders generated from
+   the IPF file. Both real number data and string data can be plotted. In
+   this example, string data was present in the "Admixture" column
 
 Working with IDF files
 ----------------------
@@ -675,34 +687,36 @@ the mouse wheel to the area where additional detail is required. Then
 press the redraw button( |image8|).
 
 This renders the area visible in the viewer in higher resolution, but
-removes the invisible parts of the grid (Figure 22). To restore those,
+removes the invisible parts of the grid (:numref:`image25`). To restore those,
 zoom out again and press |image9| again.
 
-.. image:: screenshots/viewer/image25.png
+.. _image25:
+.. figure:: screenshots/viewer/image25.png
    :width: 6.25in
    :height: 2.16667in
 
-Figure 22: Left, an upscaled IDF file. Middle: after zooming in on an
-area of interest. Right: after pressing the redraw button to increase
-resolution.
+   Left, an upscaled IDF file. Middle: after zooming in on an
+   area of interest. Right: after pressing the redraw button to increase
+   resolution.
 
 Another way to change the resolution of an IDF file is to select the
-IDF’s row in the explorer bar and clicking on “resolution” (Figure 23).
+IDF’s row in the explorer bar and clicking on “resolution” (:numref:`image26`).
 This allows choosing a resolution of 100x100, 250x250 or 500x500 for the
-IPF file (Figure 24).
+IPF file (:numref:`image27`).
 
-.. image:: screenshots/viewer/image26.png
+.. _image26:
+.. figure:: screenshots/viewer/image26.png
    :width: 2.11458in
 
+   Choose the resolution of the IDF file
 
-Figure 23: Choose the resolution of the IDF file
-
-.. image:: screenshots/viewer/image27.jpeg
+.. _image27:
+.. figure:: screenshots/viewer/image27.jpeg
    :width: 6.25556in
    :height: 2.47431in
 
-Figure 24: IDF file at resolution 100x100 (left); 250*250(middle) and
-500x500 (right)
+   IDF file at resolution 100x100 (left); 250*250(middle) and
+   500x500 (right)
 
 Additional representation options for IDF files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -711,27 +725,28 @@ The options outlined above change the way each cell is rendered, but
 they do not change the underlying geometry of the cells. For IDF files
 we have an additional option. IDF cells are horizontal rectangles, and a
 surface formed by an IDF grid may look strange in the 3D viewer because
-these rectangles “float” at different elevations(Figure 26 ). Therefore,
+these rectangles “float” at different elevations (:numref:`image29`). Therefore,
 an additional option of rendering an IDF grid as triangles was added.
 The corner points of the triangle are the cell-centers of the
 rectangles, and have the elevation of that rectangle.
 
 To change the representation of an IDF file, load the IPF file and then
 right-click on its entry in the explorer bar. A context menu appears
-(Figure 25). Choose rectangles or triangles as desired.
+(:numref:`image28`). Choose rectangles or triangles as desired.
 
-.. image:: screenshots/viewer/image28.png
+.. _image28:
+.. figure:: screenshots/viewer/image28.png
    :width: 2.1in
 
+   Context menu for changing representation of an IDF file
 
-Figure 25: Context menu for changing representation of an IDF file
-
-.. image:: screenshots/viewer/image29.png
+.. _image29:
+.. figure:: screenshots/viewer/image29.png
    :width: 5.4375in
    :height: 2.21832in
 
-Figure 26: An IDF file rendered as rectangles (left) and triangles
-(right)
+   An IDF file rendered as rectangles (left) and triangles
+   (right)
 
 
 Working with shapefiles
@@ -745,15 +760,16 @@ row in the explorer bar and hit the |image10| button.
 
 Once loaded, the line thickness and color of the overlay can be changed
 by right clicking on the overlay’s row in the explorer bar. This makes a
-context menu appear (Figure 27). There is a menu option for changing the
+context menu appear (:numref:`image30`). There is a menu option for changing the
 color and one for changing the line thickness.
 
-.. image:: screenshots/viewer/image30.png
+.. _image30:
+.. figure:: screenshots/viewer/image30.png
    :width: 6.25556in
    :height: 2.90625in
 
-Figure 27: Context menu options for changing the color and line
-thickness of an overlay.
+   Context menu options for changing the color and line
+   thickness of an overlay.
 
 How to inspect dataset values of a cell
 ---------------------------------------
@@ -765,7 +781,7 @@ dataset in each cell.
 
 To get a more precise value, it is possible to click on a cell and get a
 list of the values of different datasets in that cell. Take the
-following steps to do this (Figure 28):
+following steps to do this (:numref:`image31`):
 
 1. Visualize a grid in the viewer and select it.
 
@@ -780,11 +796,12 @@ following steps to do this (Figure 28):
 
 To end identifying, press the “identify” button again.
 
-.. image:: screenshots/viewer/image31.png
+.. _image31:
+.. figure:: screenshots/viewer/image31.png
    :width: 6.26528in
    :height: 3.71181in
 
-Figure 28: Dataset values can be inspected with the identify button
+   Dataset values can be inspected with the identify button
 
 Layered UGRID
 -------------
@@ -811,18 +828,20 @@ An example to convert a layered subsurface model in \*.idf to a UGRID
 file can be found on
 https://gitlab.com/deltares/imod/imod-python/-/snippets/2104179
 
-.. image:: screenshots/viewer/image32.png
+.. _image32:
+.. figure:: screenshots/viewer/image32.png
    :width: 6.26806in
    :height: 3.36806in
 
-Figure 29: A 2D UGRID file rendered as a layered 3D grid
+   A 2D UGRID file rendered as a layered 3D grid
 
-.. image:: screenshots/viewer/image33.png
+.. _image33:
+.. figure:: screenshots/viewer/image33.png
    :width: 6.26806in
    :height: 3.27639in
 
-Figure 30: View on internals of UGRID that can be used for rendering as
-a 3D layered grid
+   View on internals of UGRID that can be used for rendering as
+   a 3D layered grid
 
 .. |image1| image:: screenshots/viewer/image3.png
    :width: 0.15625in
