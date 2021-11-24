@@ -2,10 +2,10 @@
 iMOD Python
 ***********
 
-The imod Python package is designed to help you in your MODFLOW groundwater modeling efforts.
+The iMOD Python package is designed to help you in your MODFLOW groundwater modeling efforts.
 It makes it easy to go from your raw data to a fully defined MODFLOW model, with the aim to make this process reproducable.
 Whether you want to build a simple 2D conceptual model, or a complex 3D regional model with millions of cells,
-imod-python scales automatically by making use of `dask <https://dask.org/>`__.
+iMOD Python scales automatically by making use of `dask <https://dask.org/>`__.
 
 By building on top of popular Python packages like `xarray <http://xarray.pydata.org/>`__, `pandas <http://pandas.pydata.org/>`__,
 `rasterio <https://rasterio.readthedocs.io/en/latest/>`__ and `geopandas <http://geopandas.org/>`__, a lot of functionality comes
