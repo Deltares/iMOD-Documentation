@@ -34,7 +34,7 @@ and make sure to do a *Complete* install.
 2b. Installing from the QGIS plugin repository
 ==============================================
 
-In Qgis, navigate to *Plugins > Manage and Install Plugins > All*. 
+In QGIS, navigate to *Plugins > Manage and Install Plugins > All*. 
 In the search bar, type: "*iMOD*".
 Select the iMOD plugin, and click "Install".
 
@@ -54,7 +54,7 @@ In windows it is something such as:
 
 If you cannot find the folder, follow `these instructions <https://gis.stackexchange.com/a/274312>`_.
 
-In Qgis, make sure under *Plugins > Manage and Install Plugins > Installed* 
+In QGIS, make sure under *Plugins > Manage and Install Plugins > Installed* 
 that the checkbox *iMOD* is checked.
 
 .. _system-wide:

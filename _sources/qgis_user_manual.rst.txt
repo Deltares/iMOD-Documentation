@@ -50,12 +50,12 @@ Required to interpret timeseries in the Time Series widget,
 as well as to visualize borelogs in Cross section and 3D Viewer widget.
 To an IPF timeseries file it attaches two columns to the attribute table of the vector
 layer, namely a "start time" and "end time". 
-This allows using the Qgis Temporal Controller Panel to browse through time, 
+This allows using the QGIS Temporal Controller Panel to browse through time, 
 and see which points have data defined within a certain time frame.
 
-* Press the "..." button to select a path to a file (as you would in other Qgis windows).
+* Press the "..." button to select a path to a file (as you would in other QGIS windows).
 
-* Press "Add" to load the file into the Qgis explorer.
+* Press "Add" to load the file into the QGIS explorer.
 
 .. figure:: screenshots/qgis/ipf-reader.png
 
@@ -63,13 +63,13 @@ and see which points have data defined within a certain time frame.
 
 .. figure:: screenshots/qgis/temporal-controller.png
 
-    The temporal controller panel and map canvas of Qgis. 
+    The temporal controller panel and map canvas of QGIS. 
     The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.
 
 |3d-viewer| 3D Viewer 
 ---------------------
-The 3D viewer widget creates a connection between Qgis and the iMOD 3D viewer. 
-It allows you to make selections in Qgis and forward them to the 3D viewer.
+The 3D viewer widget creates a connection between QGIS and the iMOD 3D viewer. 
+It allows you to make selections in QGIS and forward them to the 3D viewer.
 Note that there are two perquisites for the iMOD viewer to correctly render mesh data:
 
 #. The mesh data needs to be stored in a UGRID file
@@ -78,7 +78,7 @@ Note that there are two perquisites for the iMOD viewer to correctly render mesh
    The data belonging to each layer follows the following format :code:`head_layer_*`, 
    e.g. for a variable :code:`head`.
 
-This means that not all data that can be loaded in Qgis as mesh can be viewed in the 3D viewer.
+This means that not all data that can be loaded in QGIS as mesh can be viewed in the 3D viewer.
 Currently only UGRID meshes and IPF borelog files are supported.
 
 * Use the selection box at the top to select the mesh layer/ipf file you want to inspect in the 3D viewer.
@@ -88,9 +88,9 @@ Currently only UGRID meshes and IPF borelog files are supported.
   and more:
 
   * The "Current Layer Extent" button sets the bounding box to the extent of the layer 
-    selected in the Qgis explorer.
+    selected in the QGIS explorer.
 
-  * The "Calculate from Layer" box allows you to select a dataset loaded in the Qgis explorer
+  * The "Calculate from Layer" box allows you to select a dataset loaded in the QGIS explorer
     to calculate the extent from.
 
   * "Map canvas extent" sets the bounding box to the map canvas
@@ -117,8 +117,8 @@ Currently only UGRID meshes and IPF borelog files are supported.
   * "Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer 
     and renders a fence diagram.
 
-  * "Load legend" transfers legend in the Qgis map layer to fence diagram and/or mesh data in the 3D viewer 
-    for the selected variable in the Qgis map canvas.
+  * "Load legend" transfers legend in the QGIS map layer to fence diagram and/or mesh data in the 3D viewer 
+    for the selected variable in the QGIS map canvas.
   
 .. image:: screenshots/qgis/3d-viewer.png
 

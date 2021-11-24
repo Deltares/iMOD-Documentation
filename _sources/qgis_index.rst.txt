@@ -14,6 +14,7 @@ Primary components are:
 
 .. toctree::
    :hidden:
+   :numbered:
 
    qgis_install
    qgis_user_manual

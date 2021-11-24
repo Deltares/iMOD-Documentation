@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>iMOD &#8212; iMOD Suite  documentation</title>
+    <title>iMOD Suite &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -125,9 +125,24 @@
               
               <div class="toc-item">
                 
+<div class="tocsection onthispage pt-5 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison-with-imod-5">
+   Comparison with iMOD 5
+  </a>
+ </li>
+</ul>
+
 </nav>
               </div>
               
@@ -147,9 +162,11 @@
               
               <div>
                 
-  <section id="imod">
-<h1>iMOD<a class="headerlink" href="#imod" title="Permalink to this headline">¶</a></h1>
-<p>The iMOD suite provides tools to efficiently build and visualize
+  <section id="imod-suite">
+<h1>iMOD Suite<a class="headerlink" href="#imod-suite" title="Permalink to this headline">¶</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>The iMOD Suite provides tools to efficiently build and visualize
 groundwater models.</p>
 <p>Deltares is working to integrate and improve our groundwater software.
 Therefore iMOD is extended with a new iMOD Suite to link to the latest
@@ -169,9 +186,9 @@ instead of creating complete programs ourselves.</p></li>
 <li><p>Modern programming languages (C++ and Python) that
 allow connecting to a big and lively software ecoystem.</p></li>
 </ul>
-<p>The iMOD Suite offers different modules which support modelling with
-MODFLOW 6 (including unstructured meshes):</p>
-<ul class="simple">
+<p>The iMOD Suite offers three different modules which support
+modelling with MODFLOW 6 (including unstructured meshes):</p>
+<ol class="arabic simple">
 <li><p><a class="reference internal" href="qgis_index.html"><span class="doc">iMOD QGIS Plugin</span></a>:
 A QGIS plugin for visualisation of model input and output with tool for
 cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID
@@ -183,7 +200,27 @@ file format.</p></li>
 An Python package to support MODFLOW groundwater modeling. It makes it easy
 to go from your raw data to a fully defined MODFLOW model, with the aim
 to make this workflow reproducable.</p></li>
-</ul>
+</ol>
+<figure class="align-default" id="id1">
+<img alt="_images/NHI-zz_cross-section.png" src="_images/NHI-zz_cross-section.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD QGIS plugin.
+The example shows the chlorine concentrations computed
+by the <a class="reference external" href="https://gitlab.com/deltares/imod/nhi-fresh-salt">NHI fresh-salt model</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="id2">
+<img alt="_images/NHI-zz_3d_viewer.png" src="_images/NHI-zz_3d_viewer.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">The chlorine concentrations computed by the NHI-fresh-salt model.
+for the province of Zeeland, plotted in the new iMOD 3D viewer.
+The top layer is made opaque,
+creating the pretty mist effect in the creek ridges.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="comparison-with-imod-5">
+<h2>Comparison with iMOD 5<a class="headerlink" href="#comparison-with-imod-5" title="Permalink to this headline">¶</a></h2>
 <p>The proven technology and expertise of iMOD is consolidated within
 iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
 and structured MODFLOW 6 and can be coupled to the unsaturated zone
@@ -194,28 +231,11 @@ The model input and output can be visualised in the fast interactive viewer.
 <p>Important technological innovations will be developed
 in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years,
 but will see no big new feature developments.
-<a class="reference internal" href="#table-1"><span class="std std-ref">Table 1</span></a> and <a class="reference internal" href="#table-2"><span class="std std-ref">Table 2</span></a> provide comparisons
+<a class="reference internal" href="#table-1"><span class="std std-numref">Table 1</span></a> and <a class="reference internal" href="#table-2"><span class="std std-numref">Table 2</span></a> provide comparisons
 between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
 respectively.</p>
-<figure class="align-default" id="id1">
-<img alt="_images/NHI-zz_cross-section.png" src="_images/NHI-zz_cross-section.png" />
-<figcaption>
-<p><span class="caption-text">Easy plotting of 4 dimensional [t, z, y, x] data in the iMOD QGIS plugin.
-The example shows the chlorine concentrations computed
-by the <a class="reference external" href="https://gitlab.com/deltares/imod/nhi-fresh-salt">NHI fresh-salt model</a>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="id2">
-<img alt="_images/NHI-zz_3d_viewer.png" src="_images/NHI-zz_3d_viewer.png" />
-<figcaption>
-<p><span class="caption-text">The chlorine concentrations computed by the NHI-fresh-salt model.
-for the province of Zeeland, plotted in the new iMOD 3D viewer.
-The top layer is made opaque,
-creating the pretty mist effect in the creek ridges.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
 <span id="table-1"></span><table class="table" id="id3">
-<caption><span class="caption-text">Table 1: Comparison between iMOD Suite &amp; iMOD 5</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Comparison between iMOD Suite &amp; iMOD 5</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -267,7 +287,7 @@ creating the pretty mist effect in the creek ridges.</span><a class="headerlink"
 </tbody>
 </table>
 <span id="table-2"></span><table class="colwidths-given table" id="id4">
-<caption><span class="caption-text">Table 2: Supported MODFLOW6 flow packages in iMOD Suite &amp; iMOD 5</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Supported MODFLOW6 flow packages in iMOD Suite &amp; iMOD 5</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 16%" />
 <col style="width: 42%" />
@@ -396,6 +416,7 @@ creating the pretty mist effect in the creek ridges.</span><a class="headerlink"
 </table>
 <div class="toctree-wrapper compound">
 </div>
+</section>
 </section>
 
 

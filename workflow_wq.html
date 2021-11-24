@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>A conceptual fresh-salt model &#8212; iMOD Suite  documentation</title>
+    <title>1. A conceptual fresh-salt model &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -116,7 +116,7 @@
     <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   A conceptual fresh-salt model
+   1. A conceptual fresh-salt model
   </a>
  </li>
 </ul>
@@ -141,32 +141,32 @@
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creating-a-model">
-   1. Creating a model
+   1.1. 1. Creating a model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#running-the-model">
-   2. Running the model
+   1.2. 2. Running the model
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#convert-output-data">
-   3. Convert output data
+   1.3. 3. Convert output data
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#viewing-the-results-in-qgis">
-   4. Viewing the results in QGIS
+   1.4. 4. Viewing the results in QGIS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#viewing-the-results-in-the-imod-3d-viewer">
-   5. Viewing the results in the iMOD 3D Viewer
+   1.5. 5. Viewing the results in the iMOD 3D Viewer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#concluding">
-   Concluding
+   1.6. Concluding
   </a>
  </li>
 </ul>
@@ -191,7 +191,7 @@
               <div>
                 
   <section id="a-conceptual-fresh-salt-model">
-<h1>A conceptual fresh-salt model<a class="headerlink" href="#a-conceptual-fresh-salt-model" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>A conceptual fresh-salt model<a class="headerlink" href="#a-conceptual-fresh-salt-model" title="Permalink to this headline">¶</a></h1>
 <p>In this example we create an example fresh-salt groundwater model of
 a strip-shaped freshwater lens, which could be a very simple analogue
 of a barrier island.</p>
@@ -205,7 +205,7 @@ to a data format supported by QGIS (UGRID)</p></li>
 <li><p>Use the plugin to view the results in the iMOD 3D viewer</p></li>
 </ol>
 <section id="creating-a-model">
-<h2>1. Creating a model<a class="headerlink" href="#creating-a-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>1. Creating a model<a class="headerlink" href="#creating-a-model" title="Permalink to this headline">¶</a></h2>
 <p>The iMOD-python script below creates a simple 3D iMOD-WQ model.</p>
 <p>To install iMOD-python, see
 <a class="reference external" href="https://imod.xyz/installation.html">these instructions</a>.</p>
@@ -214,7 +214,7 @@ the sides have a fixed concentration (<code class="docutils literal notranslate"
 of 35 (<code class="docutils literal notranslate"><span class="pre">sconc</span> <span class="pre">=</span> <span class="pre">35.</span></code>) in the top layer.
 This creates freshwater lens along the strip.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">create_wq_input.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 1.1.1 </span><span class="caption-text">create_wq_input.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 
@@ -321,7 +321,7 @@ This creates freshwater lens along the strip.</p>
 </div>
 </section>
 <section id="running-the-model">
-<h2>2. Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>2. Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
 <p>This model requires the iMOD-WQ kernel,
 which is part of iMOD 5 and which you can download
 <a class="reference external" href="https://oss.deltares.nl/web/imod/deltares-executables-of-imod">for free here after registering</a>.
@@ -336,7 +336,7 @@ and call the following lines of code:</p>
 <img alt="_images/cmd_run_output.png" src="_images/cmd_run_output.png" />
 </section>
 <section id="convert-output-data">
-<h2>3. Convert output data<a class="headerlink" href="#convert-output-data" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.3. </span>3. Convert output data<a class="headerlink" href="#convert-output-data" title="Permalink to this headline">¶</a></h2>
 <p>iMOD-WQ writes IDF files, a data format used in iMOD 5,
 which not many other software packages support.
 Therefore iMOD-python allows for reading these IDF files
@@ -344,7 +344,7 @@ and converting them to other data formats in Python.</p>
 <p>In this example we convert the output to a UGRID file,
 which can be read by QGIS.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">convert_output.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">Listing 1.3.1 </span><span class="caption-text">convert_output.py</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">imod</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -394,12 +394,12 @@ which can be read by QGIS.</p>
 </div>
 </section>
 <section id="viewing-the-results-in-qgis">
-<h2>4. Viewing the results in QGIS<a class="headerlink" href="#viewing-the-results-in-qgis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.4. </span>4. Viewing the results in QGIS<a class="headerlink" href="#viewing-the-results-in-qgis" title="Permalink to this headline">¶</a></h2>
 <p>Start QGIS and open the <code class="docutils literal notranslate"><span class="pre">./results/output_ugrid.nc</span></code> file as a mesh.</p>
 <figure class="align-default" id="id3">
 <img alt="_images/load_mesh.png" src="_images/load_mesh.png" />
 <figcaption>
-<p><span class="caption-text">Where to find the action to load a mesh layer</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 1.4.1 </span><span class="caption-text">Where to find the action to load a mesh layer</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 <p>You can select the variable to plot on the map canvas by right-clicking the
@@ -411,7 +411,7 @@ the variable on the map canvas.</p>
 <figure class="align-default" id="id4">
 <img alt="_images/group_selection.png" src="_images/group_selection.png" />
 <figcaption>
-<p><span class="caption-text">Where to find the group selection screen.
+<p><span class="caption-number">Fig. 1.4.2 </span><span class="caption-text">Where to find the group selection screen.
 Here you can select the variables to be plotted.
 The red circle indicates where the color ramp symbol can be found.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </figcaption>
@@ -420,7 +420,7 @@ The red circle indicates where the color ramp symbol can be found.</span><a clas
 <figure class="align-default" id="id5">
 <img alt="_images/color_ramp_selection.png" src="_images/color_ramp_selection.png" />
 <figcaption>
-<p><span class="caption-text">The color selection menu, here you can set the colormap that will be used,
+<p><span class="caption-number">Fig. 1.4.3 </span><span class="caption-text">The color selection menu, here you can set the colormap that will be used,
 as well as adjusting its binning.
 In these example screenshots we use the colormap “Spectral”.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </figcaption>
@@ -440,12 +440,12 @@ but you can select whatever colormap you think is suitable!</p>
 <figure class="align-default" id="id6">
 <img alt="_images/cross-section2.png" src="_images/cross-section2.png" />
 <figcaption>
-<p><span class="caption-text">You should see this if you followed precisely what we did.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 1.4.4 </span><span class="caption-text">You should see this if you followed precisely what we did.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="viewing-the-results-in-the-imod-3d-viewer">
-<h2>5. Viewing the results in the iMOD 3D Viewer<a class="headerlink" href="#viewing-the-results-in-the-imod-3d-viewer" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.5. </span>5. Viewing the results in the iMOD 3D Viewer<a class="headerlink" href="#viewing-the-results-in-the-imod-3d-viewer" title="Permalink to this headline">¶</a></h2>
 <p>As a final step we will look at the results in the iMOD 3D Viewer.
 Click the 3D viewer symbol <a class="reference internal" href="_images/3d-viewer.png"><img alt="3d-viewer" src="_images/3d-viewer.png" style="width: 40px; height: 40px;" /></a> in QGIS, which will open up the
 3D viewer widget of the iMOD plugin.</p>
@@ -461,12 +461,12 @@ expand the data selection tree, and under <em>Layered datasets</em>, selecting <
 <figure class="align-default" id="id7">
 <img alt="_images/3d_viewer.png" src="_images/3d_viewer.png" />
 <figcaption>
-<p><span class="caption-text">If you followed the instructions, you should see this.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-number">Fig. 1.5.2 </span><span class="caption-text">If you followed the instructions, you should see this.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="concluding">
-<h2>Concluding<a class="headerlink" href="#concluding" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.6. </span>Concluding<a class="headerlink" href="#concluding" title="Permalink to this headline">¶</a></h2>
 <p>In short, we wrote model input with iMOD-python, ran a model with iMOD-WQ,
 converted its output to UGRID with iMOD-python, and viewed the results in QGIS
 and the iMOD 3D viewer.</p>
