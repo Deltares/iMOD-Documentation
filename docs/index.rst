@@ -1,8 +1,11 @@
 ###########
-iMOD
+iMOD Suite
 ###########
 
-The iMOD suite provides tools to efficiently build and visualize
+Introduction
+------------
+
+The iMOD Suite provides tools to efficiently build and visualize
 groundwater models. 
 
 Deltares is working to integrate and improve our groundwater software. 
@@ -24,36 +27,20 @@ the latest developments in the data science ecosystem, by utilizing:
 * Modern programming languages (C++ and Python) that 
   allow connecting to a big and lively software ecoystem.
 
-The iMOD Suite offers different modules which support modelling with 
-MODFLOW 6 (including unstructured meshes):
+The iMOD Suite offers three different modules which support 
+modelling with MODFLOW 6 (including unstructured meshes):
 
-* :doc:`iMOD QGIS Plugin <qgis_index>`:
-  A QGIS plugin for visualisation of model input and output with tool for 
-  cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID 
-  and ipf's.
-* :doc:`iMOD 3D Viewer <viewer_index>`:
-  A 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID 
-  file format.
-* :doc:`iMOD python <python_index>`:
-  An Python package to support MODFLOW groundwater modeling. It makes it easy 
-  to go from your raw data to a fully defined MODFLOW model, with the aim 
-  to make this workflow reproducable.
-
-The proven technology and expertise of iMOD is consolidated within 
-iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
-and structured MODFLOW 6 and can be coupled to the unsaturated zone 
-model MetaSWAP. 
-The model input and output can be visualised in the fast interactive viewer. 
-`The documentation of iMOD 5 can be found here 
-<https://oss.deltares.nl/nl/web/imod>`_
-.
-
-Important technological innovations will be developed 
-in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years, 
-but will see no big new feature developments. 
-:ref:`Table 1<table_1>` and :ref:`Table 2<table_2>` provide comparisons
-between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
-respectively.
+#. :doc:`iMOD QGIS Plugin <qgis_index>`:
+   A QGIS plugin for visualisation of model input and output with tool for 
+   cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID 
+   and ipf's.
+#. :doc:`iMOD 3D Viewer <viewer_index>`:
+   A 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID 
+   file format.
+#. :doc:`iMOD python <python_index>`:
+   An Python package to support MODFLOW groundwater modeling. It makes it easy 
+   to go from your raw data to a fully defined MODFLOW model, with the aim 
+   to make this workflow reproducable.
 
 .. figure:: screenshots/index/NHI-zz_cross-section.png
 
@@ -69,9 +56,28 @@ respectively.
   The top layer is made opaque, 
   creating the pretty mist effect in the creek ridges.
 
+Comparison with iMOD 5
+----------------------
+
+The proven technology and expertise of iMOD is consolidated within 
+iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
+and structured MODFLOW 6 and can be coupled to the unsaturated zone 
+model MetaSWAP. 
+The model input and output can be visualised in the fast interactive viewer. 
+`The documentation of iMOD 5 can be found here 
+<https://oss.deltares.nl/nl/web/imod>`_
+.
+
+Important technological innovations will be developed 
+in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years, 
+but will see no big new feature developments. 
+:numref:`table_1` and :numref:`table_2` provide comparisons
+between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
+respectively.
+
 .. _table_1:
 
-.. list-table:: Table 1: Comparison between iMOD Suite & iMOD 5
+.. list-table:: Comparison between iMOD Suite & iMOD 5
   :header-rows: 1
   :stub-columns: 1
 
@@ -108,7 +114,7 @@ respectively.
 
 .. _table_2:
 
-.. csv-table:: Table 2: Supported MODFLOW6 flow packages in iMOD Suite & iMOD 5
+.. csv-table:: Supported MODFLOW6 flow packages in iMOD Suite & iMOD 5
    :file: tables/supported_packages.csv
    :widths: 15, 40, 20, 20
    :header-rows: 1
