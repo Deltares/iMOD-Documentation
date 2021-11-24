@@ -93,10 +93,10 @@ The resulting file can be opened with the “open project file” option.
 An autosave file is automatically created or updated when opening a
 grid, overlay or IPF file, or when editing a legend or an IPF column
 mapping. This autosave file therefore reflects the state of the viewer
-more or less recently and is stored in the appdata directory (most
+more or less recently and is stored in the appdata directory, most
 likely this:
 
-C:\\Users\\yourname\\AppData\\Roaming\\IMOD6)
+``C:\\Users\\yourname\\AppData\\Roaming\\IMOD6``
 
 The explorer sidebar
 ~~~~~~~~~~~~~~~~~~~~
