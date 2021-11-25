@@ -6,6 +6,8 @@ iMOD Suite Documentation
 
 [The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Documentation/)
 
+[The latest pdf of the documentation can be downloaded via this link.](https://nightly.link/Deltares/iMOD-Documentation/workflows/ci/main/imod-doc.zip)
+
 This documentation is written as reStructuredText (`.rst`). 
 This might take some getting used to, but instructions
 can be found [here](https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html). 
