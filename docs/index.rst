@@ -63,7 +63,7 @@ The proven technology and expertise of iMOD is consolidated within
 iMOD 5. iMOD 5 supports structured calculations with MODFLOW2005
 and structured MODFLOW 6 and can be coupled to the unsaturated zone 
 model MetaSWAP. 
-The model input and output can be visualised in the fast interactive viewer. 
+The model input and output can be visualised in its fast interactive viewer. 
 `The documentation of iMOD 5 can be found here 
 <https://oss.deltares.nl/web/imod>`_
 .
@@ -71,9 +71,8 @@ The model input and output can be visualised in the fast interactive viewer.
 Important technological innovations will be developed 
 in the new iMOD Suite, whereas iMOD 5 will be maintained the coming years, 
 but will see no big new feature developments. 
-:numref:`table_1` and :numref:`table_2` provide comparisons
-between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
-respectively.
+:numref:`table_1` and :numref:`table_2` respectively provide comparisons
+between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages.
 
 .. _table_1:
 
