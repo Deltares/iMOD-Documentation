@@ -65,7 +65,7 @@ and structured MODFLOW 6 and can be coupled to the unsaturated zone
 model MetaSWAP. 
 The model input and output can be visualised in the fast interactive viewer. 
 `The documentation of iMOD 5 can be found here 
-<https://oss.deltares.nl/nl/web/imod>`_
+<https://oss.deltares.nl/web/imod>`_
 .
 
 Important technological innovations will be developed 
