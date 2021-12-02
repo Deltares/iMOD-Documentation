@@ -5,7 +5,7 @@ How do I
 How do i - Solution
 Section with examples how to work with iMOD Python, xarray, etc. 
 
-Work in progress.
+**Work in progress.**
 
 Examples:
 
