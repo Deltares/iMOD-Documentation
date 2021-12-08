@@ -1,5 +1,5 @@
 ***********
-User Manual
+User Manual 3D vieuwer
 ***********
 
 Introduction

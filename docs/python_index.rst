@@ -27,4 +27,3 @@ Source code: https://gitlab.com/deltares/imod/imod-python
 
    python_install
    python_getting_started
-   python_howdoi

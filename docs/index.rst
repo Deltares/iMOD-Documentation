@@ -121,7 +121,6 @@ between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
 .. toctree::
    :hidden:
 
-   qgis_index
    viewer_index
    python_index
    workflow_index
