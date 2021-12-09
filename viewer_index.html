@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>iMOD 3D Viewer &#8212; iMOD Suite  documentation</title>
+    <title>iMOD Viewer &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -36,7 +36,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Install" href="viewer_install.html" />
-    <link rel="prev" title="3. Known Issues" href="qgis_known_issues.html" />
+    <link rel="prev" title="iMOD Suite" href="index.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -61,15 +61,9 @@
   
     <div id="navbar-menu" class="collapse navbar-collapse">
       <ul id="navbar-main-elements" class="navbar-nav">
-        <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="qgis_index.html">
-  iMOD QGIS plugin
- </a>
-</li>
-
-<li class="toctree-l1 current active nav-item">
+        <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
-  iMOD 3D Viewer
+  iMOD Viewer
  </a>
 </li>
 
@@ -120,8 +114,18 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="viewer_user_manual.html">
-   2. User Manual
+  <a class="reference internal" href="qgis_user_manual.html">
+   1. User Manual QGIS plugin
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3dviewer_user_manual.html">
+   2. User Manual 3D vieuwer
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="qgis_known_issues.html">
+   2. Known Issues
   </a>
  </li>
 </ul>
@@ -160,12 +164,27 @@
               
               <div>
                 
-  <section id="imod-3d-viewer">
-<h1>iMOD 3D Viewer<a class="headerlink" href="#imod-3d-viewer" title="Permalink to this headline">¶</a></h1>
-<p>The iMOD 3D viewer can visualize unstructured grids (UGRID)
-as well as structured grids (<code class="docutils literal notranslate"><span class="pre">.idf</span></code>) in 3D.
-To fully utilize the functionality of the 3D viewer,
-the iMOD QGIS plugin is required as well.</p>
+  <section id="imod-viewer">
+<h1>iMOD Viewer<a class="headerlink" href="#imod-viewer" title="Permalink to this headline">¶</a></h1>
+<p>The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.</p>
+<ul>
+<li><p>The iMOD 3D Viewer is a 3D viewer for grids and datasets.
+It supports IDF files, UGRID files and Grb.disu files that contain an unstructured layered grid.
+The 3D Viewer also supports viewing some non-grid objects like IPF files and Shapefiles.</p></li>
+<li><p>The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS.
+The primary components are Timeseries and cross-section visualization, connecting to the 3D Viewer and  and visualisation of IPF files.</p>
+<dl class="simple">
+<dt>Primary components are:</dt><dd><ul class="simple">
+<li><p>Connecting to the iMOD 3D viewer</p></li>
+<li><p>Timeseries visualization</p></li>
+<li><p>Cross-section visualization</p></li>
+<li><p>Reading .IPF files</p></li>
+<li><p>Easy viewing of NHI data</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
 <a class="reference internal image-reference" href="_images/example-dommel.png"><img alt="_images/example-dommel.png" src="_images/example-dommel.png" style="width: 600px;" /></a>
 <div class="toctree-wrapper compound">
 </div>
@@ -177,11 +196,11 @@ the iMOD QGIS plugin is required as well.</p>
               
               <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="qgis_known_issues.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>Known Issues</p>
+            <p class="prev-next-title">iMOD Suite</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="viewer_install.html" title="next page">

@@ -3,7 +3,7 @@
     :hidden:
 
 ***********
-User Manual
+User Manual QGIS plugin
 ***********
 
 Configuration

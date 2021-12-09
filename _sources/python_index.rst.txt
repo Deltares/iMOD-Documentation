@@ -18,6 +18,8 @@ Currently we support the creation of the following MODFLOW-based models:
 * `iMOD-WQ <https://oss.deltares.nl/web/imod>`__, which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)
 
 Documentation: https://deltares.gitlab.io/imod/imod-python
+This documentation includes a section "How do I" which can be used for common data conversions in imod-python or xarray. This section will be regular updated based
+on the different questions of users. 
 
 Source code: https://gitlab.com/deltares/imod/imod-python
 
@@ -27,4 +29,3 @@ Source code: https://gitlab.com/deltares/imod/imod-python
 
    python_install
    python_getting_started
-   python_howdoi

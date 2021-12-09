@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Further Links &#8212; iMOD Suite  documentation</title>
+    <title>Install &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -35,7 +35,6 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="1. A conceptual fresh-salt model" href="workflow_wq.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -78,8 +77,8 @@
  </a>
 </li>
 
-<li class="toctree-l1 current active nav-item">
- <a class="current reference internal nav-link" href="#">
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="further_links.html">
   Further Links
  </a>
 </li>
@@ -119,29 +118,9 @@
               
               <div class="toc-item">
                 
-<div class="tocsection onthispage pt-5 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
 
 <nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#videos">
-   Videos
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#practical-tips">
-   Practical Tips
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#source-code">
-   Source Code
-  </a>
- </li>
-</ul>
-
+    
 </nav>
               </div>
               
@@ -161,34 +140,68 @@
               
               <div>
                 
-  <section id="further-links">
-<h1>Further Links<a class="headerlink" href="#further-links" title="Permalink to this headline">¶</a></h1>
-<section id="videos">
-<h2>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">¶</a></h2>
-<p>A list of videos which are iMOD Suite related are shown below.</p>
+  <section id="install">
+<span id="viewer-install"></span><h1>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h1>
+<p>To install the iMOD Viewer components (3D Viewer &amp; QGIS plugin),
+download the installer
+<a class="reference external" href="https://download.deltares.nl/en/download/imod-viewer/">via this link</a>.
+If the subscription worked correctly,
+you will receive a download link via e-mail within only a few minutes.</p>
+<p>Unzip the zipfile, which includes the viewer installer.
+Double click the <cite>.msi</cite> file.</p>
+<p>This will open up the first screen of the setup wizard.</p>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="_images/wizard_start.png"><img alt="_images/wizard_start.png" src="_images/wizard_start.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">The starting screen.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Click <em>Next</em> here, which will open up the next screen, which is the
+license screen.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="_images/wizard_license.png"><img alt="_images/wizard_license.png" src="_images/wizard_license.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">The license screen</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Tick the “I accept” tickbox, and click <em>Next</em>.</p>
+<p>This will open up the installation selection screen.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="_images/wizard_setup_type.png"><img alt="_images/wizard_setup_type.png" src="_images/wizard_setup_type.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Installation selection type.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>You can select a <em>Minimal</em> or <em>Complete</em> installation here,
+by clicking the respective buttons.</p>
+<p>Note that the QGIS plugin, which comes only with a <em>Complete</em> install,
+is required to use all features of the iMOD viewer.
+These are:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://oss.deltares.nl/web/imod/-/international-imod-user-day-2021">DSD 2021 with explanation iMOD viewer and iMOD-python and 3D viewer</a></p></li>
+<li><p>Drawing fence diagrams</p></li>
+<li><p>Loading only a sub section of the map (useful for large files)</p></li>
+<li><p>Access to more legends.</p></li>
 </ul>
-</section>
-<section id="practical-tips">
-<h2>Practical Tips<a class="headerlink" href="#practical-tips" title="Permalink to this headline">¶</a></h2>
-<p>We also maintain documentation with general practical and technical tips.
-It varies from fixing specific Powershell errors to a full explanation on how
-to do proper version control of both your data and scripts with Git and DVC.</p>
-<p><a class="reference external" href="https://deltares.gitlab.io/imod/imod-practical-tips/">iMOD Practical tips</a></p>
-</section>
-<section id="source-code">
-<h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
-<p>Below is the list of repositories that contain
-the source code of the individual components.
-You can raise issues, or suggest changes, here.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/Deltares/iMOD-Documentation">iMOD Documentation Github</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Deltares/imod-qgis">iMOD QGIS plugin Github</a></p></li>
-<li><p><a class="reference external" href="https://github.com/Deltares/imod-gui">iMOD 3D Viewer Github</a></p></li>
-<li><p><a class="reference external" href="https://gitlab.com/deltares/imod/imod-python">iMOD Python Gitlab</a></p></li>
-</ul>
-</section>
+<p>After selecting the preferred installation type,
+you still have to click <em>Next</em> before installation continues.</p>
+<p>This will open the install screen.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/wizard_install.png"><img alt="_images/wizard_install.png" src="_images/wizard_install.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">The wizard install screen</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Click <em>Install</em> and after installation is complete, click <em>Finalize</em>.
+You should now be ready to go.</p>
+<p>The installer will also create a program shortcut to the pdf with documentation.
+If you open the Windows <em>Start</em> window and type “iMOD Suite User Manual”
+it should pop up.</p>
+<figure class="align-default" id="id5">
+<a class="reference internal image-reference" href="_images/pdf_program_shortcut.png"><img alt="_images/pdf_program_shortcut.png" src="_images/pdf_program_shortcut.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">A program shortcut should created by the installer to the User Manual.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </section>
 
 
@@ -196,14 +209,7 @@ You can raise issues, or suggest changes, here.</p>
               
               
               <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="workflow_wq.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>A conceptual fresh-salt model</p>
-        </div>
-    </a>
+<div class='prev-next-area'>
 </div>
               
           </main>
