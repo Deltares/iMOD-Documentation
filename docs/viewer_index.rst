@@ -9,15 +9,10 @@ The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.
   The 3D Viewer also supports viewing some non-grid objects like IPF files and Shapefiles.
 
 * The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS.  
-  The primary components are Timeseries and cross-section visualization, connecting to the 3D Viewer and  and visualisation of IPF files.
-  
-  Primary components are:
-     * Connecting to the iMOD 3D viewer
-     * Timeseries visualization
-     * Cross-section visualization
-     * Reading .IPF files
-     * Easy viewing of NHI data
-
+  Its primary components are visualization of timeseries, 
+  both at points as well as on an unstructured grid, 
+  cross-section visualization, including borelogs, and
+  connecting to the 3D Viewer.
 
 .. image:: screenshots/viewer_index/example-dommel.png
    :width: 600px
