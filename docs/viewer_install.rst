@@ -33,7 +33,7 @@ Run the .msi you can download `on the Deltares download
 portal <https://download.deltares.nl/en/download/imod-viewer/>`_
 
 Follow the installation instructions for 
-:ref:`the viewer install <viewer_install_msi>`, 
+:ref:`the viewer install <viewer-install-msi>`, 
 and make sure to do a *Complete* install.
 
 ==============================================

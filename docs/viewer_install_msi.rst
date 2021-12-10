@@ -1,4 +1,4 @@
-.. _viewer-install:
+.. _viewer-install-msi:
 
 *******
 Install
