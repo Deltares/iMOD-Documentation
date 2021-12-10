@@ -35,8 +35,8 @@ modelling with MODFLOW 6 (including unstructured meshes):
    cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID 
    and ipf's.
 #. :doc:`iMOD 3D Viewer <3dviewer_user_manual>`:
-   A 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID 
-   file format.
+   A 3D Viewer for interactive 3D visualisation of unstructured input and output. 
+   Supports UGRID file format.
 #. :doc:`iMOD python <python_index>`:
    An Python package to support MODFLOW groundwater modeling. It makes it easy 
    to go from your raw data to a fully defined MODFLOW model, with the aim 
