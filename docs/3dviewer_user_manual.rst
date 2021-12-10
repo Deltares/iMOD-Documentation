@@ -550,9 +550,9 @@ will be skewed towards the values of the small cells.
    Heat map legend with percentiles on and off. Without
    percentiles (left), the white color is the middle of the legend range.
    With percentiles on (right),the color map is distorted and white is now
-   the median value (50%) of the dataset. In general, a color that represents *N*%
+   the median value (50%) of the dataset. In general, a color that represents *N* %
    of the range in the linear legend, is mapped to the value that is larger
-   than *N*% of the data in the percentiles legend.
+   than *N* % of the data in the percentiles legend.
 
 
 Legend sidepane
