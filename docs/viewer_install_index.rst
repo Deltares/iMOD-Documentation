@@ -18,4 +18,4 @@ After downloading, please unzip the iMOD zip file and install the MSI file as de
 .. toctree::
    :hidden:
 
-   viewer_install
+   viewer_install_msi
