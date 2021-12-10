@@ -2,9 +2,9 @@
     :maxdepth: 2 
     :hidden:
 
-***********
-User Manual QGIS plugin
-***********
+***********************
+QGIS plugin User Manual
+***********************
 
 Configuration
 #############
