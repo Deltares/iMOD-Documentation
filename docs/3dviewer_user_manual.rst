@@ -298,7 +298,7 @@ moves the slider one step forward per second, or slower if updating the
 plot takes longer. The animation can be stopped using the “stop” button.
 
 The decision on what time to display for each dataset is taken as
-follows (see :numref:`_imageTimerules`):
+follows (see :numref:`imageTimerules`):
 
 -  invariant datasets are shown regardless of the viewer time’
 
