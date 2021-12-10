@@ -65,9 +65,9 @@ that the checkbox *iMOD* is checked.
 
 .. _system-wide:
 
-============================================
+=============================================
 Extra: Installing the QGIS plugin system-wide
-============================================
+=============================================
 There are cases where a system-wide QGIS installation is required, for example on computational servers, where multiple users need to use the software.
 Requiring each user to install the plugin themselves can be a burden.
 
@@ -76,42 +76,52 @@ This requires the following steps:
 1. Installing the OSGeo4W QGIS installation
 2. Putting the plugin files in the right folder.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Installing the OSGeo4W QGIS installation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Download the OSGeo4W installer from the
   `QGIS website <https://qgis.org/en/site/forusers/download.html>`_
+
 - Right-click ``osgeo4w-setup.exe`` and click *Run as administrator*
+  
 - At the starting screen, choose *Advanced Install*
+  
 - In the *Choose Installation Type* screen, 
   choose *Install from Internet* if you have access to the internet, 
   this will download the files to a folder called something like: 
   ``%APPDATA%\Local\Temp\http%3a%2f%2fdownload.osgeo.org%2fosgeo4w%2fv2%2f\`` 
   
   You can use this folder to *Install from Local Directory* later (for example on a restricted server)
+
 - In *Choose Installation Directory* check *All Users*
+  
 - In "Select Local Package Directory", you can leave the default options
+  
 - If you previously checked "Install from Internet": 
 	- in the *Select Connection Type*, choose *Direct Connection*
 	- in *Choose Download Sites*, choose http://download.osgeo.org
+  
 - In the *Select Packages* screen, make sure the following components are installed:
 	- under *Desktop*, *qgis: QGIS Desktop*.
 	- under *Libs*, *python3-pandas*
+
   A component will be installed if there is a version number in the "New" column 
   (If *Skip* change this by clicking the cell with *Skip* in it).
+
+- After downloading an installing, check *Finish*
+
 .. note::
   TIP: Maximize the screen to see the package names
-- After downloading an installing, check *Finish*
 
 .. figure:: screenshots/qgis/osgeo4w-select-packages.png
 
   The *Select packages* screen enlarged. If you click *Skip*, 
   a version number should appear in the column *New*.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Putting the plugin files in the right folder
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Download the iMOD QGIS plugin code from the `Github page <https://github.com/Deltares/imod-qgis>`_ 
 
 Unpack the zip files, and copy the ``imodqgis`` folder to your QGIS plugin directory. 
