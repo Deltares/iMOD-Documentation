@@ -16,7 +16,7 @@ The workflow consists of the following steps:
 5. Use the plugin to view the results in the iMOD 3D viewer
 
 ===================
-1. Creating a model
+Creating a model
 ===================
 
 The iMOD-python script below creates a simple 3D iMOD-WQ model.
@@ -34,7 +34,7 @@ This creates freshwater lens along the strip.
     :language: python
 
 ====================
-2. Running the model
+Running the model
 ====================
 
 This model requires the iMOD-WQ kernel, 
@@ -58,7 +58,7 @@ This will run the iMOD-WQ model, and should not take more than 10 seconds.
 .. image:: screenshots/workflows/wq/cmd_run_output.png
 
 =======================
-3. Convert output data
+Convert output data
 =======================
 
 iMOD-WQ writes IDF files, a data format used in iMOD 5, 
@@ -74,7 +74,7 @@ which can be read by QGIS.
     :language: python
 
 ==============================
-4. Viewing the results in QGIS
+Viewing the results in QGIS
 ==============================
 
 Start QGIS and open the ``./results/output_ugrid.nc`` file as a mesh.
@@ -125,7 +125,7 @@ but you can select whatever colormap you think is suitable!
     You should see this if you followed precisely what we did.
 
 ============================================
-5. Viewing the results in the iMOD 3D Viewer
+Viewing the results in the iMOD 3D Viewer
 ============================================
 
 As a final step we will look at the results in the iMOD 3D Viewer.

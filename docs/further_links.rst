@@ -7,7 +7,7 @@ Videos
 =======
 A list of videos which are iMOD Suite related are shown below.
 
-* `DSD 2020 with explanation iMOD-python and 3D viewer <https://vimeo.com/507476122>`_
+* `DSD 2021 with explanation iMOD viewer and iMOD-python and 3D viewer <https://oss.deltares.nl/web/imod/-/international-imod-user-day-2021>`_
 
 ===============
 Practical Tips

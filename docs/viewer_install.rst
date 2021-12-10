@@ -1,76 +1,130 @@
-.. _viewer-install:
-
 *******
 Install
 *******
 
-To install the iMOD Viewer components (3D Viewer & QGIS plugin),
-download the installer 
-`via this link <https://download.deltares.nl/en/download/imod-viewer/>`_.
-If the subscription worked correctly, 
-you will receive a download link via e-mail within only a few minutes.
+**NOTE: These are install instructions for the beta release**
 
-Unzip the zipfile, which includes the viewer installer.
-Double click the `.msi` file.
+For the complete iMOD viewer (QGIS plugin and 3D viewer) can be installed
+using the Deltares installer. A working QGIS is needed before installing the 
+iMOD viewer.
+It is also possible to install the QGIS plugin using the QGIS plugin repository.
+This installation is without the 3D viewer. 
 
-This will open up the first screen of the setup wizard.
+The differentways to install the QGIS plugin are described under sections 1.2, 1.3 and 1.4.
+Each of these, however, require the user to install QGIS. 
+To install the QGIS plugin, we recommend running the iMOD Viewer installer (1.2), 
+which will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin
 
-.. figure:: screenshots/viewer_installation/wizard_start.png
-    :width: 500px
-    :figwidth: image
+==================
+Installing QGIS
+==================
+You can download the standalone QGIS setup 
+`on the QGIS website <https://qgis.org/en/site/forusers/download.html>`_
+We recommend downloading the LTR (Long Term Release) version here.
+After downloading the QGIS setup, run it.
 
-    The starting screen.
+This installs a user installation of QGIS, which is sufficient in most cases.
+For a system wide installation, see :ref:`system-wide`.
 
-Click *Next* here, which will open up the next screen, which is the
-license screen.
+======================================
+Installing with the Deltares setup
+======================================
+Run the .msi you can download `on the Deltares download
+portal <https://download.deltares.nl/en/download/imod-viewer/>`_
 
-.. figure:: screenshots/viewer_installation/wizard_license.png
-    :width: 500px
-    :figwidth: image
+Follow the installation instructions for 
+:ref:`the viewer install <viewer-install-msi>`, 
+and make sure to do a *Complete* install.
 
-    The license screen
+==============================================
+Installing from the QGIS plugin repository
+==============================================
 
-Tick the "I accept" tickbox, and click *Next*.
+In QGIS, navigate to *Plugins > Manage and Install Plugins > All*. 
+In the search bar, type: "*iMOD*".
+Select the iMOD plugin, and click "Install".
 
-This will open up the installation selection screen.
+This does not install the iMOD 3D Viewer; 
+so for 3D viewing functionality, follow step **2a**, 
+but instead select a *Minimal* install.
 
-.. figure:: screenshots/viewer_installation/wizard_setup_type.png
-    :width: 500px
-    :figwidth: image
+===================================================
+Manually download and copy the iMOD QGIS plugin
+===================================================
+Download the iMOD QGIS plugin code from the `Github page <https://github.com/Deltares/imod-qgis>`_ 
 
-    Installation selection type.
+Unpack the zip files, and copy the ``imodqgis`` folder to your QGIS plugin directory. 
+This is probably located in your Appdata folder.
+In windows it is something such as:
+``c:\Users\%USER%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins``
 
-You can select a *Minimal* or *Complete* installation here,
-by clicking the respective buttons. 
+If you cannot find the folder, follow `these instructions <https://gis.stackexchange.com/a/274312>`_.
 
-Note that the QGIS plugin, which comes only with a *Complete* install,
-is required to use all features of the iMOD viewer. 
-These are: 
+In QGIS, make sure under *Plugins > Manage and Install Plugins > Installed* 
+that the checkbox *iMOD* is checked.
 
-* Drawing fence diagrams 
-* Loading only a sub section of the map (useful for large files)
-* Access to more legends.
+.. _system-wide:
 
-After selecting the preferred installation type, 
-you still have to click *Next* before installation continues.
+=============================================
+Extra: Installing the QGIS plugin system-wide
+=============================================
+There are cases where a system-wide QGIS installation is required, for example on computational servers, where multiple users need to use the software.
+Requiring each user to install the plugin themselves can be a burden.
 
-This will open the install screen.
+This requires the following steps:
 
-.. figure:: screenshots/viewer_installation/wizard_install.png
-    :width: 500px
-    :figwidth: image
+1. Installing the OSGeo4W QGIS installation
+2. Putting the plugin files in the right folder.
 
-    The wizard install screen
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Installing the OSGeo4W QGIS installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Click *Install* and after installation is complete, click *Finalize*.
-You should now be ready to go.
+- Download the OSGeo4W installer from the
+  `QGIS website <https://qgis.org/en/site/forusers/download.html>`_
 
-The installer will also create a program shortcut to the pdf with documentation.
-If you open the Windows *Start* window and type "iMOD Suite User Manual" 
-it should pop up.
+- Right-click ``osgeo4w-setup.exe`` and click *Run as administrator*
+  
+- At the starting screen, choose *Advanced Install*
+  
+- In the *Choose Installation Type* screen, 
+  choose *Install from Internet* if you have access to the internet, 
+  this will download the files to a folder called something like: 
+  ``%APPDATA%\Local\Temp\http%3a%2f%2fdownload.osgeo.org%2fosgeo4w%2fv2%2f\`` 
+  
+  You can use this folder to *Install from Local Directory* later (for example on a restricted server)
 
-.. figure:: screenshots/viewer_installation/pdf_program_shortcut.png
-    :width: 500px
-    :figwidth: image
+- In *Choose Installation Directory* check *All Users*
+  
+- In "Select Local Package Directory", you can leave the default options
+  
+- If you previously checked "Install from Internet": 
+	- in the *Select Connection Type*, choose *Direct Connection*
+	- in *Choose Download Sites*, choose http://download.osgeo.org
+  
+- In the *Select Packages* screen, make sure the following components are installed:
+	- under *Desktop*, *qgis: QGIS Desktop*.
+	- under *Libs*, *python3-pandas*
 
-    A program shortcut should created by the installer to the User Manual.
+  A component will be installed if there is a version number in the "New" column 
+  (If *Skip* change this by clicking the cell with *Skip* in it).
+
+- After downloading an installing, check *Finish*
+
+.. note::
+  TIP: Maximize the screen to see the package names
+
+.. figure:: screenshots/qgis/osgeo4w-select-packages.png
+
+  The *Select packages* screen enlarged. If you click *Skip*, 
+  a version number should appear in the column *New*.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Putting the plugin files in the right folder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Download the iMOD QGIS plugin code from the `Github page <https://github.com/Deltares/imod-qgis>`_ 
+
+Unpack the zip files, and copy the ``imodqgis`` folder to your QGIS plugin directory. 
+This is probably located in your Appdata folder.
+In windows it is something such as:
+``c:\OSGeo4W\apps\qgis\python\plugins\imodqgis``

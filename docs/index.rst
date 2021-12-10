@@ -30,13 +30,13 @@ the latest developments in the data science ecosystem, by utilizing:
 The iMOD Suite offers three different modules which support 
 modelling with MODFLOW 6 (including unstructured meshes):
 
-#. :doc:`iMOD QGIS Plugin <qgis_index>`:
+#. :doc:`iMOD QGIS Plugin <qgis_user_manual>`:
    A QGIS plugin for visualisation of model input and output with tool for 
    cross-sections, timeseries and link to the 3D viewer. Supports NetCDF, UGRID 
    and ipf's.
-#. :doc:`iMOD 3D Viewer <viewer_index>`:
-   A 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID 
-   file format.
+#. :doc:`iMOD 3D Viewer <3dviewer_user_manual>`:
+   A 3D Viewer for interactive 3D visualisation of unstructured input and output. 
+   Supports UGRID file format.
 #. :doc:`iMOD python <python_index>`:
    An Python package to support MODFLOW groundwater modeling. It makes it easy 
    to go from your raw data to a fully defined MODFLOW model, with the aim 
@@ -121,7 +121,6 @@ between iMOD Suite and iMOD 5 for the components and supported MODFLOW6 packages
 .. toctree::
    :hidden:
 
-   qgis_index
    viewer_index
    python_index
    workflow_index
