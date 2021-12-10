@@ -1,6 +1,6 @@
-***********
-User Manual 3D vieuwer
-***********
+*********************
+3D Viewer User Manual
+*********************
 
 Introduction
 ------------
