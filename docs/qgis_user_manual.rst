@@ -61,6 +61,23 @@ and see which points have data defined within a certain time frame.
 
 * Press "Add" to load the file into the QGIS explorer.
 
+.. warning:: 
+
+  Currently the IPF reader is not able to read every IPF file, 
+  as iMOD 5 supports quite a wide range of IPF files.
+  For example, iMOD 5 supports both whitespace and comma seperated files, 
+  whereas the QGIS plugin only supports comma seperated IPF files.
+  If the plugin is unable to read your IPF file, 
+  it is best to 
+  `read the file with iMOD Python <https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.read>`_ 
+  and consequently 
+  `write it again <https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.write>`_. 
+  This can help, because the IPF reader in iMOD Python 
+  is a lot more flexible, but its writer always writes
+  to a specific format. 
+  We plan to improve the flexibility of the plugin's IPF reader.
+
+
 .. figure:: screenshots/qgis/ipf-reader.png
 
     The Open IPF widget. 
