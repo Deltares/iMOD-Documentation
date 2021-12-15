@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2. QGIS plugin User Manual &#8212; iMOD Suite  documentation</title>
+    <title>2. QGIS Plugin User Manual &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -115,7 +115,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. QGIS plugin User Manual
+   2. QGIS Plugin User Manual
   </a>
  </li>
  <li class="toctree-l1">
@@ -209,7 +209,7 @@
   <div class="toctree-wrapper compound">
 </div>
 <section id="qgis-plugin-user-manual">
-<h1><span class="section-number">2. </span>QGIS plugin User Manual<a class="headerlink" href="#qgis-plugin-user-manual" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">2. </span>QGIS Plugin User Manual<a class="headerlink" href="#qgis-plugin-user-manual" title="Permalink to this headline">¶</a></h1>
 <section id="configuration">
 <h2><span class="section-number">2.1. </span>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -273,6 +273,22 @@ and see which points have data defined within a certain time frame.</p>
 <li><p>Press the “…” button to select a path to a file (as you would in other QGIS windows).</p></li>
 <li><p>Press “Add” to load the file into the QGIS explorer.</p></li>
 </ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Currently the IPF reader is not able to read every IPF file,
+as iMOD 5 supports quite a wide range of IPF files.
+For example, iMOD 5 supports both whitespace and comma seperated files,
+whereas the QGIS plugin only supports comma seperated IPF files.
+If the plugin is unable to read your IPF file,
+it is best to
+<a class="reference external" href="https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.read">read the file with iMOD Python</a>
+and consequently
+<a class="reference external" href="https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.write">write it again</a>.
+This can help, because the IPF reader in iMOD Python
+is a lot more flexible, but its writer always writes
+to a specific format.
+We plan to improve the flexibility of the plugin’s IPF reader.</p>
+</div>
 <figure class="align-default" id="id4">
 <img alt="_images/ipf-reader1.png" src="_images/ipf-reader1.png" />
 <figcaption>
