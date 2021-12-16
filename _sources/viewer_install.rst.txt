@@ -20,7 +20,7 @@ Installing QGIS
 ==================
 You can download the standalone QGIS setup 
 `on the QGIS website <https://qgis.org/en/site/forusers/download.html>`_
-We recommend downloading the LTR (Long Term Release) version here.
+We recommend downloading a QGIS version > 3.18 here.
 After downloading the QGIS setup, run it.
 
 This installs a user installation of QGIS, which is sufficient in most cases.
