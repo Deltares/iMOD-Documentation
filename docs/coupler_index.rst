@@ -1,6 +1,10 @@
-*********************
+************
+iMOD Coupler
+************
+
+=====================
 Coupling to MODFLOW 6
-*********************
+=====================
 
 Deltares have worked together with the USGS to create the `MODFLOW API
 <https://www.sciencedirect.com/science/article/pii/S1364815221002991>`_ , based
@@ -17,7 +21,7 @@ package with bindings for the API, which allow you to run and update (at
 runtime) a MODFLOW 6 model from Python. This allows coupling MODFLOW 6 to other
 computational cores. One of its first applications is a coupling of MODFLOW 6 to
 MetaSWAP, as part of the 
-`imod_coupler <https://github.com/Deltares/imod_coupler>`_ 
+`iMOD Coupler <https://github.com/Deltares/imod_coupler>`_ 
 package. Other applications can be found in `this paper.
 <https://www.sciencedirect.com/science/article/pii/S1364815221002991>`_
 
