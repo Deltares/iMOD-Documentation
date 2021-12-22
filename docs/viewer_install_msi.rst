@@ -1,4 +1,4 @@
-.. _viewer-install:
+.. _viewer-install-msi:
 
 *******
 Install
@@ -9,6 +9,13 @@ download the installer
 `via this link <https://download.deltares.nl/en/download/imod-viewer/>`_.
 If the subscription worked correctly, 
 you will receive a download link via e-mail within only a few minutes.
+
+.. warning::
+    The QGIS plugin of course requires QGIS.
+    You can download the standalone QGIS setup 
+    `on the QGIS website <https://qgis.org/en/site/forusers/download.html>`_
+    We recommend downloading a QGIS version > 3.18 here.
+    After downloading the QGIS setup, run it.
 
 Unzip the zipfile, which includes the viewer installer.
 Double click the `.msi` file.

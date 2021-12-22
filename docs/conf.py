@@ -131,7 +131,7 @@ latex_documents = [
         "iMOD Viewer install guide",
         _stdauthor,
         "manual",
-        True,
+        False,
     ),
 ]
 

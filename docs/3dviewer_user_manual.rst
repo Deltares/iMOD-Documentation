@@ -1,6 +1,6 @@
-***********
-User Manual 3D vieuwer
-***********
+*********************
+3D Viewer User Manual
+*********************
 
 Introduction
 ------------
@@ -298,7 +298,7 @@ moves the slider one step forward per second, or slower if updating the
 plot takes longer. The animation can be stopped using the “stop” button.
 
 The decision on what time to display for each dataset is taken as
-follows (see :numref:`_imageTimerules`):
+follows (see :numref:`imageTimerules`):
 
 -  invariant datasets are shown regardless of the viewer time’
 
@@ -550,9 +550,9 @@ will be skewed towards the values of the small cells.
    Heat map legend with percentiles on and off. Without
    percentiles (left), the white color is the middle of the legend range.
    With percentiles on (right),the color map is distorted and white is now
-   the median value (50%) of the dataset. In general, a color that represents *N*%
+   the median value (50%) of the dataset. In general, a color that represents *N* %
    of the range in the linear legend, is mapped to the value that is larger
-   than *N*% of the data in the percentiles legend.
+   than *N* % of the data in the percentiles legend.
 
 
 Legend sidepane
