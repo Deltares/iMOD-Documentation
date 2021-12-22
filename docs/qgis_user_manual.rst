@@ -69,9 +69,9 @@ and see which points have data defined within a certain time frame.
   whereas the QGIS plugin only supports comma seperated IPF files.
   If the plugin is unable to read your IPF file, 
   it is best to 
-  `read the file with iMOD Python <https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.read>`_ 
+  `read the file with iMOD Python <https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html>`_ 
   and consequently 
-  `write it again <https://deltares.gitlab.io/imod/imod-python/api/ipf.html#imod.ipf.write>`_. 
+  `write it again <https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html>`_. 
   This can help, because the IPF reader in iMOD Python 
   is a lot more flexible, but its writer always writes
   to a specific format. 
