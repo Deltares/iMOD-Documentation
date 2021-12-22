@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Coupling to MODFLOW 6 &#8212; iMOD Suite  documentation</title>
+    <title>iMOD Coupler &#8212; iMOD Suite  documentation</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -75,7 +75,7 @@
 
 <li class="toctree-l1 current active nav-item">
  <a class="current reference internal nav-link" href="#">
-  Coupling to MODFLOW 6
+  iMOD Coupler
  </a>
 </li>
 
@@ -133,6 +133,11 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coupling-to-modflow-6">
+   Coupling to MODFLOW 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#source-code">
    Source Code
   </a>
@@ -158,8 +163,10 @@
               
               <div>
                 
-  <section id="coupling-to-modflow-6">
-<h1>Coupling to MODFLOW 6<a class="headerlink" href="#coupling-to-modflow-6" title="Permalink to this headline">¶</a></h1>
+  <section id="imod-coupler">
+<h1>iMOD Coupler<a class="headerlink" href="#imod-coupler" title="Permalink to this headline">¶</a></h1>
+<section id="coupling-to-modflow-6">
+<h2>Coupling to MODFLOW 6<a class="headerlink" href="#coupling-to-modflow-6" title="Permalink to this headline">¶</a></h2>
 <p>Deltares have worked together with the USGS to create the <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">MODFLOW API</a> , based
 on the <a class="reference external" href="https://bmi-spec.readthedocs.io/en/latest/">Basic Model Interface (BMI)</a> with some extensions. The first
 version of this functionality became available with the release of MODFLOW
@@ -172,8 +179,9 @@ package with bindings for the API, which allow you to run and update (at
 runtime) a MODFLOW 6 model from Python. This allows coupling MODFLOW 6 to other
 computational cores. One of its first applications is a coupling of MODFLOW 6 to
 MetaSWAP, as part of the
-<a class="reference external" href="https://github.com/Deltares/imod_coupler">imod_coupler</a>
+<a class="reference external" href="https://github.com/Deltares/imod_coupler">iMOD Coupler</a>
 package. Other applications can be found in <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">this paper.</a></p>
+</section>
 <section id="source-code">
 <h2>Source Code<a class="headerlink" href="#source-code" title="Permalink to this headline">¶</a></h2>
 <p>The developments on <code class="docutils literal notranslate"><span class="pre">xmipy</span></code> can be found on:
