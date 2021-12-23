@@ -56,9 +56,9 @@ modelling with MODFLOW 6 (including unstructured meshes):
 
 .. figure:: screenshots/index/NHI-zz_3d_viewer.png
 
-  The chlorine concentrations computed by the NHI-fresh-salt model.
+  The chlorine concentrations computed by the NHI-fresh-salt model
   for the province of Zeeland, plotted in the new iMOD 3D viewer. 
-  The top layer is made opaque, 
+  The top layer is made partly transparent, 
   creating the pretty mist effect in the creek ridges.
 
 Comparison with iMOD 5
