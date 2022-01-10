@@ -5,9 +5,11 @@ Known Issues
 
 .. _plot_axis_off:
 
---------------
+QGIS plugin
+###########
+
 Plot axis off
---------------
+-------------
 
 In the QGIS plugin, 
 a weird offset in the plot axis can occur when you use a multiple monitor setup.
@@ -32,5 +34,23 @@ so you can fix this as a user by either:
   The proposed fix of PyQtgraph requires us to run specific python code before 
   the application starts, which is impossible to do for a plugin.
   https://pyqtgraph.readthedocs.io/en/latest/how_to_use.html#hidpi-displays
-  Qt6 has better support for multiple model setups, so when QGIS migrates
+  Qt6 has better support for multiple monitor setups, so when QGIS migrates
   to Qt6, this shouldn't be an issue anymore.
+
+3D Viewer
+#########
+
+MSVCR100.dll missing
+--------------------
+
+You might get an error at startup of the 3D viewer, such as:
+*"The code execution cannot proceed because MSVCR100.dll was not found. 
+Reinstalling the progam may fix the problem"*
+
+This usually happens on a clean machine, which has not yet installed the 
+Microsoft Visual C++ 2010 redistributable. 
+`You can download it here <https://www.microsoft.com/en-us/download/details.aspx?id=26999>`_
+Make sure to check if you have a 32-bits or 64-bits Windows version on your 
+system and consequently installing the right version of the redistributable. 
+For a more detailed walkthrough, 
+`see this link. <https://www.drivereasy.com/knowledge/msvcr100-dll-missing-or-not-found-on-windows-solved/#h-fix-2-download-microsoft-visual-c-2010-redistributable-package>`_ 

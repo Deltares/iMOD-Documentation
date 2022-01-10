@@ -155,9 +155,28 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-axis-off">
-   4.1. Plot axis off
+  <a class="reference internal nav-link" href="#qgis-plugin">
+   4.1. QGIS plugin
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     4.1.1. Plot axis off
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-viewer">
+   4.2. 3D Viewer
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#msvcr100-dll-missing">
+     4.2.1. MSVCR100.dll missing
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -182,8 +201,10 @@
                 
   <section id="known-issues">
 <h1><span class="section-number">4. </span>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h1>
-<section id="plot-axis-off">
-<span id="id1"></span><h2><span class="section-number">4.1. </span>Plot axis off<a class="headerlink" href="#plot-axis-off" title="Permalink to this headline">¶</a></h2>
+<section id="qgis-plugin">
+<span id="plot-axis-off"></span><h2><span class="section-number">4.1. </span>QGIS plugin<a class="headerlink" href="#qgis-plugin" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h3><span class="section-number">4.1.1. </span>Plot axis off<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>In the QGIS plugin,
 a weird offset in the plot axis can occur when you use a multiple monitor setup.
 Both the Time series widget as well as the Cross-section widget can suffer from this.</p>
@@ -202,6 +223,23 @@ so you can fix this as a user by either:</p>
 <em>Rearrange your displays</em> select the monitor you want to view QGIS on,
 and finally tick the box <em>Make this my main display</em></p></li>
 </ul>
+</section>
+</section>
+<section id="d-viewer">
+<h2><span class="section-number">4.2. </span>3D Viewer<a class="headerlink" href="#d-viewer" title="Permalink to this headline">¶</a></h2>
+<section id="msvcr100-dll-missing">
+<h3><span class="section-number">4.2.1. </span>MSVCR100.dll missing<a class="headerlink" href="#msvcr100-dll-missing" title="Permalink to this headline">¶</a></h3>
+<p>You might get an error at startup of the 3D viewer, such as:
+<em>“The code execution cannot proceed because MSVCR100.dll was not found.
+Reinstalling the progam may fix the problem”</em></p>
+<p>This usually happens on a clean machine, which has not yet installed the
+Microsoft Visual C++ 2010 redistributable.
+<a class="reference external" href="https://www.microsoft.com/en-us/download/details.aspx?id=26999">You can download it here</a>
+Make sure to check if you have a 32-bits or 64-bits Windows version on your
+system and consequently installing the right version of the redistributable.
+For a more detailed walkthrough,
+<a class="reference external" href="https://www.drivereasy.com/knowledge/msvcr100-dll-missing-or-not-found-on-windows-solved/#h-fix-2-download-microsoft-visual-c-2010-redistributable-package">see this link.</a></p>
+</section>
 </section>
 </section>
 

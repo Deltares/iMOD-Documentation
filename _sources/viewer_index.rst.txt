@@ -24,4 +24,4 @@ The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.
    viewer_install
    qgis_user_manual
    3dviewer_user_manual
-   qgis_known_issues
+   viewer_known_issues
