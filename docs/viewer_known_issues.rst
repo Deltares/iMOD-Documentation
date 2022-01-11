@@ -50,7 +50,9 @@ Reinstalling the progam may fix the problem"*
 This usually happens on a clean machine, which has not yet installed the 
 Microsoft Visual C++ 2010 redistributable. 
 `You can download it here <https://www.microsoft.com/en-us/download/details.aspx?id=26999>`_
-Make sure to check if you have a 32-bits or 64-bits Windows version on your 
+
+Make sure to check if you have a 32-bit or 64-bit Windows version on your 
 system and consequently installing the right version of the redistributable. 
-For a more detailed walkthrough, 
-`see this link. <https://www.drivereasy.com/knowledge/msvcr100-dll-missing-or-not-found-on-windows-solved/#h-fix-2-download-microsoft-visual-c-2010-redistributable-package>`_ 
+You can find this out pressing the Windows key (or clicking *Start*) and typing
+*System Information*. Click it, and look under *"System Type"*. If it says
+*x64-based PC*, you have a 64-bit system. 
