@@ -34,3 +34,15 @@ https://github.com/Deltares/xmipy
 The example of ``imod_coupler`` with the coupling between MODFLOW 6 and the
 unsaturated zone model MetaSWAP can be found on:
 https://github.com/Deltares/imod_coupler 
+
+============
+Known Issues
+============
+When using the imod_coupler an file error can occur on the dll of the kernel 
+(for example MODFLOW 6 or MetaSWAP). The following error can occur: *'FileNotFoundError: Could not find 
+module "\path\to\MetaSWAP.dll" (or one of its dependencies).
+Try using the full path with constructor syntax.'* 
+
+This is caused by not having the Intel redistrutable libraries on the system. 
+They can be installed from https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html. 
+Make sure to choose the correct platform and the version for 'Parallel Studio XE 2020'. 
