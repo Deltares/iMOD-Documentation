@@ -168,6 +168,11 @@
      4.1.1. Plot axis off
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ipf-reader-does-not-support-all-ipf-files">
+     4.1.2. IPF reader does not support all IPF files
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -227,6 +232,22 @@ so you can fix this as a user by either:</p>
 <em>Rearrange your displays</em> select the monitor you want to view QGIS on,
 and finally tick the box <em>Make this my main display</em></p></li>
 </ul>
+</section>
+<section id="ipf-reader-does-not-support-all-ipf-files">
+<h3><span class="section-number">4.1.2. </span>IPF reader does not support all IPF files<a class="headerlink" href="#ipf-reader-does-not-support-all-ipf-files" title="Permalink to this headline">¶</a></h3>
+<p>Currently the IPF reader is not able to read every IPF file,
+as iMOD 5 supports quite a wide range of IPF files.
+For example, iMOD 5 supports both whitespace and comma seperated files,
+whereas the QGIS plugin only supports comma seperated IPF files.
+If the plugin is unable to read your IPF file,
+it is best to
+<a class="reference external" href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html">read the file with iMOD Python</a>
+and consequently
+<a class="reference external" href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html">write it again</a>.
+This can help, because the IPF reader in iMOD Python
+is a lot more flexible, but its writer always writes
+to a specific format.
+We plan to improve the flexibility of the plugin’s IPF reader.</p>
 </section>
 </section>
 <section id="d-viewer">

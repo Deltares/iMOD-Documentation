@@ -37,6 +37,23 @@ so you can fix this as a user by either:
   Qt6 has better support for multiple monitor setups, so when QGIS migrates
   to Qt6, this shouldn't be an issue anymore.
 
+IPF reader does not support all IPF files
+-----------------------------------------
+
+Currently the IPF reader is not able to read every IPF file, 
+as iMOD 5 supports quite a wide range of IPF files.
+For example, iMOD 5 supports both whitespace and comma seperated files, 
+whereas the QGIS plugin only supports comma seperated IPF files.
+If the plugin is unable to read your IPF file, 
+it is best to 
+`read the file with iMOD Python <https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html>`_ 
+and consequently 
+`write it again <https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html>`_. 
+This can help, because the IPF reader in iMOD Python 
+is a lot more flexible, but its writer always writes
+to a specific format. 
+We plan to improve the flexibility of the plugin's IPF reader.
+
 3D Viewer
 #########
 
