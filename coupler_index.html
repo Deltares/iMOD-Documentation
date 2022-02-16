@@ -146,11 +146,6 @@
    Source Code
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#known-issues">
-   Known Issues
-  </a>
- </li>
 </ul>
 
 </nav>
@@ -198,16 +193,6 @@ package. Other applications can be found in <a class="reference external" href="
 <p>The example of <code class="docutils literal notranslate"><span class="pre">imod_coupler</span></code> with the coupling between MODFLOW 6 and the
 unsaturated zone model MetaSWAP can be found on:
 <a class="reference external" href="https://github.com/Deltares/imod_coupler">https://github.com/Deltares/imod_coupler</a></p>
-</section>
-<section id="known-issues">
-<h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
-<p>When using the imod_coupler an file error can occur on the dll of the kernel
-(for example MODFLOW 6 or MetaSWAP). The following error can occur: <em>‘FileNotFoundError: Could not find
-module “pathtoMetaSWAP.dll” (or one of its dependencies).
-Try using the full path with constructor syntax.’</em></p>
-<p>This is caused by not having the Intel redistrutable libraries on the system.
-They can be installed from <a class="reference external" href="https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html">https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html</a>.
-Make sure to choose the correct platform and the version for ‘Parallel Studio XE 2020’.</p>
 </section>
 </section>
 
