@@ -28,9 +28,31 @@ package. Other applications can be found in `this paper.
 ===========
 Source Code
 ===========
-The developments on ``xmipy`` can be found on:
-https://github.com/Deltares/xmipy 
+The developments on ``xmipy`` can be found on: 
+https://github.com/Deltares/xmipy
 
 The example of ``imod_coupler`` with the coupling between MODFLOW 6 and the
 unsaturated zone model MetaSWAP can be found on:
-https://github.com/Deltares/imod_coupler 
+https://github.com/Deltares/imod_coupler
+
+============
+Known Issues
+============
+
+iMOD v5.2 release
+#################
+
+The MetaSWAP and Modflow6 libraries provided with iMOD 5.2 for ``imod_coupler``
+were not statically linked. This could result in the following error:
+
+.. code:: python
+
+    FileNotFoundError: '''Could not find module "\path\to\MetaSWAP.dll" (or one
+    of its dependencies). Try using the full path with constructor syntax.'''
+
+This is caused by not having the Intel redistrutable libraries on the system.
+`These can be downloaded from this page
+<https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html>`_.
+Make sure to choose the correct platform and the version for 'Parallel Studio XE
+2020'. 
+
