@@ -1,0 +1,64 @@
+---
+title: "Tutorial iMOD-Suite: introduction + create a MODFLOW6 model"
+output-dir: ../_build
+format:
+  html:
+    code-fold: true
+jupyter: python3
+
+---
+*[NB. Windows 8.1 is not supported]*
+
+# Objective
+
+In this Tutorial you learn the basics of iMOD-Suite, this includes QGIS and the
+IMOD Plugin, iMOD-Python and the iMOD 3D viewer. Therefore, we load and analyze
+a few file types. The files describe geohydrologic datasets for an area in the
+town of Abbeyfeale, Ireland. For this area we will develop a simple groundwater
+model using Python. Therefore, we start a command prompt for Python. From that
+command prompt you will run 7 prepared Python scripts. Each script handles a
+single step in the MODFLOW 6 modelling process: the preprocessing of basic data,
+the creation of MODFLOW 6 input files, running of the MODFLOW6 model and
+analyzing the results. The files created with each step are analyzed in QGIS. 
+
+# Introduction: schematization ground water model Abbeyfeale
+
+Abbeyfeale is a historic market town in the County Limerick, Ireland. The local
+authorities are worried about the effects of drier summers on groundwater
+levels. A simple groundwater model can provide them with a quantification of the
+expected groundwater level decline. Geology: much of Ireland can be considered
+as relatively glacial subsoil (typically < 15 m thick) overlying very hard old
+fractured rock. For basic models this can be represented as one layer for the
+subsoil and one layer for bedrock.
+
+![Village of Abbeyfeale and the components of the simplified Abbeyfeale model](figures/topo-Abbeyfeale_simplified-Abbeyfeale-model.png){width=100%}
+
+# Getting Started 
+(@)  Launch QGIS from your START menu, your desktop or click on …\\QGIS3.24.0\\bin\\qgis-bin.exe.
+We start with the creation of a new QGIS project.
+
+Intermezzo QGIS language 
+Perhaps your QGIS was installed in another language
+than English. While the Tutorial refers to the English version, let’s change
+than to English. 
+
+2.	From the main menu click on Settings and select Options. (e.g. in Dutch Extra and Opties) wrap: sentence
+3.	In the new window go to the General section on the left.
+4.	From the drop-down menu “User interface translation” select American English and click on OK.
+5.	Close QGIS and open it again to activate your language change. 
+
+(@)	From the main menu click on Project and select New.
+The data we use in this part of the training is from Ireland, so next we select the appropriate projection.
+(@)	From the main menu click on Project and select Properties.  
+(@)	In the Properties window select the category CRS, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the Apply button, followed by the OK button to close the window.  
+
+For navigation purposes, let us load the universal topography of Open Street Map (OSM)
+(@)	Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to Panels and select Browser Panel.
+(@)	The Browser panel contains the group XYZ Tiles. From that group double click on the item OpenStreetMap. This layer is now added to the panel Layers. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.
+
+Let us now open a series of basic files in QGIS. We start with a digital elevation map. 
+(@)	Go to Layer in the main menu, select Add Layer and pick the option Add Raster Layer. 
+(@)	In the section Source click on the    button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.  
+(@)	Click the Add button and the layer is added to the panel Layers
+(@)	Click Close to leave the window. 
+(@)	In the panel Layers select the layer “Abbeyfeale DTM” and click the   button to zoom in to the layer. 
