@@ -2,6 +2,8 @@
 title: "Tutorial iMOD-Suite: introduction + create a MODFLOW6 model"
 output-dir: ../_build
 format: html
+mainfont: Arial
+#monofont: Roboto
 ---
 *[NB. Windows 8.1 is not supported]*
 
@@ -25,21 +27,21 @@ as relatively glacial subsoil (typically < 15 m thick) overlying very hard old
 fractured rock. For basic models this can be represented as one layer for the
 subsoil and one layer for bedrock.
 
-![Village of Abbeyfeale and the components of the simplified Abbeyfeale model](figures/topo-Abbeyfeale_simplified-Abbeyfeale-model.png){width=100%}
+![Village of Abbeyfeale and the components of the simplified Abbeyfeale model](figures/figure_topo-Abbeyfeale_simplified-Abbeyfeale-model.png){width=100%}
 
 # Getting Started 
-(@) Launch QGIS from your START menu, your desktop or click on …\\QGIS3.24.0\\bin\\qgis-bin.exe.
+(@) Launch QGIS from your START menu, your desktop or click on
+…\\QGIS3.24.0\\bin\\qgis-bin.exe.
 
-<!-- \fbox{\parbox{5in}{   
-}} -->
 ---
 
-> **Intermezzo QGIS language** \newline
-> Perhaps your QGIS was installed in another language than English. While the Tutorial refers to the English version, let’s change than to English.
+> **Intermezzo QGIS language** \newline Perhaps your QGIS was installed in
+> another language than English. While the Tutorial refers to the English
+> version, let’s change than to English.
 
-> a. From the main menu click on Settings and select Options. (e.g. in Dutch *Extra* and *Opties*)
-> a. In the new window go to the General section on the left.
-> a. From the drop-down menu *“User interface translation”* select American English and click on OK.
+> a. From the main menu click on *Settings* and select *Options*. (e.g. in Dutch *Extra* and *Opties*) 
+> a. In the new window go to the *General section* on the left. 
+> a. From the drop-down menu *“User interface translation”* select *American English* and click on OK. 
 > a. Close QGIS and open it again to activate your language change.
 ---
 
@@ -47,20 +49,57 @@ We start with the creation of a new QGIS project.
 
 (@) From the main menu click on *Project* and select *New*. 
 
-The data we use in this part of the training is from Ireland, so next we select the appropriate projection.
+The data we use in this part of the training is from Ireland, so next we select
+the appropriate projection.
 
-(@) From the main menu click on *Project* and select *Properties*.
-(@) In the Properties window select the category CRS, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the Apply button, followed by the OK button to close the window.  
+(@) From the main menu click on *Project* and select *Properties*. 
+(@) In the *Properties* window select the category *CRS*, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the *Apply* button, followed by the OK button to close the window.  
 
-For navigation purposes, let us load the universal topography of Open Street Map (OSM)
+For navigation purposes, let us load the universal topography of Open Street Map
+(OSM)
 
-(@)	Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to Panels and select Browser Panel.
-(@)	The Browser panel contains the group XYZ Tiles. From that group double click on the item OpenStreetMap. This layer is now added to the panel Layers. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.
+(@) Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to *Panels* and select *Browser Panel*. 
+(@) The Browser panel contains the group *XYZ Tiles*. From that group double click on the item *OpenStreetMap*. This layer is now added to the panel *Layers*. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.
 
-Let us now open a series of basic files in QGIS. We start with a digital elevation map. 
+Let us now open a series of basic files in QGIS. We start with a digital elevation map.
 
-(@)	Go to Layer in the main menu, select Add Layer and pick the option Add Raster Layer. 
-(@)	In the section Source click on the    button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.  
-(@)	Click the Add button and the layer is added to the panel Layers
-(@)	Click Close to leave the window. 
-(@)	In the panel Layers select the layer “Abbeyfeale DTM” and click the   button to zoom in to the layer. 
+(@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Raster Layer*. 
+(@) In the section *Source* click on the ![](figures/button_select.png) button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.  
+(@) Click the *Add* button and the layer is added to the panel *Layers*. 
+(@) Click *Close* to leave the window. 
+(@) In the panel Layers select the layer “Abbeyfeale DTM” and click the ![](figures/button_enlarge.png) button to zoom in to the layer.
+
+We see the contours of a river, but the legend is gray only by default. Let’s change that.
+
+(@) Double click on the layer “Abbeyfeale DTM”. The window “Layer Properties” opens. 
+(@) Select the group *Symbology*. 
+(@) From the dropdown *Render Type* select the type *Singleband pseudocolor*.
+(@) Be sure a Color Ramp is selected as well. 
+(@) Make sure the dropdown menu *Interpolation* shows Linear and the dropdown menu *Mode* shows *Continuous*.
+(@) Click *Apply* to change the colors and *OK* to close the window.
+(@) You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: ![](figures/button_zoom-menu.png)  
+
+Your screen might look like Figure \ref{figure_DTM-in-QGIS}. 
+
+![DTM in QGIS with the topography of OpenStreetMap Cross as background\label{figure_DTM-in-QGIS}](figures/figure_DTM-in-QGIS.png){width=100%}
+
+Let us save this project to be able to return to is later or in case of a crash of QGIS.
+
+(@) Go to Project in the main menu, select Save As and select a folder and a file name for your project, e.g. “…\\abbeyfeale\\tutorial1.qgz”
+
+Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like our iMOD Plugin. 
+
+(@) Go to *Plugins* from the main menu and select *Manage and Install Plugins… * and a window opens.
+(@) On the left, select the group *All* to see all available plugins. 
+(@) Search for “iMOD” and see that the iMOD plugin is successfully installed. 
+(@) Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.
+(@) Search for “Value Tool”, install it and *Close* the Plugins window.
+
+The tool is now visible as a panel on the left and a button ![](figures/button_valuetool.png)  
+
+(@) Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location. 
+
+Next step is to load a polygon file representing the recharge zones in the project area.
+
+(@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Vector Layer*. 
+
