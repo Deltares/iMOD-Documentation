@@ -102,3 +102,6 @@ venv.bak/
 *.ipf
 *.run
 
+# Quarto
+/.quarto/
+_build/
