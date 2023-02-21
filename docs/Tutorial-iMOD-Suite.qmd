@@ -3,7 +3,7 @@ title: "Tutorial iMOD-Suite: introduction + create a MODFLOW6 model"
 output-dir: ../_build
 format: html
 mainfont: Arial
-#monofont: Roboto
+
 ---
 *[NB. Windows 8.1 is not supported]*
 
@@ -79,9 +79,9 @@ We see the contours of a river, but the legend is gray only by default. Let’s 
 (@) Click *Apply* to change the colors and *OK* to close the window.
 (@) You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: ![](figures/button_zoom-menu.png)
 
-Your screen might look like Figure \ref{figure_DTM-in-QGIS}. 
+Your screen might look like @fig-figure_DTM-in-QGIS
 
-![DTM in QGIS with the topography of OpenStreetMap Cross as background\label{figure_DTM-in-QGIS}](figures/figure_DTM-in-QGIS.png){width=100%}
+![DTM in QGIS with the topography of OpenStreetMap Cross as background](figures/figure_DTM-in-QGIS.png){width=100% #fig-figure_DTM-in-QGIS}
 
 Let us save this project to be able to return to is later or in case of a crash of QGIS.
 
@@ -141,11 +141,11 @@ In the empty cross-section we can add a selection of (geological) layers. For no
 (@) Click the button *Add* to add this layer to the cross-section manager. 
 (@) Click the button *Plot* to draw this layer in the cross section. 
 
-Your screen might look like Figure \ref{figure_Crosssection-with-borelogs} although the colors are different than in your screen. Feel free to use the column *Symbology* to change the legend. 
+Your screen might look like @fig-figure_Crosssection-with-borelogs although the colors are different than in your screen. Feel free to use the column *Symbology* to change the legend. 
 
 **NOTE**: If no lines appear on your screen, make sure you have set your project CRS to EPSG:2157 (see earlier step).
 
-![Cross section with borelogs\label{figure_Crosssection-with-borelogs}](figures/figure_Crosssection-with-borelogs.png){width=100%}
+![Cross section with borelogs](figures/figure_Crosssection-with-borelogs.png){width=100% #fig-figure_Crosssection-with-borelogs}
 
 For now, we leave QGIS and the iMOD Plugin to return later. 
 
@@ -181,7 +181,7 @@ Results 1: The result is a raster file (NetCDF format) describing the mask of ou
 
 (@) **Optional step**. Load the topography_raster.nc file into QGIS. The file is in the folder “Abbeyfeale\\data\\2-interim”.
 
-<ins>Script 2 – River \newline</ins> \newline
+<ins>Script 2 – River \newline</ins>
 This script opens a shape file with river elements. It rasterizes it project cell size and adds a default river depth (1 m) and bottom resistance. 
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\2-create-river-system.py* and press ENTER.
@@ -191,7 +191,7 @@ Results 2: The result is a raster file (NetCDF format) for the river data, conta
 (@) Load the file “Abbeyfeale\\data\\2-interim\\river_raster.nc” into QGIS via the menu *Layer > Add Layer > Add Raster Layer*. From the interim window you see that the NC files contains 3 river parameters. 
 (@) Click on the button *Add Layers* and click *Close* to close the Data Source Manager.
 
-<ins>Script 3 – Recharge</ins> \newline
+<ins>Script 3 – Recharge</ins>
 This script opens the shape file with recharge zones (polygons) containing the recharge in mm per year. The recharge zones are rasterized to the project extent and cell size and the scripts adds a seasonal forcing resulting in a time series of daily recharge values for 1 year.  
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\3-create-recharge.py* and press ENTER.
@@ -203,10 +203,10 @@ From the panel Layer you can see that the file is a timeseries because a small c
 
 There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
 
-(@) For the animation over time, activate the Temporal Control Panel with the button ![](figures/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar
+(@) For the animation over time, activate the *Temporal Control Panel* with the button ![](figures/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar
 (@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar
 
-Your display should look similar with Figure \ref{figure_RCH-in-TemporalController-and-TimeSeriesPlot}, except for the red line below. 
+Your display should look similar with @fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot, except for the red line below. 
 
 (@) In the Temporal Controller panel click the green play button (![](figures/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
 (@) Increase the *Step* from 1 to 14 days and start the animation with a click on the Play button (![](figures/button_TemporalControler-play.png){width=4%}).
@@ -216,9 +216,9 @@ Your display should look similar with Figure \ref{figure_RCH-in-TemporalControll
 (@) Click the button *Select Points* (your mouse becomes a ![](figures/mouse_plus.png) and with the left mouse button select 3 points ad random. 
 (@) Finally click the Plot button and the 3 timeseries are added to the chart. Colors can be changed.  
 
-![Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)\label{figure_RCH-in-TemporalController-and-TimeSeriesPlot}](figures/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png){width=100%}
+![Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)](figures/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png){width=100% #fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot}
 
-<ins>Script 4 – Geohydrology</ins> \newline
+<ins>Script 4 – Geohydrology</ins>
 This script reads default parameter values from the file “parameters.csv” in order to create a NetCDF file with top and bottom of 3 layers including the geohydraulic parameters. The default values are: \newline 
 
 | Paremeter  | Value | Quantity |Description |
@@ -252,9 +252,9 @@ TIP: If you do not see any line, perhaps the axes are not defined well. To view 
 
 (@) Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.
 
-![Three model layers coloured by permeability in the iMOD cross-section tool\label{figure_CrossSectionTool-3layers}](figures/figure_CrossSectionTool-3layers.png){width=100%}
+![Three model layers coloured by permeability in the iMOD cross-section tool](figures/figure_CrossSectionTool-3layers.png){width=100% #fig-figure_CrossSectionTool-3layers}
  
-<ins>Script 5 – Create MODFLOW 6 input</ins> \newline
+<ins>Script 5 – Create MODFLOW 6 input</ins>
 Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the *Deltaforge prompt*.  
 [If you are interested in the content of the script, open it in your Python editor (e.g. Spyder) or a simple Text editor]. 
 
@@ -265,7 +265,7 @@ The result of the script is a folder with the standard MODFLOW 6 input.
 (@) Optional step \newline 
 Visit the folder "abbeyfeale\\data\\3-input" with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.
 
-<ins>Script 6 – Run the MODFLOW 6 model</ins> \newline
+<ins>Script 6 – Run the MODFLOW 6 model</ins>
 iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as "abbeyfeale\\bin\\mf6.exe".  
 
 (@) In the Deltaforge prompt type the command: *Python src\\3-model\\6-run-model.py* and press ENTER.  
@@ -273,7 +273,7 @@ iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provid
 (@) Open the file “data\\3-input\\mf.sim.lst” in the Text Editor you prefer. Go to the end of the file and see the total run time of the model and a confirmation of a “normal termination of the simulation”.
 (@) Open the file “data\\3-input\\gwf_1\\gwf_1.lst”. At the end of the file you see the Volume Budgets, the water balance for the last stress period.
 
-<ins>Script 7 - Convert the MODFLOW 6 results for QGIS</ins>\newline
+<ins>Script 7 - Convert the MODFLOW 6 results for QGIS</ins>
 The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Python contains a function to convert the output into NetCDF files. 
 
 (@) In the *Deltaforge prompt* type the command: *Python src\\3-model\\7-post-process-output.py* and press ENTER.  
@@ -299,7 +299,7 @@ Now we try to show an animation of the variation of calculated Heads over time a
 (@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar
 (@) From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1. 
 
-![Calculated head with MODFLOW 6 on 3 points within the model area.\label{figure_Timeseries-Heads-in-3-points.png}](figures/figure_Timeseries-Heads-in-3-points.png){width=100%}
+![Calculated head with MODFLOW 6 on 3 points within the model area](figures/figure_Timeseries-Heads-in-3-points.png){width=100% #fig-figure_Timeseries-Heads-in-3-points}
 
 The QGIS part of the tutorial ends here. You can save your QGIS project now. 
 
@@ -323,9 +323,9 @@ Now we’ll open a dataset containing Heads calculated with a MODFLOW model. Thi
 (@) Click on the “>” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”. 
 (@) Click on the “>” sign left from both the section “All Layer” and “Layered Datasets”.  
 
-Your screen might look like Figure \ref{figure_3DViewer_headriveroverview}. 
+Your screen might look like @fig-figure_3DViewer_headriveroverview
 
-![Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer\label{figure_3DViewer_headriveroverview}](figures/figure_3DViewer_headriveroverview.png){width=100%}
+![Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer](figures/figure_3DViewer_headriveroverview.png){width=100% #fig-figure_3DViewer_headriveroverview}
 
 Let’s now experience with the viewer controls.
 
@@ -354,4 +354,30 @@ Some final experience with the other viewer controls.
 
 The colors in the display by default referred to the *Elevation* of the layers. Let’s now color the layers by calculated *Head*. 
 
+(@) In the list of imported files select “Calculated-Heads”
+(@) From the subset “layered Datasets” double click on the element “data”. 
 
+Wait a few seconds and the name turns **bold** and the colors in the display change. 
+
+(@) Select the name “data” and click your right mouse button to open a pop-up window.
+(@) Select “Edit legend” to open the “Legend editor” (see figure on the right).  
+(@) Select PIYG for Color scale.
+(@) Check the Percentiles box. 
+(@) Click on OK and the window will close. The colors in your display change automatically.
+
+The imported file doesn’t contain one single Head, but a timeseries of calculated Heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Time Slider to display the data through time. \newline
+![](figures/button_3Dtool-TimeSlider.png){width=60%}
+ 
+(@) First click the button “Back(+y)” for a nice 3D view
+(@) Click the button (![](figures/button_3Dtool-TimeSlider-Start.png){width=3%}) to start the animation. It is a large dataset to the view in the display only changes slowly. 
+(@) Stop the animation with the button (![](figures/button_3Dtool-TimeSlider-Stop.png){width=3%}).
+(@) Play around with the slider. 
+
+That’s all for now. You can save your session if you like.
+
+(@) From the main menu choose “File” and select “Save As…” to save the session as an *.imod file.
+(@) Close the 3D viewer via menu “File” and select Quit””.
+
+Thank you for your patience and attention. 
+
+![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_legendEditor.png){width=40% fig-align="left"}
