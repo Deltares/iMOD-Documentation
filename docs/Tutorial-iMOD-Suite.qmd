@@ -251,3 +251,107 @@ Let’s create a cross-section with the permeability plot within each layer.
 TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (![](figures/button_CrossSection-ViewAll.png){width=3%}) in the lower left of the chart. 
 
 (@) Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.
+
+![Three model layers coloured by permeability in the iMOD cross-section tool\label{figure_CrossSectionTool-3layers}](figures/figure_CrossSectionTool-3layers.png){width=100%}
+ 
+<ins>Script 5 – Create MODFLOW 6 input</ins> \newline
+Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the *Deltaforge prompt*.  
+[If you are interested in the content of the script, open it in your Python editor (e.g. Spyder) or a simple Text editor]. 
+
+(@) In the *Deltaforge prompt* type the command: *Python src\\2-build\\5-build-model.py* and press ENTER.  
+
+The result of the script is a folder with the standard MODFLOW 6 input. 
+
+(@) Optional step \newline 
+Visit the folder "abbeyfeale\\data\\3-input" with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.
+
+<ins>Script 6 – Run the MODFLOW 6 model</ins> \newline
+iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as "abbeyfeale\\bin\\mf6.exe".  
+
+(@) In the Deltaforge prompt type the command: *Python src\\3-model\\6-run-model.py* and press ENTER.  
+(@) You can check the logfile of the model in order to see if it was run successful. 
+(@) Open the file “data\\3-input\\mf.sim.lst” in the Text Editor you prefer. Go to the end of the file and see the total run time of the model and a confirmation of a “normal termination of the simulation”.
+(@) Open the file “data\\3-input\\gwf_1\\gwf_1.lst”. At the end of the file you see the Volume Budgets, the water balance for the last stress period.
+
+<ins>Script 7 - Convert the MODFLOW 6 results for QGIS</ins>\newline
+The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Python contains a function to convert the output into NetCDF files. 
+
+(@) In the *Deltaforge prompt* type the command: *Python src\\3-model\\7-post-process-output.py* and press ENTER.  
+
+The result of this script is a NetCDF file with the calculated head for 365 days.
+
+(@) Load the file “Abbeyfeale\\data\\4-output\\hds_mesh.nc” into QGIS. 
+
+By default, the variable bottom_layer_1 is loaded. We will change the selected variable into Heads and pick a legend specific for plotting of time series. 
+
+(@) Double click on the layer “hds_mesh” to open the *Layer Properties window*. 
+(@) Select the group Source on the left and see that the mesh contains several datasets. 
+(@) Select the group Symbology on the left and select the first tab *Dataset* (![](figures/button_SymbologyDataset.png){width=3%}). Here we can select the group we want to plot, for now it is “head_layer_1”.  
+(@) Click on the icon (![](figures/button_SymbologyDataset-unselected.png){width=3%}) on the line for “head_layer_1” and change it into (![](figures/button_SymbologyDataset-selected.png){width=3%}). Click on Apply.
+(@) Select the second tab Contours (![](figures/button_SymbologyContours.png){width=3%} ). 
+(@) Set the Min value on 40.00 and the Max value on 60.00 in order to see head changes over time. 
+(@) From the dropdown menu Color Ramp select Turbo and click on OK to close the window. 
+
+Now we try to show an animation of the variation of calculated Heads over time and as timeseries. 
+
+(@) For the animation over time, activate the Temporal Control Panel with the button (![](figures/button_TemporalControllerPanel.png){width=3%}) on the Map Navigation Toolbar
+(@) From you experience with this tool, try to start the animation with timestep of 14 days. 
+(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar
+(@) From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1. 
+
+![Calculated head with MODFLOW 6 on 3 points within the model area.\label{figure_Timeseries-Heads-in-3-points.png}](figures/figure_Timeseries-Heads-in-3-points.png){width=100%}
+
+The QGIS part of the tutorial ends here. You can save your QGIS project now. 
+
+# iMOD 3D Viewer
+Last part of the iMOD Suite tutorial we will explore the iMOD 3D Viewer. This viewer is developed while QGIS does not support 3D viewing. It can display your geological data (layers and borehole data) but also data variation through time like chloride concentrations.
+
+There are 2 options to start the 3D Viewer. One option is to select layers in QGIS and select the 3D Viewer icon on the iMOD toolbar ![](figures/button_iMOD-3D-tool.png){width=3%}. The selected layers are opened in the 3D Viewer. The other option is to start the 3D Viewer directly. In this short Tutorial we’ll pursue the second option. 
+
+(@) Launch the iMOD 3D Viewer from your START menu or your desktop. Search for “imod6.exe”. 
+(@) Maximize the program window for a better view. 
+
+We display some data from Brabant, a province in The Netherlands. Let’s first import an overlay file showing the surface water elements.
+
+(@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp" 
+(@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png))
+
+Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This NetCDF file contains for each model layer the top, the bottom and a timeseries of calculated heads.
+
+(@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\data\\1-external\\Brabant-data\\Calculated-Heads.nc" 
+(@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png))
+(@) Click on the “>” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”. 
+(@) Click on the “>” sign left from both the section “All Layer” and “Layered Datasets”.  
+
+Your screen might look like Figure \ref{figure_3DViewer_headriveroverview}. 
+
+![Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer\label{figure_3DViewer_headriveroverview}](figures/figure_3DViewer_headriveroverview.png){width=100%}
+
+Let’s now experience with the viewer controls.
+
+(@) Spin the mouse wheel forward to zoom in and spin backwards to zoom out. On a laptop, move two fingers up and down on the touchpad.
+(@) In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (![](figures/button_zoomtoextent.png)) to return to the initial view. 
+(@) Combine the Shift button + right mouse and move the camera horizontally/vertically with each mouse move (or finger on your touch pad).
+(@) Combine the Ctrl button + right mouse and rotate the camera around its lens with a mouse move (or finger on your touch pad).
+(@) Go back to the initial view with the “zoom-to-extent” button (![](figures/button_zoomtoextent.png)).
+(@) Hold the right mouse button while moving the mouse and the camera moves around the grid. 
+
+The imported data is a nice example of an unstructured grid. 
+
+(@) Zoom in to the upper left part of the grid. Notice that the grid is built from triangles, concentrated around the rivers. 
+(@) Switch the dataset on and off with a click on the (![](figures/button_3Dtool-switchon.png){width=4%}) button in file overview, left of the layer. See the underlaying rivers.
+
+In your display the vertical thickness of the dataset is perhaps rather small. Let’s increase the vertical exaggeration.  
+
+(@) In the upper right corner, switch off the “automatic exaggeration of the z-axis”.
+(@) Now increase the value to 50.0 and the view will change automatically.
+
+Some final experience with the other viewer controls.
+
+(@) Use the buttons (![](figures/button_3Dtool-viewcontrolbar.png){width=35%}) to reposition your camera to another fixed position to the grid.
+(@) Click the button “Toggle Sliders”(![](figures/button_3Dtool-ToggleSlider.png){width=4%}) to activate the sliders for the X, Y and Z direction.
+(@) Experiment with the sliders, both left and right ![](figures/button_3Dtool-Slider.png)
+
+The colors in the display by default referred to the *Elevation* of the layers. Let’s now color the layers by calculated *Head*. 
+
+
