@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite Tutorial</title>
+<title>iMOD Suite Tutorial - Dommel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -87,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Abbeyfeale</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Dommel.html">
+    <a class="nav-link active" href="./Dommel.html" aria-current="page">
  <span class="menu-text">Dommel</span></a>
   </li>  
 </ul>
@@ -108,14 +108,22 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
+  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">iMOD Suite Tutorial</h1>
+<h1 class="title">Dommel</h1>
 </div>
 
 
@@ -130,14 +138,107 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This document features the iMOD Suite tutorials. To download and install the iMOD Suite, <a href="https://deltares.github.io/iMOD-Documentation/viewer_install.html">follow the instructions here</a>. To download the tutorial material, you can follow this link: –URL-here–</p>
-<p>We have prepared the following tutorials, based on what you want to learn:</p>
+<p><em>[NB. Windows 8.1 is not supported]</em></p>
+<section id="topics" class="level1">
+<h1>Topics</h1>
+<p>In this tutorial, you will learn the following:</p>
 <ol type="1">
-<li>QGIS and iMOD plugin: <a href="./Abbeyfeale.html">Abbeyfeale</a></li>
-<li>iMOD 3D Viewer: <a href="./Dommel.html">Dommel</a></li>
+<li>Basic usage of the iMOD 3D Viewer</li>
+<li>View a shapefile in the 3D viewer</li>
+<li>View a grid with timeseries in the 3D viewer</li>
 </ol>
+</section>
+<section id="objective" class="level1">
+<h1>Objective</h1>
+<p>In this tutoral we will explore the iMOD 3D Viewer, based on data of the Dommel, a catchment in south of the Netherlands. This viewer is developed because QGIS does not support 3D viewing. It can display your geological data (layers and borehole data) but also data variation through time like chloride concentrations.</p>
+<p>There are 2 options to start the 3D Viewer. One option is to select layers in QGIS and select the 3D Viewer icon on the iMOD toolbar <img src="figures/button_iMOD-3D-tool.png" class="img-fluid" style="width:3.0%">. The selected layers are opened in the 3D Viewer. The other option is to start the 3D Viewer directly. In this short Tutorial we’ll pursue the second option.</p>
+</section>
+<section id="tutorial" class="level1">
+<h1>Tutorial</h1>
+<ol class="example" type="1">
+<li>Launch the iMOD 3D Viewer from your START menu or your desktop. Search for “imod6.exe”.</li>
+<li>Maximize the program window for a better view.</li>
+</ol>
+<p>We display some data from Brabant, a province in The Netherlands. Let’s first import an overlay file showing the surface water elements.</p>
+<ol start="3" class="example" type="1">
+<li>In the main menu choose “Data”, select “Open overlay” and open the shape file “…\data\1-external\Brabant-data\riv_brabant.shp”</li>
+<li>Select the new layer in the overview and click the “draw-selected-layer” button (<img src="figures/button_3Dtool-redrawlayer.png" class="img-fluid">)</li>
+</ol>
+<p>Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This NetCDF file contains for each model layer the top, the bottom and a timeseries of calculated heads.</p>
+<ol start="5" class="example" type="1">
+<li>In the main menu choose “Data”, select “Open grid file” and open the shape file “..\data\1-external\Brabant-data\Calculated-Heads.nc”</li>
+<li>Select both layers in the overview and click the “draw-selected-layer” button (<img src="figures/button_3Dtool-redrawlayer.png" class="img-fluid">)</li>
+<li>Click on the “&gt;” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”.</li>
+<li>Click on the “&gt;” sign left from both the section “All Layer” and “Layered Datasets”.</li>
+</ol>
+<p>Your screen might look like <a href="#fig-figure_3DViewer_headriveroverview">Figure&nbsp;1</a></p>
+<div id="fig-figure_3DViewer_headriveroverview" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/figure_3DViewer_headriveroverview.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer</figcaption><p></p>
+</figure>
+</div>
+<p>Let’s now experience with the viewer controls.</p>
+<ol start="9" class="example" type="1">
+<li>Spin the mouse wheel forward to zoom in and spin backwards to zoom out. On a laptop, move two fingers up and down on the touchpad.</li>
+<li>In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (<img src="figures/button_zoomtoextent.png" class="img-fluid">) to return to the initial view.</li>
+<li>Combine the Shift button + right mouse and move the camera horizontally/vertically with each mouse move (or finger on your touch pad).</li>
+<li>Combine the Ctrl button + right mouse and rotate the camera around its lens with a mouse move (or finger on your touch pad).</li>
+<li>Go back to the initial view with the “zoom-to-extent” button (<img src="figures/button_zoomtoextent.png" class="img-fluid">).</li>
+<li>Hold the right mouse button while moving the mouse and the camera moves around the grid.</li>
+</ol>
+<p>The imported data is a nice example of an unstructured grid.</p>
+<ol start="15" class="example" type="1">
+<li>Zoom in to the upper left part of the grid. Notice that the grid is built from triangles, concentrated around the rivers.</li>
+<li>Switch the dataset on and off with a click on the (<img src="figures/button_3Dtool-switchon.png" class="img-fluid" style="width:4.0%">) button in file overview, left of the layer. See the underlaying rivers.</li>
+</ol>
+<p>In your display the vertical thickness of the dataset is perhaps rather small. Let’s increase the vertical exaggeration.</p>
+<ol start="17" class="example" type="1">
+<li>In the upper right corner, switch off the “automatic exaggeration of the z-axis”.</li>
+<li>Now increase the value to 50.0 and the view will change automatically.</li>
+</ol>
+<p>Some final experience with the other viewer controls.</p>
+<ol start="19" class="example" type="1">
+<li>Use the buttons (<img src="figures/button_3Dtool-viewcontrolbar.png" class="img-fluid" style="width:35.0%">) to reposition your camera to another fixed position to the grid.</li>
+<li>Click the button “Toggle Sliders”(<img src="figures/button_3Dtool-ToggleSlider.png" class="img-fluid" style="width:4.0%">) to activate the sliders for the X, Y and Z direction.</li>
+<li>Experiment with the sliders, both left and right <img src="figures/button_3Dtool-Slider.png" class="img-fluid"></li>
+</ol>
+<p>The colors in the display by default referred to the <em>Elevation</em> of the layers. Let’s now color the layers by calculated <em>Head</em>.</p>
+<ol start="22" class="example" type="1">
+<li>In the list of imported files select “Calculated-Heads”</li>
+<li>From the subset “layered Datasets” double click on the element “data”.</li>
+</ol>
+<p>Wait a few seconds and the name turns <strong>bold</strong> and the colors in the display change.</p>
+<ol start="24" class="example" type="1">
+<li>Select the name “data” and click your right mouse button to open a pop-up window.</li>
+<li>Select “Edit legend” to open the “Legend editor” (see figure on the right).<br>
+</li>
+<li>Select PIYG for Color scale.</li>
+<li>Check the Percentiles box.</li>
+<li>Click on OK and the window will close. The colors in your display change automatically.</li>
+</ol>
+<p>The imported file doesn’t contain one single head, but a timeseries of calculated heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Time Slider to display the data through time. <img src="figures/button_3Dtool-TimeSlider.png" class="img-fluid" style="width:60.0%"></p>
+<ol start="29" class="example" type="1">
+<li>First click the button “Back(+y)” for a nice 3D view</li>
+<li>Click the button (<img src="figures/button_3Dtool-TimeSlider-Start.png" class="img-fluid" style="width:3.0%">) to start the animation. It is a large dataset to the view in the display only changes slowly.</li>
+<li>Stop the animation with the button (<img src="figures/button_3Dtool-TimeSlider-Stop.png" class="img-fluid" style="width:3.0%">).</li>
+<li>Play around with the slider.</li>
+</ol>
+<p>That’s all for now. You can save your session if you like.</p>
+<ol start="33" class="example" type="1">
+<li>From the main menu choose “File” and select “Save As…” to save the session as an *.imod file.</li>
+<li>Close the 3D viewer via menu “File” and select Quit””.</li>
+</ol>
+<p>Thank you for your patience and attention.</p>
+<div class="quarto-figure quarto-figure-left">
+<figure class="figure">
+<p><img src="figures/figure_3DViewer_LegendEditor.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<p></p><figcaption class="figure-caption">iMOD 3D Viewer - Legend Editor</figcaption><p></p>
+</figure>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
