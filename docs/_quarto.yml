@@ -5,13 +5,19 @@ project:
 website:
   title: "iMOD Suite Tutorial"
   navbar:
+    background: "#080c80"
+    logo: _static/iMOD-doc-logo.svg
     left:
       - Tutorial-iMOD-Suite.qmd
+    right:
+      - icon: github
+        href: https://github.com/Deltares/iMOD-Training
+        aria-label: GitHub
 
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: _static/styles.css
     toc: true
     code-fold: true
 
