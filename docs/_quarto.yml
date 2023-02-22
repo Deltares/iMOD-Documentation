@@ -9,6 +9,7 @@ website:
     logo: _static/iMOD-doc-logo.svg
     left:
       - Abbeyfeale.qmd
+      - Dommel.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training
