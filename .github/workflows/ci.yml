@@ -20,7 +20,16 @@ jobs:
         uses: nschloe/action-checkout-with-lfs-cache@v1
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render Quarto Project
+        run: "quarto render docs --to html"  # TODO add --execute back
+
       - name: Publish to GitHub Pages
+        if: github.event_name != 'pull_request'
         uses: quarto-dev/quarto-actions/publish@v2
         with:
+          path: docs
+          render: false
           target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,5 +1,19 @@
 project:
+  type: website
   output-dir: _build
-  render:
-    - docs/Tutorial-iMOD-Suite.qmd
 
+website:
+  title: "iMOD Suite Tutorial"
+  navbar:
+    left:
+      - Tutorial-iMOD-Suite.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    code-fold: true
+
+  pdf:
+    documentclass: scrreprt

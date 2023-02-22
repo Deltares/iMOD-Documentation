@@ -1,15 +1,12 @@
 ---
-title: "Tutorial iMOD-Suite: introduction + create a MODFLOW6 model"
-output-dir: ../_build
-format: html
-mainfont: Arial
-
+title: "Abbeyfeale"
 ---
+
 *[NB. Windows 8.1 is not supported]*
 
 # Objective
 In this Tutorial you learn the basics of iMOD-Suite, this includes QGIS and the
-IMOD Plugin, iMOD-Python and the iMOD 3D viewer. Therefore, we load and analyze
+iMOD Plugin, iMOD-Python and the iMOD 3D viewer. Therefore, we load and analyze
 a few file types. The files describe geohydrologic datasets for an area in the
 town of Abbeyfeale, Ireland. For this area we will develop a simple groundwater
 model using Python. Therefore, we start a command prompt for Python. From that
@@ -36,7 +33,7 @@ subsoil and one layer for bedrock.
 ---
 
 > **Intermezzo QGIS language** \newline Perhaps your QGIS was installed in
-> another language than English. While the Tutorial refers to the English
+> another language than English. Because the Tutorial refers to the English
 > version, let’s change than to English.
 
 > a. From the main menu click on *Settings* and select *Options*. (e.g. in Dutch *Extra* and *Opties*) 
