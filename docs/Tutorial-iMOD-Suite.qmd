@@ -377,4 +377,4 @@ That’s all for now. You can save your session if you like.
 
 Thank you for your patience and attention. 
 
-![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_legendEditor.png){width=40% fig-align="left"}
+![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_LegendEditor.png){width=40% fig-align="left"}
