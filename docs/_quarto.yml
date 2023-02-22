@@ -8,7 +8,7 @@ website:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
     left:
-      - Tutorial-iMOD-Suite.qmd
+      - Abbeyfeale.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training
