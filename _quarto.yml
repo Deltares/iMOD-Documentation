@@ -1,0 +1,5 @@
+project:
+  output-dir: _build
+  render:
+    - docs/Tutorial-iMOD-Suite.qmd
+
