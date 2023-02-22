@@ -24,12 +24,8 @@ jobs:
       - name: Render Quarto Project
         run: "quarto render docs --to html"  # TODO add --execute back
 
-      - name: Publish to GitHub Pages
-        if: github.event_name != 'pull_request'
-        uses: quarto-dev/quarto-actions/publish@v2
+      - name: Deploy HTML to github pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: docs/_build
-          render: false
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build
