@@ -35,15 +35,15 @@ short Tutorial we’ll pursue the second option.
 We display some data from Brabant, a province in The Netherlands. Let’s first
 import an overlay file showing the surface water elements.
 
-(@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp" 
-(@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png))
+(@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp". 
+(@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png)).
 
 Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This
 NetCDF file contains for each model layer the top, the bottom and a timeseries
 of calculated heads.
 
-(@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\data\\1-external\\Brabant-data\\Calculated-Heads.nc" 
-(@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png))
+(@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\data\\1-external\\Brabant-data\\Calculated-Heads.nc". 
+(@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png)).
 (@) Click on the “>” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”. 
 (@) Click on the “>” sign left from both the section “All Layer” and “Layered Datasets”.  
 
@@ -80,7 +80,7 @@ Some final experience with the other viewer controls.
 The colors in the display by default referred to the *Elevation* of the layers.
 Let’s now color the layers by calculated *Head*.
 
-(@) In the list of imported files select “Calculated-Heads”
+(@) In the list of imported files select “Calculated-Heads”.
 (@) From the subset “layered Datasets” double click on the element “data”. 
 
 Wait a few seconds and the name turns **bold** and the colors in the display
@@ -97,7 +97,7 @@ calculated heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Tim
 Slider to display the data through time. \newline
 ![](figures/button_3Dtool-TimeSlider.png){width=60%}
  
-(@) First click the button “Back(+y)” for a nice 3D view
+(@) First click the button “Back(+y)” for a nice 3D view.
 (@) Click the button (![](figures/button_3Dtool-TimeSlider-Start.png){width=3%}) to start the animation. It is a large dataset to the view in the display only changes slowly. 
 (@) Stop the animation with the button (![](figures/button_3Dtool-TimeSlider-Stop.png){width=3%}).
 (@) Play around with the slider. 
@@ -105,8 +105,8 @@ Slider to display the data through time. \newline
 That’s all for now. You can save your session if you like.
 
 (@) From the main menu choose “File” and select “Save As…” to save the session as an *.imod file.
-(@) Close the 3D viewer via menu “File” and select Quit””.
+(@) Close the 3D viewer via menu “File” and select Quit”.
 
 Thank you for your patience and attention. 
 
-![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_LegendEditor.png){width=40% fig-align="left"}
+![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_LegendEditor.png){width=40% fig-align="left" #fig-figure_3DViewer_LegendEditor}
