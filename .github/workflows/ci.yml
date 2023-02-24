@@ -18,7 +18,7 @@ jobs:
 #       Circumvent this problem: https://github.com/actions/checkout/issues/165
       - name: Checkout code with LFS cache
         uses: nschloe/action-checkout-with-lfs-cache@v1
-        
+
       - name: Install Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
@@ -30,6 +30,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build
+
+      - name: install TinyTex
+        run: quarto install tinytex
 
       - name: Render PDF
         run: "quarto render docs --profile manual --to pdf"
