@@ -1,26 +1,6 @@
 project:
-  type: website
   output-dir: _build
 
-website:
-  title: "iMOD Suite Tutorial"
-  navbar:
-    background: "#080c80"
-    logo: _static/iMOD-doc-logo.svg
-    left:
-      - Abbeyfeale.qmd
-      - Dommel.qmd
-    right:
-      - icon: github
-        href: https://github.com/Deltares/iMOD-Training
-        aria-label: GitHub
-
-format:
-  html:
-    theme: cosmo
-    css: _static/styles.css
-    toc: true
-    code-fold: true
-
-  pdf:
-    documentclass: scrreprt
+profile:
+  group: 
+    - [website, manual]

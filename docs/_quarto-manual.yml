@@ -1,0 +1,14 @@
+project:
+  type: book
+
+book:
+  title: "iMOD Suite Tutorial"
+  chapters:
+    - index.qmd
+    - Abbeyfeale.qmd
+    - Dommel.qmd
+
+format:
+  pdf:
+    documentclass: scrreprt
+    top-level-division: chapter
