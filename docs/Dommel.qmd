@@ -4,7 +4,7 @@ title: "Dommel"
 
 *[NB. Windows 8.1 is not supported]*
 
-# Topics
+## Topics
 
 In this tutorial, you will learn the following:
 
@@ -13,7 +13,7 @@ In this tutorial, you will learn the following:
 1. View a grid with timeseries in the 3D viewer
 
 
-# Objective
+## Objective
 
 In this tutoral we will explore the iMOD 3D Viewer, based on data of the
 Dommel, a catchment in south of the Netherlands. This viewer is developed
@@ -27,7 +27,7 @@ QGIS and select the 3D Viewer icon on the iMOD toolbar
 in the 3D Viewer. The other option is to start the 3D Viewer directly. In this
 short Tutorial we’ll pursue the second option.
 
-# Tutorial
+## Tutorial
 
 (@) Launch the iMOD 3D Viewer from your START menu or your desktop. Search for “imod6.exe”. 
 (@) Maximize the program window for a better view. 
