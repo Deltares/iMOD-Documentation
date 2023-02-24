@@ -141,8 +141,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p><em>[NB. Windows 8.1 is not supported]</em></p>
-<section id="topics" class="level1">
-<h1>Topics</h1>
+<section id="topics" class="level2">
+<h2 class="anchored" data-anchor-id="topics">Topics</h2>
 <p>In this tutorial, you will learn the following:</p>
 <ol type="1">
 <li>Basic usage of QGIS</li>
@@ -151,12 +151,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Run a Python script in a shell</li>
 </ol>
 </section>
-<section id="objective" class="level1">
-<h1>Objective</h1>
+<section id="objective" class="level2">
+<h2 class="anchored" data-anchor-id="objective">Objective</h2>
 <p>In this Tutorial you learn the basics of iMOD-Suite. Therefore, we load and analyze a few file types. The files describe geohydrologic datasets for an area in the town of Abbeyfeale, Ireland. For this area we will develop a simple groundwater model using Python. Therefore, we start a command prompt for Python. From that command prompt you will run 7 prepared Python scripts. Each script handles a single step in the MODFLOW 6 modelling process: the preprocessing of basic data, the creation of MODFLOW 6 input files, running of the MODFLOW6 model and analyzing the results. The files created with each step are analyzed in QGIS.</p>
 </section>
-<section id="introduction-schematization-ground-water-model-abbeyfeale" class="level1">
-<h1>Introduction: schematization ground water model Abbeyfeale</h1>
+<section id="introduction-schematization-ground-water-model-abbeyfeale" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-schematization-ground-water-model-abbeyfeale">Introduction: schematization ground water model Abbeyfeale</h2>
 <p>Abbeyfeale is a historic market town in the County Limerick, Ireland. The local authorities are worried about the effects of drier summers on groundwater levels. A simple groundwater model can provide them with a quantification of the expected groundwater level decline. Geology: much of Ireland can be considered as relatively glacial subsoil (typically &lt; 15 m thick) overlying very hard old fractured rock. For basic models this can be represented as one layer for the subsoil and one layer for bedrock.</p>
 <div id="fig-figure_topo-Abbeyfeale_simplified-Abbeyfeale-model" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -165,8 +165,8 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 </section>
-<section id="getting-started" class="level1">
-<h1>Getting Started</h1>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <ol class="example" type="1">
 <li>Launch QGIS from your START menu, your desktop or click on …\QGIS3.24.0\bin\qgis-bin.exe.</li>
 </ol>
@@ -289,8 +289,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Save your project and keep the QGIS application open.</li>
 </ol>
 </section>
-<section id="imod-python" class="level1">
-<h1>iMOD Python</h1>
+<section id="imod-python" class="level2">
+<h2 class="anchored" data-anchor-id="imod-python">iMOD Python</h2>
 <p>This is the moment where we start with Python. With the help of the iMOD Python package you will create a simple MODFLOW6 model and run it.</p>
 <ul>
 <li>All input we use for this simple model is available in your tutorial folder “abbeyfeale\data\1-external\..”. There you find the spatial data we loaded to QGIS, and there is a CSV file containing all single parameter values: “parameters.csv”.</li>
