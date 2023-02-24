@@ -31,14 +31,15 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build
 
-      - name: install TinyTex
+      - name: Install TinyTex
         run: quarto install tinytex
 
       - name: Render PDF
         run: "quarto render docs --profile manual --to pdf"
 
-      - uses: actions/upload-artifact@v2
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
         with:
-          name: Upload artifact
+          name: iMOD-Suite-Tutorial
           path: |
             docs/_build/iMOD-Suite-Tutorial.pdf
