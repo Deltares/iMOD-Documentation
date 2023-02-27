@@ -1,10 +1,10 @@
 ---
 title: "Abbeyfeale"
+image: figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png
+description: 'Components: QGIS and iMOD plugin'
 ---
 
-*[NB. Windows 8.1 is not supported]*
-
-## Topics
+## Description
 
 In this tutorial, you will learn the following:
 

@@ -1,6 +1,10 @@
 ---
 title: Conceptual fresh-salt model
+image: figures/tutorial/wq/cross-section.png
+description: 'Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer'
 ---
+
+# Description
 
 In this example we create an example fresh-salt groundwater model of a
 strip-shaped freshwater lens, which could be a very simple analogue of a
