@@ -17,6 +17,8 @@ website:
         href: coupler_index.qmd
       - text: "Tutorials"
         href: tutorial_index.qmd
+      - text: "Further links"
+        href: further_links.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training
@@ -59,6 +61,12 @@ website:
         - href: tutorial_Abbeyfeale.qmd
         - href: tutorial_Dommel.qmd
         - href: tutorial_wq.qmd
+    
+    - id: further_links
+      title: "Further links"
+      align: left
+      contents:
+        - href: further_links.qmd
 
 format:
   html:
