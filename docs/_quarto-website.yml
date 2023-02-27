@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "iMOD Suite Tutorial"
+  title: "iMOD Suite"
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
@@ -58,6 +58,7 @@ website:
         - href: tutorial_index.qmd
         - href: tutorial_Abbeyfeale.qmd
         - href: tutorial_Dommel.qmd
+        - href: tutorial_wq.qmd
 
 format:
   html:
