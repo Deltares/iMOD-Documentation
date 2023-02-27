@@ -236,8 +236,8 @@ use the colormap
 \"Spectral\".](figures/tutorial/wq/color_ramp_selection.png)
 
 Next, open the iMOD plugin\'s cross-section tool
-![cross-section](screenshots/qgis/icons/cross-section.png){width="40px"
-height="40px"} and draw a cross-section by clicking *from Map* and
+![cross-section](figures/qgis/icons/cross-section.png){width="30px"
+height="30px"} and draw a cross-section by clicking *from Map* and
 right-clicking to stop drawing. Then select *conc* as variable to be
 plotted, and click *Add*. Next click *Plot*.
 
@@ -258,8 +258,8 @@ did.](figures/tutorial/wq/cross-section.png)
 
 As a final step we will look at the results in the iMOD 3D Viewer. Click
 the 3D viewer symbol
-![3d-viewer](screenshots/qgis/icons/3d-viewer.png){width="40px"
-height="40px"} in QGIS, which will open up the 3D viewer widget of the
+![3d-viewer](figures/qgis/icons/3d-viewer.png){width="30px"
+height="30px"} in QGIS, which will open up the 3D viewer widget of the
 iMOD plugin.
 
 First, click the *Draw Extent* button to draw an extent to be plotted.
