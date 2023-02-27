@@ -11,6 +11,8 @@ website:
         href: index.qmd
       - text: iMOD Viewer
         href: viewer_index.qmd
+      - text: iMOD Python
+        href: python_index.qmd
       - text: "Tutorials"
         href: tutorial_index.qmd
     right:
@@ -30,6 +32,15 @@ website:
         - href: qgis_user_manual.qmd
         - href: 3dviewer_user_manual.qmd
         - href: viewer_known_issues.qmd
+
+    - id: python
+      title: "iMOD Python"
+      align: left
+      contents:
+        - href: python_index.qmd
+        - href: python_install.qmd
+        - href: deltaforge_install.qmd
+        - href: python_getting_started.qmd
 
     - id: tutorial
       title: "Tutorials"
