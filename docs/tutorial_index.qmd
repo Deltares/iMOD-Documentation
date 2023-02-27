@@ -1,0 +1,13 @@
+---
+title: "Tutorials"
+---
+
+This document features the iMOD Suite tutorials. To download and install the
+iMOD Suite, [follow the instructions
+here](https://deltares.github.io/iMOD-Documentation/viewer_install.html). To
+download the tutorial material, you can follow this link: --URL-here--
+
+We have prepared the following tutorials, based on what you want to learn:
+
+1. QGIS and iMOD plugin: [Abbeyfeale](Abbeyfeale.qmd)
+1. iMOD 3D Viewer: [Dommel](Dommel.qmd)

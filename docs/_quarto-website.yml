@@ -7,12 +7,34 @@ website:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
     left:
-      - Abbeyfeale.qmd
-      - Dommel.qmd
+      - text: Introduction
+        href: index.qmd
+      - text: iMOD Viewer
+        href: viewer_index.qmd
+      - text: "Tutorials"
+        href: tutorial_index.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training
         aria-label: GitHub
+
+  sidebar:
+    - id: viewer
+      title: "iMOD Viewer"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - href: viewer_index.qmd
+        - href: viewer_installation.qmd
+
+    - id: tutorial
+      title: "Tutorials"
+      align: left
+      contents:
+        - href: tutorial_index.qmd
+        - href: Abbeyfeale.qmd
+        - href: Dommel.qmd
 
 format:
   html:
