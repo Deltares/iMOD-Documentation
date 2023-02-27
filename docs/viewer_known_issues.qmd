@@ -38,6 +38,12 @@ flexibility of the plugin\'s IPF reader.
 
 # 3D Viewer
 
+## Supported Windows versions
+
+At present, only Windows 10 is supported. Windows 8.1 and Windows 11 currently
+are not supported, and it has been confirmed that the 3D viewer does not
+function properly with these Windows versions.
+
 ## MSVCR100.dll missing
 
 You might get an error at startup of the 3D viewer, such as: *\"The code
