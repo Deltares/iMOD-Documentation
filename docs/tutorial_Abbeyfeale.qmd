@@ -35,7 +35,7 @@ as relatively glacial subsoil (typically < 15 m thick) overlying very hard old
 fractured rock. For basic models this can be represented as one layer for the
 subsoil and one layer for bedrock.
 
-![Village of Abbeyfeale and the components of the simplified Abbeyfeale model](figures/figure_topo-Abbeyfeale_simplified-Abbeyfeale-model.png){width=100% #fig-figure_topo-Abbeyfeale_simplified-Abbeyfeale-model}
+![Village of Abbeyfeale and the components of the simplified Abbeyfeale model](figures/tutorial/viewer/figure_topo-Abbeyfeale_simplified-Abbeyfeale-model.png){width=100% #fig-figure_topo-Abbeyfeale_simplified-Abbeyfeale-model}
 
 ## Getting Started 
 (@) Launch QGIS from your START menu, your desktop or click on
@@ -72,10 +72,10 @@ For navigation purposes, let us load the universal topography of Open Street Map
 Let us now open a series of basic files in QGIS. We start with a digital elevation map.
 
 (@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Raster Layer*. 
-(@) In the section *Source* click on the ![](figures/button_select.png) button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.
+(@) In the section *Source* click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.
 (@) Click the *Add* button and the layer is added to the panel *Layers*. 
 (@) Click *Close* to leave the window. 
-(@) In the panel Layers select the layer “Abbeyfeale DTM” and click the ![](figures/button_zoomtolayer.png) button to zoom in to the layer.
+(@) In the panel Layers select the layer “Abbeyfeale DTM” and click the ![](figures/tutorial/viewer/button_zoomtolayer.png) button to zoom in to the layer.
 
 We see the contours of a river, but the legend is gray only by default. Let’s change that.
 
@@ -85,11 +85,11 @@ We see the contours of a river, but the legend is gray only by default. Let’s 
 (@) Be sure a Color Ramp is selected as well. 
 (@) Make sure the dropdown menu *Interpolation* shows Linear and the dropdown menu *Mode* shows *Continuous*.
 (@) Click *Apply* to change the colors and *OK* to close the window.
-(@) You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: ![](figures/button_zoom-menu.png)
+(@) You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: ![](figures/tutorial/viewer/button_zoom-menu.png)
 
 Your screen might look like @fig-figure_DTM-in-QGIS
 
-![DTM in QGIS with the topography of OpenStreetMap Cross as background](figures/figure_DTM-in-QGIS.png){width=100% #fig-figure_DTM-in-QGIS}
+![DTM in QGIS with the topography of OpenStreetMap Cross as background](figures/tutorial/viewer/figure_DTM-in-QGIS.png){width=100% #fig-figure_DTM-in-QGIS}
 
 Let us save this project to be able to return to is later or in case of a crash of QGIS.
 
@@ -103,14 +103,14 @@ Do you like to see the values of the DTM under you mouse? You need a QGIS plugin
 (@) Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.
 (@) Search for “Value Tool”, install it and *Close* the Plugins window.
 
-The tool is now visible as a panel on the left and as the Value Tool button (![](figures/button_valuetool.png){width=4%}) in a panel on the top of QGIS. 
+The tool is now visible as a panel on the left and as the Value Tool button (![](figures/tutorial/viewer/button_valuetool.png){width=4%}) in a panel on the top of QGIS. 
 
 (@) Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location. 
 
 Next step is to load a polygon file representing the recharge zones in the project area.
 
 (@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Vector Layer*. 
-(@) In the section Source click on the ![](figures/button_select.png) button and select the file "abbeyfeale\\data\\1-external\\recharge\\clipped_recharge.shp". The ESRI Shapefile is a common file format. 
+(@) In the section Source click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "abbeyfeale\\data\\1-external\\recharge\\clipped_recharge.shp". The ESRI Shapefile is a common file format. 
 (@) Click the *Add* button and the layer is added to the panel *Layers*.
 (@) Click *Close* to leave the window. 
 
@@ -125,13 +125,13 @@ There is also an ESRI Shapefile with the rivers in the project area. Feel free t
 
 After loading raster and polygon layers, let us now load a point file with boreholes. This time, the file format (*.IPF) is not a common file standard but developed by Deltares because the file includes associated borelog information. We must load the IPF file with the iMOD plugin.
 
-(@) One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (![](figures/button_iMOD-Open-IPF.png){width=3%}) and a window will open.
-(@) Click on the ![](figures/button_select.png){width=3%} button and select the IPF "abbeyfeale\\data\\1-external\\boreholes\\BOREHOLES.IPF".
+(@) One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (![](figures/tutorial/viewer/button_iMOD-Open-IPF.png){width=3%}) and a window will open.
+(@) Click on the ![](figures/tutorial/viewer/button_select.png){width=3%} button and select the IPF "abbeyfeale\\data\\1-external\\boreholes\\BOREHOLES.IPF".
 (@) Click the *Add* button and the IPF file is added in the panel *Layers*.
 
 **NOTE**: If the points appear to be somewhere else on the map, e.g. Africa, make sure both your project and your layer have the correct CRS (EPSG:2157).
 
-a. Check if the project CRS on the lower right corner still is ![](figures/button_epg2157.png){width=25%}. \newline Otherwise double click this area and change the EPSG.
+a. Check if the project CRS on the lower right corner still is ![](figures/tutorial/viewer/button_epg2157.png){width=25%}. \newline Otherwise double click this area and change the EPSG.
 a. Check if the layer CSR is correct and therefor double click on the BOREHOLES layer.
 a. In the window *Layer Properties* go to the section *Source*.
 a. In the dropdown menu *“Assigned Coordinate Reference System (CRS)”* select EPSG:2157.
@@ -140,7 +140,7 @@ a. In the dropdown menu *“Assigned Coordinate Reference System (CRS)”* selec
 
 The bore log for each borehole can only be displayed in a cross-section. Therefore, we activate the iMOD cross-section tool.
 
-(@) On the iMOD Toolbar select the Cross section button (![](figures/button_iMOD-Cross-section.png){width=3%}) to start the iMOD Cross Section tool.
+(@) On the iMOD Toolbar select the Cross section button (![](figures/tutorial/viewer/button_iMOD-Cross-section.png){width=3%}) to start the iMOD Cross Section tool.
 In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.
 
 (@) Click on the button *Select location* and draw your cross-section line from north to south over the 3 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the Select location button again. 
@@ -153,7 +153,7 @@ Your screen might look like @fig-figure_Crosssection-with-borelogs although the 
 
 **NOTE**: If no lines appear on your screen, make sure you have set your project CRS to EPSG:2157 (see earlier step).
 
-![Cross section with borelogs](figures/figure_Crosssection-with-borelogs.png){width=100% #fig-figure_Crosssection-with-borelogs}
+![Cross section with borelogs](figures/tutorial/viewer/figure_Crosssection-with-borelogs.png){width=100% #fig-figure_Crosssection-with-borelogs}
 
 For now, we leave QGIS and the iMOD Plugin to return later. 
 
@@ -183,7 +183,7 @@ This script opens the DTM file, uses its extent for the model boundary and sets 
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\1-create-template-grid.py* and press ENTER.
 
-![](figures/figure_iMODforge_prompt.png) 
+![](figures/tutorial/viewer/figure_iMODforge_prompt.png) 
 
 Results 1: The result is a raster file (NetCDF format) describing the mask of our model (extent and cell size) as well as our DTM scaled up to the size of the model mask.
 
@@ -207,24 +207,24 @@ This script opens the shape file with recharge zones (polygons) containing the r
 Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster. 
 
 (@) From the menu *Layer > Add layer > Add mesh* load the file “Abbeyfeale\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
-From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/button_clockquestion.png){width=8%}. 
+From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
 
 There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
 
-(@) For the animation over time, activate the *Temporal Control Panel* with the button ![](figures/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar.
-(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar.
+(@) For the animation over time, activate the *Temporal Control Panel* with the button ![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar.
+(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar.
 
 Your display should look similar with @fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot, except for the red line below. 
 
-(@) In the Temporal Controller panel click the green play button (![](figures/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
-(@) Increase the *Step* from 1 to 14 days and start the animation with a click on the Play button (![](figures/button_TemporalControler-play.png){width=4%}).
+(@) In the Temporal Controller panel click the green play button (![](figures/tutorial/viewer/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
+(@) Increase the *Step* from 1 to 14 days and start the animation with a click on the Play button (![](figures/tutorial/viewer/button_TemporalControler-play.png){width=4%}).
 (@) In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge. 
-(@) Click the button *Select Points*, your mouse changes into a ![](figures/mouse_plus.png). be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
+(@) Click the button *Select Points*, your mouse changes into a ![](figures/tutorial/viewer/mouse_plus.png). be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
 (@) Deselect the checkbox *Update on Selection*. 
-(@) Click the button *Select Points* (your mouse becomes a ![](figures/mouse_plus.png) and with the left mouse button select 3 points ad random. 
+(@) Click the button *Select Points* (your mouse becomes a ![](figures/tutorial/viewer/mouse_plus.png) and with the left mouse button select 3 points ad random. 
 (@) Finally click the Plot button and the 3 timeseries are added to the chart. Colors can be changed.  
 
-![Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)](figures/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png){width=100% #fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot}
+![Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)](figures/tutorial/viewer/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png){width=100% #fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot}
 
 <ins>Script 4 – Geohydrology</ins>
 This script reads default parameter values from the file “parameters.csv” in order to create a NetCDF file with top and bottom of 3 layers including the geohydraulic parameters. The default values are: \newline 
@@ -249,18 +249,18 @@ Results 4: The result is a mesh file (NetCDF format) for the geohydrological dat
 
 Let’s create a cross-section with the permeability plot within each layer. 
 
-(@) First, we must deactivate temporal control. Open the Temporal Control Panel again (![](figures/button_TemporalControllerPanel.png){width=4%}), and turn off temporal navigation with the button ![](figures/button_TemporalControllerPanel-turnoff.png){width=4%}.
-(@) On the iMOD Toolbar select the ![](figures/button_iMOD-Cross-section.png){width=3%} button to start the iMOD Cross Section tool.
+(@) First, we must deactivate temporal control. Open the Temporal Control Panel again (![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%}), and turn off temporal navigation with the button ![](figures/tutorial/viewer/button_TemporalControllerPanel-turnoff.png){width=4%}.
+(@) On the iMOD Toolbar select the ![](figures/tutorial/viewer/button_iMOD-Cross-section.png){width=3%} button to start the iMOD Cross Section tool.
 (@) In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the *Variable* dropdown select permeability and from the Layers dropdown select all layers. 
 (@) Click the button *Add* to add this item to the list of chart elements.
 (@) Click on the button *Select Location* and draw a single line over the model area with your left mouse button. Close the line with your right mouse button. 
 (@) Click the button *Plot* and the geology along the line colored by permeability is draw in the chart. 
 
-TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (![](figures/button_CrossSection-ViewAll.png){width=3%}) in the lower left of the chart. 
+TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (![](figures/tutorial/viewer/button_CrossSection-ViewAll.png){width=3%}) in the lower left of the chart. 
 
 (@) Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.
 
-![Three model layers coloured by permeability in the iMOD cross-section tool](figures/figure_CrossSectionTool-3layers.png){width=100% #fig-figure_CrossSectionTool-3layers}
+![Three model layers coloured by permeability in the iMOD cross-section tool](figures/tutorial/viewer/figure_CrossSectionTool-3layers.png){width=100% #fig-figure_CrossSectionTool-3layers}
  
 <ins>Script 5 – Create MODFLOW 6 input</ins>
 Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the *Deltaforge prompt*.  
@@ -294,19 +294,19 @@ By default, the variable bottom_layer_1 is loaded. We will change the selected v
 
 (@) Double click on the layer “hds_mesh” to open the *Layer Properties window*. 
 (@) Select the group Source on the left and see that the mesh contains several datasets. 
-(@) Select the group Symbology on the left and select the first tab *Dataset* (![](figures/button_SymbologyDataset.png){width=3%}). Here we can select the group we want to plot, for now it is “head_layer_1”.  
-(@) Click on the icon (![](figures/button_SymbologyDataset-unselected.png){width=3%}) on the line for “head_layer_1” and change it into (![](figures/button_SymbologyDataset-selected.png){width=3%}). Click on Apply.
-(@) Select the second tab Contours (![](figures/button_SymbologyContours.png){width=3%} ). 
+(@) Select the group Symbology on the left and select the first tab *Dataset* (![](figures/tutorial/viewer/button_SymbologyDataset.png){width=3%}). Here we can select the group we want to plot, for now it is “head_layer_1”.  
+(@) Click on the icon (![](figures/tutorial/viewer/button_SymbologyDataset-unselected.png){width=3%}) on the line for “head_layer_1” and change it into (![](figures/tutorial/viewer/button_SymbologyDataset-selected.png){width=3%}). Click on Apply.
+(@) Select the second tab Contours (![](figures/tutorial/viewer/button_SymbologyContours.png){width=3%} ). 
 (@) Set the Min value on 40.00 and the Max value on 60.00 in order to see head changes over time. 
 (@) From the dropdown menu Color Ramp select Turbo and click on OK to close the window. 
 
 Now we try to show an animation of the variation of calculated Heads over time and as timeseries. 
 
-(@) For the animation over time, activate the Temporal Control Panel with the button (![](figures/button_TemporalControllerPanel.png){width=3%}) on the Map Navigation Toolbar.
+(@) For the animation over time, activate the Temporal Control Panel with the button (![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=3%}) on the Map Navigation Toolbar.
 (@) From you experience with this tool, try to start the animation with timestep of 14 days. 
-(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar.
+(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar.
 (@) From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1. 
 
-![Calculated head with MODFLOW 6 on 3 points within the model area](figures/figure_Timeseries-Heads-in-3-points.png){width=100% #fig-figure_Timeseries-Heads-in-3-points}
+![Calculated head with MODFLOW 6 on 3 points within the model area](figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png){width=100% #fig-figure_Timeseries-Heads-in-3-points}
 
 The QGIS part of the tutorial ends here. You can save your QGIS project now. 

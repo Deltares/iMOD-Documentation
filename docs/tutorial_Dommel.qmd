@@ -23,7 +23,7 @@ concentrations.
 
 There are 2 options to start the 3D Viewer. One option is to select layers in
 QGIS and select the 3D Viewer icon on the iMOD toolbar
-![](figures/button_iMOD-3D-tool.png){width=3%}. The selected layers are opened
+![](figures/tutorial/viewer/button_iMOD-3D-tool.png){width=3%}. The selected layers are opened
 in the 3D Viewer. The other option is to start the 3D Viewer directly. In this
 short Tutorial we’ll pursue the second option.
 
@@ -36,34 +36,34 @@ We display some data from Brabant, a province in The Netherlands. (In case you m
 Let’s first import an overlay file showing the surface water elements.
 
 (@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp". 
-(@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png)).
+(@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/tutorial/viewer/button_3Dtool-redrawlayer.png)).
 
 Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This
 NetCDF file contains for each model layer the top, the bottom and a timeseries
 of calculated heads.
 
 (@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\data\\1-external\\Brabant-data\\Calculated-Heads.nc". 
-(@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png)).
+(@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/tutorial/viewer/button_3Dtool-redrawlayer.png)).
 (@) Click on the “>” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”. 
 (@) Click on the “>” sign left from both the section “All Layer” and “Layered Datasets”.  
 
 Your screen might look like @fig-figure_3DViewer_headriveroverview
 
-![Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer](figures/figure_3DViewer_headriveroverview.png){width=100% #fig-figure_3DViewer_headriveroverview}
+![Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer](figures/tutorial/viewer/figure_3DViewer_headriveroverview.png){width=100% #fig-figure_3DViewer_headriveroverview}
 
 Let’s now experience with the viewer controls.
 
 (@) Spin the mouse wheel forward to zoom in and spin backwards to zoom out. On a laptop, move two fingers up and down on the touchpad.
-(@) In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (![](figures/button_zoomtoextent.png)) to return to the initial view. 
+(@) In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (![](figures/tutorial/viewer/button_zoomtoextent.png)) to return to the initial view. 
 (@) Combine the Shift button + right mouse and move the camera horizontally/vertically with each mouse move (or finger on your touch pad).
 (@) Combine the Ctrl button + right mouse and rotate the camera around its lens with a mouse move (or finger on your touch pad).
-(@) Go back to the initial view with the “zoom-to-extent” button (![](figures/button_zoomtoextent.png)).
+(@) Go back to the initial view with the “zoom-to-extent” button (![](figures/tutorial/viewer/button_zoomtoextent.png)).
 (@) Hold the right mouse button while moving the mouse and the camera moves around the grid. 
 
 The imported data is a nice example of an unstructured grid. 
 
 (@) Zoom in to the upper left part of the grid. Notice that the grid is built from triangles, concentrated around the rivers. 
-(@) Switch the dataset on and off with a click on the (![](figures/button_3Dtool-switchon.png){width=4%}) button in file overview, left of the layer. See the underlaying rivers.
+(@) Switch the dataset on and off with a click on the (![](figures/tutorial/viewer/button_3Dtool-switchon.png){width=4%}) button in file overview, left of the layer. See the underlaying rivers.
 
 In your display the vertical thickness of the dataset is perhaps rather small.
 Let’s increase the vertical exaggeration.
@@ -73,9 +73,9 @@ Let’s increase the vertical exaggeration.
 
 Some final experience with the other viewer controls.
 
-(@) Use the buttons (![](figures/button_3Dtool-viewcontrolbar.png){width=35%}) to reposition your camera to another fixed position to the grid.
-(@) Click the button “Toggle Sliders”(![](figures/button_3Dtool-ToggleSlider.png){width=4%}) to activate the sliders for the X, Y and Z direction.
-(@) Experiment with the sliders, both left and right ![](figures/button_3Dtool-Slider.png)
+(@) Use the buttons (![](figures/tutorial/viewer/button_3Dtool-viewcontrolbar.png){width=35%}) to reposition your camera to another fixed position to the grid.
+(@) Click the button “Toggle Sliders”(![](figures/tutorial/viewer/button_3Dtool-ToggleSlider.png){width=4%}) to activate the sliders for the X, Y and Z direction.
+(@) Experiment with the sliders, both left and right ![](figures/tutorial/viewer/button_3Dtool-Slider.png)
 
 The colors in the display by default referred to the *Elevation* of the layers.
 Let’s now color the layers by calculated *Head*.
@@ -95,11 +95,11 @@ change.
 The imported file doesn’t contain one single head, but a timeseries of
 calculated heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Time
 Slider to display the data through time. \newline
-![](figures/button_3Dtool-TimeSlider.png){width=60%}
+![](figures/tutorial/viewer/button_3Dtool-TimeSlider.png){width=60%}
  
 (@) First click the button “Back(+y)” for a nice 3D view.
-(@) Click the button (![](figures/button_3Dtool-TimeSlider-Start.png){width=3%}) to start the animation. It is a large dataset to the view in the display only changes slowly. 
-(@) Stop the animation with the button (![](figures/button_3Dtool-TimeSlider-Stop.png){width=3%}).
+(@) Click the button (![](figures/tutorial/viewer/button_3Dtool-TimeSlider-Start.png){width=3%}) to start the animation. It is a large dataset to the view in the display only changes slowly. 
+(@) Stop the animation with the button (![](figures/tutorial/viewer/button_3Dtool-TimeSlider-Stop.png){width=3%}).
 (@) Play around with the slider. 
 
 That’s all for now. You can save your session if you like.
@@ -109,4 +109,4 @@ That’s all for now. You can save your session if you like.
 
 Thank you for your patience and attention. 
 
-![iMOD 3D Viewer - Legend Editor](figures/figure_3DViewer_LegendEditor.png){width=40% fig-align="left" #fig-figure_3DViewer_LegendEditor}
+![iMOD 3D Viewer - Legend Editor](figures/tutorial/viewer/figure_3DViewer_LegendEditor.png){width=40% fig-align="left" #fig-figure_3DViewer_LegendEditor}
