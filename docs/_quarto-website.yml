@@ -13,6 +13,8 @@ website:
         href: viewer_index.qmd
       - text: iMOD Python
         href: python_index.qmd
+      - text: iMOD Coupler
+        href: coupler_index.qmd
       - text: "Tutorials"
         href: tutorial_index.qmd
     right:
@@ -42,6 +44,12 @@ website:
         - href: python_install.qmd
         - href: deltaforge_install.qmd
         - href: python_getting_started.qmd
+
+    - id: coupler
+      title: "iMOD Coupler"
+      align: left
+      contents:
+        - href: coupler_index.qmd
 
     - id: tutorial
       title: "Tutorials"
