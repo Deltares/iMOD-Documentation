@@ -29,6 +29,7 @@ website:
       contents:
         - href: viewer_index.qmd
         - href: viewer_install.qmd
+        - href: viewer_install_msi.qmd
         - href: qgis_user_manual.qmd
         - href: 3dviewer_user_manual.qmd
         - href: viewer_known_issues.qmd
