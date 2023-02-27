@@ -194,10 +194,11 @@ indicate the location of the plotted
 time-series.](figures/qgis/time-series-mesh.png)
 
 ::: {.callout-note}
-A known issue with a multiple monitor setup is that the grid behind the
-plot might be plotted way off. See the
-`known issues section <plot_axis_off>`{.interpreted-text role="ref"} for
-more info and how to fix this.
+
+A known issue with a multiple monitor setup is that the grid behind the plot
+might be plotted way off. See the [known issues
+section](viewer_known_issues.qmd) for more info and how to fix this.
+
 :::
 
 ### ![cross-section](figures/qgis/icons/cross-section.png){width="40px" height="40px"} Cross-section
@@ -268,10 +269,11 @@ which layer ids are plotted as colors, and borelogs are plotted as
 bars.](figures/qgis/cross-section.png)
 
 ::: {.callout-note}
-A known issue with a multiple monitor setup is that the grid behind the
-plot might be plotted way off. See the
-`known issues section <plot_axis_off>`{.interpreted-text role="ref"} for
-more info and how to fix this.
+
+A known issue with a multiple monitor setup is that the grid behind the plot
+might be plotted way off. See the [known issues
+section](viewer_known_issues.qmd) for more info and how to fix this.
+
 :::
 
 ### ![nhi-data](figures/qgis/icons/NHI-portal.png){width="40px" height="40px"} Add NHI-data
