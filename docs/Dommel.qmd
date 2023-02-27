@@ -32,8 +32,8 @@ short Tutorial we’ll pursue the second option.
 (@) Launch the iMOD 3D Viewer from your START menu or your desktop. Search for “imod6.exe”. 
 (@) Maximize the program window for a better view. 
 
-We display some data from Brabant, a province in The Netherlands. Let’s first
-import an overlay file showing the surface water elements.
+We display some data from Brabant, a province in The Netherlands. (In case you missed the download instructions for the Tutorial data, visit the start page [iMOD Suite Tutorial](index.qmd)).\
+Let’s first import an overlay file showing the surface water elements.
 
 (@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp". 
 (@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/button_3Dtool-redrawlayer.png)).

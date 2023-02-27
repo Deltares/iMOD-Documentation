@@ -5,7 +5,7 @@ title: "iMOD Suite Tutorial"
 This document features the iMOD Suite tutorials. To download and install the
 iMOD Suite, [follow the instructions
 here](https://deltares.github.io/iMOD-Documentation/viewer_install.html). To
-download the tutorial material, you can follow this link: --URL-here--
+download the tutorial material, you can [follow this link.](https://deltares.thegood.cloud/s/ww84QA9qq5ymRMS)
 
 We have prepared the following tutorials, based on what you want to learn:
 
