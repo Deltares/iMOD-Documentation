@@ -1,5 +1,7 @@
 ---
 title: iMOD Viewer
+image: figures/logo/iMOD-Qgis.svg
+description: 'Visualization of unstructured grids in GIS and 3D.'
 ---
 
 The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin. 

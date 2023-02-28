@@ -1,5 +1,7 @@
 ---
 title: iMOD Coupler
+image: figures/logo/iMOD-coupler.svg
+description: 'Couple Modflow 6 to other model codes.'
 ---
 
 ## Coupling to MODFLOW 6

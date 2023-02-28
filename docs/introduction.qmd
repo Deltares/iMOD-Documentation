@@ -1,22 +1,10 @@
 ---
-title: "iMOD Suite Documentation"
-listing:
-    type: grid
-    image-height: 250px
-    contents:
-        - introduction.qmd
-        - viewer_index.qmd
-        - python_index.qmd
-        - coupler_index.qmd
-        - tutorial_index.qmd
+title: Introduction
+image: figures/logo/iMOD.svg
+description: Learn what's included.
 ---
 
-<<<<<<< HEAD
-## Introduction
-This document features the iMOD Suite tutorials. To download and install the
-iMOD Suite, [follow the instructions
-here](https://deltares.github.io/iMOD-Documentation/viewer_install.html). To
-download the tutorial material, you can [follow this link.](https://deltares.thegood.cloud/s/ww84QA9qq5ymRMS)
+## What's included
 
 The iMOD Suite provides tools to efficiently build and visualize
 groundwater models. 
@@ -123,22 +111,3 @@ components and supported MODFLOW6 packages.
 | MVR     | Water Mover                                    |            |        |
 
 : Supported MODFLOW6 flow packages in iMOD Suite & iMOD 5 {#tbl-iMOD-comparison-2}
-=======
-The iMOD Suite offers different modules which support modelling with
-MODFLOW 6 (including unstructured meshes):
-
--   iMOD Viewer: The iMOD Viewer consist of a standalone 3D viewer and a
-    QGIS plugin. The iMOD QGIS Plugin QGIS plugin allows visualisation
-    of model input and output with tools for cross-sections, timeseries
-    and link to the 3D viewer. It supports structured NetCDF, UGRID and
-    IPF files. And the iMOD 3D Viewer for interactive 3D visualisation
-    of unstructured input and output. Supports UGRID file format and IPF
-    borelog files.
--   iMOD Python: A Python package to support MODFLOW groundwater
-    modeling. It makes it easy to go from your raw data to a fully
-    defined MODFLOW model, with the aim to make this workflow
-    reproducable.
--   iMOD Coupler: Software that couples MODFLOW 6 to other computational
-    cores. It currently supports a coupling to MetaSWAP, but additional
-    computational cores are planned in the future.
->>>>>>> d161cbe (Make index page nicer)

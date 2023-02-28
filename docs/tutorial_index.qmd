@@ -3,10 +3,11 @@ title: "Tutorials"
 listing:
     type: grid
     contents:
-        - tutorial_Abbeyfeale.qmd
-        - tutorial_Dommel.qmd
-        - tutorial_wq.qmd
-
+      - tutorial_Abbeyfeale.qmd
+      - tutorial_Dommel.qmd
+      - tutorial_wq.qmd
+image: figures/logo/iMOD-tutorial.svg
+description: 'Learn how to use the iMOD Suite'
 ---
 
 The iMOD-suite consists of several components, and combining these in different
@@ -16,4 +17,7 @@ user flexibility, but it can be a bit daunting at start.
 Therefore, we have compiled a set of tutorials to help you get started and give
 you an overview of the Suite's capabilities.
 
-To download the tutorial material, you can follow this link: --URL-here--
+To download and install the iMOD Suite, [follow the instructions
+here](https://deltares.github.io/iMOD-Documentation/viewer_install.html). To
+download the tutorial material, you can [follow this
+link.](https://deltares.thegood.cloud/s/ww84QA9qq5ymRMS)
