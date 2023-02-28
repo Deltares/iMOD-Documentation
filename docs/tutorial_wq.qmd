@@ -4,7 +4,7 @@ image: figures/tutorial/wq/cross-section.png
 description: 'Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer'
 ---
 
-# Description
+## Description
 
 In this example we create an example fresh-salt groundwater model of a
 strip-shaped freshwater lens, which could be a very simple analogue of a
@@ -19,7 +19,7 @@ The workflow consists of the following steps:
 4.  Viewing a cross-section in iMOD QGIS plugin
 5.  Use the plugin to view the results in the iMOD 3D viewer
 
-# Creating a model
+## Creating a model
 
 The iMOD-python script below creates a simple 3D iMOD-WQ model.
 
@@ -134,7 +134,7 @@ m.write("FreshwaterLens")
 # You can run the model using the command prompt and the iMOD-WQ executable
 ```
 
-# Running the model
+## Running the model
 
 This model requires the iMOD-WQ kernel, which is part of iMOD 5 and
 which you can download [for free here after
@@ -154,7 +154,7 @@ seconds.
 
 ![If everything worked well, iMOD WQ prints "Normal termination of iMOD-WQ"](figures/tutorial/wq/cmd_run_output.png)
 
-# Convert output data
+## Convert output data
 
 iMOD-WQ writes IDF files, a data format used in iMOD 5, which not many
 other software packages support. Therefore iMOD-python allows for
@@ -213,7 +213,7 @@ ds_ugrid.to_netcdf("./results/output_ugrid.nc")
 
 
 
-# Viewing the results in QGIS
+## Viewing the results in QGIS
 
 Start QGIS and open the `./results/output_ugrid.nc` file as a mesh.
 
@@ -258,7 +258,7 @@ colormap you think is suitable!
 ![You should see this if you followed precisely what we
 did.](figures/tutorial/wq/cross-section.png)
 
-# Viewing the results in the iMOD 3D Viewer
+## Viewing the results in the iMOD 3D Viewer
 
 As a final step we will look at the results in the iMOD 3D Viewer. Click
 the 3D viewer symbol
@@ -283,7 +283,7 @@ legend*.
 ![If you followed the instructions, you should see
 this.](figures/tutorial/wq/3d_viewer.png)
 
-# Concluding
+## Concluding
 
 In short, we wrote model input with iMOD-python, ran a model with
 iMOD-WQ, converted its output to UGRID with iMOD-python, and viewed the
