@@ -1,5 +1,5 @@
 ---
-title: Install iMOD Viewer with the installer
+title: Install iMOD Viewer with the Deltares setup
 ---
 
 To install the iMOD Viewer components (3D Viewer & QGIS plugin),
