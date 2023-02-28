@@ -2,7 +2,7 @@
 title: 3D Viewer User Manual
 ---
 
-# Introduction
+## Introduction
 
 The iMOD 3D Viewer is a viewer for grids and datasets. In this manual we
 consider a **grid** to be a region of space that is subdivided into cells. A
@@ -20,7 +20,7 @@ datasets on top of the grids using a color legend. To gain more insight in the
 data, the color legend can be edited, and the values of individual cells can be
 inspected. Slider tools allow viewing the inside of 3D bodies.
 
-# Relationship with QGIS
+## Relationship with QGIS
 
 The iMOD 3D Viewer can be used as a standalone or in combination with the iMOD
 QGIS plugin. From this plugin, the viewer can be launched, and grids can be
@@ -29,7 +29,7 @@ diagrams in the viewer. Also, the QGIS plugin allows for specifying a bounding
 box for UGRID files. When this option is used, the viewer only loads the part
 of the grid in an UGRID file that is inside the bounding box.
 
-# Features
+## Features
 
 The iMOD 3D Viewer supports visualizing grids in the following file
 formats:
@@ -63,9 +63,9 @@ The iMOD 3D Viewer also supports viewing some non-grid objects.
 The iMOD 3D Viewer can show fence diagrams. This only works when used in
 combination with the iMOD QGIS plugin
 
-# General Workings
+## General Workings
 
-## iMOD 3D Viewer solutions and autosave file
+### iMOD 3D Viewer solutions and autosave file
 
 ![File menu options for saving and loading
 projects.](figures/viewer/image1.png){#fig-image1}
@@ -83,7 +83,7 @@ and is stored in the appdata directory, most likely this:
 
 `C:\\Users\\yourname\\AppData\\Roaming\\IMOD6`
 
-## The explorer sidebar
+### The explorer sidebar
 
 When a file is opened- for example a file containing a grid- then
 automatically entries are added to the sidebar of the application. These
@@ -138,7 +138,7 @@ nodes:
         click on this node, allowing you to set a legend for all layers
         at once.
 
-## Loading and unloading objects
+### Loading and unloading objects
 
 Objects can be added to the explorer
 
@@ -166,7 +166,7 @@ height="0.14097in"}) is pressed, all object that are *not* selected are
 unloaded from the viewer and are no longer bold, except if they are
 *locked.*
 
-## How to visualize data on a grid
+### How to visualize data on a grid
 
 In order to visualize a dataset on a grid, first visualize the grid
 itself. Then double-click on one of the datasets in the explorer.
@@ -180,7 +180,7 @@ bold in the explorer.](figures/viewer/image5.png){#fig-image5}
 Currently, only datasets that hold scalar values associated to cells can
 be shown.
 
-## Locking mechanism
+### Locking mechanism
 
 Top level nodes can be "locked" and grid layer nodes can be
 
@@ -199,7 +199,7 @@ open padlock icon appears.
 
 ![The padlock icon shows if a node is locked or unlocked](figures/viewer/image6.png){#fig-image6}
 
-## Moving objects in the treeview
+### Moving objects in the treeview
 
 Top level nodes can be moved up and down the treeview, allowing you to
 order the objects as you see fit.
@@ -207,7 +207,7 @@ order the objects as you see fit.
 To move an item in the treeview, select it with the mouse and then press
 *u* (up) or *d* (down) to move the object.
 
-## How to delete an object
+### How to delete an object
 
 To delete an object (grid, overlay or IPF cylinders) , right click on it
 in the explorer. Now a context menu appears. Choose the option "delete"
@@ -217,7 +217,7 @@ redraw button instead. In the explorer, select the grids you want to be
 visualized, and make sure the grids you want to be unloaded are
 unselected. Then press redraw.
 
-## Using the time-slider
+### Using the time-slider
 
 Some datasets vary through time. The iMOD 3D Viewer currently supports 2
 cases:
@@ -278,7 +278,7 @@ has values. The red dots indicate the values displayed.](figures/viewer/imageTim
 #fig-imageTimerules}
 
 
-## Property windows
+### Property windows
 
 By right-clicking on grids or datasets in the explorer, a context menu
 appears. In it, there is usually a "properties" option which opens a
@@ -288,7 +288,7 @@ allows setting some properties as well. Here are a few examples:
 ![Property windows, from left to right for a grid, a layered grid and a
 dataset](figures/viewer/image9.png){#fig-image9}
 
-# How to use the viewer
+## How to use the viewer
 
 The following controls work if the mouse pointer is in the viewer area:
 
@@ -349,7 +349,7 @@ figure, the buttons do the following
 -   zoom out.
 -   zoom in.
 
-## How to use clipping
+### How to use clipping
 
 The clipping functionality allows one to "cut off" slices of one or more
 grids in the 3D viewer. The internals of the grids are then exposed,
@@ -367,7 +367,7 @@ combined range of all the grids in the viewer in one direction.
 ![Use sliders to cut model in each
 direction](figures/viewer/image13.png){#fig-image13}
 
-## How to plot gridlines
+### How to plot gridlines
 
 It is possible to plot geographical gridlines on top of a grid
 (@fig-image14). **This feature only works
@@ -376,7 +376,7 @@ well at near-vertical viewing angles.**
 ![Toggle gridlines with the gridlines
 button](figures/viewer/image14.png){#fig-image14}
 
-## How to change the vertical exaggeration
+### How to change the vertical exaggeration
 
 In the 3D viewer, objects can appear to be flat when they are not,
 because the range in the x and y directions for geological structures is
@@ -399,7 +399,7 @@ value in the text field above it (@fig-image15).
 ![Vertical exaggeration slider and text
 field](figures/viewer/image15.png){#fig-image15}
 
-## How to change the representation of a grid
+### How to change the representation of a grid
 
 In the 3D viewer, grids can be visualized as solid bodies
 (@fig-image16); as wireframes and as point
@@ -419,7 +419,7 @@ The representation can also be changed from the property window of a
 grid. Here some other tweaks can also be made, like highlighting cell
 edges or changing the opacity of the plot.
 
-# Changing the legend of a UGRID dataset, IDF or fence diagram grid.
+## Changing the legend of a UGRID dataset, IDF or fence diagram grid.
 
 To edit the legend of a dataset in an UGRID file, IDF file or fence
 diagram, it is necessary to load the legend editor form. From there, the
@@ -443,7 +443,7 @@ For a layered ugid dataset (so applying on all layers at the same time)
 -   Right click on the data set you want to apply the legend to
 -   From the context menu, select *Edit legend*
 
-## The legend editor
+### The legend editor
 
 The legend editor consists of 2 tabs: one for continuous legends and one
 for discrete ones (@fig-image18).
@@ -475,21 +475,21 @@ In general, a color that represents *N* % of the range in the linear legend, is
 mapped to the value that is larger than *N* % of the data in the percentiles
 legend.](figures/viewer/image19.jpeg){#fig-image19}
 
-## Legend sidepane
+### Legend sidepane
 
 For quick reference, the legend is shown on a retractable sidepane. To
 open or close it, use the button highlighted in the figure below.
 
 ![](figures/viewer/imageSidepane.png){width="6.25556in"}
 
-## Working with fence diagrams
+### Working with fence diagrams
 
 Fence diagrams have the same user interface as layered UGRID files. They
 have the same layers as the original layered UGRID they cut through, and
 the same datasets. Their legend can be set per-layer or for the whole
 fence diagram in the same way as we do for layered UGRIDs.
 
-# Working with IPF files
+## Working with IPF files
 
 To visualize an IPF file, open the data menu and click on *open overlay file*.
 An open file dialog appears. Select an IPF file. As with grids, the filename is
@@ -537,7 +537,7 @@ context menu of the IPF file.
 ![Image of an IPF plot with labels, viewed from the
 top.](figures/viewer/image22.png){#fig-image22}
 
-## Plotting borehole data
+### Plotting borehole data
 
 When the IPF file contains references to additional datafiles, one for
 each row in the IPF file, and when these datafiles contain 1D borehole
@@ -557,9 +557,9 @@ Both real number data and string data can be plotted. In this example, string
 data was present in the \"Admixture\"
 column](figures/viewer/image23.png){#fig-image23}
 
-# Working with IDF files
+## Working with IDF files
 
-## IDF file resolution
+### IDF file resolution
 
 An IDF files contains a 2D structured grid, and 1 dataset with cell data. This
 dataset is treated for visualization purposes as if it were elevation, but it
@@ -601,7 +601,7 @@ file](figures/viewer/image26.png){#fig-image26}
 (right)](figures/viewer/image27.jpeg){#fig-image27}
 
 
-## Additional representation options for IDF files
+### Additional representation options for IDF files
 
 The options outlined above change the way each cell is rendered, but
 they do not change the underlying geometry of the cells. For IDF files
@@ -624,7 +624,7 @@ file](figures/viewer/image28.png){#fig-image28}
 ![An IDF file rendered as rectangles (left) and triangles
 (right)](figures/viewer/image29.png){#fig-image29}
 
-# Working with shapefiles
+## Working with shapefiles
 
 To visualize an overlay, open the data menu and click on "open overlay
 file". An open file dialog appears. Select a shapefile containing vector
@@ -643,7 +643,7 @@ thickness.
 ![Context menu options for changing the color and line thickness of an
 overlay.](figures/viewer/image30.png){#fig-image30}
 
-# How to inspect dataset values of a cell
+## How to inspect dataset values of a cell
 
 When we visualize a dataset, its values are used to assign a color to
 each cell; the value to cell mapping is defined by the legend. Hence,
@@ -666,7 +666,7 @@ To end identifying, press the "identify" button again.
 ![Dataset values can be inspected with the identify
 button](figures/viewer/image31.png){#fig-image31}
 
-# Layered UGRID
+## Layered UGRID
 
 The iMOD 3D Viewer currently supports only 2D UGRID files. However, when
 it recognizes that datasets called *layer_1\_top* and *layer_1\_bottom*
