@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "iMOD Suite Tutorial"
+  title: "iMOD Suite User Guide"
   chapters:
     - index.qmd
     - part: viewer_index.qmd
