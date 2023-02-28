@@ -8,7 +8,7 @@ website:
     logo: _static/iMOD-doc-logo.svg
     left:
       - text: Introduction
-        href: index.qmd
+        href: introduction.qmd
       - text: iMOD Viewer
         href: viewer_index.qmd
       - text: iMOD Python

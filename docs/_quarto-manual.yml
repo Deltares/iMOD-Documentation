@@ -5,6 +5,7 @@ book:
   title: "iMOD Suite User Guide"
   chapters:
     - index.qmd
+    - introduction.qmd
     - part: viewer_index.qmd
       chapters:
         - viewer_install.qmd
