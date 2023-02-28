@@ -2,6 +2,10 @@
 title: QGIS Plugin User Manual
 ---
 
+## Description
+
+This part contains the user guide of the QGIS plugin.
+
 ## Configuration
 
 1.  You probably want to change the language settings in QGIS, if it

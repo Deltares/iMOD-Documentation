@@ -2,6 +2,10 @@
 title: Further Links
 ---
 
+## Description
+
+This part points you to more information about iMOD.
+
 ## Videos
 
 A list of videos which are iMOD Suite related are shown below.

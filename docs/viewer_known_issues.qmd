@@ -2,6 +2,10 @@
 title: Known Issues
 ---
 
+## Introduction
+
+Known issues with the iMOD Viewer are listed over here.
+
 ## QGIS plugin
 
 ### Plot axis off
