@@ -5,8 +5,25 @@ book:
   title: "iMOD Suite Tutorial"
   chapters:
     - index.qmd
-    - Abbeyfeale.qmd
-    - Dommel.qmd
+    - part: viewer_index.qmd
+      chapters:
+        - viewer_install.qmd
+        - viewer_install_msi.qmd
+        - qgis_user_manual.qmd
+        - 3dviewer_user_manual.qmd
+        - viewer_known_issues.qmd
+    - part: python_index.qmd
+      chapters:
+        - python_install.qmd
+        - deltaforge_install.qmd
+        - python_getting_started.qmd
+    - part: coupler_index.qmd
+    - part: tutorial_index.qmd
+      chapters:
+        - tutorial_Abbeyfeale.qmd
+        - tutorial_Dommel.qmd
+        - tutorial_wq.qmd
+    - part: further_links.qmd
 
 format:
   pdf:
