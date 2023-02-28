@@ -1,7 +1,6 @@
-::: {.toctree maxdepth="2" hidden=""}
-:::
-
-# QGIS Plugin User Manual
+---
+title: QGIS Plugin User Manual
+---
 
 ## Configuration
 
