@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Components: QGIS and iMOD plugin">
 
-<title>iMOD Suite Tutorial - Abbeyfeale</title>
+<title>iMOD Suite - Abbeyfeale</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="_static/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">iMOD Suite Tutorial</span>
+    <span class="navbar-title">iMOD Suite</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -83,12 +84,28 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./Abbeyfeale.html" aria-current="page">
- <span class="menu-text">Abbeyfeale</span></a>
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Dommel.html">
- <span class="menu-text">Dommel</span></a>
+    <a class="nav-link" href="./viewer_index.html">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tutorial_index.html" aria-current="page">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -102,17 +119,51 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Abbeyfeale</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_index.html" class="sidebar-item-text sidebar-link">Tutorials</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_Abbeyfeale.html" class="sidebar-item-text sidebar-link active">Abbeyfeale</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_Dommel.html" class="sidebar-item-text sidebar-link">Dommel</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_wq.html" class="sidebar-item-text sidebar-link">Conceptual fresh-salt model</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
   <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
   <li><a href="#introduction-schematization-ground-water-model-abbeyfeale" id="toc-introduction-schematization-ground-water-model-abbeyfeale" class="nav-link" data-scroll-target="#introduction-schematization-ground-water-model-abbeyfeale">Introduction: schematization ground water model Abbeyfeale</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
@@ -125,9 +176,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Abbeyfeale</h1>
+<h1 class="title d-none d-lg-block">Abbeyfeale</h1>
 </div>
 
+<div>
+  <div class="description">
+    Components: QGIS and iMOD plugin
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -140,9 +196,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><em>[NB. Windows 8.1 is not supported]</em></p>
-<section id="topics" class="level2">
-<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
 <p>In this tutorial, you will learn the following:</p>
 <ol type="1">
 <li>Basic usage of QGIS</li>
@@ -160,7 +215,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Abbeyfeale is a historic market town in the County Limerick, Ireland. The local authorities are worried about the effects of drier summers on groundwater levels. A simple groundwater model can provide them with a quantification of the expected groundwater level decline. Geology: much of Ireland can be considered as relatively glacial subsoil (typically &lt; 15 m thick) overlying very hard old fractured rock. For basic models this can be represented as one layer for the subsoil and one layer for bedrock.</p>
 <div id="fig-figure_topo-Abbeyfeale_simplified-Abbeyfeale-model" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_topo-Abbeyfeale_simplified-Abbeyfeale-model.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_topo-Abbeyfeale_simplified-Abbeyfeale-model.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Village of Abbeyfeale and the components of the simplified Abbeyfeale model</figcaption><p></p>
 </figure>
 </div>
@@ -199,10 +254,10 @@ ul.task-list li input[type="checkbox"] {
 <p>Let us now open a series of basic files in QGIS. We start with a digital elevation map.</p>
 <ol start="7" class="example" type="1">
 <li>Go to <em>Layer</em> in the main menu, select <em>Add Layer</em> and pick the option <em>Add Raster Layer</em>.</li>
-<li>In the section <em>Source</em> click on the <img src="figures/button_select.png" class="img-fluid"> button and select the file “…\abbeyfeale\data\1-external\topography\Abbeyfeale DTM.tif”. GeoTIFF is a common file format.</li>
+<li>In the section <em>Source</em> click on the <img src="figures/tutorial/viewer/button_select.png" class="img-fluid"> button and select the file “…\abbeyfeale\data\1-external\topography\Abbeyfeale DTM.tif”. GeoTIFF is a common file format.</li>
 <li>Click the <em>Add</em> button and the layer is added to the panel <em>Layers</em>.</li>
 <li>Click <em>Close</em> to leave the window.</li>
-<li>In the panel Layers select the layer “Abbeyfeale DTM” and click the <img src="figures/button_zoomtolayer.png" class="img-fluid"> button to zoom in to the layer.</li>
+<li>In the panel Layers select the layer “Abbeyfeale DTM” and click the <img src="figures/tutorial/viewer/button_zoomtolayer.png" class="img-fluid"> button to zoom in to the layer.</li>
 </ol>
 <p>We see the contours of a river, but the legend is gray only by default. Let’s change that.</p>
 <ol start="12" class="example" type="1">
@@ -212,12 +267,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Be sure a Color Ramp is selected as well.</li>
 <li>Make sure the dropdown menu <em>Interpolation</em> shows Linear and the dropdown menu <em>Mode</em> shows <em>Continuous</em>.</li>
 <li>Click <em>Apply</em> to change the colors and <em>OK</em> to close the window.</li>
-<li>You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: <img src="figures/button_zoom-menu.png" class="img-fluid"></li>
+<li>You can zoom in and out with the scroll button on your mouse or navigate with the buttons in the main menu: <img src="figures/tutorial/viewer/button_zoom-menu.png" class="img-fluid"></li>
 </ol>
 <p>Your screen might look like <a href="#fig-figure_DTM-in-QGIS">Figure&nbsp;2</a></p>
 <div id="fig-figure_DTM-in-QGIS" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_DTM-in-QGIS.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_DTM-in-QGIS.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: DTM in QGIS with the topography of OpenStreetMap Cross as background</figcaption><p></p>
 </figure>
 </div>
@@ -233,14 +288,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.</li>
 <li>Search for “Value Tool”, install it and <em>Close</em> the Plugins window.</li>
 </ol>
-<p>The tool is now visible as a panel on the left and as the Value Tool button (<img src="figures/button_valuetool.png" class="img-fluid" style="width:4.0%">) in a panel on the top of QGIS.</p>
+<p>The tool is now visible as a panel on the left and as the Value Tool button (<img src="figures/tutorial/viewer/button_valuetool.png" class="img-fluid" style="width:4.0%">) in a panel on the top of QGIS.</p>
 <ol start="25" class="example" type="1">
 <li>Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location.</li>
 </ol>
 <p>Next step is to load a polygon file representing the recharge zones in the project area.</p>
 <ol start="26" class="example" type="1">
 <li>Go to <em>Layer</em> in the main menu, select <em>Add Layer</em> and pick the option <em>Add Vector Layer</em>.</li>
-<li>In the section Source click on the <img src="figures/button_select.png" class="img-fluid"> button and select the file “abbeyfeale\data\1-external\recharge\clipped_recharge.shp”. The ESRI Shapefile is a common file format.</li>
+<li>In the section Source click on the <img src="figures/tutorial/viewer/button_select.png" class="img-fluid"> button and select the file “abbeyfeale\data\1-external\recharge\clipped_recharge.shp”. The ESRI Shapefile is a common file format.</li>
 <li>Click the <em>Add</em> button and the layer is added to the panel <em>Layers</em>.</li>
 <li>Click <em>Close</em> to leave the window.</li>
 </ol>
@@ -254,13 +309,13 @@ ul.task-list li input[type="checkbox"] {
 <p>There is also an ESRI Shapefile with the rivers in the project area. Feel free to download that file (“abbeyfeale\data\1-external\rivers\WATER_RivNetRoutes.shp”) in the same way.</p>
 <p>After loading raster and polygon layers, let us now load a point file with boreholes. This time, the file format (*.IPF) is not a common file standard but developed by Deltares because the file includes associated borelog information. We must load the IPF file with the iMOD plugin.</p>
 <ol start="34" class="example" type="1">
-<li>One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (<img src="figures/button_iMOD-Open-IPF.png" class="img-fluid" style="width:3.0%">) and a window will open.</li>
-<li>Click on the <img src="figures/button_select.png" class="img-fluid" style="width:3.0%"> button and select the IPF “abbeyfeale\data\1-external\boreholes\BOREHOLES.IPF”.</li>
+<li>One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (<img src="figures/tutorial/viewer/button_iMOD-Open-IPF.png" class="img-fluid" style="width:3.0%">) and a window will open.</li>
+<li>Click on the <img src="figures/tutorial/viewer/button_select.png" class="img-fluid" style="width:3.0%"> button and select the IPF “abbeyfeale\data\1-external\boreholes\BOREHOLES.IPF”.</li>
 <li>Click the <em>Add</em> button and the IPF file is added in the panel <em>Layers</em>.</li>
 </ol>
 <p><strong>NOTE</strong>: If the points appear to be somewhere else on the map, e.g.&nbsp;Africa, make sure both your project and your layer have the correct CRS (EPSG:2157).</p>
 <ol type="a">
-<li>Check if the project CRS on the lower right corner still is <img src="figures/button_epg2157.png" class="img-fluid" style="width:25.0%">. Otherwise double click this area and change the EPSG.</li>
+<li>Check if the project CRS on the lower right corner still is <img src="figures/tutorial/viewer/button_epg2157.png" class="img-fluid" style="width:25.0%">. Otherwise double click this area and change the EPSG.</li>
 <li>Check if the layer CSR is correct and therefor double click on the BOREHOLES layer.</li>
 <li>In the window <em>Layer Properties</em> go to the section <em>Source</em>.</li>
 <li>In the dropdown menu <em>“Assigned Coordinate Reference System (CRS)”</em> select EPSG:2157.</li>
@@ -270,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 <p>The bore log for each borehole can only be displayed in a cross-section. Therefore, we activate the iMOD cross-section tool.</p>
 <ol start="38" class="example" type="1">
-<li><p>On the iMOD Toolbar select the Cross section button (<img src="figures/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%">) to start the iMOD Cross Section tool. In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.</p></li>
+<li><p>On the iMOD Toolbar select the Cross section button (<img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%">) to start the iMOD Cross Section tool. In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.</p></li>
 <li><p>Click on the button <em>Select location</em> and draw your cross-section line from north to south over the 3 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the Select location button again.</p></li>
 <li><p>In the field <em>Search buffer</em> increase the buffer along the line to 1000m. Now a yellow shade is visible around your line selecting all the available points within.</p></li>
 <li><p>From the dropdown menu on the left, select the layer BOREHOLES if not selected already. From the borelog we want to plot the variable LITHOLOGY, which is selected already while it is the only available variable.</p></li>
@@ -281,7 +336,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>NOTE</strong>: If no lines appear on your screen, make sure you have set your project CRS to EPSG:2157 (see earlier step).</p>
 <div id="fig-figure_Crosssection-with-borelogs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_Crosssection-with-borelogs.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_Crosssection-with-borelogs.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;3: Cross section with borelogs</figcaption><p></p>
 </figure>
 </div>
@@ -314,7 +369,7 @@ Script 1 – template
 <ol start="48" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\1-prepare\1-create-template-grid.py</em> and press ENTER.</li>
 </ol>
-<p><img src="figures/figure_iMODforge_prompt.png" class="img-fluid"></p>
+<p><img src="figures/tutorial/viewer/figure_iMODforge_prompt.png" class="img-fluid"></p>
 <p>Results 1: The result is a raster file (NetCDF format) describing the mask of our model (extent and cell size) as well as our DTM scaled up to the size of the model mask.</p>
 <ol start="49" class="example" type="1">
 <li><strong>Optional step</strong>. Load the topography_raster.nc file into QGIS. The file is in the folder “Abbeyfeale\data\2-interim”.</li>
@@ -340,26 +395,26 @@ Script 3 – Recharge
 </ol>
 <p>Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster.</p>
 <ol start="54" class="example" type="1">
-<li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
+<li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/tutorial/viewer/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
 </ol>
 <p>There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.</p>
 <ol start="55" class="example" type="1">
-<li>For the animation over time, activate the <em>Temporal Control Panel</em> with the button <img src="figures/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%"> on the Map Navigation Toolbar.</li>
-<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/button_iMOD-TimeSeries.png" class="img-fluid" style="width:4.0%"> ) on the iMOD Toolbar.</li>
+<li>For the animation over time, activate the <em>Temporal Control Panel</em> with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%"> on the Map Navigation Toolbar.</li>
+<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:4.0%"> ) on the iMOD Toolbar.</li>
 </ol>
 <p>Your display should look similar with <a href="#fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot">Figure&nbsp;4</a>, except for the red line below.</p>
 <ol start="57" class="example" type="1">
-<li>In the Temporal Controller panel click the green play button (<img src="figures/button_TemporalControllerPanel-menu.png" class="img-fluid">). Navigation buttons appear.</li>
-<li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the Play button (<img src="figures/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
+<li>In the Temporal Controller panel click the green play button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel-menu.png" class="img-fluid">). Navigation buttons appear.</li>
+<li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the Play button (<img src="figures/tutorial/viewer/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
 <li>In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge.</li>
-<li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/mouse_plus.png" class="img-fluid">. be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
+<li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid">. be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
 <li>Deselect the checkbox <em>Update on Selection</em>.</li>
-<li>Click the button <em>Select Points</em> (your mouse becomes a <img src="figures/mouse_plus.png" class="img-fluid"> and with the left mouse button select 3 points ad random.</li>
+<li>Click the button <em>Select Points</em> (your mouse becomes a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid"> and with the left mouse button select 3 points ad random.</li>
 <li>Finally click the Plot button and the 3 timeseries are added to the chart. Colors can be changed.</li>
 </ol>
 <div id="fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;4: Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)</figcaption><p></p>
 </figure>
 </div>
@@ -427,20 +482,20 @@ Script 4 – Geohydrology
 </ol>
 <p>Let’s create a cross-section with the permeability plot within each layer.</p>
 <ol start="68" class="example" type="1">
-<li>First, we must deactivate temporal control. Open the Temporal Control Panel again (<img src="figures/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%">), and turn off temporal navigation with the button <img src="figures/button_TemporalControllerPanel-turnoff.png" class="img-fluid" style="width:4.0%">.</li>
-<li>On the iMOD Toolbar select the <img src="figures/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%"> button to start the iMOD Cross Section tool.</li>
+<li>First, we must deactivate temporal control. Open the Temporal Control Panel again (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%">), and turn off temporal navigation with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel-turnoff.png" class="img-fluid" style="width:4.0%">.</li>
+<li>On the iMOD Toolbar select the <img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%"> button to start the iMOD Cross Section tool.</li>
 <li>In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the <em>Variable</em> dropdown select permeability and from the Layers dropdown select all layers.</li>
 <li>Click the button <em>Add</em> to add this item to the list of chart elements.</li>
 <li>Click on the button <em>Select Location</em> and draw a single line over the model area with your left mouse button. Close the line with your right mouse button.</li>
 <li>Click the button <em>Plot</em> and the geology along the line colored by permeability is draw in the chart.</li>
 </ol>
-<p>TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (<img src="figures/button_CrossSection-ViewAll.png" class="img-fluid" style="width:3.0%">) in the lower left of the chart.</p>
+<p>TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (<img src="figures/tutorial/viewer/button_CrossSection-ViewAll.png" class="img-fluid" style="width:3.0%">) in the lower left of the chart.</p>
 <ol start="74" class="example" type="1">
 <li>Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.</li>
 </ol>
 <div id="fig-figure_CrossSectionTool-3layers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_CrossSectionTool-3layers.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_CrossSectionTool-3layers.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;5: Three model layers coloured by permeability in the iMOD cross-section tool</figcaption><p></p>
 </figure>
 </div>
@@ -482,23 +537,23 @@ Script 7 - Convert the MODFLOW 6 results for QGIS
 <ol start="83" class="example" type="1">
 <li>Double click on the layer “hds_mesh” to open the <em>Layer Properties window</em>.</li>
 <li>Select the group Source on the left and see that the mesh contains several datasets.</li>
-<li>Select the group Symbology on the left and select the first tab <em>Dataset</em> (<img src="figures/button_SymbologyDataset.png" class="img-fluid" style="width:3.0%">). Here we can select the group we want to plot, for now it is “head_layer_1”.<br>
+<li>Select the group Symbology on the left and select the first tab <em>Dataset</em> (<img src="figures/tutorial/viewer/button_SymbologyDataset.png" class="img-fluid" style="width:3.0%">). Here we can select the group we want to plot, for now it is “head_layer_1”.<br>
 </li>
-<li>Click on the icon (<img src="figures/button_SymbologyDataset-unselected.png" class="img-fluid" style="width:3.0%">) on the line for “head_layer_1” and change it into (<img src="figures/button_SymbologyDataset-selected.png" class="img-fluid" style="width:3.0%">). Click on Apply.</li>
-<li>Select the second tab Contours (<img src="figures/button_SymbologyContours.png" class="img-fluid" style="width:3.0%"> ).</li>
+<li>Click on the icon (<img src="figures/tutorial/viewer/button_SymbologyDataset-unselected.png" class="img-fluid" style="width:3.0%">) on the line for “head_layer_1” and change it into (<img src="figures/tutorial/viewer/button_SymbologyDataset-selected.png" class="img-fluid" style="width:3.0%">). Click on Apply.</li>
+<li>Select the second tab Contours (<img src="figures/tutorial/viewer/button_SymbologyContours.png" class="img-fluid" style="width:3.0%"> ).</li>
 <li>Set the Min value on 40.00 and the Max value on 60.00 in order to see head changes over time.</li>
 <li>From the dropdown menu Color Ramp select Turbo and click on OK to close the window.</li>
 </ol>
 <p>Now we try to show an animation of the variation of calculated Heads over time and as timeseries.</p>
 <ol start="90" class="example" type="1">
-<li>For the animation over time, activate the Temporal Control Panel with the button (<img src="figures/button_TemporalControllerPanel.png" class="img-fluid" style="width:3.0%">) on the Map Navigation Toolbar.</li>
+<li>For the animation over time, activate the Temporal Control Panel with the button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:3.0%">) on the Map Navigation Toolbar.</li>
 <li>From you experience with this tool, try to start the animation with timestep of 14 days.</li>
-<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/button_iMOD-TimeSeries.png" class="img-fluid" style="width:3.0%">) on the iMOD Toolbar.</li>
+<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:3.0%">) on the iMOD Toolbar.</li>
 <li>From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1.</li>
 </ol>
 <div id="fig-figure_Timeseries-Heads-in-3-points" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_Timeseries-Heads-in-3-points.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;6: Calculated head with MODFLOW 6 on 3 points within the model area</figcaption><p></p>
 </figure>
 </div>

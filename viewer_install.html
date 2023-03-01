@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>iMOD Suite - Install iMOD Viewer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="_static/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">iMOD Suite</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorial_index.html">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Training"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Install iMOD Viewer</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link">iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link active">Install iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">QGIS Plugin User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">3D Viewer User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description"><span class="toc-section-number">1</span>  Description</a></li>
+  <li><a href="#sec-install_QGIS" id="toc-sec-install_QGIS" class="nav-link" data-scroll-target="#sec-install_QGIS"><span class="toc-section-number">2</span>  Installing QGIS</a></li>
+  <li><a href="#installing-the-imod-viewer" id="toc-installing-the-imod-viewer" class="nav-link" data-scroll-target="#installing-the-imod-viewer"><span class="toc-section-number">3</span>  Installing the iMOD Viewer</a>
+  <ul class="collapse">
+  <li><a href="#sec-Deltares_setup" id="toc-sec-Deltares_setup" class="nav-link" data-scroll-target="#sec-Deltares_setup"><span class="toc-section-number">3.1</span>  (Option 1) Install with the Deltares setup</a></li>
+  <li><a href="#sec-plugin_repository" id="toc-sec-plugin_repository" class="nav-link" data-scroll-target="#sec-plugin_repository"><span class="toc-section-number">3.2</span>  (Option 2) Installing from the QGIS plugin repository</a></li>
+  <li><a href="#sec-manual_install" id="toc-sec-manual_install" class="nav-link" data-scroll-target="#sec-manual_install"><span class="toc-section-number">3.3</span>  (Option 3) Manually download and copy the iMOD QGIS plugin</a></li>
+  </ul></li>
+  <li><a href="#sec-system-wide" id="toc-sec-system-wide" class="nav-link" data-scroll-target="#sec-system-wide"><span class="toc-section-number">4</span>  Advanced: Installing the QGIS plugin system-wide</a>
+  <ul class="collapse">
+  <li><a href="#installing-the-osgeo4w-qgis-installation" id="toc-installing-the-osgeo4w-qgis-installation" class="nav-link" data-scroll-target="#installing-the-osgeo4w-qgis-installation"><span class="toc-section-number">4.1</span>  Installing the OSGeo4W QGIS installation</a></li>
+  <li><a href="#putting-the-plugin-files-in-the-right-folder" id="toc-putting-the-plugin-files-in-the-right-folder" class="nav-link" data-scroll-target="#putting-the-plugin-files-in-the-right-folder"><span class="toc-section-number">4.2</span>  Putting the plugin files in the right folder</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Install iMOD Viewer</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="description" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="description"><span class="header-section-number">1</span> Description</h2>
+<p>For the complete iMOD viewer (QGIS plugin and 3D viewer) can be installed using the Deltares installer. A working QGIS is needed before installing the iMOD viewer. It is also possible to install the QGIS plugin using the QGIS plugin repository. This installation is without the 3D viewer.</p>
+<p>The different ways to install the QGIS plugin are described in <a href="#sec-Deltares_setup">Section&nbsp;3.1</a>, <a href="#sec-plugin_repository">Section&nbsp;3.2</a>, and <a href="#sec-manual_install">Section&nbsp;3.3</a>. Each of these, however, require the user to install QGIS. To install the QGIS plugin, we recommend running the iMOD Viewer installer (<a href="#sec-Deltares_setup">Section&nbsp;3.1</a>), which will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin.</p>
+</section>
+<section id="sec-install_QGIS" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sec-install_QGIS"><span class="header-section-number">2</span> Installing QGIS</h2>
+<p>You can download the standalone QGIS setup [on the QGIS website] (https://qgis.org/en/site/forusers/download.html). We recommend downloading a QGIS version &gt; 3.18 here. After downloading the QGIS setup, run it.</p>
+<p>This installs a user installation of QGIS, which is sufficient in most cases. For a system wide installation, see <a href="#sec-system-wide">Section&nbsp;4</a>.</p>
+</section>
+<section id="installing-the-imod-viewer" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="installing-the-imod-viewer"><span class="header-section-number">3</span> Installing the iMOD Viewer</h2>
+<p>The different options to install the iMOD Viewer are listed below. The iMOD Viewer consists of the iMOD QGIS plugin and iMOD 3D viewer.</p>
+<section id="sec-Deltares_setup" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sec-Deltares_setup"><span class="header-section-number">3.1</span> (Option 1) Install with the Deltares setup</h3>
+<p>Run the .msi you can download <a href="https://download.deltares.nl/en/download/imod-suite/">on the Deltares download portal</a></p>
+<p>Follow the installation instructions for <a href="./viewer_install_msi.html">the viewer install</a>, and make sure to do a <em>Complete</em> install.</p>
+</section>
+<section id="sec-plugin_repository" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="sec-plugin_repository"><span class="header-section-number">3.2</span> (Option 2) Installing from the QGIS plugin repository</h3>
+<p>In QGIS, navigate to <em>Plugins &gt; Manage and Install Plugins &gt; All</em>. In the search bar, type: “<em>iMOD</em>”. Select the iMOD plugin, and click <em>“Install”</em>.</p>
+<p>This does not install the iMOD 3D Viewer; so for 3D viewing functionality, follow the instructions in <a href="#sec-Deltares_setup">Section&nbsp;3.1</a>, but instead select a <em>Minimal</em> install.</p>
+</section>
+<section id="sec-manual_install" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="sec-manual_install"><span class="header-section-number">3.3</span> (Option 3) Manually download and copy the iMOD QGIS plugin</h3>
+<p>Download the iMOD QGIS plugin code from the [Github page](https://github.com/Deltares/imod-qgis]</p>
+<p>Unpack the zip files, and copy the <code>imodqgis</code> folder to your QGIS plugin directory. This is probably located in your Appdata folder. In windows it is something such as: <code>c:\Users\%USER%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins</code></p>
+<p>If you cannot find the folder, follow [these instructions] (https://gis.stackexchange.com/a/274312&gt;).</p>
+<p>In QGIS, make sure under <em>Plugins &gt; Manage and Install Plugins &gt; Installed</em> that the checkbox <em>iMOD</em> is checked.</p>
+</section>
+</section>
+<section id="sec-system-wide" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-system-wide"><span class="header-section-number">4</span> Advanced: Installing the QGIS plugin system-wide</h2>
+<p>There are cases where a system-wide QGIS installation is required, for example on computational servers, where multiple users need to use the software. Requiring each user to install the plugin themselves can be a burden.</p>
+<p>This requires the following steps:</p>
+<ol type="1">
+<li>Installing the OSGeo4W QGIS installation</li>
+<li>Putting the plugin files in the right folder.</li>
+</ol>
+<section id="installing-the-osgeo4w-qgis-installation" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="installing-the-osgeo4w-qgis-installation"><span class="header-section-number">4.1</span> Installing the OSGeo4W QGIS installation</h3>
+<ul>
+<li><p>Download the OSGeo4W installer from the <code>QGIS website &lt;https://qgis.org/en/site/forusers/download.html&gt;</code>_</p></li>
+<li><p>Right-click <code>osgeo4w-setup.exe</code> and click <em>Run as administrator</em></p></li>
+<li><p>At the starting screen, choose <em>Advanced Install</em></p></li>
+<li><p>In the <em>Choose Installation Type</em> screen, choose <em>Install from Internet</em> if you have access to the internet, this will download the files to a folder called something like: <code>%APPDATA%\Local\Temp\http%3a%2f%2fdownload.osgeo.org%2fosgeo4w%2fv2%2f\</code></p>
+<p>You can use this folder to <em>Install from Local Directory</em> later (for example on a restricted server)</p></li>
+<li><p>In <em>Choose Installation Directory</em> check <em>All Users</em></p></li>
+<li><p>In “Select Local Package Directory”, you can leave the default options</p></li>
+<li><p>If you previously checked “Install from Internet”:</p>
+<ul>
+<li>in the <em>Select Connection Type</em>, choose <em>Direct Connection</em></li>
+<li>in <em>Choose Download Sites</em>, choose http://download.osgeo.org</li>
+</ul></li>
+<li><p>In the <em>Select Packages</em> screen, make sure the following components are installed:</p>
+<ul>
+<li>under <em>Desktop</em>, <em>qgis: QGIS Desktop</em>.</li>
+<li>under <em>Libs</em>, <em>python3-pandas</em></li>
+</ul>
+<p>A component will be installed if there is a version number in the “New” column (If <em>Skip</em> change this by clicking the cell with <em>Skip</em> in it).</p></li>
+<li><p>After downloading an installing, check <em>Finish</em></p></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Maximize the screen to see the package names</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/osgeo4w-select-packages.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The <em>Select packages</em> screen enlarged. If you click <em>Skip</em>, a version number should appear in the column <em>New</em>.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="putting-the-plugin-files-in-the-right-folder" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="putting-the-plugin-files-in-the-right-folder"><span class="header-section-number">4.2</span> Putting the plugin files in the right folder</h3>
+<p>Download the iMOD QGIS plugin code from the <a href="https://github.com/Deltares/imod-qgis">Github page</a></p>
+<p>Unpack the zip files, and copy the <code>imodqgis</code> folder to your QGIS plugin directory. This is probably located in your Appdata folder. In windows it is something such as: <code>c:\OSGeo4W\apps\qgis\python\plugins\imodqgis</code></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

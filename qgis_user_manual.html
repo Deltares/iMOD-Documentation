@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>iMOD Suite - QGIS Plugin User Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="_static/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">iMOD Suite</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorial_index.html">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Training"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">QGIS Plugin User Manual</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link">iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link active">QGIS Plugin User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">3D Viewer User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
+  <li><a href="#configuration" id="toc-configuration" class="nav-link" data-scroll-target="#configuration">Configuration</a></li>
+  <li><a href="#functionality" id="toc-functionality" class="nav-link" data-scroll-target="#functionality">Functionality</a>
+  <ul class="collapse">
+  <li><a href="#ipf-reader-open-ipf" id="toc-ipf-reader-open-ipf" class="nav-link" data-scroll-target="#ipf-reader-open-ipf"><img src="figures/qgis/icons/ipf-reader.png" width="40" height="40" alt="ipf-reader"> Open IPF</a></li>
+  <li><a href="#d-viewer-3d-viewer" id="toc-d-viewer-3d-viewer" class="nav-link" data-scroll-target="#d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</a></li>
+  <li><a href="#time-series-time-series" id="toc-time-series-time-series" class="nav-link" data-scroll-target="#time-series-time-series"><img src="figures/qgis/icons/time-series.png" width="40" height="40" alt="time-series"> Time Series</a></li>
+  <li><a href="#cross-section-cross-section" id="toc-cross-section-cross-section" class="nav-link" data-scroll-target="#cross-section-cross-section"><img src="figures/qgis/icons/cross-section.png" width="40" height="40" alt="cross-section"> Cross-section</a></li>
+  <li><a href="#nhi-data-add-nhi-data" id="toc-nhi-data-add-nhi-data" class="nav-link" data-scroll-target="#nhi-data-add-nhi-data"><img src="figures/qgis/icons/NHI-portal.png" width="40" height="40" alt="nhi-data"> Add NHI-data</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">QGIS Plugin User Manual</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
+<p>This part contains the user guide of the QGIS plugin.</p>
+</section>
+<section id="configuration" class="level2">
+<h2 class="anchored" data-anchor-id="configuration">Configuration</h2>
+<ol type="1">
+<li>You probably want to change the language settings in QGIS, if it defaults to Dutch, it’s <em>Extra &gt; Opties &gt; Algemeen</em>. Change it to to US settings (that’s generally the safest default). You will need to restart QGIS before this has effect.</li>
+</ol>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/qgis-language-settings.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The QGIS language settings</figcaption><p></p>
+</figure>
+</div>
+</blockquote>
+<ol start="2" type="1">
+<li><p>Start up QGIS, go to <em>Plugins &gt; Manage and Install plugins &gt; Installed</em>. Make sure the iMOD plugin is ticked.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/qgis-installed-plugins.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The QGIS plugin manager. Here you can install and activate plugins.</figcaption><p></p>
+</figure>
+</div></li>
+</ol>
+<p>If the installation and configuration was succesful, the plugin should be visible in your toolbar.</p>
+<blockquote class="blockquote">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/imod-toolbar.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The iMOD plugin toolbar</figcaption><p></p>
+</figure>
+</div>
+</blockquote>
+</section>
+<section id="functionality" class="level2">
+<h2 class="anchored" data-anchor-id="functionality">Functionality</h2>
+<p>The QGIS plugin currently consists of five widgets, of which the functionality will be described in the next section:</p>
+<ul>
+<li>Open IPF</li>
+<li>3D Viewer</li>
+<li>Time Series</li>
+<li>Cross section</li>
+<li>Add NHI data</li>
+</ul>
+<section id="ipf-reader-open-ipf" class="level3">
+<h3 class="anchored" data-anchor-id="ipf-reader-open-ipf"><img src="figures/qgis/icons/ipf-reader.png" width="40" height="40" alt="ipf-reader"> Open IPF</h3>
+<p>Open IPF file and lets QGIS interpret it as a regular shapefile with points. Required to interpret timeseries in the Time Series widget, as well as to visualize borelogs in Cross section and 3D Viewer widget. To an IPF timeseries file it attaches two columns to the attribute table of the vector layer, namely a "start time" and "end time". This allows using the QGIS Temporal Controller Panel to browse through time, and see which points have data defined within a certain time frame.</p>
+<ul>
+<li>Press the "..." button to select a path to a file (as you would in other QGIS windows).</li>
+<li>Press "Add" to load the file into the QGIS explorer.</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Currently the IPF reader is not able to read every IPF file, as iMOD 5 supports quite a wide range of IPF files. For example, iMOD 5 supports both whitespace and comma seperated files, whereas the QGIS plugin only supports comma seperated IPF files. If the plugin is unable to read your IPF file, it is best to <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html">read the file with iMOD Python</a> and consequently <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html">write it again</a>. This can help, because the IPF reader in iMOD Python is a lot more flexible, but its writer always writes to a specific format. We plan to improve the flexibility of the plugin's IPF reader.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/ipf-reader.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The Open IPF widget.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/temporal-controller.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The temporal controller panel and map canvas of QGIS. The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="d-viewer-3d-viewer" class="level3">
+<h3 class="anchored" data-anchor-id="d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</h3>
+<p>The 3D viewer widget creates a connection between QGIS and the iMOD 3D viewer. It allows you to make selections in QGIS and forward them to the 3D viewer. Note that there are two perquisites for the iMOD viewer to correctly render mesh data:</p>
+<ol type="1">
+<li>The mesh data needs to be stored in a UGRID file</li>
+<li>Vertical axis is stored as variables <code>top_layer_*</code> and <code>bottom_layer_*</code>. The data belonging to each layer follows the following format <code>head_layer_*</code>, e.g.&nbsp;for a variable <code>head</code>.</li>
+</ol>
+<p>This means that not all data that can be loaded in QGIS as mesh can be viewed in the 3D viewer. Currently only UGRID meshes and IPF borelog files are supported.</p>
+<ul>
+<li>Use the selection box at the top to select the mesh layer/ipf file you want to inspect in the 3D viewer.</li>
+<li>The "Extent" group allows the user to manually set the bounding box by editing the numbers under "North", "East", "South", and "West", and more:
+<ul>
+<li>The "Current Layer Extent" button sets the bounding box to the extent of the layer selected in the QGIS explorer.</li>
+<li>The "Calculate from Layer" box allows you to select a dataset loaded in the QGIS explorer to calculate the extent from.</li>
+<li>"Map canvas extent" sets the bounding box to the map canvas</li>
+</ul></li>
+<li>The "Select" group contains a set of buttons to spatially select data to be forwarded to the 3D viewer
+<ul>
+<li>The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwared to the 3D viewer to draw a fence diagram. Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.</li>
+<li>The "Clear fence diagram" button clears all lines from the map canvas</li>
+<li>The "Draw extent" buttons allows you to click and drag a box that allows you to set a bounding box. The iMOD viewer will only load the data within this boundary box, which can be useful when exploring specific areas in large datasets. Drawing an bounding box will update the "Extent" widget. Right-click to stop drawing the extent.</li>
+</ul></li>
+<li>The "View" group contains a set of buttons to interact with the 3D viewer
+<ul>
+<li>"Start iMOD viewer" starts the iMOD viewer and immediately loads the data selected in the widget.</li>
+<li>"Load mesh data" remove previous data from viewer and load new mesh data in it.</li>
+<li>"Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer and renders a fence diagram.</li>
+<li>"Load legend" transfers legend in the QGIS map layer to fence diagram and/or mesh data in the 3D viewer for the selected variable in the QGIS map canvas.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/3d-viewer.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The 3D viewer widget. It will be opened on the right-hand side of the screen.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The 3D Viewer widget does not forward any data to the iMOD 3D viewer, it only forwards the path to the data to load, and a command how to load it. As of now, the widget does not understand changes made by the user in the 3D viewer. It only supports "one-way traffic" towards the viewer.</p>
+</div>
+</div>
+</section>
+<section id="time-series-time-series" class="level3">
+<h3 class="anchored" data-anchor-id="time-series-time-series"><img src="figures/qgis/icons/time-series.png" width="40" height="40" alt="time-series"> Time Series</h3>
+<p>The Time Series widget visualizes time series stored in IPF files or mesh data in a graph window. You can freely zoom and drag the graph in this window. Sometimes you lose your view of the lines by dragging too fast; so to reset your view, you can click on the small "A" in the bottom left corner of the graph window. The buttons in the widget change, depending on which data type is being selected.</p>
+<ul>
+<li><p>Use the box on the top left of the widget to select the ipf file or mesh data to plot.</p></li>
+<li><p>"ID column" box allows you to select the column of the attribute table that sets the point ID's to be plotted in the legend.</p></li>
+<li><p>The "Variable" box sets the variable (or variables in case of IPFs) to be plotted.</p></li>
+<li><p>The "Layer" box sets the layers of a mesh to be plotted. Multiple layers can be selected.</p></li>
+<li><p>The "Select points" box allows selecting points in a dataset to plot.</p>
+<blockquote class="blockquote">
+<ul>
+<li>When selecting on a IPF, left-click and drag a box to select points. <em>SHIFT + click</em> to add points to the existing selection. Press <em>CTRL + ALT + A</em> to deselect all points. You can also click <em>Deselect features from all layers</em> in QGIS' selection toolbar. To stop selecting, click <em>Pan Map</em> in QGIS' Map Navigation toolbar, or close the Timeseries widget.</li>
+<li>When selecting on a mesh, left-click to select a point on a mesh to plot, right-click to stop selecting.</li>
+</ul>
+</blockquote></li>
+<li><p>The "update on selection checkbox": when checked on, the widget automatically plots newly selected points for point data or plots data at the location of the cursor for mesh data.</p></li>
+<li><p>The "Line Color" box allows you to set a color of a selected line. You can select a plotted line by clicking on it.</p></li>
+<li><p>The "Draw markers" check box enables the drawing of markers on each data point. Recommended when there are not many datapoints to show and/or when the intervals between data points are not constant.</p></li>
+<li><p>The "Colors" button opens up a new window that lets you select different colorramps.</p></li>
+<li><p>The "Export" button allows you to export your plot to an image file (.png, .jpg etc.), a vector file (.svg for Inkscape), or a .csv to allow for plotting in different software.</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/time-series-points.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps. The yellow points on the map canvas indicate the selected points.</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/time-series-mesh.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The Time series widget and map canvas for a mesh. The red crosses indicate the location of the plotted time-series.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A known issue with a multiple monitor setup is that the grid behind the plot might be plotted way off. See the <a href="./viewer_known_issues.html">known issues section</a> for more info and how to fix this.</p>
+</div>
+</div>
+</section>
+<section id="cross-section-cross-section" class="level3">
+<h3 class="anchored" data-anchor-id="cross-section-cross-section"><img src="figures/qgis/icons/cross-section.png" width="40" height="40" alt="cross-section"> Cross-section</h3>
+<p>The cross-section widget allows you to draw cross-sections of both mesh and raster data. Note that the widget expects that the vertical axis is stored as variables <code>top_layer_*</code> and <code>bottom_layer_*</code>. The data belonging to each layer follows the following format <code>head_layer_*</code>, e.g.&nbsp;for a variable <code>head</code>. For time dependent data, when the Temporal Controller Panel is turned on, the cross-section plot is automatically updated when a different moment in time is selected.</p>
+<p>The cross-section widget consists of three component:</p>
+<ol type="1">
+<li>The top bar</li>
+<li>A styling table, specifying the styling and order of elements to plot.</li>
+<li>A graph window, in which the cross-section is plotted.</li>
+</ol>
+<p>The functionality of each component is explained below.</p>
+<ol type="1">
+<li><dl>
+<dt>The top bar</dt>
+<dd>
+<ul>
+<li>"Select location" lets you draw a line on the map, along which a cross-section will be drawn. Left-click to start and to stop drawing a line. Right-click to stop the selection.</li>
+<li>When the "Dynamic resolution" checkbox option is switched on, the amount of points along which data is sampled for the plot is set to a fixed number and resolution varies. Turning this off and setting a very small resolution size might improve precision, but will definitely result in a performance loss.</li>
+<li>The "Search buffer" box sets the tangential distance from which boreholes will will be selected.</li>
+<li>The "Plot" button plots the data and styling selected in the styling table to the graph window.</li>
+<li>The "Export" button allows you to export your plot to an image file (.png, .jpg etc.), a vector file (.svg for Inkscape), or a .csv to allow for plotting in different software.</li>
+</ul>
+</dd>
+</dl></li>
+<li><dl>
+<dt>The styling table</dt>
+<dd>
+<ul>
+<li>The top left selection box allows you to choose the dataset to plot.</li>
+<li>The "Variable" box, you can select the variable to plot.</li>
+<li>The "Layer" box lets you select individual layers to plot. By default all are plotted.</li>
+<li>The "As line(s)" checkbox turns on an option to plot data as lines. Useful to plot layer tops or bottoms to show interfaces.</li>
+<li>The "Add" button adds a dataset to the table.</li>
+</ul>
+</dd>
+</dl></li>
+<li><dl>
+<dt>The plot window</dt>
+<dd>
+<ul>
+<li>Right-click the plotting window to set zoom options.</li>
+<li>You can click the small "A" in the bottom left corner to reset zoom.</li>
+</ul>
+</dd>
+</dl></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/cross-section.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The "Cross-section" widget and map canvas. An example is shown in which layer ids are plotted as colors, and borelogs are plotted as bars.</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A known issue with a multiple monitor setup is that the grid behind the plot might be plotted way off. See the <a href="./viewer_known_issues.html">known issues section</a> for more info and how to fix this.</p>
+</div>
+</div>
+</section>
+<section id="nhi-data-add-nhi-data" class="level3">
+<h3 class="anchored" data-anchor-id="nhi-data-add-nhi-data"><img src="figures/qgis/icons/NHI-portal.png" width="40" height="40" alt="nhi-data"> Add NHI-data</h3>
+<p>Opens up a window to select data from the NHI portal to load directly in QGIS. The NHI is the <a href="https://www.nhi.nu/">Netherlands Hydrological Instrument</a> . The NHI data provides datasets with different kinds of services:</p>
+<ul>
+<li>a "Web Map Service" (WMS), which provides a map with a (fixed) legend.</li>
+<li>a "Web Feature Service" (WFS), which provides features from vector data via the internet.</li>
+<li>a "Web Coverage Service" (WCS), which provides raster data via the internet.</li>
+</ul>
+<p>You can use the search bar to search for datasets of your liking.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/add-nhi-data.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">The "Add NHI window"</figcaption><p></p>
+</figure>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Experience has shown that sometimes these services are hard to reach and data cannot be loaded.</p>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

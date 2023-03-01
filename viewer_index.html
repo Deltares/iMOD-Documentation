@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Visualization of unstructured grids in GIS and 3D.">
 
-<title>iMOD Suite - iMOD Suite Documentation</title>
+<title>iMOD Suite - iMOD Viewer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +31,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -60,42 +59,12 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="_static/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -119,7 +88,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer_index.html">
+    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
@@ -150,10 +119,54 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">iMOD Viewer</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link active">iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">QGIS Plugin User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">3D Viewer User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -163,9 +176,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">iMOD Suite Documentation</h1>
+<h1 class="title d-none d-lg-block">iMOD Viewer</h1>
 </div>
 
+<div>
+  <div class="description">
+    Visualization of unstructured grids in GIS and 3D.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -178,133 +196,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>The iMOD Suite offers different modules which support modelling with MODFLOW 6 (including unstructured meshes):</p>
+<p>The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.</p>
 <ul>
-<li>iMOD Viewer: The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin. The iMOD QGIS Plugin QGIS plugin allows visualisation of model input and output with tools for cross-sections, timeseries and link to the 3D viewer. It supports structured NetCDF, UGRID and IPF files. And the iMOD 3D Viewer for interactive 3D visualisation of unstructured input and output. Supports UGRID file format and IPF borelog files.</li>
-<li>iMOD Python: A Python package to support MODFLOW groundwater modeling. It makes it easy to go from your raw data to a fully defined MODFLOW model, with the aim to make this workflow reproducable.</li>
-<li>iMOD Coupler: Software that couples MODFLOW 6 to other computational cores. It currently supports a coupling to MetaSWAP, but additional computational cores are planned in the future.</li>
+<li><p>The iMOD 3D Viewer is a 3D viewer for grids and datasets. It supports IDF files, UGRID files and Grb.disu files that contain an unstructured layered grid.<br>
+The 3D Viewer also supports viewing some non-grid objects like IPF files and Shapefiles.</p></li>
+<li><p>The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS.<br>
+Its primary components are visualization of timeseries, both at points as well as on an unstructured grid, cross-section visualization, including borelogs, and connecting to the 3D Viewer.</p>
+<p><img src="figures/viewer_index/example-dommel.png" class="img-fluid"></p></li>
 </ul>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1677676820520" data-listing-reading-time-sort="12.63">
-<a href="./introduction.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD.svg" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Introduction
-</h5>
-<div class="card-text listing-description">
-Learn what’s included.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1677676820520" data-listing-reading-time-sort="0.33">
-<a href="./tutorial_index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD-tutorial.svg" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Tutorials
-</h5>
-<div class="card-text listing-description">
-Learn how to use the iMOD Suite
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1677676820436" data-listing-reading-time-sort="1.175">
-<a href="./coupler_index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD-coupler.svg" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-iMOD Coupler
-</h5>
-<div class="card-text listing-description">
-Couple Modflow 6 to other model codes.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1677676820520" data-listing-reading-time-sort="0.805">
-<a href="./python_index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD-python.svg" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-iMOD Python
-</h5>
-<div class="card-text listing-description">
-Build large groundwater models with scripts
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1677676820520" data-listing-reading-time-sort="0.54">
-<a href="./viewer_index.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD-Qgis.svg" class="thumbnail-image card-img" style="height: 250px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-iMOD Viewer
-</h5>
-<div class="card-text listing-description">
-Visualization of unstructured grids in GIS and 3D.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

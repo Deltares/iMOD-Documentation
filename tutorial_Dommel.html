@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Components: iMOD 3D Viewer">
 
-<title>iMOD Suite Tutorial - Dommel</title>
+<title>iMOD Suite - Dommel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="_static/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -74,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">iMOD Suite Tutorial</span>
+    <span class="navbar-title">iMOD Suite</span>
     </a>
   </div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
@@ -83,12 +84,28 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./Abbeyfeale.html">
- <span class="menu-text">Abbeyfeale</span></a>
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Dommel.html" aria-current="page">
- <span class="menu-text">Dommel</span></a>
+    <a class="nav-link" href="./viewer_index.html">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./tutorial_index.html" aria-current="page">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -102,17 +119,51 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Dommel</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_index.html" class="sidebar-item-text sidebar-link">Tutorials</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_Abbeyfeale.html" class="sidebar-item-text sidebar-link">Abbeyfeale</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_Dommel.html" class="sidebar-item-text sidebar-link active">Dommel</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tutorial_wq.html" class="sidebar-item-text sidebar-link">Conceptual fresh-salt model</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#topics" id="toc-topics" class="nav-link active" data-scroll-target="#topics">Topics</a></li>
+  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
   <li><a href="#objective" id="toc-objective" class="nav-link" data-scroll-target="#objective">Objective</a></li>
   <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial">Tutorial</a></li>
   </ul>
@@ -123,9 +174,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Dommel</h1>
+<h1 class="title d-none d-lg-block">Dommel</h1>
 </div>
 
+<div>
+  <div class="description">
+    Components: iMOD 3D Viewer
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -138,9 +194,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p><em>[NB. Windows 8.1 is not supported]</em></p>
-<section id="topics" class="level2">
-<h2 class="anchored" data-anchor-id="topics">Topics</h2>
+<section id="description" class="level2">
+<h2 class="anchored" data-anchor-id="description">Description</h2>
 <p>In this tutorial, you will learn the following:</p>
 <ol type="1">
 <li>Basic usage of the iMOD 3D Viewer</li>
@@ -151,7 +206,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="objective" class="level2">
 <h2 class="anchored" data-anchor-id="objective">Objective</h2>
 <p>In this tutoral we will explore the iMOD 3D Viewer, based on data of the Dommel, a catchment in south of the Netherlands. This viewer is developed because QGIS does not support 3D viewing. It can display your geological data (layers and borehole data) but also data variation through time like chloride concentrations.</p>
-<p>There are 2 options to start the 3D Viewer. One option is to select layers in QGIS and select the 3D Viewer icon on the iMOD toolbar <img src="figures/button_iMOD-3D-tool.png" class="img-fluid" style="width:3.0%">. The selected layers are opened in the 3D Viewer. The other option is to start the 3D Viewer directly. In this short Tutorial we’ll pursue the second option.</p>
+<p>There are 2 options to start the 3D Viewer. One option is to select layers in QGIS and select the 3D Viewer icon on the iMOD toolbar <img src="figures/tutorial/viewer/button_iMOD-3D-tool.png" class="img-fluid" style="width:3.0%">. The selected layers are opened in the 3D Viewer. The other option is to start the 3D Viewer directly. In this short Tutorial we’ll pursue the second option.</p>
 </section>
 <section id="tutorial" class="level2">
 <h2 class="anchored" data-anchor-id="tutorial">Tutorial</h2>
@@ -163,35 +218,35 @@ ul.task-list li input[type="checkbox"] {
 Let’s first import an overlay file showing the surface water elements.</p>
 <ol start="3" class="example" type="1">
 <li>In the main menu choose “Data”, select “Open overlay” and open the shape file “…\data\1-external\Brabant-data\riv_brabant.shp”.</li>
-<li>Select the new layer in the overview and click the “draw-selected-layer” button (<img src="figures/button_3Dtool-redrawlayer.png" class="img-fluid">).</li>
+<li>Select the new layer in the overview and click the “draw-selected-layer” button (<img src="figures/tutorial/viewer/button_3Dtool-redrawlayer.png" class="img-fluid">).</li>
 </ol>
 <p>Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This NetCDF file contains for each model layer the top, the bottom and a timeseries of calculated heads.</p>
 <ol start="5" class="example" type="1">
 <li>In the main menu choose “Data”, select “Open grid file” and open the shape file “..\data\1-external\Brabant-data\Calculated-Heads.nc”.</li>
-<li>Select both layers in the overview and click the “draw-selected-layer” button (<img src="figures/button_3Dtool-redrawlayer.png" class="img-fluid">).</li>
+<li>Select both layers in the overview and click the “draw-selected-layer” button (<img src="figures/tutorial/viewer/button_3Dtool-redrawlayer.png" class="img-fluid">).</li>
 <li>Click on the “&gt;” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”.</li>
 <li>Click on the “&gt;” sign left from both the section “All Layer” and “Layered Datasets”.</li>
 </ol>
 <p>Your screen might look like <a href="#fig-figure_3DViewer_headriveroverview">Figure&nbsp;1</a></p>
 <div id="fig-figure_3DViewer_headriveroverview" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="figures/figure_3DViewer_headriveroverview.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_3DViewer_headriveroverview.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Top view of dataset “Calculated-Heads” and river overlay in the 3D viewer</figcaption><p></p>
 </figure>
 </div>
 <p>Let’s now experience with the viewer controls.</p>
 <ol start="9" class="example" type="1">
 <li>Spin the mouse wheel forward to zoom in and spin backwards to zoom out. On a laptop, move two fingers up and down on the touchpad.</li>
-<li>In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (<img src="figures/button_zoomtoextent.png" class="img-fluid">) to return to the initial view.</li>
+<li>In case you lost control on your display view, click in the toolbar Viewer Controls on the “zoom-to-extent” button (<img src="figures/tutorial/viewer/button_zoomtoextent.png" class="img-fluid">) to return to the initial view.</li>
 <li>Combine the Shift button + right mouse and move the camera horizontally/vertically with each mouse move (or finger on your touch pad).</li>
 <li>Combine the Ctrl button + right mouse and rotate the camera around its lens with a mouse move (or finger on your touch pad).</li>
-<li>Go back to the initial view with the “zoom-to-extent” button (<img src="figures/button_zoomtoextent.png" class="img-fluid">).</li>
+<li>Go back to the initial view with the “zoom-to-extent” button (<img src="figures/tutorial/viewer/button_zoomtoextent.png" class="img-fluid">).</li>
 <li>Hold the right mouse button while moving the mouse and the camera moves around the grid.</li>
 </ol>
 <p>The imported data is a nice example of an unstructured grid.</p>
 <ol start="15" class="example" type="1">
 <li>Zoom in to the upper left part of the grid. Notice that the grid is built from triangles, concentrated around the rivers.</li>
-<li>Switch the dataset on and off with a click on the (<img src="figures/button_3Dtool-switchon.png" class="img-fluid" style="width:4.0%">) button in file overview, left of the layer. See the underlaying rivers.</li>
+<li>Switch the dataset on and off with a click on the (<img src="figures/tutorial/viewer/button_3Dtool-switchon.png" class="img-fluid" style="width:4.0%">) button in file overview, left of the layer. See the underlaying rivers.</li>
 </ol>
 <p>In your display the vertical thickness of the dataset is perhaps rather small. Let’s increase the vertical exaggeration.</p>
 <ol start="17" class="example" type="1">
@@ -200,9 +255,9 @@ Let’s first import an overlay file showing the surface water elements.</p>
 </ol>
 <p>Some final experience with the other viewer controls.</p>
 <ol start="19" class="example" type="1">
-<li>Use the buttons (<img src="figures/button_3Dtool-viewcontrolbar.png" class="img-fluid" style="width:35.0%">) to reposition your camera to another fixed position to the grid.</li>
-<li>Click the button “Toggle Sliders”(<img src="figures/button_3Dtool-ToggleSlider.png" class="img-fluid" style="width:4.0%">) to activate the sliders for the X, Y and Z direction.</li>
-<li>Experiment with the sliders, both left and right <img src="figures/button_3Dtool-Slider.png" class="img-fluid"></li>
+<li>Use the buttons (<img src="figures/tutorial/viewer/button_3Dtool-viewcontrolbar.png" class="img-fluid" style="width:35.0%">) to reposition your camera to another fixed position to the grid.</li>
+<li>Click the button “Toggle Sliders”(<img src="figures/tutorial/viewer/button_3Dtool-ToggleSlider.png" class="img-fluid" style="width:4.0%">) to activate the sliders for the X, Y and Z direction.</li>
+<li>Experiment with the sliders, both left and right <img src="figures/tutorial/viewer/button_3Dtool-Slider.png" class="img-fluid"></li>
 </ol>
 <p>The colors in the display by default referred to the <em>Elevation</em> of the layers. Let’s now color the layers by calculated <em>Head</em>.</p>
 <ol start="22" class="example" type="1">
@@ -218,11 +273,11 @@ Let’s first import an overlay file showing the surface water elements.</p>
 <li>Check the Percentiles box.</li>
 <li>Click on OK and the window will close. The colors in your display change automatically.</li>
 </ol>
-<p>The imported file doesn’t contain one single head, but a timeseries of calculated heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Time Slider to display the data through time. <img src="figures/button_3Dtool-TimeSlider.png" class="img-fluid" style="width:60.0%"></p>
+<p>The imported file doesn’t contain one single head, but a timeseries of calculated heads ranging from 01/01/2018 – 01/02/2018. Now let’s use the Time Slider to display the data through time. <img src="figures/tutorial/viewer/button_3Dtool-TimeSlider.png" class="img-fluid" style="width:60.0%"></p>
 <ol start="29" class="example" type="1">
 <li>First click the button “Back(+y)” for a nice 3D view.</li>
-<li>Click the button (<img src="figures/button_3Dtool-TimeSlider-Start.png" class="img-fluid" style="width:3.0%">) to start the animation. It is a large dataset to the view in the display only changes slowly.</li>
-<li>Stop the animation with the button (<img src="figures/button_3Dtool-TimeSlider-Stop.png" class="img-fluid" style="width:3.0%">).</li>
+<li>Click the button (<img src="figures/tutorial/viewer/button_3Dtool-TimeSlider-Start.png" class="img-fluid" style="width:3.0%">) to start the animation. It is a large dataset to the view in the display only changes slowly.</li>
+<li>Stop the animation with the button (<img src="figures/tutorial/viewer/button_3Dtool-TimeSlider-Stop.png" class="img-fluid" style="width:3.0%">).</li>
 <li>Play around with the slider.</li>
 </ol>
 <p>That’s all for now. You can save your session if you like.</p>
@@ -233,7 +288,7 @@ Let’s first import an overlay file showing the surface water elements.</p>
 <p>Thank you for your patience and attention.</p>
 <div id="fig-figure_3DViewer_LegendEditor" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
-<p><img src="figures/figure_3DViewer_LegendEditor.png" class="img-fluid figure-img" style="width:40.0%"></p>
+<p><img src="figures/tutorial/viewer/figure_3DViewer_LegendEditor.png" class="img-fluid figure-img" style="width:40.0%"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;2: iMOD 3D Viewer - Legend Editor</figcaption><p></p>
 </figure>
 </div>
