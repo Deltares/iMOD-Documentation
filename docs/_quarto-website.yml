@@ -2,17 +2,71 @@ project:
   type: website
 
 website:
-  title: "iMOD Suite Tutorial"
+  title: "iMOD Suite"
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
     left:
-      - Abbeyfeale.qmd
-      - Dommel.qmd
+      - text: Introduction
+        href: introduction.qmd
+      - text: iMOD Viewer
+        href: viewer_index.qmd
+      - text: iMOD Python
+        href: python_index.qmd
+      - text: iMOD Coupler
+        href: coupler_index.qmd
+      - text: "Tutorials"
+        href: tutorial_index.qmd
+      - text: "Further links"
+        href: further_links.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training
         aria-label: GitHub
+
+  sidebar:
+    - id: viewer
+      title: "iMOD Viewer"
+      style: "floating"
+      collapse-level: 2
+      align: left
+      contents:
+        - href: viewer_index.qmd
+        - href: viewer_install.qmd
+        - href: viewer_install_msi.qmd
+        - href: qgis_user_manual.qmd
+        - href: 3dviewer_user_manual.qmd
+        - href: viewer_known_issues.qmd
+
+    - id: python
+      title: "iMOD Python"
+      align: left
+      contents:
+        - href: python_index.qmd
+        - href: python_install.qmd
+        - href: deltaforge_install.qmd
+        - href: python_getting_started.qmd
+
+    - id: coupler
+      title: "iMOD Coupler"
+      align: left
+      contents:
+        - href: coupler_index.qmd
+
+    - id: tutorial
+      title: "Tutorials"
+      align: left
+      contents:
+        - href: tutorial_index.qmd
+        - href: tutorial_Abbeyfeale.qmd
+        - href: tutorial_Dommel.qmd
+        - href: tutorial_wq.qmd
+    
+    - id: further_links
+      title: "Further links"
+      align: left
+      contents:
+        - href: further_links.qmd
 
 format:
   html:

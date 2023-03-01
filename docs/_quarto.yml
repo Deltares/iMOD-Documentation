@@ -3,4 +3,4 @@ project:
 
 profile:
   group: 
-    - [website, manual]
+    - [website, manual, install, tutorial]

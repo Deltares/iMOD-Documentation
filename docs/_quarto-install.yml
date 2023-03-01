@@ -1,0 +1,14 @@
+project:
+  type: book
+
+book:
+  title: "iMOD Suite Installation Guide"
+  chapters:
+    - index.qmd
+    - viewer_install_msi.qmd
+    - deltaforge_install.qmd
+
+format:
+  pdf:
+    documentclass: scrreprt
+    top-level-division: chapter

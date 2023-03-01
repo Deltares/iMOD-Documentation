@@ -15,7 +15,7 @@ jobs:
     name: Publish with Quarto
     runs-on: ubuntu-latest
     steps:
-#       Circumvent this problem: https://github.com/actions/checkout/issues/165
+        # Circumvent this problem: https://github.com/actions/checkout/issues/165
       - name: Checkout code with LFS cache
         uses: nschloe/action-checkout-with-lfs-cache@v1
 
@@ -34,12 +34,22 @@ jobs:
       - name: Install TinyTex
         run: quarto install tinytex
 
-      - name: Render PDF
+      - name: Render Manual
         run: "quarto render docs --profile manual --to pdf"
+
+      - name: Render Tutorial 
+        # --no-clean to skip cleanup before rendering
+        run: "quarto render docs --no-clean --profile tutorial --to pdf"
+
+      - name: Render Installation Guide 
+        # --no-clean to skip cleanup before rendering
+        run: "quarto render docs --no-clean --profile install --to pdf"
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: iMOD-Suite-Tutorial
+          name: iMOD-Suite-Guides
           path: |
+            docs/_build/iMOD-Suite-User-Guide.pdf
             docs/_build/iMOD-Suite-Tutorial.pdf
+            docs/_build/iMOD-Suite-Installation-Guide.pdf
