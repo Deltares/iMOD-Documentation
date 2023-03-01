@@ -101,15 +101,17 @@ Do you like to see the values of the DTM under you mouse? You need a QGIS plugin
 (@) On the left, select the group *All* to see all available plugins. 
 (@) Search for “iMOD” and see that the iMOD plugin is successfully installed. 
 (@) Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.
-(@) Search for “Value Tool”, install it and *Close* the Plugins window.
+(@) Search for “Value Tool”, install it and *Close* the Plugins window. 
 
-![iMOD Toolbar in QGIS](figures/tutorial/viewer/button_iMOD-Toolbar.png){width=50% #fig-button_iMOD-Toolbar fig-align="center"}  
+\
+
+![iMOD plugin toolbar](figures/tutorial/viewer/button_iMOD-Toolbar.png){width=35% #fig-button_iMOD-Toolbar fig-align="left"}  
 
 The tool is now visible as a panel on the left and as the *Value Tool* button (![](figures/tutorial/viewer/button_valuetool.png){width=4%}) in a panel on the top of QGIS. 
 
 (@) Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location. 
 
-![Example panel Value Tool](figures/tutorial/viewer/figure_ValueTool-in-QGIS.png){width=50% #fig-figure_ValueTool-in-QGIS fig-align="center"}  
+![Example panel Value Tool](figures/tutorial/viewer/figure_ValueTool-in-QGIS.png){width=50% #fig-figure_ValueTool-in-QGIS fig-align="left"}  
 
 Next step is to load a polygon file representing the recharge zones in the project area.
 
