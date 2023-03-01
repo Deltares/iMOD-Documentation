@@ -244,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </p>
 <ol start="3" class="example" type="1">
 <li>From the main menu click on <em>Project</em> and select <em>Properties</em>.</li>
-<li>In the <em>Properties</em> window select the category <em>CRS</em>, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the <em>Apply</em> button, followed by the OK button to close the window.</li>
+<li>In the <em>Properties</em> window select the category <em>CRS</em>, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the <em>Apply</em> button, followed by the <em>OK</em> button to close the window.</li>
 </ol>
 <p>For navigation purposes, let us load the universal topography of Open Street Map. (OSM)</p>
 <ol start="5" class="example" type="1">
@@ -257,13 +257,13 @@ ul.task-list li input[type="checkbox"] {
 <li>In the section <em>Source</em> click on the <img src="figures/tutorial/viewer/button_select.png" class="img-fluid"> button and select the file “…\abbeyfeale\data\1-external\topography\Abbeyfeale DTM.tif”. GeoTIFF is a common file format.</li>
 <li>Click the <em>Add</em> button and the layer is added to the panel <em>Layers</em>.</li>
 <li>Click <em>Close</em> to leave the window.</li>
-<li>In the panel Layers select the layer “Abbeyfeale DTM” and click the <img src="figures/tutorial/viewer/button_zoomtolayer.png" class="img-fluid"> button to zoom in to the layer.</li>
+<li>In the panel <em>Layers</em> select the layer “Abbeyfeale DTM” and click the <img src="figures/tutorial/viewer/button_zoomtolayer.png" class="img-fluid"> button to zoom in to the layer.</li>
 </ol>
 <p>We see the contours of a river, but the legend is gray only by default. Let’s change that.</p>
 <ol start="12" class="example" type="1">
 <li>Double click on the layer “Abbeyfeale DTM”. The window “Layer Properties” opens.</li>
 <li>Select the group <em>Symbology</em>.</li>
-<li>From the dropdown <em>Render Type</em> select the type <em>Singleband pseudocolor</em>.</li>
+<li>From the dropdown menu <em>Render Type</em> select the type <em>Singleband pseudocolor</em>.</li>
 <li>Be sure a Color Ramp is selected as well.</li>
 <li>Make sure the dropdown menu <em>Interpolation</em> shows Linear and the dropdown menu <em>Mode</em> shows <em>Continuous</em>.</li>
 <li>Click <em>Apply</em> to change the colors and <em>OK</em> to close the window.</li>
@@ -280,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
 <ol start="19" class="example" type="1">
 <li>Go to Project in the main menu, select Save As and select a folder and a file name for your project, e.g.&nbsp;“…\abbeyfeale\tutorial1.qgz”</li>
 </ol>
-<p>Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like our iMOD Plugin.</p>
+<p>Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like the Deltares iMOD Plugin.</p>
 <ol start="20" class="example" type="1">
 <li>Go to <em>Plugins</em> from the main menu and select <em>Manage and Install Plugins… </em> and a window opens.</li>
 <li>On the left, select the group <em>All</em> to see all available plugins.</li>
@@ -288,10 +288,22 @@ ul.task-list li input[type="checkbox"] {
 <li>Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.</li>
 <li>Search for “Value Tool”, install it and <em>Close</em> the Plugins window.</li>
 </ol>
-<p>The tool is now visible as a panel on the left and as the Value Tool button (<img src="figures/tutorial/viewer/button_valuetool.png" class="img-fluid" style="width:4.0%">) in a panel on the top of QGIS.</p>
+<div id="fig-button_iMOD-Toolbar" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/tutorial/viewer/button_iMOD-Toolbar.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: iMOD Toolbar in QGIS</figcaption><p></p>
+</figure>
+</div>
+<p>The tool is now visible as a panel on the left and as the <em>Value Tool</em> button (<img src="figures/tutorial/viewer/button_valuetool.png" class="img-fluid" style="width:4.0%">) in a panel on the top of QGIS.</p>
 <ol start="25" class="example" type="1">
 <li>Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location.</li>
 </ol>
+<div id="fig-figure_ValueTool-in-QGIS" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/tutorial/viewer/figure_ValueTool-in-QGIS.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: Example panel Value Tool</figcaption><p></p>
+</figure>
+</div>
 <p>Next step is to load a polygon file representing the recharge zones in the project area.</p>
 <ol start="26" class="example" type="1">
 <li>Go to <em>Layer</em> in the main menu, select <em>Add Layer</em> and pick the option <em>Add Vector Layer</em>.</li>
@@ -303,13 +315,16 @@ ul.task-list li input[type="checkbox"] {
 <ol start="30" class="example" type="1">
 <li>Double click on the layer “clipped_recharge”. The window “Layer Properties” opens.</li>
 <li>Select the group <em>Symbology</em>.</li>
-<li>From the upper dropdown menu select <em>Categorized</em>. From the dropdown <em>Value</em> select RECH_MM_YR and from the dropdown <em>Color</em> ramp select Viridis. Click on the button <em>Classify</em> to create the legend.</li>
+<li>From the upper dropdown menu select <em>Categorized</em>.</li>
+<li>From the dropdown <em>Value</em> select RECH_MM_YR.</li>
+<li>From the dropdown <em>Color ramp</em> select Viridis.</li>
+<li>Click on the button <em>Classify</em> to create the legend.</li>
 <li>Click <em>Apply</em> to change the colors and <em>OK</em> to close the window.</li>
 </ol>
 <p>There is also an ESRI Shapefile with the rivers in the project area. Feel free to download that file (“abbeyfeale\data\1-external\rivers\WATER_RivNetRoutes.shp”) in the same way.</p>
 <p>After loading raster and polygon layers, let us now load a point file with boreholes. This time, the file format (*.IPF) is not a common file standard but developed by Deltares because the file includes associated borelog information. We must load the IPF file with the iMOD plugin.</p>
-<ol start="34" class="example" type="1">
-<li>One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (<img src="figures/tutorial/viewer/button_iMOD-Open-IPF.png" class="img-fluid" style="width:3.0%">) and a window will open.</li>
+<ol start="37" class="example" type="1">
+<li>One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the <em>Open IPF</em> button (<img src="figures/tutorial/viewer/button_iMOD-Open-IPF.png" class="img-fluid" style="width:3.0%">) and a window will open.</li>
 <li>Click on the <img src="figures/tutorial/viewer/button_select.png" class="img-fluid" style="width:3.0%"> button and select the IPF “abbeyfeale\data\1-external\boreholes\BOREHOLES.IPF”.</li>
 <li>Click the <em>Add</em> button and the IPF file is added in the panel <em>Layers</em>.</li>
 </ol>
@@ -320,29 +335,35 @@ ul.task-list li input[type="checkbox"] {
 <li>In the window <em>Layer Properties</em> go to the section <em>Source</em>.</li>
 <li>In the dropdown menu <em>“Assigned Coordinate Reference System (CRS)”</em> select EPSG:2157.</li>
 </ol>
-<ol start="37" class="example" type="1">
-<li>Right-click BOREHOLES.IPF in the <em>Layers</em> panel and click “Show labels”. This will label the points with the borelog identifier.</li>
+<ol start="40" class="example" type="1">
+<li>Right-click layer BOREHOLES in the <em>Layers</em> panel and click “Show labels”. This will label the points with the borelog identifier.</li>
 </ol>
 <p>The bore log for each borehole can only be displayed in a cross-section. Therefore, we activate the iMOD cross-section tool.</p>
-<ol start="38" class="example" type="1">
-<li><p>On the iMOD Toolbar select the Cross section button (<img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%">) to start the iMOD Cross Section tool. In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.</p></li>
-<li><p>Click on the button <em>Select location</em> and draw your cross-section line from north to south over the 3 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the Select location button again.</p></li>
+<ol start="41" class="example" type="1">
+<li><p>On the iMOD Toolbar select the <em>Cross section</em> button (<img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%">) to start the iMOD Cross Section tool. In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.</p></li>
+<li><p>On the iMOD Toolbar click on the button <em>Select location</em> and draw your cross-section line from north to south following the 6 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the <em>Select location</em> button again.</p></li>
 <li><p>In the field <em>Search buffer</em> increase the buffer along the line to 1000m. Now a yellow shade is visible around your line selecting all the available points within.</p></li>
-<li><p>From the dropdown menu on the left, select the layer BOREHOLES if not selected already. From the borelog we want to plot the variable LITHOLOGY, which is selected already while it is the only available variable.</p></li>
-<li><p>Click the button <em>Add</em> to add this layer to the cross-section manager.</p></li>
+<li><p>From the dropdown menu on the left of this toolbar, select the layer BOREHOLES if not selected already. From the borelog we want to plot the variable LITHOLOGY, which is already selected in the Variable dropdown menu (it is the only available variable).</p></li>
+<li><p>Click the button <em>Add</em> to add this layer to the cross-section manager below.</p></li>
 <li><p>Click the button <em>Plot</em> to draw this layer in the cross section.</p></li>
 </ol>
-<p>Your screen might look like <a href="#fig-figure_Crosssection-with-borelogs">Figure&nbsp;3</a> although the colors are different than in your screen. Feel free to use the column <em>Symbology</em> to change the legend.</p>
+<p>To complete the cross section, let us also add the digital elevation map to the cross-section manager.</p>
+<ol start="47" class="example" type="1">
+<li>From the dropdown menu now select the layer Abbeyfeale DTM. We do not nead to select a Variable</li>
+<li>Click the button <em>Add</em> to add this layer to the cross-section manager below.</li>
+<li>Click the button <em>Plot</em> to draw both layers in the cross section.</li>
+</ol>
+<p>Your screen might look like <a href="#fig-figure_Crosssection-with-borelogs">Figure&nbsp;5</a> although the colors are different than in your screen. Feel free to use the column <em>Symbology</em> to change the legend.</p>
 <p><strong>NOTE</strong>: If no lines appear on your screen, make sure you have set your project CRS to EPSG:2157 (see earlier step).</p>
 <div id="fig-figure_Crosssection-with-borelogs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/tutorial/viewer/figure_Crosssection-with-borelogs.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Cross section with borelogs</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: Cross section with borelogs and DEM</figcaption><p></p>
 </figure>
 </div>
 <p>For now, we leave QGIS and the iMOD Plugin to return later.</p>
-<ol start="44" class="example" type="1">
-<li>Save your project and keep the QGIS application open.</li>
+<ol start="50" class="example" type="1">
+<li>Save your QGIS project (Ctrl+S) and keep the QGIS application open.</li>
 </ol>
 </section>
 <section id="imod-python" class="level2">
@@ -352,11 +373,11 @@ ul.task-list li input[type="checkbox"] {
 <li>All input we use for this simple model is available in your tutorial folder “abbeyfeale\data\1-external\..”. There you find the spatial data we loaded to QGIS, and there is a CSV file containing all single parameter values: “parameters.csv”.</li>
 <li>All steps, from the preparation of the model input to visualization of the results, are available in separate Python scripts. You find the scripts for each phase in the folder and subfolders within “abbeyfeale\src\..”</li>
 </ul>
-<ol start="45" class="example" type="1">
+<ol start="51" class="example" type="1">
 <li>Click on the windows START button and type <em>Deltaforge prompt</em>. Click on the app and a black DOS window will start. <em>[for Python experts: with this prompt a python environment is activated containing the iMOD python package as well as Snakemake (workflow manager)]</em>.</li>
 </ol>
 <p>From this DOS window we will run the different python scripts (*.py files). For the scripts to work properly, we need to navigate to the correct folder location.</p>
-<ol start="46" class="example" type="1">
+<ol start="52" class="example" type="1">
 <li>In the DOS window type the letter of the drive you work on (e.g.&nbsp;C: or D:) and press ENTER.</li>
 <li>Navigate to the correct main tutorial folder with CD (change directory). E.g. “CD c:\imod\training\tutorial\abbeyfeale” and press ENTER.</li>
 </ol>
@@ -366,23 +387,23 @@ ul.task-list li input[type="checkbox"] {
 Script 1 – template
 </ins>
 <p>This script opens the DTM file, uses its extent for the model boundary and sets the cell size to 40m.</p>
-<ol start="48" class="example" type="1">
+<ol start="54" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\1-prepare\1-create-template-grid.py</em> and press ENTER.</li>
 </ol>
 <p><img src="figures/tutorial/viewer/figure_iMODforge_prompt.png" class="img-fluid"></p>
 <p>Results 1: The result is a raster file (NetCDF format) describing the mask of our model (extent and cell size) as well as our DTM scaled up to the size of the model mask.</p>
-<ol start="49" class="example" type="1">
+<ol start="55" class="example" type="1">
 <li><strong>Optional step</strong>. Load the topography_raster.nc file into QGIS. The file is in the folder “Abbeyfeale\data\2-interim”.</li>
 </ol>
 <ins>
 Script 2 – River
 </ins>
 <p>This script opens a shape file with river elements. It rasterizes it project cell size and adds a default river depth (1 m) and bottom resistance.</p>
-<ol start="50" class="example" type="1">
+<ol start="56" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\1-prepare\2-create-river-system.py</em> and press ENTER.</li>
 </ol>
 <p>Results 2: The result is a raster file (NetCDF format) for the river data, containing data for the parameters Stage, Bottom and Conductance.</p>
-<ol start="51" class="example" type="1">
+<ol start="57" class="example" type="1">
 <li>Load the file “Abbeyfeale\data\2-interim\river_raster.nc” into QGIS via the menu <em>Layer &gt; Add Layer &gt; Add Raster Layer</em>. From the interim window you see that the NC files contains 3 river parameters.</li>
 <li>Click on the button <em>Add Layers</em> and click <em>Close</em> to close the Data Source Manager.</li>
 </ol>
@@ -390,32 +411,32 @@ Script 2 – River
 Script 3 – Recharge
 </ins>
 <p>This script opens the shape file with recharge zones (polygons) containing the recharge in mm per year. The recharge zones are rasterized to the project extent and cell size and the scripts adds a seasonal forcing resulting in a time series of daily recharge values for 1 year.</p>
-<ol start="53" class="example" type="1">
+<ol start="59" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\1-prepare\3-create-recharge.py</em> and press ENTER.</li>
 </ol>
 <p>Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster.</p>
-<ol start="54" class="example" type="1">
+<ol start="60" class="example" type="1">
 <li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/tutorial/viewer/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
 </ol>
 <p>There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.</p>
-<ol start="55" class="example" type="1">
+<ol start="61" class="example" type="1">
 <li>For the animation over time, activate the <em>Temporal Control Panel</em> with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%"> on the Map Navigation Toolbar.</li>
-<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:4.0%"> ) on the iMOD Toolbar.</li>
+<li>For timeseries at location activate the Timeseries panel with the <em>Timeseries</em> button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:4.0%"> ) on the iMOD Toolbar.</li>
 </ol>
-<p>Your display should look similar with <a href="#fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot">Figure&nbsp;4</a>, except for the red line below.</p>
-<ol start="57" class="example" type="1">
+<p>Your display should look similar with <a href="#fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot">Figure&nbsp;6</a>, except for the red line below.</p>
+<ol start="63" class="example" type="1">
 <li>In the Temporal Controller panel click the green play button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel-menu.png" class="img-fluid">). Navigation buttons appear.</li>
-<li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the Play button (<img src="figures/tutorial/viewer/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
+<li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the <em>Play</em> button (<img src="figures/tutorial/viewer/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
 <li>In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge.</li>
 <li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid">. be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
 <li>Deselect the checkbox <em>Update on Selection</em>.</li>
 <li>Click the button <em>Select Points</em> (your mouse becomes a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid"> and with the left mouse button select 3 points ad random.</li>
-<li>Finally click the Plot button and the 3 timeseries are added to the chart. Colors can be changed.</li>
+<li>Finally click the <em>Plot</em> button and the 3 timeseries are added to the chart. Colors can be changed.</li>
 </ol>
 <div id="fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/tutorial/viewer/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)</figcaption><p></p>
 </figure>
 </div>
 <ins>
@@ -471,17 +492,17 @@ Script 4 – Geohydrology
 </tr>
 </tbody>
 </table>
-<ol start="64" class="example" type="1">
+<ol start="70" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\1-prepare\4-create-hydrogeology.py</em> and press ENTER.</li>
 </ol>
 <p>Results 4: The result is a mesh file (NetCDF format) for the geohydrological data. This NC file must be loaded as mesh instead of a raster.</p>
-<ol start="65" class="example" type="1">
+<ol start="71" class="example" type="1">
 <li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\hydrogeology_mesh.nc” into QGIS.</li>
 <li>Double click on the layer name “hydrogeology_mesh” and the window <em>Layer Properties</em> will open.</li>
 <li>Click on the group <em>Source</em> on the left and on the right, you see all <em>Available Datasets</em> in this single mesh.</li>
 </ol>
 <p>Let’s create a cross-section with the permeability plot within each layer.</p>
-<ol start="68" class="example" type="1">
+<ol start="74" class="example" type="1">
 <li>First, we must deactivate temporal control. Open the Temporal Control Panel again (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%">), and turn off temporal navigation with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel-turnoff.png" class="img-fluid" style="width:4.0%">.</li>
 <li>On the iMOD Toolbar select the <img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%"> button to start the iMOD Cross Section tool.</li>
 <li>In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the <em>Variable</em> dropdown select permeability and from the Layers dropdown select all layers.</li>
@@ -490,13 +511,13 @@ Script 4 – Geohydrology
 <li>Click the button <em>Plot</em> and the geology along the line colored by permeability is draw in the chart.</li>
 </ol>
 <p>TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (<img src="figures/tutorial/viewer/button_CrossSection-ViewAll.png" class="img-fluid" style="width:3.0%">) in the lower left of the chart.</p>
-<ol start="74" class="example" type="1">
+<ol start="80" class="example" type="1">
 <li>Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.</li>
 </ol>
 <div id="fig-figure_CrossSectionTool-3layers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/tutorial/viewer/figure_CrossSectionTool-3layers.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Three model layers coloured by permeability in the iMOD cross-section tool</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Three model layers coloured by permeability in the iMOD cross-section tool</figcaption><p></p>
 </figure>
 </div>
 <ins>
@@ -504,18 +525,18 @@ Script 5 – Create MODFLOW 6 input
 </ins>
 <p>Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the <em>Deltaforge prompt</em>.<br>
 [If you are interested in the content of the script, open it in your Python editor (e.g.&nbsp;Spyder) or a simple Text editor].</p>
-<ol start="75" class="example" type="1">
+<ol start="81" class="example" type="1">
 <li>In the <em>Deltaforge prompt</em> type the command: <em>Python src\2-build\5-build-model.py</em> and press ENTER.</li>
 </ol>
 <p>The result of the script is a folder with the standard MODFLOW 6 input.</p>
-<ol start="76" class="example" type="1">
+<ol start="82" class="example" type="1">
 <li>Optional step Visit the folder “abbeyfeale\data\3-input” with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.</li>
 </ol>
 <ins>
 Script 6 – Run the MODFLOW 6 model
 </ins>
 <p>iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as “abbeyfeale\bin\mf6.exe”.</p>
-<ol start="77" class="example" type="1">
+<ol start="83" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\3-model\6-run-model.py</em> and press ENTER.<br>
 </li>
 <li>You can check the logfile of the model in order to see if it was run successful.</li>
@@ -526,15 +547,15 @@ Script 6 – Run the MODFLOW 6 model
 Script 7 - Convert the MODFLOW 6 results for QGIS
 </ins>
 <p>The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Python contains a function to convert the output into NetCDF files.</p>
-<ol start="81" class="example" type="1">
+<ol start="87" class="example" type="1">
 <li>In the <em>Deltaforge prompt</em> type the command: <em>Python src\3-model\7-post-process-output.py</em> and press ENTER.</li>
 </ol>
 <p>The result of this script is a NetCDF file with the calculated head for 365 days.</p>
-<ol start="82" class="example" type="1">
+<ol start="88" class="example" type="1">
 <li>Load the file “Abbeyfeale\data\4-output\hds_mesh.nc” into QGIS.</li>
 </ol>
 <p>By default, the variable bottom_layer_1 is loaded. We will change the selected variable into Heads and pick a legend specific for plotting of time series.</p>
-<ol start="83" class="example" type="1">
+<ol start="89" class="example" type="1">
 <li>Double click on the layer “hds_mesh” to open the <em>Layer Properties window</em>.</li>
 <li>Select the group Source on the left and see that the mesh contains several datasets.</li>
 <li>Select the group Symbology on the left and select the first tab <em>Dataset</em> (<img src="figures/tutorial/viewer/button_SymbologyDataset.png" class="img-fluid" style="width:3.0%">). Here we can select the group we want to plot, for now it is “head_layer_1”.<br>
@@ -545,16 +566,16 @@ Script 7 - Convert the MODFLOW 6 results for QGIS
 <li>From the dropdown menu Color Ramp select Turbo and click on OK to close the window.</li>
 </ol>
 <p>Now we try to show an animation of the variation of calculated Heads over time and as timeseries.</p>
-<ol start="90" class="example" type="1">
+<ol start="96" class="example" type="1">
 <li>For the animation over time, activate the Temporal Control Panel with the button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:3.0%">) on the Map Navigation Toolbar.</li>
 <li>From you experience with this tool, try to start the animation with timestep of 14 days.</li>
-<li>For timeseries at location activate the Timeseries panel with the Timeseries button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:3.0%">) on the iMOD Toolbar.</li>
+<li>For timeseries at location activate the Timeseries panel with the <em>Timeseries</em> button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:3.0%">) on the iMOD Toolbar.</li>
 <li>From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1.</li>
 </ol>
 <div id="fig-figure_Timeseries-Heads-in-3-points" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Calculated head with MODFLOW 6 on 3 points within the model area</figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: Calculated head with MODFLOW 6 on 3 points within the model area</figcaption><p></p>
 </figure>
 </div>
 <p>The QGIS part of the tutorial ends here. You can save your QGIS project now.</p>
