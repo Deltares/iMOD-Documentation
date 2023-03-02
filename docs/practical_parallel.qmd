@@ -1,0 +1,55 @@
+---
+title: "{{< fa solid arrows-turn-right >}} Parallel MODFLOW"
+description: "Fix some common issues trying when running iMODFLOW & iMOD-WQ codes with MPI."
+image: figures/logo/iMOD.svg
+---
+
+## SMPD errors
+
+Especially if you\'re running on Windows, you might get (rather cryptic)
+errors in the vein off:
+
+``` console
+Unable to start the local smpd manager
+```
+
+``` console
+Error while connecting to host, No connection could be made because the
+target machine actively refused it.
+```
+
+A possible cause is that the path to the `smpd.exe`, which is a parallel
+process manager, isn\'t the right one for the MPI version you\'re using.
+The MODFLOW models are generally running with a version of MPICHI2
+(<https://www.mpich.org/>). It\'s not uncommon, however, to have
+multiple implementations of MPI installed.
+
+To check, run:
+
+``` console
+where smpd
+```
+
+Which e.g. returns:
+
+``` console
+C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32_win\mpirt\smpd.exe c:\Program
+Files\MPICH2\bin\smpd.exe
+```
+
+Here, there\'s two versions installed: the Intel version, and the MPICH2
+version. In this case, the Intel version is on top, and which generally
+be called first. Then, when trying to run the model, it\'s expecting the
+MPICH2 version instead, and it won\'t run.
+
+To address this, you can run:
+
+``` console
+c:\Program Files\MPICH2\bin\smpd.exe -install
+```
+
+This should promote it to the top of the list when you run `where`
+again.
+
+Or, just remove it from your PATH if possible. Now, if you run
+`mpiexec.exe`, it\'ll use the right version of `smpd.exe`.

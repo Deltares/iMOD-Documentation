@@ -1,0 +1,127 @@
+---
+title: "{{< fa solid fire-flame-curved >}} How to look like a pro"
+description: "Some general tips and tricks to make your editors and terminals look cool."
+image: https://raw.githubusercontent.com/ryanoasis/nerd-fonts/38f76ec69fa3546784dd8beab3caf9c2ede9b92d/images/nerd-fonts-logo.svg
+---
+
+These are some general tips and tricks to make your editors and
+terminals look cool. They are not going to greatly improve your
+workflow, but they will make things look cool and thus make your working
+more enjoyful. Please do this in your own time.
+
+## Powershell themes
+
+There are themes available for Powershell which you can use to make your
+boring terminal look cooler. These will also be used by Windows Terminal
+and VSCode after some extra configuration.
+
+![Figure 1: Look at all the colors on top! It contains the current git
+branch, as well as which Spotify song I\'m currently listening to.
+Remember to only listen to cool music if you want to look
+cool!](figures/practical/look_cool/cool_terminal.jpg)
+
+### Step 1: Installing new fonts
+
+All these cool extra icons like the play button and the folder symbol in
+Figure 1 require extra icons not contained in your standard monotype
+font. To unlock them, you have to install [\"Nerd
+fonts\".](https://github.com/ryanoasis/nerd-fonts)
+
+![Figure 2: It is cool to be a nerd these
+days.](https://raw.githubusercontent.com/ryanoasis/nerd-fonts/38f76ec69fa3546784dd8beab3caf9c2ede9b92d/images/nerd-fonts-logo.svg)
+
+In the following examples, I will use CascadiaCode NerdFont, which you
+can download zipped [via this
+link](https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip)
+
+Unzip its\' contents, and install [Caskaydia Cove Nerd Font Complete
+Mono Windows Compatible.ttf]{.title-ref}, by right-clicking the file and
+install for all users. You know it has to be good with such a long
+filename!
+
+### Step 2: Configure software to use Nerd Font
+
+We first have to configure your editor/terminal to use the Nerd Font,
+otherwise all the icons will be shown as ￿, which spoils the fun.
+
+In Windows Terminal, press `CTRL+,` , which opens the Settings window.
+Next, navigate to [Windows Powershell \> Appearance]{.title-ref}. And
+under [Fonts]{.title-ref}, select [CaskaydiaCove NF]{.title-ref}, if you
+installed the font I suggested.
+
+![image](figures/practical/look_cool/WT_NerdFont.png)
+
+In VSCode, also press `CTRL+,` to open the Settings window. Navigate to
+[Text Editor \> Font]{.title-ref} and under [Font Family]{.title-ref}
+type `CaskaydiaCove NF` in front.
+
+![image](figures/practical/look_cool/VSCode_NerdFont.png)
+
+In Powershell, you can right click window bar and navigate to
+[Properties \> Font]{.title-ref} and under [Font]{.title-ref}, you can
+select [CaskaydiaCove NF]{.title-ref}.
+
+### Step 3: Install Git for Windows
+
+If you want your themes to integrate with Git, you can install [Git for
+Windows](https://git-scm.com/downloads) .
+
+I have not tested if the themes worked without Git for Windows, so I
+recommend installing it.
+
+[I also wrote a guide on how to use Git by the way.](practical_git_dvc.qmd)
+
+### Step 4: Install themes for Powershell
+
+Now open up a Powershell instance as administrator, and run the
+following lines of code:
+
+``` 
+Install-Module posh-git -Scope CurrentUser
+Install-Module oh-my-posh -Scope CurrentUser -RequiredVersion 2.0.412
+Update-Module -Name oh-my-posh -AllowPrerelease -Scope CurrentUser
+Install-Module -Name PSReadLine -Scope CurrentUser -Force -SkipPublisherCheck
+```
+
+This will probably throw you some warnings if you really want to install
+this stuff, but let\'s [trust the good people at
+Microsoft](https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup).
+
+### Step 5: Configure Powershell
+
+Because we want Powershell to automatically use new cool themes, we will
+configure our Powershell profile. Call `notepad $PROFILE` and paste the
+following lines of text:
+
+``` 
+Import-Module posh-git
+Import-Module oh-my-posh
+Set-PoshPrompt -Theme cinnamon
+```
+
+If everything worked, if you open up a new Powershell terminal, it will
+look like Figure 1. If you see any squares as `￿`, you have to check if
+Step 2 went OK.
+
+### Step 6: Being a unique individual
+
+A cool person decides what is cool him/herself of course. To get a list
+of all available themes, you can call `Get-PoshThemes`.
+
+![Wowzers!](figures/practical/look_cool/Available_Themes.png)
+
+This provide a nice demo reel of available themes.
+
+If you find something you like, you can set it as your default theme by
+repeating Step 5, and changing the last line, e.g.:
+`Set-PoshPrompt -Theme powerline`.
+
+### Bonus: Get a headache with retro effects
+
+Windows Terminal has retro effects available. Again press `CTRL+,`, go
+to [Windows Powershell \> Appearance]{.title-ref}. And click [Retro
+terminal effects]{.title-ref}.
+
+This will make your terminal more headache inducing:
+
+![Argh!](figures/practical/look_cool/Retro_Headache.png)

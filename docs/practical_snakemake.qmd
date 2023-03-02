@@ -1,0 +1,457 @@
+---
+title: "{{< fa solid diagram-project >}} Snakemake Tips {{< fa solid staff-snake >}}"
+image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsnakemake.gallerycdn.vsassets.io%2Fextensions%2Fsnakemake%2Fsnakemake-lang%2F0.1.6%2F1621589607070%2FMicrosoft.VisualStudio.Services.Icons.Default&f=1&nofb=1&ipt=5857ea7e189d3c7b23c5bce4cc375c6f417dad496289ab68203c940c0d7a646d&ipo=images
+---
+
+[Snakemake](https://snakemake.readthedocs.io/en/stable/) is a very
+useful and powerful tool to create reproducible workflows.
+
+Usually (or ideally\...) our modelling workflows consist of a set of scripts or
+calls to excecutables that exchange intermediate files, in order to convert raw
+data to model output that can be analyzed. The graph of these workflows usually
+does not look like a straight pipeline, but more often like a chaotic network
+(a plate of spaghetti for larger workflows), because some files influence
+multiple steps. Quite often some of this input changes, or a certain script
+changes. Since we also often process large datasets, we do not want to re-run
+every step again with every change, but instead only re-run the necessary
+steps. Snakemake does this bookkeeping for us.
+
+Below a graph created for an [example
+workflow](https://gitlab.com/deltares/imod/california_model):
+
+![image](https://gitlab.com/deltares/imod/california_model/-/raw/master/docs/dag.png)
+
+You can see that quite a lot of tasks in this example depend on the step
+*create_3d_grid*, in which a 3d grid is created that is used as model
+discretization. Changing something in this step means a lot of steps have to be
+redone, but not all of them (like downloading precipitation data). Therefore
+Snakemake automatically recognizes which scripts still have to be re-executed
+after a filechange.
+
+Snakemake is currently mainly used, and developed, in Academia by
+bioinformaticians. Because of this background, it has very cool features like
+support for parallel computation, both on local machines as well as high
+performance clusters. However, this background also means it can be hard to
+install on Windows and to navigate its\' extensive documentation. This
+documentation tries to help installing snakemake and to furthermore provide you
+with the most useful commands for our iMOD workflows.
+
+# Installation on Windows
+There are two options to install Snakemake on your machine.
+
+## Option 1: Recommended way: Install Deltaforge
+
+Deltaforge installs Snakemake and all its dependencies for you. [Read the
+instructions to install Deltaforge here.](deltaforge_install.qmd)
+
+## Option 2: Install via conda/mamba
+
+Note that Snakemake is located on the bioconda channel (remember snakemake\'s
+background in bioinformatics?). You can run the following commands in your
+terminal of choice to install snakemake with mamba.
+
+```bash
+> mamba install pygraphviz graphfviz
+> mamba install -c bioconda snakemake
+```
+
+## Configure your machine
+
+Then one dependency requires manual installation, namely
+[Imagemagick](https://imagemagick.org/script/download.php#windows).
+Ensure during the installation that Imagemagick is added to the Windows
+PATH variable.
+
+In order to configure Graphviz, you then have to call once:
+
+```bash
+>dot -c
+```
+
+Once you have created a workflow, you can then call the following code
+to create a directional acyclic graph and save it as docs/dag.png:
+
+```bash
+>snakemake --rulegraph | dot -Tpng > docs/dag.png
+```
+
+# Basics
+
+## Creating a workflow
+
+### Rules
+
+In order to specify the individual steps of your workflow in Snakemake,
+you must create a *Snakefile* in your repository. In this *Snakefile*,
+you define a set of *rules*, each *rule* specifying an individual step
+of your workflow. A rule looks as follows:
+
+``` 
+rule plot_heads:
+ input:
+     "data/4-output/head.nc",
+ output:
+     "reports/figures/head.png"
+ shell:
+     "python src/5-visualize/visualize_heads.py {input} {output}"
+```
+
+Snakemake does not care what the rule does, it only wants to know which
+files are used as input, in this case the file located at
+`./data/4-output/head.nc`, and what files are created as output, in this
+case `./reports/figures/head.png` and what should be executed. The last
+line under \"shell\" defines what command should be executed. In this
+case a call is made to python to run the script with two arguments:
+
+``` 
+>python src/5-visualize/visualize_heads.py data/4-output/head.nc reports/figures/head.png
+```
+
+### Scripts
+
+Snakemake has built-in support for Python scripts (as well as Julia and
+R scripts), so you don\'t have to call shell commands:
+
+``` 
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+In this case the `snakemake` object is available within the script and
+lets you access input and output. The visualize_heads.py script could
+look as follows:
+
+``` python
+import xarray as xr
+import matplotlib.pyplot as plt
+
+head_nc = snakemake.input.head_nc
+head_png = snakemake.input.head_png
+
+#Read data
+head = xr.open_dataset(head_nc)
+
+#Select and plot data
+head.isel(time =- 1, x = 0).plot()
+plt.savefig(head_png)
+```
+
+This example script reads heads as a NetCDF, selects a crossection at
+the first column and the last timestep, consequently plots this and
+saves this figure to a png file.
+
+However, including the `script` keyword alone, does not mean that
+Snakemake will keep track of changes in the script and will re-execute a
+rule accordingly. Therefore, it is smart to include the script also
+under `input`. This will ensure Snakemake keeps track of changes in a
+script:
+
+``` 
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+     script = "src/5-visualize/visualize_heads.py"
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+### Default rule
+
+Snakemake does not know what the final step is, so without any
+specifications it executes the **first** rule. It therefore is often
+convenient to specify an empty rule *all* first, which has the final
+output files as \"input\":
+
+``` 
+rule all:
+ input:
+   "reports/figures/head.png"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+When we then first `cd` into the repository and then call `snakemake`,
+Snakemake will run the complete workflow.
+
+### Parameters
+
+Sometimes you just want to pass a number or string to a rule and not
+create a seperate file for this. This can specified under the `params`
+keyword.
+
+``` 
+rule all:
+ input:
+   "reports/figures/head.png"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ params:
+     times = "2012-09-01"
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+This will pass the string `"2012-09-01"` to the python script, which can
+be accessed as `snakemake.params.times` in python.
+
+## Executing workflows
+
+Snakemake has a [lot of
+options](https://snakemake.readthedocs.io/en/stable/executing/cli.html)
+to execute workflows, here are the basic commands that are the most
+useful to know for a beginner. Executing workflows can be done by
+calling:
+
+``` 
+>snakemake
+```
+
+This will execute the first rule. To execute a specific rule, e.g.
+\"plot_heads\" (and all rules that still have to be executed to get to
+this rule):
+
+``` 
+>snakemake plot_heads
+```
+
+When you change a rule, and want to re-execute all rules downstream of
+this rule, you can call:
+
+``` 
+>snakemake -R plot_heads
+```
+
+# Advanced tips
+
+## Running regular python code in the Snakefile
+
+When Snakemake is executed, it basically executes its\' code as python
+code. This means you can just import packages of your environment and
+execute python code in your Snakefile. For example, you can add the
+following code in your Snakefile:
+
+``` python
+import pandas as pd
+START = "2012-09-01"
+END = "2020-09-01" 
+TIMES = pd.date_range(start=START, end=END, freq="A")
+TIMES = TIMES.strftime("%Y-%m-%d")
+
+rule all:
+ input:
+   "reports/figures/head.png"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ params:
+     times = TIMES
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+This will create multiple timestamps, convert these to string and pass
+these to params.
+
+## Multiple files
+
+Often the execution of steps either requires or produces multiple files
+that have a very similar makeup. For example iMOD can produce output
+files names `head_l1.idf`, `head_l2.idf`, `head_l3.idf` etc.
+
+Specifiying these all in the Snakefile requires too much manual labour
+and leads to a cluttered snakefile. Therefore, Snakemake has a builtin
+[expand](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#the-expand-function)
+function which lets you expand a template string with wildcards into a
+list.
+
+Say our visualize_heads script produces figure for all days, named
+`head_2012-09-01.png`, `head_2012-09-02.png` etc.
+
+We can specify all these figures with:
+
+``` python
+import pandas as pd
+START = "2012-09-01"
+END = "2020-09-01" 
+TIMES = pd.date_range(start=START, end=END, freq="A")
+TIMES = TIMES.strftime("%Y-%m-%d")
+
+rule all:
+ input:
+   expand("reports/figures/head_{time}.png", time=TIMES)
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ params:
+     times = TIMES
+ output:
+     head_png = expand("reports/figures/head_{time}.png", time=TIMES)
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+This is very helpful, but sometimes model code produces so many files
+(\>10k), you do not even want to bother specifying all individual files
+that are created as output. For example, a parallel iMOD-WQ run with 30
+layers, 300 timesteps, and run on 24 cores can produce 216,000 .IDFs per
+variable. Have fun specifying all of them beforehand!
+
+You can instead therefore specify a directory that should be created as
+output. Snakemake then just checks if changes are made in the directory,
+using a hidden file named `.snakemake_timestamp`.
+
+Modifying the previous example, this results in:
+
+``` python
+import pandas as pd
+START = "2012-09-01"
+END = "2020-09-01" 
+TIMES = pd.date_range(start=START, end=END, freq="A")
+TIMES = TIMES.strftime("%Y-%m-%d")
+
+rule all:
+ input:
+   "reports/figures/"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ params:
+     times = TIMES
+ output:
+     head_png = directory("reports/figures/")
+ script:
+     "src/5-visualize/visualize_heads.py"
+```
+
+Note that we do **not** have to call `directory()` in order to specify
+input for rule `all`!
+
+## Temporary files
+
+Sometimes, you do not even want to save certain intermediate files to
+save storage. For example, you run iMOD-wq, this creates .IDFs which you
+convert to NetCDF. Keeping both the .IDF as well as the NetCDF files
+requires double the storage, even though you will not use the .IDF after
+the NetCDF is written. For these cases, Snakemake has the
+[temp](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#protected-and-temporary-files)
+function.
+
+For example take this example where we call iMOD-WQ, which produces the
+directories `conc` and `head`. These folders contain a lot of .IDFs
+which we convert to a NetCDF, after which we do not need these folders
+anymore.
+
+``` python
+rule all:
+   input:
+      "data/4-output/scenario_1/head.nc",
+      "data/4-output/scenario_1/conc.nc"
+
+rule idf_to_netcdf:
+   input:
+      head_dir = "data/4-output/scenario_1/head",
+      conc_dir = "data/4-output/scenario_1/conc",
+   output:
+      head_nc = "data/4-output/scenario_1/head.nc",
+      conc_nc = "data/4-output/scenario_1/conc.nc",
+   script:
+      "src/4-analyze/idf_to_netcdf.py"
+
+rule run_model:
+   input:
+      r"data/4-output/scenario_1/model.run #The runfile is 
+   output:
+      temp(directory("data/4-output/scenario_1/conc")),
+      temp(directory("data/4-output/scenario_1/head")),
+   shell:
+      r".\src\3-model\run_model.bat data\4-output\scenario_1> .\data\4-output\scenario_1\std.out"
+```
+
+The call `temp()` ensures all these .IDFs are removed after succesful
+conversion!
+
+## Parallel execution
+
+When modelling, you usually want to run the model a few times using
+different configurations. For example a simulation with a horizontal
+hydraulic conductivity of 10 m/d and one with a hydraulic conductivity
+of 25 m/d. In the rest of this section, I call these *scenarios*.
+
+This basically means the same task has to be run multiple times, using
+different configurations, but similar files. These can be run
+independently from each other, in parallel! Wouldn\'t it be cool if
+Snakemake would be able to recognize this and run this in parallel?
+
+Ha! It does!
+
+Snakemake lets you define
+[groups](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#defining-groups-for-execution),
+using a `group` keyword. Take for example this Snakefile which runs
+three scenarios and converts their output to a NetCDF, all in parallel.
+The `group` keyword sets which rules can be executed in parallel.
+
+``` python
+scenarios = [1, 2, 3]
+
+rule all:
+   input:
+      expand("data/4-output/scenario_{scenario}/head.nc", scenario = scenarios),
+      expand("data/4-output/scenario_{scenario}/conc.nc", scenario = scenarios),
+
+rule idf_to_netcdf:
+   input:
+      head_dir = "data/4-output/scenario_{scenario}/head",
+      conc_dir = "data/4-output/scenario_{scenario}/conc",
+   group:
+      "scenarios"
+   output:
+      head_nc = "data/4-output/scenario_{scenario}/head.nc",
+      conc_nc = "data/4-output/scenario_{scenario}/conc.nc",
+   script:
+      "src/4-analyze/idf_to_netcdf.py"
+
+rule run_model:
+   input:
+      r"data/4-output/scenario_{scenario}/model.run" 
+   group:
+      "scenarios"
+   output:
+      temp(directory("data/4-output/scenario_{scenario}/conc")),
+      temp(directory("data/4-output/scenario_{scenario}/head")),
+   shell:
+      r".\src\3-model\run_model.bat data\4-output\scenario_{wildcards.scenario}> .\data\4-output\scenario_{wildcards.scenario}\std.out"
+```
+
+We need the wildcards keyword under the shell command to expand scenario
+numbers before sending the string to the shell. Note that snakemake
+requires one rule that \"collects\" all seperate groups, in this case
+the rule `all`.
+
+You can then consequently run these tasks in parallel on three cores by
+calling:
+
+``` 
+>snakemake --cores 3
+```

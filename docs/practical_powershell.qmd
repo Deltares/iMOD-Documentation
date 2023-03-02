@@ -1,0 +1,33 @@
+---
+title: "{{< fa solid plug-circle-exclamation >}} Powershell profile error"
+description: "Learn how to fix the Powershell profile error which can hamper using Visual Studio Code"
+image: https://deow9bq0xqvbj.cloudfront.net/image-logo/1769310/powershell.png
+---
+
+<!---#
+Apparently we can link the Powershell logo on our our documentation:
+https://learn.microsoft.com/en-us/powershell/scripting/community/digital-art?view=powershell-7.3#microsoft-powershell-logo-and-digital-art-guidelines
+-->
+
+Your computer might throw you the following error in Windows PowerShell.
+This is annoying, because it prevents the Visual Studio Code terminal
+(which uses PowerShell) to use conda.
+
+``` console
+File C:\Users\Herman\Documents\WindowsPowerShell\profile.ps1 cannot be loaded because the
+execution of scripts is disabled on this system. Please see "get-help about_signing" for
+more details.
+At line:1 char:2
++ . <<<<  'C:\Users\Herman\Documents\WindowsPowerShell\profile.ps1'
+    + CategoryInfo          : NotSpecified: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : RuntimeException
+```
+
+In order to solve this, it is recommended to run the following command:
+
+``` console
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+For more information, see [this
+link](https://stackoverflow.com/questions/4647429/powershell-on-windows-7-set-executionpolicy-for-regular-users/4732316).
