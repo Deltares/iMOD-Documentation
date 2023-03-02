@@ -221,7 +221,7 @@ This script opens the shape file with recharge zones (polygons) containing the r
 
 Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster. 
 
-(@) From the menu *Layer > Add layer > Add mesh* load the file “Abbeyfeale\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
+(@) From the menu *Layer > Add layer > Add Mesh Layer...* load the file “Abbeyfeale\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
 From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
 
 There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
@@ -234,7 +234,7 @@ Your display should look similar with @fig-figure_RCH-in-TemporalController-and-
 (@) In the Temporal Controller panel click the green play button (![](figures/tutorial/viewer/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
 (@) Increase the *Step* from 1 to 14 days and start the animation with a click on the *Play* button (![](figures/tutorial/viewer/button_TemporalControler-play.png){width=4%}).
 (@) In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge. 
-(@) Click the button *Select Points*, your mouse changes into a ![](figures/tutorial/viewer/mouse_plus.png). be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
+(@) Click the button *Select Points*, your mouse changes into a ![](figures/tutorial/viewer/mouse_plus.png). Be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
 (@) Deselect the checkbox *Update on Selection*. 
 (@) Click the button *Select Points* (your mouse becomes a ![](figures/tutorial/viewer/mouse_plus.png) and with the left mouse button select 3 points ad random. 
 (@) Finally click the *Plot* button and the 3 timeseries are added to the chart. Colors can be changed.  
@@ -258,9 +258,9 @@ This script reads default parameter values from the file “parameters.csv” in
 
 Results 4: The result is a mesh file (NetCDF format) for the geohydrological data. This NC file must be loaded as mesh instead of a raster. 
 
-(@) From the menu *Layer > Add layer > Add mesh* load the file “Abbeyfeale\\data\\2-interim\\hydrogeology_mesh.nc” into QGIS. 
+(@) From the menu *Layer > Add layer > Add Mesh layer...* load the file “Abbeyfeale\\data\\2-interim\\hydrogeology_mesh.nc” into QGIS. 
 (@) Double click on the layer name “hydrogeology_mesh” and the window *Layer Properties* will open.
-(@) Click on the group *Source* on the left and on the right, you see all *Available Datasets* in this single mesh.
+(@) Click on the group *Source* on the left, and on the right you see all *Available Datasets* in this single mesh.
 
 Let’s create a cross-section with the permeability plot within each layer. 
 
