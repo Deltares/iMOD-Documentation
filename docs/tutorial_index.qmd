@@ -1,5 +1,5 @@
 ---
-title: "Tutorials"
+title: "{{< fa solid book >}} Tutorials"
 listing:
     type: grid
     contents:
@@ -8,6 +8,7 @@ listing:
       - tutorial_wq.qmd
 image: figures/logo/iMOD-tutorial.svg
 description: 'Learn how to use the iMOD Suite'
+index: "5"
 ---
 
 The iMOD-suite consists of several components, and combining these in different

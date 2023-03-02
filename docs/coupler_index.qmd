@@ -1,7 +1,8 @@
 ---
-title: iMOD Coupler
+title: "{{< fa solid plug >}} iMOD Coupler"
 image: figures/logo/iMOD-coupler.svg
 description: 'Couple Modflow 6 to other model codes.'
+index: "4"
 ---
 
 ## Coupling to MODFLOW 6
