@@ -8,6 +8,7 @@ listing:
       - practical_parallel.qmd
       - practical_powershell.qmd
       - practical_look_like_a_pro.qmd
+      - practical_messy_data.qmd
     image-height: 200px
 image: figures/logo/iMOD-tutorial.svg
 description: 'Useful tips to use the iMOD Suite with other tools.'
