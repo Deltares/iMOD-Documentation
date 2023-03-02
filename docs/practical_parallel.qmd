@@ -1,6 +1,6 @@
 ---
 title: "{{< fa solid arrows-turn-right >}} Parallel MODFLOW"
-description: "Fix some common issues trying when running iMODFLOW & iMOD-WQ codes with MPI."
+description: "Fix common issues when running iMODFLOW & iMOD-WQ codes with MPI."
 image: figures/logo/iMOD.svg
 ---
 
