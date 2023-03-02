@@ -61,7 +61,7 @@ The data we use in this part of the training is from Ireland, so next we select
 the appropriate projection. (In case you missed the download instructions for the Tutorial data, visit the start page [iMOD Suite Tutorial](index.qmd)).\
 
 (@) From the main menu click on *Project* and select *Properties*. 
-(@) In the *Properties* window select the category *CRS*, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the *Apply* button, followed by the OK button to close the window.
+(@) In the *Properties* window select the category *CRS*, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the *Apply* button, followed by the *OK* button to close the window.
 
 For navigation purposes, let us load the universal topography of Open Street Map.
 (OSM)
@@ -75,13 +75,13 @@ Let us now open a series of basic files in QGIS. We start with a digital elevati
 (@) In the section *Source* click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.
 (@) Click the *Add* button and the layer is added to the panel *Layers*. 
 (@) Click *Close* to leave the window. 
-(@) In the panel Layers select the layer “Abbeyfeale DTM” and click the ![](figures/tutorial/viewer/button_zoomtolayer.png) button to zoom in to the layer.
+(@) In the panel *Layers* select the layer “Abbeyfeale DTM” and click the ![](figures/tutorial/viewer/button_zoomtolayer.png) button to zoom in to the layer.
 
 We see the contours of a river, but the legend is gray only by default. Let’s change that.
 
 (@) Double click on the layer “Abbeyfeale DTM”. The window “Layer Properties” opens. 
 (@) Select the group *Symbology*. 
-(@) From the dropdown *Render Type* select the type *Singleband pseudocolor*.
+(@) From the dropdown menu *Render Type* select the type *Singleband pseudocolor*.
 (@) Be sure a Color Ramp is selected as well. 
 (@) Make sure the dropdown menu *Interpolation* shows Linear and the dropdown menu *Mode* shows *Continuous*.
 (@) Click *Apply* to change the colors and *OK* to close the window.
@@ -95,17 +95,23 @@ Let us save this project to be able to return to is later or in case of a crash 
 
 (@) Go to Project in the main menu, select Save As and select a folder and a file name for your project, e.g. “…\\abbeyfeale\\tutorial1.qgz”
 
-Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like our iMOD Plugin. 
+Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like the Deltares iMOD Plugin. 
 
 (@) Go to *Plugins* from the main menu and select *Manage and Install Plugins… * and a window opens.
 (@) On the left, select the group *All* to see all available plugins. 
 (@) Search for “iMOD” and see that the iMOD plugin is successfully installed. 
 (@) Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.
-(@) Search for “Value Tool”, install it and *Close* the Plugins window.
+(@) Search for “Value Tool”, install it and *Close* the Plugins window. 
 
-The tool is now visible as a panel on the left and as the Value Tool button (![](figures/tutorial/viewer/button_valuetool.png){width=4%}) in a panel on the top of QGIS. 
+\
+
+![iMOD plugin toolbar](figures/tutorial/viewer/button_iMOD-Toolbar.png){width=35% #fig-button_iMOD-Toolbar fig-align="left"}  
+
+The tool is now visible as a panel on the left and as the *Value Tool* button (![](figures/tutorial/viewer/button_valuetool.png){width=4%}) in a panel on the top of QGIS. 
 
 (@) Hover over the DTM and in the “Value Tool” panel you see the value at your mouse location. 
+
+![Example panel Value Tool](figures/tutorial/viewer/figure_ValueTool-in-QGIS.png){width=50% #fig-figure_ValueTool-in-QGIS fig-align="left"}  
 
 Next step is to load a polygon file representing the recharge zones in the project area.
 
@@ -118,14 +124,17 @@ We see the contours of zones with a single color. Let’s change that.
 
 (@) Double click on the layer “clipped_recharge”. The window “Layer Properties” opens. 
 (@) Select the group *Symbology*. 
-(@) From the upper dropdown menu select *Categorized*. From the dropdown *Value* select RECH_MM_YR and from the dropdown *Color* ramp select Viridis. Click on the button *Classify* to create the legend.
+(@) From the upper dropdown menu select *Categorized*. 
+(@) From the dropdown *Value* select RECH_MM_YR. 
+(@) From the dropdown *Color ramp* select Viridis. 
+(@) Click on the button *Classify* to create the legend.
 (@) Click *Apply* to change the colors and *OK* to close the window.
 
 There is also an ESRI Shapefile with the rivers in the project area. Feel free to download that file ("abbeyfeale\\data\\1-external\\rivers\\WATER_RivNetRoutes.shp") in the same way.
 
 After loading raster and polygon layers, let us now load a point file with boreholes. This time, the file format (*.IPF) is not a common file standard but developed by Deltares because the file includes associated borelog information. We must load the IPF file with the iMOD plugin.
 
-(@) One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the Open IPF button (![](figures/tutorial/viewer/button_iMOD-Open-IPF.png){width=3%}) and a window will open.
+(@) One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the *Open IPF* button (![](figures/tutorial/viewer/button_iMOD-Open-IPF.png){width=3%}) and a window will open.
 (@) Click on the ![](figures/tutorial/viewer/button_select.png){width=3%} button and select the IPF "abbeyfeale\\data\\1-external\\boreholes\\BOREHOLES.IPF".
 (@) Click the *Add* button and the IPF file is added in the panel *Layers*.
 
@@ -136,28 +145,34 @@ a. Check if the layer CSR is correct and therefor double click on the BOREHOLES 
 a. In the window *Layer Properties* go to the section *Source*.
 a. In the dropdown menu *“Assigned Coordinate Reference System (CRS)”* select EPSG:2157.
 
-(@) Right-click BOREHOLES.IPF in the *Layers* panel and click “Show labels”. This will label the points with the borelog identifier.
+(@) Right-click layer BOREHOLES in the *Layers* panel and click “Show labels”. This will label the points with the borelog identifier.
 
 The bore log for each borehole can only be displayed in a cross-section. Therefore, we activate the iMOD cross-section tool.
 
-(@) On the iMOD Toolbar select the Cross section button (![](figures/tutorial/viewer/button_iMOD-Cross-section.png){width=3%}) to start the iMOD Cross Section tool.
+(@) On the iMOD Toolbar select the *Cross section* button (![](figures/tutorial/viewer/button_iMOD-Cross-section.png){width=3%}) to start the iMOD Cross Section tool.
 In the empty cross-section we can add a selection of (geological) layers. For now, we only select the boreholes.
 
-(@) Click on the button *Select location* and draw your cross-section line from north to south over the 3 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the Select location button again. 
+(@) On the iMOD Toolbar click on the button *Select location* and draw your cross-section line from north to south following the 6 central borehole locations. Add points to the line with your left mouse button and close the line with the right button. You can remove and redraw the line by clicking the *Select location* button again. 
 (@) In the field *Search buffer* increase the buffer along the line to 1000m. Now a yellow shade is visible around your line selecting all the available points within.
-(@) From the dropdown menu on the left, select the layer BOREHOLES if not selected already. From the borelog we want to plot the variable LITHOLOGY, which is selected already while it is the only available variable. 
-(@) Click the button *Add* to add this layer to the cross-section manager. 
+(@) From the dropdown menu on the left of this toolbar, select the layer BOREHOLES if not selected already. From the borelog we want to plot the variable LITHOLOGY, which is already selected in the Variable dropdown menu (it is the only available variable). 
+(@) Click the button *Add* to add this layer to the cross-section manager below. 
 (@) Click the button *Plot* to draw this layer in the cross section. 
+
+To complete the cross section, let us also add the digital elevation map to the cross-section manager. 
+
+(@) From the dropdown menu now select the layer Abbeyfeale DTM. We do not nead to select a Variable 
+(@) Click the button *Add* to add this layer to the cross-section manager below. 
+(@) Click the button *Plot* to draw both layers in the cross section. 
 
 Your screen might look like @fig-figure_Crosssection-with-borelogs although the colors are different than in your screen. Feel free to use the column *Symbology* to change the legend. 
 
 **NOTE**: If no lines appear on your screen, make sure you have set your project CRS to EPSG:2157 (see earlier step).
 
-![Cross section with borelogs](figures/tutorial/viewer/figure_Crosssection-with-borelogs.png){width=100% #fig-figure_Crosssection-with-borelogs}
+![Cross section with borelogs and DEM](figures/tutorial/viewer/figure_Crosssection-with-borelogs.png){width=100% #fig-figure_Crosssection-with-borelogs}
 
 For now, we leave QGIS and the iMOD Plugin to return later. 
 
-(@) Save your project and keep the QGIS application open. 
+(@) Save your QGIS project (Ctrl+S) and keep the QGIS application open. 
 
 ## iMOD Python
 This is the moment where we start with Python. With the help of the iMOD Python package you will create a simple MODFLOW6 model and run it.
@@ -212,17 +227,17 @@ From the panel Layer you can see that the file is a timeseries because a small c
 There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
 
 (@) For the animation over time, activate the *Temporal Control Panel* with the button ![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar.
-(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar.
+(@) For timeseries at location activate the Timeseries panel with the *Timeseries* button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar.
 
 Your display should look similar with @fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot, except for the red line below. 
 
 (@) In the Temporal Controller panel click the green play button (![](figures/tutorial/viewer/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
-(@) Increase the *Step* from 1 to 14 days and start the animation with a click on the Play button (![](figures/tutorial/viewer/button_TemporalControler-play.png){width=4%}).
+(@) Increase the *Step* from 1 to 14 days and start the animation with a click on the *Play* button (![](figures/tutorial/viewer/button_TemporalControler-play.png){width=4%}).
 (@) In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge. 
 (@) Click the button *Select Points*, your mouse changes into a ![](figures/tutorial/viewer/mouse_plus.png). be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
 (@) Deselect the checkbox *Update on Selection*. 
 (@) Click the button *Select Points* (your mouse becomes a ![](figures/tutorial/viewer/mouse_plus.png) and with the left mouse button select 3 points ad random. 
-(@) Finally click the Plot button and the 3 timeseries are added to the chart. Colors can be changed.  
+(@) Finally click the *Plot* button and the 3 timeseries are added to the chart. Colors can be changed.  
 
 ![Recharge data analysed in the Temporal Controller (QGIS) and the Time Series Plot tool (iMOD)](figures/tutorial/viewer/figure_RCH-in-TemporalController-and-TimeSeriesPlot.png){width=100% #fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot}
 
@@ -304,7 +319,7 @@ Now we try to show an animation of the variation of calculated Heads over time a
 
 (@) For the animation over time, activate the Temporal Control Panel with the button (![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=3%}) on the Map Navigation Toolbar.
 (@) From you experience with this tool, try to start the animation with timestep of 14 days. 
-(@) For timeseries at location activate the Timeseries panel with the Timeseries button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar.
+(@) For timeseries at location activate the Timeseries panel with the *Timeseries* button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=3%}) on the iMOD Toolbar.
 (@) From you experience with this tool, select 3 points in the model area and plot the corresponding calculated Heads for layer 1. 
 
 ![Calculated head with MODFLOW 6 on 3 points within the model area](figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png){width=100% #fig-figure_Timeseries-Heads-in-3-points}
