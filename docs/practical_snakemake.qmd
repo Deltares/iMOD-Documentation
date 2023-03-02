@@ -381,7 +381,7 @@ rule idf_to_netcdf:
 
 rule run_model:
    input:
-      r"data/4-output/scenario_1/model.run #The runfile is 
+      r"data/4-output/scenario_1/model.run" # The runfile is the model definition file.
    output:
       temp(directory("data/4-output/scenario_1/conc")),
       temp(directory("data/4-output/scenario_1/head")),
