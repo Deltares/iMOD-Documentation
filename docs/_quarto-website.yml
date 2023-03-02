@@ -19,6 +19,8 @@ website:
         href: tutorial_index.qmd
       - text: "Further links"
         href: further_links.qmd
+      - text: "Practical tips"
+        href: practical_index.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Training

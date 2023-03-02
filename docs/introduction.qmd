@@ -1,7 +1,8 @@
 ---
-title: Introduction
+title: "{{< fa solid hourglass-start >}} Introduction"
 image: figures/logo/iMOD.svg
 description: Learn what's included.
+index: "1"
 ---
 
 ## What's included

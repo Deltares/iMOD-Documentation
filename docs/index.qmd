@@ -9,6 +9,8 @@ listing:
         - python_index.qmd
         - coupler_index.qmd
         - tutorial_index.qmd
+        - practical_index.qmd
+    sort: "index"
 ---
 
 The iMOD Suite offers different modules which support modelling with

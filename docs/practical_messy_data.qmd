@@ -1,0 +1,55 @@
+---
+title: "{{< fa solid dumpster >}} Handling messy data"
+description: "Some tips in dealing with messy data, or -- God forbid -- to avoid producing it yourself."
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/International_tidyman.svg/800px-International_tidyman.svg.png
+---
+
+## Don\'t use Excel files
+
+Generally, you want to do cleanup, analysis, etc. in (Python) scripts
+\-- reason being that it\'s reproducible:
+
+-   There\'s something that describes step by step how something was
+    done;
+-   You can easily redo something when you find a mistake, get a new
+    version of the data, etc.
+
+A general source of messy data is Excel \-- after all, many people can
+work with Excel, in their own (perfidious) ways. Treat this as your
+immutable external data. However, convert the individual spreadsheets to
+CSV (or TSV if you like).
+
+This has multiple benefits:
+
+-   Data becomes more explicitly visible: separated tables, instead of
+    somewhat hidden spreadsheets;
+-   Data is much faster to read by most software: Excel files are a
+    complicated format of zipped XML files. This is useful to store
+    equations, formatting, etc., but not to just store the data;
+-   Excel file reader are not required: most software can easily read
+    plain text like CSV, xsls files (zipped XML) not so much.
+
+It\'s okay to make this a manual step: open the data with Excel, Save
+As, and store in your external data.
+
+## Avoid alphabetical or numeric codes
+
+The following labels are obviously require a lot of additional
+information to become meaningful:
+
+-   A, B, C \...
+-   A1, B1, B2, \...
+-   1.1, 1.2, 1.3, 2.1, \...
+
+Try to avoid using such labels to describe data sources, scenario names,
+filenames, etc. Not only do they require (more) description to make
+sense, they\'re much harder to memorize compared to (more) verbose
+labels:
+
+-   national_dataset, provincial_dataset, local_dataset
+-   low_recharge, high_recharge
+
+And harder to memorize means: more mix-ups, more mistakes, time lost.
+
+Just like in scripting or programming: readability beats ease of
+writing.

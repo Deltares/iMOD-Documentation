@@ -1,0 +1,531 @@
+---
+title: "{{< fa solid code-branch >}} Version control your projects"
+description: "Use Git and DVC to version control your model workflows"
+image: https://git-scm.com/images/logos/logomark-orange@2x.png
+---
+
+## Introduction
+
+Since scripting becomes increasingly important in hydrological projects,
+the rules of software development also start to apply to us. This has
+the downside that it requires extra effort from us, hydrologists, to
+learn new tools, but the upside is that there already is a wealth of
+properly tested tools and documentation available from the software
+development world. Having reproducible code is one of these important
+things, for which version control systems have been developed. It is
+very useful to use these systems in hydrological projects, since they
+provide the following advantages:
+
+1.  You keep track of the history of a project. In this way you keep a
+    journal of decisions made in a project.
+2.  If you mess up something, you can always revert to a previous state.
+3.  It allows for collaborative development, where individuals can
+    create their own branch to safely work on new developments and later
+    merge their changes.
+
+This document describes how to use [Git](https://git-scm.com/) and
+[DVC](https://dvc.org/). If you are running into issues,
+[Stackoverflow](https://stackoverflow.com/questions/tagged/git) has a
+lot of information available (\>145,000 questions at 02-03-2023), since
+Git is so commonly used today.
+
+### Git
+
+Today (03-2023), [Git](https://git-scm.com/) is the most commonly used
+version control system for code. Code development is usually shared on
+platforms such as [Github](https://github.com/) or
+[Gitlab](https://gitlab.com/).
+
+One of the main differences between Git and older systems such as
+Subversion is that Git is a distributed version control system, whereas
+Subversion is a centralized system. In subversion, there is no history
+of changes on the machine, only on the central server. So therefore, to
+do any version control, the user has to be connected to a server. With
+Git a repository on a server (called *remote*) is first
+cloned to the user\'s local machine. This repository includes the full
+history of changes. The user can then make his/her changes, after which
+he/she can push these back to the remote, but does not have to. Because
+it is more indirect, and the availability of widely used platforms such
+as Github, the distributed nature of Git allows for smooth development
+between different organizations as well as open-source code development.
+Furthermore, you can develop code offline.
+
+Due to its background in software engineering, Git is only useful for
+versioning scripts and textfiles, and not for large files. For
+versioning larger files we use DVC.
+
+### DVC
+
+[DVC](https://dvc.org/) stands for Data Version Control and it does
+exactly that. It is built on top of Git and so it uses very similar
+commands, which can be both easy and confusing at the same time. DVC
+ensures your large files themselves are not tracked by Git. Instead, it
+keeps the large files in its own cache and writes simple text files,
+which store the unique \"version code\" (a
+[hash](https://en.wikipedia.org/wiki/Hash_function)), each time you
+commit to DVC. These textfiles then have to be committed to Git. This
+may seem a bit cumbersome, as you have to commit data first to DVC, and
+then its version code to Git, but this allows the user to utilize the
+full potential of both Github as well as Cloud Storages (Like Amazon S3,
+Google Cloud, Microsoft Azure etc.). The version history is all stored
+in Git and can be pushed to Github or Gitlab, but the data itsself can
+be stored on different platforms more specialized in handling large
+files.
+
+## Installation
+
+First install Git [from this link](https://git-scm.com/). If installing
+on Windows it is useful to make sure Git is added to the %PATH% variable
+during installation. To test if the installation works, open a command
+line or shell window and test if the following command works:
+
+If this works, install DVC [from this link](https://dvc.org/).
+
+## Software to use Git and DVC
+
+You can run git from the regular Windows command line, but the Windows
+installation also comes with MinGW (Minimalist GNU for Windows) which can be
+useful.
+
+### MinGW
+
+MinGW allows you to use Linux commands, as well as other cool stuff
+(e.g. compiling Fortran 90 with gfortran for free). Note that in it you
+have to specify paths with Linux-style forward slashes `/` instead of
+Windows style backward slashes `\`.
+
+We recommend defining a button for MinGW in Total Commander by clicking:
+
+Configuration \> Button Bar \> Add
+
+And then specify the path to `git-bash.exe` under \"Command\", e.g.
+`C:\\Program Files\\Git\\Git\\git-bash.exe`
+
+::: {.callout-note}
+Depending on your system configuration, you might need to add under
+\"Parameters\": `--login -i`
+:::
+
+### VSCode
+
+[VScode](https://code.visualstudio.com/) has integrated Git support as
+well. This is very useful when you are mainly coding, but since you
+cannot call DVC, less when you are changing model data. [This
+documentation](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support)
+describes how to use it.
+
+## Tutorial
+
+There are already several tutorials online available on Git as well as
+DVC. For Git, [this is a useful no-nonsense
+guide](https://rogerdudler.github.io/git-guide/). For DVC, there is
+[this bit more involved
+tutorial](https://dvc.org/doc/use-cases/versioning-data-and-model-files/tutorial).
+However, because we want this document to be a bit more than a pointer
+to other tutorials, here\'s a quick guide that will describe your
+typical workflow.
+
+### Starting a repository
+
+You can start you own repository by changing to the directory first and then
+initializing git. Open your terminal of choice (e.g. Powershell, cmd, bash) and
+run the following commands
+
+```bash
+> cd path/to/folder 
+> git init
+```
+
+This will create a hidden `.git` folder.
+
+To then initialize dvc:
+
+```bash
+> dvc init
+```
+
+This will create a hidden `.dvc` folder as well as a `.dvc/.gitignore`
+file, which will tell Git to automatically ignore parts of the `.dvc`
+folder, for example the `.dvc/cache` folder, where DVC stores all
+versions of data files. We want Git to ignore these, as we do not want
+Git to keep track of Gigabytes of data!
+
+::: {.callout-note}
+To show hidden files and folders (very useful), you can configure Total
+Commander by clicking:
+
+*Configuration* \> *Options* \> *Display* \> *\"Show hidden files\"*
+:::
+
+::: {.callout-note}
+It is convenient for later to add the file extensions of files you want
+to keep in dvc in the `.gitignore` file, e.g. `*.idf`. Or you could add
+your data folder (e.g. `data`) to this file to exclude everything in it
+by specifiying `data/`.
+:::
+
+::: {.callout-note}
+[This
+recipe](https://gitlab.com/deltares/imod/cookiecutter-reproducible-project)
+allows you to kickstart your project, creating already a smart folder
+structure, a readme and a .gitignore file.
+:::
+
+### Checking the status
+
+One of the first things you should do once you have started your
+repository, is checking its status.
+
+Change directories into the repo and call:
+
+```bash
+> git status
+```
+
+This will show in red the files that are untracked by Git and have to be
+added still. And in green the files that are staged but have not been
+committed yet.
+
+In order to check if any data files changed in DVC, in a similar way you
+call:
+
+```bash
+> dvc status
+```
+
+### Checking differences
+
+If you have modified one or multiple files, you can view lines you have
+changed per file with:
+
+```bash
+> git diff
+```
+
+This will show in green the lines that are new, or different, in the new
+version of the file. And in red the lines as they were in the old
+version, or now have been removed.
+
+### Adding textfiles
+
+So you have checked the status and will probably have seen that there is
+a `.dvc/.gitignore` file that is already staged (this was added by DVC).
+What DVC has done for us is the following:
+
+```bash
+> git add .dvc/.gitignore
+```
+
+This will *stage* the `.gitignore` file. This means you have
+selected a change to be added to a commit. If you want to include a
+script or other textfile in version control, you have to stage it
+yourself by calling the `git add` command.
+
+::: {.callout-warning}
+Staging a script does not mean you have added it to version control yet!
+A file is only added to version control after you have committed your
+changes (see next section).
+:::
+
+### Committing changes
+
+Before your files are added to version control, you have to commit them
+first. A commit can be seen as a \"snapshot\" of a project that is added
+to the version control and is therefore
+[\"safe\"](https://www.atlassian.com/git/tutorials/saving-changes/git-commit).
+
+Each commit should be followed by a message that specifies what you have
+changed. It is very important that these messages are short and
+informative, as they form your \"journal entries\" and will make
+searching your version history a lot easier.
+
+In our example, you can commit the added .gitignore file to your version
+control by calling:
+
+```bash
+> git commit -m "Added file extensions to be ignored by Git."
+```
+
+The `-m` option allows you to specify a string that will be
+your commit message.
+
+But what if you accidentily made an error in your message? You can then
+change it using:
+
+```bash
+> git commit --amend
+```
+
+This will open up a text editor where you can alter your commit message.
+
+::: {.callout-note}
+The Windows installation of Git comes with a common Linux text editor
+called Vim. It is possible your Git is configured to automatically open
+Vim. Vim is very powerful, but has a steep learning curve. Especially
+confusing for beginners is [closing
+Vim](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor)
+
+So to close Vim: First press ESC, then press the colon `:`. To save your
+changes, you can type `x`, or to discard them you can type `q!`. Finish
+by pressing Enter.
+:::
+
+::: {.callout-warning} 
+After committing data, do not naively rename files or
+move them around. Instead, you should use Git for that. See @section_moving.
+:::
+
+### Moving/renaming scripts {#section_moving}
+
+Be careful moving scripts around after they have been committed to Git.
+Despite having the same filename, Git does not necessarily understand
+this: It sees a file being deleted and other file being created.
+
+So in order to safely move or rename committed files, don\'t copy+paste
+committed files in your Windows Explorer, but instead let Git do it for
+you:
+
+```bash
+> git mv script.py src/script.py
+```
+
+The same holds for renaming:
+
+```bash
+> git mv script.py renamed_script.py
+```
+
+### Adding and committing data files
+
+We now know how to add textfiles, but not how to add large binary files,
+your data. For this we use DVC, to add data in data version control,
+e.g. all files in the folder `data/rivers`, you can add the folder:
+
+```bash
+> dvc add data/rivers
+```
+
+This creates a unique version code (hash) for all files in the folder
+and adds the data to the cache in the `.dvc` directory. The hash of the
+data is stored in textfile named `data/rivers.dvc`.
+
+We have however not included the data in the version log yet\... DVC
+lets Git take care of keeping the version log, so that both code changes
+as well as data changes are in the same log.
+
+It does this by creating `.dvc` files with the hashes and we are
+expected to add these to our git repository. We therefore have to run
+the following commands to fully include the added data to our version
+control:
+
+```bash
+> git add -f data/rivers.dvc 
+> git commit -m "Added river data"
+```
+
+We added the `-f` option to the `add` command, just in case you added the
+*data* folder to your `.gitignore` file. This forces git to
+still add the `rivers.dvc` file.
+
+To summarize, the data backups are stored in the `.dvc` folder, the log
+of changes in the `.git` folder. This allows us to send the data
+seperately to a data cloud oriented to handling large data files (Google
+Cloud, Amazon S3, Azure etc.), and to send the `.git` folder to Github
+or Gitlab to have a nicely browseable version history.
+
+### Updating data
+
+The commands to add changes made in the data are the same as to add new
+data:
+
+```bash
+> dvc add data/rivers 
+> git add -f data/rivers.dvc 
+> git commit -m "Changed river data"
+```
+
+### Moving data
+
+You can safely move data to a different location in your repo with DVC
+by calling:
+
+```bash
+> dvc move heads.nc data/heads.nc 
+> git add data/heads.nc.dvc 
+> git commit -m "Moved heads to data folder"
+```
+
+### Viewing the version history
+
+To view the results of your hard work of carefully maintaining version
+control, you can call:
+
+```bash
+> git log
+```
+
+This shows the version history in text form. This is useful for a quick
+lookup of the last commits, but if you want to go back a lot more
+becomes cumbersome. There are quite some graphical user interfaces
+available to view the version history, one of which is already included
+with your windows installation. You can start it by calling:
+
+```bash
+> gitk
+```
+
+This is a very light-weight interface, and more fancy ones exist.
+Furthermore, when pushing to a remote (see
+@pushing_to_remote), Github and Gitlab
+have very good interfaces to view the commit history as well.
+
+### Reverting and resetting commits
+
+Say you added a commit that was not going to be used, and want to go
+back. Git provides multiple options to do this safely, and some to do
+this not so safely.
+
+Say you want to revert the repository back to a previous state, but want
+to keep the changes you made after that state. You can revert the last
+commit you made with:
+
+```bash
+> git revert HEAD
+```
+
+`HEAD` is the hash of the last commit you made. You can lookup these
+hashes by calling `git log`. Say this last hash currently is
+`j1c13377c6d4adfhcc69c6ac7b51e919b15a65c4` We could do the same by
+calling:
+
+```bash
+> git revert j1c13377c6d4adfhcc69c6ac7b51e919b15a65c4
+```
+
+If you now call `git log` again, you can see that the revert of this
+specific commit is also stored as a new commit. You can always revert
+the revert as well, if you suddenly decide you actually needed those
+changes.
+
+Sometimes you commit something which in hindsight is so stupid, you
+neither want to bother other people with it, nor yourself again. In this
+case you can *reset* the repository to a previous state. Say
+you want to reset to the state before your last commit (basically
+undoing the last commit), you can call:
+
+```bash
+> git reset --hard HEAD~1
+```
+
+``HEAD~1`` is the hash of the second last commit. In this way all commits
+after the second last commit are deleted, so be careful.
+
+::: {.callout-note}
+Note that for ``git revert`` we refer to the commit we want to undo,
+whereas for ``git reset`` we refer to the commit before this, because
+``git reset`` wants to know the state we want to reset to.
+:::
+
+If you are also resetting/reverting data changes added to DVC, the data
+referred to in the last git commit still has to be put in your
+workspace. To do this call:
+
+```bash
+> dvc checkout
+```
+
+This will make DVC check all data referred to in the .dvc files again,
+recalculating hashes, which is a slow process. If you know which files
+are changed (e.g. \'heads.nc\'), you can speed up things considerably by
+referring to the specific files:
+
+```bash
+> dvc checkout heads.nc
+```
+
+### Pushing to remote {#pushing_to_remote}
+
+Up to now you have learned how to safely store scripts and data locally,
+but what if your hard-drive crashes? Or if you accidentily shift+delete
+your whole repository? In those cases you wished you also stored your
+repository somewhere else! That\'s why Git, as well as DVC, allow you to
+push your repository to a remote.
+
+This has two benefits:
+
+1.  Your repository is safely stored somewhere else
+2.  Your colleagues can also access your repository and collaborate on
+    Gitlab/Github.
+
+We first have to configure Git to know the location of your remote and
+give it a name. A commonly used name for remote repo is \"origin\".
+
+```bash
+> git remote add origin <https://github.com/username/repo.git>
+```
+
+You can list the remotes you have added with:
+
+```bash
+> git remote -v
+```
+
+After you have added your remote, you can push your code to the remote
+by calling:
+
+```bash
+> git push
+```
+
+DVC behaves very similar, except that the location of the DVC remote is
+stored in a file named `.dvc/config` that has to be added to Git. Say we
+want to add my google drive to a remote named \"google-drive\":
+
+```bash
+> dvc remote add google-drive gdrive://some-hash-number-here 
+> git add .dvc/config
+> git commit -m "Added google-drive as dvc remote"
+```
+
+You can then push to google-drive by calling:
+
+```bash
+> dvc push
+```
+
+### Cloning an existing repository
+
+It is also possible to easily create a local copy of an exisiting
+repository. You can tell git to clone a remote repository into the
+current directory with:
+
+```bash
+> git clone <http-address>
+```
+
+For example, to clone the [California model
+repository](https://gitlab.com/deltares/imod/california_model), you can
+call:
+
+```bash
+> git clone <https://gitlab.com/deltares/imod/california_model.git>
+```
+
+::: {.callout-note}
+This might require a Gitlab account with [2 factor
+authorization](https://docs.gitlab.com/ee/user/profile/account/two_factor_authentication.html).
+:::
+
+::: {.callout-note}
+Your organization might have strict security settings and you might run
+into:
+`SSL certificate problem: self signed certificate in certificate chain github`.
+[You can follow these instructions to fix
+this.](https://mattferderer.com/fix-git-self-signed-certificate-in-certificate-chain-on-windows)
+:::
+
+## Further reading
+
+For Git commands, you can also take a look at [this useful cheat
+sheet](https://rogerdudler.github.io/git-guide/files/git_cheat_sheet.pdf)
+.

@@ -1,0 +1,19 @@
+---
+title: "{{< fa solid hammer >}} Practical Tips"
+listing:
+    type: grid
+    contents:
+      - practical_git_dvc.qmd
+      - practical_snakemake.qmd
+      - practical_parallel.qmd
+      - practical_powershell.qmd
+      - practical_look_like_a_pro.qmd
+      - practical_messy_data.qmd
+    image-height: 200px
+image: figures/logo/iMOD.svg
+description: 'Useful tips to use the iMOD Suite with other tools.'
+index: "6"
+---
+
+Listed here are practical tips how to use the iMOD Suite in combination with
+other tools for very performant workflows.
