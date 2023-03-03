@@ -21,12 +21,13 @@
   {
     "listing": "/practical_index.html",
     "items": [
-      "/practical_parallel.html",
+      "/practical_cookiecutter.html",
       "/practical_git_dvc.html",
       "/practical_snakemake.html",
       "/practical_messy_data.html",
-      "/practical_look_like_a_pro.html",
-      "/practical_powershell.html"
+      "/practical_parallel.html",
+      "/practical_powershell.html",
+      "/practical_look_like_a_pro.html"
     ]
   }
 ]
