@@ -11,7 +11,7 @@ please read the [contributing guidelines](CONTRIBUTING.md).
 ## Local Build
 
 1. [Install Quarto](https://quarto.org/docs/get-started/)
-2. `git clone  https://github.com/Deltares/iMOD-Training.git`
+2. `git clone  https://github.com/Deltares/iMOD-Documentation.git`
 3. `cd imod-training`
 4. `quarto render docs --profile website --to html`
 5. The HTML documentation will be under `./docs/_build/`

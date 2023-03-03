@@ -23,7 +23,7 @@ website:
         href: practical_index.qmd
     right:
       - icon: github
-        href: https://github.com/Deltares/iMOD-Training
+        href: https://github.com/Deltares/iMOD-Documentation
         aria-label: GitHub
 
   sidebar:
