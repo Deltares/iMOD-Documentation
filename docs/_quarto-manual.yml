@@ -24,7 +24,6 @@ book:
         - tutorial_Abbeyfeale.qmd
         - tutorial_Dommel.qmd
         - tutorial_wq.qmd
-    - part: further_links.qmd
 
 format:
   pdf:
