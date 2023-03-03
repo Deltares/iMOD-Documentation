@@ -424,7 +424,7 @@ Script 3 – Recharge
 </ol>
 <p>Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster.</p>
 <ol start="60" class="example" type="1">
-<li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/tutorial/viewer/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
+<li>From the menu <em>Layer &gt; Add layer &gt; Add Mesh Layer…</em> load the file “Abbeyfeale\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/tutorial/viewer/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
 </ol>
 <p>There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.</p>
 <ol start="61" class="example" type="1">
@@ -436,7 +436,7 @@ Script 3 – Recharge
 <li>In the Temporal Controller panel click the green play button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel-menu.png" class="img-fluid">). Navigation buttons appear.</li>
 <li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the <em>Play</em> button (<img src="figures/tutorial/viewer/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
 <li>In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge.</li>
-<li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid">. be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
+<li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid">. Be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
 <li>Deselect the checkbox <em>Update on Selection</em>.</li>
 <li>Click the button <em>Select Points</em> (your mouse becomes a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid"> and with the left mouse button select 3 points ad random.</li>
 <li>Finally click the <em>Plot</em> button and the 3 timeseries are added to the chart. Colors can be changed.</li>
@@ -505,9 +505,9 @@ Script 4 – Geohydrology
 </ol>
 <p>Results 4: The result is a mesh file (NetCDF format) for the geohydrological data. This NC file must be loaded as mesh instead of a raster.</p>
 <ol start="71" class="example" type="1">
-<li>From the menu <em>Layer &gt; Add layer &gt; Add mesh</em> load the file “Abbeyfeale\data\2-interim\hydrogeology_mesh.nc” into QGIS.</li>
+<li>From the menu <em>Layer &gt; Add layer &gt; Add Mesh layer…</em> load the file “Abbeyfeale\data\2-interim\hydrogeology_mesh.nc” into QGIS.</li>
 <li>Double click on the layer name “hydrogeology_mesh” and the window <em>Layer Properties</em> will open.</li>
-<li>Click on the group <em>Source</em> on the left and on the right, you see all <em>Available Datasets</em> in this single mesh.</li>
+<li>Click on the group <em>Source</em> on the left, and on the right you see all <em>Available Datasets</em> in this single mesh.</li>
 </ol>
 <p>Let’s create a cross-section with the permeability plot within each layer.</p>
 <ol start="74" class="example" type="1">
