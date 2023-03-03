@@ -2,6 +2,7 @@
 title: "{{< fa solid plug-circle-exclamation >}} Powershell profile error"
 description: "Learn how to fix the Powershell profile error which can hamper using Visual Studio Code"
 image: https://deow9bq0xqvbj.cloudfront.net/image-logo/1769310/powershell.png
+index: 6
 ---
 
 <!---#

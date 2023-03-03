@@ -2,6 +2,7 @@
 title: "{{< fa solid dumpster >}} Handling messy data"
 description: "Some tips in dealing with messy data, or -- God forbid -- to avoid producing it yourself."
 image: https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/International_tidyman.svg/800px-International_tidyman.svg.png
+index: 4
 ---
 
 ## Don\'t use Excel files

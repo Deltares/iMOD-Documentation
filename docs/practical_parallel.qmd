@@ -2,6 +2,7 @@
 title: "{{< fa solid arrows-turn-right >}} Parallel MODFLOW"
 description: "Fix common issues when running iMODFLOW & iMOD-WQ codes with MPI."
 image: figures/logo/iMOD.svg
+index: 5
 ---
 
 ## SMPD errors

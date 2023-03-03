@@ -1,0 +1,64 @@
+---
+title: "{{< fa solid stroopwafel >}}  Consistent folder structures with Cookiecutter"
+description: Kickstart your projects with Cookiecutter
+image: https://assets.website-files.com/6189495a8f80ad3e20ebcf60/618e86f4d53488d751cb2fc9_logo%20(29).svg
+index: 1
+---
+
+[Cookiecutter](https://www.cookiecutter.io/) enables creating templated folder
+structures and files to kickstart your projects. At Deltares, [we created such a
+template](https://gitlab.com/deltares/imod/cookiecutter-reproducible-project).
+
+Using the same project template in an organization has the following
+advantages:
+
+- No time wasted thinking about file orgization
+- Consistency between work of colleagues and projects
+- Scripts more easily transferrable between projects
+- Less time wasted searching for files
+
+[The iMOD Gitlab group](https://gitlab.com/deltares/imod/) contains multiple
+applications of the Deltares Project template.
+
+## Install
+To install Cookiecutter, run the following command:
+
+```shell
+pip install cookiecutter
+```
+
+## Kickstart project
+Then to create a new project:
+
+```shell
+cookiecutter gl:deltares/imod/cookiecutter-reproducible-project
+```
+
+This will create the following folder and file structure:
+
+```
+.
+├── AUTHORS.md
+├── LICENSE
+├── README.md
+├── bin                 <- Your compiled model code can be stored here (not tracked by git)
+├── config              <- Configuration files, e.g., for doxygen or for your model if needed
+├── data                
+│   ├── 1-external      <- Data external to the project.
+│   ├── 2-interim       <- Intermediate data that has been altered.
+│   ├── 3-input         <- The processed data sets, ready for modeling.
+│   ├── 4-output        <- Data dump from the model.
+│   └── 5-visualization <- Post-processed data, ready for visualisation.
+├── docs                <- Documentation, e.g., doxygen or scientific papers (not tracked by git)
+├── notebooks           <- Jupyter notebooks
+├── reports             <- For a manuscript source, e.g., LaTeX, Markdown, etc., or any project reports
+│   └── figures         <- Figures for the manuscript or reports
+└── src                 <- Source code for this project
+    ├── 0-setup         <- Install necessary software, dependencies, pull other git projects, etc.
+    ├── 1-prepare       <- Scripts and programs to process data, from 1-external to 2-interim.
+    ├── 2-build         <- Scripts to create model specific input from 2-interim to 3-input. 
+    ├── 3-model         <- Scripts to run model and convert or compress model results, from 3-input to 4-output.
+    ├── 4-analyze       <- Scripts to post-process model results, from 4-output to 5-visualization.
+    └── 5-visualize     <- Scripts for visualisation of your results, from 5-visualization to ./report/figures.
+
+```

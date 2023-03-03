@@ -2,6 +2,7 @@
 title: "{{< fa solid fire-flame-curved >}} How to look like a pro"
 description: "Some general tips and tricks to make your editors and terminals look cool."
 image: https://raw.githubusercontent.com/ryanoasis/nerd-fonts/38f76ec69fa3546784dd8beab3caf9c2ede9b92d/images/nerd-fonts-logo.svg
+index: 7
 ---
 
 These are some general tips and tricks to make your editors and

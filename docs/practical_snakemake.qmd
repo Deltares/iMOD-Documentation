@@ -1,6 +1,7 @@
 ---
 title: "{{< fa solid diagram-project >}} Snakemake Tips {{< fa solid staff-snake >}}"
 image: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsnakemake.gallerycdn.vsassets.io%2Fextensions%2Fsnakemake%2Fsnakemake-lang%2F0.1.6%2F1621589607070%2FMicrosoft.VisualStudio.Services.Icons.Default&f=1&nofb=1&ipt=5857ea7e189d3c7b23c5bce4cc375c6f417dad496289ab68203c940c0d7a646d&ipo=images
+index: 3
 ---
 
 [Snakemake](https://snakemake.readthedocs.io/en/stable/) is a very

@@ -2,6 +2,7 @@
 title: "{{< fa solid code-branch >}} Version control your projects"
 description: "Use Git and DVC to version control your model workflows"
 image: https://git-scm.com/images/logos/logomark-orange@2x.png
+index: 2
 ---
 
 ## Introduction
