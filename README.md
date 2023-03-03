@@ -1,6 +1,6 @@
 # iMOD Suite Documentation
 
-[The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Training)
+[The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Documentation)
 
 The documentation is set up using [Quarto](https://quarto.org/). 
 [Read here how to get started using Quarto.](https://quarto.org/docs/get-started/)
