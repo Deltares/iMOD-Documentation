@@ -10,7 +10,7 @@ Please commit changes to your own branch, push this branch to
 the repository, and file a pull request.
 
 ```batch
-git clone https://github.com/Deltares/iMOD-Training.git
+git clone https://github.com/Deltares/iMOD-Documentation.git
 git checkout -b <my_branch_name>
 
 rem Change some files here 
