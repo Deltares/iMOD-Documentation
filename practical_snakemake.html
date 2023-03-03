@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>iMOD Suite -  Snakemake Tips </title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="_static/styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">iMOD Suite</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./viewer_index.html">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorial_index.html">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./practical_index.html">
+ <span class="menu-text">Practical tips</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Training"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#installation-on-windows" id="toc-installation-on-windows" class="nav-link active" data-scroll-target="#installation-on-windows">Installation on Windows</a>
+  <ul class="collapse">
+  <li><a href="#option-1-recommended-way-install-deltaforge" id="toc-option-1-recommended-way-install-deltaforge" class="nav-link" data-scroll-target="#option-1-recommended-way-install-deltaforge">Option 1: Recommended way: Install Deltaforge</a></li>
+  <li><a href="#option-2-install-via-condamamba" id="toc-option-2-install-via-condamamba" class="nav-link" data-scroll-target="#option-2-install-via-condamamba">Option 2: Install via conda/mamba</a></li>
+  <li><a href="#configure-your-machine" id="toc-configure-your-machine" class="nav-link" data-scroll-target="#configure-your-machine">Configure your machine</a></li>
+  </ul></li>
+  <li><a href="#basics" id="toc-basics" class="nav-link" data-scroll-target="#basics">Basics</a>
+  <ul class="collapse">
+  <li><a href="#creating-a-workflow" id="toc-creating-a-workflow" class="nav-link" data-scroll-target="#creating-a-workflow">Creating a workflow</a>
+  <ul class="collapse">
+  <li><a href="#rules" id="toc-rules" class="nav-link" data-scroll-target="#rules">Rules</a></li>
+  <li><a href="#scripts" id="toc-scripts" class="nav-link" data-scroll-target="#scripts">Scripts</a></li>
+  <li><a href="#default-rule" id="toc-default-rule" class="nav-link" data-scroll-target="#default-rule">Default rule</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  </ul></li>
+  <li><a href="#executing-workflows" id="toc-executing-workflows" class="nav-link" data-scroll-target="#executing-workflows">Executing workflows</a></li>
+  </ul></li>
+  <li><a href="#advanced-tips" id="toc-advanced-tips" class="nav-link" data-scroll-target="#advanced-tips">Advanced tips</a>
+  <ul class="collapse">
+  <li><a href="#running-regular-python-code-in-the-snakefile" id="toc-running-regular-python-code-in-the-snakefile" class="nav-link" data-scroll-target="#running-regular-python-code-in-the-snakefile">Running regular python code in the Snakefile</a></li>
+  <li><a href="#multiple-files" id="toc-multiple-files" class="nav-link" data-scroll-target="#multiple-files">Multiple files</a></li>
+  <li><a href="#temporary-files" id="toc-temporary-files" class="nav-link" data-scroll-target="#temporary-files">Temporary files</a></li>
+  <li><a href="#parallel-execution" id="toc-parallel-execution" class="nav-link" data-scroll-target="#parallel-execution">Parallel execution</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><i class="fa-solid fa-diagram-project" aria-label="diagram-project"></i> Snakemake Tips <i class="fa-solid fa-staff-snake" aria-label="staff-snake"></i></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p><a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> is a very useful and powerful tool to create reproducible workflows.</p>
+<p>Usually (or ideally...) our modelling workflows consist of a set of scripts or calls to excecutables that exchange intermediate files, in order to convert raw data to model output that can be analyzed. The graph of these workflows usually does not look like a straight pipeline, but more often like a chaotic network (a plate of spaghetti for larger workflows), because some files influence multiple steps. Quite often some of this input changes, or a certain script changes. Since we also often process large datasets, we do not want to re-run every step again with every change, but instead only re-run the necessary steps. Snakemake does this bookkeeping for us.</p>
+<p>Below a graph created for an <a href="https://gitlab.com/deltares/imod/california_model">example workflow</a>:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://gitlab.com/deltares/imod/california_model/-/raw/master/docs/dag.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">image</figcaption><p></p>
+</figure>
+</div>
+<p>You can see that quite a lot of tasks in this example depend on the step <em>create_3d_grid</em>, in which a 3d grid is created that is used as model discretization. Changing something in this step means a lot of steps have to be redone, but not all of them (like downloading precipitation data). Therefore Snakemake automatically recognizes which scripts still have to be re-executed after a filechange.</p>
+<p>Snakemake is currently mainly used, and developed, in Academia by bioinformaticians. Because of this background, it has very cool features like support for parallel computation, both on local machines as well as high performance clusters. However, this background also means it can be hard to install on Windows and to navigate its' extensive documentation. This documentation tries to help installing snakemake and to furthermore provide you with the most useful commands for our iMOD workflows.</p>
+<section id="installation-on-windows" class="level1">
+<h1>Installation on Windows</h1>
+<p>There are two options to install Snakemake on your machine.</p>
+<section id="option-1-recommended-way-install-deltaforge" class="level2">
+<h2 class="anchored" data-anchor-id="option-1-recommended-way-install-deltaforge">Option 1: Recommended way: Install Deltaforge</h2>
+<p>Deltaforge installs Snakemake and all its dependencies for you. <a href="./deltaforge_install.html">Read the instructions to install Deltaforge here.</a></p>
+</section>
+<section id="option-2-install-via-condamamba" class="level2">
+<h2 class="anchored" data-anchor-id="option-2-install-via-condamamba">Option 2: Install via conda/mamba</h2>
+<p>Note that Snakemake is located on the bioconda channel (remember snakemake's background in bioinformatics?). You can run the following commands in your terminal of choice to install snakemake with mamba.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> mamba <span class="fu">install</span> pygraphviz graphfviz</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> mamba <span class="fu">install</span> <span class="at">-c</span> bioconda snakemake</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="configure-your-machine" class="level2">
+<h2 class="anchored" data-anchor-id="configure-your-machine">Configure your machine</h2>
+<p>Then one dependency requires manual installation, namely <a href="https://imagemagick.org/script/download.php#windows">Imagemagick</a>. Ensure during the installation that Imagemagick is added to the Windows PATH variable.</p>
+<p>In order to configure Graphviz, you then have to call once:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>dot <span class="ex">-c</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once you have created a workflow, you can then call the following code to create a directional acyclic graph and save it as docs/dag.png:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>snakemake <span class="ex">--rulegraph</span> <span class="kw">|</span> <span class="ex">dot</span> <span class="at">-Tpng</span> <span class="op">&gt;</span> docs/dag.png</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="basics" class="level1">
+<h1>Basics</h1>
+<section id="creating-a-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-workflow">Creating a workflow</h2>
+<section id="rules" class="level3">
+<h3 class="anchored" data-anchor-id="rules">Rules</h3>
+<p>In order to specify the individual steps of your workflow in Snakemake, you must create a <em>Snakefile</em> in your repository. In this <em>Snakefile</em>, you define a set of <em>rules</em>, each <em>rule</em> specifying an individual step of your workflow. A rule looks as follows:</p>
+<pre><code>rule plot_heads:
+ input:
+     "data/4-output/head.nc",
+ output:
+     "reports/figures/head.png"
+ shell:
+     "python src/5-visualize/visualize_heads.py {input} {output}"</code></pre>
+<p>Snakemake does not care what the rule does, it only wants to know which files are used as input, in this case the file located at <code>./data/4-output/head.nc</code>, and what files are created as output, in this case <code>./reports/figures/head.png</code> and what should be executed. The last line under "shell" defines what command should be executed. In this case a call is made to python to run the script with two arguments:</p>
+<pre><code>&gt;python src/5-visualize/visualize_heads.py data/4-output/head.nc reports/figures/head.png</code></pre>
+</section>
+<section id="scripts" class="level3">
+<h3 class="anchored" data-anchor-id="scripts">Scripts</h3>
+<p>Snakemake has built-in support for Python scripts (as well as Julia and R scripts), so you don't have to call shell commands:</p>
+<pre><code>rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"</code></pre>
+<p>In this case the <code>snakemake</code> object is available within the script and lets you access input and output. The visualize_heads.py script could look as follows:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>head_nc <span class="op">=</span> snakemake.<span class="bu">input</span>.head_nc</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>head_png <span class="op">=</span> snakemake.<span class="bu">input</span>.head_png</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#Read data</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>head <span class="op">=</span> xr.open_dataset(head_nc)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#Select and plot data</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>head.isel(time <span class="op">=-</span> <span class="dv">1</span>, x <span class="op">=</span> <span class="dv">0</span>).plot()</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.savefig(head_png)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This example script reads heads as a NetCDF, selects a crossection at the first column and the last timestep, consequently plots this and saves this figure to a png file.</p>
+<p>However, including the <code>script</code> keyword alone, does not mean that Snakemake will keep track of changes in the script and will re-execute a rule accordingly. Therefore, it is smart to include the script also under <code>input</code>. This will ensure Snakemake keeps track of changes in a script:</p>
+<pre><code>rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+     script = "src/5-visualize/visualize_heads.py"
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"</code></pre>
+</section>
+<section id="default-rule" class="level3">
+<h3 class="anchored" data-anchor-id="default-rule">Default rule</h3>
+<p>Snakemake does not know what the final step is, so without any specifications it executes the <strong>first</strong> rule. It therefore is often convenient to specify an empty rule <em>all</em> first, which has the final output files as "input":</p>
+<pre><code>rule all:
+ input:
+   "reports/figures/head.png"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"</code></pre>
+<p>When we then first <code>cd</code> into the repository and then call <code>snakemake</code>, Snakemake will run the complete workflow.</p>
+</section>
+<section id="parameters" class="level3">
+<h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
+<p>Sometimes you just want to pass a number or string to a rule and not create a seperate file for this. This can specified under the <code>params</code> keyword.</p>
+<pre><code>rule all:
+ input:
+   "reports/figures/head.png"
+
+rule plot_heads:
+ input:
+     head_nc = "data/4-output/head.nc",
+ params:
+     times = "2012-09-01"
+ output:
+     head_png = "reports/figures/head.png"
+ script:
+     "src/5-visualize/visualize_heads.py"</code></pre>
+<p>This will pass the string <code>"2012-09-01"</code> to the python script, which can be accessed as <code>snakemake.params.times</code> in python.</p>
+</section>
+</section>
+<section id="executing-workflows" class="level2">
+<h2 class="anchored" data-anchor-id="executing-workflows">Executing workflows</h2>
+<p>Snakemake has a <a href="https://snakemake.readthedocs.io/en/stable/executing/cli.html">lot of options</a> to execute workflows, here are the basic commands that are the most useful to know for a beginner. Executing workflows can be done by calling:</p>
+<pre><code>&gt;snakemake</code></pre>
+<p>This will execute the first rule. To execute a specific rule, e.g. "plot_heads" (and all rules that still have to be executed to get to this rule):</p>
+<pre><code>&gt;snakemake plot_heads</code></pre>
+<p>When you change a rule, and want to re-execute all rules downstream of this rule, you can call:</p>
+<pre><code>&gt;snakemake -R plot_heads</code></pre>
+</section>
+</section>
+<section id="advanced-tips" class="level1">
+<h1>Advanced tips</h1>
+<section id="running-regular-python-code-in-the-snakefile" class="level2">
+<h2 class="anchored" data-anchor-id="running-regular-python-code-in-the-snakefile">Running regular python code in the Snakefile</h2>
+<p>When Snakemake is executed, it basically executes its' code as python code. This means you can just import packages of your environment and execute python code in your Snakefile. For example, you can add the following code in your Snakefile:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>START <span class="op">=</span> <span class="st">"2012-09-01"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>END <span class="op">=</span> <span class="st">"2020-09-01"</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> pd.date_range(start<span class="op">=</span>START, end<span class="op">=</span>END, freq<span class="op">=</span><span class="st">"A"</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> TIMES.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>   <span class="co">"reports/figures/head.png"</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>rule plot_heads:</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>     head_nc <span class="op">=</span> <span class="st">"data/4-output/head.nc"</span>,</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a> params:</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>     times <span class="op">=</span> TIMES</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a> output:</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>     head_png <span class="op">=</span> <span class="st">"reports/figures/head.png"</span></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a> script:</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>     <span class="co">"src/5-visualize/visualize_heads.py"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will create multiple timestamps, convert these to string and pass these to params.</p>
+</section>
+<section id="multiple-files" class="level2">
+<h2 class="anchored" data-anchor-id="multiple-files">Multiple files</h2>
+<p>Often the execution of steps either requires or produces multiple files that have a very similar makeup. For example iMOD can produce output files names <code>head_l1.idf</code>, <code>head_l2.idf</code>, <code>head_l3.idf</code> etc.</p>
+<p>Specifiying these all in the Snakefile requires too much manual labour and leads to a cluttered snakefile. Therefore, Snakemake has a builtin <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#the-expand-function">expand</a> function which lets you expand a template string with wildcards into a list.</p>
+<p>Say our visualize_heads script produces figure for all days, named <code>head_2012-09-01.png</code>, <code>head_2012-09-02.png</code> etc.</p>
+<p>We can specify all these figures with:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>START <span class="op">=</span> <span class="st">"2012-09-01"</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>END <span class="op">=</span> <span class="st">"2020-09-01"</span> </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> pd.date_range(start<span class="op">=</span>START, end<span class="op">=</span>END, freq<span class="op">=</span><span class="st">"A"</span>)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> TIMES.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>   expand(<span class="st">"reports/figures/head_</span><span class="sc">{time}</span><span class="st">.png"</span>, time<span class="op">=</span>TIMES)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>rule plot_heads:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>     head_nc <span class="op">=</span> <span class="st">"data/4-output/head.nc"</span>,</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a> params:</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>     times <span class="op">=</span> TIMES</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a> output:</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>     head_png <span class="op">=</span> expand(<span class="st">"reports/figures/head_</span><span class="sc">{time}</span><span class="st">.png"</span>, time<span class="op">=</span>TIMES)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a> script:</span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>     <span class="co">"src/5-visualize/visualize_heads.py"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is very helpful, but sometimes model code produces so many files (&gt;10k), you do not even want to bother specifying all individual files that are created as output. For example, a parallel iMOD-WQ run with 30 layers, 300 timesteps, and run on 24 cores can produce 216,000 .IDFs per variable. Have fun specifying all of them beforehand!</p>
+<p>You can instead therefore specify a directory that should be created as output. Snakemake then just checks if changes are made in the directory, using a hidden file named <code>.snakemake_timestamp</code>.</p>
+<p>Modifying the previous example, this results in:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>START <span class="op">=</span> <span class="st">"2012-09-01"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>END <span class="op">=</span> <span class="st">"2020-09-01"</span> </span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> pd.date_range(start<span class="op">=</span>START, end<span class="op">=</span>END, freq<span class="op">=</span><span class="st">"A"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>TIMES <span class="op">=</span> TIMES.strftime(<span class="st">"%Y-%m-</span><span class="sc">%d</span><span class="st">"</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>   <span class="co">"reports/figures/"</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>rule plot_heads:</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a> <span class="bu">input</span>:</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>     head_nc <span class="op">=</span> <span class="st">"data/4-output/head.nc"</span>,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a> params:</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>     times <span class="op">=</span> TIMES</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a> output:</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>     head_png <span class="op">=</span> directory(<span class="st">"reports/figures/"</span>)</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a> script:</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>     <span class="co">"src/5-visualize/visualize_heads.py"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that we do <strong>not</strong> have to call <code>directory()</code> in order to specify input for rule <code>all</code>!</p>
+</section>
+<section id="temporary-files" class="level2">
+<h2 class="anchored" data-anchor-id="temporary-files">Temporary files</h2>
+<p>Sometimes, you do not even want to save certain intermediate files to save storage. For example, you run iMOD-wq, this creates .IDFs which you convert to NetCDF. Keeping both the .IDF as well as the NetCDF files requires double the storage, even though you will not use the .IDF after the NetCDF is written. For these cases, Snakemake has the <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#protected-and-temporary-files">temp</a> function.</p>
+<p>For example take this example where we call iMOD-WQ, which produces the directories <code>conc</code> and <code>head</code>. These folders contain a lot of .IDFs which we convert to a NetCDF, after which we do not need these folders anymore.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      <span class="co">"data/4-output/scenario_1/head.nc"</span>,</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>      <span class="co">"data/4-output/scenario_1/conc.nc"</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>rule idf_to_netcdf:</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      head_dir <span class="op">=</span> <span class="st">"data/4-output/scenario_1/head"</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      conc_dir <span class="op">=</span> <span class="st">"data/4-output/scenario_1/conc"</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>   output:</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>      head_nc <span class="op">=</span> <span class="st">"data/4-output/scenario_1/head.nc"</span>,</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>      conc_nc <span class="op">=</span> <span class="st">"data/4-output/scenario_1/conc.nc"</span>,</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>   script:</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>      <span class="co">"src/4-analyze/idf_to_netcdf.py"</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>rule run_model:</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>      <span class="co">r"data/4-output/scenario_1/model.run"</span> <span class="co"># The runfile is the model definition file.</span></span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>   output:</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_1/conc"</span>)),</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_1/head"</span>)),</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>   shell:</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>      <span class="co">r".\src</span><span class="ch">\3</span><span class="co">-model</span><span class="ch">\r</span><span class="co">un_model.bat data</span><span class="ch">\4</span><span class="co">-output\scenario_1&gt; .\data</span><span class="ch">\4</span><span class="co">-output\scenario_1\std.out"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The call <code>temp()</code> ensures all these .IDFs are removed after succesful conversion!</p>
+</section>
+<section id="parallel-execution" class="level2">
+<h2 class="anchored" data-anchor-id="parallel-execution">Parallel execution</h2>
+<p>When modelling, you usually want to run the model a few times using different configurations. For example a simulation with a horizontal hydraulic conductivity of 10 m/d and one with a hydraulic conductivity of 25 m/d.&nbsp;In the rest of this section, I call these <em>scenarios</em>.</p>
+<p>This basically means the same task has to be run multiple times, using different configurations, but similar files. These can be run independently from each other, in parallel! Wouldn't it be cool if Snakemake would be able to recognize this and run this in parallel?</p>
+<p>Ha! It does!</p>
+<p>Snakemake lets you define <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#defining-groups-for-execution">groups</a>, using a <code>group</code> keyword. Take for example this Snakefile which runs three scenarios and converts their output to a NetCDF, all in parallel. The <code>group</code> keyword sets which rules can be executed in parallel.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>scenarios <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>rule <span class="bu">all</span>:</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>      expand(<span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/head.nc"</span>, scenario <span class="op">=</span> scenarios),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      expand(<span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/conc.nc"</span>, scenario <span class="op">=</span> scenarios),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>rule idf_to_netcdf:</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>      head_dir <span class="op">=</span> <span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/head"</span>,</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>      conc_dir <span class="op">=</span> <span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/conc"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>   group:</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      <span class="co">"scenarios"</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>   output:</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>      head_nc <span class="op">=</span> <span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/head.nc"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>      conc_nc <span class="op">=</span> <span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/conc.nc"</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>   script:</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>      <span class="co">"src/4-analyze/idf_to_netcdf.py"</span></span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>rule run_model:</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>   <span class="bu">input</span>:</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>      <span class="co">r"data/4-output/scenario_{scenario}/model.run"</span> </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>   group:</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>      <span class="co">"scenarios"</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>   output:</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/conc"</span>)),</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/head"</span>)),</span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>   shell:</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">r".\src</span><span class="ch">\3</span><span class="co">-model</span><span class="ch">\r</span><span class="co">un_model.bat data</span><span class="ch">\4</span><span class="co">-output\scenario_{wildcards.scenario}&gt; .\data</span><span class="ch">\4</span><span class="co">-output\scenario_{wildcards.scenario}\std.out"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We need the wildcards keyword under the shell command to expand scenario numbers before sending the string to the shell. Note that snakemake requires one rule that "collects" all seperate groups, in this case the rule <code>all</code>.</p>
+<p>You can then consequently run these tasks in parallel on three cores by calling:</p>
+<pre><code>&gt;snakemake --cores 3</code></pre>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

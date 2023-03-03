@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>iMOD Suite - 3D Viewer User Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="_static/styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">iMOD Suite</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./introduction.html">
+ <span class="menu-text">Introduction</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
+ <span class="menu-text">iMOD Viewer</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./python_index.html">
+ <span class="menu-text">iMOD Python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./coupler_index.html">
+ <span class="menu-text">iMOD Coupler</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tutorial_index.html">
+ <span class="menu-text">Tutorials</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./further_links.html">
+ <span class="menu-text">Further links</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./practical_index.html">
+ <span class="menu-text">Practical tips</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Training"><i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">3D Viewer User Manual</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">QGIS Plugin User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link active">3D Viewer User Manual</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#relationship-with-qgis" id="toc-relationship-with-qgis" class="nav-link" data-scroll-target="#relationship-with-qgis">Relationship with QGIS</a></li>
+  <li><a href="#features" id="toc-features" class="nav-link" data-scroll-target="#features">Features</a></li>
+  <li><a href="#general-workings" id="toc-general-workings" class="nav-link" data-scroll-target="#general-workings">General Workings</a>
+  <ul class="collapse">
+  <li><a href="#imod-3d-viewer-solutions-and-autosave-file" id="toc-imod-3d-viewer-solutions-and-autosave-file" class="nav-link" data-scroll-target="#imod-3d-viewer-solutions-and-autosave-file">iMOD 3D Viewer solutions and autosave file</a></li>
+  <li><a href="#the-explorer-sidebar" id="toc-the-explorer-sidebar" class="nav-link" data-scroll-target="#the-explorer-sidebar">The explorer sidebar</a></li>
+  <li><a href="#loading-and-unloading-objects" id="toc-loading-and-unloading-objects" class="nav-link" data-scroll-target="#loading-and-unloading-objects">Loading and unloading objects</a></li>
+  <li><a href="#how-to-visualize-data-on-a-grid" id="toc-how-to-visualize-data-on-a-grid" class="nav-link" data-scroll-target="#how-to-visualize-data-on-a-grid">How to visualize data on a grid</a></li>
+  <li><a href="#locking-mechanism" id="toc-locking-mechanism" class="nav-link" data-scroll-target="#locking-mechanism">Locking mechanism</a></li>
+  <li><a href="#moving-objects-in-the-treeview" id="toc-moving-objects-in-the-treeview" class="nav-link" data-scroll-target="#moving-objects-in-the-treeview">Moving objects in the treeview</a></li>
+  <li><a href="#how-to-delete-an-object" id="toc-how-to-delete-an-object" class="nav-link" data-scroll-target="#how-to-delete-an-object">How to delete an object</a></li>
+  <li><a href="#using-the-time-slider" id="toc-using-the-time-slider" class="nav-link" data-scroll-target="#using-the-time-slider">Using the time-slider</a></li>
+  <li><a href="#property-windows" id="toc-property-windows" class="nav-link" data-scroll-target="#property-windows">Property windows</a></li>
+  </ul></li>
+  <li><a href="#how-to-use-the-viewer" id="toc-how-to-use-the-viewer" class="nav-link" data-scroll-target="#how-to-use-the-viewer">How to use the viewer</a>
+  <ul class="collapse">
+  <li><a href="#how-to-use-clipping" id="toc-how-to-use-clipping" class="nav-link" data-scroll-target="#how-to-use-clipping">How to use clipping</a></li>
+  <li><a href="#how-to-plot-gridlines" id="toc-how-to-plot-gridlines" class="nav-link" data-scroll-target="#how-to-plot-gridlines">How to plot gridlines</a></li>
+  <li><a href="#how-to-change-the-vertical-exaggeration" id="toc-how-to-change-the-vertical-exaggeration" class="nav-link" data-scroll-target="#how-to-change-the-vertical-exaggeration">How to change the vertical exaggeration</a></li>
+  <li><a href="#how-to-change-the-representation-of-a-grid" id="toc-how-to-change-the-representation-of-a-grid" class="nav-link" data-scroll-target="#how-to-change-the-representation-of-a-grid">How to change the representation of a grid</a></li>
+  </ul></li>
+  <li><a href="#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid." id="toc-changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid." class="nav-link" data-scroll-target="#changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.">Changing the legend of a UGRID dataset, IDF or fence diagram grid.</a>
+  <ul class="collapse">
+  <li><a href="#the-legend-editor" id="toc-the-legend-editor" class="nav-link" data-scroll-target="#the-legend-editor">The legend editor</a></li>
+  <li><a href="#legend-sidepane" id="toc-legend-sidepane" class="nav-link" data-scroll-target="#legend-sidepane">Legend sidepane</a></li>
+  <li><a href="#working-with-fence-diagrams" id="toc-working-with-fence-diagrams" class="nav-link" data-scroll-target="#working-with-fence-diagrams">Working with fence diagrams</a></li>
+  </ul></li>
+  <li><a href="#working-with-ipf-files" id="toc-working-with-ipf-files" class="nav-link" data-scroll-target="#working-with-ipf-files">Working with IPF files</a>
+  <ul class="collapse">
+  <li><a href="#plotting-borehole-data" id="toc-plotting-borehole-data" class="nav-link" data-scroll-target="#plotting-borehole-data">Plotting borehole data</a></li>
+  </ul></li>
+  <li><a href="#working-with-idf-files" id="toc-working-with-idf-files" class="nav-link" data-scroll-target="#working-with-idf-files">Working with IDF files</a>
+  <ul class="collapse">
+  <li><a href="#idf-file-resolution" id="toc-idf-file-resolution" class="nav-link" data-scroll-target="#idf-file-resolution">IDF file resolution</a></li>
+  <li><a href="#additional-representation-options-for-idf-files" id="toc-additional-representation-options-for-idf-files" class="nav-link" data-scroll-target="#additional-representation-options-for-idf-files">Additional representation options for IDF files</a></li>
+  </ul></li>
+  <li><a href="#working-with-shapefiles" id="toc-working-with-shapefiles" class="nav-link" data-scroll-target="#working-with-shapefiles">Working with shapefiles</a></li>
+  <li><a href="#how-to-inspect-dataset-values-of-a-cell" id="toc-how-to-inspect-dataset-values-of-a-cell" class="nav-link" data-scroll-target="#how-to-inspect-dataset-values-of-a-cell">How to inspect dataset values of a cell</a></li>
+  <li><a href="#layered-ugrid" id="toc-layered-ugrid" class="nav-link" data-scroll-target="#layered-ugrid">Layered UGRID</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">3D Viewer User Manual</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>The iMOD 3D Viewer is a viewer for grids and datasets. In this manual we consider a <strong>grid</strong> to be a region of space that is subdivided into cells. A grid input file contains the geometry of these cells, often as a list of vertex coordinates and cell-vertex connections.</p>
+<p>A <strong>dataset</strong> is a list of values associated to the cells or vertices of a grid. A dataset can contain for example a porosity or hydraulic head for every cell in the grid. A dataset can have an associated time. In an input file, a dataset is usually just a list of values where value number <em>N</em> is associated to cell number <em>N</em> in the grid.</p>
+<p>The iMOD 3D Viewer is used for viewing the grids in 3D, and for plotting datasets on top of the grids using a color legend. To gain more insight in the data, the color legend can be edited, and the values of individual cells can be inspected. Slider tools allow viewing the inside of 3D bodies.</p>
+</section>
+<section id="relationship-with-qgis" class="level2">
+<h2 class="anchored" data-anchor-id="relationship-with-qgis">Relationship with QGIS</h2>
+<p>The iMOD 3D Viewer can be used as a standalone or in combination with the iMOD QGIS plugin. From this plugin, the viewer can be launched, and grids can be loaded into it. Using the QGIS plugin is currently the only way to create fence diagrams in the viewer. Also, the QGIS plugin allows for specifying a bounding box for UGRID files. When this option is used, the viewer only loads the part of the grid in an UGRID file that is inside the bounding box.</p>
+</section>
+<section id="features" class="level2">
+<h2 class="anchored" data-anchor-id="features">Features</h2>
+<p>The iMOD 3D Viewer supports visualizing grids in the following file formats:</p>
+<ul>
+<li>IDF files. Both equidistant and non-equidistant UGRIDs are supported.</li>
+<li>UGRID files. the iMOD 3D Viewer can read UGRIDs that contain exclusively 2D elements such as triangles, quadrilaterals and other polygons. 1D and 3D elements are not supported. In some cases, a layered grid can be encoded as a 2D grid with certain properties. See the Layered UGRID chapter for more detail.</li>
+<li>Grb.disu files. These files are written by modflow and contain an unstructured layered grid used in a modflow simulation. Only the grid can be loaded; datasets cannot be loaded (yet)</li>
+</ul>
+<p>The iMOD 3D Viewer also supports viewing some non-grid objects.</p>
+<ul>
+<li>IPF files. These files contain tables of numeric and text data, separated by commas and whitespace, and with a small file header containing the column names. IPF files can be rendered as a collection of points (the user chooses which columns to use for x, y, and z coordinates) or vertical cylinders (the user chooses which columns to use for x, y, top and bottom). The intended use of this is to visualize for example borehole locations, observations wells, production wells or well filters.</li>
+<li>Shapefiles. These can be used to add geographical context, by adding rivers or province boundaries to the view. Only vector-type shapefiles can be show, and only the linestrings, polygons and multipolygons in it are imported.</li>
+</ul>
+<p>The iMOD 3D Viewer can show fence diagrams. This only works when used in combination with the iMOD QGIS plugin</p>
+</section>
+<section id="general-workings" class="level2">
+<h2 class="anchored" data-anchor-id="general-workings">General Workings</h2>
+<section id="imod-3d-viewer-solutions-and-autosave-file" class="level3">
+<h3 class="anchored" data-anchor-id="imod-3d-viewer-solutions-and-autosave-file">iMOD 3D Viewer solutions and autosave file</h3>
+<div id="fig-image1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: File menu options for saving and loading projects.</figcaption><p></p>
+</figure>
+</div>
+<p>The list of open files, along with the chosen legends and IPF column mappings, can be saved into an iMOD 3D Viewer solution file. To do this, open the file menu and choose “save” or “save as”.</p>
+<p>The resulting file can be opened with the “open project file” option.</p>
+<p>An autosave file is automatically created or updated when opening a grid, overlay or IPF file, or when editing a legend or an IPF column mapping. This autosave file therefore reflects the state of the viewer more or less recently and is stored in the appdata directory, most likely this:</p>
+<p><code>C:\\Users\\yourname\\AppData\\Roaming\\IMOD6</code></p>
+</section>
+<section id="the-explorer-sidebar" class="level3">
+<h3 class="anchored" data-anchor-id="the-explorer-sidebar">The explorer sidebar</h3>
+<p>When a file is opened- for example a file containing a grid- then automatically entries are added to the sidebar of the application. These entries represent the grids and datasets in the file and allow you to interact with them (<a href="#fig-image2">Figure&nbsp;2</a>).</p>
+<div id="fig-image2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2: The explorer sidebar shows the objects that are available for viewing as a tree structure</figcaption><p></p>
+</figure>
+</div>
+<p>The explorer sidebar shows the objects that are available for viewing as a tree structure</p>
+<p>In the example in <a href="#fig-image2">Figure&nbsp;2</a>, the content of the explorer sidebar is shown. In this example, the sidebar contains a shapefile (a map of the waterboards that is used for orientation of the user only); and IPF file containing boreholes, and a layered UGRID file.</p>
+<p>All The shapefile and the grid are shown in the viewer, which is why they are <strong>bold</strong>. The IPF is not shown in the viewer and is not bold. The shapefile and the IPF file are each only one line in the sidebar. The layered UGRID is a tree-node that can be expanded or collapsed as desired. For all three of these, a <strong>context menu</strong> will appear when a right mouse click is performed on it.</p>
+<p>The layered UGRID root node is called “Dommel-test.nc”. this represents the whole UGRID file. This node can be expanded to show the following nodes:</p>
+<ul>
+<li>a grouping node called “All Layers”. This node has no context menu and is never bold.
+<ul>
+<li>an entry for each layer. They have the same name as the inputfile, with the suffix “_layer_X” where X is the layer number. Layers are shown in boldface when the layer is shown in the viewer. A <strong>context menu</strong> appears on a right mouse click on this node.
+<ul>
+<li>the available datasets per layer. In this case, “bottom_layer_x”, “thickness_layer_x”, “top_layer_x”, “Elevation (cell centre)_layer_x”. These datasets are shown in bold if they are visible in the viewer. Only one dataset per layer can be shown in the viewer. A dataset is shown in the viewer when <strong>double-clicked</strong> with the left mouse button.</li>
+</ul></li>
+</ul></li>
+<li>A grouping node called “Layered datasets”. This node has no context menu and is never bold.
+<ul>
+<li>An entry for layered datasets. These entries are used to synchronise the dataset that is shown for all the layers of the grid. This means that if we <strong>double-click</strong> the layered dataset “bottom”, then grid layer 1 (if visible) will show dataset “bottom_layer_1”; grid layer N will show “bottom_layer _N” etcetera. A <strong>context menu</strong> appears when doing a right mouse click on this node, allowing you to set a legend for all layers at once.</li>
+</ul></li>
+</ul>
+</section>
+<section id="loading-and-unloading-objects" class="level3">
+<h3 class="anchored" data-anchor-id="loading-and-unloading-objects">Loading and unloading objects</h3>
+<p>Objects can be added to the explorer</p>
+<ol type="1">
+<li>Through the QGIS plugin ( see the manual of that)</li>
+<li>By opening the “data”menu and selecting “open grid” (for UGRID, IPF,or grb.disu files); “open overlay” ( for shapefiles) ; or “open point data” (for IPF files)</li>
+</ol>
+<p>When the second method is used, then the objects appear in the sidebar but not in the viewer. They have to be loaded into the viewer in a second step. To do that, select the objects you want to see in the sidebar and click the “draw selected layers” button. (<img src="figures/viewer/image3.png" style="width:0.15625in;height:0.14097in" alt="image1">) (<a href="#fig-image4">Figure&nbsp;3</a>).</p>
+<div id="fig-image4" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image4.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;3: In order to visualize a grid in the viewer, select the grid and then press the green button.</figcaption><p></p>
+</figure>
+</div>
+<p>When an object is visualized in the viewer, its name appears in boldface in the explorer.</p>
+<p>When the “draw selected layers” button (<img src="figures/viewer/image3.png" style="width:0.15625in;height:0.14097in" alt="image2">) is pressed, all object that are <em>not</em> selected are unloaded from the viewer and are no longer bold, except if they are <em>locked.</em></p>
+</section>
+<section id="how-to-visualize-data-on-a-grid" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-visualize-data-on-a-grid">How to visualize data on a grid</h3>
+<p>In order to visualize a dataset on a grid, first visualize the grid itself. Then double-click on one of the datasets in the explorer.</p>
+<p>Once visualized, the dataset will appear in boldface in the explorer (<a href="#fig-image5">Figure&nbsp;4</a>).</p>
+<div id="fig-image5" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image5.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4: The dataset 'water level' is visualized on the grid and is marked in bold in the explorer.</figcaption><p></p>
+</figure>
+</div>
+<p>Currently, only datasets that hold scalar values associated to cells can be shown.</p>
+</section>
+<section id="locking-mechanism" class="level3">
+<h3 class="anchored" data-anchor-id="locking-mechanism">Locking mechanism</h3>
+<p>Top level nodes can be “locked” and grid layer nodes can be</p>
+<p>When a node is “locked”, the object it represents is no longer automatically unloaded when the “draw selected layers” (<img src="figures/viewer/image3.png" style="width:0.15625in;height:0.14097in" alt="image3">) is pressed. It can still be moved or deleted through the context menu.</p>
+<p>To lock a node, select it and press <em>L</em> (lowercase or uppercase) on the keyboard. A padlock icon now appears next to it (<a href="#fig-image6">Figure&nbsp;5</a>).</p>
+<p>To unlock it, press <em>O</em> (lowercase or uppercase) on the keyboard. Now an open padlock icon appears.</p>
+<div id="fig-image6" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image6.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;5: The padlock icon shows if a node is locked or unlocked</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="moving-objects-in-the-treeview" class="level3">
+<h3 class="anchored" data-anchor-id="moving-objects-in-the-treeview">Moving objects in the treeview</h3>
+<p>Top level nodes can be moved up and down the treeview, allowing you to order the objects as you see fit.</p>
+<p>To move an item in the treeview, select it with the mouse and then press <em>u</em> (up) or <em>d</em> (down) to move the object.</p>
+</section>
+<section id="how-to-delete-an-object" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-delete-an-object">How to delete an object</h3>
+<p>To delete an object (grid, overlay or IPF cylinders) , right click on it in the explorer. Now a context menu appears. Choose the option “delete” to have the grid removed from the explorer. If you want to stop visualization of the grid without removing it from the explorer, use the redraw button instead. In the explorer, select the grids you want to be visualized, and make sure the grids you want to be unloaded are unselected. Then press redraw.</p>
+</section>
+<section id="using-the-time-slider" class="level3">
+<h3 class="anchored" data-anchor-id="using-the-time-slider">Using the time-slider</h3>
+<p>Some datasets vary through time. The iMOD 3D Viewer currently supports 2 cases:</p>
+<ol type="1">
+<li><p>the dataset does not have a time associated. In this case it is called “invariant” in the UI</p></li>
+<li><p>the dataset has one or more sets of values, each one with a specific point in time associated ( so not an interval!). This time must be an actual date-time; we don’t support dimensionless time or unreferenced time.</p></li>
+</ol>
+<div id="fig-image8" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image8.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: Tools and texts related to time in the UI</figcaption><p></p>
+</figure>
+</div>
+<p><a href="#fig-image8">Figure&nbsp;6</a> shows the location of tools and texts in the UI that help the user orientate in and step through the time dimension of datasets. First note the time displayed in the top toolbar (1). This is the “viewer time”, the time the viewer is currently trying to display. Since the time discretization can be different per dataset and we can show different datasets and grids simultaneously, it is not guaranteed that all datasets currently in the viewer can be shown for this specific time! Hence, in the sidebar it is shown at what time the datasets are actually diplayed (2).</p>
+<p>The viewer time can be selected using the slider. It varies over the temporal range of all displayed datasets combined- this means that when you display another dataset, the range of the slider could change. The scaling of the slider is based on the time indexes, not on the time value itself. This means that if you have dataset values for 3 times, the slider will be divided in 2 equally sized intervals- and you would be able to select the beginning, halfway and the end of the slider, regardless of how much actual time there is between these 3 times.</p>
+<p>When there are many times available, the resolution of the slider becomes very fine and it can then be more convenient to use the “next time”and “previous time” buttons, which increment and decrement the slider one position. There is also a “rewind” button to move the slider to its lowest value.</p>
+<p>Finally, it is possible to animate plots using a “play” button. This moves the slider one step forward per second, or slower if updating the plot takes longer. The animation can be stopped using the “stop” button.</p>
+<p>The decision on what time to display for each dataset is taken as follows (see <a href="#fig-imageTimerules">Figure&nbsp;7</a>):</p>
+<ul>
+<li><p>invariant datasets are shown regardless of the viewer time’</p></li>
+<li><p>if a dataset has a value at the viewer time this value is shown</p></li>
+<li><p>if it has no value at the viewer time but it has a value earlier than the viewer time then this value is shown</p></li>
+<li><p>if it has no value at the viewer time and no value earlier than the viewer time then the first time after the viewer time is shown.</p></li>
+</ul>
+<div id="fig-imageTimerules" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/imageTimerules.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Times displayed for different dataset for a given viewer time (the vertical line). The blue dots indicate the times at which a dataset has values. The red dots indicate the values displayed.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="property-windows" class="level3">
+<h3 class="anchored" data-anchor-id="property-windows">Property windows</h3>
+<p>By right-clicking on grids or datasets in the explorer, a context menu appears. In it, there is usually a “properties” option which opens a form displaying some of the properties of the object- and sometimes it allows setting some properties as well. Here are a few examples:</p>
+<div id="fig-image9" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image9.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;8: Property windows, from left to right for a grid, a layered grid and a dataset</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="how-to-use-the-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-use-the-viewer">How to use the viewer</h2>
+<p>The following controls work if the mouse pointer is in the viewer area:</p>
+<p><strong>Spinning the mouse wheel forward:</strong> zooms in</p>
+<p><strong>Spinning the mouse wheel backward</strong>: zooms out</p>
+<p><strong>Hold shift key, while pressing the right mouse key, and move the mouse:</strong> moves the camera horizontally, corresponding to the mouse movement</p>
+<p><strong>Hold ctrl key, while pressing the right mouse key, and move the mouse:</strong> this rotates the camera around its lens.</p>
+<p><strong>Clicking on a grid:</strong> this selects or unselects the grid. When a grid is selected, its name appears in red in the explorer. Only one grid can be selected at any time. A grid must be selected in order to change its legend, or to inspect its cells values. This way of selecting a grid can be slow for larger grids. Grids can also be selected by using the context menu of the grid in the sidebar. It has an option <em>Select in viewer</em>.</p>
+<p><strong>Pressing the “zoom to extent” button (</strong> <img src="figures/viewer/image10.png" style="width:0.16535in;height:0.16535in" alt="image5"> <strong>) in the toolbar:</strong> zooms out until all the grids that are visualized in the current viewer fit on the screen.</p>
+<p>In the 3D viewer the following also works:</p>
+<p><strong>Hold the right mouse button while moving the mouse</strong>: this moves the camera in a trajectory around the grid. The direction and length of the mouse movement determine the amount of camera movement.</p>
+<div id="fig-imageViewerControls" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/imageViewerControls.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;9: Some of the viewer controls are also implemented by buttons.</figcaption><p></p>
+</figure>
+</div>
+<p><strong>Using the toolbar buttons to control the viewer</strong> As shown in <a href="#fig-imageViewerControls">Figure&nbsp;9</a>, there are also buttons in the toolbar to control the viewer. From left to right in this figure, the buttons do the following</p>
+<ul>
+<li>zoom to extent. use this button to get a top view of the grid, zoomed out so that all of it is visible</li>
+<li>right(+x). use this button to position the camera so that we look in the +x direction, zoomed out so that the whole y and z range of the grid is visible.</li>
+<li>left(-x). use this button to position the camera so that we look in the -x direction, zoomed out so that the whole y and z range of the grid is visible.</li>
+<li>front(-y). use this button to position the camera so that we look in the -y direction, zoomed out so that the whole x and z range of the grid is visible.</li>
+<li>back(+y). use this button to position the camera so that we look in the +y direction, zoomed out so that the whole x and z range of the grid is visible.</li>
+<li>pan. Once this button is pressed, the camera can be dragged. Position the mouse anywhere in the viewer and keep the left mouse button pressed while dragging.</li>
+<li>zoom out.</li>
+<li>zoom in.</li>
+</ul>
+<section id="how-to-use-clipping" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-use-clipping">How to use clipping</h3>
+<p>The clipping functionality allows one to “cut off” slices of one or more grids in the 3D viewer. The internals of the grids are then exposed, allowing us to see the value of datasets or the grid geometry inside.</p>
+<p>To use clipping, open the 3D viewer and visualize one or more grids on it. Then press the clipping button in the toolbar (<a href="#fig-image12">Figure&nbsp;10</a>).</p>
+<div id="fig-image12" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image12.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;10: Activate clipping mode by pressing the clipping button in the toolbar. Sliders appear in the 3D viewer.</figcaption><p></p>
+</figure>
+</div>
+<p>Now use the sliders to clip the model. Each slider represents the combined range of all the grids in the viewer in one direction.</p>
+<div id="fig-image13" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image13.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;11: Use sliders to cut model in each direction</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="how-to-plot-gridlines" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-plot-gridlines">How to plot gridlines</h3>
+<p>It is possible to plot geographical gridlines on top of a grid (<a href="#fig-image14">Figure&nbsp;12</a>). <strong>This feature only works well at near-vertical viewing angles.</strong></p>
+<div id="fig-image14" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image14.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;12: Toggle gridlines with the gridlines button</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="how-to-change-the-vertical-exaggeration" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-change-the-vertical-exaggeration">How to change the vertical exaggeration</h3>
+<p>In the 3D viewer, objects can appear to be flat when they are not, because the range in the x and y directions for geological structures is often much larger than the range in the z direction. For example, geological layers may extend for tens or hundreds of kilometers horizontally but have a thickness and height variation of tens of meters.</p>
+<p>To fix this issue, vertical exaggeration can be applied. The same vertical exaggeration is applied to all the visible grids.</p>
+<p>By default, a vertical exaggeration is computed from the grid geometry. It computes a vertical exaggeration such that the vertical variation becomes at least 10% of the horizontal variation.</p>
+<p>The exaggeration factor can also be set manually. To do so, disable the <em>Use automatic exaggeration of z-axis</em> slider and enter the desired value in the text field above it (<a href="#fig-image15">Figure&nbsp;13</a>).</p>
+<div id="fig-image15" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image15.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;13: Vertical exaggeration slider and text field</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="how-to-change-the-representation-of-a-grid" class="level3">
+<h3 class="anchored" data-anchor-id="how-to-change-the-representation-of-a-grid">How to change the representation of a grid</h3>
+<p>In the 3D viewer, grids can be visualized as solid bodies (<a href="#fig-image16">Figure&nbsp;14</a>); as wireframes and as point clouds. In wireframe mode, only the edges of the cells are drawn, allowing one to look inside the grid. In point cloud mode, only points corresponding to the cell centers are shown</p>
+<p>To change the representation, use the dropdown in the viewer toolbar. Once selected, a dropdown appears where the representation can be changed. All visible grids get the selected representation.</p>
+<div id="fig-image16" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image16.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;14: The 3 representations of a grid. Left the <em>Surface</em> representation, in the centre <em>Wireframe</em>, and right the <em>Point</em> representation.</figcaption><p></p>
+</figure>
+</div>
+<p>The representation can also be changed from the property window of a grid. Here some other tweaks can also be made, like highlighting cell edges or changing the opacity of the plot.</p>
+</section>
+</section>
+<section id="changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid." class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-legend-of-a-ugrid-dataset-idf-or-fence-diagram-grid.">Changing the legend of a UGRID dataset, IDF or fence diagram grid.</h2>
+<p>To edit the legend of a dataset in an UGRID file, IDF file or fence diagram, it is necessary to load the legend editor form. From there, the legend can be customized.</p>
+<p>The way to make the legend editor appear, depends on the object.</p>
+<p>For an IDF file, or a single layer of a layered UGRID file, or a non-layered UGRID file, do the following:</p>
+<ul>
+<li>If not done yet, double click on the dataset to make it appear in the viewer</li>
+<li>Open the context menu of the IDF file or grid layer</li>
+<li>Press <em>Select in viewer</em></li>
+<li>Press the edit legend button (<img src="figures/viewer/image17.png" style="width:0.19722in;height:0.16667in" alt="image6">) .</li>
+</ul>
+<p>For a layered ugid dataset (so applying on all layers at the same time)</p>
+<ul>
+<li>Right click on the data set you want to apply the legend to</li>
+<li>From the context menu, select <em>Edit legend</em></li>
+</ul>
+<section id="the-legend-editor" class="level3">
+<h3 class="anchored" data-anchor-id="the-legend-editor">The legend editor</h3>
+<p>The legend editor consists of 2 tabs: one for continuous legends and one for discrete ones (<a href="#fig-image18">Figure&nbsp;15</a>).</p>
+<p>This form is more or less self explanatory. You can choose a color scale (currently rainbow or blue-white-red). Note that it is possible to save a legend in a separate file, or to load a legend from such a file, with the <em>Save</em> and <em>Load</em> buttons.</p>
+<div id="fig-image18" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image18.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;15: The 2 tabs of the legend editor</figcaption><p></p>
+</figure>
+</div>
+<p>When using a percentile legend, colors are assigned to a cell based on the percentage of cells that hold a value lower than that of the current cell. The color map is distorted to reflect this. For example, when using the “heat map” legend, the lowest value is blue, the highest red, and the middle of the range is white. When using a heat map with percentiles, the white color represents not the middle of the range, but the value for which 50% of other values is smaller than itself (<a href="#fig-image19">Figure&nbsp;16</a>).</p>
+<p>For unstructured grids, note that the percentile calculation does not take cell area into account. For example, for a dataset with lot of small cells and a few large cells, the percentile legend will be skewed towards the values of the small cells.</p>
+<div id="fig-image19" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image19.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;16: Heat map legend with percentiles on and off. Without percentiles (left), the white color is the middle of the legend range. With percentiles on (right),the color map is distorted and white is now the median value (50%) of the dataset. In general, a color that represents <em>N</em> % of the range in the linear legend, is mapped to the value that is larger than <em>N</em> % of the data in the percentiles legend.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="legend-sidepane" class="level3">
+<h3 class="anchored" data-anchor-id="legend-sidepane">Legend sidepane</h3>
+<p>For quick reference, the legend is shown on a retractable sidepane. To open or close it, use the button highlighted in the figure below.</p>
+<p><img src="figures/viewer/imageSidepane.png" class="img-fluid" style="width:6.25556in"></p>
+</section>
+<section id="working-with-fence-diagrams" class="level3">
+<h3 class="anchored" data-anchor-id="working-with-fence-diagrams">Working with fence diagrams</h3>
+<p>Fence diagrams have the same user interface as layered UGRID files. They have the same layers as the original layered UGRID they cut through, and the same datasets. Their legend can be set per-layer or for the whole fence diagram in the same way as we do for layered UGRIDs.</p>
+</section>
+</section>
+<section id="working-with-ipf-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-ipf-files">Working with IPF files</h2>
+<p>To visualize an IPF file, open the data menu and click on <em>open overlay file</em>. An open file dialog appears. Select an IPF file. As with grids, the filename is then displayed in the explorer bar, but the IPF file is not yet rendered. To render it, select the IPF’s row in the explorer bar and hit the <img src="figures/viewer/image3.png" style="width:0.15625in;height:0.14097in" alt="image7"> button.</p>
+<p>On import, the iMOD 3D Viewer will attempt to draw a vertical cylinder for each row in the IPF file’s data block (so excluding the header).</p>
+<p>By default, a column called “x”or “X” and “y” or “Y” are used for the center of the cylinder’s top and bottom; and “top”or “TOP” and “bot” or “BOT” are used for the z-coordinates of the cylinders top and bottom, respectively.</p>
+<p>If these columns are not present or if they contain text data, then the first 3 numerical columns are used for x, y and z, and the IPF data is plotted as points on these locations (<a href="#fig-image20">Figure&nbsp;17</a>).</p>
+<div id="fig-image20" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image20.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;17: When the default column names are not found an error message appears.</figcaption><p></p>
+</figure>
+</div>
+<p>To adjust the column mapping, right click on the IPF’s row in the explorer bar and select the “Properties” menu option. Then a window appears where the column mapping can be updated (<a href="#fig-image21">Figure&nbsp;18</a>).</p>
+<div id="fig-image21" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image21.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;18: Property window allows to choose what IPF columns to use for drawing cylinders.</figcaption><p></p>
+</figure>
+</div>
+<p>The z0 and z1 comboboxes will be used for the cylinder’s top and bottoms respectively. If the z1 column is not set, then points will be generated instead of cylinders.</p>
+<p>The <em>Label column</em> combobox allows choosing a combobox to be used for labels. If not set, then no labels are shown. Otherwise the content of the selected column will be shown as a text label near the top of the column.</p>
+<p>The IPF column mapping is serialized into solution and autosave files, and the next time a solution is loaded, the last-used column mapping will be assigned to each IPF file.</p>
+<p>As with overlays, the color and cylinder thickness can be adjusted from the context menu of the IPF file.</p>
+<div id="fig-image22" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image22.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;19: Image of an IPF plot with labels, viewed from the top.</figcaption><p></p>
+</figure>
+</div>
+<section id="plotting-borehole-data" class="level3">
+<h3 class="anchored" data-anchor-id="plotting-borehole-data">Plotting borehole data</h3>
+<p>When the IPF file contains references to additional datafiles, one for each row in the IPF file, and when these datafiles contain 1D borehole data, then this data can be plotted on the cylinders.</p>
+<p>To do that, check the option “Plot data on cylinder” on the IPF property form (<a href="#fig-image23">Figure&nbsp;20</a>) . Both real number data and string data can be plotted. When the checkbox is checked, a legend the appears on the form proposing a color mapping. This legend is either a continuous scale (for real numbers) or a string-to-color mapping like in the example in <a href="#fig-image23">Figure&nbsp;20</a>. The colors can be changed by clicking on a particular color box.</p>
+<p>These legends can be saved and loaded as well.</p>
+<div id="fig-image23" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image23.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;20: 1D borehole data can be plotted on cylinders generated from the IPF file. Both real number data and string data can be plotted. In this example, string data was present in the "Admixture" column</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="working-with-idf-files" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-idf-files">Working with IDF files</h2>
+<section id="idf-file-resolution" class="level3">
+<h3 class="anchored" data-anchor-id="idf-file-resolution">IDF file resolution</h3>
+<p>An IDF files contains a 2D structured grid, and 1 dataset with cell data. This dataset is treated for visualization purposes as if it were elevation, but it can be anything. The resolution is sometimes so high it makes the grid slow to load. Therefore, an automatic upscaling is applied when visualizing the grid, reducing the number of cells to approximately 100*100. Each upscaled cell contains an integer number of actual cells in both the x and y directions; therefore cell boundaries in the upscaled grid are guaranteed to coincide with cell boundaries in the actual grid.</p>
+<p>The “elevation” value of each upscaled cell is taken from the actual cell that contains the upscaled cell’s center.</p>
+<p>To increase the resolution of the IDF grid in the viewer, zoom in with the mouse wheel to the area where additional detail is required. Then press the redraw button( <img src="figures/viewer/image24.png" style="width:0.15139in;height:0.14375in" alt="image8">).</p>
+<p>This renders the area visible in the viewer in higher resolution, but removes the invisible parts of the grid (<a href="#fig-image25">Figure&nbsp;21</a>{.interpreted-text role=“numref”}). To restore those, zoom out again and press <img src="figures/viewer/image24.png" style="width:0.15139in;height:0.14375in" alt="image9"> again.</p>
+<div id="fig-image25" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image25.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;21: Left, an upscaled IDF file. Middle: after zooming in on an area of interest. Right: after pressing the redraw button to increase resolution.</figcaption><p></p>
+</figure>
+</div>
+<p>Another way to change the resolution of an IDF file is to select the IDF’s row in the explorer bar and clicking on “resolution” (<a href="#fig-image26">Figure&nbsp;22</a>). This allows choosing a resolution of 100x100, 250x250 or 500x500 for the IPF file (<a href="#fig-image27">Figure&nbsp;23</a>).</p>
+<div id="fig-image26" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image26.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;22: Choose the resolution of the IDF file</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-image27" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image27.jpeg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;23: IDF file at resolution 100x100 (left); 250*250(middle) and 500x500 (right)</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="additional-representation-options-for-idf-files" class="level3">
+<h3 class="anchored" data-anchor-id="additional-representation-options-for-idf-files">Additional representation options for IDF files</h3>
+<p>The options outlined above change the way each cell is rendered, but they do not change the underlying geometry of the cells. For IDF files we have an additional option. IDF cells are horizontal rectangles, and a surface formed by an IDF grid may look strange in the 3D viewer because these rectangles “float” at different elevations (<a href="#fig-image29">Figure&nbsp;25</a>). Therefore, an additional option of rendering an IDF grid as triangles was added. The corner points of the triangle are the cell-centers of the rectangles, and have the elevation of that rectangle.</p>
+<p>To change the representation of an IDF file, load the IPF file and then right-click on its entry in the explorer bar. A context menu appears (<a href="#fig-image28">Figure&nbsp;24</a>). Choose rectangles or triangles as desired.</p>
+<div id="fig-image28" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image28.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;24: Context menu for changing representation of an IDF file</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-image29" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image29.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;25: An IDF file rendered as rectangles (left) and triangles (right)</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="working-with-shapefiles" class="level2">
+<h2 class="anchored" data-anchor-id="working-with-shapefiles">Working with shapefiles</h2>
+<p>To visualize an overlay, open the data menu and click on “open overlay file”. An open file dialog appears. Select a shapefile containing vector data. As with grids, the filename is then displayed in the explorer bar, but the overlay is not yet rendered. To render it, select the overlay’s row in the explorer bar and hit the <img src="figures/viewer/image3.png" style="width:0.15625in;height:0.14097in" alt="image10"> button.</p>
+<p>Once loaded, the line thickness and color of the overlay can be changed by right clicking on the overlay’s row in the explorer bar. This makes a context menu appear (<a href="#fig-image30">Figure&nbsp;26</a>). There is a menu option for changing the color and one for changing the line thickness.</p>
+<div id="fig-image30" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image30.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;26: Context menu options for changing the color and line thickness of an overlay.</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="how-to-inspect-dataset-values-of-a-cell" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-inspect-dataset-values-of-a-cell">How to inspect dataset values of a cell</h2>
+<p>When we visualize a dataset, its values are used to assign a color to each cell; the value to cell mapping is defined by the legend. Hence, inspecting the plot of a dataset gives a rough idea of the value of that dataset in each cell.</p>
+<p>To get a more precise value, it is possible to click on a cell and get a list of the values of different datasets in that cell. Take the following steps to do this (<a href="#fig-image31">Figure&nbsp;27</a>):</p>
+<ol type="1">
+<li>Visualize a grid in the viewer and select it.</li>
+<li>Press the “identify” button in the toolbar.</li>
+<li>Select some datasets of the selected grid in the explorer</li>
+<li>Click on a cell of the grid. It will be highlighted in black.</li>
+<li>Now a window opens showing the values of the selected datasets in the selected cell.</li>
+</ol>
+<p>To end identifying, press the “identify” button again.</p>
+<div id="fig-image31" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image31.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;27: Dataset values can be inspected with the identify button</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="layered-ugrid" class="level2">
+<h2 class="anchored" data-anchor-id="layered-ugrid">Layered UGRID</h2>
+<p>The iMOD 3D Viewer currently supports only 2D UGRID files. However, when it recognizes that datasets called <em>layer_1_top</em> and <em>layer_1_bottom</em> are present (<em>1</em> being a layer number), it will create a 3D grid using the x and y coordinates from the 2D grid, and the top and bottoms from the datasets. The result is a grid with cells that have horizontal and vertical cell faces, and that can represent for example a geological layer. Additional datasets (<em>layer_2_top</em> and <em>layer_2_bottom</em>) can be provided to create additional layers. The grids created this way will all have the same x and y positions for their nodes, but due to the top and bot datasets, they are at different depths. There can be holes between the layers to represent for example aquicludes.</p>
+<p>Each layer is shown in the explorer as a separate grid that can be loaded and unloaded independently. Properties can be assigned to each layer by listing the layer number in the dataset name. For example, we can assign a kD property to each layer by creating datasets called <em>kD_layer_1</em>, <em>kD_layer_2</em>, etcetera.</p>
+<p>An example to convert a layered subsurface model in *.idf to a UGRID file can be found on <a href="https:/gitlab.com/deltares/imod/imod-python/-/snippets/2104179" class="uri">https:/gitlab.com/deltares/imod/imod-python/-/snippets/2104179</a></p>
+<div id="fig-image32" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image32.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;28: A 2D UGRID file rendered as a layered 3D grid</figcaption><p></p>
+</figure>
+</div>
+<div id="fig-image33" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/viewer/image33.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;29: View on internals of UGRID that can be used for rendering as a 3D layered grid</figcaption><p></p>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
