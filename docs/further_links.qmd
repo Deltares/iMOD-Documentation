@@ -17,16 +17,6 @@ the Deltares Vimeo page.
 <p><a href="https://vimeo.com/651111537">iMOD User Day 2021</a> from <a href="https://vimeo.com/deltares">Deltares</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 ```
 
-## Practical Tips
-
-We also maintain documentation with general practical and technical
-tips. It varies from fixing specific Powershell errors to a full
-explanation on how to do proper version control of both your data and
-scripts with Git and DVC.
-
-[iMOD Practical
-tips](https://deltares.gitlab.io/imod/imod-practical-tips/)
-
 ## Source Code
 
 Below is the list of repositories that contain the source code of the
