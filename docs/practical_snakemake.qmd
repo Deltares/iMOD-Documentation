@@ -52,7 +52,7 @@ background in bioinformatics?). You can run the following commands in your
 terminal of choice to install snakemake with mamba.
 
 ```bash
-> mamba install pygraphviz graphfviz
+> mamba install pygraphviz graphviz
 > mamba install -c bioconda snakemake
 ```
 
