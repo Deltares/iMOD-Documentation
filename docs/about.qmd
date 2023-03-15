@@ -30,6 +30,8 @@ page.
 
 2023-02: National University of Singapore, Singapore
 
+![](figures/about/training-singapore.jpg)
+
 2022-11: Deltares Campus, Delft
 
 ![](figures/about/training-delft.jpg)
