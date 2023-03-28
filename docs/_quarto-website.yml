@@ -3,6 +3,7 @@ project:
 
 website:
   title: "iMOD Suite"
+  page-navigation: true
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
