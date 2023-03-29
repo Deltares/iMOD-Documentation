@@ -3,6 +3,7 @@ project:
 
 website:
   title: "iMOD Suite"
+  page-navigation: true
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
@@ -17,8 +18,8 @@ website:
         href: coupler_index.qmd
       - text: "Tutorials"
         href: tutorial_index.qmd
-      - text: "Further links"
-        href: further_links.qmd
+      - text: "About"
+        href: about.qmd
       - text: "Practical tips"
         href: practical_index.qmd
     right:
