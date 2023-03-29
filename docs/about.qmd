@@ -5,6 +5,120 @@ nocite: |
   @*
 ---
 
+## Get involved
+
+### Questions and help
+
+If you have questions on using iMOD Suite or want to report a bug, you can send
+an email to `imod.support@deltares.nl`.
+
+### Bugs, source code
+
+Below is the list of repositories that contain the source code of the
+individual components. You can raise issues, or suggest changes, here.
+
+-   [iMOD Documentation
+    Github](https://github.com/Deltares/iMOD-Documentation)
+-   [iMOD QGIS plugin Github](https://github.com/Deltares/imod-qgis)
+-   [iMOD 3D Viewer Github](https://github.com/Deltares/imod-gui)
+-   [iMOD Python Gitlab](https://gitlab.com/deltares/imod/imod-python)
+
+
+## History
+
+Developments on iMOD started in 2006, with the aim to make groundwater
+modelling with MODFLOW easier. iMOD developed into a full fletched GUI, which
+could be used to build and analyse groundwater models from start to finish.
+Focus of the software always has been on large groundwater models, for which
+the software was so succesful that most regional groundwater models owned by
+water boards in Netherlands, plus the Dutch National model (LHM), run on iMOD.
+In 2014, in Deltares' move to make their software open source, the Fortran code
+of iMOD was shared and in 2015 the compiled executables became freely
+available. In many international projects (for example in India, New Orleans,
+Colombia, Germany, and Switzerland) this was one of the reasons to adopt iMOD
+as the modelling software. iMOD's capabilities of simulating large groundwater
+models were pushed further in 2017 when iMOD and its custom computational
+kernels iMODFLOW and iMOD-WQ, could be run in parallel. Developments on the GUI
+continued up to 2020, when it became apparent that the approach up to that
+point had a few drawbacks:
+
+- With the release of Modflow 6, computations on unstructured grids were
+possible. This created a demand for supporting all types of unstructured grids.
+iMOD, however, could not support these grids (except multi-model structured
+subgrids).
+
+- It was difficult to connect iMOD to the ever changing software and data
+science ecosystem, because of the use of Fortran and iMOD's custom data formats.
+For example, Python has a larger ecosystem, allowing users to easily
+incorporate all kinds of packages into their workflows.
+
+Therefore, in 2021, the **iMOD Suite** was released. This suite consists of a
+Python package, a QGIS plugin, and a 3D viewer. It therefore supports
+reproducible workflows for unstructured groundwater models and relies more on
+standard filetypes such as NetCDF, UGRID, and shapefiles.
+
+The classic iMOD GUI and its batch functionality is consolidated under the name
+**iMOD 5**, and will be maintained for the coming years. During this transition
+period it is easy to use iMOD 5 in combination with iMOD Suite. New
+developments will land in iMOD Suite.
+
+<!---
+FUTURE: Picture can be replaced with a timeline https://mermaid.js.org/syntax/timeline.html
+
+When quarto is updated with a more recent mermaid version.
+--->
+
+```{mermaid}
+flowchart TB
+  subgraph 2006
+  A{iMOD 1.0}
+  X{{Start development}}
+  end
+  A --> B{iMOD 2.0}
+  subgraph 2014
+  B
+  Y{{Fortran code \n available as open source}}
+  end
+  B --> C{iMOD 3.0}
+  subgraph 2015
+  C
+  Z{{Executables freely \n available}}
+  end
+  C --> D{iMOD 4.0}
+  subgraph 2017
+  D
+  XX{{parallel Solver Pks}}
+  end
+  D --> E{iMOD 5.0}
+  subgraph 2019
+  E
+  XY{{iMOD Water Quality \n and MODFLOW6}}
+  end
+  E --> F{iMOD 5.2}
+  subgraph 2020
+  F
+  XZ{{BMI coupling \n Modflow6-MetaSWAP}}
+  end
+  F --> G{iMOD Suite}
+  F --> H{iMOD 5.3}
+  subgraph 2021
+  G
+  YX{{Tooling in Python, QGIS \n C++. Unstructured grids}}
+  end
+  subgraph 2021 
+  H
+  end
+  H --> I{iMOD 5.5}
+  G --> J{iMOD Suite}
+  subgraph 2023
+  I
+  end
+  subgraph 2023 
+  J
+  YY{{Model input validation, \n CPT plotting in QGIS, \n Backwards \n compatibility iMOD 5}}
+  end
+```
+
 ## Trainings
 
 ### Delft Software Days
@@ -40,68 +154,8 @@ page.
 
 ![](figures/about/training-ireland.jfif)
 
-## Get involved
 
-### Questions and help
-
-If you have questions on using iMOD Suite or want to report a bug, you can send
-an email to `imod.support@deltares.nl`.
-
-### Bugs, source code
-
-Below is the list of repositories that contain the source code of the
-individual components. You can raise issues, or suggest changes, here.
-
--   [iMOD Documentation
-    Github](https://github.com/Deltares/iMOD-Documentation)
--   [iMOD QGIS plugin Github](https://github.com/Deltares/imod-qgis)
--   [iMOD 3D Viewer Github](https://github.com/Deltares/imod-gui)
--   [iMOD Python Gitlab](https://gitlab.com/deltares/imod/imod-python)
-
-
-## History
-
-Developments on iMOD started in 2006, with the aim to make groundwater
-modelling with MODFLOW easier. iMOD developed into a full fletched GUI, which
-could be used to build and analyse groundwater models from start to finish.
-Focus of the software always has been on large groundwater models, for which
-the software was so succesful that most regional groundwater models owned by
-water boards in Netherlands, plus the Dutch National model (LHM), run on iMOD.
-In 2014, in Deltares' move to make their software open source, the Fortran code
-of iMOD was shared and in 2015 the compiled executables became freely
-available. iMOD's capabilities of simulating large groundwater models were
-pushed further in 2017 when iMOD and its custom computational kernels iMODFLOW
-and iMOD-WQ, could be run in parallel. Developments on the GUI continued up to
-2020, when it became apparent that the approach up to that point had a few
-drawbacks:
-
-- With the release of Modflow 6, computations on unstructured grids were
-possible. This created a demand for supporting all types of unstructured grids.
-iMOD, however, could not support these grids (except multi-model structured
-subgrids).
-
-- It was difficult to connect iMOD to the ever changing software and data
-science ecosystem, because of the use of Fortran and iMOD's custom data formats.
-For example, Python has a larger ecosystem, allowing users to easily
-incorporate all kinds of packages into their workflows.
-
-Therefore, in 2021, the iMOD Suite was released, consisting of a Python
-package, a QGIS plugin, and a 3D viewer, which support reproducible workflows
-for unstructured groundwater models and relies more on standard filetypes such
-as NetCDF, UGRID, and shapefiles.
-
-The classic GUI is consolidated under the name iMOD 5, and will be maintained
-for the coming years.
-
-<!---
-FUTURE: Picture can be replaced with a timeline https://mermaid.js.org/syntax/timeline.html
-
-When quarto is updated with a more recent mermaid version.
---->
-
-![Timeline of iMOD developments](figures/about/imod-timeline.png)
-
-## References
+## Publications using iMOD Suite
 
 ::: {#refs}
 :::
