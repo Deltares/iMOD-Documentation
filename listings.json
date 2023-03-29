@@ -1,5 +1,13 @@
 [
   {
+    "listing": "/tutorial_index.html",
+    "items": [
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html"
+    ]
+  },
+  {
     "listing": "/practical_index.html",
     "items": [
       "/practical_cookiecutter.html",
@@ -20,14 +28,6 @@
       "/coupler_index.html",
       "/tutorial_index.html",
       "/practical_index.html"
-    ]
-  },
-  {
-    "listing": "/tutorial_index.html",
-    "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html"
     ]
   }
 ]
