@@ -72,7 +72,7 @@ For navigation purposes, let us load the universal topography of Open Street Map
 Let us now open a series of basic files in QGIS. We start with a digital elevation map.
 
 (@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Raster Layer*. 
-(@) In the section *Source* click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "…\\abbeyfeale\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.
+(@) In the section *Source* click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "…\\iMOD-Suite-Tutorial_01\\data\\1-external\\topography\\Abbeyfeale DTM.tif". GeoTIFF is a common file format.
 (@) Click the *Add* button and the layer is added to the panel *Layers*. 
 (@) Click *Close* to leave the window. 
 (@) In the panel *Layers* select the layer “Abbeyfeale DTM” and click the ![](figures/tutorial/viewer/button_zoomtolayer.png) button to zoom in to the layer.
@@ -93,7 +93,7 @@ Your screen might look like @fig-figure_DTM-in-QGIS
 
 Let us save this project to be able to return to is later or in case of a crash of QGIS.
 
-(@) Go to Project in the main menu, select Save As and select a folder and a file name for your project, e.g. “…\\abbeyfeale\\tutorial1.qgz”
+(@) Go to *Project* in the main menu, select *Save As* and select a folder and a file name for your project, e.g. “…\\iMOD-Suite-Tutorial_01\\tutorial1.qgz”
 
 Do you like to see the values of the DTM under you mouse? You need a QGIS plugin “Value Tool”. Many additional helpful tools are available as QGIS plugin, just like the Deltares iMOD Plugin. 
 
@@ -116,7 +116,7 @@ The tool is now visible as a panel on the left and as the *Value Tool* button (!
 Next step is to load a polygon file representing the recharge zones in the project area.
 
 (@) Go to *Layer* in the main menu, select *Add Layer* and pick the option *Add Vector Layer*. 
-(@) In the section Source click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "abbeyfeale\\data\\1-external\\recharge\\clipped_recharge.shp". The ESRI Shapefile is a common file format. 
+(@) In the section Source click on the ![](figures/tutorial/viewer/button_select.png) button and select the file "…\\iMOD-Suite-Tutorial_01\\data\\1-external\\recharge\\clipped_recharge.shp". The ESRI Shapefile is a common file format. 
 (@) Click the *Add* button and the layer is added to the panel *Layers*.
 (@) Click *Close* to leave the window. 
 
@@ -130,12 +130,12 @@ We see the contours of zones with a single color. Let’s change that.
 (@) Click on the button *Classify* to create the legend.
 (@) Click *Apply* to change the colors and *OK* to close the window.
 
-There is also an ESRI Shapefile with the rivers in the project area. Feel free to download that file ("abbeyfeale\\data\\1-external\\rivers\\WATER_RivNetRoutes.shp") in the same way.
+There is also an ESRI Shapefile with the rivers in the project area. Feel free to download that file ("…\\iMOD-Suite-Tutorial_01\\data\\1-external\\rivers\\WATER_RivNetRoutes.shp") in the same way.
 
 After loading raster and polygon layers, let us now load a point file with boreholes. This time, the file format (*.IPF) is not a common file standard but developed by Deltares because the file includes associated borelog information. We must load the IPF file with the iMOD plugin.
 
 (@) One of the QGIS toolbars is the iMOD Toolbar. There you find al the iMOD plugin tools. Click on the *Open IPF* button (![](figures/tutorial/viewer/button_iMOD-Open-IPF.png){width=3%}) and a window will open.
-(@) Click on the ![](figures/tutorial/viewer/button_select.png){width=3%} button and select the IPF "abbeyfeale\\data\\1-external\\boreholes\\BOREHOLES.IPF".
+(@) Click on the ![](figures/tutorial/viewer/button_select.png){width=3%} button and select the IPF "…\\iMOD-Suite-Tutorial_01\\data\\1-external\\boreholes\\BOREHOLES.IPF".
 (@) Click the *Add* button and the IPF file is added in the panel *Layers*.
 
 **NOTE**: If the points appear to be somewhere else on the map, e.g. Africa, make sure both your project and your layer have the correct CRS (EPSG:2157).
@@ -177,8 +177,8 @@ For now, we leave QGIS and the iMOD Plugin to return later.
 ## iMOD Python
 This is the moment where we start with Python. With the help of the iMOD Python package you will create a simple MODFLOW6 model and run it.
 
-- All input we use for this simple model is available in your tutorial folder “abbeyfeale\\data\\1-external\\..”. There you find the spatial data we loaded to QGIS, and there is a CSV file containing all single parameter values: “parameters.csv”.
-- All steps, from the preparation of the model input to visualization of the results, are available in separate Python scripts. You find the scripts for each phase in the folder and subfolders within “abbeyfeale\\src\\..”
+- All input we use for this simple model is available in your tutorial folder "…\\iMOD-Suite-Tutorial_01\\data\\1-external\\.."". There you find the spatial data we loaded to QGIS, and there is a CSV file containing all single parameter values: “parameters.csv”.
+- All steps, from the preparation of the model input to visualization of the results, are available in separate Python scripts. You find the scripts for each phase in the folder and subfolders within "..\\iMOD-Suite-Tutorial_01\\src\\..”
 
 
 (@) Click on the windows START button and type *Deltaforge prompt*. Click on the app and a black DOS window will start. \newline
@@ -187,7 +187,7 @@ This is the moment where we start with Python. With the help of the iMOD Python 
 From this DOS window we will run the different python scripts (*.py files). For the scripts to work properly, we need to navigate to the correct folder location. 
 
 (@) In the DOS window type the letter of the drive you work on (e.g. C: or D:) and press ENTER.
-(@) Navigate to the correct main tutorial folder with CD (change directory). \newline E.g. “CD c:\\imod\\training\\tutorial\\abbeyfeale” and press ENTER.
+(@) Navigate to the correct main tutorial folder with CD (change directory). \newline E.g. “CD c:\\imod\\training\\iMOD-Suite-Tutorial_01” and press ENTER.
 
 TIP: After copying your path, you can paste your path in the prompt window with CTRL+V.
 
@@ -202,7 +202,7 @@ This script opens the DTM file, uses its extent for the model boundary and sets 
 
 Results 1: The result is a raster file (NetCDF format) describing the mask of our model (extent and cell size) as well as our DTM scaled up to the size of the model mask.
 
-(@) **Optional step**. Load the topography_raster.nc file into QGIS. The file is in the folder “Abbeyfeale\\data\\2-interim”.
+(@) **Optional step**. Load the topography_raster.nc file into QGIS. The file is in the folder "…\\iMOD-Suite-Tutorial_01\\data\\2-interim".
 
 <ins>Script 2 – River \newline</ins>
 This script opens a shape file with river elements. It rasterizes it project cell size and adds a default river depth (1 m) and bottom resistance. 
@@ -211,7 +211,7 @@ This script opens a shape file with river elements. It rasterizes it project cel
 
 Results 2: The result is a raster file (NetCDF format) for the river data, containing data for the parameters Stage, Bottom and Conductance. 
 
-(@) Load the file “Abbeyfeale\\data\\2-interim\\river_raster.nc” into QGIS via the menu *Layer > Add Layer > Add Raster Layer*. From the interim window you see that the NC files contains 3 river parameters. 
+(@) Load the file “..\\iMOD-Suite-Tutorial_01\\data\\2-interim\\river_raster.nc” into QGIS via the menu *Layer > Add Layer > Add Raster Layer*. From the interim window you see that the NC files contains 3 river parameters. 
 (@) Click on the button *Add Layers* and click *Close* to close the Data Source Manager.
 
 <ins>Script 3 – Recharge</ins>
@@ -221,7 +221,7 @@ This script opens the shape file with recharge zones (polygons) containing the r
 
 Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster. 
 
-(@) From the menu *Layer > Add layer > Add Mesh Layer...* load the file “Abbeyfeale\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
+(@) From the menu *Layer > Add layer > Add Mesh Layer...* load the file “…\\iMOD-Suite-Tutorial_01\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
 From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
 
 There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
@@ -258,7 +258,7 @@ This script reads default parameter values from the file “parameters.csv” in
 
 Results 4: The result is a mesh file (NetCDF format) for the geohydrological data. This NC file must be loaded as mesh instead of a raster. 
 
-(@) From the menu *Layer > Add layer > Add Mesh layer...* load the file “Abbeyfeale\\data\\2-interim\\hydrogeology_mesh.nc” into QGIS. 
+(@) From the menu *Layer > Add layer > Add Mesh layer...* load the file "…\\iMOD-Suite-Tutorial_01\\data\\2-interim\\hydrogeology_mesh.nc" into QGIS. 
 (@) Double click on the layer name “hydrogeology_mesh” and the window *Layer Properties* will open.
 (@) Click on the group *Source* on the left, and on the right you see all *Available Datasets* in this single mesh.
 
@@ -286,15 +286,15 @@ Now the input data for the model are available it is time to convert the data in
 The result of the script is a folder with the standard MODFLOW 6 input. 
 
 (@) Optional step \newline 
-Visit the folder "abbeyfeale\\data\\3-input" with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.
+Visit the folder "…\\iMOD-Suite-Tutorial_01\\data\\3-input" with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.
 
 <ins>Script 6 – Run the MODFLOW 6 model</ins>
-iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as "abbeyfeale\\bin\\mf6.exe".  
+iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as "…\\iMOD-Suite-Tutorial_01\\bin\\mf6.exe".  
 
 (@) In the Deltaforge prompt type the command: *Python src\\3-model\\6-run-model.py* and press ENTER.  
 (@) You can check the logfile of the model in order to see if it was run successful. 
-(@) Open the file “data\\3-input\\mf.sim.lst” in the Text Editor you prefer. Go to the end of the file and see the total run time of the model and a confirmation of a “normal termination of the simulation”.
-(@) Open the file “data\\3-input\\gwf_1\\gwf_1.lst”. At the end of the file you see the Volume Budgets, the water balance for the last stress period.
+(@) Open the file “…\\iMOD-Suite-Tutorial_01\\data\\3-input\\mf.sim.lst” in the Text Editor you prefer. Go to the end of the file and see the total run time of the model and a confirmation of a “normal termination of the simulation”.
+(@) Open the file “…\\iMOD-Suite-Tutorial_01\\data\\3-input\\gwf_1\\gwf_1.lst”. At the end of the file you see the Volume Budgets, the water balance for the last stress period.
 
 <ins>Script 7 - Convert the MODFLOW 6 results for QGIS</ins>
 The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Python contains a function to convert the output into NetCDF files. 
@@ -303,7 +303,7 @@ The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Pyth
 
 The result of this script is a NetCDF file with the calculated head for 365 days.
 
-(@) Load the file “Abbeyfeale\\data\\4-output\\hds_mesh.nc” into QGIS. 
+(@) Load the file “…\\iMOD-Suite-Tutorial_01\\data\\4-output\\hds_mesh.nc” into QGIS. 
 
 By default, the variable bottom_layer_1 is loaded. We will change the selected variable into Heads and pick a legend specific for plotting of time series. 
 
