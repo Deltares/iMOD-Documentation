@@ -35,14 +35,14 @@ short Tutorial we’ll pursue the second option.
 We display some data from Brabant, a province in The Netherlands. (In case you missed the download instructions for the Tutorial data, visit the start page [iMOD Suite Tutorial](index.qmd)).\
 Let’s first import an overlay file showing the surface water elements.
 
-(@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\data\\1-external\\Brabant-data\\riv_brabant.shp". 
+(@) In the main menu choose “Data”, select “Open overlay” and open the shape file “…\\iMod-Suite-Tutorial_01\\data\\1-external\\Brabant-data\\riv_brabant.shp". 
 (@) Select the new layer in the overview and click the “draw-selected-layer” button (![](figures/tutorial/viewer/button_3Dtool-redrawlayer.png)).
 
 Now we’ll open a dataset containing Heads calculated with a MODFLOW model. This
 NetCDF file contains for each model layer the top, the bottom and a timeseries
 of calculated heads.
 
-(@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\data\\1-external\\Brabant-data\\Calculated-Heads.nc". 
+(@) In the main menu choose “Data”, select “Open grid file” and open the shape file “..\\iMod-Suite-Tutorial_01\\data\\1-external\\Brabant-data\\Calculated-Heads.nc". 
 (@) Select both layers in the overview and click the “draw-selected-layer” button (![](figures/tutorial/viewer/button_3Dtool-redrawlayer.png)).
 (@) Click on the “>” sign left from the layer “Calculated-Heads“ and you’ll see a subset with “All Layer” and “Layered Datasets”. 
 (@) Click on the “>” sign left from both the section “All Layer” and “Layered Datasets”.  
