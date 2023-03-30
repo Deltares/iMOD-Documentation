@@ -6,10 +6,8 @@ title: Install iMOD Python with Deltaforge
 
 Deltaforge is a python distribution which includes iMOD Python and all
 its dependencies. It is provided as an installer and makes installing
-iMOD Python easy.You can download the Deltaforge installer [via this
-link](https://download.deltares.nl/en/download/imod-suite/). If the
-subscription worked correctly, you will receive a download link via
-e-mail within only a few minutes.
+iMOD Python easy. You can download the Deltaforge installer [via this
+link](https://deltares.thegood.cloud/s/AefTz97ZHbWS4RT).
 
 ## Installation
 
