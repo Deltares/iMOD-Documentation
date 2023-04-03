@@ -284,7 +284,7 @@
     "href": "deltaforge_install.html",
     "title": "Install iMOD Python with Deltaforge",
     "section": "",
-    "text": "Deltaforge is a python distribution which includes iMOD Python and all its dependencies. It is provided as an installer and makes installing iMOD Python easy. You can download the Deltaforge installer via this link."
+    "text": "Deltaforge is a python distribution which includes iMOD Python and all its dependencies. It is provided as an installer and makes installing iMOD Python easy. You can download the Deltaforge installer on the Deltares download portal (login required)."
   },
   {
     "objectID": "deltaforge_install.html#installation",
