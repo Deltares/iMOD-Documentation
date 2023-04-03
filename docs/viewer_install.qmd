@@ -33,7 +33,7 @@ Viewer consists of the iMOD QGIS plugin and iMOD 3D viewer.
 ### (Option 1) Install with the Deltares setup {#sec-Deltares_setup}
 
 Run the .msi you can download [on the Deltares download
-portal](https://download2.deltares.nl/imod-suite/) (login required).
+portal](https://download2.deltares.nl/imod-suite/).
 
 Follow the installation instructions for [the viewer
 install](viewer_install_msi.qmd), and make sure to do a *Complete* install.
