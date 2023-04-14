@@ -57,17 +57,16 @@ We start with the creation of a new QGIS project.
 
 (@) From the main menu click on *Project* and select *New*. 
 
+For navigation purposes, let us load the universal topography of Open Street Map (OSM).
+
+(@) Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to *Panels* and select *Browser Panel*. 
+(@) The Browser panel contains the group *XYZ Tiles*. From that group double click on the item *OpenStreetMap*. This layer is now added to the panel *Layers*. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.
+
 The data we use in this part of the training is from Ireland, so next we select
 the appropriate projection. (In case you missed the download instructions for the Tutorial data, visit the start page [iMOD Suite Tutorial](index.qmd)).\
 
 (@) From the main menu click on *Project* and select *Properties*. 
 (@) In the *Properties* window select the category *CRS*, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the *Apply* button, followed by the *OK* button to close the window.
-
-For navigation purposes, let us load the universal topography of Open Street Map.
-(OSM)
-
-(@) Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to *Panels* and select *Browser Panel*. 
-(@) The Browser panel contains the group *XYZ Tiles*. From that group double click on the item *OpenStreetMap*. This layer is now added to the panel *Layers*. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.
 
 Let us now open a series of basic files in QGIS. We start with a digital elevation map.
 
@@ -100,7 +99,7 @@ Do you like to see the values of the DTM under you mouse? You need a QGIS plugin
 (@) Go to *Plugins* from the main menu and select *Manage and Install Plugins… * and a window opens.
 (@) On the left, select the group *All* to see all available plugins. 
 (@) Search for “iMOD” and see that the iMOD plugin is successfully installed. 
-(@) Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.
+(@) Check if version 0.2.3 is installed. If not, click the button to Upgrade the iMOD Plugin.
 (@) Search for “Value Tool”, install it and *Close* the Plugins window. 
 
 \
@@ -224,14 +223,19 @@ Results 3: The result is a mesh file (NetCDF format) for the recharge data, cont
 (@) From the menu *Layer > Add layer > Add Mesh Layer...* load the file “…\\iMOD-Suite-Tutorial_01\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
 From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
 
-There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.
+There are 2 ways to visualize this recharge over time: 
 
-(@) For the animation over time, activate the *Temporal Control Panel* with the button ![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%}  on the Map Navigation Toolbar.
+1. animation over time; 
+1. timeseries at location.
+
+Let's now activate the panels for both methods. 
+
+(@) For the animation over time, activate the *Temporal Control Panel* with the clock  button ![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%} on the Map Navigation Toolbar (![](figures/tutorial/viewer/button_TemporalControllerPanel_plus.png){width=18%}).
 (@) For timeseries at location activate the Timeseries panel with the *Timeseries* button (![](figures/tutorial/viewer/button_iMOD-TimeSeries.png){width=4%} ) on the iMOD Toolbar.
 
 Your display should look similar with @fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot, except for the red line below. 
 
-(@) In the Temporal Controller panel click the green play button (![](figures/tutorial/viewer/button_TemporalControllerPanel-menu.png)). Navigation buttons appear.
+(@) In the *Temporal Controller* panel click the green play button (![](figures/tutorial/viewer/button_TemporalControllerPanel-menu.png){width=12%}). Navigation buttons appear.
 (@) Increase the *Step* from 1 to 14 days and start the animation with a click on the *Play* button (![](figures/tutorial/viewer/button_TemporalControler-play.png){width=4%}).
 (@) In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge. 
 (@) Click the button *Select Points*, your mouse changes into a ![](figures/tutorial/viewer/mouse_plus.png). Be sure *Update on Selection* is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse. 
@@ -266,19 +270,23 @@ Let’s create a cross-section with the permeability plot within each layer.
 
 (@) First, we must deactivate temporal control. Open the Temporal Control Panel again (![](figures/tutorial/viewer/button_TemporalControllerPanel.png){width=4%}), and turn off temporal navigation with the button ![](figures/tutorial/viewer/button_TemporalControllerPanel-turnoff.png){width=4%}.
 (@) On the iMOD Toolbar select the ![](figures/tutorial/viewer/button_iMOD-Cross-section.png){width=3%} button to start the iMOD Cross Section tool.
-(@) In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the *Variable* dropdown select permeability and from the Layers dropdown select all layers. 
+(@) In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the *Variable* dropdown select *permeability* and from the Layers dropdown select all layers. 
 (@) Click the button *Add* to add this item to the list of chart elements.
 (@) Click on the button *Select Location* and draw a single line over the model area with your left mouse button. Close the line with your right mouse button. 
 (@) Click the button *Plot* and the geology along the line colored by permeability is draw in the chart. 
 
 TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (![](figures/tutorial/viewer/button_CrossSection-ViewAll.png){width=3%}) in the lower left of the chart. 
 
-(@) Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.
+Your screen might look like @fig-figure_CrossSectionTool-3layers. In case the default legend is not ![](figures/tutorial/viewer/figure_CrossSectionTool-legend.png){width=20%} you can change it. 
+
+(@) To change the legend, click on the colored bar in the column *symbology*.
+(@) In the new window go the "Render type" menu and select *Unique values* and click *Apply*.
+(@) Use the scroll button on your mouse to zoom in order to make the permeability of the thin first layer visible.
 
 ![Three model layers coloured by permeability in the iMOD cross-section tool](figures/tutorial/viewer/figure_CrossSectionTool-3layers.png){width=100% #fig-figure_CrossSectionTool-3layers}
  
 <ins>Script 5 – Create MODFLOW 6 input</ins>
-Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the *Deltaforge prompt*.  
+Now the input data for the model are available, it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the *Deltaforge prompt*.  
 [If you are interested in the content of the script, open it in your Python editor (e.g. Spyder) or a simple Text editor]. 
 
 (@) In the *Deltaforge prompt* type the command: *Python src\\2-build\\5-build-model.py* and press ENTER.  
