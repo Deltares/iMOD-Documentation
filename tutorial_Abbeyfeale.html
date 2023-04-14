@@ -248,16 +248,16 @@ ul.task-list li input[type="checkbox"] {
 <ol start="2" class="example" type="1">
 <li>From the main menu click on <em>Project</em> and select <em>New</em>.</li>
 </ol>
-<p>The data we use in this part of the training is from Ireland, so next we select the appropriate projection. (In case you missed the download instructions for the Tutorial data, visit the start page <a href="./index.html">iMOD Suite Tutorial</a>).<br>
-</p>
+<p>For navigation purposes, let us load the universal topography of Open Street Map (OSM).</p>
 <ol start="3" class="example" type="1">
-<li>From the main menu click on <em>Project</em> and select <em>Properties</em>.</li>
-<li>In the <em>Properties</em> window select the category <em>CRS</em>, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the <em>Apply</em> button, followed by the <em>OK</em> button to close the window.</li>
-</ol>
-<p>For navigation purposes, let us load the universal topography of Open Street Map. (OSM)</p>
-<ol start="5" class="example" type="1">
 <li>Check on the left site if the panel “Browser” is available. If not, select View from the main menu, go to <em>Panels</em> and select <em>Browser Panel</em>.</li>
 <li>The Browser panel contains the group <em>XYZ Tiles</em>. From that group double click on the item <em>OpenStreetMap</em>. This layer is now added to the panel <em>Layers</em>. To display this dataset an internet connection is needed. So if that is the situation, you will see the world map in the display.</li>
+</ol>
+<p>The data we use in this part of the training is from Ireland, so next we select the appropriate projection. (In case you missed the download instructions for the Tutorial data, visit the start page <a href="./index.html">iMOD Suite Tutorial</a>).<br>
+</p>
+<ol start="5" class="example" type="1">
+<li>From the main menu click on <em>Project</em> and select <em>Properties</em>.</li>
+<li>In the <em>Properties</em> window select the category <em>CRS</em>, search for “EPSG:2157” and you find “IRENET95 / Irish Transverse Mercator”. Select this option and click the <em>Apply</em> button, followed by the <em>OK</em> button to close the window.</li>
 </ol>
 <p>Let us now open a series of basic files in QGIS. We start with a digital elevation map.</p>
 <ol start="7" class="example" type="1">
@@ -293,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Go to <em>Plugins</em> from the main menu and select <em>Manage and Install Plugins… </em> and a window opens.</li>
 <li>On the left, select the group <em>All</em> to see all available plugins.</li>
 <li>Search for “iMOD” and see that the iMOD plugin is successfully installed.</li>
-<li>Check if version 0.2.2 is installed. If not, click the button to Upgrade the iMOD Plugin.</li>
+<li>Check if version 0.2.3 is installed. If not, click the button to Upgrade the iMOD Plugin.</li>
 <li>Search for “Value Tool”, install it and <em>Close</em> the Plugins window.</li>
 </ol>
 <p><br>
@@ -428,14 +428,19 @@ Script 3 – Recharge
 <ol start="60" class="example" type="1">
 <li>From the menu <em>Layer &gt; Add layer &gt; Add Mesh Layer…</em> load the file “…\iMOD-Suite-Tutorial_01\data\2-interim\recharge_mesh.nc” into QGIS. From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable <img src="figures/tutorial/viewer/button_clockquestion.png" class="img-fluid" style="width:8.0%">.</li>
 </ol>
-<p>There are 2 ways to visualize this recharge over time: a) animation over time and b) timeseries at location.</p>
+<p>There are 2 ways to visualize this recharge over time:</p>
+<ol type="1">
+<li>animation over time;</li>
+<li>timeseries at location.</li>
+</ol>
+<p>Let’s now activate the panels for both methods.</p>
 <ol start="61" class="example" type="1">
-<li>For the animation over time, activate the <em>Temporal Control Panel</em> with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%"> on the Map Navigation Toolbar.</li>
+<li>For the animation over time, activate the <em>Temporal Control Panel</em> with the clock button <img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%"> on the Map Navigation Toolbar (<img src="figures/tutorial/viewer/button_TemporalControllerPanel_plus.png" class="img-fluid" style="width:18.0%">).</li>
 <li>For timeseries at location activate the Timeseries panel with the <em>Timeseries</em> button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:4.0%"> ) on the iMOD Toolbar.</li>
 </ol>
 <p>Your display should look similar with <a href="#fig-figure_RCH-in-TemporalController-and-TimeSeriesPlot">Figure&nbsp;6</a>, except for the red line below.</p>
 <ol start="63" class="example" type="1">
-<li>In the Temporal Controller panel click the green play button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel-menu.png" class="img-fluid">). Navigation buttons appear.</li>
+<li>In the <em>Temporal Controller</em> panel click the green play button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel-menu.png" class="img-fluid" style="width:12.0%">). Navigation buttons appear.</li>
 <li>Increase the <em>Step</em> from 1 to 14 days and start the animation with a click on the <em>Play</em> button (<img src="figures/tutorial/viewer/button_TemporalControler-play.png" class="img-fluid" style="width:4.0%">).</li>
 <li>In the iMOD time series panel be sure the layer RECHARGE_MESH is loaded. The mesh only contains a single variable: Recharge.</li>
 <li>Click the button <em>Select Points</em>, your mouse changes into a <img src="figures/tutorial/viewer/mouse_plus.png" class="img-fluid">. Be sure <em>Update on Selection</em> is checked and hover over the mesh. The graph shows the timeseries at the location of your mouse.</li>
@@ -515,14 +520,17 @@ Script 4 – Geohydrology
 <ol start="74" class="example" type="1">
 <li>First, we must deactivate temporal control. Open the Temporal Control Panel again (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:4.0%">), and turn off temporal navigation with the button <img src="figures/tutorial/viewer/button_TemporalControllerPanel-turnoff.png" class="img-fluid" style="width:4.0%">.</li>
 <li>On the iMOD Toolbar select the <img src="figures/tutorial/viewer/button_iMOD-Cross-section.png" class="img-fluid" style="width:3.0%"> button to start the iMOD Cross Section tool.</li>
-<li>In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the <em>Variable</em> dropdown select permeability and from the Layers dropdown select all layers.</li>
+<li>In the iMOD cross-section panel be sure the layer “hydrogeology_mesh” is selected. From the <em>Variable</em> dropdown select <em>permeability</em> and from the Layers dropdown select all layers.</li>
 <li>Click the button <em>Add</em> to add this item to the list of chart elements.</li>
 <li>Click on the button <em>Select Location</em> and draw a single line over the model area with your left mouse button. Close the line with your right mouse button.</li>
 <li>Click the button <em>Plot</em> and the geology along the line colored by permeability is draw in the chart.</li>
 </ol>
 <p>TIP: If you do not see any line, perhaps the axes are not defined well. To view all data, click you right mouse button in the figure and select the option “View All”. The alternative is to click on the small A symbol (<img src="figures/tutorial/viewer/button_CrossSection-ViewAll.png" class="img-fluid" style="width:3.0%">) in the lower left of the chart.</p>
+<p>Your screen might look like <a href="#fig-figure_CrossSectionTool-3layers">Figure&nbsp;7</a>. In case the default legend is not <img src="figures/tutorial/viewer/figure_CrossSectionTool-legend.png" class="img-fluid" style="width:20.0%"> you can change it.</p>
 <ol start="80" class="example" type="1">
-<li>Use the scroll button on your mouse to zoom in and make the permeability of the 1st layer visible.</li>
+<li>To change the legend, click on the colored bar in the column <em>symbology</em>.</li>
+<li>In the new window go the “Render type” menu and select <em>Unique values</em> and click <em>Apply</em>.</li>
+<li>Use the scroll button on your mouse to zoom in order to make the permeability of the thin first layer visible.</li>
 </ol>
 <div id="fig-figure_CrossSectionTool-3layers" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
@@ -533,20 +541,20 @@ Script 4 – Geohydrology
 <ins>
 Script 5 – Create MODFLOW 6 input
 </ins>
-<p>Now the input data for the model are available it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the <em>Deltaforge prompt</em>.<br>
+<p>Now the input data for the model are available, it is time to convert the data into the standard MODFLOW6 format. For that conversion a function exists within iMOD Python. We prepared another python script for you to easily do the conversion by running the script in the <em>Deltaforge prompt</em>.<br>
 [If you are interested in the content of the script, open it in your Python editor (e.g.&nbsp;Spyder) or a simple Text editor].</p>
-<ol start="81" class="example" type="1">
+<ol start="83" class="example" type="1">
 <li>In the <em>Deltaforge prompt</em> type the command: <em>Python src\2-build\5-build-model.py</em> and press ENTER.</li>
 </ol>
 <p>The result of the script is a folder with the standard MODFLOW 6 input.</p>
-<ol start="82" class="example" type="1">
+<ol start="84" class="example" type="1">
 <li>Optional step Visit the folder “…\iMOD-Suite-Tutorial_01\data\3-input” with your file manager. There your find the file MFSIM.NAM. This is the main MODFLOW6 file with references to the other files and settings. The folder GWF_1 contains the model input and later the model results.</li>
 </ol>
 <ins>
 Script 6 – Run the MODFLOW 6 model
 </ins>
 <p>iMOD Suite uses the official USGS version of MODFLOW 6. The executable is provided with the tutorial database and is available as “…\iMOD-Suite-Tutorial_01\bin\mf6.exe”.</p>
-<ol start="83" class="example" type="1">
+<ol start="85" class="example" type="1">
 <li>In the Deltaforge prompt type the command: <em>Python src\3-model\6-run-model.py</em> and press ENTER.<br>
 </li>
 <li>You can check the logfile of the model in order to see if it was run successful.</li>
@@ -557,15 +565,15 @@ Script 6 – Run the MODFLOW 6 model
 Script 7 - Convert the MODFLOW 6 results for QGIS
 </ins>
 <p>The standard output of MODFLOW6 cannot be loaded into QGIS. Therefore, iMOD Python contains a function to convert the output into NetCDF files.</p>
-<ol start="87" class="example" type="1">
+<ol start="89" class="example" type="1">
 <li>In the <em>Deltaforge prompt</em> type the command: <em>Python src\3-model\7-post-process-output.py</em> and press ENTER.</li>
 </ol>
 <p>The result of this script is a NetCDF file with the calculated head for 365 days.</p>
-<ol start="88" class="example" type="1">
+<ol start="90" class="example" type="1">
 <li>Load the file “…\iMOD-Suite-Tutorial_01\data\4-output\hds_mesh.nc” into QGIS.</li>
 </ol>
 <p>By default, the variable bottom_layer_1 is loaded. We will change the selected variable into Heads and pick a legend specific for plotting of time series.</p>
-<ol start="89" class="example" type="1">
+<ol start="91" class="example" type="1">
 <li>Double click on the layer “hds_mesh” to open the <em>Layer Properties window</em>.</li>
 <li>Select the group Source on the left and see that the mesh contains several datasets.</li>
 <li>Select the group Symbology on the left and select the first tab <em>Dataset</em> (<img src="figures/tutorial/viewer/button_SymbologyDataset.png" class="img-fluid" style="width:3.0%">). Here we can select the group we want to plot, for now it is “head_layer_1”.<br>
@@ -576,7 +584,7 @@ Script 7 - Convert the MODFLOW 6 results for QGIS
 <li>From the dropdown menu Color Ramp select Turbo and click on OK to close the window.</li>
 </ol>
 <p>Now we try to show an animation of the variation of calculated Heads over time and as timeseries.</p>
-<ol start="96" class="example" type="1">
+<ol start="98" class="example" type="1">
 <li>For the animation over time, activate the Temporal Control Panel with the button (<img src="figures/tutorial/viewer/button_TemporalControllerPanel.png" class="img-fluid" style="width:3.0%">) on the Map Navigation Toolbar.</li>
 <li>From you experience with this tool, try to start the animation with timestep of 14 days.</li>
 <li>For timeseries at location activate the Timeseries panel with the <em>Timeseries</em> button (<img src="figures/tutorial/viewer/button_iMOD-TimeSeries.png" class="img-fluid" style="width:3.0%">) on the iMOD Toolbar.</li>

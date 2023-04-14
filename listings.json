@@ -1,10 +1,13 @@
 [
   {
-    "listing": "/tutorial_index.html",
+    "listing": "/index.html",
     "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html"
+      "/introduction.html",
+      "/viewer_index.html",
+      "/python_index.html",
+      "/coupler_index.html",
+      "/tutorial_index.html",
+      "/practical_index.html"
     ]
   },
   {
@@ -20,14 +23,11 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/tutorial_index.html",
     "items": [
-      "/introduction.html",
-      "/viewer_index.html",
-      "/python_index.html",
-      "/coupler_index.html",
-      "/tutorial_index.html",
-      "/practical_index.html"
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html"
     ]
   }
 ]
