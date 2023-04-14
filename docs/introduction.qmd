@@ -72,17 +72,17 @@ feature developments. @tbl-iMOD-comparison and @tbl-iMOD-comparison-2
 respectively provide comparisons between iMOD Suite and iMOD 5 for the
 components and supported MODFLOW6 packages.
 
-|                            | iMOD Suite                              | iMOD 5                                            |
-|----------------------------|-----------------------------------------|---------------------------------------------------|
-| computational kernels      | MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS | MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS, MetaSWAP |
-| file types                 | NetCDF, UGRID, shp, tiff, idf, ipf, gen | idf, ipf, isg, gen                                |
-| grid types                 | structured & unstructured               | structured & nested structured                    |
-| scripted pre-processing    | iMOD Python                             | iMOD Batch                                        |
-| interactive pre-processing | (QGIS)                                  | iMOD GUI                                          |
-| scripted 2D plot           | iMOD Python                             | iMOD Batch                                        |
-| interactive 2D plot        | iMOD QGIS plugin (& QGIS)               | iMOD GUI                                          |
-| scripted 3D plot           | iMOD Python                             |                                                   |
-| interactive 3D plot        | iMOD 3D Viewer                          | iMOD GUI                                          |
+|                            | iMOD Suite                                        | iMOD 5                                            |
+|----------------------------|---------------------------------------------------|---------------------------------------------------|
+| computational kernels      | MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS, MetaSWAP | MODFLOW 2005, MODFLOW 6, SEAWAT, MT3DMS, MetaSWAP |
+| file types                 | NetCDF, UGRID, shp, tiff, idf, ipf, gen           | idf, ipf, isg, gen                                |
+| grid types                 | structured & unstructured                         | structured & nested structured                    |
+| scripted pre-processing    | iMOD Python                                       | iMOD Batch                                        |
+| interactive pre-processing | (QGIS)                                            | iMOD GUI                                          |
+| scripted 2D plot           | iMOD Python                                       | iMOD Batch                                        |
+| interactive 2D plot        | iMOD QGIS plugin (& QGIS)                         | iMOD GUI                                          |
+| scripted 3D plot           | iMOD Python                                       |                                                   |
+| interactive 3D plot        | iMOD 3D Viewer                                    | iMOD GUI                                          |
 
 : Comparison between iMOD Suite & iMOD 5 {#tbl-iMOD-comparison}
 
