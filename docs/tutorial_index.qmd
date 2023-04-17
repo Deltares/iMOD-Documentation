@@ -21,4 +21,4 @@ you an overview of the Suite's capabilities.
 To download and install the iMOD Suite, [follow the instructions
 here](https://deltares.github.io/iMOD-Documentation/viewer_install.html). To
 download the tutorial material, you can [follow this
-link.](https://deltares.thegood.cloud/s/ww84QA9qq5ymRMS)
+link.](https://deltares.thegood.cloud/s/8JxcJK5jijijEQs)

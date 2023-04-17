@@ -87,7 +87,7 @@ Wait a few seconds and the name turns **bold** and the colors in the display
 change.
 
 (@) Select the name “data” and click your right mouse button to open a pop-up window.
-(@) Select “Edit legend” to open the “Legend editor” (see figure on the right).  
+(@) Select “Edit legend” to open the “Legend editor” (see figure below).  
 (@) Select PIYG for Color scale.
 (@) Check the Percentiles box. 
 (@) Click on OK and the window will close. The colors in your display change automatically.
