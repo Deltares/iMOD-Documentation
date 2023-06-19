@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -59,7 +59,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -81,99 +82,116 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">iMOD Suite</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./introduction.html">
+    <a class="nav-link" href="./introduction.html" rel="" target="">
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
+    <a class="nav-link active" href="./viewer_index.html" rel="" target="" aria-current="page">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python_index.html">
+    <a class="nav-link" href="./python_index.html" rel="" target="">
  <span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./coupler_index.html">
+    <a class="nav-link" href="./coupler_index.html" rel="" target="">
  <span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial_index.html">
+    <a class="nav-link" href="./tutorial_index.html" rel="" target="">
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./practical_index.html">
+    <a class="nav-link" href="./practical_index.html" rel="" target="">
  <span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">3D Viewer User Manual</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./3dviewer_user_manual.html">3D Viewer User Manual</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</a>
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer</a>
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">QGIS Plugin User Manual</a>
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QGIS Plugin User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link active">3D Viewer User Manual</a>
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">3D Viewer User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Known Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_instruction_videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instruction videos</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -228,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">3D Viewer User Manual</h1>
+<h1 class="title">3D Viewer User Manual</h1>
 </div>
 
 
@@ -275,7 +293,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: File menu options for saving and loading projects.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: File menu options for saving and loading projects.</figcaption>
 </figure>
 </div>
 <p>The list of open files, along with the chosen legends and IPF column mappings, can be saved into an iMOD 3D Viewer solution file. To do this, open the file menu and choose “save” or “save as”.</p>
@@ -289,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: The explorer sidebar shows the objects that are available for viewing as a tree structure</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: The explorer sidebar shows the objects that are available for viewing as a tree structure</figcaption>
 </figure>
 </div>
 <p>The explorer sidebar shows the objects that are available for viewing as a tree structure</p>
@@ -321,7 +339,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image4" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: In order to visualize a grid in the viewer, select the grid and then press the green button.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: In order to visualize a grid in the viewer, select the grid and then press the green button.</figcaption>
 </figure>
 </div>
 <p>When an object is visualized in the viewer, its name appears in boldface in the explorer.</p>
@@ -334,7 +352,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image5" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image5.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: The dataset 'water level' is visualized on the grid and is marked in bold in the explorer.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: The dataset 'water level' is visualized on the grid and is marked in bold in the explorer.</figcaption>
 </figure>
 </div>
 <p>Currently, only datasets that hold scalar values associated to cells can be shown.</p>
@@ -348,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image6" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image6.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: The padlock icon shows if a node is locked or unlocked</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: The padlock icon shows if a node is locked or unlocked</figcaption>
 </figure>
 </div>
 </section>
@@ -371,7 +389,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image8" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image8.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Tools and texts related to time in the UI</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Tools and texts related to time in the UI</figcaption>
 </figure>
 </div>
 <p><a href="#fig-image8">Figure&nbsp;6</a> shows the location of tools and texts in the UI that help the user orientate in and step through the time dimension of datasets. First note the time displayed in the top toolbar (1). This is the “viewer time”, the time the viewer is currently trying to display. Since the time discretization can be different per dataset and we can show different datasets and grids simultaneously, it is not guaranteed that all datasets currently in the viewer can be shown for this specific time! Hence, in the sidebar it is shown at what time the datasets are actually diplayed (2).</p>
@@ -388,7 +406,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-imageTimerules" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/imageTimerules.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Times displayed for different dataset for a given viewer time (the vertical line). The blue dots indicate the times at which a dataset has values. The red dots indicate the values displayed.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Times displayed for different dataset for a given viewer time (the vertical line). The blue dots indicate the times at which a dataset has values. The red dots indicate the values displayed.</figcaption>
 </figure>
 </div>
 </section>
@@ -398,7 +416,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image9" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image9.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;8: Property windows, from left to right for a grid, a layered grid and a dataset</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;8: Property windows, from left to right for a grid, a layered grid and a dataset</figcaption>
 </figure>
 </div>
 </section>
@@ -417,7 +435,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-imageViewerControls" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/imageViewerControls.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;9: Some of the viewer controls are also implemented by buttons.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;9: Some of the viewer controls are also implemented by buttons.</figcaption>
 </figure>
 </div>
 <p><strong>Using the toolbar buttons to control the viewer</strong> As shown in <a href="#fig-imageViewerControls">Figure&nbsp;9</a>, there are also buttons in the toolbar to control the viewer. From left to right in this figure, the buttons do the following</p>
@@ -438,14 +456,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image12" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image12.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;10: Activate clipping mode by pressing the clipping button in the toolbar. Sliders appear in the 3D viewer.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;10: Activate clipping mode by pressing the clipping button in the toolbar. Sliders appear in the 3D viewer.</figcaption>
 </figure>
 </div>
 <p>Now use the sliders to clip the model. Each slider represents the combined range of all the grids in the viewer in one direction.</p>
 <div id="fig-image13" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image13.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;11: Use sliders to cut model in each direction</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;11: Use sliders to cut model in each direction</figcaption>
 </figure>
 </div>
 </section>
@@ -455,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image14" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image14.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;12: Toggle gridlines with the gridlines button</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;12: Toggle gridlines with the gridlines button</figcaption>
 </figure>
 </div>
 </section>
@@ -468,7 +486,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image15" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image15.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;13: Vertical exaggeration slider and text field</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;13: Vertical exaggeration slider and text field</figcaption>
 </figure>
 </div>
 </section>
@@ -479,7 +497,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image16" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image16.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;14: The 3 representations of a grid. Left the <em>Surface</em> representation, in the centre <em>Wireframe</em>, and right the <em>Point</em> representation.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;14: The 3 representations of a grid. Left the <em>Surface</em> representation, in the centre <em>Wireframe</em>, and right the <em>Point</em> representation.</figcaption>
 </figure>
 </div>
 <p>The representation can also be changed from the property window of a grid. Here some other tweaks can also be made, like highlighting cell edges or changing the opacity of the plot.</p>
@@ -508,7 +526,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image18" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image18.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;15: The 2 tabs of the legend editor</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;15: The 2 tabs of the legend editor</figcaption>
 </figure>
 </div>
 <p>When using a percentile legend, colors are assigned to a cell based on the percentage of cells that hold a value lower than that of the current cell. The color map is distorted to reflect this. For example, when using the “heat map” legend, the lowest value is blue, the highest red, and the middle of the range is white. When using a heat map with percentiles, the white color represents not the middle of the range, but the value for which 50% of other values is smaller than itself (<a href="#fig-image19">Figure&nbsp;16</a>).</p>
@@ -516,7 +534,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image19" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image19.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;16: Heat map legend with percentiles on and off. Without percentiles (left), the white color is the middle of the legend range. With percentiles on (right),the color map is distorted and white is now the median value (50%) of the dataset. In general, a color that represents <em>N</em> % of the range in the linear legend, is mapped to the value that is larger than <em>N</em> % of the data in the percentiles legend.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;16: Heat map legend with percentiles on and off. Without percentiles (left), the white color is the middle of the legend range. With percentiles on (right),the color map is distorted and white is now the median value (50%) of the dataset. In general, a color that represents <em>N</em> % of the range in the linear legend, is mapped to the value that is larger than <em>N</em> % of the data in the percentiles legend.</figcaption>
 </figure>
 </div>
 </section>
@@ -539,14 +557,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image20" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image20.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;17: When the default column names are not found an error message appears.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;17: When the default column names are not found an error message appears.</figcaption>
 </figure>
 </div>
 <p>To adjust the column mapping, right click on the IPF’s row in the explorer bar and select the “Properties” menu option. Then a window appears where the column mapping can be updated (<a href="#fig-image21">Figure&nbsp;18</a>).</p>
 <div id="fig-image21" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image21.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;18: Property window allows to choose what IPF columns to use for drawing cylinders.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;18: Property window allows to choose what IPF columns to use for drawing cylinders.</figcaption>
 </figure>
 </div>
 <p>The z0 and z1 comboboxes will be used for the cylinder’s top and bottoms respectively. If the z1 column is not set, then points will be generated instead of cylinders.</p>
@@ -556,7 +574,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image22" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image22.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;19: Image of an IPF plot with labels, viewed from the top.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;19: Image of an IPF plot with labels, viewed from the top.</figcaption>
 </figure>
 </div>
 <section id="plotting-borehole-data" class="level3">
@@ -567,7 +585,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image23" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image23.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;20: 1D borehole data can be plotted on cylinders generated from the IPF file. Both real number data and string data can be plotted. In this example, string data was present in the "Admixture" column</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;20: 1D borehole data can be plotted on cylinders generated from the IPF file. Both real number data and string data can be plotted. In this example, string data was present in the "Admixture" column</figcaption>
 </figure>
 </div>
 </section>
@@ -583,20 +601,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image25" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image25.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;21: Left, an upscaled IDF file. Middle: after zooming in on an area of interest. Right: after pressing the redraw button to increase resolution.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;21: Left, an upscaled IDF file. Middle: after zooming in on an area of interest. Right: after pressing the redraw button to increase resolution.</figcaption>
 </figure>
 </div>
 <p>Another way to change the resolution of an IDF file is to select the IDF’s row in the explorer bar and clicking on “resolution” (<a href="#fig-image26">Figure&nbsp;22</a>). This allows choosing a resolution of 100x100, 250x250 or 500x500 for the IPF file (<a href="#fig-image27">Figure&nbsp;23</a>).</p>
 <div id="fig-image26" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image26.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;22: Choose the resolution of the IDF file</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;22: Choose the resolution of the IDF file</figcaption>
 </figure>
 </div>
 <div id="fig-image27" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image27.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;23: IDF file at resolution 100x100 (left); 250*250(middle) and 500x500 (right)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;23: IDF file at resolution 100x100 (left); 250*250(middle) and 500x500 (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -607,13 +625,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image28" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image28.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;24: Context menu for changing representation of an IDF file</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;24: Context menu for changing representation of an IDF file</figcaption>
 </figure>
 </div>
 <div id="fig-image29" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image29.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;25: An IDF file rendered as rectangles (left) and triangles (right)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;25: An IDF file rendered as rectangles (left) and triangles (right)</figcaption>
 </figure>
 </div>
 </section>
@@ -625,7 +643,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image30" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image30.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;26: Context menu options for changing the color and line thickness of an overlay.</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;26: Context menu options for changing the color and line thickness of an overlay.</figcaption>
 </figure>
 </div>
 </section>
@@ -644,7 +662,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image31" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image31.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;27: Dataset values can be inspected with the identify button</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;27: Dataset values can be inspected with the identify button</figcaption>
 </figure>
 </div>
 </section>
@@ -656,13 +674,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-image32" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image32.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;28: A 2D UGRID file rendered as a layered 3D grid</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;28: A 2D UGRID file rendered as a layered 3D grid</figcaption>
 </figure>
 </div>
 <div id="fig-image33" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/viewer/image33.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;29: View on internals of UGRID that can be used for rendering as a 3D layered grid</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;29: View on internals of UGRID that can be used for rendering as a 3D layered grid</figcaption>
 </figure>
 </div>
 
@@ -697,9 +715,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -764,6 +796,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

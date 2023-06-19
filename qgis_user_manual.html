@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -59,7 +59,8 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -81,99 +82,116 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">iMOD Suite</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./introduction.html">
+    <a class="nav-link" href="./introduction.html" rel="" target="">
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./viewer_index.html" aria-current="page">
+    <a class="nav-link active" href="./viewer_index.html" rel="" target="" aria-current="page">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python_index.html">
+    <a class="nav-link" href="./python_index.html" rel="" target="">
  <span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./coupler_index.html">
+    <a class="nav-link" href="./coupler_index.html" rel="" target="">
  <span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial_index.html">
+    <a class="nav-link" href="./tutorial_index.html" rel="" target="">
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./practical_index.html">
+    <a class="nav-link" href="./practical_index.html" rel="" target="">
  <span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation"><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">QGIS Plugin User Manual</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./qgis_user_manual.html">QGIS Plugin User Manual</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</a>
+  <a href="./viewer_index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer</a>
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">Install iMOD Viewer with the Deltares setup</a>
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link active">QGIS Plugin User Manual</a>
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">QGIS Plugin User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">3D Viewer User Manual</a>
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3D Viewer User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">Known Issues</a>
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Known Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_instruction_videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instruction videos</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -198,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">QGIS Plugin User Manual</h1>
+<h1 class="title">QGIS Plugin User Manual</h1>
 </div>
 
 
@@ -223,30 +241,15 @@ ul.task-list li input[type="checkbox"] {
 <li>You probably want to change the language settings in QGIS, if it defaults to Dutch, it’s <em>Extra &gt; Opties &gt; Algemeen</em>. Change it to to US settings (that’s generally the safest default). You will need to restart QGIS before this has effect.</li>
 </ol>
 <blockquote class="blockquote">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/qgis/qgis-language-settings.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The QGIS language settings</figcaption><p></p>
-</figure>
-</div>
+<img src="figures/qgis/qgis-language-settings.png" class="img-fluid" alt="The QGIS language settings">
 </blockquote>
 <ol start="2" type="1">
 <li><p>Start up QGIS, go to <em>Plugins &gt; Manage and Install plugins &gt; Installed</em>. Make sure the iMOD plugin is ticked.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/qgis/qgis-installed-plugins.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The QGIS plugin manager. Here you can install and activate plugins.</figcaption><p></p>
-</figure>
-</div></li>
+<img src="figures/qgis/qgis-installed-plugins.png" class="img-fluid" alt="The QGIS plugin manager. Here you can install and activate plugins."></li>
 </ol>
 <p>If the installation and configuration was succesful, the plugin should be visible in your toolbar.</p>
 <blockquote class="blockquote">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/qgis/imod-toolbar.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The iMOD plugin toolbar</figcaption><p></p>
-</figure>
-</div>
+<img src="figures/qgis/imod-toolbar.png" class="img-fluid" alt="The iMOD plugin toolbar">
 </blockquote>
 </section>
 <section id="functionality" class="level2">
@@ -266,12 +269,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Press the "..." button to select a path to a file (as you would in other QGIS windows).</li>
 <li>Press "Add" to load the file into the QGIS explorer.</li>
 </ul>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Warning
 </div>
 </div>
@@ -282,13 +285,13 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/ipf-reader.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The Open IPF widget.</figcaption><p></p>
+<figcaption class="figure-caption">The Open IPF widget.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/temporal-controller.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The temporal controller panel and map canvas of QGIS. The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.</figcaption><p></p>
+<figcaption class="figure-caption">The temporal controller panel and map canvas of QGIS. The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.</figcaption>
 </figure>
 </div>
 </section>
@@ -325,15 +328,15 @@ Warning
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/3d-viewer.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The 3D viewer widget. It will be opened on the right-hand side of the screen.</figcaption><p></p>
+<figcaption class="figure-caption">The 3D viewer widget. It will be opened on the right-hand side of the screen.</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -366,21 +369,21 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/time-series-points.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps. The yellow points on the map canvas indicate the selected points.</figcaption><p></p>
+<figcaption class="figure-caption">The Time series widget and map canvas for points. Notice that the widget can handle irregular time series filled with gaps. The yellow points on the map canvas indicate the selected points.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/time-series-mesh.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The Time series widget and map canvas for a mesh. The red crosses indicate the location of the plotted time-series.</figcaption><p></p>
+<figcaption class="figure-caption">The Time series widget and map canvas for a mesh. The red crosses indicate the location of the plotted time-series.</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -437,15 +440,15 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/cross-section.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The "Cross-section" widget and map canvas. An example is shown in which layer ids are plotted as colors, and borelogs are plotted as bars.</figcaption><p></p>
+<figcaption class="figure-caption">The "Cross-section" widget and map canvas. An example is shown in which layer ids are plotted as colors, and borelogs are plotted as bars.</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -466,15 +469,15 @@ Note
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/qgis/add-nhi-data.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">The "Add NHI window"</figcaption><p></p>
+<figcaption class="figure-caption">The "Add NHI window"</figcaption>
 </figure>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -515,9 +518,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -582,6 +599,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
