@@ -3,7 +3,7 @@ title: Instruction videos
 number-sections: true
 ---
 
-## Demonstration of elements on the QGIS plugin widgets
+## Demonstration of the use of widgets on the iMOD QGIS plugin
 
 {{< video https://vimeo.com/837510722?share=copy >}}
 {{< video https://vimeo.com/837510303?share=copy >}}
