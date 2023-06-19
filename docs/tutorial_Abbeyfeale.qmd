@@ -204,7 +204,7 @@ Results 1: The result is a raster file (NetCDF format) describing the mask of ou
 (@) **Optional step**. Load the topography_raster.nc file into QGIS. The file is in the folder "…\\iMOD-Suite-Tutorial_01\\data\\2-interim".
 
 <ins>Script 2 – River \newline</ins>
-This script opens a shape file with river elements. It rasterizes it project cell size and adds a default river depth (1 m) and bottom resistance. 
+This script opens a shape file with river elements. It rasterizes it to the project cell size and adds a default river depth (1 m) and bottom resistance. 
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\2-create-river-system.py* and press ENTER.
 
@@ -214,7 +214,7 @@ Results 2: The result is a raster file (NetCDF format) for the river data, conta
 (@) Click on the button *Add Layers* and click *Close* to close the Data Source Manager.
 
 <ins>Script 3 – Recharge</ins>
-This script opens the shape file with recharge zones (polygons) containing the recharge in mm per year. The recharge zones are rasterized to the project extent and cell size and the scripts adds a seasonal forcing resulting in a time series of daily recharge values for 1 year.  
+This script opens the shape file with recharge zones (polygons) containing the recharge in mm per year. The recharge zones are rasterized to the project extent and cell size. Finally the script adds a seasonal forcing (sine function) resulting in a time series of daily recharge values for 1 year.  
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\3-create-recharge.py* and press ENTER.
 

@@ -1,0 +1,10 @@
+---
+title: Instruction videos
+number-sections: true
+---
+
+## Demonstration of elements on the QGIS plugin widgets
+
+{{< video https://vimeo.com/837510722?share=copy >}}
+{{< video https://vimeo.com/837510303?share=copy >}}
+{{< video https://vimeo.com/837509898?share=copy >}}
