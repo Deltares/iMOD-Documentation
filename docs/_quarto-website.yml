@@ -56,6 +56,10 @@ website:
       align: left
       contents:
         - href: coupler_index.qmd
+        - section: "MetaSWAP - MODFLOW 6"
+          contents:       
+          - href: coupler_metamod_config.qmd
+          - href: coupler_metamod_technical.qmd
 
     - id: tutorial
       title: "Tutorials"

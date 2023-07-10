@@ -105,3 +105,4 @@ venv.bak/
 # Quarto
 /.quarto/
 _build/
+/.luarc.json
