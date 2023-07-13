@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Application for coupling hydrological kernels.">
 
-<title>iMOD Suite -  iMOD Coupler</title>
+<title>iMOD Suite - Configuration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_metamod_config.html" rel="next">
+<link href="./coupler_metamod_technical.html" rel="next">
+<link href="./coupler_index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_index.html"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">Configuration</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -182,7 +182,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</span></a>
   </div>
 </li>
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
@@ -219,11 +219,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#coupling-to-modflow-6" id="toc-coupling-to-modflow-6" class="nav-link active" data-scroll-target="#coupling-to-modflow-6">Coupling to MODFLOW 6</a></li>
-  <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code">Source Code</a></li>
-  <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a>
+  <li><a href="#config-schema" id="toc-config-schema" class="nav-link active" data-scroll-target="#config-schema">Config schema</a>
   <ul class="collapse">
-  <li><a href="#imod-v5.2-release" id="toc-imod-v5.2-release" class="nav-link" data-scroll-target="#imod-v5.2-release">iMOD v5.2 release</a></li>
+  <li><a href="#driver.kernels.modflow6" id="toc-driver.kernels.modflow6" class="nav-link" data-scroll-target="#driver.kernels.modflow6">driver.kernels.modflow6</a></li>
+  <li><a href="#driver.kernels.metaswap" id="toc-driver.kernels.metaswap" class="nav-link" data-scroll-target="#driver.kernels.metaswap">driver.kernels.metaswap</a></li>
+  <li><a href="#driver.coupling" id="toc-driver.coupling" class="nav-link" data-scroll-target="#driver.coupling">driver.coupling</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -233,14 +233,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</h1>
+<h1 class="title">Configuration</h1>
 </div>
 
-<div>
-  <div class="description">
-    Application for coupling hydrological kernels.
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -253,24 +248,402 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="coupling-to-modflow-6" class="level2">
-<h2 class="anchored" data-anchor-id="coupling-to-modflow-6">Coupling to MODFLOW 6</h2>
-<p>Deltares have worked together with the USGS to create the <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">MODFLOW API</a>, based on the <a href="https://bmi-spec.readthedocs.io/en/latest/">Basic Model Interface (BMI)</a> with some extensions. The first version of this functionality became available with the release of MODFLOW 6.2.0. BMI is a set of standard control and query functions that, when added to a model code, make that model both easier to learn and easier to couple with other software elements. Furthermore, the BMI makes it possible to control MODFLOW 6 execution from scripting languages using bindings for the BMI.</p>
-<p>We have also developed <a href="https://github.com/Deltares/xmipy">xmipy</a>, a Python package with bindings for the API, which allow you to run and update (at runtime) a MODFLOW 6 model from Python. This allows coupling MODFLOW 6 to other computational cores. One of its first applications is a coupling of MODFLOW 6 to MetaSWAP, as part of the <a href="https://github.com/Deltares/imod_coupler">iMOD Coupler</a> package. Other applications can be found in <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">this paper.</a></p>
+<p>The configuration file is necessary to describe the model and its dependencies. It is in the <a href="https://toml.io/en/">toml</a> format and should have a <code>.toml</code> extension.</p>
+<p>Note that <code>toml</code> uses quote marks differently than <code>python</code>. Single quotes in toml (<code>''</code>) are interpreted similarly to how python would interpret a rawstring (<code>r''</code> or <code>r""</code>), whereas double quotes (<code>""</code>) are interpreted in a similar manner to regular strings in python (<code>""</code> or <code>''</code>). This matters for paths on Windows, for which we advice to use single quotes.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">log_level</span> <span class="op">=</span> <span class="st">'</span><span class="vs">INFO</span><span class="st">'</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">timing</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">driver_type</span> <span class="op">=</span> <span class="st">'</span><span class="vs">metamod</span><span class="st">'</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># MODFLOW 6</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">kernels</span><span class="kw">.</span><span class="dt">modflow6</span><span class="kw">]</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/libmf6.dll</span><span class="st">'</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mf6_data</span><span class="st">'</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># MetaSWAP</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">kernels</span><span class="kw">.</span><span class="dt">metaswap</span><span class="kw">]</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/MetaSWAP.dll</span><span class="st">'</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">dll_dep_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/3rdparty</span><span class="st">'</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./msw_data</span><span class="st">'</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner model with sprinkling</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">coupling</span><span class="kw">]]</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">true</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">inner_model</span><span class="st">'</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_well_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">WELLS_MSW</span><span class="st">'</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">mappings_inner/nodenr2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">mappings_inner/rchindex2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_sprinkling_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">mappings_inner/wellindex2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer model, without sprinkling</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">coupling</span><span class="kw">]]</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">outer_model</span><span class="st">'</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">mappings_outer/nodenr2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">mappings_outer/rchindex2svat.dxc</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="config-schema" class="level2">
+<h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
+<table class="table">
+<caption>log_level</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>This setting determines the severity and therefore the verbosity of the log messages.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+<tr class="even">
+<td>default</td>
+<td>INFO</td>
+</tr>
+<tr class="odd">
+<td>enum</td>
+<td>DEBUG, INFO, WARNING, ERROR, CRITICAL</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>timing</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Specifies whether the coupling should be timed. This option requires the log level to at least include INFO.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+<tr class="even">
+<td>default</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>driver_type</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Specifies which driver should be used. Typically, this determines which hydrological kernels are coupled.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+<tr class="even">
+<td>enum</td>
+<td>metamod</td>
+</tr>
+</tbody>
+</table>
+<section id="driver.kernels.modflow6" class="level3">
+<h3 class="anchored" data-anchor-id="driver.kernels.modflow6">driver.kernels.modflow6</h3>
+<table class="table">
+<caption>dll</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The path to the MODFLOW 6 library.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>dll_dep_dir</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The path to the dependencies of MODFLOW 6.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>work_dir</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The working directory MODFLOW 6 expects. This is the directory where the simulation name file resides.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="source-code" class="level2">
-<h2 class="anchored" data-anchor-id="source-code">Source Code</h2>
-<p>The <code>xmipy</code> library can be found on: <a href="https://github.com/Deltares/xmipy" class="uri">https://github.com/Deltares/xmipy</a></p>
-<p>The iMOD Coupler can be found on: <a href="https://github.com/Deltares/imod_coupler" class="uri">https://github.com/Deltares/imod_coupler</a></p>
+<section id="driver.kernels.metaswap" class="level3">
+<h3 class="anchored" data-anchor-id="driver.kernels.metaswap">driver.kernels.metaswap</h3>
+<table class="table">
+<caption>dll</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The path to the MetaSWAP library.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>dll_dep_dir</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The path to the dependencies of MetaSWAP.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>work_dir</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>The working directory MetaSWAP expects.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="known-issues" class="level2">
-<h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
-<section id="imod-v5.2-release" class="level3">
-<h3 class="anchored" data-anchor-id="imod-v5.2-release">iMOD v5.2 release</h3>
-<p>The MetaSWAP and Modflow6 libraries provided with iMOD 5.2 for <code>imod_coupler</code> were not statically linked. This could result in the following error:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">FileNotFoundError</span>: <span class="st">'''Could not find module "\path</span><span class="ch">\t</span><span class="st">o\MetaSWAP.dll" (or one</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">of its dependencies). Try using the full path with constructor syntax.'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is caused by not having the Intel redistrutable libraries on the system. <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html">These can be downloaded from this page</a>. Make sure to choose the correct platform and the version for 'Parallel Studio XE 2020'.</p>
+<section id="driver.coupling" class="level3">
+<h3 class="anchored" data-anchor-id="driver.coupling">driver.coupling</h3>
+<table class="table">
+<caption>enable_sprinkling</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Whether to enable sprinkling, that is: enable extracting groundwater for irrigation.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>boolean</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_model</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Specifies the MODFLOW 6 model name to which MetaSWAP will be coupled.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_msw_recharge_pkg</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_msw_well_pkg</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_msw_node_map</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Path to the file specifying the mapping between MODFLOW 6 cells and MetaSWAP svats.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_msw_recharge_pkg</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Path to the file specifying the mapping between MODFLOW 6 recharge cells and MetaSWAP svats.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<table class="table">
+<caption>mf6_msw_sprinkling_map</caption>
+<colgroup>
+<col style="width: 11%">
+<col style="width: 88%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>description</td>
+<td>Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
+</tr>
+<tr class="even">
+<td>type</td>
+<td>string</td>
+</tr>
+<tr class="odd">
+<td>required</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -512,10 +885,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./coupler_index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coupler_metamod_config.html" class="pagination-link">
-        <span class="nav-page-text">Configuration</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./coupler_metamod_technical.html" class="pagination-link">
+        <span class="nav-page-text">Technical Reference</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

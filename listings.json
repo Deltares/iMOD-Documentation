@@ -11,14 +11,6 @@
     ]
   },
   {
-    "listing": "/tutorial_index.html",
-    "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html"
-    ]
-  },
-  {
     "listing": "/practical_index.html",
     "items": [
       "/practical_cookiecutter.html",
@@ -28,6 +20,14 @@
       "/practical_parallel.html",
       "/practical_powershell.html",
       "/practical_look_like_a_pro.html"
+    ]
+  },
+  {
+    "listing": "/tutorial_index.html",
+    "items": [
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html"
     ]
   }
 ]
