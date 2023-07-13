@@ -3,7 +3,10 @@ title: Technical Reference
 ---
 
 
-This document describes how MetaSWAP and MODFLOW6 are coupled. It is intended for groundwater modellers, who need to know which variables are exchanged between computational kernels and at which moment. For details of the inner workings of the code, we refer to the docstrings in the code.
+This document describes how MetaSWAP and MODFLOW6 are coupled. It is intended
+for groundwater modellers, who need to know which variables are exchanged
+between computational kernels and at which moment. For details of the inner
+workings of the code, we refer to the docstrings in the code.
 
 Below is a flowchart showing the order in which one timestep is iteratively solved and when data is exchanged between MetaSWAP and MODFLOW6.
 
@@ -11,7 +14,8 @@ Below is a flowchart showing the order in which one timestep is iteratively solv
 
 # Requirements
 
-- Currently only confined flow is supported, similar to a previous implementation of MetaSWAP-MODFLOW coupling.
+- Currently only confined flow is supported, similar to a previous
+  implementation of MetaSWAP-MODFLOW coupling.
 - Both the specific storage and the storage coefficient option of MODFLOW 6 are supported.
 - A recharge package (RCH) is required in the MODFLOW 6 model to facilitate the recharge flux of MetaSWAP.
 - A well package (WEL) is required in the MODFLOW 6 to facilitate the extraction of groundwater for MetaSWAP's sprinkling.
@@ -24,23 +28,32 @@ Below is a flowchart showing the order in which one timestep is iteratively solv
 
 ### Heads
 
-MODFLOW sets the heads in MetaSWAP, to be specific the `hgwmodf` variable. When multiple svats are coupled to one MODFLOW cell, each svat is given MODFLOW's head. When multiple MODFLOW cells are coupled to one svat, the arithmetic average is taken.
+MODFLOW sets the heads in MetaSWAP, to be specific the `hgwmodf` variable. When
+multiple svats are coupled to one MODFLOW cell, each svat is given MODFLOW's
+head. When multiple MODFLOW cells are coupled to one svat, the arithmetic
+average is taken.
 
 ## MetaSWAP to MODFLOW
 
 MetaSWAP provides a recharge, sets the storage, and extracts groundwater from deeper layers for sprinkling (if switched on).
 
 ### Storage
-
-MetaSWAP sets the storage in coupled MODFLOW cells. When multiple svats are coupled to one MODFLOW cell, storages are summed. Note that, in case the summed area of the svats is less than the MODFLOW cell area, the total storage of the remaining area is assumed zero.
+q
 
 ### Recharge
 
-Recharge is provided by MetaSWAP to MODFLOW. MetaSWAP internally stores volumes that should be provided to MODFLOW, so these are converted to rates by dividing by the timestep length. When multiple svats are coupled to one MODFLOW cell, recharge rates are summed.
+Recharge is provided by MetaSWAP to MODFLOW. MetaSWAP internally stores volumes
+that should be provided to MODFLOW, so these are converted to rates by dividing
+by the timestep length. When multiple svats are coupled to one MODFLOW cell,
+recharge rates are summed.
 
 ### Sprinkling
 
-Groundwater extraction rates to set sprinkling are computed by MetaSWAP based on irrigation requirements. MetaSWAP internally stores volumes that should be provided to MODFLOW, so these are converted to rates by dividing by the timestep length. When multiple svats are coupled to one MODFLOW cell, extraction rates are summed.
+Groundwater extraction rates to set sprinkling are computed by MetaSWAP based on
+irrigation requirements. MetaSWAP internally stores volumes that should be
+provided to MODFLOW, so these are converted to rates by dividing by the timestep
+length. When multiple svats are coupled to one MODFLOW cell, extraction rates
+are summed.
 
 # Files
 
@@ -67,16 +80,18 @@ Below we will describe the format for each file.
 
 ### mod2svat.inp
 
-The file format for this file is also described in the [SIMGRO IO manual](ftp://ftp.wur.nl/simgro/doc/Report_913_3_V8_0_0_7.pdf). It is as follows:
+The file format for this file is also described in the [SIMGRO IO manual](ftp://ftp.wur.nl/simgro/doc/Report_913_3_V8_0_0_7.pdf).
+It is as follows:
 
 ```
 node_nr svat ly
 ...
 ```
 
-Were `node_nr` is the MODFLOW6 node number (to be specific: the user node number), which replaces the MODFLOW 2005 CellID. 
-`svat` is the MetaSWAP svat number and `ly` is the MODFLOW layer number.
-Note that the format for this file should be fixed to
+Were `node_nr` is the MODFLOW6 node number (to be specific: the user node
+number), which replaces the MODFLOW 2005 CellID. `svat` is the MetaSWAP svat
+number and `ly` is the MODFLOW layer number. Note that the format for this file
+should be fixed to
 
 ```python
 f"{nodenr:10d}  {svat:10d}{ly:2d}"
