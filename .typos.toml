@@ -1,0 +1,6 @@
+[files]
+extend-exclude = ["*.css", "*.png", "*.svg"]
+
+[default.extend-words]
+# Ignore false-positives
+Stichting = "Stichting"

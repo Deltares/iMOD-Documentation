@@ -8,7 +8,7 @@ index: 3
 useful and powerful tool to create reproducible workflows.
 
 Usually (or ideally\...) our modelling workflows consist of a set of scripts or
-calls to excecutables that exchange intermediate files, in order to convert raw
+calls to executables that exchange intermediate files, in order to convert raw
 data to model output that can be analyzed. The graph of these workflows usually
 does not look like a straight pipeline, but more often like a chaotic network
 (a plate of spaghetti for larger workflows), because some files influence
@@ -190,7 +190,7 @@ Snakemake will run the complete workflow.
 ### Parameters
 
 Sometimes you just want to pass a number or string to a rule and not
-create a seperate file for this. This can specified under the `params`
+create a separate file for this. This can specified under the `params`
 keyword.
 
 ``` 
@@ -279,7 +279,7 @@ Often the execution of steps either requires or produces multiple files
 that have a very similar makeup. For example iMOD can produce output
 files names `head_l1.idf`, `head_l2.idf`, `head_l3.idf` etc.
 
-Specifiying these all in the Snakefile requires too much manual labour
+Specifying these all in the Snakefile requires too much manual labour
 and leads to a cluttered snakefile. Therefore, Snakemake has a builtin
 [expand](https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#the-expand-function)
 function which lets you expand a template string with wildcards into a
@@ -390,7 +390,7 @@ rule run_model:
       r".\src\3-model\run_model.bat data\4-output\scenario_1> .\data\4-output\scenario_1\std.out"
 ```
 
-The call `temp()` ensures all these .IDFs are removed after succesful
+The call `temp()` ensures all these .IDFs are removed after successful
 conversion!
 
 ## Parallel execution
@@ -447,7 +447,7 @@ rule run_model:
 
 We need the wildcards keyword under the shell command to expand scenario
 numbers before sending the string to the shell. Note that snakemake
-requires one rule that \"collects\" all seperate groups, in this case
+requires one rule that \"collects\" all separate groups, in this case
 the rule `all`.
 
 You can then consequently run these tasks in parallel on three cores by

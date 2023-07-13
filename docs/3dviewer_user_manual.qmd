@@ -239,7 +239,7 @@ viewer is currently trying to display. Since the time discretization can be
 different per dataset and we can show different datasets and grids
 simultaneously, it is not guaranteed that all datasets currently in the viewer
 can be shown for this specific time! Hence, in the sidebar it is shown at what
-time the datasets are actually diplayed (2).
+time the datasets are actually displayed (2).
 
 The viewer time can be selected using the slider. It varies over the temporal
 range of all displayed datasets combined- this means that when you display

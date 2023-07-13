@@ -42,7 +42,7 @@ files.
 
 1. **iMOD Python**: A Python package to support MODFLOW groundwater
 modeling. It makes it easy to go from your raw data to a fully defined MODFLOW
-model, with the aim to make this workflow reproducable. 
+model, with the aim to make this workflow reproducible. 
 
 1. **iMOD Coupler**: Software that couples MODFLOW 6 to other computational
 cores. It currently supports a coupling to MetaSWAP, but additional
