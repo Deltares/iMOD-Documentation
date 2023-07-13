@@ -90,29 +90,48 @@ Note the two whitespaces between `nodenr` and `svat`.
 
 ### [filename].rch
 
-A dummy recharge file, of which the fluxes will be overrided. The location of the recharge cells is used to assign an recharge index by Modflow6. The file format of the .rch file is described here. To specify an uncoupled recharge as well, a second RCH package should be defined. How to define a second stress package is explained here. Please note that in the model name file the package name should correspond to the package name specified in the [configuration file](./coupler_metamod_config.qmd).
+A dummy recharge file, of which the fluxes will be overrided. The location of
+the recharge cells is used to assign an recharge index by Modflow6. The file
+format of the .rch file is described here. To specify an uncoupled recharge as
+well, a second RCH package should be defined. How to define a second stress
+package is explained here. Please note that in the model name file the package
+name should correspond to the package name specified in the
+[configuration file](./coupler_metamod_config.qmd).
 
 ### [filename].wel
 
-A dummy well file, of which the fluxes will be overrided. The location of the wells is used to assign a well index by Modflow6. The file format of the .wel file is described here. To specify uncoupled extractions/injections as well, a second WEL package should be defined. How to define a second stress package is explained here. Please note that the package name in the [model name file](https://modflow6.readthedocs.io/en/latest/_mf6io/gwf-nam.html#block-packages) should correspond to the package name specified in the [configuration file](./coupler_metamod_config.qmd).
+A dummy well file, of which the fluxes will be overrided. The location of the
+wells is used to assign a well index by Modflow6. The file format of the .wel
+file is described here. To specify uncoupled extractions/injections as well, a
+second WEL package should be defined. How to define a second stress package is
+explained here. Please note that the package name in the
+[model name file](https://modflow6.readthedocs.io/en/latest/_mf6io/gwf-nam.html#block-packages)
+should correspond to the package name specified in the
+[configuration file](./coupler_metamod_config.qmd).
 
 ## Coupler
 
 ### nodenr2svat.dxc
 
-This file takes care of mapping the MODFLOW node numbers to the MetaSWAP svats, which is required for coupling the heads and storages of both kernels, it thus excludes nodes connected where wells are for sprinkling. The file format is as follows:
+This file takes care of mapping the MODFLOW node numbers to the MetaSWAP svats,
+which is required for coupling the heads and storages of both kernels, it thus
+excludes nodes connected where wells are for sprinkling. The file format is as
+follows:
 
 ```
 node_nr svat ly
 ...
 ```
 
-Where `node_nr` is the MODFLOW6 node number (to be specific: the user node number), which replaces the MODFLOW 2005 CellID. `svat` is the MetaSWAP svat number and `ly` is the Modflow layer number.
+Where `node_nr` is the MODFLOW6 node number (to be specific: the user node
+number), which replaces the MODFLOW 2005 CellID. `svat` is the MetaSWAP svat
+number and `ly` is the Modflow layer number.
 
 
 ### rchindex2svat.dxc
 
-This file takes care of mapping the recharge cells to the MetaSWAP svats. The file format is as follows:
+This file takes care of mapping the recharge cells to the MetaSWAP svats. 
+The file format is as follows:
 
 ```
 rch_index svat ly
@@ -120,11 +139,14 @@ rch_index svat ly
 ```
 
 
-Where `rch_index` is the MODFLOW6 RCH index number, which equals the row number of the data specified under `period` in the `.rch` file. `svat` is the MetaSWAP svat number and `ly` is the MODFLOW layer number.
+Where `rch_index` is the MODFLOW6 RCH index number, which equals the row number
+of the data specified under `period` in the `.rch` file. `svat` is the MetaSWAP
+svat number and `ly` is the MODFLOW layer number.
 
 ### wellindex2svat.dxc
 
-This file takes care of mapping MODFLOW wells to the MetaSWAP svats for sprinkling. The file format is as follows:
+This file takes care of mapping MODFLOW wells to the MetaSWAP svats for sprinkling.
+The file format is as follows:
 
 ```
 well_index svat ly
@@ -132,7 +154,9 @@ well_index svat ly
 ```
 
 
-Where `well_index` is the MODFLOW6 WEL index number, which equals the row number of the data specified under `period` in the `.wel` file. `svat` is the MetaSWAP svat number and `ly` is the MODFLOW layer number.
+Where `well_index` is the MODFLOW6 WEL index number, which equals the row number
+of the data specified under `period` in the `.wel` file. `svat` is the MetaSWAP
+svat number and `ly` is the MODFLOW layer number.
 
 # How to define a second stress package for MODFLOW6
 
@@ -155,4 +179,6 @@ end packages
 ```
 
 
-The argument values `WELLS_MSW` and `WELL2`, specify the package names to be printed in the water budget .lst file. In the configuration file, you have to specify which package name is used for the coupling.
+The argument values `WELLS_MSW` and `WELL2`, specify the package names to be
+printed in the water budget .lst file. In the configuration file, you have to
+specify which package name is used for the coupling.
