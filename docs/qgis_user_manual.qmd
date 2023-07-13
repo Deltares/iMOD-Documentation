@@ -101,7 +101,7 @@ files are supported.
 -   The \"Select\" group contains a set of buttons to spatially select
     data to be forwarded to the 3D viewer
     -   The \"Draw fence diagram\" button allows to draw lines on the
-        map canvas which can be forwared to the 3D viewer to draw a
+        map canvas which can be forwarded to the 3D viewer to draw a
         fence diagram. Press the button to start drawing mode.
         Left-click to start drawing a line; right-click to stop drawing
         the line.

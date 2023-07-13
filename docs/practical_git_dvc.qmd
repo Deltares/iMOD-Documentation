@@ -69,7 +69,7 @@ may seem a bit cumbersome, as you have to commit data first to DVC, and
 then its version code to Git, but this allows the user to utilize the
 full potential of both Github as well as Cloud Storages (Like Amazon S3,
 Google Cloud, Microsoft Azure etc.). The version history is all stored
-in Git and can be pushed to Github or Gitlab, but the data itsself can
+in Git and can be pushed to Github or Gitlab, but the data itself can
 be stored on different platforms more specialized in handling large
 files.
 
