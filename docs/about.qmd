@@ -30,7 +30,7 @@ Developments on iMOD started in 2006, with the aim to make groundwater
 modelling with MODFLOW easier. iMOD developed into a full fletched GUI, which
 could be used to build and analyse groundwater models from start to finish.
 Focus of the software always has been on large groundwater models, for which
-the software was so succesful that most regional groundwater models owned by
+the software was so successful that most regional groundwater models owned by
 water boards in Netherlands, plus the Dutch National model (LHM), run on iMOD.
 In 2014, in Deltares' move to make their software open source, the Fortran code
 of iMOD was shared and in 2015 the compiled executables became freely
@@ -131,7 +131,7 @@ website](https://softwaredays.deltares.nl/) and via the iMOD mailing list, so
 keep an eye out on those.
 
 In 2021, the Delft Software Days were not held in person but recorded as
-webinars, which can be viewed online. Note that due to privacy seetings, you
+webinars, which can be viewed online. Note that due to privacy settings, you
 might need follow the link below the video to view it on the Deltares Vimeo
 page.
 

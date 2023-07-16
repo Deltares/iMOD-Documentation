@@ -105,7 +105,7 @@ Note the two whitespaces between `nodenr` and `svat`.
 
 ### [filename].rch
 
-A dummy recharge file, of which the fluxes will be overrided. The location of
+A dummy recharge file, of which the fluxes will be overridden. The location of
 the recharge cells is used to assign an recharge index by Modflow6. The file
 format of the .rch file is described here. To specify an uncoupled recharge as
 well, a second RCH package should be defined. How to define a second stress
@@ -115,7 +115,7 @@ name should correspond to the package name specified in the
 
 ### [filename].wel
 
-A dummy well file, of which the fluxes will be overrided. The location of the
+A dummy well file, of which the fluxes will be overridden. The location of the
 wells is used to assign a well index by Modflow6. The file format of the .wel
 file is described here. To specify uncoupled extractions/injections as well, a
 second WEL package should be defined. How to define a second stress package is

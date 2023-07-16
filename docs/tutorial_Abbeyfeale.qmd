@@ -159,7 +159,7 @@ In the empty cross-section we can add a selection of (geological) layers. For no
 
 To complete the cross section, let us also add the digital elevation map to the cross-section manager. 
 
-(@) From the dropdown menu now select the layer Abbeyfeale DTM. We do not nead to select a Variable 
+(@) From the dropdown menu now select the layer Abbeyfeale DTM. We do not need to select a Variable 
 (@) Click the button *Add* to add this layer to the cross-section manager below. 
 (@) Click the button *Plot* to draw both layers in the cross section. 
 
@@ -221,7 +221,7 @@ This script opens the shape file with recharge zones (polygons) containing the r
 Results 3: The result is a mesh file (NetCDF format) for the recharge data, containing data for 365 days. This NC file must be loaded as mesh in stead of a raster. 
 
 (@) From the menu *Layer > Add layer > Add Mesh Layer...* load the file “…\\iMOD-Suite-Tutorial_01\\data\\2-interim\\recharge_mesh.nc” into QGIS. 
-From the panel Layer you can see that the file is a timeseries because a small clock symbol is visable ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
+From the panel Layer you can see that the file is a timeseries because a small clock symbol is visible ![](figures/tutorial/viewer/button_clockquestion.png){width=8%}. 
 
 There are 2 ways to visualize this recharge over time: 
 
@@ -248,7 +248,7 @@ Your display should look similar with @fig-figure_RCH-in-TemporalController-and-
 <ins>Script 4 – Geohydrology</ins>
 This script reads default parameter values from the file “parameters.csv” in order to create a NetCDF file with top and bottom of 3 layers including the geohydraulic parameters. The default values are: \newline 
 
-| Paremeter  | Value | Quantity |Description |
+| Parameter  | Value | Quantity |Description |
 |---------|:-----|:------:|:------|
 | K_tz | 5.9 | m/d | Permeability Transition Zone |
 | K_sb | 0.02 | m/d | Permeability Shallow Bed rock |
@@ -256,7 +256,7 @@ This script reads default parameter values from the file “parameters.csv” in
 | D_tz | 1 | m | Thickness transition zone |
 | D_sb | 5 | m | Thickness shallow bed rock zone |
 | D_db | 50 | m | Thickness deep bed rock zone |
-: Paremeter values
+: Parameter values
 
 (@) In the Deltaforge prompt type the command: *Python src\\1-prepare\\4-create-hydrogeology.py* and press ENTER.  
 

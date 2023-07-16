@@ -30,8 +30,8 @@ as a user by either:
 
 Currently the IPF reader is not able to read every IPF file, as iMOD 5 supports
 quite a wide range of IPF files. For example, iMOD 5 supports both whitespace
-and comma seperated files, whereas the QGIS plugin only supports comma
-seperated IPF files. If the plugin is unable to read your IPF file, it is best
+and comma separated files, whereas the QGIS plugin only supports comma
+separated IPF files. If the plugin is unable to read your IPF file, it is best
 to [read the file with iMOD
 Python](https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html)
 and consequently [write it
@@ -52,7 +52,7 @@ function properly with these Windows versions.
 
 You might get an error at startup of the 3D viewer, such as: *\"The code
 execution cannot proceed because MSVCR100.dll was not found.
-Reinstalling the progam may fix the problem\"*
+Reinstalling the program may fix the problem\"*
 
 This usually happens on a clean machine, which has not yet installed the
 Microsoft Visual C++ 2010 redistributable. [You can download it

@@ -69,7 +69,7 @@ may seem a bit cumbersome, as you have to commit data first to DVC, and
 then its version code to Git, but this allows the user to utilize the
 full potential of both Github as well as Cloud Storages (Like Amazon S3,
 Google Cloud, Microsoft Azure etc.). The version history is all stored
-in Git and can be pushed to Github or Gitlab, but the data itsself can
+in Git and can be pushed to Github or Gitlab, but the data itself can
 be stored on different platforms more specialized in handling large
 files.
 
@@ -162,7 +162,7 @@ Commander by clicking:
 It is convenient for later to add the file extensions of files you want
 to keep in dvc in the `.gitignore` file, e.g. `*.idf`. Or you could add
 your data folder (e.g. `data`) to this file to exclude everything in it
-by specifiying `data/`.
+by specifying `data/`.
 :::
 
 ::: {.callout-note}
@@ -250,7 +250,7 @@ control by calling:
 The `-m` option allows you to specify a string that will be
 your commit message.
 
-But what if you accidentily made an error in your message? You can then
+But what if you accidentally made an error in your message? You can then
 change it using:
 
 ```bash
@@ -330,9 +330,9 @@ still add the `rivers.dvc` file.
 
 To summarize, the data backups are stored in the `.dvc` folder, the log
 of changes in the `.git` folder. This allows us to send the data
-seperately to a data cloud oriented to handling large data files (Google
+separately to a data cloud oriented to handling large data files (Google
 Cloud, Amazon S3, Azure etc.), and to send the `.git` folder to Github
-or Gitlab to have a nicely browseable version history.
+or Gitlab to have a nicely browsable version history.
 
 ### Updating data
 
@@ -447,7 +447,7 @@ referring to the specific files:
 ### Pushing to remote {#pushing_to_remote}
 
 Up to now you have learned how to safely store scripts and data locally,
-but what if your hard-drive crashes? Or if you accidentily shift+delete
+but what if your hard-drive crashes? Or if you accidentally shift+delete
 your whole repository? In those cases you wished you also stored your
 repository somewhere else! That\'s why Git, as well as DVC, allow you to
 push your repository to a remote.
@@ -496,7 +496,7 @@ You can then push to google-drive by calling:
 
 ### Cloning an existing repository
 
-It is also possible to easily create a local copy of an exisiting
+It is also possible to easily create a local copy of an existing
 repository. You can tell git to clone a remote repository into the
 current directory with:
 
