@@ -247,7 +247,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Start up QGIS, go to <em>Plugins &gt; Manage and Install plugins &gt; Installed</em>. Make sure the iMOD plugin is ticked.</p>
 <img src="figures/qgis/qgis-installed-plugins.png" class="img-fluid" alt="The QGIS plugin manager. Here you can install and activate plugins."></li>
 </ol>
-<p>If the installation and configuration was succesful, the plugin should be visible in your toolbar.</p>
+<p>If the installation and configuration was successful, the plugin should be visible in your toolbar.</p>
 <blockquote class="blockquote">
 <img src="figures/qgis/imod-toolbar.png" class="img-fluid" alt="The iMOD plugin toolbar">
 </blockquote>
@@ -279,7 +279,7 @@ Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Currently the IPF reader is not able to read every IPF file, as iMOD 5 supports quite a wide range of IPF files. For example, iMOD 5 supports both whitespace and comma seperated files, whereas the QGIS plugin only supports comma seperated IPF files. If the plugin is unable to read your IPF file, it is best to <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html">read the file with iMOD Python</a> and consequently <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html">write it again</a>. This can help, because the IPF reader in iMOD Python is a lot more flexible, but its writer always writes to a specific format. We plan to improve the flexibility of the plugin's IPF reader.</p>
+<p>Currently the IPF reader is not able to read every IPF file, as iMOD 5 supports quite a wide range of IPF files. For example, iMOD 5 supports both whitespace and comma separated files, whereas the QGIS plugin only supports comma separated IPF files. If the plugin is unable to read your IPF file, it is best to <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html">read the file with iMOD Python</a> and consequently <a href="https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html">write it again</a>. This can help, because the IPF reader in iMOD Python is a lot more flexible, but its writer always writes to a specific format. We plan to improve the flexibility of the plugin's IPF reader.</p>
 </div>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -313,7 +313,7 @@ Warning
 </ul></li>
 <li>The "Select" group contains a set of buttons to spatially select data to be forwarded to the 3D viewer
 <ul>
-<li>The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwared to the 3D viewer to draw a fence diagram. Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.</li>
+<li>The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwarded to the 3D viewer to draw a fence diagram. Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.</li>
 <li>The "Clear fence diagram" button clears all lines from the map canvas</li>
 <li>The "Draw extent" buttons allows you to click and drag a box that allows you to set a bounding box. The iMOD viewer will only load the data within this boundary box, which can be useful when exploring specific areas in large datasets. Drawing an bounding box will update the "Extent" widget. Right-click to stop drawing the extent.</li>
 </ul></li>

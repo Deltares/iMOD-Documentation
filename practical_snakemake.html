@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 <p><a href="https://snakemake.readthedocs.io/en/stable/">Snakemake</a> is a very useful and powerful tool to create reproducible workflows.</p>
-<p>Usually (or ideally...) our modelling workflows consist of a set of scripts or calls to excecutables that exchange intermediate files, in order to convert raw data to model output that can be analyzed. The graph of these workflows usually does not look like a straight pipeline, but more often like a chaotic network (a plate of spaghetti for larger workflows), because some files influence multiple steps. Quite often some of this input changes, or a certain script changes. Since we also often process large datasets, we do not want to re-run every step again with every change, but instead only re-run the necessary steps. Snakemake does this bookkeeping for us.</p>
+<p>Usually (or ideally...) our modelling workflows consist of a set of scripts or calls to executables that exchange intermediate files, in order to convert raw data to model output that can be analyzed. The graph of these workflows usually does not look like a straight pipeline, but more often like a chaotic network (a plate of spaghetti for larger workflows), because some files influence multiple steps. Quite often some of this input changes, or a certain script changes. Since we also often process large datasets, we do not want to re-run every step again with every change, but instead only re-run the necessary steps. Snakemake does this bookkeeping for us.</p>
 <p>Below a graph created for an <a href="https://gitlab.com/deltares/imod/california_model">example workflow</a>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -320,7 +320,7 @@ rule plot_heads:
 </section>
 <section id="parameters" class="level3">
 <h3 class="anchored" data-anchor-id="parameters">Parameters</h3>
-<p>Sometimes you just want to pass a number or string to a rule and not create a seperate file for this. This can specified under the <code>params</code> keyword.</p>
+<p>Sometimes you just want to pass a number or string to a rule and not create a separate file for this. This can specified under the <code>params</code> keyword.</p>
 <pre><code>rule all:
  input:
    "reports/figures/head.png"
@@ -376,7 +376,7 @@ rule plot_heads:
 <section id="multiple-files" class="level2">
 <h2 class="anchored" data-anchor-id="multiple-files">Multiple files</h2>
 <p>Often the execution of steps either requires or produces multiple files that have a very similar makeup. For example iMOD can produce output files names <code>head_l1.idf</code>, <code>head_l2.idf</code>, <code>head_l3.idf</code> etc.</p>
-<p>Specifiying these all in the Snakefile requires too much manual labour and leads to a cluttered snakefile. Therefore, Snakemake has a builtin <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#the-expand-function">expand</a> function which lets you expand a template string with wildcards into a list.</p>
+<p>Specifying these all in the Snakefile requires too much manual labour and leads to a cluttered snakefile. Therefore, Snakemake has a builtin <a href="https://snakemake.readthedocs.io/en/stable/snakefiles/rules.html#the-expand-function">expand</a> function which lets you expand a template string with wildcards into a list.</p>
 <p>Say our visualize_heads script produces figure for all days, named <code>head_2012-09-01.png</code>, <code>head_2012-09-02.png</code> etc.</p>
 <p>We can specify all these figures with:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -449,7 +449,7 @@ rule plot_heads:
 <span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_1/head"</span>)),</span>
 <span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>   shell:</span>
 <span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>      <span class="co">r".\src</span><span class="ch">\3</span><span class="co">-model</span><span class="ch">\r</span><span class="co">un_model.bat data</span><span class="ch">\4</span><span class="co">-output\scenario_1&gt; .\data</span><span class="ch">\4</span><span class="co">-output\scenario_1\std.out"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The call <code>temp()</code> ensures all these .IDFs are removed after succesful conversion!</p>
+<p>The call <code>temp()</code> ensures all these .IDFs are removed after successful conversion!</p>
 </section>
 <section id="parallel-execution" class="level2">
 <h2 class="anchored" data-anchor-id="parallel-execution">Parallel execution</h2>
@@ -486,7 +486,7 @@ rule plot_heads:
 <span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>      temp(directory(<span class="st">"data/4-output/scenario_</span><span class="sc">{scenario}</span><span class="st">/head"</span>)),</span>
 <span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>   shell:</span>
 <span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>      <span class="co">r".\src</span><span class="ch">\3</span><span class="co">-model</span><span class="ch">\r</span><span class="co">un_model.bat data</span><span class="ch">\4</span><span class="co">-output\scenario_{wildcards.scenario}&gt; .\data</span><span class="ch">\4</span><span class="co">-output\scenario_{wildcards.scenario}\std.out"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We need the wildcards keyword under the shell command to expand scenario numbers before sending the string to the shell. Note that snakemake requires one rule that "collects" all seperate groups, in this case the rule <code>all</code>.</p>
+<p>We need the wildcards keyword under the shell command to expand scenario numbers before sending the string to the shell. Note that snakemake requires one rule that "collects" all separate groups, in this case the rule <code>all</code>.</p>
 <p>You can then consequently run these tasks in parallel on three cores by calling:</p>
 <pre><code>&gt;snakemake --cores 3</code></pre>
 

@@ -245,7 +245,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="dvc" class="level3">
 <h3 class="anchored" data-anchor-id="dvc">DVC</h3>
-<p><a href="https://dvc.org/">DVC</a> stands for Data Version Control and it does exactly that. It is built on top of Git and so it uses very similar commands, which can be both easy and confusing at the same time. DVC ensures your large files themselves are not tracked by Git. Instead, it keeps the large files in its own cache and writes simple text files, which store the unique "version code" (a <a href="https://en.wikipedia.org/wiki/Hash_function">hash</a>), each time you commit to DVC. These textfiles then have to be committed to Git. This may seem a bit cumbersome, as you have to commit data first to DVC, and then its version code to Git, but this allows the user to utilize the full potential of both Github as well as Cloud Storages (Like Amazon S3, Google Cloud, Microsoft Azure etc.). The version history is all stored in Git and can be pushed to Github or Gitlab, but the data itsself can be stored on different platforms more specialized in handling large files.</p>
+<p><a href="https://dvc.org/">DVC</a> stands for Data Version Control and it does exactly that. It is built on top of Git and so it uses very similar commands, which can be both easy and confusing at the same time. DVC ensures your large files themselves are not tracked by Git. Instead, it keeps the large files in its own cache and writes simple text files, which store the unique "version code" (a <a href="https://en.wikipedia.org/wiki/Hash_function">hash</a>), each time you commit to DVC. These textfiles then have to be committed to Git. This may seem a bit cumbersome, as you have to commit data first to DVC, and then its version code to Git, but this allows the user to utilize the full potential of both Github as well as Cloud Storages (Like Amazon S3, Google Cloud, Microsoft Azure etc.). The version history is all stored in Git and can be pushed to Github or Gitlab, but the data itself can be stored on different platforms more specialized in handling large files.</p>
 </section>
 </section>
 <section id="installation" class="level2">
@@ -317,7 +317,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>It is convenient for later to add the file extensions of files you want to keep in dvc in the <code>.gitignore</code> file, e.g.&nbsp;<code>*.idf</code>. Or you could add your data folder (e.g.&nbsp;<code>data</code>) to this file to exclude everything in it by specifiying <code>data/</code>.</p>
+<p>It is convenient for later to add the file extensions of files you want to keep in dvc in the <code>.gitignore</code> file, e.g.&nbsp;<code>*.idf</code>. Or you could add your data folder (e.g.&nbsp;<code>data</code>) to this file to exclude everything in it by specifying <code>data/</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -375,7 +375,7 @@ Warning
 <p>In our example, you can commit the added .gitignore file to your version control by calling:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">commit</span> <span class="at">-m</span> <span class="st">"Added file extensions to be ignored by Git."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The <code>-m</code> option allows you to specify a string that will be your commit message.</p>
-<p>But what if you accidentily made an error in your message? You can then change it using:</p>
+<p>But what if you accidentally made an error in your message? You can then change it using:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">commit</span> <span class="at">--amend</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will open up a text editor where you can alter your commit message.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -424,7 +424,7 @@ Warning
 <div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">add</span> <span class="at">-f</span> data/rivers.dvc </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">commit</span> <span class="at">-m</span> <span class="st">"Added river data"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We added the <code>-f</code> option to the <code>add</code> command, just in case you added the <em>data</em> folder to your <code>.gitignore</code> file. This forces git to still add the <code>rivers.dvc</code> file.</p>
-<p>To summarize, the data backups are stored in the <code>.dvc</code> folder, the log of changes in the <code>.git</code> folder. This allows us to send the data seperately to a data cloud oriented to handling large data files (Google Cloud, Amazon S3, Azure etc.), and to send the <code>.git</code> folder to Github or Gitlab to have a nicely browseable version history.</p>
+<p>To summarize, the data backups are stored in the <code>.dvc</code> folder, the log of changes in the <code>.git</code> folder. This allows us to send the data separately to a data cloud oriented to handling large data files (Google Cloud, Amazon S3, Azure etc.), and to send the <code>.git</code> folder to Github or Gitlab to have a nicely browsable version history.</p>
 </section>
 <section id="updating-data" class="level3">
 <h3 class="anchored" data-anchor-id="updating-data">Updating data</h3>
@@ -479,7 +479,7 @@ Note
 </section>
 <section id="pushing_to_remote" class="level3">
 <h3 class="anchored" data-anchor-id="pushing_to_remote">Pushing to remote</h3>
-<p>Up to now you have learned how to safely store scripts and data locally, but what if your hard-drive crashes? Or if you accidentily shift+delete your whole repository? In those cases you wished you also stored your repository somewhere else! That's why Git, as well as DVC, allow you to push your repository to a remote.</p>
+<p>Up to now you have learned how to safely store scripts and data locally, but what if your hard-drive crashes? Or if you accidentally shift+delete your whole repository? In those cases you wished you also stored your repository somewhere else! That's why Git, as well as DVC, allow you to push your repository to a remote.</p>
 <p>This has two benefits:</p>
 <ol type="1">
 <li>Your repository is safely stored somewhere else</li>
@@ -500,7 +500,7 @@ Note
 </section>
 <section id="cloning-an-existing-repository" class="level3">
 <h3 class="anchored" data-anchor-id="cloning-an-existing-repository">Cloning an existing repository</h3>
-<p>It is also possible to easily create a local copy of an exisiting repository. You can tell git to clone a remote repository into the current directory with:</p>
+<p>It is also possible to easily create a local copy of an existing repository. You can tell git to clone a remote repository into the current directory with:</p>
 <div class="sourceCode" id="cb27"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">clone</span> <span class="op">&lt;</span>http-address<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example, to clone the <a href="https://gitlab.com/deltares/imod/california_model">California model repository</a>, you can call:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> git <span class="ex">clone</span> <span class="op">&lt;</span>https://gitlab.com/deltares/imod/california_model.git<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
