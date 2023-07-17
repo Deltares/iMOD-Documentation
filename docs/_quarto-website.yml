@@ -11,17 +11,17 @@ website:
       - text: Introduction
         href: introduction.qmd
       - text: iMOD Viewer
-        href: viewer_index.qmd
+        href: viewer.qmd
       - text: iMOD Python
-        href: python_index.qmd
+        href: python.qmd
       - text: iMOD Coupler
-        href: coupler_index.qmd
+        href: coupler.qmd
       - text: "Tutorials"
-        href: tutorial_index.qmd
+        href: tutorial.qmd
       - text: "About"
         href: about.qmd
       - text: "Practical tips"
-        href: practical_index.qmd
+        href: practical.qmd
     right:
       - icon: github
         href: https://github.com/Deltares/iMOD-Documentation
@@ -34,7 +34,7 @@ website:
       collapse-level: 2
       align: left
       contents:
-        - href: viewer_index.qmd
+        - href: viewer.qmd
         - href: viewer_install.qmd
         - href: viewer_install_msi.qmd
         - href: qgis_user_manual.qmd
@@ -46,7 +46,7 @@ website:
       title: "iMOD Python"
       align: left
       contents:
-        - href: python_index.qmd
+        - href: python.qmd
         - href: python_install.qmd
         - href: deltaforge_install.qmd
         - href: python_getting_started.qmd
@@ -55,7 +55,7 @@ website:
       title: "iMOD Coupler"
       align: left
       contents:
-        - href: coupler_index.qmd
+        - href: coupler.qmd
         - section: "MetaSWAP - MODFLOW 6"
           contents:       
           - href: coupler_metamod_config.qmd
@@ -68,7 +68,7 @@ website:
       title: "Tutorials"
       align: left
       contents:
-        - href: tutorial_index.qmd
+        - href: tutorial.qmd
         - href: tutorial_Abbeyfeale.qmd
         - href: tutorial_Dommel.qmd
         - href: tutorial_wq.qmd

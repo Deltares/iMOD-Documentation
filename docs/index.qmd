@@ -5,11 +5,11 @@ listing:
     image-height: 250px
     contents:
         - introduction.qmd
-        - viewer_index.qmd
-        - python_index.qmd
-        - coupler_index.qmd
-        - tutorial_index.qmd
-        - practical_index.qmd
+        - viewer.qmd
+        - python.qmd
+        - coupler.qmd
+        - tutorial.qmd
+        - practical.qmd
     sort: "index"
 ---
 

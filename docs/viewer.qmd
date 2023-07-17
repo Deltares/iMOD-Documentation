@@ -17,4 +17,4 @@ The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.
   cross-section visualization, including borelogs, and
   connecting to the 3D Viewer.
 
-  ![](figures/viewer_index/example-dommel.png)
+  ![](figures/viewer/example-dommel.png)
