@@ -102,7 +102,7 @@ mf6_drainage_packages = ["drn_primary", "drn_secondary"]
 |---------------|----------------------------------------------------------------------------------------------------------------------|
 | description   | The path to the dependencies of Ribasim.                                                                             |
 | type          | string                                                                                                               |
-| required      | false                                                                                                                |
+| required      | true                                                                                                                |
 : dll_dep_dir
 
 |               |                                                                                                                      |
