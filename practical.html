@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Application for coupling hydrological kernels.">
+<meta name="description" content="Useful tips to use the iMOD Suite with other tools.">
 
-<title>iMOD Suite -  iMOD Coupler</title>
+<title>iMOD Suite -  Practical Tips</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,7 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_metamod_config.html" rel="next">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,12 +64,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="_static/styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -127,19 +125,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer_index.html" rel="" target="">
+    <a class="nav-link" href="./viewer.html" rel="" target="">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python_index.html" rel="" target="">
+    <a class="nav-link" href="./python.html" rel="" target="">
  <span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./coupler_index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./coupler.html" rel="" target="">
  <span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial_index.html" rel="" target="">
+    <a class="nav-link" href="./tutorial.html" rel="" target="">
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
@@ -147,7 +145,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./practical_index.html" rel="" target="">
+    <a class="nav-link active" href="./practical.html" rel="" target="" aria-current="page">
  <span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
@@ -163,99 +161,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_index.html"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">MetaSWAP - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Reference</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Ribasim - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribamod_config.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuration</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#coupling-to-modflow-6" id="toc-coupling-to-modflow-6" class="nav-link active" data-scroll-target="#coupling-to-modflow-6">Coupling to MODFLOW 6</a></li>
-  <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code">Source Code</a></li>
-  <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a>
-  <ul class="collapse">
-  <li><a href="#imod-v5.2-release" id="toc-imod-v5.2-release" class="nav-link" data-scroll-target="#imod-v5.2-release">iMOD v5.2 release</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</h1>
+<h1 class="title"><i class="fa-solid fa-hammer" aria-label="hammer"></i> Practical Tips</h1>
 </div>
 
 <div>
   <div class="description">
-    Application for coupling hydrological kernels.
+    Useful tips to use the iMOD Suite with other tools.
   </div>
 </div>
 
@@ -270,30 +194,172 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="coupling-to-modflow-6" class="level2">
-<h2 class="anchored" data-anchor-id="coupling-to-modflow-6">Coupling to MODFLOW 6</h2>
-<p>Deltares have worked together with the USGS to create the <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">MODFLOW API</a>, based on the <a href="https://bmi-spec.readthedocs.io/en/latest/">Basic Model Interface (BMI)</a> with some extensions. The first version of this functionality became available with the release of MODFLOW 6.2.0. BMI is a set of standard control and query functions that, when added to a model code, make that model both easier to learn and easier to couple with other software elements. Furthermore, the BMI makes it possible to control MODFLOW 6 execution from scripting languages using bindings for the BMI.</p>
-<p>We have also developed <a href="https://github.com/Deltares/xmipy">xmipy</a>, a Python package with bindings for the API, which allow you to run and update (at runtime) a MODFLOW 6 model from Python. This allows coupling MODFLOW 6 to other computational cores. One of its first applications is a coupling of MODFLOW 6 to MetaSWAP, as part of the <a href="https://github.com/Deltares/imod_coupler">iMOD Coupler</a> package. Other applications can be found in <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">this paper.</a></p>
-</section>
-<section id="source-code" class="level2">
-<h2 class="anchored" data-anchor-id="source-code">Source Code</h2>
-<p>The <code>xmipy</code> library can be found on: <a href="https://github.com/Deltares/xmipy" class="uri">https://github.com/Deltares/xmipy</a></p>
-<p>The iMOD Coupler can be found on: <a href="https://github.com/Deltares/imod_coupler" class="uri">https://github.com/Deltares/imod_coupler</a></p>
-</section>
-<section id="known-issues" class="level2">
-<h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
-<section id="imod-v5.2-release" class="level3">
-<h3 class="anchored" data-anchor-id="imod-v5.2-release">iMOD v5.2 release</h3>
-<p>The MetaSWAP and Modflow6 libraries provided with iMOD 5.2 for <code>imod_coupler</code> were not statically linked. This could result in the following error:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">FileNotFoundError</span>: <span class="st">'''Could not find module "\path</span><span class="ch">\t</span><span class="st">o\MetaSWAP.dll" (or one</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="st">of its dependencies). Try using the full path with constructor syntax.'''</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This is caused by not having the Intel redistrutable libraries on the system. <a href="https://software.intel.com/content/www/us/en/develop/articles/intel-compilers-redistributable-libraries-by-version.html">These can be downloaded from this page</a>. Make sure to choose the correct platform and the version for 'Parallel Studio XE 2020'.</p>
+<p>Listed here are practical tips how to use the iMOD Suite in combination with other tools for very performant workflows.</p>
 
 
-</section>
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="3">
+<a href="./practical_cookiecutter.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://assets.website-files.com/6189495a8f80ad3e20ebcf60/618e86f4d53488d751cb2fc9_logo%20(29).svg" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-stroopwafel" aria-label="stroopwafel"></i> Consistent folder structures with Cookiecutter
+</h5>
+<div class="card-text listing-description">
+Kickstart your projects with Cookiecutter
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="13">
+<a href="./practical_git_dvc.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://git-scm.com/images/logos/logomark-orange@2x.png" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Version control your projects
+</h5>
+<div class="card-text listing-description">
+Use Git and DVC to version control your model workflows
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="10">
+<a href="./practical_snakemake.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsnakemake.gallerycdn.vsassets.io%2Fextensions%2Fsnakemake%2Fsnakemake-lang%2F0.1.6%2F1621589607070%2FMicrosoft.VisualStudio.Services.Icons.Default&amp;f=1&amp;nofb=1&amp;ipt=5857ea7e189d3c7b23c5bce4cc375c6f417dad496289ab68203c940c0d7a646d&amp;ipo=images" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-diagram-project" aria-label="diagram-project"></i> Snakemake Tips <i class="fa-solid fa-staff-snake" aria-label="staff-snake"></i>
+</h5>
+<div class="card-text listing-description">
+Snakemake is a very useful and powerful tool to create reproducible workflows.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="2">
+<a href="./practical_messy_data.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/International_tidyman.svg/800px-International_tidyman.svg.png" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-dumpster" aria-label="dumpster"></i> Handling messy data
+</h5>
+<div class="card-text listing-description">
+Some tips in dealing with messy data, or – God forbid – to avoid producing it yourself.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="1">
+<a href="./practical_parallel.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="./figures/logo/iMOD.svg" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-arrows-turn-right" aria-label="arrows-turn-right"></i> Parallel MODFLOW
+</h5>
+<div class="card-text listing-description">
+Fix common issues when running iMODFLOW &amp; iMOD-WQ codes with MPI.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="1">
+<a href="./practical_powershell.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://deow9bq0xqvbj.cloudfront.net/image-logo/1769310/powershell.png" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-plug-circle-exclamation" aria-label="plug-circle-exclamation"></i> Powershell profile error
+</h5>
+<div class="card-text listing-description">
+Learn how to fix the Powershell profile error which can hamper using Visual Studio Code
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1689579686498" data-listing-reading-time-sort="3">
+<a href="./practical_look_like_a_pro.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img src="https://raw.githubusercontent.com/ryanoasis/nerd-fonts/38f76ec69fa3546784dd8beab3caf9c2ede9b92d/images/nerd-fonts-logo.svg" class="thumbnail-image card-img" style="height: 200px;">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+<i class="fa-solid fa-fire-flame-curved" aria-label="fire-flame-curved"></i> How to look like a pro
+</h5>
+<div class="card-text listing-description">
+Some general tips and tricks to make your editors and terminals look cool.
+</div>
+<div class="card-attribution card-text-small start">
+<div class="listing-author">
+
+</div>
+</div>
+</div>
+</div>
+</a>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -527,15 +593,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./coupler_metamod_config.html" class="pagination-link">
-        <span class="nav-page-text">Configuration</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Learn how to use the iMOD Suite">
+<meta name="description" content="Visualization of unstructured grids in GIS and 3D.">
 
-<title>iMOD Suite -  Tutorials</title>
+<title>iMOD Suite -  iMOD Viewer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,9 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./tutorial_Abbeyfeale.html" rel="next">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./viewer_install.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -65,38 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="_static/styles.css">
 </head>
@@ -126,19 +93,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer_index.html" rel="" target="">
+    <a class="nav-link active" href="./viewer.html" rel="" target="" aria-current="page">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python_index.html" rel="" target="">
+    <a class="nav-link" href="./python.html" rel="" target="">
  <span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./coupler_index.html" rel="" target="">
+    <a class="nav-link" href="./coupler.html" rel="" target="">
  <span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tutorial_index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./tutorial.html" rel="" target="">
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
@@ -146,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./practical_index.html" rel="" target="">
+    <a class="nav-link" href="./practical.html" rel="" target="">
  <span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
@@ -167,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_index.html"><i class="fa-solid fa-book" aria-label="book"></i> Tutorials</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./viewer.html"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -181,26 +148,44 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><i class="fa-solid fa-book" aria-label="book"></i> Tutorials</span></a>
+  <a href="./viewer.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_Abbeyfeale.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Abbeyfeale</span></a>
+  <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_Dommel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dommel</span></a>
+  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_wq.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Conceptual fresh-salt model</span></a>
+  <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QGIS Plugin User Manual</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3D Viewer User Manual</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_known_issues.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Known Issues</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./viewer_instruction_videos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instruction videos</span></a>
   </div>
 </li>
     </ul>
@@ -216,12 +201,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><i class="fa-solid fa-book" aria-label="book"></i> Tutorials</h1>
+<h1 class="title"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</h1>
 </div>
 
 <div>
   <div class="description">
-    Learn how to use the iMOD Suite
+    Visualization of unstructured grids in GIS and 3D.
   </div>
 </div>
 
@@ -236,86 +221,18 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>The iMOD-suite consists of several components, and combining these in different ways allows for different workflows. This “mix-and-match” capability benefits user flexibility, but it can be a bit daunting at start.</p>
-<p>Therefore, we have compiled a set of tutorials to help you get started and give you an overview of the Suite’s capabilities.</p>
-<p>To download and install the iMOD Suite, <a href="https://deltares.github.io/iMOD-Documentation/viewer_install.html">follow the instructions here</a>. To download the tutorial material, you can <a href="https://deltares.thegood.cloud/s/8JxcJK5jijijEQs">follow this link.</a></p>
+<p>The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.</p>
+<ul>
+<li><p>The iMOD 3D Viewer is a 3D viewer for grids and datasets. It supports IDF files, UGRID files and Grb.disu files that contain an unstructured layered grid.<br>
+The 3D Viewer also supports viewing some non-grid objects like IPF files and Shapefiles.</p></li>
+<li><p>The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS.<br>
+Its primary components are visualization of timeseries, both at points as well as on an unstructured grid, cross-section visualization, including borelogs, and connecting to the 3D Viewer.</p>
+<p><img src="figures/viewer/example-dommel.png" class="img-fluid"></p></li>
+</ul>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1689579323845" data-listing-reading-time-sort="18">
-<a href="./tutorial_Abbeyfeale.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/tutorial/viewer/figure_Timeseries-Heads-in-3-points.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Abbeyfeale
-</h5>
-<div class="card-text listing-description">
-Components: QGIS and iMOD plugin
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1689579323845" data-listing-reading-time-sort="7">
-<a href="./tutorial_wq.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/tutorial/wq/cross-section.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Conceptual fresh-salt model
-</h5>
-<div class="card-text listing-description">
-Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1689579323845" data-listing-reading-time-sort="5">
-<a href="./tutorial_Dommel.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/viewer/image13.png" class="thumbnail-image card-img" style="height: 150px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-Dommel
-</h5>
-<div class="card-text listing-description">
-Components: iMOD 3D Viewer
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -553,8 +470,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./tutorial_Abbeyfeale.html" class="pagination-link">
-        <span class="nav-page-text">Abbeyfeale</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./viewer_install.html" class="pagination-link">
+        <span class="nav-page-text">Install iMOD Viewer</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

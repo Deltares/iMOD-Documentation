@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Useful tips to use the iMOD Suite with other tools.">
+<meta name="description" content="Build large groundwater models with scripts">
 
-<title>iMOD Suite -  Practical Tips</title>
+<title>iMOD Suite -  iMOD Python</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,8 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
+<link href="./python_install.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -64,43 +63,12 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="_static/styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -125,19 +93,19 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer_index.html" rel="" target="">
+    <a class="nav-link" href="./viewer.html" rel="" target="">
  <span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python_index.html" rel="" target="">
+    <a class="nav-link active" href="./python.html" rel="" target="" aria-current="page">
  <span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./coupler_index.html" rel="" target="">
+    <a class="nav-link" href="./coupler.html" rel="" target="">
  <span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial_index.html" rel="" target="">
+    <a class="nav-link" href="./tutorial.html" rel="" target="">
  <span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
@@ -145,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./practical_index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./practical.html" rel="" target="">
  <span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
@@ -161,10 +129,51 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./python.html"><i class="fa-brands fa-python" aria-label="python"></i> iMOD Python</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><i class="fa-brands fa-python" aria-label="python"></i> iMOD Python</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./deltaforge_install.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install iMOD Python with Deltaforge</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./python_getting_started.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Getting started</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -174,12 +183,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><i class="fa-solid fa-hammer" aria-label="hammer"></i> Practical Tips</h1>
+<h1 class="title"><i class="fa-brands fa-python" aria-label="python"></i> iMOD Python</h1>
 </div>
 
 <div>
   <div class="description">
-    Useful tips to use the iMOD Suite with other tools.
+    Build large groundwater models with scripts
   </div>
 </div>
 
@@ -194,172 +203,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Listed here are practical tips how to use the iMOD Suite in combination with other tools for very performant workflows.</p>
+<p>The iMOD Python package is designed to help you in your MODFLOW groundwater modeling efforts. It makes it easy to go from your raw data to a fully defined MODFLOW model, with the aim to make this process reproducible. Whether you want to build a simple 2D conceptual model, or a complex 3D regional model with millions of cells, iMOD Python scales automatically by making use of <a href="https://dask.org/">dask</a>.</p>
+<p>By building on top of popular Python packages like <a href="http://xarray.pydata.org/">xarray</a>, <a href="http://pandas.pydata.org/">pandas</a>, <a href="https://rasterio.readthedocs.io/en/latest/">rasterio</a> and <a href="http://geopandas.org/">geopandas</a>, a lot of functionality comes for free.</p>
+<p>Currently we support the creation of the following MODFLOW-based models:</p>
+<ul>
+<li><a href="https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model">USGS MODFLOW 6</a>, currently only the Groundwater Flow packages</li>
+<li><a href="https://oss.deltares.nl/web/imod">iMODFLOW</a></li>
+<li><a href="https://oss.deltares.nl/web/imod">iMOD-WQ</a>, which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)</li>
+</ul>
+<p>Documentation: <a href="https://deltares.gitlab.io/imod/imod-python" class="uri">https://deltares.gitlab.io/imod/imod-python</a> This documentation includes a section "How do I" which can be used for common data conversions in imod-python or xarray. This section will be regular updated based on the different questions of users.</p>
+<p>Source code: <a href="https://gitlab.com/deltares/imod/imod-python" class="uri">https://gitlab.com/deltares/imod/imod-python</a></p>
 
 
 
-
-<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
-<div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="3">
-<a href="./practical_cookiecutter.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://assets.website-files.com/6189495a8f80ad3e20ebcf60/618e86f4d53488d751cb2fc9_logo%20(29).svg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-stroopwafel" aria-label="stroopwafel"></i> Consistent folder structures with Cookiecutter
-</h5>
-<div class="card-text listing-description">
-Kickstart your projects with Cookiecutter
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="13">
-<a href="./practical_git_dvc.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://git-scm.com/images/logos/logomark-orange@2x.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-code-branch" aria-label="code-branch"></i> Version control your projects
-</h5>
-<div class="card-text listing-description">
-Use Git and DVC to version control your model workflows
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="10">
-<a href="./practical_snakemake.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsnakemake.gallerycdn.vsassets.io%2Fextensions%2Fsnakemake%2Fsnakemake-lang%2F0.1.6%2F1621589607070%2FMicrosoft.VisualStudio.Services.Icons.Default&amp;f=1&amp;nofb=1&amp;ipt=5857ea7e189d3c7b23c5bce4cc375c6f417dad496289ab68203c940c0d7a646d&amp;ipo=images" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-diagram-project" aria-label="diagram-project"></i> Snakemake Tips <i class="fa-solid fa-staff-snake" aria-label="staff-snake"></i>
-</h5>
-<div class="card-text listing-description">
-Snakemake is a very useful and powerful tool to create reproducible workflows.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="2">
-<a href="./practical_messy_data.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/International_tidyman.svg/800px-International_tidyman.svg.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-dumpster" aria-label="dumpster"></i> Handling messy data
-</h5>
-<div class="card-text listing-description">
-Some tips in dealing with messy data, or – God forbid – to avoid producing it yourself.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="1">
-<a href="./practical_parallel.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="./figures/logo/iMOD.svg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-arrows-turn-right" aria-label="arrows-turn-right"></i> Parallel MODFLOW
-</h5>
-<div class="card-text listing-description">
-Fix common issues when running iMODFLOW &amp; iMOD-WQ codes with MPI.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="1">
-<a href="./practical_powershell.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://deow9bq0xqvbj.cloudfront.net/image-logo/1769310/powershell.png" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-plug-circle-exclamation" aria-label="plug-circle-exclamation"></i> Powershell profile error
-</h5>
-<div class="card-text listing-description">
-Learn how to fix the Powershell profile error which can hamper using Visual Studio Code
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1689579323841" data-listing-reading-time-sort="3">
-<a href="./practical_look_like_a_pro.html" class="quarto-grid-link">
-<div class="quarto-grid-item card h-100 card-left">
-<p class="card-img-top">
-<img src="https://raw.githubusercontent.com/ryanoasis/nerd-fonts/38f76ec69fa3546784dd8beab3caf9c2ede9b92d/images/nerd-fonts-logo.svg" class="thumbnail-image card-img" style="height: 200px;">
-</p>
-<div class="card-body post-contents">
-<h5 class="no-anchor card-title listing-title">
-<i class="fa-solid fa-fire-flame-curved" aria-label="fire-flame-curved"></i> How to look like a pro
-</h5>
-<div class="card-text listing-description">
-Some general tips and tricks to make your editors and terminals look cool.
-</div>
-<div class="card-attribution card-text-small start">
-<div class="listing-author">
-
-</div>
-</div>
-</div>
-</div>
-</a>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -593,6 +450,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./python_install.html" class="pagination-link">
+        <span class="nav-page-text">Install</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
