@@ -5,7 +5,7 @@ book:
   title: "iMOD Suite Tutorial"
   chapters:
     - index.qmd
-    - tutorial_index.qmd
+    - tutorial.qmd
     - tutorial_Abbeyfeale.qmd
     - tutorial_Dommel.qmd
 
