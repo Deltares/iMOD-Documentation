@@ -22,6 +22,7 @@ book:
       chapters:
         - coupler_metamod_config.qmd        
         - coupler_metamod_technical.qmd
+        - coupler_ribamod_config.qmd  
     - part: tutorial_index.qmd
       chapters:
         - tutorial_Abbeyfeale.qmd
