@@ -1,0 +1,137 @@
+---
+title: Configuration
+---
+
+The configuration file is necessary to describe the model and its dependencies.
+It is in the [toml](https://toml.io/en/) format and should have a `.toml`
+extension.
+
+Note that `toml` uses quote marks differently than `python`. Single quotes in
+toml (`''`) are interpreted similarly to how python would interpret a rawstring
+(`r''` or `r""`), whereas double quotes (`""`) are interpreted in a similar
+manner to regular strings in python (`""` or `''`). This matters for paths on
+Windows, for which we advice to use single quotes.
+
+```toml
+log_level = "INFO"
+timing = false
+driver_type = "ribamod"
+
+[driver.kernels.modflow6]
+dll = "./kernels/modflow6/libmf6.dll"
+work_dir = "./mf6_data"
+
+[driver.kernels.ribasim]
+dll = "./kernels/ribasim/bin/libribasim.dll"
+dll_dep_dir = "./kernels/ribasim/bin"
+config_file = "./ribasim_data/ribasim.toml"
+
+[[driver.coupling]]
+mf6_model = "inner_model"
+mf6_river_packages = ["riv_primary", "riv_secondary"]
+mf6_drainage_packages = ["drn_primary"]
+
+[[driver.coupling]]
+mf6_model = "outer_model"
+mf6_river_packages = ["riv_primary"]
+mf6_drainage_packages = ["drn_primary", "drn_secondary"]
+```
+
+
+## Config schema
+
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | This setting determines the severity and therefore the verbosity of the log messages.                                |
+| type          | string                                                                                                               |
+| required      | false                                                                                                                |
+| default       | INFO                                                                                                                 |
+| enum          | DEBUG, INFO, WARNING, ERROR, CRITICAL                                                                                |
+: log_level
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | Specifies whether the coupling should be timed. This option requires the log level to at least include INFO.         |
+| type          | boolean                                                                                                              |
+| required      | false                                                                                                                |
+| default       | false                                                                                                                |
+: timing
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | Specifies which driver should be used. Typically, this determines which hydrological kernels are coupled.            |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+| enum          | ribamod                                                                                                              |
+: driver_type
+
+### driver.kernels.modflow6
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The path to the MODFLOW 6 library.                                                                                   |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+: dll
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The path to the dependencies of MODFLOW 6.                                                                           |
+| type          | string                                                                                                               |
+| required      | false                                                                                                                |
+: dll_dep_dir
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The working directory MODFLOW 6 expects. This is the directory where the simulation name file resides.               |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+: work_dir
+
+### driver.kernels.ribasim
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The path to the Ribasim library.                                                                                     |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+: dll
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The path to the dependencies of Ribasim.                                                                             |
+| type          | string                                                                                                               |
+| required      | false                                                                                                                |
+: dll_dep_dir
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | The path to the Ribasim config file.                                                                                 |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+: config_file
+
+### driver.coupling
+
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | Specifies the MODFLOW 6 model name to which Ribasim will be coupled.                                                 |
+| type          | string                                                                                                               |
+| required      | true                                                                                                                 |
+: mf6_model
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | Specifies the river packages of MODFLOW 6 that will be coupled.                                                      |
+| type          | array of strings                                                                                                     |
+| required      | true                                                                                                                 |
+: mf6_river_packages
+
+|               |                                                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------------------|
+| description   | Specifies the drainage packages of MODFLOW 6 that will be coupled.                                                   |
+| type          | array of strings                                                                                                     |
+| required      | true                                                                                                                 |
+: mf6_drainage_packages
