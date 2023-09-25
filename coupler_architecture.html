@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite - Technical Reference</title>
+<title>iMOD Suite - Architecture</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_ribamod_config.html" rel="next">
-<link href="./coupler_metamod_config.html" rel="prev">
+<link href="./coupler_ribamod_config.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,6 +96,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="_static/styles.css">
@@ -168,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_metamod_technical.html">Technical Reference</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_architecture.html">Architecture</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -203,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_technical.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_metamod_technical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Technical Reference</span></a>
   </div>
 </li>
@@ -228,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_architecture.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_architecture.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
@@ -242,39 +244,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link active" data-scroll-target="#requirements">Requirements</a></li>
-  <li><a href="#data-exchanges" id="toc-data-exchanges" class="nav-link" data-scroll-target="#data-exchanges">Data exchanges</a>
-  <ul class="collapse">
-  <li><a href="#modflow-6-to-metaswap" id="toc-modflow-6-to-metaswap" class="nav-link" data-scroll-target="#modflow-6-to-metaswap">MODFLOW 6 to MetaSWAP</a>
-  <ul class="collapse">
-  <li><a href="#heads" id="toc-heads" class="nav-link" data-scroll-target="#heads">Heads</a></li>
-  </ul></li>
-  <li><a href="#metaswap-to-modflow" id="toc-metaswap-to-modflow" class="nav-link" data-scroll-target="#metaswap-to-modflow">MetaSWAP to MODFLOW</a>
-  <ul class="collapse">
-  <li><a href="#storage" id="toc-storage" class="nav-link" data-scroll-target="#storage">Storage</a></li>
-  <li><a href="#recharge" id="toc-recharge" class="nav-link" data-scroll-target="#recharge">Recharge</a></li>
-  <li><a href="#sprinkling" id="toc-sprinkling" class="nav-link" data-scroll-target="#sprinkling">Sprinkling</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#files" id="toc-files" class="nav-link" data-scroll-target="#files">Files</a>
-  <ul class="collapse">
-  <li><a href="#metaswap" id="toc-metaswap" class="nav-link" data-scroll-target="#metaswap">MetaSWAP</a>
-  <ul class="collapse">
-  <li><a href="#mod2svat.inp" id="toc-mod2svat.inp" class="nav-link" data-scroll-target="#mod2svat.inp">mod2svat.inp</a></li>
-  </ul></li>
-  <li><a href="#modflow-6" id="toc-modflow-6" class="nav-link" data-scroll-target="#modflow-6">MODFLOW 6</a>
-  <ul class="collapse">
-  <li><a href="#filename.rch" id="toc-filename.rch" class="nav-link" data-scroll-target="#filename.rch">[filename].rch</a></li>
-  <li><a href="#filename.wel" id="toc-filename.wel" class="nav-link" data-scroll-target="#filename.wel">[filename].wel</a></li>
-  </ul></li>
-  <li><a href="#coupler" id="toc-coupler" class="nav-link" data-scroll-target="#coupler">Coupler</a>
-  <ul class="collapse">
-  <li><a href="#nodenr2svat.dxc" id="toc-nodenr2svat.dxc" class="nav-link" data-scroll-target="#nodenr2svat.dxc">nodenr2svat.dxc</a></li>
-  <li><a href="#rchindex2svat.dxc" id="toc-rchindex2svat.dxc" class="nav-link" data-scroll-target="#rchindex2svat.dxc">rchindex2svat.dxc</a></li>
-  <li><a href="#wellindex2svat.dxc" id="toc-wellindex2svat.dxc" class="nav-link" data-scroll-target="#wellindex2svat.dxc">wellindex2svat.dxc</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#how-to-define-a-second-stress-package-for-modflow6" id="toc-how-to-define-a-second-stress-package-for-modflow6" class="nav-link" data-scroll-target="#how-to-define-a-second-stress-package-for-modflow6">How to define a second stress package for MODFLOW6</a></li>
+  <li><a href="#drivers" id="toc-drivers" class="nav-link active" data-scroll-target="#drivers">Drivers</a></li>
+  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration">Continuous Integration</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Technical Reference</h1>
+<h1 class="title">Architecture</h1>
 </div>
 
 
@@ -298,135 +269,77 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This document describes how MetaSWAP and MODFLOW6 are coupled. It is intended for groundwater modellers, who need to know which variables are exchanged between computational kernels and at which moment. For details of the inner workings of the code, we refer to the docstrings in the code.</p>
-<p>Below is a flowchart showing the order in which one timestep is iteratively solved and when data is exchanged between MetaSWAP and MODFLOW6.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./figures/coupler/MF6BMI_coupling.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">MF6BMI Coupling</figcaption>
-</figure>
+<p>The purpose of iMOD Coupler is to couple hydrological kernels. iMOD Coupler itself is written in Python, but the kernels are written in either Julia or Fortran. The most common way of interacting with libraries written in different languages is by letting them expose a C interface and compiling them as shared libraries.</p>
+<p>While not technically required, these libraries are expected to follow a variation of the Basic Model Interface or <a href="https://bmi-spec.readthedocs.io/en/latest/">BMI</a>. This describes a standardized way of controlling a modelling framework. It also allows to utilize the <a href="https://github.com/Deltares/xmipy"><code>xmipy</code></a> package, which wraps the C API into a Python API. On top of that, it is often convenient to add functions specific to the kernels. This is why Ribasim and MODFLOW 6 get a <a href="https://deltares.github.io/xmipy/xmipy.html#XmiWrapper"><code>XmiWrapper</code></a> subclass, that is called <code>ribasim_api</code> and <code>modflow_api</code> respectively.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+    libribasim.dll--&gt; xmipy_r[xmipy]
+    libmf6.dll --&gt; xmipy_m[xmipy]
+    xmipy_r --&gt; ribasim_api 
+    xmipy_m --&gt; modflow_api 
+    ribasim_api --&gt;  imodc[iMOD Coupler]
+    modflow_api --&gt;  imodc
+</pre>
 </div>
-<section id="requirements" class="level1">
-<h1>Requirements</h1>
+</div>
+</div>
+</div>
+<p>Most input data needs to be pre-processed in order to be suitable for the hydrological kernels. In the case of Ribasim this is handled by Ribasim Python, in the case of MODFLOW 6 it is handled by iMOD Python. However, the input data for the iMOD Coupler needs to be pre-processed as well. Coupling tables describe how the coupling takes place. In order to generate them, input data from all kernels are needed. The <code>primod</code> package wraps the functionality of the kernel pre-processors and generates the coupling data for iMOD Coupler.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+    ribasim_python[Ribasim Python] --&gt; primod
+    imod-python[iMOD Python] --&gt; primod
+    primod --&gt; ribasim[Ribasim]
+    primod --&gt; imodc
+    primod --&gt; modflow6[MODFLOW 6]
+    ribasim --&gt; imodc["iMOD Coupler"]
+    modflow6 --&gt; imodc
+</pre>
+</div>
+</div>
+</div>
+</div>
+<section id="drivers" class="level2">
+<h2 class="anchored" data-anchor-id="drivers">Drivers</h2>
+<p>Coupling Ribasim and MODFLOW 6 is only one of multiple coupling configurations. Each configuration is handled by an iMOD Coupler driver. A driver is a Python module under <code>imod_coupler/drivers</code>. At the minimum, it includes a subclass of the abstract class <code>Driver</code> as well as its own config under the <code>[[driver.coupling]]</code> namespace. A driver itself also includes a BMI interface, executing it then looks like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.initialize()</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">self</span>.get_current_time() <span class="op">&lt;</span> <span class="va">self</span>.get_end_time():</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.update()</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.finalize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="continuous-integration" class="level2">
+<h2 class="anchored" data-anchor-id="continuous-integration">Continuous Integration</h2>
+<p>We took great care to set up a pipeline to ensure that iMOD Coupler continues to work with the newest version of its dependencies. This is especially important since we access internal state of the kernels when coupling them. It can happen very easily that kernel developers change something that break assumptions of the coupler.</p>
+<p>At the time of this writing, there are three kernels handled by iMOD Coupler:</p>
 <ul>
-<li>Currently only confined flow is supported, similar to a previous implementation of MetaSWAP-MODFLOW coupling.</li>
-<li>Both the specific storage and the storage coefficient option of MODFLOW 6 are supported.</li>
-<li>A recharge package (RCH) is required in the MODFLOW 6 model to facilitate the recharge flux of MetaSWAP.</li>
-<li>A well package (WEL) is required in the MODFLOW 6 to facilitate the extraction of groundwater for MetaSWAP’s sprinkling.</li>
-<li>The sum of svat areas should not exceed the area of the MODFLOW cell they are coupled to.</li>
-<li>Currently only multiple svats can be coupled to one MODFLOW cell, and not the other way around. It is not possible to couple multiple MODFLOW cells to one svat.</li>
+<li>Ribasim,</li>
+<li>MODFLOW 6, and</li>
+<li>MetaSWAP.</li>
 </ul>
-</section>
-<section id="data-exchanges" class="level1">
-<h1>Data exchanges</h1>
-<section id="modflow-6-to-metaswap" class="level2">
-<h2 class="anchored" data-anchor-id="modflow-6-to-metaswap">MODFLOW 6 to MetaSWAP</h2>
-<section id="heads" class="level3">
-<h3 class="anchored" data-anchor-id="heads">Heads</h3>
-<p>MODFLOW sets the heads in MetaSWAP, to be specific the <code>hgwmodf</code> variable. When multiple svats are coupled to one MODFLOW cell, each svat is given MODFLOW’s head. When multiple MODFLOW cells are coupled to one svat, the arithmetic average is taken.</p>
-</section>
-</section>
-<section id="metaswap-to-modflow" class="level2">
-<h2 class="anchored" data-anchor-id="metaswap-to-modflow">MetaSWAP to MODFLOW</h2>
-<p>MetaSWAP provides a recharge, sets the storage, and extracts groundwater from deeper layers for sprinkling (if switched on).</p>
-<section id="storage" class="level3">
-<h3 class="anchored" data-anchor-id="storage">Storage</h3>
-<p>q</p>
-</section>
-<section id="recharge" class="level3">
-<h3 class="anchored" data-anchor-id="recharge">Recharge</h3>
-<p>Recharge is provided by MetaSWAP to MODFLOW. MetaSWAP internally stores volumes that should be provided to MODFLOW, so these are converted to rates by dividing by the timestep length. When multiple svats are coupled to one MODFLOW cell, recharge rates are summed.</p>
-</section>
-<section id="sprinkling" class="level3">
-<h3 class="anchored" data-anchor-id="sprinkling">Sprinkling</h3>
-<p>Groundwater extraction rates to set sprinkling are computed by MetaSWAP based on irrigation requirements. MetaSWAP internally stores volumes that should be provided to MODFLOW, so these are converted to rates by dividing by the timestep length. When multiple svats are coupled to one MODFLOW cell, extraction rates are summed.</p>
-</section>
-</section>
-</section>
-<section id="files" class="level1">
-<h1>Files</h1>
-<p>The following files are required to couple the two model codes. These files provide the mappings from MODFLOW indices to the MetaSWAP svats.</p>
-<p>MetaSWAP requires the file:</p>
-<ul>
-<li><code>mod2svat.inp</code></li>
-</ul>
-<p>MODFLOW6 requires the files:</p>
-<ul>
-<li><code>[filename].rch</code></li>
-<li><code>[filename].wel</code> (optional)</li>
-</ul>
-<p>The coupler itself requires the following files:</p>
-<ul>
-<li><code>nodenr2svat.dxc</code></li>
-<li><code>rchindex2svat.dxc</code></li>
-<li><code>wellindex2svat.dxc</code> (optional)</li>
-</ul>
-<p>Below we will describe the format for each file.</p>
-<section id="metaswap" class="level2">
-<h2 class="anchored" data-anchor-id="metaswap">MetaSWAP</h2>
-<section id="mod2svat.inp" class="level3">
-<h3 class="anchored" data-anchor-id="mod2svat.inp">mod2svat.inp</h3>
-<p>The file format for this file is also described in the <a href="ftp://ftp.wur.nl/simgro/doc/Report_913_3_V8_0_0_7.pdf">SIMGRO IO manual</a>. It is as follows:</p>
-<pre><code>node_nr svat ly
-...</code></pre>
-<p>Were <code>node_nr</code> is the MODFLOW6 node number (to be specific: the user node number), which replaces the MODFLOW 2005 CellID. <code>svat</code> is the MetaSWAP svat number and <code>ly</code> is the MODFLOW layer number. Note that the format for this file should be fixed to</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ss">f"</span><span class="sc">{</span>nodenr<span class="sc">:10d}</span><span class="ss">  </span><span class="sc">{</span>svat<span class="sc">:10d}{</span>ly<span class="sc">:2d}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>where the number behind the colon indicated the number of characters, padded with whitespace. Note the two whitespaces between <code>nodenr</code> and <code>svat</code>.</p>
-</section>
-</section>
-<section id="modflow-6" class="level2">
-<h2 class="anchored" data-anchor-id="modflow-6">MODFLOW 6</h2>
-<section id="filename.rch" class="level3">
-<h3 class="anchored" data-anchor-id="filename.rch">[filename].rch</h3>
-<p>A dummy recharge file, of which the fluxes will be overridden. The location of the recharge cells is used to assign an recharge index by Modflow6. The file format of the .rch file is described here. To specify an uncoupled recharge as well, a second RCH package should be defined. How to define a second stress package is explained here. Please note that in the model name file the package name should correspond to the package name specified in the <a href="./coupler_metamod_config.html">configuration file</a>.</p>
-</section>
-<section id="filename.wel" class="level3">
-<h3 class="anchored" data-anchor-id="filename.wel">[filename].wel</h3>
-<p>A dummy well file, of which the fluxes will be overridden. The location of the wells is used to assign a well index by Modflow6. The file format of the .wel file is described here. To specify uncoupled extractions/injections as well, a second WEL package should be defined. How to define a second stress package is explained here. Please note that the package name in the <a href="https://modflow6.readthedocs.io/en/latest/_mf6io/gwf-nam.html#block-packages">model name file</a> should correspond to the package name specified in the <a href="./coupler_metamod_config.html">configuration file</a>.</p>
-</section>
-</section>
-<section id="coupler" class="level2">
-<h2 class="anchored" data-anchor-id="coupler">Coupler</h2>
-<section id="nodenr2svat.dxc" class="level3">
-<h3 class="anchored" data-anchor-id="nodenr2svat.dxc">nodenr2svat.dxc</h3>
-<p>This file takes care of mapping the MODFLOW node numbers to the MetaSWAP svats, which is required for coupling the heads and storages of both kernels, it thus excludes nodes connected where wells are for sprinkling. The file format is as follows:</p>
-<pre><code>node_nr svat ly
-...</code></pre>
-<p>Where <code>node_nr</code> is the MODFLOW6 node number (to be specific: the user node number), which replaces the MODFLOW 2005 CellID. <code>svat</code> is the MetaSWAP svat number and <code>ly</code> is the Modflow layer number.</p>
-</section>
-<section id="rchindex2svat.dxc" class="level3">
-<h3 class="anchored" data-anchor-id="rchindex2svat.dxc">rchindex2svat.dxc</h3>
-<p>This file takes care of mapping the recharge cells to the MetaSWAP svats. The file format is as follows:</p>
-<pre><code>rch_index svat ly
-...</code></pre>
-<p>Where <code>rch_index</code> is the MODFLOW6 RCH index number, which equals the row number of the data specified under <code>period</code> in the <code>.rch</code> file. <code>svat</code> is the MetaSWAP svat number and <code>ly</code> is the MODFLOW layer number.</p>
-</section>
-<section id="wellindex2svat.dxc" class="level3">
-<h3 class="anchored" data-anchor-id="wellindex2svat.dxc">wellindex2svat.dxc</h3>
-<p>This file takes care of mapping MODFLOW wells to the MetaSWAP svats for sprinkling. The file format is as follows:</p>
-<pre><code>well_index svat ly
-...</code></pre>
-<p>Where <code>well_index</code> is the MODFLOW6 WEL index number, which equals the row number of the data specified under <code>period</code> in the <code>.wel</code> file. <code>svat</code> is the MetaSWAP svat number and <code>ly</code> is the MODFLOW layer number.</p>
-</section>
-</section>
-</section>
-<section id="how-to-define-a-second-stress-package-for-modflow6" class="level1">
-<h1>How to define a second stress package for MODFLOW6</h1>
-<p>A second stress package (in our case named <code>WELL2</code>) can be defined in the flow model’s <code>.nam</code> file (GWF_1.nam).</p>
-<pre><code>begin options
-end options
-
-begin packages
-    dis6 GWF_1/dis.dis
-    chd6 GWF_1/chd.chd
-    npf6 GWF_1/npf.npf
-    ic6 GWF_1/ic.ic
-    wel6 GWF_1/wel.wel WELLS_MSW
-    wel6 GWF_1/wel2.wel WELL2
-    sto6 GWF_1/sto.sto
-    oc6 GWF_1/oc.oc
-end packages</code></pre>
-<p>The argument values <code>WELLS_MSW</code> and <code>WELL2</code>, specify the package names to be printed in the water budget .lst file. In the configuration file, you have to specify which package name is used for the coupling.</p>
+<p>On <a href="https://dpcbuild.deltares.nl/project/iMOD6_Coupler">TeamCity</a>, the three kernels will be compiled to shared libraries and iMOD Coupler will be compiled to an executable. These binaries are then collected in a zip file, called the iMOD Collector. The iMOD Collector is checked on our testbench and can be downloaded by users.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">flowchart BT
+    ribasim[Ribasim] --&gt; imod_collector[iMOD Collector]
+    modflow[MODFLOW 6] --&gt; imod_collector
+    metaswap[MetaSWAP] --&gt; imod_collector
+    imodc[iMOD Coupler] --&gt; imod_collector
+    imod_collector --&gt; testbench[Testbench Coupler]
+</pre>
+</div>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -667,14 +580,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler_metamod_config.html" class="pagination-link">
+      <a href="./coupler_ribamod_config.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coupler_ribamod_config.html" class="pagination-link">
-        <span class="nav-page-text">Configuration</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
