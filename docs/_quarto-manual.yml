@@ -20,9 +20,10 @@ book:
         - python_getting_started.qmd
     - part: coupler.qmd
       chapters:
-        - coupler_metamod_config.qmd        
+        - coupler_metamod_config.qmd
         - coupler_metamod_technical.qmd
-        - coupler_ribamod_config.qmd  
+        - coupler_ribamod_config.qmd
+        - coupler_architecture.qmd
     - part: tutorial.qmd
       chapters:
         - tutorial_Abbeyfeale.qmd
