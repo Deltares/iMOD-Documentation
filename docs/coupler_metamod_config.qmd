@@ -8,9 +8,9 @@ extension.
 
 Note that `toml` uses quote marks differently than `python`. Single quotes in
 toml (`''`) are interpreted similarly to how python would interpret a rawstring
-(`r''` or `r""`), whereas double quotes (`""`) are interpreted in a similar
-manner to regular strings in python (`""` or `''`). This matters for paths on
-Windows, for which we advice to use single quotes.
+(`r''` or `r""`), whereas double quotes (`""`) are interpreted similarly to
+regular strings in python (`""` or `''`). This matters for paths on Windows, for
+which we advise to use single quotes.
 
 ```toml
 log_level = 'INFO'
