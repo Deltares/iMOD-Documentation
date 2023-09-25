@@ -1,0 +1,94 @@
+---
+title: "Architecture"
+---
+
+The purpose of iMOD Coupler is to couple hydrological kernels. iMOD Coupler
+itself is written in Python, but the kernels are written in either Julia or
+Fortran. The most common way of interacting with libraries written in different
+languages is by letting them expose a C interface and compiling them as shared
+libraries.
+
+While not technically required, these libraries are expected to follow a
+variation of the Basic Model Interface or
+[BMI](https://bmi-spec.readthedocs.io/en/latest/). This describes a standardized
+way of controlling a modelling framework. It also allows to utilize the
+[`xmipy`](https://github.com/Deltares/xmipy) package, which wraps the C API into
+a Python API. On top of that, it is often convenient to add functions specific
+to the kernels. This is why Ribasim and MODFLOW 6 get a
+[`XmiWrapper`](https://deltares.github.io/xmipy/xmipy.html#XmiWrapper) subclass,
+that is called `ribasim_api` and `modflow_api` respectively.
+
+```{mermaid}
+flowchart BT
+    libribasim.dll--> xmipy_r[xmipy]
+    libmf6.dll --> xmipy_m[xmipy]
+    xmipy_r --> ribasim_api 
+    xmipy_m --> modflow_api 
+    ribasim_api -->  imodc[iMOD Coupler]
+    modflow_api -->  imodc
+```
+
+
+Most input data needs to be pre-processed in order to be suitable for the hydrological kernels.
+In the case of Ribasim this is handled by Ribasim Python, in the case of MODFLOW 6 it is handled by iMOD Python.
+However, the input data for the iMOD Coupler needs to be pre-processed as well.
+Coupling tables describe how the coupling takes place. In order to generate them, input data from all kernels are needed.
+The `primod` package wraps the functionality of the kernel pre-processors and generates the coupling data for iMOD Coupler.
+
+```{mermaid}
+flowchart BT
+    ribasim_python[Ribasim Python] --> primod
+    imod-python[iMOD Python] --> primod
+    primod --> ribasim[Ribasim]
+    primod --> imodc
+    primod --> modflow6[MODFLOW 6]
+    ribasim --> imodc["iMOD Coupler"]
+    modflow6 --> imodc
+```
+
+## Drivers
+
+Coupling Ribasim and MODFLOW 6 is only one of multiple coupling configurations.
+Each configuration is handled by an iMOD Coupler driver. A driver is a Python
+module under `imod_coupler/drivers`. At the minimum, it includes a subclass of
+the abstract class `Driver` as well as its own config under the
+`[[driver.coupling]]` namespace. A driver itself also includes a BMI interface,
+executing it then looks like this:
+
+```python
+self.initialize()
+
+while self.get_current_time() < self.get_end_time():
+    self.update()
+
+self.finalize()
+```
+
+## Continuous Integration
+
+We took great care to set up a pipeline to ensure that iMOD Coupler continues to
+work with the newest version of its dependencies. This is especially important
+since we access internal state of the kernels when coupling them. It can happen
+very easily that kernel developers change something that break assumptions of
+the coupler.
+
+At the time of this writing, there are three kernels handled by iMOD Coupler:
+
+- Ribasim,
+- MODFLOW 6, and
+- MetaSWAP.
+
+On [TeamCity](https://dpcbuild.deltares.nl/project/iMOD6_Coupler), the three
+kernels will be compiled to shared libraries and iMOD Coupler will be compiled
+to an executable. These binaries are then collected in a zip file, called the
+iMOD Collector. The iMOD Collector is checked on our testbench and can be
+downloaded by users.
+
+```{mermaid}
+flowchart BT
+    ribasim[Ribasim] --> imod_collector[iMOD Collector]
+    modflow[MODFLOW 6] --> imod_collector
+    metaswap[MetaSWAP] --> imod_collector
+    imodc[iMOD Coupler] --> imod_collector
+    imod_collector --> testbench[Testbench Coupler]
+```
