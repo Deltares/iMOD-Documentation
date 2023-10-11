@@ -12,7 +12,7 @@ e-mail within only a few minutes.
 
 The QGIS plugin of course requires QGIS. You can download the standalone QGIS
 setup [on the QGIS website](https://qgis.org/en/site/forusers/download.html) We
-recommend downloading a QGIS version \> 3.18 here. After downloading the QGIS
+recommend downloading a QGIS version \>= 3.28 here. After downloading the QGIS
 setup, run it.
 
 :::

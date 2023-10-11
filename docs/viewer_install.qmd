@@ -20,7 +20,7 @@ will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin.
 
 You can download the standalone QGIS setup [on the QGIS website]
 (https://qgis.org/en/site/forusers/download.html). We recommend downloading a
-QGIS version > 3.18 here. After downloading the QGIS setup, run it.
+QGIS version >= 3.28 here. After downloading the QGIS setup, run it.
 
 This installs a user installation of QGIS, which is sufficient in most cases.
 For a system wide installation, see @sec-system-wide.
