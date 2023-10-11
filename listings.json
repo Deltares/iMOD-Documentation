@@ -1,5 +1,17 @@
 [
   {
+    "listing": "/practical.html",
+    "items": [
+      "/practical_cookiecutter.html",
+      "/practical_git_dvc.html",
+      "/practical_snakemake.html",
+      "/practical_messy_data.html",
+      "/practical_parallel.html",
+      "/practical_powershell.html",
+      "/practical_look_like_a_pro.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/introduction.html",
@@ -16,18 +28,6 @@
       "/tutorial_Abbeyfeale.html",
       "/tutorial_wq.html",
       "/tutorial_Dommel.html"
-    ]
-  },
-  {
-    "listing": "/practical.html",
-    "items": [
-      "/practical_cookiecutter.html",
-      "/practical_git_dvc.html",
-      "/practical_snakemake.html",
-      "/practical_messy_data.html",
-      "/practical_parallel.html",
-      "/practical_powershell.html",
-      "/practical_look_like_a_pro.html"
     ]
   }
 ]
