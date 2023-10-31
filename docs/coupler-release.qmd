@@ -1,0 +1,96 @@
+---
+title: "Release process"
+---
+
+# What is a release
+
+The [imod_coupler repository](https://github.com/Deltares/imod_coupler) contains multiple components, at the time of this writing the pre- and post-processing package `primod` and `imod_coupler` itself.
+The components are currently only guaranteed to work together if they are built at the same time.
+Therefore we release iMOD Coupler as a collection of all the components at once.
+For maximum interoperability it is suggested to only release all components together, and not individually.
+
+For these releases we use [Calender Versioning](https://calver.org/), which makes it clear in which month the release was made.
+
+# Release steps
+
+This section provides a guide for developers to follow when preparing a new release.
+
+## Pre-release checks
+
+Before starting the release process, ensure that all tests are passing and that all features intended for the release are complete and merged into the main branch.
+
+## Update version numbers of the components as needed
+
+The components have their own version number which generally uses [Semantic Versioning](https://semver.org/), with minor version signifying a breaking release for pre-1.0 versions. 
+If a component did not change at all between releases, the version number can stay the same.
+
+Now submit a pull request which updates the version numbers of the components as needed.
+
+- Remove the `-dev` suffix from the version number in `__init__.py` of `imod_coupler` and `primod`
+
+For example: `__version__ = "0.10.0-dev"` -> `__version__ = "0.10.0"`
+
+- Increase the version number in `__init__.py` of `imod_coupler` and `primod`
+
+For example: `__version__ = "0.10.0"` -> `__version__ = "0.11.0"`
+
+- Create a new commit with the updated version number,
+and push to remote
+
+## Create a new release
+
+Create a [new release](https://github.com/Deltares/imod_coupler/releases/new).
+Give it a tag like `v2023.08.0`, filling in the current year, month and a sequential "MICRO" number.
+This follows `vYYYY.0M.MICRO` from [calver](https://calver.org/).
+For [v2023.09.0](https://github.com/Deltares/Ribasim/releases/tag/v2023.09.0) I used the "Generate release notes" button, which I then manually edited to copy the most important changes for users to the top in the form of [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
+The possibly long list of generated release notes can put below an "All changes" collapsed item as such:
+
+```
+<details>
+<summary>
+All changes
+</summary>
+
+# Put Github flavored markdown here
+
+</details>
+
+```
+
+## Release primod to PyPI and conda forge
+
+To be able to do `pip install ribasim` , `primod` needs to be released on the Python Package Index.
+
+- If present remove build and dist folder
+
+- If not done yet, install twine via
+```
+pip install build twine
+```
+- Re-create the wheels:
+```
+python -m build
+```
+
+- Check the package files:
+```
+twine check dist/*
+```
+
+- Re-upload the new files:
+```
+twine upload dist/*
+```
+
+## Add the `-dev` version suffix again
+
+- Add the `-dev` suffix to the version number in `__init__.py` of `imod_coupler` and `primod`
+
+For example: `__version__ = "0.11.0"` -> `__version__ = "0.11.0-dev"`
+
+- Create a new commit with the updated version number,
+and push to remote
+
+## Announce release
+
+Announce the release in appropriate channels.

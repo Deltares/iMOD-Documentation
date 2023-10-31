@@ -64,6 +64,7 @@ website:
           contents:
             - href: coupler_ribamod_config.qmd
         - href: coupler_architecture.qmd
+        - href: coupler_release.qmd
 
     - id: tutorial
       title: "Tutorials"

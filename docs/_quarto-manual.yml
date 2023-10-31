@@ -24,6 +24,7 @@ book:
         - coupler_metamod_technical.qmd
         - coupler_ribamod_config.qmd
         - coupler_architecture.qmd
+        - coupler_release.qmd
     - part: tutorial.qmd
       chapters:
         - tutorial_Abbeyfeale.qmd
