@@ -26,13 +26,9 @@ If a component did not change at all between releases, the version number can st
 
 Now submit a pull request which updates the version numbers of the components as needed.
 
-- Remove the `-dev` suffix from the version number in `__init__.py` of `imod_coupler` and `primod`
+- Remove the `-dev` suffix from the version number and increase the version number in `__init__.py` of `imod_coupler` and `pre-processing/primod`
 
-For example: `__version__ = "0.10.0-dev"` -> `__version__ = "0.10.0"`
-
-- Increase the version number in `__init__.py` of `imod_coupler` and `primod`
-
-For example: `__version__ = "0.10.0"` -> `__version__ = "0.11.0"`
+For example: `__version__ = "0.10.0-dev"` -> `__version__ = "0.11.0"`
 
 - Create a new commit with the updated version number,
 and push to remote
@@ -57,9 +53,9 @@ All changes
 
 ```
 
-## Release primod to PyPI and conda forge
+## Release primod on PyPI
 
-To be able to do `pip install ribasim` , `primod` needs to be released on the Python Package Index.
+To be able to do `pip install primod` , `primod` needs to be released on the Python Package Index.
 
 - If present remove build and dist folder
 
@@ -84,7 +80,7 @@ twine upload dist/*
 
 ## Add the `-dev` version suffix again
 
-- Add the `-dev` suffix to the version number in `__init__.py` of `imod_coupler` and `primod`
+- Add the `-dev` suffix to the version number in `__init__.py` of `imod_coupler` and `pre-processing/primod`
 
 For example: `__version__ = "0.11.0"` -> `__version__ = "0.11.0-dev"`
 
