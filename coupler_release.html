@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite - Architecture</title>
+<title>iMOD Suite - Release process</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_release.html" rel="next">
-<link href="./coupler_ribamod_config.html" rel="prev">
+<link href="./coupler_architecture.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -97,9 +62,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="_static/styles.css">
@@ -171,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_architecture.html">Architecture</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_release.html">Release process</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -231,13 +193,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_architecture.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_architecture.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Architecture</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Release process</span></a>
   </div>
 </li>
@@ -251,8 +213,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#drivers" id="toc-drivers" class="nav-link active" data-scroll-target="#drivers">Drivers</a></li>
-  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration">Continuous Integration</a></li>
+  <li><a href="#what-is-a-release" id="toc-what-is-a-release" class="nav-link active" data-scroll-target="#what-is-a-release">What is a release</a></li>
+  <li><a href="#release-steps" id="toc-release-steps" class="nav-link" data-scroll-target="#release-steps">Release steps</a>
+  <ul class="collapse">
+  <li><a href="#pre-release-checks" id="toc-pre-release-checks" class="nav-link" data-scroll-target="#pre-release-checks">Pre-release checks</a></li>
+  <li><a href="#update-version-numbers-of-the-components-as-needed" id="toc-update-version-numbers-of-the-components-as-needed" class="nav-link" data-scroll-target="#update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</a></li>
+  <li><a href="#create-a-new-release" id="toc-create-a-new-release" class="nav-link" data-scroll-target="#create-a-new-release">Create a new release</a></li>
+  <li><a href="#release-primod-on-pypi" id="toc-release-primod-on-pypi" class="nav-link" data-scroll-target="#release-primod-on-pypi">Release primod on PyPI</a></li>
+  <li><a href="#add-the--dev-version-suffix-again" id="toc-add-the--dev-version-suffix-again" class="nav-link" data-scroll-target="#add-the--dev-version-suffix-again">Add the <code>-dev</code> version suffix again</a></li>
+  <li><a href="#announce-release" id="toc-announce-release" class="nav-link" data-scroll-target="#announce-release">Announce release</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -261,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Architecture</h1>
+<h1 class="title">Release process</h1>
 </div>
 
 
@@ -276,79 +246,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>The purpose of iMOD Coupler is to couple hydrological kernels. iMOD Coupler itself is written in Python, but the kernels are written in either Julia or Fortran. The most common way of interacting with libraries written in different languages is by letting them expose a C interface and compiling them as shared libraries.</p>
-<p>While not technically required, these libraries are expected to follow a variation of the Basic Model Interface or <a href="https://bmi-spec.readthedocs.io/en/latest/">BMI</a>. This describes a standardized way of controlling a modelling framework. It also allows to utilize the <a href="https://github.com/Deltares/xmipy"><code>xmipy</code></a> package, which wraps the C API into a Python API. On top of that, it is often convenient to add functions specific to the kernels. This is why Ribasim and MODFLOW 6 get a <a href="https://deltares.github.io/xmipy/xmipy.html#XmiWrapper"><code>XmiWrapper</code></a> subclass, that is called <code>ribasim_api</code> and <code>modflow_api</code> respectively.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart BT
-    libribasim.dll--&gt; xmipy_r[xmipy]
-    libmf6.dll --&gt; xmipy_m[xmipy]
-    xmipy_r --&gt; ribasim_api 
-    xmipy_m --&gt; modflow_api 
-    ribasim_api --&gt;  imodc[iMOD Coupler]
-    modflow_api --&gt;  imodc
-</pre>
-</div>
-</div>
-</div>
-</div>
-<p>Most input data needs to be pre-processed in order to be suitable for the hydrological kernels. In the case of Ribasim this is handled by Ribasim Python, in the case of MODFLOW 6 it is handled by iMOD Python. However, the input data for the iMOD Coupler needs to be pre-processed as well. Coupling tables describe how the coupling takes place. In order to generate them, input data from all kernels are needed. The <code>primod</code> package wraps the functionality of the kernel pre-processors and generates the coupling data for iMOD Coupler.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart BT
-    ribasim_python[Ribasim Python] --&gt; primod
-    imod-python[iMOD Python] --&gt; primod
-    primod --&gt; ribasim[Ribasim]
-    primod --&gt; imodc
-    primod --&gt; modflow6[MODFLOW 6]
-    ribasim --&gt; imodc["iMOD Coupler"]
-    modflow6 --&gt; imodc
-</pre>
-</div>
-</div>
-</div>
-</div>
-<section id="drivers" class="level2">
-<h2 class="anchored" data-anchor-id="drivers">Drivers</h2>
-<p>Coupling Ribasim and MODFLOW 6 is only one of multiple coupling configurations. Each configuration is handled by an iMOD Coupler driver. A driver is a Python module under <code>imod_coupler/drivers</code>. At the minimum, it includes a subclass of the abstract class <code>Driver</code> as well as its own config under the <code>[[driver.coupling]]</code> namespace. A driver itself also includes a BMI interface, executing it then looks like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.initialize()</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">self</span>.get_current_time() <span class="op">&lt;</span> <span class="va">self</span>.get_end_time():</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.update()</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">self</span>.finalize()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="what-is-a-release" class="level1">
+<h1>What is a release</h1>
+<p>The <a href="https://github.com/Deltares/imod_coupler">imod_coupler repository</a> contains multiple components, at the time of this writing the pre-processing package <code>primod</code> and <code>imod_coupler</code> itself. The components are currently only guaranteed to work together if they are built at the same time. Therefore we release iMOD Coupler as a collection of all the components at once. For maximum interoperability it is suggested to only release all components together, and not individually.</p>
+<p>For these releases we use <a href="https://calver.org/">Calender Versioning</a>, which makes it clear in which month the release was made.</p>
 </section>
-<section id="continuous-integration" class="level2">
-<h2 class="anchored" data-anchor-id="continuous-integration">Continuous Integration</h2>
-<p>We took great care to set up a pipeline to ensure that iMOD Coupler continues to work with the newest version of its dependencies. This is especially important since we access internal state of the kernels when coupling them. It can happen very easily that kernel developers change something that break assumptions of the coupler.</p>
-<p>At the time of this writing, there are three kernels handled by iMOD Coupler:</p>
+<section id="release-steps" class="level1">
+<h1>Release steps</h1>
+<p>This section provides a guide for developers to follow when preparing a new release.</p>
+<section id="pre-release-checks" class="level2">
+<h2 class="anchored" data-anchor-id="pre-release-checks">Pre-release checks</h2>
+<p>Before starting the release process, ensure that all tests are passing and that all features intended for the release are complete and merged into the main branch.</p>
+</section>
+<section id="update-version-numbers-of-the-components-as-needed" class="level2">
+<h2 class="anchored" data-anchor-id="update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</h2>
+<p>The components have their own version number which generally uses <a href="https://semver.org/">Semantic Versioning</a>, with minor version signifying a breaking release for pre-1.0 versions. If a component did not change at all between releases, the version number can stay the same.</p>
+<p>Now submit a pull request which updates the version numbers of the components as needed.</p>
 <ul>
-<li>Ribasim,</li>
-<li>MODFLOW 6, and</li>
-<li>MetaSWAP.</li>
+<li>Remove the <code>-dev</code> suffix from the version number and increase the version number in <code>__init__.py</code> of <code>imod_coupler</code> and <code>pre-processing/primod</code></li>
 </ul>
-<p>On <a href="https://dpcbuild.deltares.nl/project/iMOD6_Coupler">TeamCity</a>, the three kernels will be compiled to shared libraries and iMOD Coupler will be compiled to an executable. These binaries are then collected in a zip file, called the iMOD Collector. The iMOD Collector is checked on our testbench and can be downloaded by users.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart BT
-    ribasim[Ribasim] --&gt; imod_collector[iMOD Collector]
-    modflow[MODFLOW 6] --&gt; imod_collector
-    metaswap[MetaSWAP] --&gt; imod_collector
-    imodc[iMOD Coupler] --&gt; imod_collector
-    imod_collector --&gt; testbench[Testbench Coupler]
-</pre>
-</div>
-</div>
-</div>
-</div>
+<p>For example: <code>__version__ = "0.10.0-dev"</code> -&gt; <code>__version__ = "0.11.0"</code></p>
+<ul>
+<li>Create a new commit with the updated version number, and push to remote</li>
+</ul>
+</section>
+<section id="create-a-new-release" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-new-release">Create a new release</h2>
+<p>Create a <a href="https://github.com/Deltares/imod_coupler/releases/new">new release</a>. Give it a tag like <code>v2023.08.0</code>, filling in the current year, month and a sequential “MICRO” number. This follows <code>vYYYY.0M.MICRO</code> from <a href="https://calver.org/">calver</a>. For <a href="https://github.com/Deltares/Ribasim/releases/tag/v2023.09.0">v2023.09.0</a> I used the “Generate release notes” button, which I then manually edited to copy the most important changes for users to the top in the form of <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. The possibly long list of generated release notes can put below an “All changes” collapsed item as such:</p>
+<pre><code>&lt;details&gt;
+&lt;summary&gt;
+All changes
+&lt;/summary&gt;
+
+# Put Github flavored markdown here
+
+&lt;/details&gt;
+</code></pre>
+</section>
+<section id="release-primod-on-pypi" class="level2">
+<h2 class="anchored" data-anchor-id="release-primod-on-pypi">Release primod on PyPI</h2>
+<p>To be able to do <code>pip install primod</code> , <code>primod</code> needs to be released on the Python Package Index.</p>
+<ul>
+<li>Go into the the pre-processing folder with</li>
+</ul>
+<pre><code>cd pre-processing</code></pre>
+<ul>
+<li><p>If present remove build and dist folder</p></li>
+<li><p>If not done yet, install twine via</p></li>
+</ul>
+<pre><code>pip install build twine</code></pre>
+<ul>
+<li>Re-create the wheels:</li>
+</ul>
+<pre><code>python -m build</code></pre>
+<ul>
+<li>Check the package files:</li>
+</ul>
+<pre><code>twine check dist/*</code></pre>
+<ul>
+<li>Re-upload the new files:</li>
+</ul>
+<pre><code>twine upload dist/*</code></pre>
+</section>
+<section id="add-the--dev-version-suffix-again" class="level2">
+<h2 class="anchored" data-anchor-id="add-the--dev-version-suffix-again">Add the <code>-dev</code> version suffix again</h2>
+<ul>
+<li>Add the <code>-dev</code> suffix to the version number in <code>__init__.py</code> of <code>imod_coupler</code> and <code>pre-processing/primod</code></li>
+</ul>
+<p>For example: <code>__version__ = "0.11.0"</code> -&gt; <code>__version__ = "0.11.0-dev"</code></p>
+<ul>
+<li>Create a new commit with the updated version number, and push to remote</li>
+</ul>
+</section>
+<section id="announce-release" class="level2">
+<h2 class="anchored" data-anchor-id="announce-release">Announce release</h2>
+<p>Announce the release in appropriate channels.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -587,14 +562,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler_ribamod_config.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
+      <a href="./coupler_architecture.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Architecture</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coupler_release.html" class="pagination-link">
-        <span class="nav-page-text">Release process</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
