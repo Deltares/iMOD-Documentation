@@ -4,7 +4,7 @@ title: "Release process"
 
 # What is a release
 
-The [imod_coupler repository](https://github.com/Deltares/imod_coupler) contains multiple components, at the time of this writing the pre- and post-processing package `primod` and `imod_coupler` itself.
+The [imod_coupler repository](https://github.com/Deltares/imod_coupler) contains multiple components, at the time of this writing the pre-processing package `primod` and `imod_coupler` itself.
 The components are currently only guaranteed to work together if they are built at the same time.
 Therefore we release iMOD Coupler as a collection of all the components at once.
 For maximum interoperability it is suggested to only release all components together, and not individually.
@@ -56,6 +56,12 @@ All changes
 ## Release primod on PyPI
 
 To be able to do `pip install primod` , `primod` needs to be released on the Python Package Index.
+
+- Go into the the pre-processing folder with
+
+```
+cd pre-processing
+```
 
 - If present remove build and dist folder
 
