@@ -22,6 +22,7 @@ book:
       chapters:
         - coupler_metamod_config.qmd
         - coupler_metamod_technical.qmd
+        - coupler_metamod_example.ipynb
         - coupler_ribamod_config.qmd
         - coupler_architecture.qmd
         - coupler_release.qmd

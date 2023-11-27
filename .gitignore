@@ -106,3 +106,4 @@ venv.bak/
 /.quarto/
 _build/
 /.luarc.json
+.pixi
