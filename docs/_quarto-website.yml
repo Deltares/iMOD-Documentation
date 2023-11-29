@@ -60,6 +60,7 @@ website:
           contents:
             - href: coupler_metamod_config.qmd
             - href: coupler_metamod_technical.qmd
+            - href: coupler_metamod_example.ipynb
         - section: "Ribasim - MODFLOW 6"
           contents:
             - href: coupler_ribamod_config.qmd

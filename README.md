@@ -2,7 +2,7 @@
 
 [The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Documentation)
 
-The documentation is set up using [Quarto](https://quarto.org/). 
+The documentation is set up using [Quarto](https://quarto.org/).
 [Read here how to get started using Quarto.](https://quarto.org/docs/get-started/)
 
 If you want to contribute to the iMOD Suite documentation,
@@ -10,12 +10,12 @@ please read the [contributing guidelines](CONTRIBUTING.md).
 
 ## Local Build
 
-1. [Install Quarto](https://quarto.org/docs/get-started/)
+1. [Install Quarto](https://quarto.org/docs/get-started/) and [pixi](https://pixi.sh)
 2. `git clone  https://github.com/Deltares/iMOD-Documentation.git`
-3. `cd imod-training`
-4. `quarto render docs --profile website --to html`
-5. The HTML documentation will be under `./docs/_build/`
-6. To render PDF (deleting any previously build documentation): 
+3. `cd iMOD-Documentation`
+4. `pixi run install-pre-commit`
+5. `pixi run docs`
+6. To render PDF (deleting any previously build documentation):
     `quarto render docs --profile manual --to pdf`
 
 ## Project setup
