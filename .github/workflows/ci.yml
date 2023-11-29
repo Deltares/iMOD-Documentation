@@ -14,7 +14,7 @@ on:
 
 jobs:
   quarto-html:
-    name: Publish with Quarto
+    name: HTML
     runs-on: ubuntu-latest
     steps:
         # Circumvent this problem: https://github.com/actions/checkout/issues/165
@@ -24,8 +24,6 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.4.1
         with:
           pixi-version: "latest"
-      - name: Prepare pixi
-        run: pixi run install-without-pre-commit
 
       - name: Check Quarto installation and all engines
         run: pixi run quarto-check
@@ -44,7 +42,7 @@ jobs:
 
 
   quarto-pdf:
-    name: Publish with Quarto
+    name: PDF
     runs-on: ubuntu-latest
     steps:
         # Circumvent this problem: https://github.com/actions/checkout/issues/165
