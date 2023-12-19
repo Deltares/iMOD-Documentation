@@ -24,7 +24,7 @@ The workflow consists of the following steps:
 The iMOD-python script below creates a simple 3D iMOD-WQ model.
 
 To install iMOD-python, see [these
-instructions](https://deltares.gitlab.io/imod/imod-python/installation.html).
+instructions](https://deltares.github.io/imod-python/installation.html).
 
 We define a middle strip which has fresh recharge (`rch`) applied, and
 the sides have a fixed concentration (`bnd = -1`) of 35 (`sconc = 35.`)

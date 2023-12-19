@@ -29,9 +29,9 @@ Currently we support the creation of the following MODFLOW-based models:
     (density-dependent groundwater flow) and MT3DMS (multi-species
     reactive transport calculations)
 
-Documentation: <https://deltares.gitlab.io/imod/imod-python> This
+Documentation: <https://deltares.github.io/imod-python/> This
 documentation includes a section \"How do I\" which can be used for
 common data conversions in imod-python or xarray. This section will be
 regular updated based on the different questions of users.
 
-Source code: <https://gitlab.com/deltares/imod/imod-python>
+Source code: <https://github.com/Deltares/imod-python>

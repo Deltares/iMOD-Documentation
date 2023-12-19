@@ -33,9 +33,9 @@ quite a wide range of IPF files. For example, iMOD 5 supports both whitespace
 and comma separated files, whereas the QGIS plugin only supports comma
 separated IPF files. If the plugin is unable to read your IPF file, it is best
 to [read the file with iMOD
-Python](https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.read.html)
+Python](https://deltares.github.io/imod-python/api/generated/io/imod.formats.ipf.read.html)
 and consequently [write it
-again](https://deltares.gitlab.io/imod/imod-python/api/generated/io/imod.ipf.write.html).
+again](https://deltares.github.io/imod-python/api/generated/io/imod.formats.ipf.write.htm).
 This can help, because the IPF reader in iMOD Python is a lot more flexible,
 but its writer always writes to a specific format. We plan to improve the
 flexibility of the plugin\'s IPF reader.
