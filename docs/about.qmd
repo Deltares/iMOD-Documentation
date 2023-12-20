@@ -21,7 +21,7 @@ individual components. You can raise issues, or suggest changes, here.
     Github](https://github.com/Deltares/iMOD-Documentation)
 -   [iMOD QGIS plugin Github](https://github.com/Deltares/imod-qgis)
 -   [iMOD 3D Viewer Github](https://github.com/Deltares/imod-gui)
--   [iMOD Python Gitlab](https://gitlab.com/deltares/imod/imod-python)
+-   [iMOD Python Github](https://github.com/Deltares/imod-python)
 
 
 ## History
