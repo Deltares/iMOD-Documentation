@@ -264,7 +264,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="creating-a-model" class="level2">
 <h2 class="anchored" data-anchor-id="creating-a-model">Creating a model</h2>
 <p>The iMOD-python script below creates a simple 3D iMOD-WQ model.</p>
-<p>To install iMOD-python, see <a href="https://deltares.gitlab.io/imod/imod-python/installation.html">these instructions</a>.</p>
+<p>To install iMOD-python, see <a href="https://deltares.github.io/imod-python/installation.html">these instructions</a>.</p>
 <p>We define a middle strip which has fresh recharge (<code>rch</code>) applied, and the sides have a fixed concentration (<code>bnd = -1</code>) of 35 (<code>sconc = 35.</code>) in the top layer. This creates freshwater lens along the strip.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
