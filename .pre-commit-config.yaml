@@ -4,6 +4,6 @@ repos:
     hooks:
       - id: nbstripout
   - repo: https://github.com/crate-ci/typos
-    rev: v1.16.21
+    rev: v1.16.26
     hooks:
       - id: typos
