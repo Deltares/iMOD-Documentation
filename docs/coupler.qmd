@@ -26,13 +26,17 @@ Coupler](https://github.com/Deltares/imod_coupler) package. Other
 applications can be found in [this
 paper.](https://www.sciencedirect.com/science/article/pii/S1364815221002991)
 
-## Source Code
+## Links
+
+The iMOD Coupler can be found on:
+<https://github.com/Deltares/imod_coupler>
+
+The latest release together with the binaries can be found on:
+<https://github.com/Deltares/imod_coupler/releases/latest/>
 
 The `xmipy` library can be found on:
 <https://github.com/Deltares/xmipy>
 
-The iMOD Coupler can be found on:
-<https://github.com/Deltares/imod_coupler>
 
 ## Known Issues
 
