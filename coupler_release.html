@@ -329,28 +329,10 @@ All changes
 </section>
 <section id="release-primod-on-pypi" class="level2">
 <h2 class="anchored" data-anchor-id="release-primod-on-pypi">Release primod on PyPI</h2>
-<p>To be able to do <code>pip install primod</code> , <code>primod</code> needs to be released on the Python Package Index.</p>
-<ul>
-<li>Go into the the pre-processing folder with</li>
-</ul>
-<pre><code>cd pre-processing</code></pre>
-<ul>
-<li><p>If present remove build and dist folder</p></li>
-<li><p>If not done yet, install twine via</p></li>
-</ul>
-<pre><code>pip install build twine</code></pre>
-<ul>
-<li>Re-create the wheels:</li>
-</ul>
-<pre><code>python -m build</code></pre>
-<ul>
-<li>Check the package files:</li>
-</ul>
-<pre><code>twine check dist/*</code></pre>
-<ul>
-<li>Re-upload the new files:</li>
-</ul>
-<pre><code>twine upload dist/*</code></pre>
+<p>To be able to do <code>pip install primod</code> , <code>primod</code> needs to be released on the Python Package Index. First, make sure that you have a <a href="https://pypi.org/">PyPI</a> account. Then create a new API token and store it in a secure location.</p>
+<p>When you publish, you will need to provide a username and a password. Enter the following details: - username: <code>__token__</code> - password: <code>&lt;your-API-token&gt;</code></p>
+<p>Run the following to start the process:</p>
+<pre><code>pixi run publish-primod</code></pre>
 </section>
 <section id="add-the--dev-version-suffix-again" class="level2">
 <h2 class="anchored" data-anchor-id="add-the--dev-version-suffix-again">Add the <code>-dev</code> version suffix again</h2>
