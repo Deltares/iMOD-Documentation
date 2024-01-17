@@ -44,6 +44,7 @@ jobs:
   quarto-pdf:
     name: PDF
     runs-on: ubuntu-latest
+    if: false # PDF build hangs indefinitely, disable it for now
     steps:
         # Circumvent this problem: https://github.com/actions/checkout/issues/165
       - name: Checkout code with LFS cache
