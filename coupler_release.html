@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -278,7 +312,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="create-a-new-release" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-new-release">Create a new release</h2>
-<p>Create a <a href="https://github.com/Deltares/imod_coupler/releases/new">new release</a>. Give it a tag like <code>v2023.08.0</code>, filling in the current year, month and a sequential “MICRO” number. This follows <code>vYYYY.0M.MICRO</code> from <a href="https://calver.org/">calver</a>. For <a href="https://github.com/Deltares/Ribasim/releases/tag/v2023.09.0">v2023.09.0</a> I used the “Generate release notes” button, which I then manually edited to copy the most important changes for users to the top in the form of <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. The possibly long list of generated release notes can put below an “All changes” collapsed item as such:</p>
+<p>Create a new tag like <code>v2023.08.0</code>, filling in the current year, month and a sequential “MICRO” number. This follows <code>vYYYY.0M.MICRO</code> from <a href="https://calver.org/">calver</a>. This can be done by executing:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then push the tags:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This will trigger a workflow on TeamCity that will publish a new release on GitHub as soon as it is finished. You can follow the progress <a href="https://dpcbuild.deltares.nl/buildConfiguration/iMOD6_Coupler_MakeGitHubRelease">here</a>. It also auto-generates a changelog. You’ll probably want to curate that by rearranging the most important changes for users to the top in the form of <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. The possibly long list of generated release notes can put below an “All changes” collapsed item as such:</p>
 <pre><code>&lt;details&gt;
 &lt;summary&gt;
 All changes

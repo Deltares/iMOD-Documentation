@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#coupling-to-modflow-6" id="toc-coupling-to-modflow-6" class="nav-link active" data-scroll-target="#coupling-to-modflow-6">Coupling to MODFLOW 6</a></li>
-  <li><a href="#source-code" id="toc-source-code" class="nav-link" data-scroll-target="#source-code">Source Code</a></li>
+  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
   <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a>
   <ul class="collapse">
   <li><a href="#imod-v5.2-release" id="toc-imod-v5.2-release" class="nav-link" data-scroll-target="#imod-v5.2-release">iMOD v5.2 release</a></li>
@@ -293,10 +293,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Deltares have worked together with the USGS to create the <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">MODFLOW API</a>, based on the <a href="https://bmi-spec.readthedocs.io/en/latest/">Basic Model Interface (BMI)</a> with some extensions. The first version of this functionality became available with the release of MODFLOW 6.2.0. BMI is a set of standard control and query functions that, when added to a model code, make that model both easier to learn and easier to couple with other software elements. Furthermore, the BMI makes it possible to control MODFLOW 6 execution from scripting languages using bindings for the BMI.</p>
 <p>We have also developed <a href="https://github.com/Deltares/xmipy">xmipy</a>, a Python package with bindings for the API, which allow you to run and update (at runtime) a MODFLOW 6 model from Python. This allows coupling MODFLOW 6 to other computational cores. One of its first applications is a coupling of MODFLOW 6 to MetaSWAP, as part of the <a href="https://github.com/Deltares/imod_coupler">iMOD Coupler</a> package. Other applications can be found in <a href="https://www.sciencedirect.com/science/article/pii/S1364815221002991">this paper.</a></p>
 </section>
-<section id="source-code" class="level2">
-<h2 class="anchored" data-anchor-id="source-code">Source Code</h2>
-<p>The <code>xmipy</code> library can be found on: <a href="https://github.com/Deltares/xmipy" class="uri">https://github.com/Deltares/xmipy</a></p>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
 <p>The iMOD Coupler can be found on: <a href="https://github.com/Deltares/imod_coupler" class="uri">https://github.com/Deltares/imod_coupler</a></p>
+<p>The latest release together with the binaries can be found on: <a href="https://github.com/Deltares/imod_coupler/releases/latest/" class="uri">https://github.com/Deltares/imod_coupler/releases/latest/</a></p>
+<p>The <code>xmipy</code> library can be found on: <a href="https://github.com/Deltares/xmipy" class="uri">https://github.com/Deltares/xmipy</a></p>
 </section>
 <section id="known-issues" class="level2">
 <h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
