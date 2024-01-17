@@ -67,33 +67,19 @@ All changes
 ## Release primod on PyPI
 
 To be able to do `pip install primod` , `primod` needs to be released on the Python Package Index.
+First, make sure that you have a [PyPI](https://pypi.org/) account.
+Then create a new API token and store it in a secure location.
 
-- Go into the the pre-processing folder with
+When you publish, you will need to provide a username and a password.
+Enter the following details:
+- username: `__token__`
+- password: `<your-API-token>`
 
+Run the following to start the process:
 ```
-cd pre-processing
-```
-
-- If present remove build and dist folder
-
-- If not done yet, install twine via
-```
-pip install build twine
-```
-- Re-create the wheels:
-```
-python -m build
+pixi run publish-primod
 ```
 
-- Check the package files:
-```
-twine check dist/*
-```
-
-- Re-upload the new files:
-```
-twine upload dist/*
-```
 
 ## Add the `-dev` version suffix again
 
