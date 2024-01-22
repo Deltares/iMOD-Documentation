@@ -1,7 +1,10 @@
 [project]
 name = "iMOD-Documentation"
 version = "0.1.0"
-authors = ["Joeri van Engelen <joerivanengelen@deltares.nl>", "Hofer-Julian <julianhofer@deltares.nl>"]
+authors = [
+    "Joeri van Engelen <joerivanengelen@deltares.nl>",
+    "Hofer-Julian <julianhofer@deltares.nl>",
+]
 channels = ["conda-forge"]
 platforms = ["win-64", "linux-64", "osx-64"]
 
@@ -9,9 +12,14 @@ platforms = ["win-64", "linux-64", "osx-64"]
 install-pre-commit = "pre-commit install"
 pre-commit = "pre-commit run --all-files"
 jupyter = "jupyter lab"
-quarto-check = "quarto check all"
-quarto-render = "export QUARTO_PYTHON=python && quarto render docs --to html --execute"
-docs = "export QUARTO_PYTHON=python && quarto preview docs"
+quartodoc-build = { cmd = "quartodoc build && rm objects.json", cwd = "docs" }
+quarto-check = { cmd = "quarto check all", depends_on = ["quartodoc-build"] }
+quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render docs --to html --execute", depends_on = [
+    "quartodoc-build",
+] }
+docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends_on = [
+    "quartodoc-build",
+] }
 
 [dependencies]
 imod = "*"
@@ -19,3 +27,4 @@ jupyterlab = "*"
 pre-commit = "*"
 primod = "*"
 quarto = "*"
+quartodoc = "*"

@@ -107,3 +107,4 @@ venv.bak/
 _build/
 /.luarc.json
 .pixi
+docs/primod_api

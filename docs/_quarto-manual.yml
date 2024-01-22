@@ -24,6 +24,7 @@ book:
         - coupler_metamod_technical.qmd
         - coupler_metamod_example.ipynb
         - coupler_ribamod_config.qmd
+        - primod_api/index.qmd
         - coupler_architecture.qmd
         - coupler_release.qmd
     - part: tutorial.qmd

@@ -64,6 +64,7 @@ website:
         - section: "Ribasim - MODFLOW 6"
           contents:
             - href: coupler_ribamod_config.qmd
+        - href: primod_api/index.qmd
         - href: coupler_architecture.qmd
         - href: coupler_release.qmd
 

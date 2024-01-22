@@ -4,3 +4,17 @@ project:
 profile:
   group: 
     - [website, manual, install, tutorial]
+
+
+quartodoc:
+  style: pkgdown
+  dir: primod_api
+  title: Primod API Reference
+  package: primod
+  sections:
+    - title: Coupling classes
+      desc: Couple hydrological kernels.
+      contents:
+        - MetaMod
+        - RibaMod
+        - RibaMetaMod
