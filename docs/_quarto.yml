@@ -12,10 +12,17 @@ quartodoc:
   title: Primod API Reference
   package: primod
   sections:
-    - title: Coupling classes
-      desc: Couple hydrological kernels.
+    - title: MetaMod
+      desc: Couple MetaSWAP and MODFLOW 6.
       contents:
         - MetaMod
+    - title: RibaMod
+      desc: Couple Ribasim and MODFLOW 6.
+      contents:
         - RibaMod
+        - ribamod.DriverCoupling       
+    - title: RibaMetaMod
+      desc: Couple Ribasim, MetaSWAP and MODFLOW 6.
+      contents:
         - RibaMetaMod
-        - ribamod.ribamod.DriverCoupling
+        - ribametamod.DriverCoupling
