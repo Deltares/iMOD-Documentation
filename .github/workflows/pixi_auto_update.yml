@@ -17,6 +17,7 @@ jobs:
       - uses: prefix-dev/setup-pixi@v0.4.3
         with:
           pixi-version: "latest"
+          cache: false
       - name: Update pixi lock file
         run: |
           rm pixi.lock
