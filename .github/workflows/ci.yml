@@ -21,7 +21,7 @@ jobs:
       - name: Checkout code with LFS cache
         uses: nschloe/action-checkout-with-lfs-cache@v1
 
-      - uses: prefix-dev/setup-pixi@v0.4.1
+      - uses: prefix-dev/setup-pixi@v0.4.3
         with:
           pixi-version: "latest"
 
