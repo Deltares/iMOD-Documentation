@@ -1,4 +1,4 @@
-name: Pre-commit
+name: Pixi auto update
 
 on:
   schedule:
