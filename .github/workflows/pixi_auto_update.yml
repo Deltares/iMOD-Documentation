@@ -25,8 +25,8 @@ jobs:
       - uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: update/pre-commit-hooks
-          title: Update pre-commit hooks
+          branch: update/pixi-lock
+          title: Update pixi lock file
           commit-message: "Update `pixi.lock`"
           body: Update pixi dependencies to the latest version.
           author: "GitHub <noreply@github.com>"
