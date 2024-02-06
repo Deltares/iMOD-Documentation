@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite - Configuration</title>
+<title>iMOD Suite - Pre-processing</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_metamod_technical.html" rel="next">
-<link href="./coupler.html" rel="prev">
+<link href="./primod_api/index.html" rel="next">
+<link href="./coupler_ribamod_technical.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -168,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">Configuration</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribamod_config.html">Ribasim - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribamod_preprocessing.html">Pre-processing</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
@@ -238,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_ribamod_preprocessing.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_ribamod_preprocessing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Pre-processing</span></a>
   </div>
 </li>
@@ -272,11 +272,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#config-schema" id="toc-config-schema" class="nav-link active" data-scroll-target="#config-schema">Config schema</a>
+  <li><a href="#the-primod-python-package" id="toc-the-primod-python-package" class="nav-link active" data-scroll-target="#the-primod-python-package">The primod Python package</a></li>
+  <li><a href="#abbreviated-example" id="toc-abbreviated-example" class="nav-link" data-scroll-target="#abbreviated-example">Abbreviated example</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#exchange-derivation" id="toc-exchange-derivation" class="nav-link" data-scroll-target="#exchange-derivation">Exchange derivation</a>
   <ul class="collapse">
-  <li><a href="#driver.kernels.modflow6" id="toc-driver.kernels.modflow6" class="nav-link" data-scroll-target="#driver.kernels.modflow6">driver.kernels.modflow6</a></li>
-  <li><a href="#driver.kernels.metaswap" id="toc-driver.kernels.metaswap" class="nav-link" data-scroll-target="#driver.kernels.metaswap">driver.kernels.metaswap</a></li>
-  <li><a href="#driver.coupling" id="toc-driver.coupling" class="nav-link" data-scroll-target="#driver.coupling">driver.coupling</a></li>
+  <li><a href="#passive-coupling" id="toc-passive-coupling" class="nav-link" data-scroll-target="#passive-coupling">Passive coupling</a></li>
+  <li><a href="#active-coupling" id="toc-active-coupling" class="nav-link" data-scroll-target="#active-coupling">Active coupling</a></li>
+  </ul></li>
+  <li><a href="#modifications-to-the-ribasim-model" id="toc-modifications-to-the-ribasim-model" class="nav-link" data-scroll-target="#modifications-to-the-ribasim-model">Modifications to the Ribasim model</a></li>
+  <li><a href="#modifications-to-the-modflow-6-simulation" id="toc-modifications-to-the-modflow-6-simulation" class="nav-link" data-scroll-target="#modifications-to-the-modflow-6-simulation">Modifications to the MODFLOW 6 simulation</a>
+  <ul class="collapse">
+  <li><a href="#consistency-between-modflow-6-and-ribasim-subgrid" id="toc-consistency-between-modflow-6-and-ribasim-subgrid" class="nav-link" data-scroll-target="#consistency-between-modflow-6-and-ribasim-subgrid">Consistency between MODFLOW 6 and Ribasim subgrid</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -286,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Configuration</h1>
+<h1 class="title">Pre-processing</h1>
 </div>
 
 
@@ -301,402 +308,119 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>The configuration file is necessary to describe the model and its dependencies. It is in the <a href="https://toml.io/en/">toml</a> format and should have a <code>.toml</code> extension.</p>
-<p>Note that <code>toml</code> uses quote marks differently than <code>python</code>. Single quotes in toml (<code>''</code>) are interpreted similarly to how python would interpret a rawstring (<code>r''</code> or <code>r""</code>), whereas double quotes (<code>""</code>) are interpreted similarly to regular strings in python (<code>""</code> or <code>''</code>). This matters for paths on Windows, for which we advise to use single quotes.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">log_level</span> <span class="op">=</span> <span class="st">'</span><span class="vs">INFO</span><span class="st">'</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">timing</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">driver_type</span> <span class="op">=</span> <span class="st">'</span><span class="vs">metamod</span><span class="st">'</span></span>
+<p>This document describes how to setup coupled Ribasim-MODFLOW 6 simulations.</p>
+<section id="the-primod-python-package" class="level2">
+<h2 class="anchored" data-anchor-id="the-primod-python-package">The primod Python package</h2>
+<p>To aid in setting up coupled models, we have created the <code>primod</code> Python package. It takes both models, derives the exchange relationships between both, and writes:</p>
+<ul>
+<li>the Ribasim model</li>
+<li>the MODFLOW 6 simulation</li>
+<li>the exchange files</li>
+<li>the iMOD coupler configuration file</li>
+</ul>
+<p>The derivation of exchange connections between the models is automatic, and based on the spatial information provided for both models.</p>
+<p>As <code>primod</code> is a Python package, both models must be represented in Python:</p>
+<ul>
+<li>The MODFLOW 6 simulation is represented by the <a href="https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.html">Modflow6Simulation</a> class of the <code>imod</code> Python package.</li>
+<li>The Ribasim model is represented by the <a href="https://deltares.github.io/Ribasim/python/reference/#model">Model</a> class of the <code>ribasim</code> Python package.</li>
+<li>The combination of both models is represented by the <code>primod</code> <a href="primod_api/RibaMod.html#primod.RibaMod">RibaMod</a> class.</li>
+</ul>
+<p>Both Python packages support reading a model from a TOML file and associated files.</p>
+</section>
+<section id="abbreviated-example" class="level2">
+<h2 class="anchored" data-anchor-id="abbreviated-example">Abbreviated example</h2>
+<p>The following abbreviated example:</p>
+<ul>
+<li>Reads a Ribasim model</li>
+<li>Reads a MODFLOW 6 simulation</li>
+<li>Reads a basin definition associated with the Ribasim model</li>
+<li>Defines a driver coupling: which river and drainage packages are coupled</li>
+<li>Sets up a coupled model</li>
+<li>Writes the coupled model</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ribasim</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> imod</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># MODFLOW 6</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">kernels</span><span class="kw">.</span><span class="dt">modflow6</span><span class="kw">]</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/libmf6.dll</span><span class="st">'</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mf6_data</span><span class="st">'</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># MetaSWAP</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">kernels</span><span class="kw">.</span><span class="dt">metaswap</span><span class="kw">]</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/MetaSWAP.dll</span><span class="st">'</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">dll_dep_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./kernels/3rdparty</span><span class="st">'</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./msw_data</span><span class="st">'</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner model with sprinkling</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">coupling</span><span class="kw">]]</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">inner_model</span><span class="st">'</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_well_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">WELLS_MSW</span><span class="st">'</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/nodenr2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/rchindex2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_sprinkling_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/wellindex2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> primod.ribamod <span class="im">import</span> DriverCoupling, RibaMod</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>ribasim_model <span class="op">=</span> ribasim.Model.read(<span class="st">"ribasim/ribasim.toml"</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>mf6_simulation <span class="op">=</span> imod.mf6.Modflow6Simulation.from_file(<span class="st">"modflow/GWF_1.toml"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>basin_definition <span class="op">=</span> gpd.read_file(<span class="st">"ribasim_network.gpkg"</span>, layer<span class="op">=</span><span class="st">"basin_areas"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>driver_coupling <span class="op">=</span> DriverCoupling(</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    mf6_model<span class="op">=</span><span class="st">"GWF_1"</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    mf6_active_river_packages<span class="op">=</span>[<span class="st">"riv-1"</span>],</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    mf6_passive_drainage_packages<span class="op">=</span>[<span class="st">"drn-1"</span>, <span class="st">"drn-2"</span>],</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>ribamod_model <span class="op">=</span> RibaMod(</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    ribasim_model<span class="op">=</span>ribasim_model,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    mf6_simulation<span class="op">=</span>mf6sim,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    coupling_list<span class="op">=</span>[driver_coupling],</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    basin_definition<span class="op">=</span>basin_definition,</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer model, without sprinkling</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">[[</span><span class="dt">driver</span><span class="kw">.</span><span class="dt">coupling</span><span class="kw">]]</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">outer_model</span><span class="st">'</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/nodenr2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/rchindex2svat.dxc</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="config-schema" class="level2">
-<h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
-<table class="table">
-<caption>log_level</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>This setting determines the severity and therefore the verbosity of the log messages.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-<tr class="even">
-<td>default</td>
-<td>INFO</td>
-</tr>
-<tr class="odd">
-<td>enum</td>
-<td>DEBUG, INFO, WARNING, ERROR, CRITICAL</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>timing</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Specifies whether the coupling should be timed. This option requires the log level to at least include INFO.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>bool</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-<tr class="even">
-<td>default</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>driver_type</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Specifies which driver should be used. Typically, this determines which hydrological kernels are coupled.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-<tr class="even">
-<td>enum</td>
-<td>metamod</td>
-</tr>
-</tbody>
-</table>
-<section id="driver.kernels.modflow6" class="level3">
-<h3 class="anchored" data-anchor-id="driver.kernels.modflow6">driver.kernels.modflow6</h3>
-<table class="table">
-<caption>dll</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The path to the MODFLOW 6 library.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>dll_dep_dir</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The path to the dependencies of MODFLOW 6.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>work_dir</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The working directory MODFLOW 6 expects. This is the directory where the simulation name file resides.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ribamod_model.write(</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>   directory<span class="op">=</span><span class="st">"coupled-ribamod-simulation"</span>,</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>   modflow6_dll<span class="op">=</span><span class="vs">r"c:\bin\imod_coupler\modflow6\libmf6.dll"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>   ribasim_dll<span class="op">=</span><span class="vs">r"c:\bin\imod_coupler\ribasim\bin\libribasim.dll"</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>   ribasim_dll_dependency<span class="op">=</span><span class="vs">r"c:\bin\imod_coupler\ribasim\bin"</span>,</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="driver.kernels.metaswap" class="level3">
-<h3 class="anchored" data-anchor-id="driver.kernels.metaswap">driver.kernels.metaswap</h3>
-<table class="table">
-<caption>dll</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The path to the MetaSWAP library.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>dll_dep_dir</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The path to the dependencies of MetaSWAP.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>work_dir</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>The working directory MetaSWAP expects.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
+<ul>
+<li>The start and end times of the Ribasim and MODFLOW 6 simulations must align. <code>primod</code> will raise an error otherwise.</li>
+<li>Spatial extents of both models need not coincide. Part of the Ribasim basins may be located outside of the MODFLOW 6 simulation window. Uncoupled basins will proceed with the regular drainage and irrigation terms define in the Basin / Static or Basin / Time tables.</li>
+<li>Similarly, not every River and Drainage boundary needs to be linked with Ribasim. Boundaries outside of any basin polygon will simply use the regular file input.</li>
+</ul>
 </section>
-<section id="driver.coupling" class="level3">
-<h3 class="anchored" data-anchor-id="driver.coupling">driver.coupling</h3>
-<table class="table">
-<caption>enable_sprinkling</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Whether to enable sprinkling, that is: enable extracting groundwater for irrigation.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>bool</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_model</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Specifies the MODFLOW 6 model name to which MetaSWAP will be coupled.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_msw_recharge_pkg</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_msw_well_pkg</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_msw_node_map</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Path to the file specifying the mapping between MODFLOW 6 cells and MetaSWAP svats.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_msw_recharge_pkg</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Path to the file specifying the mapping between MODFLOW 6 recharge cells and MetaSWAP svats.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
-<caption>mf6_msw_sprinkling_map</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>str</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>false</td>
-</tr>
-</tbody>
-</table>
+<section id="exchange-derivation" class="level2">
+<h2 class="anchored" data-anchor-id="exchange-derivation">Exchange derivation</h2>
+<p>The exchanges are derived based on spatial overlap of Ribasim basins and the grid-based River and Drainage representation. For an active coupling, the x and y locations of the subgrid elements is used to link each actively coupled MODFLOW 6 boundary with a subgrid element.</p>
+<section id="passive-coupling" class="level3">
+<h3 class="anchored" data-anchor-id="passive-coupling">Passive coupling</h3>
+<p>The derivation of exchanges proceeds in the following steps:</p>
+<ul>
+<li>Rasterize the basin definition polygons (provided as a <code>geopandas.GeoDataFrame</code>) to the MODFLOW 6 model grid.</li>
+<li>Overlay the conductance on the rasterized basin definition, and derive for each boundary the basin index.</li>
+<li>Identify the indices of the coupled MODFLOW 6 boundaries.</li>
+<li>Store the basin indices and boundary indices in a table.</li>
+</ul>
+</section>
+<section id="active-coupling" class="level3">
+<h3 class="anchored" data-anchor-id="active-coupling">Active coupling</h3>
+<p>The derivation of active coupling exchanges proceeds largely the same, but also locates the nearest subgrid elements:</p>
+<ul>
+<li>Rasterize the basin definition polygons (provided as a <code>geopandas.GeoDataFrame</code>) to the MODFLOW 6 model grid.</li>
+<li>Overlay the conductance on the rasterized basin definition, and derive for each boundary the basin index.</li>
+<li>Identify the indices of the coupled MODFLOW 6 boundaries.</li>
+<li>Using the <code>meta_x</code> and <code>meta_y</code> columns in the Ribasim Basin / subgrid table, find the nearest subgrid element for each MODFLOW 6 boundary.</li>
+<li>Store the basin indices, boundary indices, subgrid indices in a table.</li>
+</ul>
+</section>
+</section>
+<section id="modifications-to-the-ribasim-model" class="level2">
+<h2 class="anchored" data-anchor-id="modifications-to-the-ribasim-model">Modifications to the Ribasim model</h2>
+<p>The <code>primod.RibaMod</code> class makes the following alteration to the Ribasim input before writing the Ribasim model: for basins that are coupled to MODFLOW 6, the infiltration and drainage columns are set to <code>NaN</code> / <code>Null</code> (nodata) in the Basin / Static or Basin / Time tables.</p>
+<p>This ensures that Ribasim does not overwrite the exchange flows while running coupled with MODFLOW 6.</p>
+<p>Conceptually, it also means that when a basin is coupled, it should generally located inside of the MODFLOW 6 model; after all, when half of the basin is located outside of the MODFLOW 6 model, it will not receive drainage or lose water to infiltration in that half.</p>
+</section>
+<section id="modifications-to-the-modflow-6-simulation" class="level2">
+<h2 class="anchored" data-anchor-id="modifications-to-the-modflow-6-simulation">Modifications to the MODFLOW 6 simulation</h2>
+<p>Currently, no modifications are made in the MODFLOW 6 input.</p>
+<section id="consistency-between-modflow-6-and-ribasim-subgrid" class="level3">
+<h3 class="anchored" data-anchor-id="consistency-between-modflow-6-and-ribasim-subgrid">Consistency between MODFLOW 6 and Ribasim subgrid</h3>
+<p>During the coupling, water levels should not be set below the bed elevation of the boundary. For drainage packages, this is the drainage elevation provided in the MODFLOW 6 input; for river packages, this is the bottom elevation provided in the MODFLOW 6 input.</p>
+<p>There is potential for inconsistency here, as Ribasim also describes a bed elevation: the lowest level of the subgrid piecewise interpolation table:</p>
+<ul>
+<li>In case the MODFLOW 6 bed elevation is higher than the subgrid elevation, infiltration will stop before the Ribasim basin is empty.</li>
+<li>In case the MODFLOW 6 bed elevation is lower than the subgrid elevation, infiltration will proceed even when the Ribasim basin is empty.</li>
+</ul>
+<p>The second is a more pressing problem, as it will results in a discrepancy between the water balances of both models.</p>
 
 
 </section>
@@ -938,13 +662,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</span>
+      <a href="./coupler_ribamod_technical.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Technical Reference</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coupler_metamod_technical.html" class="pagination-link">
-        <span class="nav-page-text">Technical Reference</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./primod_api/index.html" class="pagination-link">
+        <span class="nav-page-text">Primod API Reference</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
