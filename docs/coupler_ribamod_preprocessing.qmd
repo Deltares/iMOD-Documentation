@@ -27,7 +27,7 @@ As `primod` is a Python package, both models must be represented in Python:
   [Model](https://deltares.github.io/Ribasim/python/reference/#model) class of
   the `ribasim` Python package.
 * The combination of both models is represented by the `primod`
-  [RibaMod](https://deltares.github.io/iMOD-Documentation/primod_api/RibaMod.html#primod.RibaMod)
+  [RibaMod](primod_api/RibaMod.html#primod.RibaMod)
   class.
  
 Both Python packages support reading a model from a TOML file and associated
