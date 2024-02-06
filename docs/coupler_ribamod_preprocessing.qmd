@@ -1,0 +1,162 @@
+---
+title: Pre-processing
+---
+
+This document describes how to setup coupled Ribasim-MODFLOW 6 simulations.
+
+## The primod Python package
+
+To aid in setting up coupled models, we have created the `primod` Python
+package. It takes both models, derives the exchange relationships between
+both, and writes: 
+
+* the Ribasim model
+* the MODFLOW 6 simulation
+* the exchange files
+* the iMOD coupler configuration file 
+
+The derivation of exchange connections between the models is automatic, and
+based on the spatial information provided for both models.
+
+As `primod` is a Python package, both models must be represented in Python:
+
+* The MODFLOW 6 simulation is represented by the
+  [Modflow6Simulation](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.html)
+  class of the `imod` Python package.
+* The Ribasim model is represented by the
+  [Model](https://deltares.github.io/Ribasim/python/reference/#model) class of
+  the `ribasim` Python package.
+* The combination of both models is represented by the `primod`
+  [RibaMod](primod_api/RibaMod.html#primod.RibaMod)
+  class.
+ 
+Both Python packages support reading a model from a TOML file and associated
+files.
+
+## Abbreviated example
+
+The following abbreviated example:
+
+* Reads a Ribasim model
+* Reads a MODFLOW 6 simulation
+* Reads a basin definition associated with the Ribasim model
+* Defines a driver coupling: which river and drainage packages are coupled
+* Sets up a coupled model
+* Writes the coupled model
+
+
+``` python
+import ribasim
+import geopandas as gpd
+import imod
+
+from primod.ribamod import DriverCoupling, RibaMod
+
+
+ribasim_model = ribasim.Model.read("ribasim/ribasim.toml")
+mf6_simulation = imod.mf6.Modflow6Simulation.from_file("modflow/GWF_1.toml")
+basin_definition = gpd.read_file("ribasim_network.gpkg", layer="basin_areas")
+
+
+driver_coupling = DriverCoupling(
+    mf6_model="GWF_1",
+    mf6_active_river_packages=["riv-1"],
+    mf6_passive_drainage_packages=["drn-1", "drn-2"],
+)
+
+ribamod_model = RibaMod(
+    ribasim_model=ribasim_model,
+    mf6_simulation=mf6sim,
+    coupling_list=[driver_coupling],
+    basin_definition=basin_definition,
+)
+
+ribamod_model.write(
+   directory="coupled-ribamod-simulation",
+   modflow6_dll=r"c:\bin\imod_coupler\modflow6\libmf6.dll",
+   ribasim_dll=r"c:\bin\imod_coupler\ribasim\bin\libribasim.dll",
+   ribasim_dll_dependency=r"c:\bin\imod_coupler\ribasim\bin",
+)
+```
+
+## Requirements
+
+* The start and end times of the Ribasim and MODFLOW 6 simulations must align.
+  `primod` will raise an error otherwise.
+* Spatial extents of both models need not coincide. Part of the Ribasim basins
+  may be located outside of the MODFLOW 6 simulation window. Uncoupled basins
+  will proceed with the regular drainage and irrigation terms define in the
+  Basin / Static or Basin / Time tables.
+* Similarly, not every River and Drainage boundary needs to be linked with
+  Ribasim. Boundaries outside of any basin polygon will simply use the regular
+  file input.
+
+## Exchange derivation
+
+The exchanges are derived based on spatial overlap of Ribasim basins and the
+grid-based River and Drainage representation. For an active coupling, the x
+and y locations of the subgrid elements is used to link each actively coupled
+MODFLOW 6 boundary with a subgrid element.
+
+
+### Passive coupling
+
+The derivation of exchanges proceeds in the following steps:
+
+* Rasterize the basin definition polygons (provided as a
+  `geopandas.GeoDataFrame`) to the MODFLOW 6 model grid.
+* Overlay the conductance on the rasterized basin definition,
+  and derive for each boundary the basin index.
+* Identify the indices of the coupled MODFLOW 6 boundaries.
+* Store the basin indices and boundary indices in a table.
+
+### Active coupling
+
+The derivation of active coupling exchanges proceeds largely the same, but also
+locates the nearest subgrid elements:
+
+* Rasterize the basin definition polygons (provided as a
+  `geopandas.GeoDataFrame`) to the MODFLOW 6 model grid.
+* Overlay the conductance on the rasterized basin definition, and derive for
+  each boundary the basin index.
+* Identify the indices of the coupled MODFLOW 6 boundaries.
+* Using the `meta_x` and `meta_y` columns in the Ribasim Basin / subgrid table,
+  find the nearest subgrid element for each MODFLOW 6 boundary.
+* Store the basin indices, boundary indices, subgrid indices in a table.
+
+## Modifications to the Ribasim model
+
+The `primod.RibaMod` class makes the following alteration to the Ribasim input
+before writing the Ribasim model: for basins that are coupled to MODFLOW 6,
+the infiltration and drainage columns are set to `NaN` / `Null` (nodata) in
+the Basin / Static or Basin / Time tables.
+
+This ensures that Ribasim does not overwrite the exchange flows while running
+coupled with MODFLOW 6.
+
+Conceptually, it also means that when a basin is coupled, it should generally
+located inside of the MODFLOW 6 model; after all, when half of the basin is
+located outside of the MODFLOW 6 model, it will not receive drainage or lose
+water to infiltration in that half.
+
+## Modifications to the MODFLOW 6 simulation
+
+Currently, no modifications are made in the MODFLOW 6 input.
+
+### Consistency between MODFLOW 6 and Ribasim subgrid
+
+During the coupling, water levels should not be set below the bed elevation
+of the boundary. For drainage packages, this is the drainage elevation
+provided in the MODFLOW 6 input; for river packages, this is the bottom
+elevation provided in the MODFLOW 6 input.
+
+There is potential for inconsistency here, as Ribasim also describes a bed
+elevation: the lowest level of the subgrid piecewise interpolation table:
+
+* In case the MODFLOW 6 bed elevation is higher than the subgrid elevation,
+  infiltration will stop before the Ribasim basin is empty.
+* In case the MODFLOW 6 bed elevation is lower than the subgrid elevation,
+  infiltration will proceed even when the Ribasim basin is empty.
+
+The second is a more pressing problem, as it will results in a discrepancy
+between the water balances of both models.
