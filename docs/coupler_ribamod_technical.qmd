@@ -118,7 +118,7 @@ provides the drainage and infiltration flows. These flows are collected in the
 Ribasim basins.
 
 The RibaMod coupling only exchanges between Ribasim basins and MODFLOW 6 River
-and Drainage packages. This means that for a succesful coupling with Ribasim,
+and Drainage packages. This means that for a successful coupling with Ribasim,
 the surface water should **only** be represented by either River or Drainage
 boundaries.
 
