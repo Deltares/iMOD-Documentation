@@ -7,6 +7,18 @@ for groundwater modellers, who need to know which variables are exchanged
 between computational kernels and at which moment. For details of the inner
 workings of the code, we refer to the docstrings in the code.
 
+The following sequence diagram show the current sequential coupling scheme for
+a single MODFLOW 6 stress period.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    Ribasim ->> MODFLOW6: exchange stage [T-1]
+    Note over MODFLOW6: solve T
+    MODFLOW6 ->> Ribasim: RIV flux [T-1]
+    Note over Ribasim: solve T
+```
+
 # Requirements
 
 * Ribasim only couples to the River (RIV) and Drainage (DRN) packages of

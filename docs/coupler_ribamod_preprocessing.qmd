@@ -106,7 +106,7 @@ The derivation of exchanges proceeds in the following steps:
 * Rasterize the basin definition polygons (provided as a
   `geopandas.GeoDataFrame`) to the MODFLOW 6 model grid.
 * Overlay the conductance on the rasterized basin definition,
-  and derive for each boundary the basin index..
+  and derive for each boundary the basin index.
 * Identify the indices of the coupled MODFLOW 6 boundaries.
 * Store the basin indices and boundary indices in a table.
 
@@ -118,7 +118,7 @@ locates the nearest subgrid elements:
 * Rasterize the basin definition polygons (provided as a
   `geopandas.GeoDataFrame`) to the MODFLOW 6 model grid.
 * Overlay the conductance on the rasterized basin definition, and derive for
-  each boundary the basin index..
+  each boundary the basin index.
 * Identify the indices of the coupled MODFLOW 6 boundaries.
 * Using the `meta_x` and `meta_y` columns in the Ribasim Basin / subgrid table,
   find the nearest subgrid element for each MODFLOW 6 boundary.
