@@ -21,22 +21,30 @@ Before starting the release process, ensure that all tests are passing and that 
 
 ## Update version numbers of the components as needed
 
-The components have their own version number which generally uses [Semantic Versioning](https://semver.org/), with minor version signifying a breaking release for pre-1.0 versions. 
-If a component did not change at all between releases, the version number can stay the same.
+The components have a version number which generally uses [Semantic Versioning](https://semver.org/), with minor version signifying a breaking release for pre-1.0 versions. 
+The components are only guaranteed to work together if they are built at the same time.
+To clearly communicate this, component versions should have synchronized version numbers.
+This means that both version numbers should be updated even if only one component has been changed.
 
 Now submit a pull request which updates the version numbers of the components as needed.
 
-- Remove the `-dev` suffix from the version number and increase the version number in `__init__.py` of `imod_coupler` and `pre-processing/primod`
-
-For example: `__version__ = "0.10.0-dev"` -> `__version__ = "0.11.0"`
-
-- Create a new commit with the updated version number,
-and push to remote
+- Create a new branch and switch to it, for example: `git checkout -b new-release`.
+- Remove the `-dev` postfix and increase the version number in `__init__.py` of `imod_coupler` and `pre-processing/primod`
+- The new version numbers should be of the form `__version__ = "0.11.0"`
+- Create a new commit with the updated version number
+- Push to remote
+- Create a Pull Request
+- Merge the Pull Request into main
 
 ## Create a new release
 
-Create a new tag like `v2023.08.0`, filling in the current year, month and a sequential "MICRO" number.
-This follows `vYYYY.0M.MICRO` from [calver](https://calver.org/).
+Create a new tag like `v2023.8.0`, filling in the current year, month and a sequential "MICRO" number.
+This follows `vYYYY.MM.MICRO` from [calver](https://calver.org/).
+
+::: {.callout-note}
+Note the lack of a trailing zero on the month (`MM` verus `0M`) for parsing reasons.
+:::
+
 This can be done by executing:
 ```bash
 git tag <tagname>
