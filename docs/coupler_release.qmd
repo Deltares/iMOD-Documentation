@@ -41,9 +41,6 @@ Now submit a pull request which updates the version numbers of the components as
 Create a new tag like `v2023.8.0`, filling in the current year, month and a sequential "MICRO" number.
 This follows `vYYYY.MM.MICRO` from [calver](https://calver.org/).
 
-::: {.callout-note}
-Note the lack of a trailing zero on the month (`MM` verus `0M`) for parsing reasons.
-:::
 
 This can be done by executing:
 ```bash
