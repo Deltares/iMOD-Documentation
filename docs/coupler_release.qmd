@@ -29,7 +29,6 @@ This means that both version numbers should be updated even if only one componen
 Now submit a pull request which updates the version numbers of the components as needed.
 
 - Create a new branch and switch to it, for example: `git switch --create new-release`.
-- Remove the `-dev` postfix and increase the version number in `__init__.py` of `imod_coupler` and `pre-processing/primod`
 - The new version numbers should be of the form `__version__ = "0.11.0"`
 - Create a new commit with the updated version number
 - Push to remote
