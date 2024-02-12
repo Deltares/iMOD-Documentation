@@ -25,7 +25,7 @@ Determine the new version number like `2023.1.0`, filling in the current year, a
 This follows `YYYY.MINOR.MICRO` from [calver](https://calver.org/).
 
 The components are only guaranteed to work together if they are built at the same time.
-To clearly communicate this, component versions should have synchronized version numbers.
+To clearly communicate this, component versions need to have synchronized version numbers.
 This means that both version numbers should be updated even if only one component has been changed.
 
 Update the version numbers in the repository to the new version number.
