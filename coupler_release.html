@@ -278,7 +278,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#update-version-numbers-of-the-components-as-needed" id="toc-update-version-numbers-of-the-components-as-needed" class="nav-link" data-scroll-target="#update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</a></li>
   <li><a href="#create-a-new-release" id="toc-create-a-new-release" class="nav-link" data-scroll-target="#create-a-new-release">Create a new release</a></li>
   <li><a href="#release-primod-on-pypi" id="toc-release-primod-on-pypi" class="nav-link" data-scroll-target="#release-primod-on-pypi">Release primod on PyPI</a></li>
-  <li><a href="#add-the--dev-version-suffix-again" id="toc-add-the--dev-version-suffix-again" class="nav-link" data-scroll-target="#add-the--dev-version-suffix-again">Add the <code>-dev</code> version suffix again</a></li>
   <li><a href="#announce-release" id="toc-announce-release" class="nav-link" data-scroll-target="#announce-release">Announce release</a></li>
   </ul></li>
   </ul>
@@ -318,19 +317,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="update-version-numbers-of-the-components-as-needed" class="level2">
 <h2 class="anchored" data-anchor-id="update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</h2>
-<p>The components have their own version number which generally uses <a href="https://semver.org/">Semantic Versioning</a>, with minor version signifying a breaking release for pre-1.0 versions. If a component did not change at all between releases, the version number can stay the same.</p>
+<p>Determine the new version number like <code>2023.1.0</code>, filling in the current year, a bumped <code>MINOR</code> number for normal releases and a bumped <code>MICRO</code> number for non-breaking, hotfix releases. This follows <code>YYYY.MINOR.MICRO</code> from <a href="https://calver.org/">calver</a>.</p>
+<p>The components are only guaranteed to work together if they are built at the same time. To clearly communicate this, component versions need to have synchronized version numbers. This means that both version numbers should be updated even if only one component has been changed.</p>
+<p>Update the version numbers in the repository to the new version number. Update the following two locations:</p>
+<ul>
+<li><code>imod_coupler/__init__.py</code></li>
+<li><code>pre-processing/primod/__init__.py</code></li>
+</ul>
 <p>Now submit a pull request which updates the version numbers of the components as needed.</p>
 <ul>
-<li>Remove the <code>-dev</code> suffix from the version number and increase the version number in <code>__init__.py</code> of <code>imod_coupler</code> and <code>pre-processing/primod</code></li>
-</ul>
-<p>For example: <code>__version__ = "0.10.0-dev"</code> -&gt; <code>__version__ = "0.11.0"</code></p>
-<ul>
-<li>Create a new commit with the updated version number, and push to remote</li>
+<li>Create a new branch and switch to it, for example: <code>git switch --create new-release</code>.</li>
+<li>Create a new commit with the updated version number</li>
+<li>Push to remote</li>
+<li>Create a Pull Request</li>
+<li>Merge the Pull Request into main</li>
 </ul>
 </section>
 <section id="create-a-new-release" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-new-release">Create a new release</h2>
-<p>Create a new tag like <code>v2023.08.0</code>, filling in the current year, month and a sequential “MICRO” number. This follows <code>vYYYY.0M.MICRO</code> from <a href="https://calver.org/">calver</a>. This can be done by executing:</p>
+<p>Create a new tag like <code>v2023.1.0</code> by prepending <code>v</code> to the calver version number.</p>
+<p>This can be done by executing:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then push the tags:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -351,16 +357,6 @@ All changes
 <p>When you publish, you will need to provide a username and a password. Enter the following details: - username: <code>__token__</code> - password: <code>&lt;your-API-token&gt;</code></p>
 <p>Run the following to start the process:</p>
 <pre><code>pixi run publish-primod</code></pre>
-</section>
-<section id="add-the--dev-version-suffix-again" class="level2">
-<h2 class="anchored" data-anchor-id="add-the--dev-version-suffix-again">Add the <code>-dev</code> version suffix again</h2>
-<ul>
-<li>Add the <code>-dev</code> suffix to the version number in <code>__init__.py</code> of <code>imod_coupler</code> and <code>pre-processing/primod</code></li>
-</ul>
-<p>For example: <code>__version__ = "0.11.0"</code> -&gt; <code>__version__ = "0.11.0-dev"</code></p>
-<ul>
-<li>Create a new commit with the updated version number, and push to remote</li>
-</ul>
 </section>
 <section id="announce-release" class="level2">
 <h2 class="anchored" data-anchor-id="announce-release">Announce release</h2>
