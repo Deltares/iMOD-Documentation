@@ -1,9 +1,9 @@
 repos:
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.6.1
+    rev: 0.7.1
     hooks:
       - id: nbstripout
   - repo: https://github.com/crate-ci/typos
-    rev: v1.17.2
+    rev: typos-v0.10.21
     hooks:
       - id: typos
