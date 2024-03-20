@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite - Example</title>
+<title>iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -83,7 +83,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -92,13 +98,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
@@ -109,9 +116,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     <img src="./_static/iMOD-doc-logo.svg" alt="" class="navbar-logo">
     </a>
@@ -126,67 +133,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./introduction.html" rel="" target="">
- <span class="menu-text">Introduction</span></a>
+    <a class="nav-link" href="./introduction.html"> 
+<span class="menu-text">Introduction</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./viewer.html" rel="" target="">
- <span class="menu-text">iMOD Viewer</span></a>
+    <a class="nav-link" href="./viewer.html"> 
+<span class="menu-text">iMOD Viewer</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./python.html" rel="" target="">
- <span class="menu-text">iMOD Python</span></a>
+    <a class="nav-link" href="./python.html"> 
+<span class="menu-text">iMOD Python</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./coupler.html" rel="" target="" aria-current="page">
- <span class="menu-text">iMOD Coupler</span></a>
+    <a class="nav-link active" href="./coupler.html" aria-current="page"> 
+<span class="menu-text">iMOD Coupler</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html" rel="" target="">
- <span class="menu-text">Tutorials</span></a>
+    <a class="nav-link" href="./tutorial.html"> 
+<span class="menu-text">Tutorials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./practical.html" rel="" target="">
- <span class="menu-text">Practical tips</span></a>
+    <a class="nav-link" href="./practical.html"> 
+<span class="menu-text">Practical tips</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation" rel="" target=""><i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/Deltares/iMOD-Documentation"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_metamod_example.html">Example</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_metamod_config.html">MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_metamod_example.html">Example</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coupler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><i class="fa-solid fa-plug" aria-label="plug"></i> iMOD Coupler</span></a>
+ <span class="menu-text"> iMOD Coupler</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -268,14 +275,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#modflow-6-model" id="toc-modflow-6-model" class="nav-link active" data-scroll-target="#modflow-6-model">Modflow 6 model</a>
+  <li><a href="#example" id="toc-example" class="nav-link active" data-scroll-target="#example">Example</a>
+  <ul class="collapse">
+  <li><a href="#modflow-6-model" id="toc-modflow-6-model" class="nav-link" data-scroll-target="#modflow-6-model">Modflow 6 model</a>
   <ul class="collapse">
   <li><a href="#create-grid" id="toc-create-grid" class="nav-link" data-scroll-target="#create-grid">Create grid</a></li>
   <li><a href="#hydrogeology" id="toc-hydrogeology" class="nav-link" data-scroll-target="#hydrogeology">Hydrogeology</a></li>
@@ -300,29 +309,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#coupler-mapping" id="toc-coupler-mapping" class="nav-link" data-scroll-target="#coupler-mapping">Coupler mapping</a></li>
   <li><a href="#running-the-models" id="toc-running-the-models" class="nav-link" data-scroll-target="#running-the-models">Running the models</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Example</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
+<section id="example" class="level1">
+<h1>Example</h1>
 <p>This example illustrates how to setup a simple MetaSWAP model coupled to a Modflow 6 model model using the <code>imod</code> package and associated packages.</p>
 <p>Overview of steps made:</p>
 <ul>
@@ -331,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Write coupled models</li>
 </ul>
 <p>We’ll start with the following imports:</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="1">
+<div id="cell-3" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
@@ -343,13 +341,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="modflow-6-model" class="level2">
 <h2 class="anchored" data-anchor-id="modflow-6-model">Modflow 6 model</h2>
 <p>Next, we initiate the Modflow 6 groundwater model:</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="2">
+<div id="cell-5" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gwf_model <span class="op">=</span> mf6.GroundwaterFlowModel()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="create-grid" class="level3">
 <h3 class="anchored" data-anchor-id="create-grid">Create grid</h3>
 <p>We’ll then define the Modflow 6 grid. It consists of 3 layers of 9 by 9 cells rasters.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="3">
+<div id="cell-7" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>shape <span class="op">=</span> nlay, nrow, ncol <span class="op">=</span> <span class="dv">3</span>, <span class="dv">9</span>, <span class="dv">9</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> <span class="fl">10.0</span></span>
@@ -373,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>    np.cumsum(layer <span class="op">*</span> dz), coords<span class="op">=</span>{<span class="st">"layer"</span>: layer}, dims<span class="op">=</span><span class="st">"layer"</span></span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="4">
+<div id="cell-8" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"dis"</span>] <span class="op">=</span> mf6.StructuredDiscretization(idomain<span class="op">=</span>idomain, top<span class="op">=</span>top, bottom<span class="op">=</span>bottom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -382,7 +380,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="hydraulic-conductivity" class="level4">
 <h4 class="anchored" data-anchor-id="hydraulic-conductivity">Hydraulic conductivity</h4>
 <p>Assign the node property flow package, which specifies the hydraulic conductivities. The middle layer is an aquitard.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="5">
+<div id="cell-10" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> xr.DataArray([<span class="fl">10.0</span>, <span class="fl">0.1</span>, <span class="fl">10.0</span>], {<span class="st">"layer"</span>: layer}, (<span class="st">"layer"</span>,))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>k33 <span class="op">=</span> xr.DataArray([<span class="fl">1.0</span>, <span class="fl">0.01</span>, <span class="fl">1.0</span>], {<span class="st">"layer"</span>: layer}, (<span class="st">"layer"</span>,))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"npf"</span>] <span class="op">=</span> mf6.NodePropertyFlow(</span>
@@ -396,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="storage" class="level4">
 <h4 class="anchored" data-anchor-id="storage">Storage</h4>
 <p>Cells are set to non-convertible (convertible = 0). This is a requirement for MetaSWAP, because, once coupled, MetaSWAP is responsible for computing the storage coefficient instead of Modflow.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="6">
+<div id="cell-12" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"sto"</span>] <span class="op">=</span> mf6.SpecificStorage(</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    specific_storage<span class="op">=</span><span class="fl">1e-3</span>, specific_yield<span class="op">=</span><span class="fl">0.0</span>, transient<span class="op">=</span><span class="va">True</span>, convertible<span class="op">=</span><span class="dv">0</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -405,13 +403,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="initial-conditions" class="level3">
 <h3 class="anchored" data-anchor-id="initial-conditions">Initial conditions</h3>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="7">
+<div id="cell-14" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"ic"</span>] <span class="op">=</span> mf6.InitialConditions(start<span class="op">=</span><span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="output-control" class="level3">
 <h3 class="anchored" data-anchor-id="output-control">Output Control</h3>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="8">
+<div id="cell-16" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"oc"</span>] <span class="op">=</span> mf6.OutputControl(save_head<span class="op">=</span><span class="st">"last"</span>, save_budget<span class="op">=</span><span class="st">"last"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -420,7 +418,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="constant-head" class="level4">
 <h4 class="anchored" data-anchor-id="constant-head">Constant head</h4>
 <p>We’ll create constant head cells at the most left and right columns of the grid, representing two ditches.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="9">
+<div id="cell-18" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>head <span class="op">=</span> xr.full_like(idomain, np.nan, dtype<span class="op">=</span><span class="bu">float</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>head[<span class="dv">0</span>, :, <span class="dv">0</span>] <span class="op">=</span> <span class="op">-</span><span class="fl">1.0</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>head[<span class="dv">0</span>, :, <span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="op">-</span><span class="fl">1.0</span></span>
@@ -430,11 +428,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>head.isel(layer<span class="op">=</span><span class="dv">0</span>).plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<pre><code>&lt;matplotlib.collections.QuadMesh at 0x7f893f337150&gt;</code></pre>
-</div>
 <div class="cell-output cell-output-display">
-<p><img src="coupler_metamod_example_files/figure-html/cell-10-output-2.png" width="575" height="449"></p>
+<div>
+<figure class="figure">
+<p><img src="coupler_metamod_example_files/figure-html/cell-10-output-1.png" width="575" height="449" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -444,56 +443,57 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="recharge" class="level5">
 <h5 class="anchored" data-anchor-id="recharge">Recharge</h5>
 <p>We’ll start off with the recharge package, which has no recharge cells at the location of our ditches.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>recharge <span class="op">=</span> xr.zeros_like(idomain.sel(layer<span class="op">=</span><span class="dv">1</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>recharge[:, <span class="dv">0</span>] <span class="op">=</span> np.nan</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>recharge[:, <span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> np.nan</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"rch_msw"</span>] <span class="op">=</span> mf6.Recharge(recharge)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>recharge.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<pre><code>&lt;matplotlib.collections.QuadMesh at 0x7f893f123e10&gt;</code></pre>
-</div>
+<div id="cell-20" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>recharge <span class="op">=</span> xr.zeros_like(idomain.sel(layer<span class="op">=</span><span class="dv">1</span>), dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>recharge[:, <span class="dv">0</span>] <span class="op">=</span> np.nan</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>recharge[:, <span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> np.nan</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"rch_msw"</span>] <span class="op">=</span> mf6.Recharge(recharge)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>recharge.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="coupler_metamod_example_files/figure-html/cell-11-output-2.png" width="575" height="449"></p>
+<div>
+<figure class="figure">
+<p><img src="coupler_metamod_example_files/figure-html/cell-11-output-1.png" width="575" height="449" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
 <section id="wells" class="level5">
 <h5 class="anchored" data-anchor-id="wells">Wells</h5>
 <p>We’ll create a dummy well package as well. imod.mf6.WellDisStructured needs its input data provided as long tables instead of grids to so therefore we’ll create 1d arrays by calling <code>np.tile</code> on the column indices, and <code>np.repeat</code> on the row indices.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>wel_layer <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>ix <span class="op">=</span> np.tile(np.arange(ncol) <span class="op">+</span> <span class="dv">1</span>, nrow)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>iy <span class="op">=</span> np.repeat(np.arange(nrow) <span class="op">+</span> <span class="dv">1</span>, ncol)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> np.zeros(ix.shape)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> np.full_like(ix, wel_layer)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"wells_msw"</span>] <span class="op">=</span> mf6.WellDisStructured(</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    layer<span class="op">=</span>layer, row<span class="op">=</span>iy, column<span class="op">=</span>ix, rate<span class="op">=</span>rate</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-22" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>wel_layer <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>ix <span class="op">=</span> np.tile(np.arange(ncol) <span class="op">+</span> <span class="dv">1</span>, nrow)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>iy <span class="op">=</span> np.repeat(np.arange(nrow) <span class="op">+</span> <span class="dv">1</span>, ncol)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> np.zeros(ix.shape)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> np.full_like(ix, wel_layer)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"wells_msw"</span>] <span class="op">=</span> mf6.WellDisStructured(</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    layer<span class="op">=</span>layer, row<span class="op">=</span>iy, column<span class="op">=</span>ix, rate<span class="op">=</span>rate</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Initiate a Modflow 6 simulation and attach the groundwater model to it.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>simulation <span class="op">=</span> mf6.Modflow6Simulation(<span class="st">"test"</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"GWF_1"</span>] <span class="op">=</span> gwf_model</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define solver settings, we'll use a preset that is sufficient for this example.</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"solver"</span>] <span class="op">=</span> mf6.SolutionPresetSimple(</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    modelnames<span class="op">=</span>[<span class="st">"GWF_1"</span>], print_option<span class="op">=</span><span class="st">"summary"</span>, csv_output<span class="op">=</span><span class="va">False</span>, no_ptc<span class="op">=</span><span class="va">True</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-24" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>simulation <span class="op">=</span> mf6.Modflow6Simulation(<span class="st">"test"</span>)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"GWF_1"</span>] <span class="op">=</span> gwf_model</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define solver settings, we'll use a preset that is sufficient for this example.</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"solver"</span>] <span class="op">=</span> mf6.SolutionPresetSimple(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    modelnames<span class="op">=</span>[<span class="st">"GWF_1"</span>], print_option<span class="op">=</span><span class="st">"summary"</span>, csv_output<span class="op">=</span><span class="va">False</span>, no_ptc<span class="op">=</span><span class="va">True</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Create time discretization, we’ll model 2 days.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> <span class="st">"D"</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">"1/1/1971"</span>, end<span class="op">=</span><span class="st">"1/3/1971"</span>, freq<span class="op">=</span>freq)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>simulation.create_time_discretization(additional_times<span class="op">=</span>times)</span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>times</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-26" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>freq <span class="op">=</span> <span class="st">"D"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">"1/1/1971"</span>, end<span class="op">=</span><span class="st">"1/3/1971"</span>, freq<span class="op">=</span>freq)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>simulation.create_time_discretization(additional_times<span class="op">=</span>times)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>times</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>DatetimeIndex(['1971-01-01', '1971-01-02', '1971-01-03'], dtype='datetime64[ns]', freq='D')</code></pre>
 </div>
@@ -505,27 +505,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="metaswap-model" class="level2">
 <h2 class="anchored" data-anchor-id="metaswap-model">MetaSWAP model</h2>
 <p>The next step is initiating a <code>MetaSwapModel</code>. Critical is setting the right path to MetaSWAP’s soil physical database, which contains the lookup table with the soil physical relationships. Without access to this database MetaSWAP cannot function. <a href="https://download.deltares.nl/metaswap">The full database can be downloaded here.</a></p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="14">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>msw_model <span class="op">=</span> msw.MetaSwapModel(unsaturated_database<span class="op">=</span><span class="st">"./path/to/unsaturated/database"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ```````````</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll start off specifying the grids required for MetaSWAP. The x,y values</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># of this grid should be identical as the Modflow6 model, but it should</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># not have a layer dimension.</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>msw_grid <span class="op">=</span> idomain.sel(layer<span class="op">=</span><span class="dv">1</span>, drop<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-28" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>msw_model <span class="op">=</span> msw.MetaSwapModel(unsaturated_database<span class="op">=</span><span class="st">"./path/to/unsaturated/database"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create grid</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># ```````````</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="co"># We'll start off specifying the grids required for MetaSWAP. The x,y values</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co"># of this grid should be identical as the Modflow6 model, but it should</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># not have a layer dimension.</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>msw_grid <span class="op">=</span> idomain.sel(layer<span class="op">=</span><span class="dv">1</span>, drop<span class="op">=</span><span class="va">True</span>).astype(<span class="bu">float</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We do not want MetaSWAP cells in the cells where the ditches are located in Modflow 6. We can specify where MetaSWAP cells are active with the “active” grid, which is a grid of booleans (i.e.&nbsp;True/False).</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>active <span class="op">=</span> msw_grid.astype(<span class="bu">bool</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>active[..., <span class="dv">0</span>] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>active[..., <span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>active</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-30" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>active <span class="op">=</span> msw_grid.astype(<span class="bu">bool</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>active[..., <span class="dv">0</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>active[..., <span class="op">-</span><span class="dv">1</span>] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>active</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="15">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -889,7 +888,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (y: 9, x: 9)&gt;
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (y: 9, x: 9)&gt; Size: 81B
 array([[False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
@@ -900,8 +899,8 @@ array([[False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False]])
 Coordinates:
-  * y        (y) float64 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
-  * x        (x) float64 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-ca980c6c-7bd0-48c8-9edf-6ab39ae6b4bc" class="xr-array-in" type="checkbox" checked=""><label for="section-ca980c6c-7bd0-48c8-9edf-6ab39ae6b4bc" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>False True True True True True True ... True True True True True False</span></div><div class="xr-array-data"><pre>array([[False,  True,  True,  True,  True,  True,  True,  True, False],
+  * y        (y) float64 72B 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
+  * x        (x) float64 72B 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-ac122571-90dd-4e0b-a010-8b700ad13d07" class="xr-array-in" type="checkbox" checked=""><label for="section-ac122571-90dd-4e0b-a010-8b700ad13d07" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>False True True True True True True ... True True True True True False</span></div><div class="xr-array-data"><pre>array([[False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
@@ -909,38 +908,37 @@ Coordinates:
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
        [False,  True,  True,  True,  True,  True,  True,  True, False],
-       [False,  True,  True,  True,  True,  True,  True,  True, False]])</pre></div></div></li><li class="xr-section-item"><input id="section-24cd5b6e-84b7-4f60-bc16-45f0d9d91e18" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-24cd5b6e-84b7-4f60-bc16-45f0d9d91e18" class="xr-section-summary">Coordinates: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-c29fc209-b363-4dda-a42b-9180ebfdd194" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-c29fc209-b363-4dda-a42b-9180ebfdd194" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7c0dd7ab-d10d-4532-8558-2052c7d48b82" class="xr-var-data-in" type="checkbox"><label for="data-7c0dd7ab-d10d-4532-8558-2052c7d48b82" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-4949d16d-b43a-4b31-a86c-84d2860f9cb8" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-4949d16d-b43a-4b31-a86c-84d2860f9cb8" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-3eac3c4a-0a65-41c7-a5b4-a5f31a594da9" class="xr-var-data-in" type="checkbox"><label for="data-3eac3c4a-0a65-41c7-a5b4-a5f31a594da9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-1f1ff213-d5a5-445d-8094-b0fa595177b7" class="xr-section-summary-in" type="checkbox"><label for="section-1f1ff213-d5a5-445d-8094-b0fa595177b7" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-2db382ed-bd20-4b3d-8ed3-7164179f35ab" class="xr-index-data-in" type="checkbox"><label for="index-2db382ed-bd20-4b3d-8ed3-7164179f35ab" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-fd682c16-4e45-474e-8e2f-3e153d4cbde7" class="xr-index-data-in" type="checkbox"><label for="index-fd682c16-4e45-474e-8e2f-3e153d4cbde7" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-d466d575-730a-4c2f-a5a9-ec69327fbadf" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d466d575-730a-4c2f-a5a9-ec69327fbadf" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+       [False,  True,  True,  True,  True,  True,  True,  True, False]])</pre></div></div></li><li class="xr-section-item"><input id="section-a5f93871-11ee-4dd5-b341-f738e4b0bbf3" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-a5f93871-11ee-4dd5-b341-f738e4b0bbf3" class="xr-section-summary">Coordinates: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-e7e047db-3429-4463-9b47-1a49bafc6bbe" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-e7e047db-3429-4463-9b47-1a49bafc6bbe" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-06438543-1164-4b19-ad36-de2a0a5475bf" class="xr-var-data-in" type="checkbox"><label for="data-06438543-1164-4b19-ad36-de2a0a5475bf" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-d0ec0833-07d4-44df-98fa-9229c7a9f411" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-d0ec0833-07d4-44df-98fa-9229c7a9f411" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d96b0eb9-7ee2-421b-aaf3-94ce823d8c1b" class="xr-var-data-in" type="checkbox"><label for="data-d96b0eb9-7ee2-421b-aaf3-94ce823d8c1b" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-3a497b93-72b1-4dec-b123-eb503f3af480" class="xr-section-summary-in" type="checkbox"><label for="section-3a497b93-72b1-4dec-b123-eb503f3af480" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-3a6776e8-074b-4c9d-baf0-61ea9dd5b90f" class="xr-index-data-in" type="checkbox"><label for="index-3a6776e8-074b-4c9d-baf0-61ea9dd5b90f" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-4a01b80a-e50d-4062-8013-980ece66346f" class="xr-index-data-in" type="checkbox"><label for="index-4a01b80a-e50d-4062-8013-980ece66346f" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-7f88bf92-03e9-4ae3-bb6e-ce776b4f35ce" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-7f88bf92-03e9-4ae3-bb6e-ce776b4f35ce" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Another crucial grid is the “area” grid. The area grid denotes the area in each cell, for each “subunit”. A subunit represent a separate landuse in the grid. We’ll create a grid with two separate land uses.</p>
 <p>Each grid which specifies parameters related to landuse (e.g.&nbsp;landuse, rootzone_depth, ponding depth) requires a subunit dimension. In contrast, grids specifying parameters not induced by landuse (e.g.&nbsp;soil type, elevation, precipitation) cannot contain a subunit dimension.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>subunit <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>total_cell_area <span class="op">=</span> <span class="bu">abs</span>(dx <span class="op">*</span> dy)</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>equal_area_per_subunit <span class="op">=</span> total_cell_area <span class="op">/</span> <span class="bu">len</span>(subunit)</span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>total_cell_area</span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a full grid equal to the msw_grid. And expand_dims() to broadcast this</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># grid along a new dimension, named "subunit"</span></span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> (</span>
-<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    xr.full_like(msw_grid, equal_area_per_subunit, dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    .expand_dims(subunit<span class="op">=</span>subunit)</span>
-<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    .copy()  <span class="co"># expand_dims creates a view, so copy it to allow setting values.</span></span>
-<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># To the left we only have subunit 0</span></span>
-<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">0</span>, :, :<span class="dv">3</span>] <span class="op">=</span> total_cell_area</span>
-<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">1</span>, :, :<span class="dv">3</span>] <span class="op">=</span> np.nan</span>
-<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># To the right we only have subunit 1</span></span>
-<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">0</span>, :, <span class="op">-</span><span class="dv">3</span>:] <span class="op">=</span> np.nan</span>
-<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">1</span>, :, <span class="op">-</span><span class="dv">3</span>:] <span class="op">=</span> total_cell_area</span>
-<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-32" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>subunit <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>]</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>total_cell_area <span class="op">=</span> <span class="bu">abs</span>(dx <span class="op">*</span> dy)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>equal_area_per_subunit <span class="op">=</span> total_cell_area <span class="op">/</span> <span class="bu">len</span>(subunit)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>total_cell_area</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a full grid equal to the msw_grid. And expand_dims() to broadcast this</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># grid along a new dimension, named "subunit"</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>area <span class="op">=</span> (</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    xr.full_like(msw_grid, equal_area_per_subunit, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    .expand_dims(subunit<span class="op">=</span>subunit)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>    .copy()  <span class="co"># expand_dims creates a view, so copy it to allow setting values.</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a><span class="co"># To the left we only have subunit 0</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">0</span>, :, :<span class="dv">3</span>] <span class="op">=</span> total_cell_area</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">1</span>, :, :<span class="dv">3</span>] <span class="op">=</span> np.nan</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a><span class="co"># To the right we only have subunit 1</span></span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">0</span>, :, <span class="op">-</span><span class="dv">3</span>:] <span class="op">=</span> np.nan</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>area[<span class="dv">1</span>, :, <span class="op">-</span><span class="dv">3</span>:] <span class="op">=</span> total_cell_area</span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>area</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="16">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1304,7 +1302,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (subunit: 2, y: 9, x: 9)&gt;
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (subunit: 2, y: 9, x: 9)&gt; Size: 1kB
 array([[[100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
@@ -1325,9 +1323,9 @@ array([[[100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.],
         [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.]]])
 Coordinates:
-  * subunit  (subunit) int64 0 1
-  * y        (y) float64 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
-  * x        (x) float64 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">subunit</span>: 2</li><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-b122771a-abe6-4108-bd3c-1fa785916f83" class="xr-array-in" type="checkbox" checked=""><label for="section-b122771a-abe6-4108-bd3c-1fa785916f83" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>100.0 100.0 100.0 50.0 50.0 50.0 ... 50.0 50.0 50.0 100.0 100.0 100.0</span></div><div class="xr-array-data"><pre>array([[[100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
+  * subunit  (subunit) int64 16B 0 1
+  * y        (y) float64 72B 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
+  * x        (x) float64 72B 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">subunit</span>: 2</li><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-c2f31dc1-1c84-46cc-8e47-473c142efb6a" class="xr-array-in" type="checkbox" checked=""><label for="section-c2f31dc1-1c84-46cc-8e47-473c142efb6a" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>100.0 100.0 100.0 50.0 50.0 50.0 ... 50.0 50.0 50.0 100.0 100.0 100.0</span></div><div class="xr-array-data"><pre>array([[[100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
         [100., 100., 100.,  50.,  50.,  50.,  nan,  nan,  nan],
@@ -1345,19 +1343,18 @@ Coordinates:
         [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.],
         [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.],
         [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.],
-        [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.]]])</pre></div></div></li><li class="xr-section-item"><input id="section-1c206d77-adfc-43cf-bab8-dea79bc4ace1" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-1c206d77-adfc-43cf-bab8-dea79bc4ace1" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">subunit</span></div><div class="xr-var-dims">(subunit)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1</div><input id="attrs-7bdab65e-5126-4c1d-a61b-6c31c7b8a555" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-7bdab65e-5126-4c1d-a61b-6c31c7b8a555" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f44c6168-5c8e-40a9-a632-f0d1796c3834" class="xr-var-data-in" type="checkbox"><label for="data-f44c6168-5c8e-40a9-a632-f0d1796c3834" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([0, 1])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-ec6e9ba3-2438-4a3f-b649-76df9dc77714" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-ec6e9ba3-2438-4a3f-b649-76df9dc77714" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-168e92cc-a3cf-42d8-af3d-2e12dae2d2e1" class="xr-var-data-in" type="checkbox"><label for="data-168e92cc-a3cf-42d8-af3d-2e12dae2d2e1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-b06d8a9a-81ce-498e-aaa1-867a28121f59" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-b06d8a9a-81ce-498e-aaa1-867a28121f59" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d5dce095-228a-481c-9561-d70285919cb5" class="xr-var-data-in" type="checkbox"><label for="data-d5dce095-228a-481c-9561-d70285919cb5" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-f5f305b2-d359-4d67-bdb5-ae361103a839" class="xr-section-summary-in" type="checkbox"><label for="section-f5f305b2-d359-4d67-bdb5-ae361103a839" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-34d7f06a-21b3-4149-b91f-9c7862c42fb2" class="xr-index-data-in" type="checkbox"><label for="index-34d7f06a-21b3-4149-b91f-9c7862c42fb2" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-b442bd2c-dfcc-4d99-a10f-2c9e98bba9a2" class="xr-index-data-in" type="checkbox"><label for="index-b442bd2c-dfcc-4d99-a10f-2c9e98bba9a2" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>subunit</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-44280cde-90bf-4f47-baa4-600ecbe61e88" class="xr-index-data-in" type="checkbox"><label for="index-44280cde-90bf-4f47-baa4-600ecbe61e88" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Int64Index([0, 1], dtype='int64', name='subunit'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-12eb9de1-871b-4f27-89d8-01384bdc6c56" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-12eb9de1-871b-4f27-89d8-01384bdc6c56" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+        [ nan,  nan,  nan,  50.,  50.,  50., 100., 100., 100.]]])</pre></div></div></li><li class="xr-section-item"><input id="section-2f4c510c-4fcd-47e8-9a57-454ac2e0f770" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-2f4c510c-4fcd-47e8-9a57-454ac2e0f770" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">subunit</span></div><div class="xr-var-dims">(subunit)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1</div><input id="attrs-abc4c095-feec-4539-b304-811aa3fe3347" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-abc4c095-feec-4539-b304-811aa3fe3347" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-5e7b6666-ee71-454c-8efd-fc5200dae276" class="xr-var-data-in" type="checkbox"><label for="data-5e7b6666-ee71-454c-8efd-fc5200dae276" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([0, 1])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-5a1b3593-1359-4c58-a7c8-c1ea3dbf216e" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-5a1b3593-1359-4c58-a7c8-c1ea3dbf216e" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-af4b08a3-38b8-4784-9256-7b740c41de7e" class="xr-var-data-in" type="checkbox"><label for="data-af4b08a3-38b8-4784-9256-7b740c41de7e" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-55185387-2a93-492d-a169-23362bd610f9" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-55185387-2a93-492d-a169-23362bd610f9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-631117de-a3cd-4bd9-ad77-3260a1c0e314" class="xr-var-data-in" type="checkbox"><label for="data-631117de-a3cd-4bd9-ad77-3260a1c0e314" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-415b2cb0-e85b-4911-97d5-0d7e61dada02" class="xr-section-summary-in" type="checkbox"><label for="section-415b2cb0-e85b-4911-97d5-0d7e61dada02" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-e0dac9ac-6b7c-4088-a4a6-2e4141c97c4f" class="xr-index-data-in" type="checkbox"><label for="index-e0dac9ac-6b7c-4088-a4a6-2e4141c97c4f" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-b99ba003-3646-466e-beb5-2b904342bc81" class="xr-index-data-in" type="checkbox"><label for="index-b99ba003-3646-466e-beb5-2b904342bc81" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>subunit</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-5bd5f48c-851b-4e2e-93a8-9601c839dc53" class="xr-index-data-in" type="checkbox"><label for="index-5bd5f48c-851b-4e2e-93a8-9601c839dc53" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([0, 1], dtype='int64', name='subunit'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-d908f8fd-ddd8-4fcb-8867-3dccf230cee4" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d908f8fd-ddd8-4fcb-8867-3dccf230cee4" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 <section id="landuse" class="level3">
 <h3 class="anchored" data-anchor-id="landuse">Landuse</h3>
 <p>Define a grid with landuse classes.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>landuse <span class="op">=</span> xr.full_like(area, <span class="dv">1</span>, dtype<span class="op">=</span>np.int16)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>landuse[<span class="dv">1</span>, :, :] <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>landuse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-34" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>landuse <span class="op">=</span> xr.full_like(area, <span class="dv">1</span>, dtype<span class="op">=</span>np.int16)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>landuse[<span class="dv">1</span>, :, :] <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>landuse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="17">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -1721,7 +1718,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (subunit: 2, y: 9, x: 9)&gt;
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (subunit: 2, y: 9, x: 9)&gt; Size: 324B
 array([[[1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -1742,9 +1739,9 @@ array([[[1, 1, 1, 1, 1, 1, 1, 1, 1],
         [2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2]]], dtype=int16)
 Coordinates:
-  * subunit  (subunit) int64 0 1
-  * y        (y) float64 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
-  * x        (x) float64 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">subunit</span>: 2</li><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-56b08a60-4cb3-472d-a695-c73755aff145" class="xr-array-in" type="checkbox" checked=""><label for="section-56b08a60-4cb3-472d-a695-c73755aff145" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2</span></div><div class="xr-array-data"><pre>array([[[1, 1, 1, 1, 1, 1, 1, 1, 1],
+  * subunit  (subunit) int64 16B 0 1
+  * y        (y) float64 72B 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
+  * x        (x) float64 72B 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">subunit</span>: 2</li><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-43520a2d-0f9a-4fcb-985b-a1e5a7caae1f" class="xr-array-in" type="checkbox" checked=""><label for="section-43520a2d-0f9a-4fcb-985b-a1e5a7caae1f" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2</span></div><div class="xr-array-data"><pre>array([[[1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
         [1, 1, 1, 1, 1, 1, 1, 1, 1],
@@ -1762,21 +1759,20 @@ Coordinates:
         [2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2],
         [2, 2, 2, 2, 2, 2, 2, 2, 2],
-        [2, 2, 2, 2, 2, 2, 2, 2, 2]]], dtype=int16)</pre></div></div></li><li class="xr-section-item"><input id="section-d1eed6f0-a641-447a-929c-21501eca84a5" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-d1eed6f0-a641-447a-929c-21501eca84a5" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">subunit</span></div><div class="xr-var-dims">(subunit)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1</div><input id="attrs-58b28f82-8872-47bb-b2b7-7ecfd7bfb0ca" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-58b28f82-8872-47bb-b2b7-7ecfd7bfb0ca" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c8c496f6-7663-481a-b2e3-ee87ad40df1d" class="xr-var-data-in" type="checkbox"><label for="data-c8c496f6-7663-481a-b2e3-ee87ad40df1d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([0, 1])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-de73f532-44af-47aa-a277-c4c7e687a587" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-de73f532-44af-47aa-a277-c4c7e687a587" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f2a3754b-845f-48c2-a70d-8a281ace1e2b" class="xr-var-data-in" type="checkbox"><label for="data-f2a3754b-845f-48c2-a70d-8a281ace1e2b" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-197c6259-eb02-4296-9537-683cd1311604" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-197c6259-eb02-4296-9537-683cd1311604" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-588ff0fe-aafe-48ff-ac47-86bf6e25686c" class="xr-var-data-in" type="checkbox"><label for="data-588ff0fe-aafe-48ff-ac47-86bf6e25686c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-381f4b2f-0a89-4386-91c6-d8bc266c7e9b" class="xr-section-summary-in" type="checkbox"><label for="section-381f4b2f-0a89-4386-91c6-d8bc266c7e9b" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-61b3b708-604b-4208-8ae9-7cc67595b085" class="xr-index-data-in" type="checkbox"><label for="index-61b3b708-604b-4208-8ae9-7cc67595b085" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-130068df-3aa5-4ecd-b4e2-ee9b02904539" class="xr-index-data-in" type="checkbox"><label for="index-130068df-3aa5-4ecd-b4e2-ee9b02904539" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>subunit</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-72ca6ef9-012c-464e-946e-659e8de4c46a" class="xr-index-data-in" type="checkbox"><label for="index-72ca6ef9-012c-464e-946e-659e8de4c46a" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Int64Index([0, 1], dtype='int64', name='subunit'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-7825ddda-cb3c-445c-a474-f570e9a56132" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-7825ddda-cb3c-445c-a474-f570e9a56132" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+        [2, 2, 2, 2, 2, 2, 2, 2, 2]]], dtype=int16)</pre></div></div></li><li class="xr-section-item"><input id="section-d9d2e38d-ecab-4dac-98e4-2cc7e1af7334" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-d9d2e38d-ecab-4dac-98e4-2cc7e1af7334" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">subunit</span></div><div class="xr-var-dims">(subunit)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1</div><input id="attrs-9a1bc0fe-8249-40d4-a205-1cf4f696c347" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-9a1bc0fe-8249-40d4-a205-1cf4f696c347" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f0d03e8a-60b3-490f-9878-3705480cd80b" class="xr-var-data-in" type="checkbox"><label for="data-f0d03e8a-60b3-490f-9878-3705480cd80b" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([0, 1])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-005c40a1-8124-4afe-b211-1e3246dc5198" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-005c40a1-8124-4afe-b211-1e3246dc5198" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-2c351fc1-b8cb-4670-b3f5-e0125a49fc52" class="xr-var-data-in" type="checkbox"><label for="data-2c351fc1-b8cb-4670-b3f5-e0125a49fc52" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-fa077f65-9bbc-4750-ad98-8a12234a0a9c" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-fa077f65-9bbc-4750-ad98-8a12234a0a9c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-89a7a2bf-94a9-4dc5-971e-0b1b856e5ea3" class="xr-var-data-in" type="checkbox"><label for="data-89a7a2bf-94a9-4dc5-971e-0b1b856e5ea3" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c3e36eed-3be4-44ac-a15f-d0e25ea4656c" class="xr-section-summary-in" type="checkbox"><label for="section-c3e36eed-3be4-44ac-a15f-d0e25ea4656c" class="xr-section-summary">Indexes: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-22f1b5e7-2f84-41b6-892c-da184f5645be" class="xr-index-data-in" type="checkbox"><label for="index-22f1b5e7-2f84-41b6-892c-da184f5645be" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-42b4fb03-f401-4daa-9fdc-ad65f5a3a060" class="xr-index-data-in" type="checkbox"><label for="index-42b4fb03-f401-4daa-9fdc-ad65f5a3a060" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>subunit</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-b688edf0-3136-4fd9-94dc-c11c5c2ce7ae" class="xr-index-data-in" type="checkbox"><label for="index-b688edf0-3136-4fd9-94dc-c11c5c2ce7ae" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([0, 1], dtype='int64', name='subunit'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-3e0c85ca-adc7-47be-b634-27fcf2f9cd9b" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-3e0c85ca-adc7-47be-b634-27fcf2f9cd9b" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 </section>
 <section id="soil-types" class="level3">
 <h3 class="anchored" data-anchor-id="soil-types">Soil types</h3>
 <p>Define soil type classes. These will be looked up in MetaSWAP’s giant lookup table for the national Staring series describing Dutch soils. <code>The full database can be downloaded here. &lt;https://download.deltares.nl/metaswap&gt;</code> In previous examples we set values in our DataArray using numpy indexing. But we can also use xarray’s <code>where()</code> method to set values.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="18">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>slt <span class="op">=</span> xr.full_like(msw_grid, <span class="dv">1</span>, dtype<span class="op">=</span>np.int16)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set all cells on the right half to 2.</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>slt <span class="op">=</span> slt.where((slt.x <span class="op">&lt;</span> (xmax <span class="op">/</span> <span class="dv">2</span>)), <span class="dv">2</span>)</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>slt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-36" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>slt <span class="op">=</span> xr.full_like(msw_grid, <span class="dv">1</span>, dtype<span class="op">=</span>np.int16)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Set all cells on the right half to 2.</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>slt <span class="op">=</span> slt.where((slt.x <span class="op">&lt;</span> (xmax <span class="op">/</span> <span class="dv">2</span>)), <span class="dv">2</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>slt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="18">
-
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewbox="0 0 32 32">
@@ -2140,7 +2136,7 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (y: 9, x: 9)&gt;
+</style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (y: 9, x: 9)&gt; Size: 162B
 array([[1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
@@ -2151,8 +2147,8 @@ array([[1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2]], dtype=int16)
 Coordinates:
-  * y        (y) float64 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
-  * x        (x) float64 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-9ed75d69-a71d-452b-b6ff-cb72d02670ea" class="xr-array-in" type="checkbox" checked=""><label for="section-9ed75d69-a71d-452b-b6ff-cb72d02670ea" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 2 2 2 2 2 1 1 1 1 2 2 2 2 ... 1 1 2 2 2 2 2 1 1 1 1 2 2 2 2 2</span></div><div class="xr-array-data"><pre>array([[1, 1, 1, 1, 2, 2, 2, 2, 2],
+  * y        (y) float64 72B 85.0 75.0 65.0 55.0 45.0 35.0 25.0 15.0 5.0
+  * x        (x) float64 72B 5.0 15.0 25.0 35.0 45.0 55.0 65.0 75.0 85.0</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">y</span>: 9</li><li><span class="xr-has-index">x</span>: 9</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-e35b343f-c285-4c06-ae7f-5fca252815b1" class="xr-array-in" type="checkbox" checked=""><label for="section-e35b343f-c285-4c06-ae7f-5fca252815b1" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 2 2 2 2 2 1 1 1 1 2 2 2 2 ... 1 1 2 2 2 2 2 1 1 1 1 2 2 2 2 2</span></div><div class="xr-array-data"><pre>array([[1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
@@ -2160,234 +2156,242 @@ Coordinates:
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
        [1, 1, 1, 1, 2, 2, 2, 2, 2],
-       [1, 1, 1, 1, 2, 2, 2, 2, 2]], dtype=int16)</pre></div></div></li><li class="xr-section-item"><input id="section-85bc182b-d63d-440e-b1d9-ba69354c073f" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-85bc182b-d63d-440e-b1d9-ba69354c073f" class="xr-section-summary">Coordinates: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-f149dabe-96ba-4fd2-bd00-0954f9872b70" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-f149dabe-96ba-4fd2-bd00-0954f9872b70" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7a7e3e0b-da0b-4ba2-a535-65e4ea2e36be" class="xr-var-data-in" type="checkbox"><label for="data-7a7e3e0b-da0b-4ba2-a535-65e4ea2e36be" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-9a76a979-9050-4b01-a581-de174a1dfcab" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-9a76a979-9050-4b01-a581-de174a1dfcab" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ab8e5571-4593-451c-ab62-8b4902c2249a" class="xr-var-data-in" type="checkbox"><label for="data-ab8e5571-4593-451c-ab62-8b4902c2249a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-a76fcb8a-913b-402b-a05b-22d7d7bfcec0" class="xr-section-summary-in" type="checkbox"><label for="section-a76fcb8a-913b-402b-a05b-22d7d7bfcec0" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-ec8cf5a8-d65d-477c-b760-ee1547ed2e8a" class="xr-index-data-in" type="checkbox"><label for="index-ec8cf5a8-d65d-477c-b760-ee1547ed2e8a" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-0e7f86e5-12cc-40e9-b34a-6d52e27c17ad" class="xr-index-data-in" type="checkbox"><label for="index-0e7f86e5-12cc-40e9-b34a-6d52e27c17ad" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Float64Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-304eea4f-9e8a-4e01-a770-44bce9ccbf1a" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-304eea4f-9e8a-4e01-a770-44bce9ccbf1a" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+       [1, 1, 1, 1, 2, 2, 2, 2, 2]], dtype=int16)</pre></div></div></li><li class="xr-section-item"><input id="section-3bd862b1-b825-4a0d-aa16-4fba9a6c2531" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-3bd862b1-b825-4a0d-aa16-4fba9a6c2531" class="xr-section-summary">Coordinates: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">y</span></div><div class="xr-var-dims">(y)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">85.0 75.0 65.0 ... 25.0 15.0 5.0</div><input id="attrs-643ab09e-9e17-4524-81e0-6b39d5a8f43d" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-643ab09e-9e17-4524-81e0-6b39d5a8f43d" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-c798de60-5002-4014-9432-ec0e829eefde" class="xr-var-data-in" type="checkbox"><label for="data-c798de60-5002-4014-9432-ec0e829eefde" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([85., 75., 65., 55., 45., 35., 25., 15.,  5.])</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">x</span></div><div class="xr-var-dims">(x)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">5.0 15.0 25.0 ... 65.0 75.0 85.0</div><input id="attrs-aab5b2b5-36a4-47ef-8cc5-e1684233d9dd" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-aab5b2b5-36a4-47ef-8cc5-e1684233d9dd" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-91663acb-7c96-4929-bea2-15adcb1e80d5" class="xr-var-data-in" type="checkbox"><label for="data-91663acb-7c96-4929-bea2-15adcb1e80d5" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([ 5., 15., 25., 35., 45., 55., 65., 75., 85.])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-81854ae3-25e7-4568-bda3-c07d17d804e1" class="xr-section-summary-in" type="checkbox"><label for="section-81854ae3-25e7-4568-bda3-c07d17d804e1" class="xr-section-summary">Indexes: <span>(2)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>y</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-62c68ee0-cfcc-4240-8b18-3b32238242b5" class="xr-index-data-in" type="checkbox"><label for="index-62c68ee0-cfcc-4240-8b18-3b32238242b5" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([85.0, 75.0, 65.0, 55.0, 45.0, 35.0, 25.0, 15.0, 5.0], dtype='float64', name='y'))</pre></div></li><li class="xr-var-item"><div class="xr-index-name"><div>x</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-ef976107-8a55-47aa-bce4-81964a7003d8" class="xr-index-data-in" type="checkbox"><label for="index-ef976107-8a55-47aa-bce4-81964a7003d8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([5.0, 15.0, 25.0, 35.0, 45.0, 55.0, 65.0, 75.0, 85.0], dtype='float64', name='x'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-e9337ea0-be1f-46ae-ba68-60fe65beb4b6" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-e9337ea0-be1f-46ae-ba68-60fe65beb4b6" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 </section>
 <section id="finishing-the-grid" class="level3">
 <h3 class="anchored" data-anchor-id="finishing-the-grid">Finishing the grid</h3>
 <p>To finish specifying the landuse grid data, we’ll require a rootzone depth for each subunit, and a grid with surface elevations</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>rootzone_depth <span class="op">=</span> xr.full_like(area, <span class="fl">0.5</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>surface_elevation <span class="op">=</span> xr.full_like(msw_grid, <span class="fl">2.0</span>)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"grid"</span>] <span class="op">=</span> msw.GridData(</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>    area<span class="op">=</span>area,</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    landuse<span class="op">=</span>landuse,</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>    rootzone_depth<span class="op">=</span>rootzone_depth,</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>    surface_elevation<span class="op">=</span>surface_elevation,</span>
-<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>    soil_physical_unit<span class="op">=</span>slt,</span>
-<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>    active<span class="op">=</span>active,</span>
-<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-38" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>rootzone_depth <span class="op">=</span> xr.full_like(area, <span class="fl">0.5</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>surface_elevation <span class="op">=</span> xr.full_like(msw_grid, <span class="fl">2.0</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"grid"</span>] <span class="op">=</span> msw.GridData(</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    area<span class="op">=</span>area,</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>    landuse<span class="op">=</span>landuse,</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    rootzone_depth<span class="op">=</span>rootzone_depth,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    surface_elevation<span class="op">=</span>surface_elevation,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    soil_physical_unit<span class="op">=</span>slt,</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    active<span class="op">=</span>active,</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="initial-condition" class="level3">
 <h3 class="anchored" data-anchor-id="initial-condition">Initial Condition</h3>
 <p>There are four options to specify initial conditions, see this for page for an explanation —link-here—. In this case we opt for an initial pF value of 2.2.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"ic"</span>] <span class="op">=</span> msw.InitialConditionsRootzonePressureHead(initial_pF<span class="op">=</span><span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-40" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"ic"</span>] <span class="op">=</span> msw.InitialConditionsRootzonePressureHead(initial_pF<span class="op">=</span><span class="fl">2.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="meteorology" class="level3">
 <h3 class="anchored" data-anchor-id="meteorology">Meteorology</h3>
 <p>Meteorological information should be provided as grids with a <code>time</code> dimension.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="21">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>precipitation <span class="op">=</span> msw_grid.expand_dims(time<span class="op">=</span>times[:<span class="op">-</span><span class="dv">1</span>])</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>evapotranspiration <span class="op">=</span> precipitation <span class="op">*</span> <span class="fl">1.5</span></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"meteo_grid"</span>] <span class="op">=</span> msw.MeteoGrid(precipitation, evapotranspiration)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mapping_prec"</span>] <span class="op">=</span> msw.PrecipitationMapping(precipitation)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mapping_evt"</span>] <span class="op">=</span> msw.EvapotranspirationMapping(evapotranspiration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-42" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>precipitation <span class="op">=</span> msw_grid.expand_dims(time<span class="op">=</span>times[:<span class="op">-</span><span class="dv">1</span>])</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>evapotranspiration <span class="op">=</span> precipitation <span class="op">*</span> <span class="fl">1.5</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"meteo_grid"</span>] <span class="op">=</span> msw.MeteoGrid(precipitation, evapotranspiration)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mapping_prec"</span>] <span class="op">=</span> msw.PrecipitationMapping(precipitation)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mapping_evt"</span>] <span class="op">=</span> msw.EvapotranspirationMapping(evapotranspiration)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ponding" class="level3">
 <h3 class="anchored" data-anchor-id="ponding">Ponding</h3>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="22">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"ponding"</span>] <span class="op">=</span> msw.Ponding(</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    ponding_depth<span class="op">=</span>xr.full_like(area, <span class="fl">0.0</span>),</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    runon_resistance<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    runoff_resistance<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-44" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"ponding"</span>] <span class="op">=</span> msw.Ponding(</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    ponding_depth<span class="op">=</span>xr.full_like(area, <span class="fl">0.0</span>),</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    runon_resistance<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    runoff_resistance<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="scaling-factors" class="level3">
 <h3 class="anchored" data-anchor-id="scaling-factors">Scaling Factors</h3>
 <p>Scaling factors can be defined to adapt some parameters in the soil physical database. With this you can investigate the sensitivity of parameters in soil physical database. Furthermore, with this package you can specify the depth of the perched water table.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="23">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"scaling"</span>] <span class="op">=</span> msw.ScalingFactors(</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    scale_soil_moisture<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    scale_hydraulic_conductivity<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>    scale_pressure_head<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    depth_perched_water_table<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">1.0</span>),</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-46" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"scaling"</span>] <span class="op">=</span> msw.ScalingFactors(</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    scale_soil_moisture<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    scale_hydraulic_conductivity<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    scale_pressure_head<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    depth_perched_water_table<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">1.0</span>),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="infiltration-factors" class="level3">
 <h3 class="anchored" data-anchor-id="infiltration-factors">Infiltration Factors</h3>
 <p>Set the infiltration parameters. We set the resistances to -9999.0, which makes MetaSWAP ignore them.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="24">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"infiltration"</span>] <span class="op">=</span> msw.Infiltration(</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    infiltration_capacity<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    downward_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    upward_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    bottom_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    extra_storage_coefficient<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">0.1</span>),</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-48" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"infiltration"</span>] <span class="op">=</span> msw.Infiltration(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    infiltration_capacity<span class="op">=</span>xr.full_like(area, <span class="fl">1.0</span>),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    downward_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    upward_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    bottom_resistance<span class="op">=</span>xr.full_like(msw_grid, <span class="op">-</span><span class="fl">9999.0</span>),</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    extra_storage_coefficient<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">0.1</span>),</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="landuse-options" class="level3">
 <h3 class="anchored" data-anchor-id="landuse-options">Landuse options</h3>
 <p>The landuse option class constructs a lookup table which is used to map landuse indices to a set of parameters. In this example, 3 stands for potatoes. This means that for every cell in the <code>landuse</code> grid with a 3, the parameters for a crop with <code>vegetation_index == 3</code> are associate, which in this case are potatoes.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="25">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>vegetation_index <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"grassland"</span>, <span class="st">"maize"</span>, <span class="st">"potatoes"</span>]</span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>landuse_index <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> {<span class="st">"landuse_index"</span>: landuse_index}</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>landuse_names <span class="op">=</span> xr.DataArray(data<span class="op">=</span>names, coords<span class="op">=</span>coords, dims<span class="op">=</span>(<span class="st">"landuse_index"</span>,))</span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>vegetation_index_da <span class="op">=</span> xr.DataArray(</span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>vegetation_index, coords<span class="op">=</span>coords, dims<span class="op">=</span>(<span class="st">"landuse_index"</span>,)</span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-50" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>vegetation_index <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>names <span class="op">=</span> [<span class="st">"grassland"</span>, <span class="st">"maize"</span>, <span class="st">"potatoes"</span>]</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>landuse_index <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> {<span class="st">"landuse_index"</span>: landuse_index}</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>landuse_names <span class="op">=</span> xr.DataArray(data<span class="op">=</span>names, coords<span class="op">=</span>coords, dims<span class="op">=</span>(<span class="st">"landuse_index"</span>,))</span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>vegetation_index_da <span class="op">=</span> xr.DataArray(</span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>vegetation_index, coords<span class="op">=</span>coords, dims<span class="op">=</span>(<span class="st">"landuse_index"</span>,)</span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Because there are a lot of parameters to define, we’ll create a DataArray of ones (<code>lu</code>) to more easily broadcast all the different parameters.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="26">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>lu <span class="op">=</span> xr.ones_like(vegetation_index_da, dtype<span class="op">=</span><span class="bu">float</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"landuse_options"</span>] <span class="op">=</span> msw.LanduseOptions(</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    landuse_name<span class="op">=</span>landuse_names,</span>
-<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    vegetation_index<span class="op">=</span>vegetation_index_da,</span>
-<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    jarvis_o2_stress<span class="op">=</span>xr.ones_like(lu),</span>
-<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    jarvis_drought_stress<span class="op">=</span>xr.ones_like(lu),</span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>    feddes_p1<span class="op">=</span>xr.full_like(lu, <span class="fl">99.0</span>),</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>    feddes_p2<span class="op">=</span>xr.full_like(lu, <span class="fl">99.0</span>),</span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>    feddes_p3h<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">2.0</span>, <span class="op">-</span><span class="fl">4.0</span>, <span class="op">-</span><span class="fl">3.0</span>],</span>
-<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>    feddes_p3l<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">8.0</span>, <span class="op">-</span><span class="fl">5.0</span>, <span class="op">-</span><span class="fl">5.0</span>],</span>
-<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>    feddes_p4<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">80.0</span>, <span class="op">-</span><span class="fl">100.0</span>, <span class="op">-</span><span class="fl">100.0</span>],</span>
-<span id="cb29-13"><a href="#cb29-13" aria-hidden="true" tabindex="-1"></a>    feddes_t3h<span class="op">=</span>xr.full_like(lu, <span class="fl">5.0</span>),</span>
-<span id="cb29-14"><a href="#cb29-14" aria-hidden="true" tabindex="-1"></a>    feddes_t3l<span class="op">=</span>xr.full_like(lu, <span class="fl">1.0</span>),</span>
-<span id="cb29-15"><a href="#cb29-15" aria-hidden="true" tabindex="-1"></a>    threshold_sprinkling<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">8.0</span>, <span class="op">-</span><span class="fl">5.0</span>, <span class="op">-</span><span class="fl">5.0</span>],</span>
-<span id="cb29-16"><a href="#cb29-16" aria-hidden="true" tabindex="-1"></a>    fraction_evaporated_sprinkling<span class="op">=</span>xr.full_like(lu, <span class="fl">0.05</span>),</span>
-<span id="cb29-17"><a href="#cb29-17" aria-hidden="true" tabindex="-1"></a>    gift<span class="op">=</span>xr.full_like(lu, <span class="fl">20.0</span>),</span>
-<span id="cb29-18"><a href="#cb29-18" aria-hidden="true" tabindex="-1"></a>    gift_duration<span class="op">=</span>xr.full_like(lu, <span class="fl">0.25</span>),</span>
-<span id="cb29-19"><a href="#cb29-19" aria-hidden="true" tabindex="-1"></a>    rotational_period<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">7</span>],</span>
-<span id="cb29-20"><a href="#cb29-20" aria-hidden="true" tabindex="-1"></a>    start_sprinkling_season<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">150</span>],</span>
-<span id="cb29-21"><a href="#cb29-21" aria-hidden="true" tabindex="-1"></a>    end_sprinkling_season<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">230</span>, <span class="dv">230</span>, <span class="dv">240</span>],</span>
-<span id="cb29-22"><a href="#cb29-22" aria-hidden="true" tabindex="-1"></a>    interception_option<span class="op">=</span>xr.ones_like(lu, dtype<span class="op">=</span><span class="bu">int</span>),</span>
-<span id="cb29-23"><a href="#cb29-23" aria-hidden="true" tabindex="-1"></a>    interception_capacity_per_LAI<span class="op">=</span>xr.zeros_like(lu),</span>
-<span id="cb29-24"><a href="#cb29-24" aria-hidden="true" tabindex="-1"></a>    interception_intercept<span class="op">=</span>xr.ones_like(lu),</span>
-<span id="cb29-25"><a href="#cb29-25" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-52" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>lu <span class="op">=</span> xr.ones_like(vegetation_index_da, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"landuse_options"</span>] <span class="op">=</span> msw.LanduseOptions(</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    landuse_name<span class="op">=</span>landuse_names,</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>    vegetation_index<span class="op">=</span>vegetation_index_da,</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    jarvis_o2_stress<span class="op">=</span>xr.ones_like(lu),</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>    jarvis_drought_stress<span class="op">=</span>xr.ones_like(lu),</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>    feddes_p1<span class="op">=</span>xr.full_like(lu, <span class="fl">99.0</span>),</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>    feddes_p2<span class="op">=</span>xr.full_like(lu, <span class="fl">99.0</span>),</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>    feddes_p3h<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">2.0</span>, <span class="op">-</span><span class="fl">4.0</span>, <span class="op">-</span><span class="fl">3.0</span>],</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a>    feddes_p3l<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">8.0</span>, <span class="op">-</span><span class="fl">5.0</span>, <span class="op">-</span><span class="fl">5.0</span>],</span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a>    feddes_p4<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">80.0</span>, <span class="op">-</span><span class="fl">100.0</span>, <span class="op">-</span><span class="fl">100.0</span>],</span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a>    feddes_t3h<span class="op">=</span>xr.full_like(lu, <span class="fl">5.0</span>),</span>
+<span id="cb27-14"><a href="#cb27-14" aria-hidden="true" tabindex="-1"></a>    feddes_t3l<span class="op">=</span>xr.full_like(lu, <span class="fl">1.0</span>),</span>
+<span id="cb27-15"><a href="#cb27-15" aria-hidden="true" tabindex="-1"></a>    threshold_sprinkling<span class="op">=</span>lu <span class="op">*</span> [<span class="op">-</span><span class="fl">8.0</span>, <span class="op">-</span><span class="fl">5.0</span>, <span class="op">-</span><span class="fl">5.0</span>],</span>
+<span id="cb27-16"><a href="#cb27-16" aria-hidden="true" tabindex="-1"></a>    fraction_evaporated_sprinkling<span class="op">=</span>xr.full_like(lu, <span class="fl">0.05</span>),</span>
+<span id="cb27-17"><a href="#cb27-17" aria-hidden="true" tabindex="-1"></a>    gift<span class="op">=</span>xr.full_like(lu, <span class="fl">20.0</span>),</span>
+<span id="cb27-18"><a href="#cb27-18" aria-hidden="true" tabindex="-1"></a>    gift_duration<span class="op">=</span>xr.full_like(lu, <span class="fl">0.25</span>),</span>
+<span id="cb27-19"><a href="#cb27-19" aria-hidden="true" tabindex="-1"></a>    rotational_period<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">7</span>],</span>
+<span id="cb27-20"><a href="#cb27-20" aria-hidden="true" tabindex="-1"></a>    start_sprinkling_season<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">120</span>, <span class="dv">180</span>, <span class="dv">150</span>],</span>
+<span id="cb27-21"><a href="#cb27-21" aria-hidden="true" tabindex="-1"></a>    end_sprinkling_season<span class="op">=</span>lu <span class="op">*</span> [<span class="dv">230</span>, <span class="dv">230</span>, <span class="dv">240</span>],</span>
+<span id="cb27-22"><a href="#cb27-22" aria-hidden="true" tabindex="-1"></a>    interception_option<span class="op">=</span>xr.ones_like(lu, dtype<span class="op">=</span><span class="bu">int</span>),</span>
+<span id="cb27-23"><a href="#cb27-23" aria-hidden="true" tabindex="-1"></a>    interception_capacity_per_LAI<span class="op">=</span>xr.zeros_like(lu),</span>
+<span id="cb27-24"><a href="#cb27-24" aria-hidden="true" tabindex="-1"></a>    interception_intercept<span class="op">=</span>xr.ones_like(lu),</span>
+<span id="cb27-25"><a href="#cb27-25" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="crop-growth" class="level3">
 <h3 class="anchored" data-anchor-id="crop-growth">Crop Growth</h3>
 <p>Crop growth tables are specified as a two-dimensional array, with the day of year as one dimension, and the vegetation index on the other. In the vegetation factors, we’ll show how to bring some distinction between different crops.</p>
 <p>We’ll start off specifying the coordinates:</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="27">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>day_of_year <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">367</span>)</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>vegetation_index <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> {<span class="st">"day_of_year"</span>: day_of_year, <span class="st">"vegetation_index"</span>: vegetation_index}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-54" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>day_of_year <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">367</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>vegetation_index <span class="op">=</span> np.arange(<span class="dv">1</span>, <span class="dv">4</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>coords <span class="op">=</span> {<span class="st">"day_of_year"</span>: day_of_year, <span class="st">"vegetation_index"</span>: vegetation_index}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can use the coordinates to specify the soil cover of each plant. We’ll start with a grid of zeros</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>soil_cover <span class="op">=</span> xr.DataArray(</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>np.zeros(day_of_year.shape <span class="op">+</span> vegetation_index.shape),</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>coords,</span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>(<span class="st">"day_of_year"</span>, <span class="st">"vegetation_index"</span>),</span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-56" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>soil_cover <span class="op">=</span> xr.DataArray(</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    data<span class="op">=</span>np.zeros(day_of_year.shape <span class="op">+</span> vegetation_index.shape),</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    coords<span class="op">=</span>coords,</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    dims<span class="op">=</span>(<span class="st">"day_of_year"</span>, <span class="st">"vegetation_index"</span>),</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The simplest soil cover specification is a step function. In this case soil cover equals 1.0 for days 133 to 255 (mind Python’s 0-based index here), and for the rest of the days it equals zero.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>soil_cover[<span class="dv">132</span>:<span class="dv">254</span>, :] <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>soil_cover.sel(vegetation_index<span class="op">=</span><span class="dv">1</span>).plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-58" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>soil_cover[<span class="dv">132</span>:<span class="dv">254</span>, :] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>soil_cover.sel(vegetation_index<span class="op">=</span><span class="dv">1</span>).plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="coupler_metamod_example_files/figure-html/cell-30-output-1.png" width="571" height="449"></p>
+<div>
+<figure class="figure">
+<p><img src="coupler_metamod_example_files/figure-html/cell-30-output-1.png" width="571" height="449" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We’ll simply triple the soil cover to get a leaf area index</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>leaf_area_index <span class="op">=</span> soil_cover <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-60" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>leaf_area_index <span class="op">=</span> soil_cover <span class="op">*</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Vegetation factors are used to convert the Makkink reference evapotranspiration to a potential evapotranspiration for a certain vegetation type. We’ll specify some simple crop schemes for the three crops as vegetation factors. Mind that the vegetation factor array has two dimensions: <code>day_of_year</code> and <code>vegetation_index</code></p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>vegetation_names <span class="op">=</span> [<span class="st">"grass"</span>, <span class="st">"maize"</span>, <span class="st">"potatoes"</span>]</span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>vegetation_factor <span class="op">=</span> xr.zeros_like(soil_cover)</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">120</span>:<span class="dv">132</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.0</span>]</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">132</span>:<span class="dv">142</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.7</span>, <span class="fl">0.7</span>]</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">142</span>:<span class="dv">152</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>]</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">152</span>:<span class="dv">162</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>]</span>
-<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">162</span>:<span class="dv">172</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.2</span>]</span>
-<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">172</span>:<span class="dv">182</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.2</span>]</span>
-<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">182</span>:<span class="dv">192</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.3</span>, <span class="fl">1.2</span>]</span>
-<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">192</span>:<span class="dv">244</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.1</span>]</span>
-<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">244</span>:<span class="dv">254</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">0.7</span>]</span>
-<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">254</span>:<span class="dv">283</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">0.0</span>]</span>
-<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Since grass is the reference crop, force all grass to 1.0</span></span>
-<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>vegetation_factor[:, <span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span></span>
-<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign vegetation names for the plot</span></span>
-<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>vegetation_factor.assign_coords(</span>
-<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>    vegetation_names<span class="op">=</span>(<span class="st">"vegetation_index"</span>, vegetation_names)</span>
-<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a>).plot.line(x<span class="op">=</span><span class="st">"day_of_year"</span>, hue<span class="op">=</span><span class="st">"vegetation_names"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-62" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>vegetation_names <span class="op">=</span> [<span class="st">"grass"</span>, <span class="st">"maize"</span>, <span class="st">"potatoes"</span>]</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>vegetation_factor <span class="op">=</span> xr.zeros_like(soil_cover)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">120</span>:<span class="dv">132</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.5</span>, <span class="fl">0.0</span>]</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">132</span>:<span class="dv">142</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.7</span>, <span class="fl">0.7</span>]</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">142</span>:<span class="dv">152</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>]</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">152</span>:<span class="dv">162</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>]</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">162</span>:<span class="dv">172</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.0</span>, <span class="fl">1.2</span>]</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">172</span>:<span class="dv">182</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.2</span>]</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">182</span>:<span class="dv">192</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.3</span>, <span class="fl">1.2</span>]</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">192</span>:<span class="dv">244</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">1.1</span>]</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">244</span>:<span class="dv">254</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">0.7</span>]</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>vegetation_factor[<span class="dv">254</span>:<span class="dv">283</span>, :] <span class="op">=</span> [<span class="fl">1.0</span>, <span class="fl">1.2</span>, <span class="fl">0.0</span>]</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Since grass is the reference crop, force all grass to 1.0</span></span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>vegetation_factor[:, <span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Assign vegetation names for the plot</span></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>vegetation_factor.assign_coords(</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    vegetation_names<span class="op">=</span>(<span class="st">"vegetation_index"</span>, vegetation_names)</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>).plot.line(x<span class="op">=</span><span class="st">"day_of_year"</span>, hue<span class="op">=</span><span class="st">"vegetation_names"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<p><img src="coupler_metamod_example_files/figure-html/cell-32-output-1.png" width="571" height="429"></p>
+<div>
+<figure class="figure">
+<p><img src="coupler_metamod_example_files/figure-html/cell-32-output-1.png" width="571" height="429" class="figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>We’ll leave the interception capacity at zero, and the other factors at one, and assign these to the AnnualCropFactors package.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"crop_factors"</span>] <span class="op">=</span> msw.AnnualCropFactors(</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    soil_cover<span class="op">=</span>soil_cover,</span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    leaf_area_index<span class="op">=</span>leaf_area_index,</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    interception_capacity<span class="op">=</span>xr.zeros_like(soil_cover),</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>    vegetation_factor<span class="op">=</span>vegetation_factor,</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    interception_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    bare_soil_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
-<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    ponding_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
-<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-64" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"crop_factors"</span>] <span class="op">=</span> msw.AnnualCropFactors(</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    soil_cover<span class="op">=</span>soil_cover,</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    leaf_area_index<span class="op">=</span>leaf_area_index,</span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>    interception_capacity<span class="op">=</span>xr.zeros_like(soil_cover),</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>    vegetation_factor<span class="op">=</span>vegetation_factor,</span>
+<span id="cb33-6"><a href="#cb33-6" aria-hidden="true" tabindex="-1"></a>    interception_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
+<span id="cb33-7"><a href="#cb33-7" aria-hidden="true" tabindex="-1"></a>    bare_soil_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
+<span id="cb33-8"><a href="#cb33-8" aria-hidden="true" tabindex="-1"></a>    ponding_factor<span class="op">=</span>xr.ones_like(soil_cover),</span>
+<span id="cb33-9"><a href="#cb33-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="output-control-1" class="level3">
 <h3 class="anchored" data-anchor-id="output-control-1">Output Control</h3>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_idf"</span>] <span class="op">=</span> msw.IdfMapping(area, <span class="op">-</span><span class="fl">9999.0</span>)</span>
-<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_var"</span>] <span class="op">=</span> msw.VariableOutputControl()</span>
-<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_time"</span>] <span class="op">=</span> msw.TimeOutputControl(time<span class="op">=</span>times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-66" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_idf"</span>] <span class="op">=</span> msw.IdfMapping(area, <span class="op">-</span><span class="fl">9999.0</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_var"</span>] <span class="op">=</span> msw.VariableOutputControl()</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"oc_time"</span>] <span class="op">=</span> msw.TimeOutputControl(time<span class="op">=</span>times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="metaswap-mappings" class="level3">
 <h3 class="anchored" data-anchor-id="metaswap-mappings">MetaSWAP Mappings</h3>
 <p>MetaSWAP requires its own mapping of SVAT to MODFLOW cells, for internal use. We therefore provide the mf6.StructuredDiscretization and mf6.Well package to mf6.CouplerMapping.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mod2svat"</span>] <span class="op">=</span> msw.CouplerMapping(</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    modflow_dis<span class="op">=</span>gwf_model[<span class="st">"dis"</span>], well<span class="op">=</span>gwf_model[<span class="st">"wells_msw"</span>]</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-68" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="34">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"mod2svat"</span>] <span class="op">=</span> msw.CouplerMapping(</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    modflow_dis<span class="op">=</span>gwf_model[<span class="st">"dis"</span>], well<span class="op">=</span>gwf_model[<span class="st">"wells_msw"</span>]</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The sprinkling package also requires the Modflow6 wells.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"sprinkling"</span>] <span class="op">=</span> msw.Sprinkling(</span>
-<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    max_abstraction_groundwater<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">100.0</span>),</span>
-<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    max_abstraction_surfacewater<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">100.0</span>),</span>
-<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    well<span class="op">=</span>gwf_model[<span class="st">"wells_msw"</span>],</span>
-<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-70" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="35">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>msw_model[<span class="st">"sprinkling"</span>] <span class="op">=</span> msw.Sprinkling(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    max_abstraction_groundwater<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">100.0</span>),</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    max_abstraction_surfacewater<span class="op">=</span>xr.full_like(msw_grid, <span class="fl">100.0</span>),</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    well<span class="op">=</span>gwf_model[<span class="st">"wells_msw"</span>],</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 <section id="coupler-mapping" class="level2">
 <h2 class="anchored" data-anchor-id="coupler-mapping">Coupler mapping</h2>
 <p>The MetaSWAP model and Modflow 6 simulation are provided to the MetaMod class, which takes care of connecting (= “mapping”) the two models. Make sure to provide the keys of the dummy Modflow 6 boundary conditions where MetaSWAP is coupled to, so iMOD Python knows where to look: It is technically possible to define multiple WEL and RCH packages in Modflow 6.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>metamod <span class="op">=</span> primod.MetaMod(</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    msw_model<span class="op">=</span>msw_model,</span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    mf6_simulation<span class="op">=</span>simulation,</span>
-<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    mf6_rch_pkgkey<span class="op">=</span><span class="st">"rch_msw"</span>,</span>
-<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    mf6_wel_pkgkey<span class="op">=</span><span class="st">"wells_msw"</span>,</span>
-<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-72" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="36">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>metamod <span class="op">=</span> primod.MetaMod(</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    msw_model<span class="op">=</span>msw_model,</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    mf6_simulation<span class="op">=</span>simulation,</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    mf6_rch_pkgkey<span class="op">=</span><span class="st">"rch_msw"</span>,</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    mf6_wel_pkgkey<span class="op">=</span><span class="st">"wells_msw"</span>,</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>We can write the coupled models by providing the following necessary paths to iMOD Coupler:</p>
 <ul>
@@ -2396,17 +2400,17 @@ Coordinates:
 <li>directory with dependent libraries for metaswap</li>
 </ul>
 <p>You can download the modflow and metaswap libraries (<code>.dll</code>’s) as part of the <a href="https://github.com/Deltares/imod_coupler/releases/latest/download/imod_coupler_windows.zip">the last iMOD Coupler release</a> for Windows for free. Please contact imod.support@deltares.nl if you require the libraries for Linux.</p>
-<div class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="37">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>metamod_dir <span class="op">=</span> imod.util.temporary_directory()</span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>mf6_dll <span class="op">=</span> <span class="st">"./path/to/mf6.dll"</span></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>metaswap_dll <span class="op">=</span> <span class="st">"./path/to/metaswap.dll"</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>metaswap_dll_dependency_dir <span class="op">=</span> <span class="st">"./path/to/metaswap/dll/dependency/directory"</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>metamod.write(metamod_dir, mf6_dll, metaswap_dll, metaswap_dll_dependency_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-74" class="cell" data-jupyter="{&quot;outputs_hidden&quot;:false}" data-execution_count="37">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>metamod_dir <span class="op">=</span> imod.util.temporary_directory()</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>mf6_dll <span class="op">=</span> <span class="st">"./path/to/mf6.dll"</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>metaswap_dll <span class="op">=</span> <span class="st">"./path/to/metaswap.dll"</span></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>metaswap_dll_dependency_dir <span class="op">=</span> <span class="st">"./path/to/metaswap/dll/dependency/directory"</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>metamod.write(metamod_dir, mf6_dll, metaswap_dll, metaswap_dll_dependency_dir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/home/runner/work/iMOD-Documentation/iMOD-Documentation/.pixi/envs/default/lib/python3.11/site-packages/imod/formats/array_io/writing.py:37: UserWarning: The `squeeze` kwarg to GroupBy is being removed.Pass .groupby(..., squeeze=False) to disable squeezing, which is the new default, and to silence this warning.
+<pre><code>/home/runner/work/iMOD-Documentation/iMOD-Documentation/.pixi/envs/default/lib/python3.12/site-packages/imod/formats/array_io/writing.py:37: UserWarning: The `squeeze` kwarg to GroupBy is being removed.Pass .groupby(..., squeeze=False) to disable squeezing, which is the new default, and to silence this warning.
   for coordvals, a_yx in list(stacked.groupby("idf")):
-/home/runner/work/iMOD-Documentation/iMOD-Documentation/.pixi/envs/default/lib/python3.11/site-packages/imod/formats/array_io/writing.py:37: UserWarning: The `squeeze` kwarg to GroupBy is being removed.Pass .groupby(..., squeeze=False) to disable squeezing, which is the new default, and to silence this warning.
+/home/runner/work/iMOD-Documentation/iMOD-Documentation/.pixi/envs/default/lib/python3.12/site-packages/imod/formats/array_io/writing.py:37: UserWarning: The `squeeze` kwarg to GroupBy is being removed.Pass .groupby(..., squeeze=False) to disable squeezing, which is the new default, and to silence this warning.
   for coordvals, a_yx in list(stacked.groupby("idf")):</code></pre>
 </div>
 </div>
@@ -2416,6 +2420,7 @@ Coordinates:
 <p>In order to run the models, make sure you install <code>imod_coupler</code>. <a href="https://github.com/Deltares/imod_coupler">You can find the installation instructions here.</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -2498,10 +2503,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2511,8 +2515,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2525,6 +2538,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2568,6 +2700,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2593,6 +2726,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2654,17 +2813,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler_metamod_technical.html" class="pagination-link">
+      <a href="./coupler_metamod_technical.html" class="pagination-link" aria-label="Technical Reference">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Technical Reference</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./coupler_ribamod_config.html" class="pagination-link">
+      <a href="./coupler_ribamod_config.html" class="pagination-link" aria-label="Configuration">
         <span class="nav-page-text">Configuration</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
