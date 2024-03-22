@@ -372,7 +372,7 @@
     "href": "coupler_release.html#release-primod-on-pypi",
     "title": "Release process",
     "section": "Release primod on PyPI",
-    "text": "Release primod on PyPI\nTo be able to do pip install primod , primod needs to be released on the Python Package Index. First, make sure that you have a PyPI account. Then create a new API token and store it in a secure location.\nWhen you publish, you will need to provide a username and a password. Enter the following details: - username: __token__ - password: &lt;your-API-token&gt;\nRun the following to start the process:\npixi run publish-primod",
+    "text": "Release primod on PyPI\nTo be able to do pip install primod , primod needs to be released on the Python Package Index. First, make sure that you have a PyPI account. Then create a new API token and store it in a secure location.\nRun the following to start the process:\npixi run publish-primod",
     "crumbs": [
       "iMOD Coupler",
       "Release process"
