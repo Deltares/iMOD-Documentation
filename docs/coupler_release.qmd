@@ -79,11 +79,6 @@ To be able to do `pip install primod` , `primod` needs to be released on the Pyt
 First, make sure that you have a [PyPI](https://pypi.org/) account.
 Then create a new API token and store it in a secure location.
 
-When you publish, you will need to provide a username and a password.
-Enter the following details:
-- username: `__token__`
-- password: `<your-API-token>`
-
 Run the following to start the process:
 ```
 pixi run publish-primod
