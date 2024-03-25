@@ -78,6 +78,7 @@ website:
         - href: tutorial_Abbeyfeale.qmd
         - href: tutorial_Dommel.qmd
         - href: tutorial_wq.qmd
+        - href: tutorial_Hondsrug.ipynb
 
     - id: further_links
       title: "Further links"
