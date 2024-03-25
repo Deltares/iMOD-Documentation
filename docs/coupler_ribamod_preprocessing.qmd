@@ -49,26 +49,28 @@ The following abbreviated example:
 import ribasim
 import geopandas as gpd
 import imod
-
-from primod.ribamod import DriverCoupling, RibaMod
+import primod
 
 
 ribasim_model = ribasim.Model.read("ribasim/ribasim.toml")
 mf6_simulation = imod.mf6.Modflow6Simulation.from_file("modflow/GWF_1.toml")
 basin_definition = gpd.read_file("ribasim_network.gpkg", layer="basin_areas")
 
-
-driver_coupling = DriverCoupling(
+driver_coupling_active = primod.RibaModActiveDriverCoupling(
     mf6_model="GWF_1",
-    mf6_active_river_packages=["riv-1"],
-    mf6_passive_drainage_packages=["drn-1", "drn-2"],
+    mf6_packages=["riv-1"],
+    basin_definition=basin_definition,
+)
+driver_coupling_passve = primod.RibaModPassiveDriverCoupling(
+    mf6_model="GWF_1",
+    mf6_packages=["drn-1", "drn-2"],
     basin_definition=basin_definition,
 )
 
-ribamod_model = RibaMod(
+ribamod_model = primod.RibaMod(
     ribasim_model=ribasim_model,
     mf6_simulation=mf6sim,
-    coupling_list=[driver_coupling],
+    coupling_list=[driver_coupling_active, driver_coupling_passive],
 )
 
 ribamod_model.write(

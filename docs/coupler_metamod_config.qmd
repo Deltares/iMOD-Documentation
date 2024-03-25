@@ -30,17 +30,15 @@ work_dir = './msw_data'
 
 # Inner model with sprinkling
 [[driver.coupling]]
-enable_sprinkling = true
 mf6_model = 'inner_model'
 mf6_msw_recharge_pkg = 'RCH_MSW'
 mf6_msw_well_pkg = 'WELLS_MSW'
 mf6_msw_node_map = './mappings_inner/nodenr2svat.dxc'
 mf6_msw_recharge_map = './mappings_inner/rchindex2svat.dxc'
-mf6_msw_sprinkling_map = './mappings_inner/wellindex2svat.dxc'
+mf6_msw_sprinkling_map_groundwater = './mappings_inner/wellindex2svat.dxc'
 
 # Outer model, without sprinkling
 [[driver.coupling]]
-enable_sprinkling = false
 mf6_model = 'outer_model'
 mf6_msw_recharge_pkg = 'RCH_MSW'
 mf6_msw_node_map = './mappings_outer/nodenr2svat.dxc'
@@ -126,13 +124,6 @@ mf6_msw_recharge_map = './mappings_outer/rchindex2svat.dxc'
 
 |               |                                                                                                                      |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
-| description   | Whether to enable sprinkling, that is: enable extracting groundwater for irrigation.                                   |
-| type          | bool                                                                                                              |
-| required      | true                                                                                                                 |
-: enable_sprinkling
-
-|               |                                                                                                                      |
-|---------------|----------------------------------------------------------------------------------------------------------------------|
 | description   | Specifies the MODFLOW 6 model name to which MetaSWAP will be coupled.                                                  |
 | type          | str                                                                                                              |
 | required      | true                                                                                                                 |
@@ -161,14 +152,14 @@ mf6_msw_recharge_map = './mappings_outer/rchindex2svat.dxc'
 
 |               |                                                                                                                      |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
-| description   | Path to the file specifying the mapping between MODFLOW 6 recharge cells and MetaSWAP svats.                          |
+| description   | Path to the file specifying the mapping between MODFLOW 6 recharge cells and MetaSWAP svats.                         |
 | type          | str                                                                                                               |
 | required      | true                                                                                                                 |
 : mf6_msw_recharge_pkg
 
 |               |                                                                                                                      |
 |---------------|----------------------------------------------------------------------------------------------------------------------|
-| description   | Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats. This setting is only required if `enable_sprinkling` is set to `true`. |
+| description   | Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats.                                  |
 | type          | str                                                                                                              |
 | required      | false                                                                                                                |
-: mf6_msw_sprinkling_map
+: mf6_msw_sprinkling_map_groundwater
