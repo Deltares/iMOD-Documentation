@@ -329,21 +329,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Inner model with sprinkling</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">[[driver.coupling]]</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">true</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">inner_model</span><span class="st">'</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_well_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">WELLS_MSW</span><span class="st">'</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/nodenr2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/rchindex2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_sprinkling_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/wellindex2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer model, without sprinkling</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">[[driver.coupling]]</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="dt">enable_sprinkling</span> <span class="op">=</span> <span class="cn">false</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">outer_model</span><span class="st">'</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/nodenr2svat.dxc</span><span class="st">'</span></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/rchindex2svat.dxc</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">inner_model</span><span class="st">'</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_well_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">WELLS_MSW</span><span class="st">'</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/nodenr2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/rchindex2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_sprinkling_map_groundwater</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_inner/wellindex2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Outer model, without sprinkling</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="kw">[[driver.coupling]]</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">'</span><span class="vs">outer_model</span><span class="st">'</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">'</span><span class="vs">RCH_MSW</span><span class="st">'</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/nodenr2svat.dxc</span><span class="st">'</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/rchindex2svat.dxc</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="config-schema" class="level2">
 <h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
 <table class="table">
@@ -560,27 +558,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="driver.coupling" class="level3">
 <h3 class="anchored" data-anchor-id="driver.coupling">driver.coupling</h3>
 <table class="table">
-<caption>enable_sprinkling</caption>
-<colgroup>
-<col style="width: 11%">
-<col style="width: 88%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>description</td>
-<td>Whether to enable sprinkling, that is: enable extracting groundwater for irrigation.</td>
-</tr>
-<tr class="even">
-<td>type</td>
-<td>bool</td>
-</tr>
-<tr class="odd">
-<td>required</td>
-<td>true</td>
-</tr>
-</tbody>
-</table>
-<table class="table">
 <caption>mf6_model</caption>
 <colgroup>
 <col style="width: 11%">
@@ -686,7 +663,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <table class="table">
-<caption>mf6_msw_sprinkling_map</caption>
+<caption>mf6_msw_sprinkling_map_groundwater</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
@@ -694,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tbody>
 <tr class="odd">
 <td>description</td>
-<td>Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
+<td>Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats.</td>
 </tr>
 <tr class="even">
 <td>type</td>
