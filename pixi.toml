@@ -22,7 +22,8 @@ docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends_on 
 ] }
 
 [dependencies]
-imod = "*"
+modflow6 = ">=6.4.4"
+imod = ">=0.16.0"
 jupyterlab = "*"
 pre-commit = "*"
 primod = "*"
