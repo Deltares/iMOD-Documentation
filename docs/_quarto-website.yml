@@ -79,6 +79,7 @@ website:
         - href: tutorial_Dommel.qmd
         - href: tutorial_wq.qmd
         - href: tutorial_Hondsrug.ipynb
+        - href: tutorial_Netherlands_mesh.ipynb
 
     - id: further_links
       title: "Further links"
