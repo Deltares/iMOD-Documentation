@@ -1,5 +1,5 @@
 [files]
-extend-exclude = ["*.css", "*.png", "*.svg", "docs/tutorial_Hondsrug.ipynb"]
+extend-exclude = ["*.css", "*.png", "*.svg", "docs/tutorial_Hondsrug.ipynb", "docs/tutorial_Netherlands_mesh.ipynb"]
 
 [default.extend-words]
 # Ignore false-positives
