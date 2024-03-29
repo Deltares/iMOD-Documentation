@@ -34,6 +34,8 @@ book:
         - tutorial_Abbeyfeale.qmd
         - tutorial_Dommel.qmd
         - tutorial_wq.qmd
+        - tutorial_Hondsrug.ipynb
+        - tutorial_Netherlands_mesh.ipynb
 
 format:
   pdf:
