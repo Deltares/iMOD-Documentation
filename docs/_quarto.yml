@@ -16,13 +16,18 @@ quartodoc:
       desc: Couple MetaSWAP and MODFLOW 6.
       contents:
         - MetaMod
+        - MetaModDriverCoupling
     - title: RibaMod
       desc: Couple Ribasim and MODFLOW 6.
       contents:
         - RibaMod
-        - ribamod.DriverCoupling       
+        - RibaModActiveDriverCoupling       
+        - RibaModPassiveDriverCoupling       
     - title: RibaMetaMod
       desc: Couple Ribasim, MetaSWAP and MODFLOW 6.
       contents:
         - RibaMetaMod
-        - ribametamod.DriverCoupling
+        - RibaMetaDriverCoupling
+        - RibaModActiveDriverCoupling
+        - RibaModPassiveDriverCoupling
+        - MetaModDriverCoupling
