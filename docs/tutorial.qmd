@@ -11,7 +11,7 @@ listing:
         image: figures/tutorial/hondsrug/groundwater_decline.png
         description: "In this tutorial, you will learn how to use iMOD Python for building, running and analysing your MODFLOW 6 model."
       - path: tutorial_Netherlands_mesh.ipynb
-        title: "Unstructured grid model of the Netherlands"
+        title: "Unstructured grid model"
         image: figures/tutorial/unstructured_NL/head.png
         description: "In this example, we'll work with unstructured grid. We'll create a very simple unstructured model of the Netherlands from scratch."
 image: figures/logo/iMOD-tutorial.svg
