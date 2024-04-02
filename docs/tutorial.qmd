@@ -6,6 +6,14 @@ listing:
       - tutorial_Abbeyfeale.qmd
       - tutorial_Dommel.qmd
       - tutorial_wq.qmd
+      - path: tutorial_Hondsrug.ipynb
+        title: "Modifying an existing Modflow 6 model in iMOD Python"
+        image: figures/tutorial/hondsrug/groundwater_decline.png
+        description: "In this tutorial, you will learn how to use iMOD Python for building, running and analysing your MODFLOW 6 model."
+      - path: tutorial_Netherlands_mesh.ipynb
+        title: "Unstructured grid model of the Netherlands"
+        image: figures/tutorial/unstructured_NL/head.png
+        description: "In this example, we'll work with unstructured grid. We'll create a very simple unstructured model of the Netherlands from scratch."
 image: figures/logo/iMOD-tutorial.svg
 description: 'Learn how to use the iMOD Suite'
 index: "5"
