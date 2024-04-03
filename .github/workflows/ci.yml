@@ -8,7 +8,8 @@ concurrency:
 
 on:
   push:
-    branches: ['main', 'update/pixi-lock']
+    branches: [main, update/pixi-lock]
+    tags: ["*"]
   pull_request:
 
 
