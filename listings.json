@@ -1,12 +1,13 @@
 [
   {
-    "listing": "/tutorial.html",
+    "listing": "/index.html",
     "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html",
-      "tutorial_Hondsrug.html",
-      "tutorial_Netherlands_mesh.html"
+      "/introduction.html",
+      "/viewer.html",
+      "/python.html",
+      "/coupler.html",
+      "/tutorial.html",
+      "/practical.html"
     ]
   },
   {
@@ -22,14 +23,13 @@
     ]
   },
   {
-    "listing": "/index.html",
+    "listing": "/tutorial.html",
     "items": [
-      "/introduction.html",
-      "/viewer.html",
-      "/python.html",
-      "/coupler.html",
-      "/tutorial.html",
-      "/practical.html"
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html",
+      "tutorial_Hondsrug.html",
+      "tutorial_Netherlands_mesh.html"
     ]
   }
 ]
