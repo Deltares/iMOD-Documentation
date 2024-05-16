@@ -1,5 +1,15 @@
 [
   {
+    "listing": "/tutorial.html",
+    "items": [
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html",
+      "tutorial_Hondsrug.html",
+      "tutorial_Netherlands_mesh.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/introduction.html",
@@ -20,16 +30,6 @@
       "/practical_parallel.html",
       "/practical_powershell.html",
       "/practical_look_like_a_pro.html"
-    ]
-  },
-  {
-    "listing": "/tutorial.html",
-    "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html",
-      "tutorial_Hondsrug.html",
-      "tutorial_Netherlands_mesh.html"
     ]
   }
 ]
