@@ -125,6 +125,9 @@ locates the nearest subgrid elements:
   find the nearest subgrid element for each MODFLOW 6 boundary.
 * Store the basin indices, boundary indices, subgrid indices in a table.
 
+**NB.** The subgrid In a passive coupling, only drainage package are expected on the MODFLOW 6 side.
+In this type of coupling, the occurrence of a river package is not allowed and triggers a fatal error during preprocessing.
+
 ## Modifications to the Ribasim model
 
 The `primod.RibaMod` class makes the following alteration to the Ribasim input
@@ -160,4 +163,5 @@ elevation: the lowest level of the subgrid piecewise interpolation table:
   infiltration will proceed even when the Ribasim basin is empty.
 
 The second is a more pressing problem, as it will results in a discrepancy
-between the water balances of both models.
+between the water balances of both models. However, this problem is detected
+in the preprocessing stage and triggers a fatal error. 
