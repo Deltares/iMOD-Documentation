@@ -257,24 +257,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>In this example, we’ll work with an unstructured grid. We’ll create a very simple unstructured model of the Netherlands from scratch. We’ll use a digital elevation model (DEM) to set as drain level to simulate overland flow. To this we add constant recharge.</p>
 <p>Let’s start with importing the required packages. These are <a href="https://deltares.github.io/imod-python/">iMOD Python</a>, <a href="https://xarray.dev/">xarray</a>, and <a href="https://deltares.github.io/xugrid/">xugrid</a>.</p>
 <div id="3" class="cell" title="Imports" data-execution_count="1">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> imod</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xarray <span class="im">as</span> xr</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> xugrid <span class="im">as</span> xu</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
 <p>This data is distributed with the xugrid package. You need an internet connection to download the data.</p>
 <div id="5" class="cell" title="Get data" data-execution_count="2">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>elevation <span class="op">=</span> xu.data.elevation_nl()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>elevation </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Downloading file 'elevation_nl.nc' from 'https://github.com/deltares/xugrid/raw/main/data/elevation_nl.nc' to '/home/runner/.cache/xugrid'.</code></pre>
 </div>
@@ -649,15 +643,12 @@ Coordinates:
     mesh2d_face_y  (mesh2d_nFaces) float64 42kB ...
   * mesh2d_nFaces  (mesh2d_nFaces) int64 42kB 0 1 2 3 4 ... 5244 5245 5246 5247
 Attributes:
-    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-9f55fb10-ae83-4ab2-9de1-150678a49624" class="xr-array-in" type="checkbox" checked=""><label for="section-9f55fb10-ae83-4ab2-9de1-150678a49624" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>...</span></div><div class="xr-array-data"><pre>[5248 values with dtype=float32]</pre></div></div></li><li class="xr-section-item"><input id="section-ce306a01-f536-48e6-a42b-6d87ab59ea40" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-ce306a01-f536-48e6-a42b-6d87ab59ea40" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-f38418ba-37db-4ce0-b5fb-415a12857089" class="xr-var-attrs-in" type="checkbox"><label for="attrs-f38418ba-37db-4ce0-b5fb-415a12857089" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-28ab9f51-33b4-4dea-a2ab-00f559edc6b0" class="xr-var-data-in" type="checkbox"><label for="data-28ab9f51-33b4-4dea-a2ab-00f559edc6b0" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-b723ffaf-7cea-472f-9eda-5054083f298a" class="xr-var-attrs-in" type="checkbox"><label for="attrs-b723ffaf-7cea-472f-9eda-5054083f298a" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-033e4e62-e70d-45d0-87e8-bd9500e7b252" class="xr-var-data-in" type="checkbox"><label for="data-033e4e62-e70d-45d0-87e8-bd9500e7b252" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-cabdbc22-a95a-4da1-b208-636ef069d5d7" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-cabdbc22-a95a-4da1-b208-636ef069d5d7" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-64171d86-193c-486c-a558-5a4eb01a9071" class="xr-var-data-in" type="checkbox"><label for="data-64171d86-193c-486c-a558-5a4eb01a9071" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-fe352c9a-685b-4a65-9fba-7a692cbfeb9a" class="xr-section-summary-in" type="checkbox"><label for="section-fe352c9a-685b-4a65-9fba-7a692cbfeb9a" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-55101e64-3a69-4586-8569-fd1109870608" class="xr-index-data-in" type="checkbox"><label for="index-55101e64-3a69-4586-8569-fd1109870608" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-014b8202-57f9-432f-8f7d-8d9d826eaefa" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-014b8202-57f9-432f-8f7d-8d9d826eaefa" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
+    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-e2c31865-b575-4ae9-849b-c54940323b2b" class="xr-array-in" type="checkbox" checked=""><label for="section-e2c31865-b575-4ae9-849b-c54940323b2b" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>...</span></div><div class="xr-array-data"><pre>[5248 values with dtype=float32]</pre></div></div></li><li class="xr-section-item"><input id="section-b82ddbd3-1360-4f5b-b7e3-1f78bd9c0232" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-b82ddbd3-1360-4f5b-b7e3-1f78bd9c0232" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-7d58542a-eea3-493d-846e-f99f63a3b4f9" class="xr-var-attrs-in" type="checkbox"><label for="attrs-7d58542a-eea3-493d-846e-f99f63a3b4f9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-917da4f5-2845-4dfa-9ebb-bf10e4352120" class="xr-var-data-in" type="checkbox"><label for="data-917da4f5-2845-4dfa-9ebb-bf10e4352120" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-c4c3c907-71f3-4499-a60c-38d5bc6aded0" class="xr-var-attrs-in" type="checkbox"><label for="attrs-c4c3c907-71f3-4499-a60c-38d5bc6aded0" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b894f42f-e208-48b5-b147-47fee6b4892a" class="xr-var-data-in" type="checkbox"><label for="data-b894f42f-e208-48b5-b147-47fee6b4892a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-a2f59566-9253-4822-b8f1-c6b0a4e81948" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-a2f59566-9253-4822-b8f1-c6b0a4e81948" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-4c852455-b039-4c53-a780-2d54f63b8e47" class="xr-var-data-in" type="checkbox"><label for="data-4c852455-b039-4c53-a780-2d54f63b8e47" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-df5ed8fb-fee1-4d42-a4ea-0dd5d2169698" class="xr-section-summary-in" type="checkbox"><label for="section-df5ed8fb-fee1-4d42-a4ea-0dd5d2169698" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-f002082d-00af-4604-b517-1cb27ce814d8" class="xr-index-data-in" type="checkbox"><label for="index-f002082d-00af-4604-b517-1cb27ce814d8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-9e5255c5-2f70-4d44-9001-97120feac520" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-9e5255c5-2f70-4d44-9001-97120feac520" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Let’s plot the data</p>
 <div id="7" class="cell" title="Plot" data-execution_count="3">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>elevation.ugrid.plot(vmin<span class="op">=-</span><span class="dv">20</span>, vmax<span class="op">=</span><span class="dv">90</span>, cmap<span class="op">=</span><span class="st">"terrain"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -672,12 +663,9 @@ Attributes:
 <p>It is convenient to create a <em>template</em> grid, which has the right shape, dimensions, and coordinates. This can be used to construct DataArrays for different variables.</p>
 <p>We’ll start off with creating a <code>layer</code> DataArray, which is a 1D DataArray, containing all layer information required.</p>
 <div id="9" class="cell" title="Setup" data-execution_count="4">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>layer <span class="op">=</span> xr.DataArray(data<span class="op">=</span>[<span class="dv">1</span>], coords<span class="op">=</span>{<span class="st">"layer"</span>: [<span class="dv">1</span>]}, dims<span class="op">=</span>(<span class="st">"layer"</span>,))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>layer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -1045,17 +1033,14 @@ dl.xr-attrs {
 </style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (layer: 1)&gt; Size: 8B
 array([1])
 Coordinates:
-  * layer    (layer) int64 8B 1</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">layer</span>: 1</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-5c3ac516-1779-4ca5-a284-39ce085cf4af" class="xr-array-in" type="checkbox" checked=""><label for="section-5c3ac516-1779-4ca5-a284-39ce085cf4af" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1</span></div><div class="xr-array-data"><pre>array([1])</pre></div></div></li><li class="xr-section-item"><input id="section-306bb679-9a39-4f55-bd49-4287e8dea284" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-306bb679-9a39-4f55-bd49-4287e8dea284" class="xr-section-summary">Coordinates: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">layer</span></div><div class="xr-var-dims">(layer)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">1</div><input id="attrs-c8a3d15c-09bc-4723-b6e5-d6e1bb371e9c" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-c8a3d15c-09bc-4723-b6e5-d6e1bb371e9c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-e5048e90-cdc4-475f-a67a-5b8c46097cb8" class="xr-var-data-in" type="checkbox"><label for="data-e5048e90-cdc4-475f-a67a-5b8c46097cb8" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([1])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c53cfafe-9eca-4905-84ae-865b1a022f67" class="xr-section-summary-in" type="checkbox"><label for="section-c53cfafe-9eca-4905-84ae-865b1a022f67" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>layer</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-34ffe3c7-7622-4683-b2ff-ed5f2e854aa0" class="xr-index-data-in" type="checkbox"><label for="index-34ffe3c7-7622-4683-b2ff-ed5f2e854aa0" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1], dtype='int64', name='layer'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-d4ba0dbb-90da-4954-9681-7f8af71fb994" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-d4ba0dbb-90da-4954-9681-7f8af71fb994" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+  * layer    (layer) int64 8B 1</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">layer</span>: 1</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-f15266c2-a211-4522-ae49-6e542142d092" class="xr-array-in" type="checkbox" checked=""><label for="section-f15266c2-a211-4522-ae49-6e542142d092" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1</span></div><div class="xr-array-data"><pre>array([1])</pre></div></div></li><li class="xr-section-item"><input id="section-238a806f-49f3-433e-a44e-96e08b4aa7b2" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-238a806f-49f3-433e-a44e-96e08b4aa7b2" class="xr-section-summary">Coordinates: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">layer</span></div><div class="xr-var-dims">(layer)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">1</div><input id="attrs-6b908d3b-18fd-4992-b245-6aaaa38f5ab6" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-6b908d3b-18fd-4992-b245-6aaaa38f5ab6" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7e48544d-2e4a-4642-8fd8-c8850888a9a7" class="xr-var-data-in" type="checkbox"><label for="data-7e48544d-2e4a-4642-8fd8-c8850888a9a7" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([1])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-995dd0e7-2955-4449-8336-43abdd30bc46" class="xr-section-summary-in" type="checkbox"><label for="section-995dd0e7-2955-4449-8336-43abdd30bc46" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>layer</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-0f5368ed-ea20-4903-a3d6-395896c4d875" class="xr-index-data-in" type="checkbox"><label for="index-0f5368ed-ea20-4903-a3d6-395896c4d875" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1], dtype='int64', name='layer'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-a4eeb3fe-1763-4d51-979e-8daeb69b79ca" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-a4eeb3fe-1763-4d51-979e-8daeb69b79ca" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Next, we’ll create a 2D planar template grid. The xarray function <code>.ones_like</code> returns a new object of ones with the same shape and type as a given dataarray or dataset.</p>
 <div id="11" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>template_2d <span class="op">=</span> imod.typing.grid.ones_like(elevation, dtype<span class="op">=</span><span class="bu">int</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>template_2d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
@@ -1427,19 +1412,16 @@ Coordinates:
     mesh2d_face_y  (mesh2d_nFaces) float64 42kB ...
   * mesh2d_nFaces  (mesh2d_nFaces) int64 42kB 0 1 2 3 4 ... 5244 5245 5246 5247
 Attributes:
-    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-573aab86-15ef-4e2d-82c7-7acbca2c9fe7" class="xr-array-in" type="checkbox" checked=""><label for="section-573aab86-15ef-4e2d-82c7-7acbca2c9fe7" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span></div><div class="xr-array-data"><pre>array([1, 1, 1, ..., 1, 1, 1])</pre></div></div></li><li class="xr-section-item"><input id="section-c79e05c0-ad84-4f6d-868b-8fca2183e0ab" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-c79e05c0-ad84-4f6d-868b-8fca2183e0ab" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-2f847d66-cad4-4809-87d2-c690f4cff4eb" class="xr-var-attrs-in" type="checkbox"><label for="attrs-2f847d66-cad4-4809-87d2-c690f4cff4eb" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-ea9dfe27-e111-44df-a7b7-58db170549e1" class="xr-var-data-in" type="checkbox"><label for="data-ea9dfe27-e111-44df-a7b7-58db170549e1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-434d1a22-cfbc-4610-9558-25030144c777" class="xr-var-attrs-in" type="checkbox"><label for="attrs-434d1a22-cfbc-4610-9558-25030144c777" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-41179c01-c18a-495b-8f6a-8524bbd0e895" class="xr-var-data-in" type="checkbox"><label for="data-41179c01-c18a-495b-8f6a-8524bbd0e895" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-1b19622e-6efa-447e-89a8-c1593dfb4c24" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-1b19622e-6efa-447e-89a8-c1593dfb4c24" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-71b62f09-f833-4bb8-b68b-b63b5520e1d9" class="xr-var-data-in" type="checkbox"><label for="data-71b62f09-f833-4bb8-b68b-b63b5520e1d9" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-946cb54e-d02e-464c-a0ee-7953c295ee3a" class="xr-section-summary-in" type="checkbox"><label for="section-946cb54e-d02e-464c-a0ee-7953c295ee3a" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-9cdcb1d0-0f01-4d50-bb38-e6b89ed9c472" class="xr-index-data-in" type="checkbox"><label for="index-9cdcb1d0-0f01-4d50-bb38-e6b89ed9c472" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-e38ea00e-0c87-40e8-a9ca-79570dedb21f" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-e38ea00e-0c87-40e8-a9ca-79570dedb21f" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
+    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-189388d2-6832-42dd-a15a-d159f5bca01d" class="xr-array-in" type="checkbox" checked=""><label for="section-189388d2-6832-42dd-a15a-d159f5bca01d" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span></div><div class="xr-array-data"><pre>array([1, 1, 1, ..., 1, 1, 1])</pre></div></div></li><li class="xr-section-item"><input id="section-966e0ab9-44f7-44ee-9499-33e59f91fee5" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-966e0ab9-44f7-44ee-9499-33e59f91fee5" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-198a9c4c-ac9d-42aa-872d-839db3e4e934" class="xr-var-attrs-in" type="checkbox"><label for="attrs-198a9c4c-ac9d-42aa-872d-839db3e4e934" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d7cb7390-6c59-48bc-8273-14ebfc2b3334" class="xr-var-data-in" type="checkbox"><label for="data-d7cb7390-6c59-48bc-8273-14ebfc2b3334" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-dda81bb6-bddf-42e5-9d81-bad82fa43e30" class="xr-var-attrs-in" type="checkbox"><label for="attrs-dda81bb6-bddf-42e5-9d81-bad82fa43e30" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8324e1bd-fd10-4768-9a4d-9727863fc2af" class="xr-var-data-in" type="checkbox"><label for="data-8324e1bd-fd10-4768-9a4d-9727863fc2af" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-f4f02d74-e76d-4218-8bcf-02388f43e12f" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-f4f02d74-e76d-4218-8bcf-02388f43e12f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-1f5b7028-8c74-42c2-b7a5-0d31590d094d" class="xr-var-data-in" type="checkbox"><label for="data-1f5b7028-8c74-42c2-b7a5-0d31590d094d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c57e585e-6244-446f-a7cc-1090d279c480" class="xr-section-summary-in" type="checkbox"><label for="section-c57e585e-6244-446f-a7cc-1090d279c480" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-d4ce6ee3-844c-42c8-9a6c-fad97fd6d767" class="xr-index-data-in" type="checkbox"><label for="index-d4ce6ee3-844c-42c8-9a6c-fad97fd6d767" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-60a4f497-f8d1-4e04-ba62-0f81c59b78fc" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-60a4f497-f8d1-4e04-ba62-0f81c59b78fc" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Finally, we’ll create our unstructured template 3D grid.</p>
 <p>We’ll multiply our template 2d grid with the <code>layer</code> template to construct the full 3D grid. Pay attention to the dimension order, iMOD Python is very specific about this. We’ll put the dimensions in the right order immediately, to save ourselves headaches later.</p>
 <div id="13" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># iMOD Python requires the layer dimension first, faces dimension second</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>template <span class="op">=</span> (template_2d <span class="op">*</span> layer).transpose(<span class="st">"layer"</span>, <span class="st">"mesh2d_nFaces"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>template.sel(layer<span class="op">=</span><span class="dv">1</span>).ugrid.plot(vmin<span class="op">=</span><span class="dv">0</span>, vmax<span class="op">=</span><span class="dv">2</span>, cmap<span class="op">=</span><span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1453,13 +1435,10 @@ Attributes:
 <h1>Drainage</h1>
 <p>We can now use the template grid to transform the 2D elevation grid to a 3D elevation grid, required for the drainage package.</p>
 <div id="15" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Drain info</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>drainage_lvl <span class="op">=</span> template <span class="op">*</span> elevation  <span class="co"># requires layer dimension</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>drainage_lvl.sel(layer<span class="op">=</span><span class="dv">1</span>).ugrid.plot(vmin<span class="op">=-</span><span class="dv">5</span>, vmax<span class="op">=</span><span class="dv">40</span>, cmap<span class="op">=</span><span class="st">"viridis"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1470,14 +1449,11 @@ Attributes:
 </div>
 <p>Compute conductance. The function <code>.ugrid.grid.area</code> yields a numpy array with for each unstructured element its area (m2). Multiplied with the unstructured grid with value 1 yiels grid with area.</p>
 <div id="17" class="cell" data-execution_count="8">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cell_area <span class="op">=</span> template <span class="op">*</span> template.ugrid.grid.area <span class="co"># [m2]</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>resistance <span class="op">=</span> <span class="dv">1</span>  <span class="co"># [d]</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>conductance <span class="op">=</span> cell_area <span class="op">/</span> resistance <span class="co"># [m2/d]</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>conductance.sel(layer<span class="op">=</span><span class="dv">1</span>).ugrid.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1491,20 +1467,14 @@ Attributes:
 <h1>Discretization</h1>
 <p>Prepare our model discretization. <code>idomain</code> specifies whether a call is active [1], inactive [0], or vertical pass through [-1]. In this case we’ll go for a grid that is active everywhere.</p>
 <div id="19" class="cell" data-execution_count="9">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>idomain <span class="op">=</span> template.copy()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>We’ll also define the bottom of the model. To keep things simple, we’ll subtract 300 from the drainage level, which will also be our top. In this way, we’ll construct a model with thickness 300 everywhere.</p>
 <div id="21" class="cell" data-execution_count="10">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>bottom <span class="op">=</span> drainage_lvl <span class="op">-</span> <span class="fl">300.0</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>bottom.sel(layer<span class="op">=</span><span class="dv">1</span>).ugrid.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1518,13 +1488,10 @@ Attributes:
 <h1>Recharge</h1>
 <p>Let’s prepare our recharge. Note that Modflow 6 requires consistent length units, so we have to provide recharge in m/d instead of mm/d!</p>
 <div id="23" class="cell" data-execution_count="11">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define recharge</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>recharge_rate <span class="op">=</span> template <span class="op">*</span> <span class="fl">0.002</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>recharge_rate.sel(layer<span class="op">=</span><span class="dv">1</span>).ugrid.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1538,106 +1505,65 @@ Attributes:
 <h1>Construct simulation</h1>
 <p>Initialization of the main MODFLOW 6 object. We give it a name.</p>
 <div id="25" class="cell" data-execution_count="12">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>simulation <span class="op">=</span> imod.mf6.Modflow6Simulation(<span class="st">"nl_elevation"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Within a <code>Modflow6Simulation</code> object one or more models can be defined. In this example there is just one ground water flow model. <br> In the next cells we will assemble our groundwater model in the object “gwf_model”. Further down, we add it to the object “simulation”. <br></p>
 <p>In the next cell we define that option <em>newton</em> is chosen.</p>
 <div id="27" class="cell" data-execution_count="13">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>gwf_model <span class="op">=</span> imod.mf6.GroundwaterFlowModel(newton<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The DIS package with vertices discretization needs input on tops, bottom and idomain.</p>
 <div id="29" class="cell" data-execution_count="14">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"dis"</span>] <span class="op">=</span> imod.mf6.VerticesDiscretization(</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    top<span class="op">=</span>elevation, idomain<span class="op">=</span>idomain, bottom<span class="op">=</span>bottom</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Assign storage package:</p>
 <div id="31" class="cell" data-execution_count="15">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"sto"</span>] <span class="op">=</span> imod.mf6.SpecificStorage(</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    specific_storage<span class="op">=</span><span class="fl">1e-5</span>, specific_yield<span class="op">=</span><span class="fl">0.01</span>, transient<span class="op">=</span><span class="va">False</span>, convertible<span class="op">=</span><span class="dv">1</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Assign initial conditions, we’ll set them equal to drainage level.</p>
 <div id="33" class="cell" data-execution_count="16">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"ic"</span>] <span class="op">=</span> imod.mf6.InitialConditions(start<span class="op">=</span>drainage_lvl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The Node Property Flow is most noteworthy where we specify the hydraulic conductivities. For a simple homogeneous, isotropic medium of 10 m/d:</p>
 <div id="35" class="cell" data-execution_count="17">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"npf"</span>] <span class="op">=</span> imod.mf6.NodePropertyFlow(icelltype<span class="op">=</span><span class="dv">1</span>, k<span class="op">=</span><span class="fl">10.0</span>, k33<span class="op">=</span><span class="fl">10.0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Assign recharge package:</p>
 <div id="37" class="cell" data-execution_count="18">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"rch"</span>] <span class="op">=</span> imod.mf6.Recharge(rate<span class="op">=</span>recharge_rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Assign drainage package:</p>
 <div id="39" class="cell" data-execution_count="19">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"drn"</span>] <span class="op">=</span> imod.mf6.Drainage(elevation<span class="op">=</span>drainage_lvl, conductance<span class="op">=</span>conductance)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="40" class="cell" data-execution_count="20">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>gwf_model[<span class="st">"oc"</span>] <span class="op">=</span> imod.mf6.OutputControl(save_head<span class="op">=</span><span class="st">"last"</span>, save_budget<span class="op">=</span><span class="st">"last"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Now the ground water model object ‘gwf_model’ is ready. <br> Let’s add this model to the MODFLOW 6 simulation object.</p>
 <div id="42" class="cell" data-execution_count="21">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"gwf"</span>] <span class="op">=</span> gwf_model</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>The final things we have to define are specifying a solver settings and time discretization to the Modflow 6 simulation.</p>
 <div id="44" class="cell" data-execution_count="22">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"solver"</span>] <span class="op">=</span> imod.mf6.SolutionPresetModerate(modelnames<span class="op">=</span>[<span class="st">"gwf"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <div id="45" class="cell" title="define the time discretization" data-execution_count="23">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>simulation.create_time_discretization(additional_times<span class="op">=</span>[<span class="st">"2000-01-01"</span>, <span class="st">"2001-01-01"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <section id="write-model" class="level2">
 <h2 class="anchored" data-anchor-id="write-model">Write model</h2>
 <div id="47" class="cell" title="Write the MODFLOW 6 input files." data-execution_count="24">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tmpdir <span class="op">=</span> imod.util.temporary_directory()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>modeldir <span class="op">=</span> tmpdir <span class="op">/</span> <span class="st">"reference"</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>simulation.write(modeldir)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Now run our simulation:</p>
 <div id="49" class="cell" title="Run the model" data-execution_count="25">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mf6_path = "path/to/mf6.exe" </span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># If you installed Modflow6 in your PATH environment variable, you can use the</span></span>
@@ -1645,18 +1571,14 @@ Attributes:
 <span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>mf6_path <span class="op">=</span> <span class="st">"mf6"</span></span>
 <span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>simulation.run(mf6_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Let’s look at the results:</p>
 <div id="51" class="cell" title="Open the calculated heads" data-execution_count="26">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>head <span class="op">=</span> simulation.open_head().load().isel(time<span class="op">=-</span><span class="dv">1</span>, layer<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate ground water below surface level.</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>groundwater_depth <span class="op">=</span> elevation <span class="op">-</span> head</span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot</span></span>
 <span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>groundwater_depth.ugrid.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1667,14 +1589,11 @@ Attributes:
 </div>
 <p>iMOD Python also supports partitioning a simulation, for parallel computation. It offers convenience functions to split existing simulations. For this we require a label array first.</p>
 <div id="53" class="cell" title="Split model into 4 partitions" data-execution_count="27">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> imod.mf6.multimodel.partition_generator <span class="im">import</span> get_label_array</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>label_array <span class="op">=</span> get_label_array(simulation, npartitions<span class="op">=</span><span class="dv">4</span>)</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>label_array.ugrid.plot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1685,28 +1604,19 @@ Attributes:
 </div>
 <p>Let’s split our simulation with the label array.</p>
 <div id="55" class="cell" data-execution_count="28">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>simulation_split <span class="op">=</span> simulation.split(label_array)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>Now write the split simulation and run it</p>
 <div id="57" class="cell" title="Run model" data-execution_count="29">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>modeldir <span class="op">=</span> tmpdir <span class="op">/</span> <span class="st">"partitioned"</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>simulation_split.write(modeldir)</span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>simulation_split.run(mf6_path)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 </div>
 <p>And plot the results. Note that iMOD Python takes care of merging the 4 partitioned models into one single head grid.</p>
 <div id="59" class="cell" title="Merge outputs using open_head method" data-execution_count="30">
-<details class="code-fold">
-<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>head_merged <span class="op">=</span> simulation_split.open_head()[<span class="st">"head"</span>].isel(time<span class="op">=-</span><span class="dv">1</span>, layer<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co"># plot</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>head_merged.ugrid.plot(vmin<span class="op">=-</span><span class="dv">20</span>, vmax<span class="op">=</span><span class="dv">90</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

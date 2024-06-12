@@ -412,6 +412,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Using the <code>meta_x</code> and <code>meta_y</code> columns in the Ribasim Basin / subgrid table, find the nearest subgrid element for each MODFLOW 6 boundary.</li>
 <li>Store the basin indices, boundary indices, subgrid indices in a table.</li>
 </ul>
+<p><strong>NB.</strong> The subgrid In a passive coupling, only drainage package are expected on the MODFLOW 6 side. In this type of coupling, the occurrence of a river package is not allowed and triggers a fatal error during preprocessing.</p>
 </section>
 </section>
 <section id="modifications-to-the-ribasim-model" class="level2">
@@ -431,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>In case the MODFLOW 6 bed elevation is higher than the subgrid elevation, infiltration will stop before the Ribasim basin is empty.</li>
 <li>In case the MODFLOW 6 bed elevation is lower than the subgrid elevation, infiltration will proceed even when the Ribasim basin is empty.</li>
 </ul>
-<p>The second is a more pressing problem, as it will results in a discrepancy between the water balances of both models.</p>
+<p>The second is a more pressing problem, as it will results in a discrepancy between the water balances of both models. However, this problem is detected in the preprocessing stage and triggers a fatal error.</p>
 
 
 </section>
