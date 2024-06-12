@@ -22,12 +22,13 @@ docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends_on 
 ] }
 
 [dependencies]
-imod = ">=0.16.0"
+imod = ">=0.17.1"
 jupyterlab = "*"
 pre-commit = "*"
 primod = "*"
 quarto = "*"
 quartodoc = "*"
+rioxarray = ">=0.15.5,<0.16"
 
 [target.linux-64.dependencies]
 # Install Modflow 6 on linux to render examples on CI.
