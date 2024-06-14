@@ -1,0 +1,177 @@
+---
+title: Technical Reference
+---
+
+This document describes the complete couple scheme Ribasim - MetaSWAP - MODFLOW 6,
+the operations performed by the individual kernels as well as the exchanges between the kernels.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    Ribasim ->> MODFLOW6: stage [t-1][active]
+    MODFLOW6 ->> Ribasim: RIV flux estimate [t-1][active + passive]
+
+    loop Ribasim-MetaSWAP subtimesteps
+        Note over MetaSWAP: prepare surface water timestep tsw
+        MetaSWAP->>Ribasim:  sprinkling demand [tsw]
+        MetaSWAP->>Ribasim:  runoff [tsw]
+        Note over Ribasim: solve tsw
+        Ribasim ->> MetaSWAP: sprinkling realised [tsw]
+    end
+    Ribasim ->> MODFLOW6: RIV realised [t][active]
+    MODFLOW6 ->> MetaSWAP: head [t-1]
+    Note over MetaSWAP, MODFLOW6: Iterate again
+```
+
+
+
+
+
+The following sequence diagram show the current sequential coupling scheme for
+a single MODFLOW 6 stress period.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    Ribasim ->> MODFLOW6: exchange stage [T-1]
+    Note over MODFLOW6: solve T
+    MODFLOW6 ->> Ribasim: RIV flux [T-1]
+    Note over Ribasim: solve T
+```
+
+# Requirements
+
+* Ribasim only couples to the River (RIV) and Drainage (DRN) packages of
+  MODFLOW6.
+* One or more River and Drainage boundaries can be connected with one Ribasim
+  basin.
+* The MODFLOW6 River and Drainage entity is the smallest entity: coupling
+  multiple Ribasim basins to a single MODFLOW6 boundary is not supported.
+* The active coupling, in which MODFLOW6 boundary levels are changed, always
+  requires a "subgrid" table in Ribasim.
+  
+# Data exchanges
+
+## MODFLOW6 to Ribasim
+
+### Flows
+
+The computed drainage and infiltration flows to and from River and Drainage
+packages are aggregated on basin level and set as:
+
+* infiltration: a flow from the surface water to the groundwater (positive).
+* drainage: a flow from the groundwater to the surface (positive).
+  
+These are set as the infiltration and drainage forcing on the Ribasim basins.
+
+## Ribasim to MODFLOW 6
+
+### Levels
+
+Ribasim sets the stage of River packages, and the drainage elevation of Drainage
+packages in MODFLOW6.
+
+The levels of the basins are not set directly in MODFLOW6. The levels are
+interpolated using the "subgrid" functionality of Ribasim, which can be used to
+e.g. create sloping water levels within a single basin.
+
+For simplicity of the coupling, the subgrid functionality is also used in
+case of a 1:1 basin-boundary coupling.
+
+# Files
+
+The following files are required to couple the two model codes.
+
+## MODFLOW6
+
+No specific files are required. The MODFLOW6 model must contain River or
+Drainage packages which represent the surface water.
+
+## Ribasim
+
+No specific files are required. The Basin / Subgrid table must be defined. For
+preprocessing with `primod`, the metadata columns `meta_x`, `meta_y` must be
+included in this table to indicate the spatial location of each subgrid
+element.
+
+## Coupler
+
+These files provide the mappings from the MODFLOW boundary indices to the
+Ribasim basin indices. For actively coupled system (see below), it also
+includes subgrid indices.
+
+The files are identified by the MODFLOW6 package name.
+
+Note that the exchange files are **tab-separated** and use 0-based indices.
+They also include a header.
+
+### Passive coupling
+
+#### [package-name].tsv
+
+
+```
+basin_index     bound_index
+{basin_index0}  {bound_index0}
+{basin_index1}  {bound_index1}
+...
+```
+
+### Active coupling
+
+#### [package-name].tsv
+
+```
+basin_index     bound_index      subgrid_index
+{basin_index0}  {bound_index0}   {subgrid_index0}
+{basin_index1}  {bound_index1}   {subgrid_index1}
+...
+```
+
+# MODFLOW 6 surface water representation
+
+Ribasim is linked to the surface water representation of the MODFLOW 6 models.
+Specifically, Ribasim is linked to either River (RIV) or Drainage (DRN)
+packages. In a coupled simulation, Ribasim computes a surface water mass
+balance and sets the water levels for the MODFLOW 6 boundaries, and MODFLOW 6
+provides the drainage and infiltration flows. These flows are collected in the
+Ribasim basins.
+
+The RibaMod coupling only exchanges between Ribasim basins and MODFLOW 6 River
+and Drainage packages. This means that for a successful coupling with Ribasim,
+the surface water should **only** be represented by either River or Drainage
+boundaries.
+
+More advanced surface water boundaries such as the Streamflow-Routing (SFR)
+package or the Lake (LAK) package compute their own surface water mass balance,
+and cannot be coupled to Ribasim. Such packages may be used freely in the parts
+of the model domain that are **not** coupled with Ribasim, but should not be
+used in the part of the model domain that is coupled to Ribasim.
+
+## Active versus passive coupling
+
+In coupling Ribasim to MODFLOW 6, we make a distinction between active and
+passive coupling.
+
+In passive coupling, MODFLOW 6 computes drainage and infiltration flows. These
+are added to the water balance of the Ribasim basins. The water levels computed
+by Ribasim are **not** set back into MODFLOW 6. This type of coupling is
+convenient for boundaries that show little variation in terms of drainage
+elevation over time (e.g. surface runoff, or ditches with negligible water
+depth). A passive coupling requires little in terms of parametrization of the
+Ribasim model: all flows are simply added as a sort of "lateral" flow into the
+basin.
+
+In the active coupling, Ribasim does set the water levels of the MODFLOW 6
+model.
+
+The passive coupling should generally only be applied to coupling to Drainage
+packages, not River packages: in case of "over-infiltration", the water levels
+in Ribasim will drop, potentially resulting in a dry basin. However, since the
+water levels are not set in MODFLOW 6, no feedback can occur, and the MODFLOW 6
+model will keep infiltrating water that is not available. This creates a
+discrepancy between the water balances of both models.
+
+In the active coupling, large infiltration flows would result in lower water
+levels, and infiltration stops when the basin dries up and the River stage
+reaches the bed elevation.
