@@ -2,176 +2,144 @@
 title: Technical Reference
 ---
 
-This document describes the complete couple scheme Ribasim - MetaSWAP - MODFLOW 6,
-the operations performed by the individual kernels as well as the exchanges between the kernels.
+This document describes the complete Ribasim - MetaSWAP - MODFLOW 6 coupling sequence,
+the operations performed by the individual components as well as the exchanges of data among the components.
 
 ```{mermaid}
 sequenceDiagram
     autonumber
-    Ribasim ->> MODFLOW6: stage [t-1][active]
-    MODFLOW6 ->> Ribasim: RIV flux estimate [t-1][active + passive]
+    Ribasim ->> MODFLOW6: stage [t-1]
+    MODFLOW6 ->> Ribasim: estimated RIV flux, active & passive  [t-1]
 
     loop Ribasim-MetaSWAP subtimesteps
         Note over MetaSWAP: prepare surface water timestep tsw
-        MetaSWAP->>Ribasim:  sprinkling demand [tsw]
-        MetaSWAP->>Ribasim:  runoff [tsw]
+        MetaSWAP->>Ribasim:  ponding runoff [tsw]
+        MetaSWAP->>Ribasim:  estimated sprinkling [tsw]
         Note over Ribasim: solve tsw
-        Ribasim ->> MetaSWAP: sprinkling realised [tsw]
+        Ribasim ->> MetaSWAP: realized sprinkling [tsw]
     end
-    Ribasim ->> MODFLOW6: RIV realised [t][active]
-    MODFLOW6 ->> MetaSWAP: head [t-1]
-    Note over MetaSWAP, MODFLOW6: Iterate again
+    Ribasim ->> MODFLOW6: realized RIV, active [t]
+    loop MODFLOW6-MetaSWAP iterations
+        MODFLOW6 ->> MetaSWAP: head[] 
+        Note over MetaSWAP: solve t
+        MetaSWAP ->> MODFLOW6: storage coefficient[]
+        MetaSWAP ->> MODFLOW6: recharge flux[]
+        MetaSWAP ->> MODFLOW6: groundwater sprinkling flux[]
+        Note over MODFLOW6: solve t
+    end
+
 ```
 
+The exchanges between kernels can be summerized as follows:
+<ol>
+<li value=1> Surface water levels (stages) for all MODFLOW6 cells with an active RIV coupling to produce an estimate of the active RIV flux.
+These surface levels are obtained from a Ribasim subgrid water level profile by interpolation from the basin levels.
+This interpolation requires the definition of a subgrid table within the Ribasim configuration. 
+</li>
+<li value=2> RIV flux (both active and passive) estimated by MODFLOW6, proposed to Ribasim</li>
+<b>Ribasim-MetaSWAP sub-timestepping</b>
+<ol>
+<li value=3> Runoff (ponding) from MetaSWAP added to Ribasim</li>
+<li value=4> Surface water sprinkling flux requested by MetaSWAP to be extracted from Ribasim, if allocated.</li>
+<li value=5> Surface water sprinkling flux realized by Ribasim, reported back to MetaSWAP</li>
+</ol>
+<li value=6> RIV flux, realized by Ribasim, reported back to MODFLOW6</li>
+<b>MODFLOW6-MetaSWAP iterations</b>
+<ol>
+<li value=7> Head of MODFLOW6 sent to MetaSWAP</li>
+<li value=8> Storage coefficient from MetaSWAP sent to MODFLOW6</li>
+<li value=9> Recharge from MetaSWAP sent to MODFLOW6 as a source term</li>
+<li value=10> Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW6</li>
+</ol>
+</ol>
 
 
-
-
-The following sequence diagram show the current sequential coupling scheme for
-a single MODFLOW 6 stress period.
-
-```{mermaid}
-sequenceDiagram
-    autonumber
-    Ribasim ->> MODFLOW6: exchange stage [T-1]
-    Note over MODFLOW6: solve T
-    MODFLOW6 ->> Ribasim: RIV flux [T-1]
-    Note over Ribasim: solve T
-```
-
-# Requirements
-
-* Ribasim only couples to the River (RIV) and Drainage (DRN) packages of
-  MODFLOW6.
-* One or more River and Drainage boundaries can be connected with one Ribasim
-  basin.
-* The MODFLOW6 River and Drainage entity is the smallest entity: coupling
-  multiple Ribasim basins to a single MODFLOW6 boundary is not supported.
-* The active coupling, in which MODFLOW6 boundary levels are changed, always
-  requires a "subgrid" table in Ribasim.
+## Some remarks
+* Flows directly to or from Ribasim are communicated to the Ribasim kernel via the BMI variables <b>infiltration</b> for all extractions from and <b>drainage</b> for all additions to Ribasim basin volumes.  This requires a mapping to ribasim basins. 
+However, amounts for infiltration and drainage are grouped and kept track off in an exchange object, rather than sent to Ribasim diretly.
+The net effect of these contributions is sent to Ribasim just before solving Ribasim for the current timestep and individual contributions can also be logged.
+* The surface water sprinkling is however kept separate as so-called 'user demands' applied to specific user-demand nodes in the Ribasim network. 
+These demands are subject to an optimalization algorithm establishing allocation of water for all requests.
+* Ribasim only couples to a River (RIV package ) for and Drainage (DRN) packages of
+  MODFLOW6, no other packages of surface water boundaries should be active where Ribasim is coupled.
+* One or more River and Drainage boundaries can be connected with one Ribasim basin. Inversely, more than one Ribasim basin couppled to a single MODFLOW6 boundary is *not* supported.
   
-# Data exchanges
-
-## MODFLOW6 to Ribasim
-
-### Flows
-
-The computed drainage and infiltration flows to and from River and Drainage
-packages are aggregated on basin level and set as:
-
-* infiltration: a flow from the surface water to the groundwater (positive).
-* drainage: a flow from the groundwater to the surface (positive).
-  
-These are set as the infiltration and drainage forcing on the Ribasim basins.
-
-## Ribasim to MODFLOW 6
-
-### Levels
-
-Ribasim sets the stage of River packages, and the drainage elevation of Drainage
-packages in MODFLOW6.
-
-The levels of the basins are not set directly in MODFLOW6. The levels are
-interpolated using the "subgrid" functionality of Ribasim, which can be used to
-e.g. create sloping water levels within a single basin.
-
-For simplicity of the coupling, the subgrid functionality is also used in
-case of a 1:1 basin-boundary coupling.
-
-# Files
-
-The following files are required to couple the two model codes.
-
-## MODFLOW6
-
-No specific files are required. The MODFLOW6 model must contain River or
-Drainage packages which represent the surface water.
-
-## Ribasim
-
-No specific files are required. The Basin / Subgrid table must be defined. For
-preprocessing with `primod`, the metadata columns `meta_x`, `meta_y` must be
-included in this table to indicate the spatial location of each subgrid
-element.
-
-## Coupler
-
-These files provide the mappings from the MODFLOW boundary indices to the
-Ribasim basin indices. For actively coupled system (see below), it also
-includes subgrid indices.
-
-The files are identified by the MODFLOW6 package name.
-
-Note that the exchange files are **tab-separated** and use 0-based indices.
-They also include a header.
-
-### Passive coupling
-
-#### [package-name].tsv
-
-
-```
-basin_index     bound_index
-{basin_index0}  {bound_index0}
-{basin_index1}  {bound_index1}
-...
-```
-
-### Active coupling
-
-#### [package-name].tsv
-
-```
-basin_index     bound_index      subgrid_index
-{basin_index0}  {bound_index0}   {subgrid_index0}
-{basin_index1}  {bound_index1}   {subgrid_index1}
-...
-```
-
-# MODFLOW 6 surface water representation
-
-Ribasim is linked to the surface water representation of the MODFLOW 6 models.
-Specifically, Ribasim is linked to either River (RIV) or Drainage (DRN)
-packages. In a coupled simulation, Ribasim computes a surface water mass
-balance and sets the water levels for the MODFLOW 6 boundaries, and MODFLOW 6
-provides the drainage and infiltration flows. These flows are collected in the
-Ribasim basins.
-
-The RibaMod coupling only exchanges between Ribasim basins and MODFLOW 6 River
-and Drainage packages. This means that for a successful coupling with Ribasim,
-the surface water should **only** be represented by either River or Drainage
-boundaries.
-
-More advanced surface water boundaries such as the Streamflow-Routing (SFR)
-package or the Lake (LAK) package compute their own surface water mass balance,
-and cannot be coupled to Ribasim. Such packages may be used freely in the parts
-of the model domain that are **not** coupled with Ribasim, but should not be
-used in the part of the model domain that is coupled to Ribasim.
 
 ## Active versus passive coupling
+In coupling Ribasim and MODFLOW6, a distinction exists between *active* and *passive* coupling.
+In a passive coupling fluxes on the MODFLOW6 side are evaluated irrespective of the Ribasim waterlevels 
+and contribute directly to the Ribasim basins. 
+The Ribasim water levels are *not* required in this case, fluxes are simply regarded as "lateral" sources to the basin,
+hence configuration on the Ribasim side is minimal.
+The passive approach is justified for drainage packages showing little variation in terms of elevation over time (e.g. surface runoff, or ditches with negligible water depth).
+On the contrary, in the case of an active coupling fluxes depend (linearly) on the Ribasim water levels.
+This requires the stages in the MODFLOW6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.
 
-In coupling Ribasim to MODFLOW 6, we make a distinction between active and
-passive coupling.
+In the case of river packages "over-infiltration" can cause Ribasim water levels can fall to zero, leaving a dry basin.
+Since in the passive situation, water levels are not taken into account, no feedback occurs that limits or impedes infiltration.
+The MODFLOW6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a
+discrepancy in the water balance between both models. Therefore, passive couplings are unsuitable for river packages
+In active couplings, infiltration stops when the basin dries up and the water level reaches the bed elevation.
 
-In passive coupling, MODFLOW 6 computes drainage and infiltration flows. These
-are added to the water balance of the Ribasim basins. The water levels computed
-by Ribasim are **not** set back into MODFLOW 6. This type of coupling is
-convenient for boundaries that show little variation in terms of drainage
-elevation over time (e.g. surface runoff, or ditches with negligible water
-depth). A passive coupling requires little in terms of parametrization of the
-Ribasim model: all flows are simply added as a sort of "lateral" flow into the
-basin.
+## Derivation of the realised sprinkling flux and the river flux correction.
+Before performing a Ribasim update, the surface water sprinkling amounts in MetaSWAP and the active infiltration or drainage in 
+MODFLOW6 have been evaluated under the assumption of an unlimited availability of surface water for these processes.
+After Ribasims timestep, the *realized* extraction is known in Ribasim and this information must somehow be communicated to MODFLOW6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.
 
-In the active coupling, Ribasim does set the water levels of the MODFLOW 6
-model.
+For the surface water sprinkling the following procedure is used to derive the realized fluxes for the MetaSWAP units.
 
-The passive coupling should generally only be applied to coupling to Drainage
-packages, not River packages: in case of "over-infiltration", the water levels
-in Ribasim will drop, potentially resulting in a dry basin. However, since the
-water levels are not set in MODFLOW 6, no feedback can occur, and the MODFLOW 6
-model will keep infiltrating water that is not available. This creates a
-discrepancy between the water balances of both models.
+* The realized fraction $f_i$ is derived of the realized sprinkling flux $R_i$, compared to the requested flux $D_i$ for Ribasim element $i$.
+i.o.w.
+$$
+f_i\,=\,
+\begin{align}
+\begin{cases}
+    R_i/D_i & D_i\neq 0 \\
+    0 & D_i = 0
+\end{cases}
+\end{align}
+$$
 
-In the active coupling, large infiltration flows would result in lower water
-levels, and infiltration stops when the basin dries up and the River stage
-reaches the bed elevation.
+* The real contribution of Ribasim element $i$ to MetaSWAP element $j$ was then $f_i A_{ij} M^*_j$, where $M^*$ denotes the MetaSWAP vector of demand fluxes and $A_{ij}$ refers to an element of the couple matrix.
+
+* So, the total realized flux $M_j$ received by MetaSWAP element $j$ is then obtained by summation over $j$: 
+$$
+M_j\,=\,\sum\limits_j f_i A_{ij} M^*_j 
+$$\,\,,
+or in vector notation for all MetaSWAP elements:
+$$
+\hspace{1cm}
+\mathbf{M}\,=\,(A^T\mathbf{f})\odot\mathbf{M^*}
+$$
+
+The evaluation of the correction of the infiltration flux, for MODFLOW6 proceeds in a similar fashion, except:
+
+* Not the realized fraction $f_i$, but its complement $1-f_i$ is used. 
+
+* Correction is only applied to the *negative* demands. The positive demands, representing drainage, is unlimited.
+$$
+\begin{align}
+M_j\,=\,
+\begin{cases}
+\sum\limits_j f_i A_{ij} M^*_j  & M^*_j<0 \\
+\sum\limits_j M^*  & M^*_j>0
+\end{cases}
+\end{align}
+$$
+
+This must be taken into account into the realized fraction for the water balance to be correct:
+$$
+
+$$
+
+In earlier implementation of coupling groundwater and surface water such corrections  were applied proportional  and applying 
+This can be accomplished by evaluating the realized fractions on the Ribasim side and using the mapping to convert these fractions into 
+fractions on the MetaSWAP or MODFLOW6 side: the reduction $\beta_i=R_i/D_i$ 
+now applies to that portion of the demand by node/svat $j$ that is supposed to come from Ribasim element $j$  
+
+The most straightforward way  
+Let $R_{i}$ be the realized Ribasim infiltration amount for Ribasim element $i$ 
+and $D_{j}$ the amount requested, $M_{j}$ the amount realized and $C_{j}$ the correction for element $j$ in the MetaSWAP or MODFLOW6 model.
+$$
+\sum a_{i,j}
+$$

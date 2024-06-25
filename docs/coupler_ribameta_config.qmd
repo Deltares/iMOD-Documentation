@@ -181,3 +181,53 @@ riv_1 = "./exchanges/riv_1.tsv"
 </tbody>
 </table>
 </font>
+
+# Files
+
+The following files are required to couple the two model codes.
+
+## MODFLOW6
+
+No specific files are required. The MODFLOW6 model must contain River or
+Drainage packages which represent the surface water.
+
+## Ribasim
+
+No specific files are required. The Basin / Subgrid table must be defined. For
+preprocessing with `primod`, the metadata columns `meta_x`, `meta_y` must be
+included in this table to indicate the spatial location of each subgrid
+element.
+
+## Coupler
+
+These files provide the mappings from the MODFLOW boundary indices to the
+Ribasim basin indices. For actively coupled system (see below), it also
+includes subgrid indices.
+
+The files are identified by the MODFLOW6 package name.
+
+Note that the exchange files are **tab-separated** and use 0-based indices.
+They also include a header.
+
+### Passive coupling
+
+#### [package-name].tsv
+
+
+```
+basin_index     bound_index
+{basin_index0}  {bound_index0}
+{basin_index1}  {bound_index1}
+...
+```
+
+### Active coupling
+
+#### [package-name].tsv
+
+```
+basin_index     bound_index      subgrid_index
+{basin_index0}  {bound_index0}   {subgrid_index0}
+{basin_index1}  {bound_index1}   {subgrid_index1}
+...
+```
