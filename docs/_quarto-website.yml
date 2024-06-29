@@ -68,9 +68,9 @@ website:
             - href: coupler_ribamod_preprocessing.qmd
         - section: "Ribasim - MetaSWAP"
           contents:
-            - href: coupler_ribameta_config.qmd
-            - href: coupler_ribameta_technical.qmd
-            - href: coupler_ribameta_preprocessing.qmd
+            - href: coupler_ribametamod_config.qmd
+            - href: coupler_ribametamod_technical.qmd
+            - href: coupler_ribametamod_preprocessing.qmd
         - href: primod_api/index.qmd
         - href: coupler_architecture.qmd
         - href: coupler_release.qmd

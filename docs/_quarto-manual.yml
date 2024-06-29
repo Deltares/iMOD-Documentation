@@ -26,9 +26,9 @@ book:
         - coupler_ribamod_config.qmd
         - coupler_ribamod_technical.qmd
         - coupler_ribamod_preprocessing.qmd
-        - coupler_ribameta_config.qmd
-        - coupler_ribameta_technical.qmd
-        - coupler_ribameta_preprocessing.qmd
+        - coupler_ribametamod_config.qmd
+        - coupler_ribametamod_technical.qmd
+        - coupler_ribametamod_preprocessing.qmd
         - primod_api/index.qmd
         - coupler_architecture.qmd
         - coupler_release.qmd
