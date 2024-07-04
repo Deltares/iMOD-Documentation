@@ -8,90 +8,87 @@ the operations performed by the individual components as well as the exchanges o
 ```{mermaid}
 sequenceDiagram
     autonumber
-    Ribasim ->> MODFLOW6: stage [t-1]
-    MODFLOW6 ->> Ribasim: estimated RIV flux, active & passive  [t-1]
+    Ribasim ->> MODFLOW 6: stage [t-1]
+    MODFLOW 6 ->> Ribasim: estimated RIV flux, active & passive  [t-1]
 
-    loop Ribasim-MetaSWAP subtimesteps
+    loop Ribasim-MetaSWAP subtimesteps [tsw]
         Note over MetaSWAP: prepare surface water timestep tsw
         MetaSWAP->>Ribasim:  ponding runoff [tsw]
         MetaSWAP->>Ribasim:  estimated sprinkling [tsw]
         Note over Ribasim: solve tsw
         Ribasim ->> MetaSWAP: realized sprinkling [tsw]
     end
-    Ribasim ->> MODFLOW6: realized RIV, active [t]
-    loop MODFLOW6-MetaSWAP iterations
-        MODFLOW6 ->> MetaSWAP: head[] 
-        Note over MetaSWAP: solve t
-        MetaSWAP ->> MODFLOW6: storage coefficient[]
-        MetaSWAP ->> MODFLOW6: recharge flux[]
-        MetaSWAP ->> MODFLOW6: groundwater sprinkling flux[]
-        Note over MODFLOW6: solve t
+    Ribasim ->> MODFLOW 6: realized RIV, active [t]
+    MODFLOW 6 ->> MetaSWAP: head [t-1] 
+    loop MODFLOW 6-MetaSWAP iterations (solving t)
+        Note over MetaSWAP: solve iter
+        MetaSWAP ->> MODFLOW 6: storage coefficient [iter]
+        MetaSWAP ->> MODFLOW 6: recharge flux [iter]
+        MetaSWAP ->> MODFLOW 6: groundwater sprinkling flux [iter]
+        Note over MODFLOW 6: solve iter
+        MODFLOW 6 ->> MetaSWAP: head [iter] 
     end
 
 ```
 
-The exchanges between kernels can be summerized as follows:
+The exchanges between kernels can be summarized as follows:
 <ol>
-<li value=1> Surface water levels (stages) for all MODFLOW6 cells with an active RIV coupling to produce an estimate of the active RIV flux.
-These surface levels are obtained from a Ribasim subgrid water level profile by interpolation from the basin levels.
-This interpolation requires the definition of a subgrid table within the Ribasim configuration. 
+<li value=1> 
+Exchange the Ribasim subgrid stage from the previous timestep to actively coupled RIV en DRN packages.
 </li>
-<li value=2> RIV flux (both active and passive) estimated by MODFLOW6, proposed to Ribasim</li>
-<b>Ribasim-MetaSWAP sub-timestepping</b>
-<ol>
+<li value=2> RIV flux (both active and passive) estimated by MODFLOW 6, proposed to Ribasim</li>
+<br>
+<b>Ribasim-MetaSWAP sub-timestepping:</b>
 <li value=3> Runoff (ponding) from MetaSWAP added to Ribasim</li>
-<li value=4> Surface water sprinkling flux requested by MetaSWAP to be extracted from Ribasim, if allocated.</li>
-<li value=5> Surface water sprinkling flux realized by Ribasim, reported back to MetaSWAP</li>
+<li value=4> Irrigation demand from MetaSWAP svats to Ribasim water users.</li>
+<li value=5> Realized irrigation volume on svats based on realized volumes per water user and 
+distributed over svats in proportion to their demands.</li>
+<li value=6> Flux correction in the case that Ribasim basins are unable to meet the total infiltration demand. </li>
+<br>
+<b>MODFLOW 6-MetaSWAP iterations:</b>
+<li value=7> Head of MODFLOW 6 to MetaSWAP</li>
+<li value=8> Storage coefficient from MetaSWAP sent to MODFLOW 6</li>
+<li value=9> Recharge from MetaSWAP sent to MODFLOW 6 as a source term</li>
+<li value=10> Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW 6</li>
 </ol>
-<li value=6> RIV flux, realized by Ribasim, reported back to MODFLOW6</li>
-<b>MODFLOW6-MetaSWAP iterations</b>
-<ol>
-<li value=7> Head of MODFLOW6 sent to MetaSWAP</li>
-<li value=8> Storage coefficient from MetaSWAP sent to MODFLOW6</li>
-<li value=9> Recharge from MetaSWAP sent to MODFLOW6 as a source term</li>
-<li value=10> Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW6</li>
-</ol>
-</ol>
-
 
 ### Some remarks
-* Flows directly to or from Ribasim are communicated to the Ribasim kernel via the BMI variables <b>infiltration</b> for all extractions from and <b>drainage</b> for all additions to Ribasim basin volumes.  This requires a mapping to ribasim basins. 
-However, amounts for infiltration and drainage are grouped and kept track off in an exchange object, rather than sent to Ribasim diretly.
-The net effect of these contributions is sent to Ribasim just before solving Ribasim for the current timestep and individual contributions can also be logged.
 * The surface water sprinkling is however kept separate as so-called 'user demands' applied to specific user-demand nodes in the Ribasim network. 
 These demands are subject to an optimalization algorithm establishing allocation of water for all requests.
 * Ribasim only couples to a River (RIV package ) for and Drainage (DRN) packages of
-  MODFLOW6, no other packages of surface water boundaries should be active where Ribasim is coupled.
-* One or more River and Drainage boundaries can be connected with one Ribasim basin. Inversely, more than one Ribasim basin couppled to a single MODFLOW6 boundary is *not* supported.
+  MODFLOW 6, no other packages of surface water boundaries should be active where Ribasim is coupled.
   
 
 ### Active versus passive coupling
-In coupling Ribasim and MODFLOW6, a distinction exists between *active* and *passive* coupling.
-In a passive coupling fluxes on the MODFLOW6 side are evaluated irrespective of the Ribasim waterlevels 
+In coupling Ribasim and MODFLO 6, a distinction exists between *active* and *passive* coupling.
+In a passive coupling fluxes on the MODFLOW 6 side are evaluated irrespective of the Ribasim waterlevels 
 and contribute directly to the Ribasim basins. 
 The Ribasim water levels are *not* required in this case, fluxes are simply regarded as "lateral" sources to the basin,
 hence configuration on the Ribasim side is minimal.
 The passive approach is justified for drainage packages showing little variation in terms of elevation over time (e.g. surface runoff, or ditches with negligible water depth).
 On the contrary, in the case of an active coupling fluxes depend (linearly) on the Ribasim water levels.
-This requires the stages in the MODFLOW6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.
+This requires the stages in the MODFLOW 6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.
 
 In the case of river packages "over-infiltration" can cause Ribasim water levels can fall to zero, leaving a dry basin.
 Since in the passive situation, water levels are not taken into account, no feedback occurs that limits or impedes infiltration.
-The MODFLOW6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a
+The MODFLOW 6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a
 discrepancy in the water balance between both models. Therefore, passive couplings are unsuitable for river packages
 In active couplings, infiltration stops when the basin dries up and the water level reaches the bed elevation.
 
 ### Estimated sprinkling flux
-Within the Ribasim context, the sprinkling flux is implemented as a water user, the demand of which is
-communicated is communicated in entries of the user demand matrix. 
+Within the Ribasim context, the sprinkling flux is implemented as a water user. 
+The sprinkling demand is exchanged to Ribasim through the user demand matrix. 
 From the couplers perspective, this is a two-dimensional array in which every column represents a water user
-and every row corresponds with a priority. The array elements are water demands for the users, with different priorities. These priorities play a role on the Ribasim side only if allocation is active. There, the users are defined as nodes in the network and in the coupler, these users are mapped onto MetaSWAP svats.
-For every of those users, the water demand can be non-zero for a single priority only. This is however not checked and the resposibility of the user.
+and every row corresponds with a priority. The array elements are water demands for the users 
+(also for other water users beside sprinkling), each with their own set of priorities. 
+Priorities play a role on the Ribasim side only if allocation is active. 
+Within Ribasim, water users are defined as nodes in the network and in the coupler water users are mapped onto MetaSWAP svats.
+For every of those users, the water demand can be non-zero for a single priority only. 
 
 ### Realized sprinkling flux and infiltration flux correction.
 Before performing a Ribasim update, the surface water sprinkling amounts in MetaSWAP and the active infiltration or drainage in 
-MODFLOW6 have been evaluated under the assumption of an unlimited availability of surface water for these processes (steps 2 and 4)    .
-After Ribasims timestep, the *realized* extraction is known in Ribasim and this information must somehow be communicated to MODFLOW6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.
+MODFLOW 6 have been evaluated under the assumption of an unlimited availability of surface water for these processes (steps 2 and 4)    .
+After Ribasims timestep, the *realized* extraction is known in Ribasim and this information must somehow be communicated to MODFLOW 6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.
 
 For the surface water sprinkling the following procedure is used to derive the realized fluxes for the MetaSWAP units.
 
@@ -119,13 +116,13 @@ $$
 \mathbf{M}\,=\,(A^T\mathbf{f})\odot\mathbf{M^*}
 $$
 
-The evaluation of the correction of the infiltration flux, for MODFLOW6 proceeds in a similar fashion, except:
+The evaluation of the correction of the infiltration flux, for MODFLOW 6 proceeds in a similar fashion, except:
 
 * Not the realized fraction $f_i$, but its complement $1-f_i$ is used to obtain the correction $C_j$ on the infiltration flux. 
 
 * This correction is only applied to the *negative* demands. The positive demands, associated with drainage, are always granted.
 
-* The correction amounts represent a lack of water already infiltrated into MODFLOW6, which turned out not to be available at the end of the Ribasim timestep. Hence, this is corrected by means of a *negative* source term in MODFLOW6 in the next groundwater timestep.
+* The correction amounts represent a lack of water already infiltrated into MODFLOW 6, which turned out not to be available at the end of the Ribasim timestep. Hence, this is corrected by means of a *negative* source term in MODFLOW 6 in the next groundwater timestep.
 $$
 \begin{align}
 C_j\,=\,
@@ -138,7 +135,7 @@ $$
 
 This must be taken into account into the realized fraction for a correct water balance.
 Therefore, the demand $D_i$ to Ribasim element $i$ is now plit into $D_{i-}$ and, $D_{i+}$, 
-summing fluxes over the infiltrating and draining MODFLOW6 elemnents respectively.  
+summing fluxes over the infiltrating and draining MODFLOW 6 elements respectively.  
 
 $$
 f_i\,=\,
@@ -150,20 +147,16 @@ f_i\,=\,
 \end{align}
 $$
 
-The correction $C_j$ enters MODFLOW6 as a negative right-hand side term, i.e. extraction.
+The correction $C_j$ enters MODFLOW 6 as a negative right-hand side term, i.e. extraction.
 
 
 ### Logging of exchanged values
-Mainly intended for checking, the coupler class now also supports logging of the values exchanged between components.
-These values are written as timeseries to separate files.
+The values exchanged by the coupler for a specific variable can optionally be written to file during the simulation for inspection.
+These values are written as timeseries to separate files per variable.
 In the initialization stage of the simulation a dictionary-like structure (ExchangeCollector class) is created which holds
 a collection of labelled ExchangeLogger instances. 
 The initialization of an ExchangeLogger creates a netcdf file with dimensions `time` and `id`, a variable `time` with dimension (`time`)
 and a variable `xchg` with dimensions (`time`, `id`). The time dimension is the unlimited dimension.
-
-When performing an exchange, the ExchangeCollector instance is scanned
-for an ExchangeLogger with the label associated with that exchange. If found, the (mapped) arrays are written to the variable `xchg` 
-at the appropriate time level and the current time is accordingly set in the variable `time`
 
 
 
