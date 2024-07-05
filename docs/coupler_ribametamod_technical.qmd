@@ -1,0 +1,151 @@
+---
+title: Technical Reference
+---
+
+This document describes the complete Ribasim - MetaSWAP - MODFLOW 6 coupling sequence,
+the operations performed by the individual components as well as the exchanges of data among the components.
+
+```{mermaid}
+sequenceDiagram
+    autonumber
+    Ribasim ->> MODFLOW 6: stage [t-1]
+    MODFLOW 6 ->> Ribasim: estimated RIV flux, active & passive  [t-1]
+
+    loop Ribasim-MetaSWAP subtimesteps [tsw]
+        Note over MetaSWAP: prepare surface water timestep tsw
+        MetaSWAP->>Ribasim:  ponding runoff [tsw]
+        MetaSWAP->>Ribasim:  estimated sprinkling [tsw]
+        Note over Ribasim: solve tsw
+        Ribasim ->> MetaSWAP: realized sprinkling [tsw]
+    end
+    Ribasim ->> MODFLOW 6: realized RIV, active [t]
+    MODFLOW 6 ->> MetaSWAP: head [t-1] 
+    loop MODFLOW 6-MetaSWAP iterations (solving t)
+        Note over MetaSWAP: solve iter
+        MetaSWAP ->> MODFLOW 6: storage coefficient [iter]
+        MetaSWAP ->> MODFLOW 6: recharge flux [iter]
+        MetaSWAP ->> MODFLOW 6: groundwater sprinkling flux [iter]
+        Note over MODFLOW 6: solve iter
+        MODFLOW 6 ->> MetaSWAP: head [iter] 
+    end
+
+```
+
+The exchanges between kernels can be summarized as follows:
+<ol>
+<li value=1> 
+Exchange the Ribasim subgrid stage from the previous timestep to actively coupled RIV en DRN packages.
+</li>
+<li value=2> Estimated RIV and DRN flux, exchanged to Ribasim basins</li>
+<br>
+<b>Ribasim-MetaSWAP sub-timestepping:</b>
+<li value=3> Runoff from MetaSWAP exchanged to Ribasim basins</li>
+<li value=4> Irrigation demand from MetaSWAP svats to Ribasim water users.</li>
+<li value=5> Irrigation volume on svats based on realized volumes per water user
+</li>
+<li value=6> Flux correction in the case that Ribasim basins are unable to meet the total infiltration demand. </li>
+<br>
+<b>MODFLOW 6-MetaSWAP iterations:</b>
+<li value=7> Head of MODFLOW 6 to MetaSWAP</li>
+<li value=8> Storage coefficient from MetaSWAP sent to MODFLOW 6</li>
+<li value=9> Recharge from MetaSWAP sent to MODFLOW 6 as a source term</li>
+<li value=10> Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW 6</li>
+</ol>
+
+### Some remarks
+* If allocation is active in the Ribasim model, the demand-realisation cycle for irrigation is based on the user priority and the water availability. 
+When inactive it is based on water availability alone.  
+* For coupling surface water to Ribasim, only the RIV and DRN package can be used. Other packages like GHB are not supported and should not be present in coupled domain.  
+
+
+### Active versus passive coupling
+In coupling Ribasim and MODFLO 6, a distinction exists between *active* and *passive* coupling.
+In a passive coupling fluxes on the MODFLOW 6 side are evaluated irrespective of the Ribasim waterlevels 
+and contribute directly to the Ribasim basins. 
+The Ribasim water levels are *not* required in this case, fluxes are simply regarded as "lateral" sources to the basin,
+hence configuration on the Ribasim side is minimal.
+The passive approach is justified for drainage packages showing little variation in terms of elevation over time (e.g. surface runoff, or ditches with negligible water depth).
+On the contrary, in the case of an active coupling fluxes depend (linearly) on the Ribasim water levels.
+This requires the stages in the MODFLOW 6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.
+
+In the case of river packages "over-infiltration" can cause Ribasim water levels can fall to zero, leaving a dry basin.
+Since in the passive situation, water levels are not taken into account, no feedback occurs that limits or impedes infiltration.
+The MODFLOW 6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a
+discrepancy in the water balance between both models. Therefore, passive couplings are unsuitable for river packages
+In active couplings, infiltration stops when the basin dries up and the water level reaches the bed elevation.
+
+### Estimated sprinkling flux
+Within the Ribasim context, the sprinkling flux is implemented as a water user. 
+The sprinkling demand is exchanged to Ribasim through the user demand matrix. 
+From the couplers perspective, this is a two-dimensional array in which every column represents a water user
+and every row corresponds with a priority. The array elements are water demands for the users 
+(also for other water users beside sprinkling), each with their own set of priorities. 
+Priorities play a role on the Ribasim side only if allocation is active. 
+Within Ribasim, water users are defined as nodes in the network and in the coupler water users are mapped onto MetaSWAP svats.
+For every of those users, the water demand can be non-zero for a single priority only. 
+
+### Realized sprinkling flux and infiltration flux correction.
+Before performing a Ribasim update, the surface water sprinkling amounts in MetaSWAP and the active infiltration or drainage in 
+MODFLOW 6 have been evaluated under the assumption of an unlimited availability of surface water for these processes (steps 2 and 4)    .
+After Ribasims timestep, the *realized* extraction is known in Ribasim and this information must somehow be communicated to MODFLOW 6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.
+
+For the surface water sprinkling the following procedure is used to derive the realized fluxes for the MetaSWAP units.
+
+* The realized fraction $f_i$ is derived of the realized sprinkling flux $R_i$, compared to the requested flux $D_i$ for Ribasim element $i$.
+i.o.w.
+$$
+f_i\,=\,
+\begin{align}
+\begin{cases}
+    R_i/D_i & D_i\neq 0 \\
+    0 & D_i = 0
+\end{cases}
+\end{align}
+$$
+
+* The real contribution of Ribasim element $i$ to MetaSWAP element $j$ was then $f_i A_{ij} M^*_j$, where $M^*$ denotes the MetaSWAP vector of demand fluxes and $A_{ij}$ refers to an element of the couple matrix.
+
+* So, the total realized flux $M_j$ received by MetaSWAP element $j$ is then obtained by summation over $j$: 
+$$
+M_j\,=\,\sum\limits_j f_i A_{ij} M^*_j 
+$$\,\,,
+or in vector notation for all MetaSWAP elements:
+$$
+\hspace{1cm}
+\mathbf{M}\,=\,(A^T\mathbf{f})\odot\mathbf{M^*}
+$$
+
+The evaluation of the correction of the infiltration flux, for MODFLOW 6 proceeds in a similar fashion, except:
+
+* Not the realized fraction $f_i$, but its complement $1-f_i$ is used to obtain the correction $C_j$ on the infiltration flux. 
+
+* This correction is only applied to the *negative* demands. The positive demands, associated with drainage, are always granted.
+
+* The correction amounts represent a lack of water already infiltrated into MODFLOW 6, which turned out not to be available at the end of the Ribasim timestep. Hence, this is corrected by means of a *negative* source term in MODFLOW 6 in the next groundwater timestep.
+$$
+\begin{align}
+C_j\,=\,
+\begin{cases}
+\sum\limits_j (1-f_i) A_{ij} M^*_j  & M^*_j<0 \\
+0 & M^*_j>0
+\end{cases}
+\end{align}
+$$
+
+This must be taken into account into the realized fraction for a correct water balance.
+Therefore, the demand $D_i$ to Ribasim element $i$ is now plit into $D_{i-}$ and, $D_{i+}$, 
+summing fluxes over the infiltrating and draining MODFLOW 6 elements respectively.  
+
+$$
+f_i\,=\,
+\begin{align}
+\begin{cases}
+    (R_i - D_{i+})/D_{i-} & D_{i-}\neq 0 \\
+    0 & D_{i-} = 0
+\end{cases}
+\end{align}
+$$
+
+The correction $C_j$ enters MODFLOW 6 as a negative right-hand side term, i.e. extraction.
+
+
