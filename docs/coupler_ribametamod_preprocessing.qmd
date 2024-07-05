@@ -30,7 +30,7 @@ does not support this yet. Initialising this model can be scripted.
 
 
 ## Coupling and model requirements
-The [RibaMetaMod](primod_api/RibaMetaMod.html#primod.RibaMetaMod) class includes three seperate couplings.
+The [RibaMetaMod](primod_api/RibaMetaMod.html#primod.RibaMetaMod) class includes three separate couplings.
 
 ### MODFLOW 6 and MetaSWAP
 This coupling is equal to the [MetaMod](primod_api/MetaMod.html#primod.MetaMod) driver and requires the following [MODFLOW](https://deltares.github.io/imod-python/api/mf6.html) packages:
@@ -51,7 +51,7 @@ This coupling is equal to the one of [RibaMod](primod_api/RibaMod.html#primod.Ri
 
 These packages can be used interchangeably
 
-This coupling has the folowing requirement on the Ribasim model:
+This coupling has the following requirement on the Ribasim model:
 
 * The [Basins](https://deltares.github.io/Ribasim/reference/node/basin.html) need to be set up with a [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) for active coupling. 
 
@@ -83,7 +83,7 @@ This coupling has the following requirements on the Ribasim model:
 
 * There should be [User_demand](https://deltares.github.io/Ribasim/reference/python/Model.html#ribasim.Model.user_demand) defined with one priority per coupled water user. For this priority there should be a rate defined > 0.0. This specified rate will be replaced with the coupled MetaSWAP demands. 
 
-If [Allocation](https://deltares.github.io/Ribasim/reference/python/Allocation.html#ribasim.Allocation) is active in the Ribasim model, The demand-realization cyle is based on the user priority and the water availibility. When it's inactive its based on water availibility alone.   
+If [Allocation](https://deltares.github.io/Ribasim/reference/python/Allocation.html#ribasim.Allocation) is active in the Ribasim model, The demand-realization cycle is based on the user priority and the water availability. When it's inactive its based on water availability alone.   
 
 
 ## Coupling and model extents
@@ -95,7 +95,7 @@ If [Allocation](https://deltares.github.io/Ribasim/reference/python/Allocation.h
   Ribasim. Boundaries outside of any basin polygon will simply use the regular
   file input.
   + Not every MetaSWAP SVAT need to be linked with Ribasim. For uncoupled SVATS, runoff is not routed via the surface water and irrigation from surface water is unlimited. 
-  + The MetaSWAP model does not need to be active in the complete MODFLOW 6 simulation window. Uncoupled MODFLOW 6 nodes can have an aditional [RCH](https://deltares.github.io/imod-python/api/generated/msw/imod.mf6.Recharge.html) and [EVT](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Evapotranspiration.html) package.
+  + The MetaSWAP model does not need to be active in the complete MODFLOW 6 simulation window. Uncoupled MODFLOW 6 nodes can have an additional [RCH](https://deltares.github.io/imod-python/api/generated/msw/imod.mf6.Recharge.html) and [EVT](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Evapotranspiration.html) package.
 
 
 ## Abbreviated examples of coupling 
@@ -155,10 +155,10 @@ ribametamod_model.write(
 )
 ```
 
-For including the optional coupling of irrigation from surface water, the folowing adition can be done:
+For including the optional coupling of irrigation from surface water, the following addition can be done:
 
 ``` python
-# read aditional water-user definition polygon
+# read additional water-user definition polygon
 water_users_definition = gpd.read_file("ribasim_network.gpkg", layer="water_user_areas")
 
 # add water-user definition to the RibaMetaDriverCoupling
@@ -172,7 +172,7 @@ driver_coupling_ribameta = primod.RibaMetaDriverCoupling(
 ```
 
 ## Exchange derivation
-The exchanges are derived based on spatial overlap of the models. In general all couplings with ribasim are based on a spatial overlap of the basin and/or water user definition polygons. The coupling between MODFLOW 6 6 and MetaSWAP is based on overlapping grid based coordinates. The coupling based on polygon defninitions is done in the folowing way:
+The exchanges are derived based on spatial overlap of the models. In general all couplings with ribasim are based on a spatial overlap of the basin and/or water user definition polygons. The coupling between MODFLOW 6 6 and MetaSWAP is based on overlapping grid based coordinates. The coupling based on polygon definitions is done in the following way:
 
 * Rasterize the basin and/or Water users definition polygons (provided as a
   `geopandas.GeoDataFrame`) to the MODFLOW 6 or MetaSWAP model grid.
