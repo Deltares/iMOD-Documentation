@@ -53,7 +53,8 @@ Exchange the Ribasim subgrid stage from the previous timestep to actively couple
 </ol>
 
 ### Some remarks
-* If allocation is active in the Ribasim model, The demand-realisation cycle for irrigation is based on the user priority and the water availibility. When it's inactive its based on water availibility alone.  
+* If allocation is active in the Ribasim model, the demand-realisation cycle for irrigation is based on the user priority and the water availability. 
+When inactive it is based on water availability alone.  
 * For coupling surface water to Ribasim, only the RIV and DRN package can be used. Other packages like GHB are not supported and should not be present in coupled domain.  
 
 

@@ -67,7 +67,7 @@ self.finalize()
 ```
 ### Logging of exchanged values
 
-An integral task of an iMOD Coupler driver is to support the exchange of values between hydrological kernals.
+An integral task of an iMOD Coupler driver is to support the exchange of values between hydrological kernels.
 Values exchanged by the coupler for a specific variable can optionally be written to file during the simulation for inspection.
 These values are written as timeseries to separate files per variable.
 In the initialization stage of the simulation a dictionary-like structure (ExchangeCollector class) is created which holds
