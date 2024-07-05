@@ -1,0 +1,184 @@
+---
+title: Configuration
+---
+
+The configuration file is necessary to describe the model and its dependencies. It is in the [toml](https://toml.io/en/) format and should have a `.toml` extension.
+
+```{=html}
+<!--
+Note that `toml` uses quote marks differently than `python`. Single quotes in
+toml (`''`) are interpreted similarly to how python would interpret a rawstring
+(`r''` or `r""`), whereas double quotes (`""`) are interpreted in a similar
+manner to regular strings in python (`""` or `''`). This matters for paths on
+Windows, for which we advice to use single quotes. -->
+```
+``` toml
+timing = false
+log_level = "INFO"
+driver_type = "ribametamod"
+
+[driver.kernels.modflow6]
+dll = "./kernels/modflow6/libmf6.dll"
+dll_dep_dir = "./kernels/modflow6"
+work_dir = "./mf6_data"
+
+[driver.kernels.metaswap]
+dll = "./kernels/metaswap/MetaSWAP.dll"
+dll_dep_dir = "./kernels/metaswap"
+work_dir = "./metaswap"
+
+[driver.kernels.ribasim]
+dll = "./kernels/ribasim/bin/libribasim.dll"
+dll_dep_dir = "./kernels/ribasim/bin"
+config_file = "./ribasim_data/ribasim.toml"
+
+[[driver.coupling]]
+mf6_model = "GWF_1"
+mf6_msw_node_map = "./exchanges/nodenr2svat.dxc"
+mf6_msw_recharge_pkg = "rch_msw"
+mf6_msw_recharge_map = "./exchanges/rchindex2svat.dxc"
+mf6_msw_well_pkg = "well_msw"
+mf6_msw_sprinkling_map_groundwater = "./exchanges/wellindex2svat.dxc"
+rib_msw_ponding_map_surface_water = "./exchanges/msw_ponding.tsv"
+rib_msw_sprinkling_map_surface_water = "./exchanges/msw_sw_sprinkling.tsv"
+output_config_file = "C:\\Users\\leander\\AppData\\Local\\Temp\\pytest-of-leander\\pytest-1254\\test_ribametamod_two_basin_use0\\develop\\exchange_logging\\logging.toml"
+
+[driver.coupling.mf6_active_river_packages]
+riv_1 = "./exchanges/riv_1.tsv"
+
+[driver.coupling.mf6_passive_river_packages]
+
+[driver.coupling.mf6_active_drainage_packages]
+
+[driver.coupling.mf6_passive_drainage_packages]
+```
+
+## Config schema
+
+<!--
+<font size=-1>
+
+| name                           | description                                                                         | type    | default | enum                                  |     |
+|------------|-------------|------------|------------|------------|------------|
+| log_level                      | verbosity of logging                                                                | str     | INFO    | DEBUG, INFO, WARNING, ERROR, CRITICAL |     |
+| timing                         | profiling active?<br>if so, record timing                                           | boolean | false   |                                       |     |
+| driver_type                    | chosen coupler implementation. Typically associated with the set of coupled kernels | str     |         |                                       |     |
+| <b>driver.kernels.modflow6</b> |                                                                                     |         |         |                                       |     |
+| dll                            | path to the MODFLOW 6 library file                                                  | str     |         |                                       |     |
+| dll_dep_dir                    | optional path to the library's dependencies                                         | str     | \[..\]  |                                       |     |
+| workdir                        | path to the MODFLOW 6 working directory holding the simulation name file            | str     |         |                                       |     |
+| <b>driver.kernels.metaswap</b> |                                                                                     |         |         |                                       |     |
+| dll                            | path to the MetaSWAP library file                                                   | str     |         |                                       |     |
+| dll_dep_dir                    | optional path to the library's dependencies                                         | str     | \[..\]  |                                       |     |
+| workdir                        | path to the MetaSWAP working directory holding the <tt>parasim.inp name</tt> file   | str     |         |                                       |     |
+| <b>driver.kernels.ribasim</b>  |                                                                                     |         |         |                                       |     |
+| dll                            | path to the Ribasim library file                                                    | str     |         |                                       |     |
+| config_file                    | path to the Ribasim config file                                                     | str     |         |                                       |     |
+| <b>driver.coupling</b>         |                                                                                     |         |         |                                       |     |
+| mf6_model                      | name of the MODFLOW 6 model (within the simulation) to couple                       | str     |         |                                       |     |
+| mf6_active_river_packages      | dictionary of active MODFLOW 6 river packages with couple file                     | dict     |
+| mf6_passive_river_packages      | dictionary of passive MODFLOW 6 river packages with couple file                     | dict     |
+| mf6_active_river_packages      | dictionary of active MODFLOW 6 drainage packages with couple file                     | dict     |
+| mf6_passive_river_packages      | dictionary of passive MODFLOW 6 drainage packages with couple file                     | dict     |
+</font>
+-->
+
+<font size=-1>
+<table>
+<thead><tr bgcolor="lightgray">
+<td width=230> <b>name</b> </td>
+<td><b>description</b></td>
+<td width=75><b>type</b></td>
+<td width=75><b> default</b></td>
+<td> <b>enum </b> </td><td>     </td>
+</tr></thead>
+<tbody>
+<tr style="vertical-align:top">
+<td> log_level                      </td><td> verbosity of logging                                                                </td><td> str     </td><td> INFO    </td><td> DEBUG, INFO, WARNING, ERROR, CRITICAL </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> timing                         </td><td> profiling active? if so, record timing                                           </td><td> boolean </td><td> false   </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> driver_type                    </td><td> chosen coupler implementation. Typically associated with the set of coupled kernels </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> <b>driver.kernels.modflow6</b> </td><td>                                                                                     </td><td>         </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> dll                            </td><td> path to the MODFLOW 6 library file                                                  </td><td> str     </td><td>         </td><td>                                       </td><td>     </td></tr>
+<tr style="vertical-align:top">
+<td> dll_dep_dir                    </td><td> optional path to the library's dependencies                                         </td><td> str     </td><td> \[..\]  </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> workdir                        </td><td> path to the MODFLOW 6 working directory holding the simulation name file            </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> <b>driver.kernels.metaswap</b> </td><td>                                                                                     </td><td>         </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> dll                            </td><td> path to the MetaSWAP library file                                                   </td><td> str     </td><td>         </td><td>                                       </td><td>     </td></tr>
+<tr style="vertical-align:top">
+<td> dll_dep_dir                    </td><td> optional path to the library's dependencies                                         </td><td> str     </td><td> \[..\]  </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> workdir                        </td><td> path to the MetaSWAP working directory holding the <tt>parasim.inp name</tt> file   </td><td> str     </td><td>         </td><td>                                       </td><td>     </td></tr>
+<tr style="vertical-align:top">
+<td> <b>driver.kernels.ribasim</b>  </td><td>                                                                                     </td><td>         </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> dll                            </td><td> path to the Ribasim library file                                                    </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> config_file                    </td><td> path to the Ribasim config file                                                     </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr><td><br></td></tr>
+<tr style="vertical-align:top">
+<td> <b>driver.coupling</b>         </td><td>                                                                                     </td><td>         </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_model                      </td><td> name of the MODFLOW 6 model (within the simulation) to couple                       </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_msw_node_map               </td><td> file with MODFLOW 6 node to MetaSWAP svat mapping                       </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_msw_recharge_pkg           </td><td> name of MODFLOW 6 recharge package for coupling with MetaSWAP                       </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_msw_recharge_map           </td><td> file with MODFLOW 6 recharge index to MetaSWAP svat mapping                         </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_msw_well_pkg           </td><td> name of MODFLOW 6 well package for coupling with MetaSWAP groundwater sprinkling                       </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> rib_msw_ponding_map_groundwater           </td><td> file with Ribasim node index to MetaSWAP svat mapping for ponding                        </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> rib_msw_ponding_map_surface_water           </td><td> file with Ribasim node index to MetaSWAP svat mapping for surface water sprinkling                         </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> rib_msw_sprinkling_map_surface_water           </td><td> file with Ribasim node index to MetaSWAP svat mapping for surface water sprinkling                         </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr><td><br></td></tr>
+<tr style="vertical-align:top">
+<td> mf6_active_river_packages      </td><td> dictionary of active MODFLOW 6 river packages with couple file                     </td><td> dict     </td>
+<td>
+<tr style="vertical-align:top">
+<td> mf6_passive_river_packages      </td><td> dictionary of passive MODFLOW 6 river packages with couple file                     </td><td> dict     </td>
+</tr>
+<tr>
+<tr style="vertical-align:top">
+<td> mf6_active_river_packages      </td><td> dictionary of active MODFLOW 6 drainage packages with couple file                     </td><td> dict     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> mf6_passive_river_packages      </td><td> dictionary of passive MODFLOW 6 drainage packages with couple file                     </td><td> dict     </td>
+</tr>
+<tr style="vertical-align:top">
+<td> output_config_file           </td><td> <tt>.toml</tt> specifying kernel exchanges for which to record values to output files as timeseries    </td><td> str     </td><td>         </td><td>                                       </td><td>     </td>
+</tr>
+<tr style="vertical-align:top">
+</tbody>
+</table>
+</font>
+
