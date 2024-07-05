@@ -36,13 +36,13 @@ The exchanges between kernels can be summarized as follows:
 <li value=1> 
 Exchange the Ribasim subgrid stage from the previous timestep to actively coupled RIV en DRN packages.
 </li>
-<li value=2> RIV flux (both active and passive) estimated by MODFLOW 6, proposed to Ribasim</li>
+<li value=2> Estimated RIV and DRN flux, exchanged to Ribasim basins</li>
 <br>
 <b>Ribasim-MetaSWAP sub-timestepping:</b>
-<li value=3> Runoff (ponding) from MetaSWAP added to Ribasim</li>
+<li value=3> Runoff from MetaSWAP exchanged to Ribasim basins</li>
 <li value=4> Irrigation demand from MetaSWAP svats to Ribasim water users.</li>
-<li value=5> Realized irrigation volume on svats based on realized volumes per water user and 
-distributed over svats in proportion to their demands.</li>
+<li value=5> Irrigation volume on svats based on realized volumes per water user
+</li>
 <li value=6> Flux correction in the case that Ribasim basins are unable to meet the total infiltration demand. </li>
 <br>
 <b>MODFLOW 6-MetaSWAP iterations:</b>
@@ -53,11 +53,9 @@ distributed over svats in proportion to their demands.</li>
 </ol>
 
 ### Some remarks
-* The surface water sprinkling is however kept separate as so-called 'user demands' applied to specific user-demand nodes in the Ribasim network. 
-These demands are subject to an optimalization algorithm establishing allocation of water for all requests.
-* Ribasim only couples to a River (RIV package ) for and Drainage (DRN) packages of
-  MODFLOW 6, no other packages of surface water boundaries should be active where Ribasim is coupled.
-  
+* If allocation is active in the Ribasim model, The demand-realisation cycle for irrigation is based on the user priority and the water availibility. When it's inactive its based on water availibility alone.  
+* For coupling surface water to Ribasim, only the RIV and DRN package can be used. Other packages like GHB are not supported and should not be present in coupled domain.  
+
 
 ### Active versus passive coupling
 In coupling Ribasim and MODFLO 6, a distinction exists between *active* and *passive* coupling.
