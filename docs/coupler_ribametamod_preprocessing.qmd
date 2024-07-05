@@ -1,0 +1,213 @@
+---
+title: Pre-processing
+---
+
+This document describes how to set up a coupled Ribasim-MetaSWAP-MODFLOW 6 model. The `primod` Python package is used for setting up a coupled model. It uses the three models, updateds modelinput, derives the exchange relationships, and writes: 
+
+* the model input files
+* the exchange files
+* the iMOD coupler configuration file 
+* the optional logging configuration file
+
+The derivation of exchange connections between the models is automatic, and
+based on the spatial information provided for both models.
+
+As `primod` is a Python package, all three models must be represented in Python:
+
+* The Ribasim model is represented by the
+  [Model](https://deltares.github.io/Ribasim/python/reference/#model) class of
+  the `ribasim` Python package.
+* The MODFLOW 6 simulation is represented by the
+  [Modflow6Simulation](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.html)
+  class of the `imod` Python package.
+* The MetaSWAP model is represented by the
+  [MetaSwapModel](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.MetaSwapModel.html) class of the `imod` Python package
+  
+The combination of the three models is represented by the [RibaMetaMod](primod_api/RibaMetaMod.html#primod.RibaMetaMod) class of `primod`. 
+ 
+The [Modflow6Simulation](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.html) and Ribasim [Model](https://deltares.github.io/Ribasim/python/reference/#model) can be initialised from a TOML file with associated data. The [MetaSwapModel](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.MetaSwapModel.html) 
+does not support this yet. Initialising this model can be scripted. 
+
+
+## Coupling and model requirements
+The [RibaMetaMod](primod_api/RibaMetaMod.html#primod.RibaMetaMod) class includes three separate couplings.
+
+### MODFLOW 6 and MetaSWAP
+This coupling is equal to the [MetaMod](primod_api/MetaMod.html#primod.MetaMod) driver and requires the following [MODFLOW](https://deltares.github.io/imod-python/api/mf6.html) packages:
+
+* [Recharge](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Recharge.html) for the exchange of the flux from the unstaurated zone.  
+* [Wel](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Wel.html) for the optional exchange of irrigation from groundwater
+
+This coupling requires the following [MetaSWAP](https://deltares.github.io/imod-python/api/msw.html) packages:
+
+* [Sprinkling](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.Sprinkling.html) to define the maximum irrigation rate. 
+* [LanduseOptions](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.LanduseOptions.html) to specify the irrigation regime. 
+
+### MODFLOW 6 and Ribasim
+This coupling is equal to the one of [RibaMod](primod_api/RibaMod.html#primod.RibaMod) and requires the following [MODFLOW](https://deltares.github.io/imod-python/api/mf6.html) packages for exchangeing stage (active) and flux (active and passive):
+
+* [River](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.River.html) 
+* [Drainage](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Drainage.html)
+
+These packages can be used interchangeably
+
+This coupling has the following requirement on the Ribasim model:
+
+* The [Basins](https://deltares.github.io/Ribasim/reference/node/basin.html) need to be set up with a [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) for active coupling. 
+
+Consistency between MODFLOW 6 and Ribasim subgrid
+: During the coupling, water levels should not be set below the bed elevation
+of the boundary. For drainage packages, this is the drainage elevation
+provided in the MODFLOW 6 input; for river packages, this is the bottom
+elevation provided in the MODFLOW 6 input.
+
+There is potential for inconsistency here, as Ribasim also describes a bed
+elevation: the lowest level of the [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) piecewise interpolation table:
+
+* In case the MODFLOW 6 bed elevation is higher than the [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) elevation,
+  infiltration will stop before the Ribasim basin is empty.
+* In case the MODFLOW 6 bed elevation is lower than the [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid)elevation,
+  infiltration will proceed even when the Ribasim basin is empty. In this case `primod` will raise an error
+
+### Ribasim and MetaSWAP
+This coupling is used for routing runoff at the subsurface to the Ribasim basins. This coupling requires the following [MetaSWAP](https://deltares.github.io/imod-python/api/msw.html) package:
+
+* [Ponding](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.Ponding.html) to define the ponding level at which runoff is generated.
+
+Optionally the irrigation from surface water can be coupled to the [UserDemand](https://deltares.github.io/Ribasim/reference/node/user-demand.html) in Ribasim. In that case the sprinkling realized in MetaSWAP, depends on the water availability for the [UserDemand](https://deltares.github.io/Ribasim/reference/node/user-demand.html) in Ribasim. This coupling requires the following [MetaSWAP](https://deltares.github.io/imod-python/api/msw.html) packages:
+
+* [Sprinkling](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.Sprinkling.html) to define the maximum irrigation rates.
+* [LanduseOptions](https://deltares.github.io/imod-python/api/generated/msw/imod.msw.LanduseOptions.html) to specify the irrigation regime.
+
+This coupling has the following requirements on the Ribasim model:
+
+* There should be [User_demand](https://deltares.github.io/Ribasim/reference/python/Model.html#ribasim.Model.user_demand) defined with one priority per coupled water user. For this priority there should be a rate defined > 0.0. This specified rate will be replaced with the coupled MetaSWAP demands. 
+
+If [Allocation](https://deltares.github.io/Ribasim/reference/python/Allocation.html#ribasim.Allocation) is active in the Ribasim model, The demand-realization cycle is based on the user priority and the water availability. When it's inactive its based on water availability alone.   
+
+
+## Coupling and model extents
+* The start and end times of the Ribasim, MetaSWAP and MODFLOW 6 simulations must align.
+  `primod` will raise an error otherwise.
+* Spatial extents of the models need not coincide:
+  + Part of the Ribasim basins may be located outside of the MODFLOW 6 and MetaSWAP simulation window. Uncoupled basins will proceed with the regular drainage and irrigation terms define in the model.
+  + Not every MODFLOW 6 River and Drainage boundary needs to be linked with
+  Ribasim. Boundaries outside of any basin polygon will simply use the regular
+  file input.
+  + Not every MetaSWAP SVAT need to be linked with Ribasim. For uncoupled SVATS, runoff is not routed via the surface water and irrigation from surface water is unlimited. 
+  + The MetaSWAP model does not need to be active in the complete MODFLOW 6 simulation window. Uncoupled MODFLOW 6 nodes can have an additional [RCH](https://deltares.github.io/imod-python/api/generated/msw/imod.mf6.Recharge.html) and [EVT](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Evapotranspiration.html) package.
+
+
+## Abbreviated examples of coupling 
+
+The following abbreviated example for coupling Runoff:
+
+* Reads a Ribasim model
+* Takes a MetaSWAP model
+* Reads a MODFLOW 6 simulation
+* Reads a basin definition associated with the Ribasim model
+* Defines a driver coupling: which river and drainage packages are coupled
+* Sets up a coupled model
+* Writes the coupled model
+
+
+``` python
+import ribasim
+import geopandas as gpd
+import imod
+import primod
+
+
+ribasim_model = ribasim.Model.read("ribasim/ribasim.toml")
+metaswap_model = metaswap_model_from_script
+mf6_simulation = imod.mf6.Modflow6Simulation.from_file("modflow/GWF_1.toml")
+
+basin_definition = gpd.read_file("ribasim_network.gpkg", layer="basin_areas")
+
+# Active coupling Ribasim - MODFLOW
+driver_coupling_ribamod_active = primod.RibaModActiveDriverCoupling(
+    mf6_model="GWF_1",
+    mf6_packages=["riv-1"],
+    basin_definition=basin_definition,
+)
+# coupling Ribasim - MetaSWAP
+driver_coupling_ribameta = primod.RibaMetaDriverCoupling(
+    ribasim_basin_definition=basin_definition,
+)
+# coupling MODFLOW 6 - MetaSWAP
+driver_coupling_metamod = primod.MetaModDriverCoupling(
+    mf6_model="GWF_1",
+    mf6_recharge_package="rch_msw",
+    mf6_wel_package="well_msw",
+)
+# generate coupled model
+ribametamod_model = primod.RibaMetaMod(
+    ribasim_model=ribasim_model,
+    mf6_simulation=mf6sim,
+    coupling_list=[driver_coupling_ribamod_active, driver_coupling_ribameta,driver_coupling_metamod],
+)
+
+ribametamod_model.write(
+   directory="coupled-ribametamod-simulation",
+   modflow6_dll=r"c:\bin\imod_coupler\modflow6\libmf6.dll",
+   ribasim_dll=r"c:\bin\imod_coupler\ribasim\bin\libribasim.dll",
+   ribasim_dll_dependency=r"c:\bin\imod_coupler\ribasim\bin",
+)
+```
+
+For including the optional coupling of irrigation from surface water, the following addition can be done:
+
+``` python
+# read additional water-user definition polygon
+water_users_definition = gpd.read_file("ribasim_network.gpkg", layer="water_user_areas")
+
+# add water-user definition to the RibaMetaDriverCoupling
+driver_coupling_ribameta = primod.RibaMetaDriverCoupling(
+    ribasim_basin_definition=basin_definition,
+    ribasim_user_demand_definition=water_users_definition,
+)
+
+# proceed as previous example
+
+```
+
+## Exchange derivation
+The exchanges are derived based on spatial overlap of the models. In general all couplings with ribasim are based on a spatial overlap of the basin and/or water user definition polygons. The coupling between MODFLOW 6 6 and MetaSWAP is based on overlapping grid based coordinates. The coupling based on polygon definitions is done in the following way:
+
+* Rasterize the basin and/or Water users definition polygons (provided as a
+  `geopandas.GeoDataFrame`) to the MODFLOW 6 or MetaSWAP model grid.
+* Overlay the grid-based variable on the rasterized basin definition,
+  and derive for each gridcel the basin index.
+* Identify the indices of the coupled MODFLOW 6 or MetaSWAP gridcel.
+* Store the basin indices and gridcel indices in a table.
+
+Ribasim and MODFLOW
+: For the flux exchange, the Overlay is based on the [river](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.River.html) conductance. The indices are based on the package level. For the stage exchange, the mapping is based on the x and y locations of the [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) elements. For every [river](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.River.html) conductance gridcell the neirest [subgrid](https://deltares.github.io/Ribasim/reference/node/basin.html#subgrid) element is found. 
+
+Ribasim and MetaSWAP
+: For Runoff exchange the overlay is based on the basin definition and all active SVATS. For the irrigation of surface water, the Overlay is based on the water user definition and all SVATS for which irrigation from surface water is active. 
+
+MODFLOW 6 and MetaSWAP
+: The grid-based recharge, storage and well exchange is based on overlapping xy-coordinates. The optional 1-N coupling between MODFLOW 6 and MetaSWAP is based on the subunit coordinate in the MetaSWAP model. 
+
+
+## Modifications to the models
+
+Ribasim
+: The `primod.RibaMod` class makes the following alteration to the Ribasim input
+before writing the Ribasim model: 
+
+* for basins coupled to MODFLOW 6,
+the "infiltration and drainage" columns are set to `NaN` / `Null` (nodata) in
+the Basin / Static or Basin / Time tables. This ensures that Ribasim does not overwrite the exchange flows while running coupled with MODFLOW 6.
+
+Coupled basins should entirely fall within the MODFLOW 6 domain.
+The portion outside the MODFLOW 6 domain is excluded from infiltration and drainage.
+
+Modflow 6
+: For all actively coupled RIV packages an API-package is added to the simulation. This package is used to apply the flux correction. In a water-balance from the MODFLOW 6 output, this package output should be added RIV output 
+
+MetaSWAP
+: Currently no modifications are made in the MetaSWAP model
+
+
