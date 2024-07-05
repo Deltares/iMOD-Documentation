@@ -148,13 +148,3 @@ $$
 The correction $C_j$ enters MODFLOW 6 as a negative right-hand side term, i.e. extraction.
 
 
-### Logging of exchanged values
-The values exchanged by the coupler for a specific variable can optionally be written to file during the simulation for inspection.
-These values are written as timeseries to separate files per variable.
-In the initialization stage of the simulation a dictionary-like structure (ExchangeCollector class) is created which holds
-a collection of labelled ExchangeLogger instances. 
-The initialization of an ExchangeLogger creates a netcdf file with dimensions `time` and `id`, a variable `time` with dimension (`time`)
-and a variable `xchg` with dimensions (`time`, `id`). The time dimension is the unlimited dimension.
-
-
-

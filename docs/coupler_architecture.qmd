@@ -40,9 +40,11 @@ flowchart BT
     ribasim_python[Ribasim Python] --> primod
     imod-python[iMOD Python] --> primod
     primod --> ribasim[Ribasim]
-    primod --> imodc
+    primod --> |couple tables|imodc
+    primod --> MetaSWAP
     primod --> modflow6[MODFLOW 6]
     ribasim --> imodc["iMOD Coupler"]
+    MetaSWAP --> imodc["iMOD Coupler"]
     modflow6 --> imodc
 ```
 
@@ -63,6 +65,15 @@ while self.get_current_time() < self.get_end_time():
 
 self.finalize()
 ```
+### Logging of exchanged values
+
+An integral task of an iMOD Coupler driver is to support the exchange of values between hydrological kernals.
+Values exchanged by the coupler for a specific variable can optionally be written to file during the simulation for inspection.
+These values are written as timeseries to separate files per variable.
+In the initialization stage of the simulation a dictionary-like structure (ExchangeCollector class) is created which holds
+a collection of labelled ExchangeLogger instances. 
+The initialization of an ExchangeLogger creates a netcdf file with dimensions `time` and `id`, a variable `time` with dimension (`time`)
+and a variable `xchg` with dimensions (`time`, `id`). The time dimension is the unlimited dimension.
 
 ## Continuous Integration
 
