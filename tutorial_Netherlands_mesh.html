@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite</title>
+<title>tutorial_netherlands_mesh – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -126,7 +126,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -168,17 +168,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tutorial_Netherlands_mesh.html">Load the data</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -304,6 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 
 html[theme=dark],
+html[data-theme=dark],
 body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
@@ -643,7 +644,7 @@ Coordinates:
     mesh2d_face_y  (mesh2d_nFaces) float64 42kB ...
   * mesh2d_nFaces  (mesh2d_nFaces) int64 42kB 0 1 2 3 4 ... 5244 5245 5246 5247
 Attributes:
-    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-e2c31865-b575-4ae9-849b-c54940323b2b" class="xr-array-in" type="checkbox" checked=""><label for="section-e2c31865-b575-4ae9-849b-c54940323b2b" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>...</span></div><div class="xr-array-data"><pre>[5248 values with dtype=float32]</pre></div></div></li><li class="xr-section-item"><input id="section-b82ddbd3-1360-4f5b-b7e3-1f78bd9c0232" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-b82ddbd3-1360-4f5b-b7e3-1f78bd9c0232" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-7d58542a-eea3-493d-846e-f99f63a3b4f9" class="xr-var-attrs-in" type="checkbox"><label for="attrs-7d58542a-eea3-493d-846e-f99f63a3b4f9" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-917da4f5-2845-4dfa-9ebb-bf10e4352120" class="xr-var-data-in" type="checkbox"><label for="data-917da4f5-2845-4dfa-9ebb-bf10e4352120" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-c4c3c907-71f3-4499-a60c-38d5bc6aded0" class="xr-var-attrs-in" type="checkbox"><label for="attrs-c4c3c907-71f3-4499-a60c-38d5bc6aded0" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b894f42f-e208-48b5-b147-47fee6b4892a" class="xr-var-data-in" type="checkbox"><label for="data-b894f42f-e208-48b5-b147-47fee6b4892a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-a2f59566-9253-4822-b8f1-c6b0a4e81948" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-a2f59566-9253-4822-b8f1-c6b0a4e81948" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-4c852455-b039-4c53-a780-2d54f63b8e47" class="xr-var-data-in" type="checkbox"><label for="data-4c852455-b039-4c53-a780-2d54f63b8e47" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-df5ed8fb-fee1-4d42-a4ea-0dd5d2169698" class="xr-section-summary-in" type="checkbox"><label for="section-df5ed8fb-fee1-4d42-a4ea-0dd5d2169698" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-f002082d-00af-4604-b517-1cb27ce814d8" class="xr-index-data-in" type="checkbox"><label for="index-f002082d-00af-4604-b517-1cb27ce814d8" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-9e5255c5-2f70-4d44-9001-97120feac520" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-9e5255c5-2f70-4d44-9001-97120feac520" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
+    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-a07042a9-154a-4a33-8d44-56a0fbf98a19" class="xr-array-in" type="checkbox" checked=""><label for="section-a07042a9-154a-4a33-8d44-56a0fbf98a19" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>...</span></div><div class="xr-array-data"><pre>[5248 values with dtype=float32]</pre></div></div></li><li class="xr-section-item"><input id="section-ea33bafc-32d1-4148-a01c-8ec79fa620a1" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-ea33bafc-32d1-4148-a01c-8ec79fa620a1" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-07b472ef-717f-4845-a10c-dbd3a58bdee0" class="xr-var-attrs-in" type="checkbox"><label for="attrs-07b472ef-717f-4845-a10c-dbd3a58bdee0" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-16571ab4-0432-4d87-ba2b-549d3f8c92c2" class="xr-var-data-in" type="checkbox"><label for="data-16571ab4-0432-4d87-ba2b-549d3f8c92c2" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-e1ce25d0-417a-4654-a0a7-51874470b5ef" class="xr-var-attrs-in" type="checkbox"><label for="attrs-e1ce25d0-417a-4654-a0a7-51874470b5ef" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-f1ced41e-bef0-4c2f-b155-457690c5d229" class="xr-var-data-in" type="checkbox"><label for="data-f1ced41e-bef0-4c2f-b155-457690c5d229" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-e7c6a4b8-d8bd-43a8-b7a2-f5259f235900" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-e7c6a4b8-d8bd-43a8-b7a2-f5259f235900" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d00f1c15-9657-40e2-bf44-1565bd35d16c" class="xr-var-data-in" type="checkbox"><label for="data-d00f1c15-9657-40e2-bf44-1565bd35d16c" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-487dd61d-b21f-4eda-8b6a-9d323c117fe1" class="xr-section-summary-in" type="checkbox"><label for="section-487dd61d-b21f-4eda-8b6a-9d323c117fe1" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-c5e2de68-a121-493d-b44a-8126ac0a38a7" class="xr-index-data-in" type="checkbox"><label for="index-c5e2de68-a121-493d-b44a-8126ac0a38a7" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c707fcaf-25e4-4169-8a89-50e72e456d78" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-c707fcaf-25e4-4169-8a89-50e72e456d78" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Let’s plot the data</p>
@@ -698,6 +699,7 @@ Attributes:
 }
 
 html[theme=dark],
+html[data-theme=dark],
 body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
@@ -1033,7 +1035,7 @@ dl.xr-attrs {
 </style><pre class="xr-text-repr-fallback">&lt;xarray.DataArray (layer: 1)&gt; Size: 8B
 array([1])
 Coordinates:
-  * layer    (layer) int64 8B 1</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">layer</span>: 1</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-f15266c2-a211-4522-ae49-6e542142d092" class="xr-array-in" type="checkbox" checked=""><label for="section-f15266c2-a211-4522-ae49-6e542142d092" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1</span></div><div class="xr-array-data"><pre>array([1])</pre></div></div></li><li class="xr-section-item"><input id="section-238a806f-49f3-433e-a44e-96e08b4aa7b2" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-238a806f-49f3-433e-a44e-96e08b4aa7b2" class="xr-section-summary">Coordinates: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">layer</span></div><div class="xr-var-dims">(layer)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">1</div><input id="attrs-6b908d3b-18fd-4992-b245-6aaaa38f5ab6" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-6b908d3b-18fd-4992-b245-6aaaa38f5ab6" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-7e48544d-2e4a-4642-8fd8-c8850888a9a7" class="xr-var-data-in" type="checkbox"><label for="data-7e48544d-2e4a-4642-8fd8-c8850888a9a7" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([1])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-995dd0e7-2955-4449-8336-43abdd30bc46" class="xr-section-summary-in" type="checkbox"><label for="section-995dd0e7-2955-4449-8336-43abdd30bc46" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>layer</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-0f5368ed-ea20-4903-a3d6-395896c4d875" class="xr-index-data-in" type="checkbox"><label for="index-0f5368ed-ea20-4903-a3d6-395896c4d875" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1], dtype='int64', name='layer'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-a4eeb3fe-1763-4d51-979e-8daeb69b79ca" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-a4eeb3fe-1763-4d51-979e-8daeb69b79ca" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
+  * layer    (layer) int64 8B 1</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name"></div><ul class="xr-dim-list"><li><span class="xr-has-index">layer</span>: 1</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-5b13d7cc-c5ba-452c-90fc-8e80b39f7ad8" class="xr-array-in" type="checkbox" checked=""><label for="section-5b13d7cc-c5ba-452c-90fc-8e80b39f7ad8" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1</span></div><div class="xr-array-data"><pre>array([1])</pre></div></div></li><li class="xr-section-item"><input id="section-2a27fc12-dc25-4d4a-b148-269213e02882" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-2a27fc12-dc25-4d4a-b148-269213e02882" class="xr-section-summary">Coordinates: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">layer</span></div><div class="xr-var-dims">(layer)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">1</div><input id="attrs-e19e2ab6-5895-4ea0-88fb-76385ead0d9b" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-e19e2ab6-5895-4ea0-88fb-76385ead0d9b" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-eaf67ba3-e20e-41ac-ae61-52b0f32fd80a" class="xr-var-data-in" type="checkbox"><label for="data-eaf67ba3-e20e-41ac-ae61-52b0f32fd80a" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([1])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-b7b89b79-b1df-43d6-8288-11b0536c5578" class="xr-section-summary-in" type="checkbox"><label for="section-b7b89b79-b1df-43d6-8288-11b0536c5578" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>layer</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-30e0b1bc-e686-4fd0-ae70-7a26c4ef04aa" class="xr-index-data-in" type="checkbox"><label for="index-30e0b1bc-e686-4fd0-ae70-7a26c4ef04aa" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(Index([1], dtype='int64', name='layer'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-e88b0d6f-7d59-4f28-b0c2-df031dacb18b" class="xr-section-summary-in" type="checkbox" disabled=""><label for="section-e88b0d6f-7d59-4f28-b0c2-df031dacb18b" class="xr-section-summary" title="Expand/collapse section">Attributes: <span>(0)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Next, we’ll create a 2D planar template grid. The xarray function <code>.ones_like</code> returns a new object of ones with the same shape and type as a given dataarray or dataset.</p>
@@ -1073,6 +1075,7 @@ Coordinates:
 }
 
 html[theme=dark],
+html[data-theme=dark],
 body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
@@ -1412,7 +1415,7 @@ Coordinates:
     mesh2d_face_y  (mesh2d_nFaces) float64 42kB ...
   * mesh2d_nFaces  (mesh2d_nFaces) int64 42kB 0 1 2 3 4 ... 5244 5245 5246 5247
 Attributes:
-    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-189388d2-6832-42dd-a15a-d159f5bca01d" class="xr-array-in" type="checkbox" checked=""><label for="section-189388d2-6832-42dd-a15a-d159f5bca01d" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span></div><div class="xr-array-data"><pre>array([1, 1, 1, ..., 1, 1, 1])</pre></div></div></li><li class="xr-section-item"><input id="section-966e0ab9-44f7-44ee-9499-33e59f91fee5" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-966e0ab9-44f7-44ee-9499-33e59f91fee5" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-198a9c4c-ac9d-42aa-872d-839db3e4e934" class="xr-var-attrs-in" type="checkbox"><label for="attrs-198a9c4c-ac9d-42aa-872d-839db3e4e934" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d7cb7390-6c59-48bc-8273-14ebfc2b3334" class="xr-var-data-in" type="checkbox"><label for="data-d7cb7390-6c59-48bc-8273-14ebfc2b3334" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-dda81bb6-bddf-42e5-9d81-bad82fa43e30" class="xr-var-attrs-in" type="checkbox"><label for="attrs-dda81bb6-bddf-42e5-9d81-bad82fa43e30" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-8324e1bd-fd10-4768-9a4d-9727863fc2af" class="xr-var-data-in" type="checkbox"><label for="data-8324e1bd-fd10-4768-9a4d-9727863fc2af" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-f4f02d74-e76d-4218-8bcf-02388f43e12f" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-f4f02d74-e76d-4218-8bcf-02388f43e12f" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-1f5b7028-8c74-42c2-b7a5-0d31590d094d" class="xr-var-data-in" type="checkbox"><label for="data-1f5b7028-8c74-42c2-b7a5-0d31590d094d" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-c57e585e-6244-446f-a7cc-1090d279c480" class="xr-section-summary-in" type="checkbox"><label for="section-c57e585e-6244-446f-a7cc-1090d279c480" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-d4ce6ee3-844c-42c8-9a6c-fad97fd6d767" class="xr-index-data-in" type="checkbox"><label for="index-d4ce6ee3-844c-42c8-9a6c-fad97fd6d767" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-60a4f497-f8d1-4e04-ba62-0f81c59b78fc" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-60a4f497-f8d1-4e04-ba62-0f81c59b78fc" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
+    unit:     m NAP</pre><div class="xr-wrap" style="display:none"><div class="xr-header"><div class="xr-obj-type">xarray.DataArray</div><div class="xr-array-name">'elevation'</div><ul class="xr-dim-list"><li><span class="xr-has-index">mesh2d_nFaces</span>: 5248</li></ul></div><ul class="xr-sections"><li class="xr-section-item"><div class="xr-array-wrap"><input id="section-80026080-8dbe-402b-aa62-d9e32202ac0b" class="xr-array-in" type="checkbox" checked=""><label for="section-80026080-8dbe-402b-aa62-d9e32202ac0b" title="Show/hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-array-preview xr-preview"><span>1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 ... 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1</span></div><div class="xr-array-data"><pre>array([1, 1, 1, ..., 1, 1, 1])</pre></div></div></li><li class="xr-section-item"><input id="section-ed8e3ff7-8a9a-4741-b51a-d00411eac7c1" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-ed8e3ff7-8a9a-4741-b51a-d00411eac7c1" class="xr-section-summary">Coordinates: <span>(3)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_x</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-39bb0e28-d415-4031-ab75-e827abfbab34" class="xr-var-attrs-in" type="checkbox"><label for="attrs-39bb0e28-d415-4031-ab75-e827abfbab34" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-85b28e70-206c-4f36-b66f-c5c6d2391235" class="xr-var-data-in" type="checkbox"><label for="data-85b28e70-206c-4f36-b66f-c5c6d2391235" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_x_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span>mesh2d_face_y</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">float64</div><div class="xr-var-preview xr-preview">...</div><input id="attrs-bd92edc0-a8ef-4ae3-a16d-ba47f9a6659c" class="xr-var-attrs-in" type="checkbox"><label for="attrs-bd92edc0-a8ef-4ae3-a16d-ba47f9a6659c" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-b09c1e4f-f4b5-430a-bc35-3a15e05b7054" class="xr-var-data-in" type="checkbox"><label for="data-b09c1e4f-f4b5-430a-bc35-3a15e05b7054" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"><dt><span>standard_name :</span></dt><dd>projection_y_coordinate</dd></dl></div><div class="xr-var-data"><pre>[5248 values with dtype=float64]</pre></div></li><li class="xr-var-item"><div class="xr-var-name"><span class="xr-has-index">mesh2d_nFaces</span></div><div class="xr-var-dims">(mesh2d_nFaces)</div><div class="xr-var-dtype">int64</div><div class="xr-var-preview xr-preview">0 1 2 3 4 ... 5244 5245 5246 5247</div><input id="attrs-f926d3ab-f808-4484-8e52-6ea7f9e8f3e3" class="xr-var-attrs-in" type="checkbox" disabled=""><label for="attrs-f926d3ab-f808-4484-8e52-6ea7f9e8f3e3" title="Show/Hide attributes"><svg class="icon xr-icon-file-text2"><use href="#icon-file-text2"></use></svg></label><input id="data-d2e18801-1c98-4ec7-8475-5ce89c5f1ed1" class="xr-var-data-in" type="checkbox"><label for="data-d2e18801-1c98-4ec7-8475-5ce89c5f1ed1" title="Show/Hide data repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-var-attrs"><dl class="xr-attrs"></dl></div><div class="xr-var-data"><pre>array([   0,    1,    2, ..., 5245, 5246, 5247])</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-1dc6564f-193d-491d-9995-d57b0c1571f2" class="xr-section-summary-in" type="checkbox"><label for="section-1dc6564f-193d-491d-9995-d57b0c1571f2" class="xr-section-summary">Indexes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><ul class="xr-var-list"><li class="xr-var-item"><div class="xr-index-name"><div>mesh2d_nFaces</div></div><div class="xr-index-preview">PandasIndex</div><div></div><input id="index-f41202a8-713e-4f48-9880-da589f082bda" class="xr-index-data-in" type="checkbox"><label for="index-f41202a8-713e-4f48-9880-da589f082bda" title="Show/Hide index repr"><svg class="icon xr-icon-database"><use href="#icon-database"></use></svg></label><div class="xr-index-data"><pre>PandasIndex(RangeIndex(start=0, stop=5248, step=1, name='mesh2d_nFaces'))</pre></div></li></ul></div></li><li class="xr-section-item"><input id="section-1a88c603-b41f-406e-83c8-60d6c3d3e935" class="xr-section-summary-in" type="checkbox" checked=""><label for="section-1a88c603-b41f-406e-83c8-60d6c3d3e935" class="xr-section-summary">Attributes: <span>(1)</span></label><div class="xr-section-inline-details"></div><div class="xr-section-details"><dl class="xr-attrs"><dt><span>unit :</span></dt><dd>m NAP</dd></dl></div></li></ul></div></div>
 </div>
 </div>
 <p>Finally, we’ll create our unstructured template 3D grid.</p>
@@ -1666,18 +1669,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1709,7 +1701,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1744,7 +1776,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

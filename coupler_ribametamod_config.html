@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Release process – iMOD Suite</title>
+<title>Configuration – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_architecture.html" rel="prev">
+<link href="./coupler_ribametamod_technical.html" rel="next">
+<link href="./coupler_ribamod_preprocessing.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -174,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_release.html">Release process</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Configuration</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -261,7 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_ribametamod_config.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_ribametamod_config.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Configuration</span></a>
   </div>
 </li>
@@ -293,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Release process</span></a>
   </div>
 </li>
@@ -307,24 +308,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-a-release" id="toc-what-is-a-release" class="nav-link active" data-scroll-target="#what-is-a-release">What is a release</a></li>
-  <li><a href="#release-steps" id="toc-release-steps" class="nav-link" data-scroll-target="#release-steps">Release steps</a>
-  <ul class="collapse">
-  <li><a href="#pre-release-checks" id="toc-pre-release-checks" class="nav-link" data-scroll-target="#pre-release-checks">Pre-release checks</a></li>
-  <li><a href="#update-version-numbers-of-the-components-as-needed" id="toc-update-version-numbers-of-the-components-as-needed" class="nav-link" data-scroll-target="#update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</a></li>
-  <li><a href="#create-a-new-release" id="toc-create-a-new-release" class="nav-link" data-scroll-target="#create-a-new-release">Create a new release</a></li>
-  <li><a href="#release-primod-on-pypi" id="toc-release-primod-on-pypi" class="nav-link" data-scroll-target="#release-primod-on-pypi">Release primod on PyPI</a></li>
-  <li><a href="#announce-release" id="toc-announce-release" class="nav-link" data-scroll-target="#announce-release">Announce release</a></li>
-  </ul></li>
+  <li><a href="#config-schema" id="toc-config-schema" class="nav-link active" data-scroll-target="#config-schema">Config schema</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Configuration</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Release process</h1>
+<h1 class="title">Configuration</h1>
 </div>
 
 
@@ -341,66 +334,570 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-a-release" class="level1">
-<h1>What is a release</h1>
-<p>The <a href="https://github.com/Deltares/imod_coupler">imod_coupler repository</a> contains multiple components, at the time of this writing the pre-processing package <code>primod</code> and <code>imod_coupler</code> itself. The components are currently only guaranteed to work together if they are built at the same time. Therefore we release iMOD Coupler as a collection of all the components at once. For maximum interoperability it is suggested to only release all components together, and not individually.</p>
-<p>For these releases we use <a href="https://calver.org/">Calender Versioning</a>, which makes it clear in which month the release was made.</p>
-</section>
-<section id="release-steps" class="level1">
-<h1>Release steps</h1>
-<p>This section provides a guide for developers to follow when preparing a new release.</p>
-<section id="pre-release-checks" class="level2">
-<h2 class="anchored" data-anchor-id="pre-release-checks">Pre-release checks</h2>
-<p>Before starting the release process, ensure that all tests are passing and that all features intended for the release are complete and merged into the main branch.</p>
-</section>
-<section id="update-version-numbers-of-the-components-as-needed" class="level2">
-<h2 class="anchored" data-anchor-id="update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</h2>
-<p>Determine the new version number like <code>2023.1.0</code>, filling in the current year, a bumped <code>MINOR</code> number for normal releases and a bumped <code>MICRO</code> number for non-breaking, hotfix releases. This follows <code>YYYY.MINOR.MICRO</code> from <a href="https://calver.org/">calver</a>.</p>
-<p>The components are only guaranteed to work together if they are built at the same time. To clearly communicate this, component versions need to have synchronized version numbers. This means that both version numbers should be updated even if only one component has been changed.</p>
-<p>Update the version numbers in the repository to the new version number. Update the following two locations:</p>
-<ul>
-<li><code>imod_coupler/__init__.py</code></li>
-<li><code>pre-processing/primod/__init__.py</code></li>
-</ul>
-<p>Now submit a pull request which updates the version numbers of the components as needed.</p>
-<ul>
-<li>Create a new branch and switch to it, for example: <code>git switch --create new-release</code>.</li>
-<li>Create a new commit with the updated version number</li>
-<li>Push to remote</li>
-<li>Create a Pull Request</li>
-<li>Merge the Pull Request into main</li>
-</ul>
-</section>
-<section id="create-a-new-release" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-new-release">Create a new release</h2>
-<p>Create a new tag like <code>v2023.1.0</code> by prepending <code>v</code> to the calver version number.</p>
-<p>This can be done by executing:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then push the tags:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will trigger a workflow on TeamCity that will publish a new release on GitHub as soon as it is finished. You can follow the progress <a href="https://dpcbuild.deltares.nl/buildConfiguration/iMOD6_Coupler_MakeGitHubRelease">here</a>. It also auto-generates a changelog. You’ll probably want to curate that by rearranging the most important changes for users to the top in the form of <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. The possibly long list of generated release notes can put below an “All changes” collapsed item as such:</p>
-<pre><code>&lt;details&gt;
-&lt;summary&gt;
-All changes
-&lt;/summary&gt;
+<p>The configuration file is necessary to describe the model and its dependencies. It is in the <a href="https://toml.io/en/">toml</a> format and should have a <code>.toml</code> extension.</p>
+<!--
+Note that `toml` uses quote marks differently than `python`. Single quotes in
+toml (`''`) are interpreted similarly to how python would interpret a rawstring
+(`r''` or `r""`), whereas double quotes (`""`) are interpreted in a similar
+manner to regular strings in python (`""` or `''`). This matters for paths on
+Windows, for which we advice to use single quotes. -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode toml code-with-copy"><code class="sourceCode toml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">timing</span> <span class="op">=</span> <span class="cn">false</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">log_level</span> <span class="op">=</span> <span class="st">"INFO"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">driver_type</span> <span class="op">=</span> <span class="st">"ribametamod"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.kernels.modflow6]</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">"./kernels/modflow6/libmf6.dll"</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="dt">dll_dep_dir</span> <span class="op">=</span> <span class="st">"./kernels/modflow6"</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">"./mf6_data"</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.kernels.metaswap]</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">"./kernels/metaswap/MetaSWAP.dll"</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="dt">dll_dep_dir</span> <span class="op">=</span> <span class="st">"./kernels/metaswap"</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">work_dir</span> <span class="op">=</span> <span class="st">"./metaswap"</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.kernels.ribasim]</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="dt">dll</span> <span class="op">=</span> <span class="st">"./kernels/ribasim/bin/libribasim.dll"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="dt">dll_dep_dir</span> <span class="op">=</span> <span class="st">"./kernels/ribasim/bin"</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="dt">config_file</span> <span class="op">=</span> <span class="st">"./ribasim_data/ribasim.toml"</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">[[driver.coupling]]</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_model</span> <span class="op">=</span> <span class="st">"GWF_1"</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_node_map</span> <span class="op">=</span> <span class="st">"./exchanges/nodenr2svat.dxc"</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_pkg</span> <span class="op">=</span> <span class="st">"rch_msw"</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">"./exchanges/rchindex2svat.dxc"</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_well_pkg</span> <span class="op">=</span> <span class="st">"well_msw"</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_sprinkling_map_groundwater</span> <span class="op">=</span> <span class="st">"./exchanges/wellindex2svat.dxc"</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="dt">rib_msw_ponding_map_surface_water</span> <span class="op">=</span> <span class="st">"./exchanges/msw_ponding.tsv"</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="dt">rib_msw_sprinkling_map_surface_water</span> <span class="op">=</span> <span class="st">"./exchanges/msw_sw_sprinkling.tsv"</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="dt">output_config_file</span> <span class="op">=</span> <span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">leander</span><span class="sc">\\</span><span class="st">AppData</span><span class="sc">\\</span><span class="st">Local</span><span class="sc">\\</span><span class="st">Temp</span><span class="sc">\\</span><span class="st">pytest-of-leander</span><span class="sc">\\</span><span class="st">pytest-1254</span><span class="sc">\\</span><span class="st">test_ribametamod_two_basin_use0</span><span class="sc">\\</span><span class="st">develop</span><span class="sc">\\</span><span class="st">exchange_logging</span><span class="sc">\\</span><span class="st">logging.toml"</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.coupling.mf6_active_river_packages]</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="dt">riv_1</span> <span class="op">=</span> <span class="st">"./exchanges/riv_1.tsv"</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.coupling.mf6_passive_river_packages]</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.coupling.mf6_active_drainage_packages]</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="kw">[driver.coupling.mf6_passive_drainage_packages]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="config-schema" class="level2">
+<h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
+<!--
+<font size=-1>
 
-# Put Github flavored markdown here
+| name                           | description                                                                         | type    | default | enum                                  |     |
+|------------|-------------|------------|------------|------------|------------|
+| log_level                      | verbosity of logging                                                                | str     | INFO    | DEBUG, INFO, WARNING, ERROR, CRITICAL |     |
+| timing                         | profiling active?<br>if so, record timing                                           | boolean | false   |                                       |     |
+| driver_type                    | chosen coupler implementation. Typically associated with the set of coupled kernels | str     |         |                                       |     |
+| <b>driver.kernels.modflow6</b> |                                                                                     |         |         |                                       |     |
+| dll                            | path to the MODFLOW 6 library file                                                  | str     |         |                                       |     |
+| dll_dep_dir                    | optional path to the library's dependencies                                         | str     | \[..\]  |                                       |     |
+| workdir                        | path to the MODFLOW 6 working directory holding the simulation name file            | str     |         |                                       |     |
+| <b>driver.kernels.metaswap</b> |                                                                                     |         |         |                                       |     |
+| dll                            | path to the MetaSWAP library file                                                   | str     |         |                                       |     |
+| dll_dep_dir                    | optional path to the library's dependencies                                         | str     | \[..\]  |                                       |     |
+| workdir                        | path to the MetaSWAP working directory holding the <tt>parasim.inp name</tt> file   | str     |         |                                       |     |
+| <b>driver.kernels.ribasim</b>  |                                                                                     |         |         |                                       |     |
+| dll                            | path to the Ribasim library file                                                    | str     |         |                                       |     |
+| config_file                    | path to the Ribasim config file                                                     | str     |         |                                       |     |
+| <b>driver.coupling</b>         |                                                                                     |         |         |                                       |     |
+| mf6_model                      | name of the MODFLOW 6 model (within the simulation) to couple                       | str     |         |                                       |     |
+| mf6_active_river_packages      | dictionary of active MODFLOW 6 river packages with couple file                     | dict     |
+| mf6_passive_river_packages      | dictionary of passive MODFLOW 6 river packages with couple file                     | dict     |
+| mf6_active_river_packages      | dictionary of active MODFLOW 6 drainage packages with couple file                     | dict     |
+| mf6_passive_river_packages      | dictionary of passive MODFLOW 6 drainage packages with couple file                     | dict     |
+</font>
+-->
+<font size="-1">
+<table>
+<thead>
+<tr bgcolor="lightgray">
+<td width="230">
+<b>name</b>
+</td>
+<td>
+<b>description</b>
+</td>
+<td width="75">
+<b>type</b>
+</td>
+<td width="75">
+<b> default</b>
+</td>
+<td>
+<b>enum </b>
+</td>
+<td>
+</td>
+</tr>
+</thead>
+<tbody>
+<tr style="vertical-align:top">
+<td>
+log_level
+</td>
+<td>
+verbosity of logging
+</td>
+<td>
+str
+</td>
+<td>
+INFO
+</td>
+<td>
+DEBUG, INFO, WARNING, ERROR, CRITICAL
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+timing
+</td>
+<td>
+profiling active? if so, record timing
+</td>
+<td>
+boolean
+</td>
+<td>
+false
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+driver_type
+</td>
+<td>
+chosen coupler implementation. Typically associated with the set of coupled kernels
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+<b>driver.kernels.modflow6</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+dll
+</td>
+<td>
+path to the MODFLOW 6 library file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+dll_dep_dir
+</td>
+<td>
+optional path to the library’s dependencies
+</td>
+<td>
+str
+</td>
+<td>
+[..]
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+workdir
+</td>
+<td>
+path to the MODFLOW 6 working directory holding the simulation name file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+<b>driver.kernels.metaswap</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+dll
+</td>
+<td>
+path to the MetaSWAP library file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+dll_dep_dir
+</td>
+<td>
+optional path to the library’s dependencies
+</td>
+<td>
+str
+</td>
+<td>
+[..]
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+workdir
+</td>
+<td>
+path to the MetaSWAP working directory holding the <tt>parasim.inp name</tt> file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+<b>driver.kernels.ribasim</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+dll
+</td>
+<td>
+path to the Ribasim library file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+config_file
+</td>
+<td>
+path to the Ribasim config file
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<br>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+<b>driver.coupling</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_model
+</td>
+<td>
+name of the MODFLOW 6 model (within the simulation) to couple
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_msw_node_map
+</td>
+<td>
+file with MODFLOW 6 node to MetaSWAP svat mapping
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_msw_recharge_pkg
+</td>
+<td>
+name of MODFLOW 6 recharge package for coupling with MetaSWAP
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_msw_recharge_map
+</td>
+<td>
+file with MODFLOW 6 recharge index to MetaSWAP svat mapping
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_msw_well_pkg
+</td>
+<td>
+name of MODFLOW 6 well package for coupling with MetaSWAP groundwater sprinkling
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+rib_msw_ponding_map_groundwater
+</td>
+<td>
+file with Ribasim node index to MetaSWAP svat mapping for ponding
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+rib_msw_ponding_map_surface_water
+</td>
+<td>
+file with Ribasim node index to MetaSWAP svat mapping for surface water sprinkling
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+rib_msw_sprinkling_map_surface_water
+</td>
+<td>
+file with Ribasim node index to MetaSWAP svat mapping for surface water sprinkling
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<br>
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_active_river_packages
+</td>
+<td>
+dictionary of active MODFLOW 6 river packages with couple file
+</td>
+<td>
+dict
+</td>
+<td>
+</td></tr><tr style="vertical-align:top">
+<td>
+mf6_passive_river_packages
+</td>
+<td>
+dictionary of passive MODFLOW 6 river packages with couple file
+</td>
+<td>
+dict
+</td>
+</tr>
+<tr>
+</tr><tr style="vertical-align:top">
+<td>
+mf6_active_river_packages
+</td>
+<td>
+dictionary of active MODFLOW 6 drainage packages with couple file
+</td>
+<td>
+dict
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+mf6_passive_river_packages
+</td>
+<td>
+dictionary of passive MODFLOW 6 drainage packages with couple file
+</td>
+<td>
+dict
+</td>
+</tr>
+<tr style="vertical-align:top">
+<td>
+output_config_file
+</td>
+<td>
+<tt>.toml</tt> specifying kernel exchanges for which to record values to output files as timeseries
+</td>
+<td>
+str
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+</tr>
+<tr style="vertical-align:top">
+</tr></tbody>
+</table>
+</font><p><font size="-1"></font></p>
 
-&lt;/details&gt;
-</code></pre>
-</section>
-<section id="release-primod-on-pypi" class="level2">
-<h2 class="anchored" data-anchor-id="release-primod-on-pypi">Release primod on PyPI</h2>
-<p>To be able to do <code>pip install primod</code> , <code>primod</code> needs to be released on the Python Package Index. First, make sure that you have a <a href="https://pypi.org/">PyPI</a> account. Then create a new API token and store it in a secure location.</p>
-<p>Run the following to start the process:</p>
-<pre><code>pixi run publish-primod</code></pre>
-</section>
-<section id="announce-release" class="level2">
-<h2 class="anchored" data-anchor-id="announce-release">Announce release</h2>
-<p>Announce the release in appropriate channels.</p>
 
-
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -826,11 +1323,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler_architecture.html" class="pagination-link" aria-label="Architecture">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Architecture</span>
+      <a href="./coupler_ribamod_preprocessing.html" class="pagination-link" aria-label="Pre-processing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Pre-processing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./coupler_ribametamod_technical.html" class="pagination-link" aria-label="Technical Reference">
+        <span class="nav-page-text">Technical Reference</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

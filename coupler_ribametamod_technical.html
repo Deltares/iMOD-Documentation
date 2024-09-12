@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Release process – iMOD Suite</title>
+<title>Technical Reference – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,7 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_architecture.html" rel="prev">
+<link href="./coupler_ribametamod_preprocessing.html" rel="next">
+<link href="./coupler_ribametamod_config.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -103,7 +70,39 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="_static/styles.css">
 </head>
@@ -174,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_release.html">Release process</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_technical.html">Technical Reference</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -267,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_ribametamod_technical.html" class="sidebar-item-text sidebar-link">
+  <a href="./coupler_ribametamod_technical.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Technical Reference</span></a>
   </div>
 </li>
@@ -293,7 +292,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link active">
+  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Release process</span></a>
   </div>
 </li>
@@ -307,24 +306,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#what-is-a-release" id="toc-what-is-a-release" class="nav-link active" data-scroll-target="#what-is-a-release">What is a release</a></li>
-  <li><a href="#release-steps" id="toc-release-steps" class="nav-link" data-scroll-target="#release-steps">Release steps</a>
-  <ul class="collapse">
-  <li><a href="#pre-release-checks" id="toc-pre-release-checks" class="nav-link" data-scroll-target="#pre-release-checks">Pre-release checks</a></li>
-  <li><a href="#update-version-numbers-of-the-components-as-needed" id="toc-update-version-numbers-of-the-components-as-needed" class="nav-link" data-scroll-target="#update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</a></li>
-  <li><a href="#create-a-new-release" id="toc-create-a-new-release" class="nav-link" data-scroll-target="#create-a-new-release">Create a new release</a></li>
-  <li><a href="#release-primod-on-pypi" id="toc-release-primod-on-pypi" class="nav-link" data-scroll-target="#release-primod-on-pypi">Release primod on PyPI</a></li>
-  <li><a href="#announce-release" id="toc-announce-release" class="nav-link" data-scroll-target="#announce-release">Announce release</a></li>
-  </ul></li>
+  <li><a href="#some-remarks" id="toc-some-remarks" class="nav-link active" data-scroll-target="#some-remarks">Some remarks</a></li>
+  <li><a href="#active-versus-passive-coupling" id="toc-active-versus-passive-coupling" class="nav-link" data-scroll-target="#active-versus-passive-coupling">Active versus passive coupling</a></li>
+  <li><a href="#estimated-sprinkling-flux" id="toc-estimated-sprinkling-flux" class="nav-link" data-scroll-target="#estimated-sprinkling-flux">Estimated sprinkling flux</a></li>
+  <li><a href="#realized-sprinkling-flux-and-infiltration-flux-correction." id="toc-realized-sprinkling-flux-and-infiltration-flux-correction." class="nav-link" data-scroll-target="#realized-sprinkling-flux-and-infiltration-flux-correction.">Realized sprinkling flux and infiltration flux correction.</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_technical.html">Technical Reference</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Release process</h1>
+<h1 class="title">Technical Reference</h1>
 </div>
 
 
@@ -341,66 +335,142 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="what-is-a-release" class="level1">
-<h1>What is a release</h1>
-<p>The <a href="https://github.com/Deltares/imod_coupler">imod_coupler repository</a> contains multiple components, at the time of this writing the pre-processing package <code>primod</code> and <code>imod_coupler</code> itself. The components are currently only guaranteed to work together if they are built at the same time. Therefore we release iMOD Coupler as a collection of all the components at once. For maximum interoperability it is suggested to only release all components together, and not individually.</p>
-<p>For these releases we use <a href="https://calver.org/">Calender Versioning</a>, which makes it clear in which month the release was made.</p>
-</section>
-<section id="release-steps" class="level1">
-<h1>Release steps</h1>
-<p>This section provides a guide for developers to follow when preparing a new release.</p>
-<section id="pre-release-checks" class="level2">
-<h2 class="anchored" data-anchor-id="pre-release-checks">Pre-release checks</h2>
-<p>Before starting the release process, ensure that all tests are passing and that all features intended for the release are complete and merged into the main branch.</p>
-</section>
-<section id="update-version-numbers-of-the-components-as-needed" class="level2">
-<h2 class="anchored" data-anchor-id="update-version-numbers-of-the-components-as-needed">Update version numbers of the components as needed</h2>
-<p>Determine the new version number like <code>2023.1.0</code>, filling in the current year, a bumped <code>MINOR</code> number for normal releases and a bumped <code>MICRO</code> number for non-breaking, hotfix releases. This follows <code>YYYY.MINOR.MICRO</code> from <a href="https://calver.org/">calver</a>.</p>
-<p>The components are only guaranteed to work together if they are built at the same time. To clearly communicate this, component versions need to have synchronized version numbers. This means that both version numbers should be updated even if only one component has been changed.</p>
-<p>Update the version numbers in the repository to the new version number. Update the following two locations:</p>
+<p>This document describes the complete Ribasim - MetaSWAP - MODFLOW 6 coupling sequence, the operations performed by the individual components as well as the exchanges of data among the components.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">sequenceDiagram
+    autonumber
+    Ribasim -&gt;&gt; MODFLOW 6: stage [t-1]
+    MODFLOW 6 -&gt;&gt; Ribasim: estimated RIV flux, active &amp; passive  [t-1]
+
+    loop Ribasim-MetaSWAP subtimesteps [tsw]
+        Note over MetaSWAP: prepare surface water timestep tsw
+        MetaSWAP-&gt;&gt;Ribasim:  ponding runoff [tsw]
+        MetaSWAP-&gt;&gt;Ribasim:  estimated sprinkling [tsw]
+        Note over Ribasim: solve tsw
+        Ribasim -&gt;&gt; MetaSWAP: realized sprinkling [tsw]
+    end
+    Ribasim -&gt;&gt; MODFLOW 6: realized RIV, active [t]
+    MODFLOW 6 -&gt;&gt; MetaSWAP: head [t-1] 
+    loop MODFLOW 6-MetaSWAP iterations (solving t)
+        Note over MetaSWAP: solve iter
+        MetaSWAP -&gt;&gt; MODFLOW 6: storage coefficient [iter]
+        MetaSWAP -&gt;&gt; MODFLOW 6: recharge flux [iter]
+        MetaSWAP -&gt;&gt; MODFLOW 6: groundwater sprinkling flux [iter]
+        Note over MODFLOW 6: solve iter
+        MODFLOW 6 -&gt;&gt; MetaSWAP: head [iter] 
+    end
+
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+The exchanges between kernels can be summarized as follows:
+<ol>
+<li value="1">
+Exchange the Ribasim subgrid stage from the previous timestep to actively coupled RIV en DRN packages.
+</li>
+<li value="2">
+Estimated RIV and DRN flux, exchanged to Ribasim basins
+</li>
+<br> <b>Ribasim-MetaSWAP sub-timestepping:</b>
+<li value="3">
+Runoff from MetaSWAP exchanged to Ribasim basins
+</li>
+<li value="4">
+Irrigation demand from MetaSWAP svats to Ribasim water users.
+</li>
+<li value="5">
+Irrigation volume on svats based on realized volumes per water user
+</li>
+<li value="6">
+Flux correction in the case that Ribasim basins are unable to meet the total infiltration demand.
+</li>
+<br> <b>MODFLOW 6-MetaSWAP iterations:</b>
+<li value="7">
+Head of MODFLOW 6 to MetaSWAP
+</li>
+<li value="8">
+Storage coefficient from MetaSWAP sent to MODFLOW 6
+</li>
+<li value="9">
+Recharge from MetaSWAP sent to MODFLOW 6 as a source term
+</li>
+<li value="10">
+Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW 6
+</li>
+</ol>
+<section id="some-remarks" class="level3">
+<h3 class="anchored" data-anchor-id="some-remarks">Some remarks</h3>
 <ul>
-<li><code>imod_coupler/__init__.py</code></li>
-<li><code>pre-processing/primod/__init__.py</code></li>
+<li>If allocation is active in the Ribasim model, the demand-realisation cycle for irrigation is based on the user priority and the water availability. When inactive it is based on water availability alone.<br>
+</li>
+<li>For coupling surface water to Ribasim, only the RIV and DRN package can be used. Other packages like GHB are not supported and should not be present in coupled domain.</li>
 </ul>
-<p>Now submit a pull request which updates the version numbers of the components as needed.</p>
+</section>
+<section id="active-versus-passive-coupling" class="level3">
+<h3 class="anchored" data-anchor-id="active-versus-passive-coupling">Active versus passive coupling</h3>
+<p>In coupling Ribasim and MODFLO 6, a distinction exists between <em>active</em> and <em>passive</em> coupling. In a passive coupling fluxes on the MODFLOW 6 side are evaluated irrespective of the Ribasim waterlevels and contribute directly to the Ribasim basins. The Ribasim water levels are <em>not</em> required in this case, fluxes are simply regarded as “lateral” sources to the basin, hence configuration on the Ribasim side is minimal. The passive approach is justified for drainage packages showing little variation in terms of elevation over time (e.g.&nbsp;surface runoff, or ditches with negligible water depth). On the contrary, in the case of an active coupling fluxes depend (linearly) on the Ribasim water levels. This requires the stages in the MODFLOW 6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.</p>
+<p>In the case of river packages “over-infiltration” can cause Ribasim water levels can fall to zero, leaving a dry basin. Since in the passive situation, water levels are not taken into account, no feedback occurs that limits or impedes infiltration. The MODFLOW 6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a discrepancy in the water balance between both models. Therefore, passive couplings are unsuitable for river packages In active couplings, infiltration stops when the basin dries up and the water level reaches the bed elevation.</p>
+</section>
+<section id="estimated-sprinkling-flux" class="level3">
+<h3 class="anchored" data-anchor-id="estimated-sprinkling-flux">Estimated sprinkling flux</h3>
+<p>Within the Ribasim context, the sprinkling flux is implemented as a water user. The sprinkling demand is exchanged to Ribasim through the user demand matrix. From the couplers perspective, this is a two-dimensional array in which every column represents a water user and every row corresponds with a priority. The array elements are water demands for the users (also for other water users beside sprinkling), each with their own set of priorities. Priorities play a role on the Ribasim side only if allocation is active. Within Ribasim, water users are defined as nodes in the network and in the coupler water users are mapped onto MetaSWAP svats. For every of those users, the water demand can be non-zero for a single priority only.</p>
+</section>
+<section id="realized-sprinkling-flux-and-infiltration-flux-correction." class="level3">
+<h3 class="anchored" data-anchor-id="realized-sprinkling-flux-and-infiltration-flux-correction.">Realized sprinkling flux and infiltration flux correction.</h3>
+<p>Before performing a Ribasim update, the surface water sprinkling amounts in MetaSWAP and the active infiltration or drainage in MODFLOW 6 have been evaluated under the assumption of an unlimited availability of surface water for these processes (steps 2 and 4) . After Ribasims timestep, the <em>realized</em> extraction is known in Ribasim and this information must somehow be communicated to MODFLOW 6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.</p>
+<p>For the surface water sprinkling the following procedure is used to derive the realized fluxes for the MetaSWAP units.</p>
 <ul>
-<li>Create a new branch and switch to it, for example: <code>git switch --create new-release</code>.</li>
-<li>Create a new commit with the updated version number</li>
-<li>Push to remote</li>
-<li>Create a Pull Request</li>
-<li>Merge the Pull Request into main</li>
+<li><p>The realized fraction <span class="math inline">\(f_i\)</span> is derived of the realized sprinkling flux <span class="math inline">\(R_i\)</span>, compared to the requested flux <span class="math inline">\(D_i\)</span> for Ribasim element <span class="math inline">\(i\)</span>. i.o.w. <span class="math display">\[
+f_i\,=\,
+\begin{align}
+\begin{cases}
+  R_i/D_i &amp; D_i\neq 0 \\
+  0 &amp; D_i = 0
+\end{cases}
+\end{align}
+\]</span></p></li>
+<li><p>The real contribution of Ribasim element <span class="math inline">\(i\)</span> to MetaSWAP element <span class="math inline">\(j\)</span> was then <span class="math inline">\(f_i A_{ij} M^*_j\)</span>, where <span class="math inline">\(M^*\)</span> denotes the MetaSWAP vector of demand fluxes and <span class="math inline">\(A_{ij}\)</span> refers to an element of the couple matrix.</p></li>
+<li><p>So, the total realized flux <span class="math inline">\(M_j\)</span> received by MetaSWAP element <span class="math inline">\(j\)</span> is then obtained by summation over <span class="math inline">\(j\)</span>: <span class="math display">\[
+M_j\,=\,\sum\limits_j f_i A_{ij} M^*_j
+\]</span>,,, or in vector notation for all MetaSWAP elements: <span class="math display">\[
+\hspace{1cm}
+\mathbf{M}\,=\,(A^T\mathbf{f})\odot\mathbf{M^*}
+\]</span></p></li>
 </ul>
-</section>
-<section id="create-a-new-release" class="level2">
-<h2 class="anchored" data-anchor-id="create-a-new-release">Create a new release</h2>
-<p>Create a new tag like <code>v2023.1.0</code> by prepending <code>v</code> to the calver version number.</p>
-<p>This can be done by executing:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> tag <span class="op">&lt;</span>tagname<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Then push the tags:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="at">--tags</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will trigger a workflow on TeamCity that will publish a new release on GitHub as soon as it is finished. You can follow the progress <a href="https://dpcbuild.deltares.nl/buildConfiguration/iMOD6_Coupler_MakeGitHubRelease">here</a>. It also auto-generates a changelog. You’ll probably want to curate that by rearranging the most important changes for users to the top in the form of <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>. The possibly long list of generated release notes can put below an “All changes” collapsed item as such:</p>
-<pre><code>&lt;details&gt;
-&lt;summary&gt;
-All changes
-&lt;/summary&gt;
-
-# Put Github flavored markdown here
-
-&lt;/details&gt;
-</code></pre>
-</section>
-<section id="release-primod-on-pypi" class="level2">
-<h2 class="anchored" data-anchor-id="release-primod-on-pypi">Release primod on PyPI</h2>
-<p>To be able to do <code>pip install primod</code> , <code>primod</code> needs to be released on the Python Package Index. First, make sure that you have a <a href="https://pypi.org/">PyPI</a> account. Then create a new API token and store it in a secure location.</p>
-<p>Run the following to start the process:</p>
-<pre><code>pixi run publish-primod</code></pre>
-</section>
-<section id="announce-release" class="level2">
-<h2 class="anchored" data-anchor-id="announce-release">Announce release</h2>
-<p>Announce the release in appropriate channels.</p>
+<p>The evaluation of the correction of the infiltration flux, for MODFLOW 6 proceeds in a similar fashion, except:</p>
+<ul>
+<li><p>Not the realized fraction <span class="math inline">\(f_i\)</span>, but its complement <span class="math inline">\(1-f_i\)</span> is used to obtain the correction <span class="math inline">\(C_j\)</span> on the infiltration flux.</p></li>
+<li><p>This correction is only applied to the <em>negative</em> demands. The positive demands, associated with drainage, are always granted.</p></li>
+<li><p>The correction amounts represent a lack of water already infiltrated into MODFLOW 6, which turned out not to be available at the end of the Ribasim timestep. Hence, this is corrected by means of a <em>negative</em> source term in MODFLOW 6 in the next groundwater timestep. <span class="math display">\[
+\begin{align}
+C_j\,=\,
+\begin{cases}
+\sum\limits_j (1-f_i) A_{ij} M^*_j  &amp; M^*_j&lt;0 \\
+0 &amp; M^*_j&gt;0
+\end{cases}
+\end{align}
+\]</span></p></li>
+</ul>
+<p>This must be taken into account into the realized fraction for a correct water balance. Therefore, the demand <span class="math inline">\(D_i\)</span> to Ribasim element <span class="math inline">\(i\)</span> is now plit into <span class="math inline">\(D_{i-}\)</span> and, <span class="math inline">\(D_{i+}\)</span>, summing fluxes over the infiltrating and draining MODFLOW 6 elements respectively.</p>
+<p><span class="math display">\[
+f_i\,=\,
+\begin{align}
+\begin{cases}
+    (R_i - D_{i+})/D_{i-} &amp; D_{i-}\neq 0 \\
+    0 &amp; D_{i-} = 0
+\end{cases}
+\end{align}
+\]</span></p>
+<p>The correction <span class="math inline">\(C_j\)</span> enters MODFLOW 6 as a negative right-hand side term, i.e.&nbsp;extraction.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -826,11 +896,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./coupler_architecture.html" class="pagination-link" aria-label="Architecture">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Architecture</span>
+      <a href="./coupler_ribametamod_config.html" class="pagination-link" aria-label="Configuration">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./coupler_ribametamod_preprocessing.html" class="pagination-link" aria-label="Pre-processing">
+        <span class="nav-page-text">Pre-processing</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

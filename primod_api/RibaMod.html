@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite</title>
+<title>ribamod – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -128,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -145,6 +145,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#primod.RibaMod" id="toc-primod.RibaMod" class="nav-link active" data-scroll-target="#primod.RibaMod">RibaMod</a>
   <ul class="collapse">
   <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#methods" id="toc-methods" class="nav-link" data-scroll-target="#methods">Methods</a>
+  <ul class="collapse">
+  <li><a href="#primod.RibaMod.write" id="toc-primod.RibaMod.write" class="nav-link" data-scroll-target="#primod.RibaMod.write">write</a></li>
+  <li><a href="#primod.RibaMod.write_toml" id="toc-primod.RibaMod.write_toml" class="nav-link" data-scroll-target="#primod.RibaMod.write_toml">write_toml</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -161,15 +166,15 @@ ul.task-list li input[type="checkbox"] {
 <p>Couple Ribasim and MODFLOW 6.</p>
 <section id="parameters" class="level2">
 <h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
-<table class="table">
+<table class="caption-top" style="width:100%;">
 <colgroup>
+<col style="width: 15%">
+<col style="width: 29%">
+<col style="width: 45%">
 <col style="width: 10%">
-<col style="width: 49%">
-<col style="width: 32%">
-<col style="width: 7%">
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th>Name</th>
 <th>Type</th>
 <th>Description</th>
@@ -177,28 +182,155 @@ ul.task-list li input[type="checkbox"] {
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td><code>ribasim_model</code></td>
-<td>ribasim.ribasim.model</td>
+<td>ribasim.model</td>
 <td>The Ribasim model that should be coupled.</td>
 <td><em>required</em></td>
 </tr>
-<tr class="even">
+<tr>
 <td><code>mf6_simulation</code></td>
-<td>imod.mf6.Modflow6Simulation</td>
+<td>Modflow6Simulation</td>
 <td>The Modflow6 simulation that should be coupled.</td>
 <td><em>required</em></td>
 </tr>
-<tr class="odd">
+<tr>
 <td><code>coupling_list</code></td>
-<td>collections.abc.Sequence[primod.driver_coupling.ribamod.RibaModDriverCoupling]</td>
+<td>Sequence[RibaModDriverCoupling]</td>
 <td>One entry per MODFLOW 6 model that should be coupled</td>
+<td><em>required</em></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="methods" class="level2">
+<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<table class="caption-top">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#primod.RibaMod.write">write</a></td>
+<td>Write Ribasim and Modflow 6 model with exchange files, as well as a</td>
+</tr>
+<tr>
+<td><a href="#primod.RibaMod.write_toml">write_toml</a></td>
+<td>Write .toml file which configures the imod coupler run.</td>
+</tr>
+</tbody>
+</table>
+<section id="primod.RibaMod.write" class="level3">
+<h3 class="anchored" data-anchor-id="primod.RibaMod.write">write</h3>
+<p><code>RibaMod.write(directory, modflow6_dll, ribasim_dll, ribasim_dll_dependency, modflow6_write_kwargs=None)</code></p>
+<p>Write Ribasim and Modflow 6 model with exchange files, as well as a <code>.toml</code> file which configures the iMOD Coupler run.</p>
+<section id="parameters-1" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-1">Parameters</h4>
+<table class="caption-top">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 76%">
+<col style="width: 4%">
+</colgroup>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>directory</code></td>
+<td>str | Path</td>
+<td>Directory in which to write the coupled models</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>modflow6_dll</code></td>
+<td>str | Path</td>
+<td>Path to modflow6 .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ribasim_dll</code></td>
+<td>str | Path</td>
+<td>Path to ribasim .dll.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ribasim_dll_dependency</code></td>
+<td>str | Path</td>
+<td>Directory with ribasim .dll dependencies.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>modflow6_write_kwargs</code></td>
+<td>dict[str, Any] | None</td>
+<td>Optional dictionary with keyword arguments for the writing of Modflow6 models. You can use this for example to turn off the validation at writing (<code>validation=False</code>) or to write text files (<code>binary=False</code>)</td>
+<td><code>None</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="primod.RibaMod.write_toml" class="level3">
+<h3 class="anchored" data-anchor-id="primod.RibaMod.write_toml">write_toml</h3>
+<p><code>RibaMod.write_toml(directory, coupling_dict, modflow6_dll, ribasim_dll, ribasim_dll_dependency)</code></p>
+<p>Write .toml file which configures the imod coupler run.</p>
+<section id="parameters-2" class="level4">
+<h4 class="anchored" data-anchor-id="parameters-2">Parameters</h4>
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 6%">
+<col style="width: 73%">
+<col style="width: 6%">
+</colgroup>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>directory</code></td>
+<td>str | Path</td>
+<td>Directory in which to write the .toml file.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>modflow6_dll</code></td>
+<td>str | Path</td>
+<td>Path to modflow6 .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ribasim_dll</code></td>
+<td>str | Path</td>
+<td>Path to ribasim .dll.</td>
+<td><em>required</em></td>
+</tr>
+<tr>
+<td><code>ribasim_dll_dependency</code></td>
+<td>str | Path</td>
+<td>Directory with ribasim .dll dependencies.</td>
 <td><em>required</em></td>
 </tr>
 </tbody>
 </table>
 
 
+</section>
+</section>
 </section>
 </section>
 
@@ -238,18 +370,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -281,7 +402,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -316,7 +477,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');

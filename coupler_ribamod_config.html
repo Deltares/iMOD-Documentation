@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.5.55">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>iMOD Suite - Configuration</title>
+<title>Configuration – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -166,17 +166,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribamod_config.html">Ribasim - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribamod_config.html">Configuration</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
@@ -195,9 +195,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">MetaSWAP - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -224,9 +224,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Ribasim - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -246,6 +246,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./coupler_ribamod_preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Pre-processing</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Ribasim - MetaSWAP - MODFLOW 6</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coupler_ribametamod_config.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Configuration</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coupler_ribametamod_technical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Technical Reference</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./coupler_ribametamod_preprocessing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Pre-processing</span></a>
   </div>
 </li>
@@ -340,80 +369,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_passive_drainage_packages</span> <span class="op">=</span> <span class="op">{</span><span class="dt">"drn_2"</span><span class="op"> =</span> <span class="st">"./mappings_outer/drn_2.tsv"</span><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="config-schema" class="level2">
 <h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
-<table class="table">
+<table class="caption-top">
 <caption>log_level</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>This setting determines the severity and therefore the verbosity of the log messages.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>false</td>
 </tr>
-<tr class="even">
+<tr>
 <td>default</td>
 <td>INFO</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>enum</td>
 <td>DEBUG, INFO, WARNING, ERROR, CRITICAL</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>timing</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies whether the coupling should be timed. This option requires the log level to at least include INFO.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>boolean</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>false</td>
 </tr>
-<tr class="even">
+<tr>
 <td>default</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>driver_type</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies which driver should be used. Typically, this determines which hydrological kernels are coupled.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
-<tr class="even">
+<tr>
 <td>enum</td>
 <td>ribamod</td>
 </tr>
@@ -421,64 +450,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <section id="driver.kernels.modflow6" class="level3">
 <h3 class="anchored" data-anchor-id="driver.kernels.modflow6">driver.kernels.modflow6</h3>
-<table class="table">
+<table class="caption-top">
 <caption>dll</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The path to the MODFLOW 6 library.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>dll_dep_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The path to the dependencies of MODFLOW 6.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>work_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The working directory MODFLOW 6 expects. This is the directory where the simulation name file resides.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
@@ -487,64 +516,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="driver.kernels.ribasim" class="level3">
 <h3 class="anchored" data-anchor-id="driver.kernels.ribasim">driver.kernels.ribasim</h3>
-<table class="table">
+<table class="caption-top">
 <caption>dll</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The path to the Ribasim library.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>dll_dep_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The path to the dependencies of Ribasim.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>config_file</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>The path to the Ribasim config file.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
@@ -553,106 +582,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="driver.coupling" class="level3">
 <h3 class="anchored" data-anchor-id="driver.coupling">driver.coupling</h3>
-<table class="table">
+<table class="caption-top">
 <caption>mf6_model</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies the MODFLOW 6 model name to which Ribasim will be coupled.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>str</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>mf6_active_river_packages</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies the active river packages of MODFLOW 6 that will be coupled together with the path to the mapping table.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>dict[str, str]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>mf6_passive_river_packages</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies the passive river packages of MODFLOW 6 that will be coupled together with the path to the mapping table.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>dict[str, str]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>mf6_active_drainage_packages</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies the active drainage packages of MODFLOW 6 that will be coupled together with the path to the mapping table.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>dict[str, str]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="table">
+<table class="caption-top">
 <caption>mf6_passive_drainage_packages</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr class="odd">
+<tr>
 <td>description</td>
 <td>Specifies the passive drainage packages of MODFLOW 6 that will be coupled together with the path to the mapping table.</td>
 </tr>
-<tr class="even">
+<tr>
 <td>type</td>
 <td>dict[str, str]</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>required</td>
 <td>true</td>
 </tr>
@@ -699,18 +728,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -742,7 +760,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -777,7 +835,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
