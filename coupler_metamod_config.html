@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.55">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -373,80 +373,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="dt">mf6_msw_recharge_map</span> <span class="op">=</span> <span class="st">'</span><span class="vs">./mappings_outer/rchindex2svat.dxc</span><span class="st">'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="config-schema" class="level2">
 <h2 class="anchored" data-anchor-id="config-schema">Config schema</h2>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>log_level</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>This setting determines the severity and therefore the verbosity of the log messages.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="even">
 <td>default</td>
 <td>INFO</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>enum</td>
 <td>DEBUG, INFO, WARNING, ERROR, CRITICAL</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>timing</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Specifies whether the coupling should be timed. This option requires the log level to at least include INFO.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>bool</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
-<tr>
+<tr class="even">
 <td>default</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>driver_type</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Specifies which driver should be used. Typically, this determines which hydrological kernels are coupled.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
-<tr>
+<tr class="even">
 <td>enum</td>
 <td>metamod</td>
 </tr>
@@ -454,64 +454,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <section id="driver.kernels.modflow6" class="level3">
 <h3 class="anchored" data-anchor-id="driver.kernels.modflow6">driver.kernels.modflow6</h3>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>dll</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The path to the MODFLOW 6 library.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>dll_dep_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The path to the dependencies of MODFLOW 6.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>work_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The working directory MODFLOW 6 expects. This is the directory where the simulation name file resides.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
@@ -520,64 +520,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="driver.kernels.metaswap" class="level3">
 <h3 class="anchored" data-anchor-id="driver.kernels.metaswap">driver.kernels.metaswap</h3>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>dll</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The path to the MetaSWAP library.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>dll_dep_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The path to the dependencies of MetaSWAP.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>work_dir</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>The working directory MetaSWAP expects.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
@@ -586,127 +586,127 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="driver.coupling" class="level3">
 <h3 class="anchored" data-anchor-id="driver.coupling">driver.coupling</h3>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_model</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Specifies the MODFLOW 6 model name to which MetaSWAP will be coupled.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_msw_recharge_pkg</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_msw_well_pkg</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Specifies the package name (specified in the Modflow 6 simulation name file) of the recharge package to which MetaSWAP will be coupled. This setting is only required if <code>enable_sprinkling</code> is set to <code>true</code>.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_msw_node_map</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Path to the file specifying the mapping between MODFLOW 6 cells and MetaSWAP svats.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_msw_recharge_pkg</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Path to the file specifying the mapping between MODFLOW 6 recharge cells and MetaSWAP svats.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>true</td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top">
+<table class="caption-top table">
 <caption>mf6_msw_sprinkling_map_groundwater</caption>
 <colgroup>
 <col style="width: 11%">
 <col style="width: 88%">
 </colgroup>
 <tbody>
-<tr>
+<tr class="odd">
 <td>description</td>
 <td>Path to the file specifying the mapping between MODFLOW 6 wells and MetaSWAP svats.</td>
 </tr>
-<tr>
+<tr class="even">
 <td>type</td>
 <td>str</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>required</td>
 <td>false</td>
 </tr>
