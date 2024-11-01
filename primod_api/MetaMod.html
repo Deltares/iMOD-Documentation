@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -162,15 +196,15 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="primod.MetaMod" class="level1">
 <h1>MetaMod</h1>
-<p><code>MetaMod(self, msw_model, mf6_simulation, coupling_list)</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>MetaMod(<span class="va">self</span>, msw_model, mf6_simulation, coupling_list)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Couple MetaSWAP and MODFLOW 6.</p>
-<section id="parameters" class="level2">
-<h2 class="anchored" data-anchor-id="parameters">Parameters</h2>
+<section id="parameters" class="level2 doc-section doc-section-parameters">
+<h2 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters">Parameters</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 18%">
+<col style="width: 16%">
 <col style="width: 20%">
-<col style="width: 49%">
+<col style="width: 50%">
 <col style="width: 12%">
 </colgroup>
 <thead>
@@ -183,13 +217,13 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>msw_model</code></td>
+<td>msw_model</td>
 <td>MetaSwapModel</td>
 <td>The MetaSWAP model that should be coupled.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>mf6_simulation</code></td>
+<td>mf6_simulation</td>
 <td>Modflow6Simulation</td>
 <td>The Modflow6 simulation that should be coupled.</td>
 <td><em>required</em></td>
@@ -219,15 +253,21 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <section id="primod.MetaMod.write" class="level3">
 <h3 class="anchored" data-anchor-id="primod.MetaMod.write">write</h3>
-<p><code>MetaMod.write(directory, modflow6_dll, metaswap_dll, metaswap_dll_dependency, modflow6_write_kwargs=None)</code></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>MetaMod.write(</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    directory</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    modflow6_dll</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    metaswap_dll</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    metaswap_dll_dependency</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    modflow6_write_kwargs<span class="op">=</span><span class="va">None</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Write MetaSWAP and Modflow 6 model with exchange files, as well as a <code>.toml</code> file which configures the imod coupler run.</p>
-<section id="parameters-1" class="level4">
-<h4 class="anchored" data-anchor-id="parameters-1">Parameters</h4>
+<section id="parameters-1" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-1">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
 <col style="width: 8%">
-<col style="width: 78%">
+<col style="width: 79%">
 <col style="width: 3%">
 </colgroup>
 <thead>
@@ -240,31 +280,31 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>directory</code></td>
+<td>directory</td>
 <td>str | Path</td>
 <td>Directory in which to write the coupled models</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>modflow6_dll</code></td>
+<td>modflow6_dll</td>
 <td>str | Path</td>
 <td>Path to modflow6 .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>metaswap_dll</code></td>
+<td>metaswap_dll</td>
 <td>str | Path</td>
 <td>Path to metaswap .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>metaswap_dll_dependency</code></td>
+<td>metaswap_dll_dependency</td>
 <td>str | Path</td>
 <td>Directory with metaswap .dll dependencies. Directory should contain: [fmpich2.dll, mpich2mpi.dll, mpich2nemesis.dll, TRANSOL.dll]. You can obtain these by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>modflow6_write_kwargs</code></td>
+<td>modflow6_write_kwargs</td>
 <td>dict[str, Any] | None</td>
 <td>Optional dictionary with keyword arguments for the writing of Modflow6 models. You can use this for example to turn off the validation at writing (<code>validation=False</code>) or to write text files (<code>binary=False</code>)</td>
 <td><code>None</code></td>
@@ -275,16 +315,22 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="primod.MetaMod.write_toml" class="level3">
 <h3 class="anchored" data-anchor-id="primod.MetaMod.write_toml">write_toml</h3>
-<p><code>MetaMod.write_toml(directory, modflow6_dll, metaswap_dll, metaswap_dll_dependency, coupling_dict)</code></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>MetaMod.write_toml(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    directory</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    modflow6_dll</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    metaswap_dll</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    metaswap_dll_dependency</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    coupling_dict</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Write .toml file which configures the imod coupler run.</p>
-<section id="parameters-2" class="level4">
-<h4 class="anchored" data-anchor-id="parameters-2">Parameters</h4>
+<section id="parameters-2" class="level4 doc-section doc-section-parameters">
+<h4 class="doc-section doc-section-parameters anchored" data-anchor-id="parameters-2">Parameters</h4>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 8%">
-<col style="width: 5%">
+<col style="width: 6%">
 <col style="width: 81%">
-<col style="width: 3%">
+<col style="width: 4%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -296,31 +342,31 @@ ul.task-list li input[type="checkbox"] {
 </thead>
 <tbody>
 <tr class="odd">
-<td><code>directory</code></td>
+<td>directory</td>
 <td>str | Path</td>
 <td>Directory in which to write the .toml file.</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>modflow6_dll</code></td>
+<td>modflow6_dll</td>
 <td>str | Path</td>
 <td>Path to modflow6 .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>metaswap_dll</code></td>
+<td>metaswap_dll</td>
 <td>str | Path</td>
 <td>Path to metaswap .dll. You can obtain this library by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="even">
-<td><code>metaswap_dll_dependency</code></td>
+<td>metaswap_dll_dependency</td>
 <td>str | Path</td>
 <td>Directory with metaswap .dll dependencies. Directory should contain: [fmpich2.dll, mpich2mpi.dll, mpich2nemesis.dll, TRANSOL.dll]. You can obtain these by downloading <code>the last iMOD5 release &lt;https://oss.deltares.nl/web/imod/download-imod5&gt;</code>_</td>
 <td><em>required</em></td>
 </tr>
 <tr class="odd">
-<td><code>coupling_dict</code></td>
+<td>coupling_dict</td>
 <td>dict[str, Any]</td>
 <td>Dictionary with names of coupler packages and paths to mappings.</td>
 <td><em>required</em></td>
