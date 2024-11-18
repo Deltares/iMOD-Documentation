@@ -12,7 +12,6 @@ In this tutorial, you will learn the following:
 1. Draw a cross-section in the iMOD QGIS plugin 
 1. View time series in the iMOD QGIS plugin
 1. Run a Python script in a shell
-1. frans
 
 ## Objective 
 
