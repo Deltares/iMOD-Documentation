@@ -84,6 +84,7 @@ website:
         - href: tutorial_Dommel.qmd
         - href: tutorial_wq.qmd
         - href: tutorial_Hondsrug.ipynb
+        - href: tutorial_3_Import_modeldata_and_analysis.ipynb 
         - href: tutorial_Netherlands_mesh.ipynb
 
     - id: further_links

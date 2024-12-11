@@ -14,9 +14,15 @@ listing:
         title: "Unstructured grid model"
         image: figures/tutorial/unstructured_NL/head.png
         description: "In this example, we'll work with unstructured grid. We'll create a very simple unstructured model of the Netherlands from scratch."
+      - path: tutorial_3_Import_modeldata_and_analysis.ipynb 
+        title: "Import and edit MODFLOW 6 modeldata and analysis"
+        image: figures\tutorial\hondsrug\river_clean.png 
+        description: "In this example, you will learn how to use iMOD Python for building, running
+        and analysing your MODFLOW 6 model. We compiled a tutorial to help you get
+        started with iMOD Python and give you an overview of some of its capabilities."        
 image: figures/logo/iMOD-tutorial.svg
 description: 'Learn how to use the iMOD Suite'
-index: "5"
+index: "6"
 ---
 
 The iMOD-suite consists of several components, and combining these in different
