@@ -13,11 +13,11 @@ install-pre-commit = "pre-commit install"
 pre-commit = "pre-commit run --all-files"
 jupyter = "jupyter lab"
 quartodoc-build = { cmd = "quartodoc build && rm objects.json", cwd = "docs" }
-quarto-check = { cmd = "quarto check all", depends_on = ["quartodoc-build"] }
-quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render docs --to html --execute", depends_on = [
+quarto-check = { cmd = "quarto check all", depends-on = ["quartodoc-build"] }
+quarto-render = { cmd = "export QUARTO_PYTHON=python && quarto render docs --to html --execute", depends-on = [
     "quartodoc-build",
 ] }
-docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends_on = [
+docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends-on = [
     "quartodoc-build",
 ] }
 
