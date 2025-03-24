@@ -1,5 +1,16 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/introduction.html",
+      "/viewer.html",
+      "/python.html",
+      "/coupler.html",
+      "/tutorial.html",
+      "/practical.html"
+    ]
+  },
+  {
     "listing": "/practical.html",
     "items": [
       "/practical_cookiecutter.html",
@@ -19,17 +30,6 @@
       "/tutorial_Dommel.html",
       "tutorial_Hondsrug.html",
       "tutorial_Netherlands_mesh.html"
-    ]
-  },
-  {
-    "listing": "/index.html",
-    "items": [
-      "/introduction.html",
-      "/viewer.html",
-      "/python.html",
-      "/coupler.html",
-      "/tutorial.html",
-      "/practical.html"
     ]
   }
 ]
