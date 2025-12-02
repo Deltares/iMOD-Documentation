@@ -4,6 +4,7 @@ project:
 website:
   title: "iMOD Suite"
   page-navigation: true
+  favicon: _static/iMOD-doc-logo.svg
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
@@ -26,6 +27,13 @@ website:
       - icon: github
         href: https://github.com/Deltares/iMOD-Documentation
         aria-label: GitHub
+
+  announcement:
+    icon: megaphone
+    dismissible: true
+    content: "🎂 [iMOD Python 1.0.0](https://deltares.github.io/imod-python/index.htm) is released. 🎂"
+    type: primary
+    position: below-navbar
 
   sidebar:
     - id: viewer
