@@ -1,5 +1,9 @@
 ---
 title: About
+format:
+  html:
+    mermaid:
+      theme: neutral
 bibliography: references/scientific_papers.bib
 nocite: |
   @*
@@ -77,12 +81,12 @@ flowchart TB
   A --> B{iMOD 2.0}
   subgraph 2014
   B
-  Y{{Fortran code \n available as open source}}
+  Y{{Fortran code <br/> available as open source}}
   end
   B --> C{iMOD 3.0}
   subgraph 2015
   C
-  Z{{Executables freely \n available}}
+  Z{{Executables freely <br/> available}}
   end
   C --> D{iMOD 4.0}
   subgraph 2017
@@ -92,18 +96,18 @@ flowchart TB
   D --> E{iMOD 5.0}
   subgraph 2019
   E
-  XY{{iMOD Water Quality \n and MODFLOW6}}
+  XY{{iMOD Water Quality <br/> and MODFLOW6}}
   end
   E --> F{iMOD 5.2}
   subgraph 2020
   F
-  XZ{{BMI coupling \n Modflow6-MetaSWAP}}
+  XZ{{BMI coupling <br/> Modflow6-MetaSWAP}}
   end
   F --> G{iMOD Suite}
   F --> H{iMOD 5.3}
   subgraph 2021
   G
-  YX{{Tooling in Python, QGIS \n C++. Unstructured grids}}
+  YX{{Tooling in Python, QGIS <br/> C++. Unstructured grids}}
   end
   subgraph 2021 
   H
@@ -115,7 +119,7 @@ flowchart TB
   end
   subgraph 2023 
   J
-  YY{{Model input validation, \n CPT plotting in QGIS, \n Backwards \n compatibility iMOD 5}}
+  YY{{Model input validation, <br/> CPT plotting in QGIS, <br/> Backwards <br/> compatibility iMOD 5}}
   end
 ```
 
