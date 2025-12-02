@@ -4,18 +4,24 @@ project:
 website:
   title: "iMOD Suite"
   page-navigation: true
+  favicon: _static/iMOD-doc-logo.svg
+  open-graph: true
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
     left:
       - text: Introduction
         href: introduction.qmd
-      - text: iMOD Viewer
-        href: viewer.qmd
-      - text: iMOD Python
-        href: python.qmd
-      - text: iMOD Coupler
-        href: coupler.qmd
+      - text: Components
+        menu:
+          - text: iMOD Viewer 🧭
+            href: viewer.qmd
+          - text: iMOD Python 🐍
+            href: python.qmd
+          - text: iMOD Coupler 🔌
+            href: coupler.qmd
+      - text: "News"
+        href: news.qmd
       - text: "Tutorials"
         href: tutorial.qmd
       - text: "About"
@@ -26,6 +32,13 @@ website:
       - icon: github
         href: https://github.com/Deltares/iMOD-Documentation
         aria-label: GitHub
+
+  announcement:
+    icon: megaphone
+    dismissible: true
+    content: "🎂 [iMOD Python 1.0.0 is released.](news_posts/2025-11-11_imod_python_stable_release.qmd) 🎂"
+    type: primary
+    position: below-navbar
 
   sidebar:
     - id: viewer

@@ -14,7 +14,7 @@ listing:
     sort: "index"
 image: figures/logo/iMOD.svg
 description: 'Useful tips to use the iMOD Suite with other tools.'
-index: "6"
+index: "7"
 ---
 
 Listed here are practical tips how to use the iMOD Suite in combination with

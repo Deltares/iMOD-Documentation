@@ -2,7 +2,7 @@
 title: "{{< fa brands python >}} iMOD Python"
 image: figures/logo/iMOD-python.svg
 description: 'Build large groundwater models with scripts'
-index: "3"
+index: "4"
 ---
 
 The iMOD Python package is designed to help you in your MODFLOW

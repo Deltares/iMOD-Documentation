@@ -1,0 +1,40 @@
+---
+title: "iMOD User Day - Germany"
+description: "Experiences from Germany 💡"
+author: "Frans Roelofsen"
+date: "2025-03-27"
+image: images/2025-03-27.jpg
+---
+
+[Copied from LinkedIn](https://www.linkedin.com/posts/deltares_enablingdeltalife-imod-userdays-activity-7313860624826978304-zv7I?utm_source=share&utm_medium=member_desktop&rcm=ACoAABl9x2wBH4filRw5jvtn-vDRT_6YVckd4Lk)
+
+First iMOD User Day in Germany: A Huge Success! 🎉 
+
+On Thursday, March 27th, the very first iMOD User Day in Germany was organized
+by the Geological Survey of Schleswig-Holstein (Klaas Stoepker) and Hamburger
+Wasser (Björn Stiller) and hosted in Hamburg. This event brought together
+over 40 participants, including iMOD users from governments and consultants
+across Schleswig-Holstein, Niedersachsen, Hessen, Hamburg and Bremen. What an
+inspiring day it was! 🙌 
+
+The packed agenda included: 
+✅ Engaging iMOD cases from different Bundesländer focusing on groundwater modelling for research and policymaking 
+✅ A deep dive into iMOD5's advanced functions 
+✅ Insights into iMOD Suite's new developments and live demos 
+✅ Lessons learned from the Dutch National Groundwater Program 
+✅ A look ahead at future iMOD developments and user requirements 
+
+Our Deltares delegation (Timo Kroon, Frans Roelofsen, Peter Vermeulen, Joeri
+van Engelen and Bernhard Becker) shared insights, gave support, gave technical
+demonstrations, and explained the developments in iMOD5 and iMOD Suite. 
+
+💡 The take-home message from the event? MODFLOW6 is the foundation of all
+models and the 3D viewer of iMOD5 is still widely used by the community.
+Agreements for maintenance and support contracts were also established. The
+overwhelming feedback from attendees? They voted unanimously for a two-day event
+for the next iMOD User Day! 
+
+Thank you to everyone who joined us and made this event so special. For
+questions or follow-up, feel free to reach out to us at <iMOD.info@deltares.nl>.
+
+Looking forward to more great events in the future! 🌱 
