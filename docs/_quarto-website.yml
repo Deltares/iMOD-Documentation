@@ -36,7 +36,7 @@ website:
   announcement:
     icon: megaphone
     dismissible: true
-    content: "🎂 [iMOD Python 1.0.0](https://deltares.github.io/imod-python/index.htm) is released. 🎂"
+    content: "🎂 [iMOD Python 1.0.0 is released.](news_posts/2025-11-11_imod_python_stable_release.qmd) 🎂"
     type: primary
     position: below-navbar
 
