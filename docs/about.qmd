@@ -121,6 +121,21 @@ flowchart TB
   J
   YY{{Model input validation, <br/> CPT plotting in QGIS, <br/> Backwards <br/> compatibility iMOD 5}}
   end
+  I --> K{iMOD 5.6}
+  J --> L{iMOD Suite}
+  subgraph 2024
+  K
+  end
+  subgraph 2024 
+  L
+  YZ{{iMOD Python 1.0 Beta version released. iMOD Coupler supports coupling to Ribasim}}
+  end
+  L --> M{iMOD Suite}
+  subgraph 2025
+  M
+  ZX{{iMOD Python 1.0.0 stable release.}}
+  end
+
 ```
 
 ## Trainings
