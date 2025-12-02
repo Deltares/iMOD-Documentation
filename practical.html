@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./_static/iMOD-doc-logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -132,6 +133,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="_static/styles.css">
+<meta property="og:title" content=" Practical Tips – iMOD Suite">
+<meta property="og:description" content="Useful tips to use the iMOD Suite with other tools.">
+<meta property="og:image" content="figures/logo/iMOD.svg">
+<meta property="og:site_name" content="iMOD Suite">
 </head>
 
 <body class="nav-fixed">
@@ -158,17 +163,28 @@ window.Quarto = {
     <a class="nav-link" href="./introduction.html"> 
 <span class="menu-text">Introduction</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./viewer.html"> 
-<span class="menu-text">iMOD Viewer</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-components" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Components</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
+        <li>
+    <a class="dropdown-item" href="./viewer.html">
+ <span class="dropdown-text">iMOD Viewer 🧭</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./python.html"> 
-<span class="menu-text">iMOD Python</span></a>
+        <li>
+    <a class="dropdown-item" href="./python.html">
+ <span class="dropdown-text">iMOD Python 🐍</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./coupler.html">
+ <span class="dropdown-text">iMOD Coupler 🔌</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item">
-    <a class="nav-link" href="./coupler.html"> 
-<span class="menu-text">iMOD Coupler</span></a>
+    <a class="nav-link" href="./news.html"> 
+<span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./tutorial.html"> 
@@ -195,6 +211,9 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <div id="quarto-announcement" data-announcement-id="b0d01bb7a8e847484a78cc4e23bea160" class="alert alert-primary hidden"><i class="bi bi-megaphone quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>🎂 <a href="./news_posts/2025-11-11_imod_python_stable_release.html">iMOD Python 1.0.0 is released.</a> 🎂</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -237,7 +256,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
 <div class="list grid quarto-listing-cols-3">
-<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="3" data-listing-word-count-sort="488">
+<div class="g-col-1" data-index="0" data-listing-file-modified-sort="1764693156508" data-listing-reading-time-sort="3" data-listing-word-count-sort="488">
 <a href="./practical_cookiecutter.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -259,7 +278,7 @@ Kickstart your projects with Cookiecutter
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="13" data-listing-word-count-sort="2476">
+<div class="g-col-1" data-index="1" data-listing-file-modified-sort="1764693156508" data-listing-reading-time-sort="13" data-listing-word-count-sort="2476">
 <a href="./practical_git_dvc.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -281,7 +300,7 @@ Use Git and DVC to version control your model workflows
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="10" data-listing-word-count-sort="1832">
+<div class="g-col-1" data-index="2" data-listing-file-modified-sort="1764693156509" data-listing-reading-time-sort="10" data-listing-word-count-sort="1832">
 <a href="./practical_snakemake.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -303,7 +322,7 @@ Snakemake is a very useful and powerful tool to create reproducible workflows.
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="2" data-listing-word-count-sort="294">
+<div class="g-col-1" data-index="3" data-listing-file-modified-sort="1764693156508" data-listing-reading-time-sort="2" data-listing-word-count-sort="294">
 <a href="./practical_messy_data.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -325,7 +344,7 @@ Some tips in dealing with messy data, or – God forbid – to avoid producing i
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="1" data-listing-word-count-sort="174">
+<div class="g-col-1" data-index="4" data-listing-file-modified-sort="1764693156509" data-listing-reading-time-sort="1" data-listing-word-count-sort="174">
 <a href="./practical_parallel.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -347,7 +366,7 @@ Fix common issues when running iMODFLOW &amp; iMOD-WQ codes with MPI.
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
+<div class="g-col-1" data-index="5" data-listing-file-modified-sort="1764693156509" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
 <a href="./practical_powershell.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">
@@ -369,7 +388,7 @@ Learn how to fix the Powershell profile error which can hamper using Visual Stud
 </div>
 </a>
 </div>
-<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1742822223247" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
+<div class="g-col-1" data-index="6" data-listing-file-modified-sort="1764693156508" data-listing-reading-time-sort="3" data-listing-word-count-sort="549">
 <a href="./practical_look_like_a_pro.html" class="quarto-grid-link">
 <div class="quarto-grid-item card h-100 card-left">
 <p class="card-img-top">

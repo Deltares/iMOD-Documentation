@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Reference – iMOD Suite</title>
+<title> iMOD News – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,9 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./coupler_ribametamod_preprocessing.html" rel="next">
-<link href="./coupler_ribametamod_config.html" rel="prev">
 <link href="./_static/iMOD-doc-logo.svg" rel="icon" type="image/svg+xml">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,9 +71,35 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -106,12 +132,13 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="_static/styles.css">
-<meta property="og:title" content="Technical Reference – iMOD Suite">
+<meta property="og:title" content=" iMOD News – iMOD Suite">
 <meta property="og:description" content="">
+<meta property="og:image" content="figures/logo/iMOD-news.svg">
 <meta property="og:site_name" content="iMOD Suite">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -155,7 +182,7 @@ window.Quarto = {
     </ul>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="./news.html"> 
+    <a class="nav-link active" href="./news.html" aria-current="page"> 
 <span class="menu-text">News</span></a>
   </li>  
   <li class="nav-item">
@@ -183,16 +210,6 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_technical.html">Technical Reference</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
   <div id="quarto-announcement" data-announcement-id="b0d01bb7a8e847484a78cc4e23bea160" class="alert alert-primary hidden"><i class="bi bi-megaphone quarto-announcement-icon"></i><div class="quarto-announcement-content">
 <p>🎂 <a href="./news_posts/2025-11-11_imod_python_stable_release.html">iMOD Python 1.0.0 is released.</a> 🎂</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
@@ -200,143 +217,16 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"> iMOD Coupler</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">MetaSWAP - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_config.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Reference</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_metamod_example.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Ribasim - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribamod_config.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribamod_technical.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Technical Reference</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribamod_preprocessing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-processing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Ribasim - MetaSWAP - MODFLOW 6</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribametamod_config.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Configuration</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribametamod_technical.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Technical Reference</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_ribametamod_preprocessing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Pre-processing</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./primod_api/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Primod API Reference</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_architecture.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Architecture</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./coupler_release.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Release process</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#some-remarks" id="toc-some-remarks" class="nav-link active" data-scroll-target="#some-remarks">Some remarks</a></li>
-  <li><a href="#active-versus-passive-coupling" id="toc-active-versus-passive-coupling" class="nav-link" data-scroll-target="#active-versus-passive-coupling">Active versus passive coupling</a></li>
-  <li><a href="#estimated-sprinkling-flux" id="toc-estimated-sprinkling-flux" class="nav-link" data-scroll-target="#estimated-sprinkling-flux">Estimated sprinkling flux</a></li>
-  <li><a href="#realized-sprinkling-flux-and-infiltration-flux-correction." id="toc-realized-sprinkling-flux-and-infiltration-flux-correction." class="nav-link" data-scroll-target="#realized-sprinkling-flux-and-infiltration-flux-correction.">Realized sprinkling flux and infiltration flux correction.</a></li>
-  </ul>
-</nav>
-    </div>
+        
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./coupler_ribametamod_config.html">Ribasim - MetaSWAP - MODFLOW 6</a></li><li class="breadcrumb-item"><a href="./coupler_ribametamod_technical.html">Technical Reference</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Technical Reference</h1>
+<h1 class="title"><i class="fa-solid fa-newspaper" aria-label="newspaper"></i> iMOD News</h1>
 </div>
 
 
@@ -353,145 +243,102 @@ window.Quarto = {
 </header>
 
 
-<p>This document describes the complete Ribasim - MetaSWAP - MODFLOW 6 coupling sequence, the operations performed by the individual components as well as the exchanges of data among the components.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">sequenceDiagram
-    autonumber
-    Ribasim -&gt;&gt; MODFLOW 6: stage [t-1]
-    MODFLOW 6 -&gt;&gt; Ribasim: estimated RIV flux, active &amp; passive  [t-1]
+<p>Read the latest iMOD news here!</p>
 
-    loop Ribasim-MetaSWAP subtimesteps [tsw]
-        Note over MetaSWAP: prepare surface water timestep tsw
-        MetaSWAP-&gt;&gt;Ribasim:  ponding runoff [tsw]
-        MetaSWAP-&gt;&gt;Ribasim:  estimated sprinkling [tsw]
-        Note over Ribasim: solve tsw
-        Ribasim -&gt;&gt; MetaSWAP: realized sprinkling [tsw]
-    end
-    Ribasim -&gt;&gt; MODFLOW 6: realized RIV, active [t]
-    MODFLOW 6 -&gt;&gt; MetaSWAP: head [t-1] 
-    loop MODFLOW 6-MetaSWAP iterations (solving t)
-        Note over MetaSWAP: solve iter
-        MetaSWAP -&gt;&gt; MODFLOW 6: storage coefficient [iter]
-        MetaSWAP -&gt;&gt; MODFLOW 6: recharge flux [iter]
-        MetaSWAP -&gt;&gt; MODFLOW 6: groundwater sprinkling flux [iter]
-        Note over MODFLOW 6: solve iter
-        MODFLOW 6 -&gt;&gt; MetaSWAP: head [iter] 
-    end
 
-</pre>
+
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1763596800000" data-listing-file-modified-sort="1764693156507" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="198">
+<div class="thumbnail">
+<p><a href="./news_posts/2025-11-20_DSD.html" class="no-external"></a></p><a href="./news_posts/2025-11-20_DSD.html" class="no-external">
+<p><img loading="lazy" src="./news_posts/images/2025-11-20.jpg" class="thumbnail-image"></p>
+</a><p><a href="./news_posts/2025-11-20_DSD.html" class="no-external"></a></p>
 </div>
-<p></p></figure><p></p>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./news_posts/2025-11-20_DSD.html" class="no-external">MODFLOW6 and iMOD user day 2025</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./news_posts/2025-11-20_DSD.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./news_posts/2025-11-20_DSD.html" class="no-external">Highlights from Delft 💡</a>
 </div>
 </div>
+<div class="metadata">
+<a href="./news_posts/2025-11-20_DSD.html" class="no-external">
+<div class="listing-date">
+Nov 20, 2025
 </div>
-The exchanges between kernels can be summarized as follows:
-<ol>
-<li value="1">
-Exchange the Ribasim subgrid stage from the previous timestep to actively coupled RIV en DRN packages.
-</li>
-<li value="2">
-Estimated RIV and DRN flux, exchanged to Ribasim basins
-</li>
-<br> <b>Ribasim-MetaSWAP sub-timestepping:</b>
-<li value="3">
-Runoff from MetaSWAP exchanged to Ribasim basins
-</li>
-<li value="4">
-Irrigation demand from MetaSWAP svats to Ribasim water users.
-</li>
-<li value="5">
-Irrigation volume on svats based on realized volumes per water user
-</li>
-<li value="6">
-Flux correction in the case that Ribasim basins are unable to meet the total infiltration demand.
-</li>
-<br> <b>MODFLOW 6-MetaSWAP iterations:</b>
-<li value="7">
-Head of MODFLOW 6 to MetaSWAP
-</li>
-<li value="8">
-Storage coefficient from MetaSWAP sent to MODFLOW 6
-</li>
-<li value="9">
-Recharge from MetaSWAP sent to MODFLOW 6 as a source term
-</li>
-<li value="10">
-Groundwater sprinkling flux requested by MetaSWAP, extracted from MODFLOW 6
-</li>
-</ol>
-<section id="some-remarks" class="level3">
-<h3 class="anchored" data-anchor-id="some-remarks">Some remarks</h3>
-<ul>
-<li>If allocation is active in the Ribasim model, the demand-realisation cycle for irrigation is based on the user priority and the water availability. When inactive it is based on water availability alone.<br>
-</li>
-<li>For coupling surface water to Ribasim, only the RIV and DRN package can be used. Other packages like GHB are not supported and should not be present in coupled domain.</li>
-</ul>
-</section>
-<section id="active-versus-passive-coupling" class="level3">
-<h3 class="anchored" data-anchor-id="active-versus-passive-coupling">Active versus passive coupling</h3>
-<p>In coupling Ribasim and MODFLO 6, a distinction exists between <em>active</em> and <em>passive</em> coupling. In a passive coupling fluxes on the MODFLOW 6 side are evaluated irrespective of the Ribasim waterlevels and contribute directly to the Ribasim basins. The Ribasim water levels are <em>not</em> required in this case, fluxes are simply regarded as “lateral” sources to the basin, hence configuration on the Ribasim side is minimal. The passive approach is justified for drainage packages showing little variation in terms of elevation over time (e.g.&nbsp;surface runoff, or ditches with negligible water depth). On the contrary, in the case of an active coupling fluxes depend (linearly) on the Ribasim water levels. This requires the stages in the MODFLOW 6 model to be set to the subgrid water levels of Ribasim prior to evaluation of the river fluxes.</p>
-<p>In the case of river packages “over-infiltration” can cause Ribasim water levels can fall to zero, leaving a dry basin. Since in the passive situation, water levels are not taken into account, no feedback occurs that limits or impedes infiltration. The MODFLOW 6 model assumes infiltration to continue, whereas the coupled Ribasim basin already ran out of water. This raises a discrepancy in the water balance between both models. Therefore, passive couplings are unsuitable for river packages In active couplings, infiltration stops when the basin dries up and the water level reaches the bed elevation.</p>
-</section>
-<section id="estimated-sprinkling-flux" class="level3">
-<h3 class="anchored" data-anchor-id="estimated-sprinkling-flux">Estimated sprinkling flux</h3>
-<p>Within the Ribasim context, the sprinkling flux is implemented as a water user. The sprinkling demand is exchanged to Ribasim through the user demand matrix. From the couplers perspective, this is a two-dimensional array in which every column represents a water user and every row corresponds with a priority. The array elements are water demands for the users (also for other water users beside sprinkling), each with their own set of priorities. Priorities play a role on the Ribasim side only if allocation is active. Within Ribasim, water users are defined as nodes in the network and in the coupler water users are mapped onto MetaSWAP svats. For every of those users, the water demand can be non-zero for a single priority only.</p>
-</section>
-<section id="realized-sprinkling-flux-and-infiltration-flux-correction." class="level3">
-<h3 class="anchored" data-anchor-id="realized-sprinkling-flux-and-infiltration-flux-correction.">Realized sprinkling flux and infiltration flux correction.</h3>
-<p>Before performing a Ribasim update, the surface water sprinkling amounts in MetaSWAP and the active infiltration or drainage in MODFLOW 6 have been evaluated under the assumption of an unlimited availability of surface water for these processes (steps 2 and 4) . After Ribasims timestep, the <em>realized</em> extraction is known in Ribasim and this information must somehow be communicated to MODFLOW 6 (step 6) and MetaSWAP (step 5) in order to maintain a correct overall water balance.</p>
-<p>For the surface water sprinkling the following procedure is used to derive the realized fluxes for the MetaSWAP units.</p>
-<ul>
-<li><p>The realized fraction <span class="math inline">\(f_i\)</span> is derived of the realized sprinkling flux <span class="math inline">\(R_i\)</span>, compared to the requested flux <span class="math inline">\(D_i\)</span> for Ribasim element <span class="math inline">\(i\)</span>. i.o.w. <span class="math display">\[
-f_i\,=\,
-\begin{align}
-\begin{cases}
-  R_i/D_i &amp; D_i\neq 0 \\
-  0 &amp; D_i = 0
-\end{cases}
-\end{align}
-\]</span></p></li>
-<li><p>The real contribution of Ribasim element <span class="math inline">\(i\)</span> to MetaSWAP element <span class="math inline">\(j\)</span> was then <span class="math inline">\(f_i A_{ij} M^*_j\)</span>, where <span class="math inline">\(M^*\)</span> denotes the MetaSWAP vector of demand fluxes and <span class="math inline">\(A_{ij}\)</span> refers to an element of the couple matrix.</p></li>
-<li><p>So, the total realized flux <span class="math inline">\(M_j\)</span> received by MetaSWAP element <span class="math inline">\(j\)</span> is then obtained by summation over <span class="math inline">\(j\)</span>: <span class="math display">\[
-M_j\,=\,\sum\limits_j f_i A_{ij} M^*_j
-\]</span>,,, or in vector notation for all MetaSWAP elements: <span class="math display">\[
-\hspace{1cm}
-\mathbf{M}\,=\,(A^T\mathbf{f})\odot\mathbf{M^*}
-\]</span></p></li>
-</ul>
-<p>The evaluation of the correction of the infiltration flux, for MODFLOW 6 proceeds in a similar fashion, except:</p>
-<ul>
-<li><p>Not the realized fraction <span class="math inline">\(f_i\)</span>, but its complement <span class="math inline">\(1-f_i\)</span> is used to obtain the correction <span class="math inline">\(C_j\)</span> on the infiltration flux.</p></li>
-<li><p>This correction is only applied to the <em>negative</em> demands. The positive demands, associated with drainage, are always granted.</p></li>
-<li><p>The correction amounts represent a lack of water already infiltrated into MODFLOW 6, which turned out not to be available at the end of the Ribasim timestep. Hence, this is corrected by means of a <em>negative</em> source term in MODFLOW 6 in the next groundwater timestep. <span class="math display">\[
-\begin{align}
-C_j\,=\,
-\begin{cases}
-\sum\limits_j (1-f_i) A_{ij} M^*_j  &amp; M^*_j&lt;0 \\
-0 &amp; M^*_j&gt;0
-\end{cases}
-\end{align}
-\]</span></p></li>
-</ul>
-<p>This must be taken into account into the realized fraction for a correct water balance. Therefore, the demand <span class="math inline">\(D_i\)</span> to Ribasim element <span class="math inline">\(i\)</span> is now plit into <span class="math inline">\(D_{i-}\)</span> and, <span class="math inline">\(D_{i+}\)</span>, summing fluxes over the infiltrating and draining MODFLOW 6 elements respectively.</p>
-<p><span class="math display">\[
-f_i\,=\,
-\begin{align}
-\begin{cases}
-    (R_i - D_{i+})/D_{i-} &amp; D_{i-}\neq 0 \\
-    0 &amp; D_{i-} = 0
-\end{cases}
-\end{align}
-\]</span></p>
-<p>The correction <span class="math inline">\(C_j\)</span> enters MODFLOW 6 as a negative right-hand side term, i.e.&nbsp;extraction.</p>
-
-
-</section>
-
-</main> <!-- /main -->
+<div class="listing-author">
+Frans Roelofsen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1762819200000" data-listing-file-modified-sort="1764693156507" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="501">
+<div class="thumbnail">
+<p><a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external"></a></p><a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external">
+<p><img loading="lazy" src="./figures/logo/iMOD-python.svg" class="thumbnail-image"></p>
+</a><p><a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external">iMOD Python 1.0.0</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external">iMOD Python has reached its first stable release 🎂</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./news_posts/2025-11-11_imod_python_stable_release.html" class="no-external">
+<div class="listing-date">
+Nov 11, 2025
+</div>
+<div class="listing-author">
+Joeri van Engelen
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1743033600000" data-listing-file-modified-sort="1764693156507" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="237">
+<div class="thumbnail">
+<p><a href="./news_posts/2025-03-27_Hamburg.html" class="no-external"></a></p><a href="./news_posts/2025-03-27_Hamburg.html" class="no-external">
+<p><img loading="lazy" src="./news_posts/images/2025-03-27.jpg" class="thumbnail-image"></p>
+</a><p><a href="./news_posts/2025-03-27_Hamburg.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./news_posts/2025-03-27_Hamburg.html" class="no-external">iMOD User Day - Germany</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./news_posts/2025-03-27_Hamburg.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./news_posts/2025-03-27_Hamburg.html" class="no-external">Experiences from Germany 💡</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./news_posts/2025-03-27_Hamburg.html" class="no-external">
+<div class="listing-date">
+Mar 27, 2025
+</div>
+<div class="listing-author">
+Frans Roelofsen
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -912,18 +759,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./coupler_ribametamod_config.html" class="pagination-link" aria-label="Configuration">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Configuration</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./coupler_ribametamod_preprocessing.html" class="pagination-link" aria-label="Pre-processing">
-        <span class="nav-page-text">Pre-processing</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 

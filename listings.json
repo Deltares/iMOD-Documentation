@@ -1,8 +1,27 @@
 [
   {
+    "listing": "/news.html",
+    "items": [
+      "/news_posts/2025-11-20_DSD.html",
+      "/news_posts/2025-11-11_imod_python_stable_release.html",
+      "/news_posts/2025-03-27_Hamburg.html"
+    ]
+  },
+  {
+    "listing": "/tutorial.html",
+    "items": [
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "/tutorial_Dommel.html",
+      "tutorial_Hondsrug.html",
+      "tutorial_Netherlands_mesh.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
       "/introduction.html",
+      "/news.html",
       "/viewer.html",
       "/python.html",
       "/coupler.html",
@@ -20,16 +39,6 @@
       "/practical_parallel.html",
       "/practical_powershell.html",
       "/practical_look_like_a_pro.html"
-    ]
-  },
-  {
-    "listing": "/tutorial.html",
-    "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "/tutorial_Dommel.html",
-      "tutorial_Hondsrug.html",
-      "tutorial_Netherlands_mesh.html"
     ]
   }
 ]
