@@ -5,6 +5,7 @@ website:
   title: "iMOD Suite"
   page-navigation: true
   favicon: _static/iMOD-doc-logo.svg
+  open-graph: true
   navbar:
     background: "#080c80"
     logo: _static/iMOD-doc-logo.svg
