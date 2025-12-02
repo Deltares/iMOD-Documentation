@@ -17,7 +17,6 @@ The workflow consists of the following steps:
 3.  Use iMOD-python to post-process the model output (IDF) to a data
     format supported by QGIS (UGRID)
 4.  Viewing a cross-section in iMOD QGIS plugin
-5.  Use the plugin to view the results in the iMOD 3D viewer
 
 ## Creating a model
 
@@ -258,33 +257,8 @@ colormap you think is suitable!
 ![You should see this if you followed precisely what we
 did.](figures/tutorial/wq/cross-section.png)
 
-## Viewing the results in the iMOD 3D Viewer
-
-As a final step we will look at the results in the iMOD 3D Viewer. Click
-the 3D viewer symbol
-![3d-viewer](figures/qgis/icons/3d-viewer.png){width="30px"
-height="30px"} in QGIS, which will open up the 3D viewer widget of the
-iMOD plugin.
-
-First, click the *Draw Extent* button to draw an extent to be plotted.
-This can be very useful for large datasets, to only look at a smaller
-zone of the data.
-
-Second, click *Start iMOD 3D viewer* to start the iMOD 3D viewer. Third,
-click *Load mesh data* to load the mesh you selected in the QGIS widget
-to be opened in the 3D viewer.
-
-Fourth, to plot the data, under the *Imported files*, expand the data
-selection tree, and under *Layered datasets*, selecting *conc*.
-
-Finally, you can migrate the colormap you used in QGIS by clicking *Load
-legend*.
-
-![If you followed the instructions, you should see
-this.](figures/tutorial/wq/3d_viewer.png)
-
 ## Concluding
 
 In short, we wrote model input with iMOD-python, ran a model with
 iMOD-WQ, converted its output to UGRID with iMOD-python, and viewed the
-results in QGIS and the iMOD 3D viewer.
+results in QGIS.

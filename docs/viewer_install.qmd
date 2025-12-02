@@ -1,20 +1,12 @@
 ---
-title: Install iMOD Viewer
+title: Install iMOD QGIS Plugin
 number-sections: true
 ---
 
 ## Description
-
-For the complete iMOD viewer (QGIS plugin and 3D viewer) can be installed using
-the Deltares installer. A working QGIS is needed before installing the iMOD
-viewer. It is also possible to install the QGIS plugin using the QGIS plugin
-repository. This installation is without the 3D viewer.
-
 The different ways to install the QGIS plugin are described in
-@sec-Deltares_setup, @sec-plugin_repository, and @sec-manual_install. Each of
-these, however, require the user to install QGIS. To install the QGIS plugin,
-we recommend running the iMOD Viewer installer (@sec-Deltares_setup), which
-will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin.
+@sec-plugin_repository and @sec-manual_install. Each of
+these, however, require the user to install QGIS.
 
 ## Installing QGIS {#sec-install_QGIS}
 
@@ -25,29 +17,16 @@ QGIS version >= 3.28 here. After downloading the QGIS setup, run it.
 This installs a user installation of QGIS, which is sufficient in most cases.
 For a system wide installation, see @sec-system-wide.
 
-## Installing the iMOD Viewer
+## Installing the iMOD QGIS plugin
 
-The different options to install the iMOD Viewer are listed below. The iMOD
-Viewer consists of the iMOD QGIS plugin and iMOD 3D viewer.
+The different options to install the iMOD QGIS plugin are listed below..
 
-### (Option 1) Install with the Deltares setup {#sec-Deltares_setup}
-
-Run the .msi you can download [on the Deltares download
-portal](https://download.deltares.nl/imod-suite/).
-
-Follow the installation instructions for [the viewer
-install](viewer_install_msi.qmd), and make sure to do a *Complete* install.
-
-### (Option 2) Installing from the QGIS plugin repository {#sec-plugin_repository}
+### (Option 1) Installing from the QGIS plugin repository (Recommended) {#sec-plugin_repository}
 
 In QGIS, navigate to *Plugins > Manage and Install Plugins > All*. In the
 search bar, type: "*iMOD*". Select the iMOD plugin, and click *"Install"*.
 
-This does not install the iMOD 3D Viewer; so for 3D viewing functionality,
-follow the instructions in @sec-Deltares_setup, but instead select a
-*Minimal* install.
-
-### (Option 3) Manually download and copy the iMOD QGIS plugin {#sec-manual_install}
+### (Option 2) Manually download and copy the iMOD QGIS plugin {#sec-manual_install}
 
 Download the iMOD QGIS plugin code from the [Github
 page](https://github.com/Deltares/imod-qgis]

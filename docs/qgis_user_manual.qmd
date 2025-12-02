@@ -33,10 +33,10 @@ The QGIS plugin currently consists of five widgets, of which the
 functionality will be described in the next section:
 
 -   Open IPF
--   3D Viewer
 -   Time Series
 -   Cross section
 -   Add NHI data
+-   3D Viewer (Discontinued)
 
 ### ![ipf-reader](figures/qgis/icons/ipf-reader.png){width="40px" height="40px"} Open IPF
 
@@ -72,69 +72,6 @@ improve the flexibility of the plugin\'s IPF reader.
 controller panel is opened by clicking the clock in the \"map
 navigation\" toolbar.](figures/qgis/temporal-controller.png)
 
-### ![3d-viewer](figures/qgis/icons/3d-viewer.png){width="40px" height="40px"} 3D Viewer
-
-The 3D viewer widget creates a connection between QGIS and the iMOD 3D
-viewer. It allows you to make selections in QGIS and forward them to the
-3D viewer. Note that there are two perquisites for the iMOD viewer to
-correctly render mesh data:
-
-1.  The mesh data needs to be stored in a UGRID file
-2.  Vertical axis is stored as variables `top_layer_*` and
-    `bottom_layer_*`. The data belonging to each layer follows the
-    following format `head_layer_*`, e.g. for a variable `head`.
-
-This means that not all data that can be loaded in QGIS as mesh can be
-viewed in the 3D viewer. Currently only UGRID meshes and IPF borelog
-files are supported.
-
--   Use the selection box at the top to select the mesh layer/ipf file
-    you want to inspect in the 3D viewer.
--   The \"Extent\" group allows the user to manually set the bounding
-    box by editing the numbers under \"North\", \"East\", \"South\", and
-    \"West\", and more:
-    -   The \"Current Layer Extent\" button sets the bounding box to the
-        extent of the layer selected in the QGIS explorer.
-    -   The \"Calculate from Layer\" box allows you to select a dataset
-        loaded in the QGIS explorer to calculate the extent from.
-    -   \"Map canvas extent\" sets the bounding box to the map canvas
--   The \"Select\" group contains a set of buttons to spatially select
-    data to be forwarded to the 3D viewer
-    -   The \"Draw fence diagram\" button allows to draw lines on the
-        map canvas which can be forwarded to the 3D viewer to draw a
-        fence diagram. Press the button to start drawing mode.
-        Left-click to start drawing a line; right-click to stop drawing
-        the line.
-    -   The \"Clear fence diagram\" button clears all lines from the map
-        canvas
-    -   The \"Draw extent\" buttons allows you to click and drag a box
-        that allows you to set a bounding box. The iMOD viewer will only
-        load the data within this boundary box, which can be useful when
-        exploring specific areas in large datasets. Drawing an bounding
-        box will update the \"Extent\" widget. Right-click to stop
-        drawing the extent.
--   The \"View\" group contains a set of buttons to interact with the 3D
-    viewer
-    -   \"Start iMOD viewer\" starts the iMOD viewer and immediately
-        loads the data selected in the widget.
-    -   \"Load mesh data\" remove previous data from viewer and load new
-        mesh data in it.
-    -   \"Load fence diagram\" loads the lines drawn with \"Draw fence
-        diagram\" to the viewer and renders a fence diagram.
-    -   \"Load legend\" transfers legend in the QGIS map layer to fence
-        diagram and/or mesh data in the 3D viewer for the selected
-        variable in the QGIS map canvas.
-
-![The 3D viewer widget. It will be opened on the right-hand side of the
-screen.](figures/qgis/3d-viewer.png)
-
-::: {.callout-note}
-The 3D Viewer widget does not forward any data to the iMOD 3D viewer, it
-only forwards the path to the data to load, and a command how to load
-it. As of now, the widget does not understand changes made by the user
-in the 3D viewer. It only supports \"one-way traffic\" towards the
-viewer.
-:::
 
 ### ![time-series](figures/qgis/icons/time-series.png){width="40px" height="40px"} Time Series
 
@@ -300,4 +237,75 @@ You can use the search bar to search for datasets of your liking.
 ::: {.callout-note}
 Experience has shown that sometimes these services are hard to reach and
 data cannot be loaded.
+:::
+
+### ![3d-viewer](figures/qgis/icons/3d-viewer.png){width="40px" height="40px"} 3D Viewer
+
+::: {.callout-important}
+
+The 3D viewer is discontinued. This section is left in the documentation as
+people might encounter the 3D widget in the plugin.
+
+:::
+
+The 3D viewer widget creates a connection between QGIS and the iMOD 3D
+viewer. It allows you to make selections in QGIS and forward them to the
+3D viewer. Note that there are two perquisites for the iMOD viewer to
+correctly render mesh data:
+
+1.  The mesh data needs to be stored in a UGRID file
+2.  Vertical axis is stored as variables `top_layer_*` and
+    `bottom_layer_*`. The data belonging to each layer follows the
+    following format `head_layer_*`, e.g. for a variable `head`.
+
+This means that not all data that can be loaded in QGIS as mesh can be
+viewed in the 3D viewer. Currently only UGRID meshes and IPF borelog
+files are supported.
+
+-   Use the selection box at the top to select the mesh layer/ipf file
+    you want to inspect in the 3D viewer.
+-   The \"Extent\" group allows the user to manually set the bounding
+    box by editing the numbers under \"North\", \"East\", \"South\", and
+    \"West\", and more:
+    -   The \"Current Layer Extent\" button sets the bounding box to the
+        extent of the layer selected in the QGIS explorer.
+    -   The \"Calculate from Layer\" box allows you to select a dataset
+        loaded in the QGIS explorer to calculate the extent from.
+    -   \"Map canvas extent\" sets the bounding box to the map canvas
+-   The \"Select\" group contains a set of buttons to spatially select
+    data to be forwarded to the 3D viewer
+    -   The \"Draw fence diagram\" button allows to draw lines on the
+        map canvas which can be forwarded to the 3D viewer to draw a
+        fence diagram. Press the button to start drawing mode.
+        Left-click to start drawing a line; right-click to stop drawing
+        the line.
+    -   The \"Clear fence diagram\" button clears all lines from the map
+        canvas
+    -   The \"Draw extent\" buttons allows you to click and drag a box
+        that allows you to set a bounding box. The iMOD viewer will only
+        load the data within this boundary box, which can be useful when
+        exploring specific areas in large datasets. Drawing an bounding
+        box will update the \"Extent\" widget. Right-click to stop
+        drawing the extent.
+-   The \"View\" group contains a set of buttons to interact with the 3D
+    viewer
+    -   \"Start iMOD viewer\" starts the iMOD viewer and immediately
+        loads the data selected in the widget.
+    -   \"Load mesh data\" remove previous data from viewer and load new
+        mesh data in it.
+    -   \"Load fence diagram\" loads the lines drawn with \"Draw fence
+        diagram\" to the viewer and renders a fence diagram.
+    -   \"Load legend\" transfers legend in the QGIS map layer to fence
+        diagram and/or mesh data in the 3D viewer for the selected
+        variable in the QGIS map canvas.
+
+![The 3D viewer widget. It will be opened on the right-hand side of the
+screen.](figures/qgis/3d-viewer.png)
+
+::: {.callout-note}
+The 3D Viewer widget does not forward any data to the iMOD 3D viewer, it
+only forwards the path to the data to load, and a command how to load
+it. As of now, the widget does not understand changes made by the user
+in the 3D viewer. It only supports \"one-way traffic\" towards the
+viewer.
 :::

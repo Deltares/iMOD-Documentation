@@ -7,7 +7,6 @@ book:
     - index.qmd
     - tutorial.qmd
     - tutorial_Abbeyfeale.qmd
-    - tutorial_Dommel.qmd
 
 format:
   pdf:

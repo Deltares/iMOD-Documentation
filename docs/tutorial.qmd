@@ -4,7 +4,6 @@ listing:
     type: grid
     contents:
       - tutorial_Abbeyfeale.qmd
-      - tutorial_Dommel.qmd
       - tutorial_wq.qmd
       - path: tutorial_Hondsrug.ipynb
         title: "Modifying an existing Modflow 6 model in iMOD Python"

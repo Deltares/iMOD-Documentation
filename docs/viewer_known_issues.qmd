@@ -39,28 +39,3 @@ again](https://deltares.github.io/imod-python/api/generated/io/imod.formats.ipf.
 This can help, because the IPF reader in iMOD Python is a lot more flexible,
 but its writer always writes to a specific format. We plan to improve the
 flexibility of the plugin\'s IPF reader.
-
-## 3D Viewer
-
-### Supported Windows versions
-
-At present, only Windows 10 is supported. Windows 8.1 and Windows 11 currently
-are not supported, and it has been confirmed that the 3D viewer does not
-function properly with these Windows versions.
-
-### MSVCR100.dll missing
-
-You might get an error at startup of the 3D viewer, such as: *\"The code
-execution cannot proceed because MSVCR100.dll was not found.
-Reinstalling the program may fix the problem\"*
-
-This usually happens on a clean machine, which has not yet installed the
-Microsoft Visual C++ 2010 redistributable. [You can download it
-here](https://www.microsoft.com/en-us/download/details.aspx?id=26999)
-
-Make sure to check if you have a 32-bit or 64-bit Windows version on
-your system and consequently installing the right version of the
-redistributable. You can find this out pressing the Windows key (or
-clicking *Start*) and typing *System Information*. Click it, and look
-under *\"System Type\"*. If it says *x64-based PC*, you have a 64-bit
-system.

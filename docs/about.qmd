@@ -20,7 +20,6 @@ individual components. You can raise issues, or suggest changes, here.
 -   [iMOD Documentation
     Github](https://github.com/Deltares/iMOD-Documentation)
 -   [iMOD QGIS plugin Github](https://github.com/Deltares/imod-qgis)
--   [iMOD 3D Viewer Github](https://github.com/Deltares/imod-gui)
 -   [iMOD Python Github](https://github.com/Deltares/imod-python)
 
 
@@ -53,9 +52,10 @@ For example, Python has a larger ecosystem, allowing users to easily
 incorporate all kinds of packages into their workflows.
 
 Therefore, in 2021, the **iMOD Suite** was released. This suite consists of a
-Python package, a QGIS plugin, and a 3D viewer. It therefore supports
-reproducible workflows for unstructured groundwater models and relies more on
-standard filetypes such as NetCDF, UGRID, and shapefiles.
+Python package, a QGIS plugin, and a 3D viewer. (The latter which was
+discontinued in 2025, as the team's resources were too scarce to maintain it.)
+It therefore supports reproducible workflows for unstructured groundwater models
+and relies more on standard filetypes such as NetCDF, UGRID, and shapefiles.
 
 The classic iMOD GUI and its batch functionality is consolidated under the name
 **iMOD 5**, and will be maintained for the coming years. During this transition
