@@ -20,7 +20,7 @@ following specifically:
   we had to fix some additional bugs which we missed in small tests.
 - Better stability when it comes to handling large models. We have now run weekly
   tests with large models. With this we can better avoid problems like
-  performance degredation or exploding memory when working with large models. 
+  performance degradation or exploding memory when working with large models. 
 - You can get a support contract with Deltares by contacting
   <software@deltares.nl>
 
