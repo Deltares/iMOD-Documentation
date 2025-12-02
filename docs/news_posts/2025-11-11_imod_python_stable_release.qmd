@@ -2,7 +2,7 @@
 title: "iMOD Python 1.0.0"
 description: "iMOD Python has reached its first stable release 🎂"
 author: "Joeri van Engelen"
-date: "11/11/2025"
+date: "2025-11-11"
 image: ../figures/logo/iMOD-python.svg
 ---
 
