@@ -12,12 +12,16 @@ website:
     left:
       - text: Introduction
         href: introduction.qmd
-      - text: iMOD Viewer
-        href: viewer.qmd
-      - text: iMOD Python
-        href: python.qmd
-      - text: iMOD Coupler
-        href: coupler.qmd
+      - text: Components
+        menu:
+          - text: iMOD Viewer 🧭
+            href: viewer.qmd
+          - text: iMOD Python 🐍
+            href: python.qmd
+          - text: iMOD Coupler 🔌
+            href: coupler.qmd
+      - text: "News"
+        href: news.qmd
       - text: "Tutorials"
         href: tutorial.qmd
       - text: "About"

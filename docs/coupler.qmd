@@ -2,7 +2,7 @@
 title: "{{< fa solid plug >}} iMOD Coupler"
 image: figures/logo/iMOD-coupler.svg
 description: 'Application for coupling hydrological kernels.'
-index: "4"
+index: "5"
 ---
 
 ## Coupling to MODFLOW 6

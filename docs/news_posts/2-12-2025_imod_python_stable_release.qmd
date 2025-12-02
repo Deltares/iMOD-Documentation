@@ -1,0 +1,58 @@
+---
+title: "iMOD Python 1.0.0"
+description: "iMOD Python has reached its stable release 🎂"
+author: "Joeri van Engelen"
+date: "11/11/2025"
+---
+
+After 7 release candidates in 2025, we are happy to announce the first stable
+release of iMOD Python 1.0.0 🎉.  The Deltares definition of a stable release is
+_"Fully validated functionality with proven and reliable functionality for
+specific use cases and/or regions."_ . The specific use cases in question here
+are the dutch national hydologic model (LHM) and a large solute transport model
+made for Flanders (Belgium). For iMOD Python, this means the
+following specifically:
+
+- The API will be kept stable, and users will be warned in advance if we are
+  going to break something.
+- The software is tried and tested on 2 large, complex example models, for which
+  we had to fix some additional bugs which we missed in small tests.
+- Better stability when it comes to handling large models. We have now run weekly
+  tests with large models. With this we can better avoid problems like
+  performance degredation or exploding memory when working with large models. 
+- You can get a support contract with Deltares by contacting
+  <software@deltares.nl>
+
+The main goal of the iMOD Python 1.0.0 release was to be able to work with the
+dutch national hydrologic model (LHM). If you are not an LHM user, this might
+not sound so exciting, but you also benefit from this. The development team has
+worked a lot on reimplementing key features of iMOD5 and have backwards
+compatibility with existing iMOD5 models. To get a full overview of the current
+backwards compatibility with iMOD5, see [this overview](https://deltares.github.io/imod-python/faq/imod5_backwards_compatibility.html). The second goal of this
+release was to support recently added MODFLOW 6 features that can be used to
+achieve full feature parity with iMOD-WQ. These are parallel computation and
+adaptive time stepping based on the advection package.
+
+Important highlights of features we worked on for the 1.0 release are:
+
+-   Performant regridding of entire MODFLOW 6 simulations, including regridding
+    from structured to unstructured grids. [See this user guide on all things
+    considering regridding.](https://deltares.github.io/imod-python/user-guide/08-regridding.html)
+-   Clip, mask, and split entire large MODFLOW 6 simulations. The latter is
+    required to conduct parallel computations. [See this example on how to split
+    a regional
+    model.](https://deltares.github.io/imod-python/examples/mf6/hondsrug_partitioning.html)
+-   [Check and clean common mistakes in model
+    input.](https://deltares.github.io/imod-python/user-guide/10-cleanup.html)
+-   [Allocate topsystem packages to model
+    layers.](https://deltares.github.io/imod-python/user-guide/09-topsystem.html)
+-   Import existing iMOD5 database and convert them to MODFLOW 6 simulations.
+    [See this example of importing an iMOD5 model and regridding it to an
+    unstructured grid refined around the rivers](https://deltares.github.io/imod-python/user-guide/12-imod5-model-to-modflow6.html)
+-   Import MetaSWAP models from iMOD5 database. MetaSWAP is a model kernel to
+    solve problems in the unsaturated zone, mostly used in the Netherlands.
+-	Write, edit and regrid MetaSWAP models on structured grids.
+-   Support for the AdaptiveTimeStepping (ATS) package and the ``ats_percel``
+    option in the Advection (ADV) package. This allows to restrict timesteps
+    based on the Courant number in solute transport models, like was done in
+    SEAWAT and iMOD-WQ.

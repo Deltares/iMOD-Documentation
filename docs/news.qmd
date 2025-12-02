@@ -1,0 +1,12 @@
+---
+title: "{{< fa solid newspaper >}} iMOD News"
+listing:
+    contents: news_posts
+    sort: "date desc"
+    type: default
+    categories: true
+image: figures/logo/iMOD-news.svg
+index: "2"
+---
+
+Read the latest iMOD news here!

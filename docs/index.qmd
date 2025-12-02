@@ -5,6 +5,7 @@ listing:
     image-height: 250px
     contents:
         - introduction.qmd
+        - news.qmd
         - viewer.qmd
         - python.qmd
         - coupler.qmd
