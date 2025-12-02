@@ -1,0 +1,38 @@
+---
+title: "MODFLOW6 and iMOD user day 2025"
+description: "Highlights from Delft 💡"
+author: "Frans Roelofsen"
+date: "2025-11-20"
+image: images/2025-11-20.jpg
+---
+
+[Copied from LinkedIn](https://www.linkedin.com/posts/fjroelofsen_imod-modflow6-groundwater-activity-7401590833906360320-YcVV/)
+
+🌍 The 11th edition of our User Day was a success! Nearly 100 participants from
+11 countries gathered in Delft on 20 November for the Deltares International
+Hydrology Software Days. 
+
+We thank our keynote speaker Chris Langevin for his insight in MODFLOW 6
+developments. Frans Roelofsen and Joeri van Engelen shared developments and the
+roadmap for iMOD Suite. 
+
+🎉 We are proud to announce that we released iMOD Python 1.0. 
+
+Sessions on the main stage covered topics such as: 
+- The National Hydrological Model of Denmark (Raphael Schneider & Simon Stisen) 
+- MODFLOW 6 parallel capabilities (Joost Delsman) and Flexible quadtree sub
+  modelling (Jarno Verkaik) 
+- Land Subsidence (Joe Hughes)   
+- Groundwater Energy (GWE) Model for MAR systems (Arjan van Wachtendonk) 
+- MODFLOW 6 Solver settings (Huite Bootsma) 
+
+In the afternoon, participants enjoyed short pitches on interesting topics
+related to our current developments and beyond, presented by Hendrik Kok, Robert
+Leander, Sunny Titus, Davíd Brakenhoff, Jesse Reusen and Mart Clanor. Meanwhile,
+others joined a parallel session for the iMOD Python hands-on training. 
+
+🤝 It was fantastic to see so many professionals engage, collaborate, and help
+strengthen the global hydrology community. We’re already looking forward to the
+next edition in 2026! 
+
+![DSD 2025](./images/2025-11-20.jpg)
