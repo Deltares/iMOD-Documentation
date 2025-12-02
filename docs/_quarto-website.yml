@@ -14,7 +14,7 @@ website:
         href: introduction.qmd
       - text: Components
         menu:
-          - text: iMOD Viewer 🧭
+          - text: iMOD QGIS plugin 🧭
             href: viewer.qmd
           - text: iMOD Python 🐍
             href: python.qmd
@@ -42,7 +42,7 @@ website:
 
   sidebar:
     - id: viewer
-      title: "iMOD Viewer"
+      title: "iMOD QGIS Plugin"
       style: "floating"
       collapse-level: 2
       align: left

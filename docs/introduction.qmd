@@ -78,7 +78,7 @@ components and supported MODFLOW6 packages.
 | scripted 2D plot           | iMOD Python                                       | iMOD Batch                                        |
 | interactive 2D plot        | iMOD QGIS plugin (& QGIS)                         | iMOD GUI                                          |
 | scripted 3D plot           | iMOD Python                                       |                                                   |
-| interactive 3D plot        | iMOD 3D Viewer                                    | iMOD GUI                                          |
+| interactive 3D plot        | iMOD 3D Viewer (discontinued)                     | iMOD GUI                                          |
 
 : Comparison between iMOD Suite & iMOD 5 {#tbl-iMOD-comparison}
 
