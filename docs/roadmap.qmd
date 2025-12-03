@@ -1,6 +1,6 @@
 ---
 title: "{{< fa regular map >}} Roadmap"
-image: figures/logo/iMOD.svg
+image: figures/logo/iMOD-roadmap.svg
 description: Our plans for the iMOD Suite.
 index: "7"
 ---
