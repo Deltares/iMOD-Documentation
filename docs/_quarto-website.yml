@@ -36,7 +36,10 @@ website:
   announcement:
     icon: megaphone
     dismissible: true
-    content: "🎂 [iMOD Python 1.0.0 is released.](news_posts/2025-11-11_imod_python_stable_release.qmd) 🎂"
+    # news_posts/2025-11-11_imod_python_stable_release.qmd does not work here
+    # for all pages, as qmd files within news_posts do need a folder upward and
+    # globpath with ** does not work. So we hardcode the link here.
+    content: "🎂 [iMOD Python 1.0.0 is released.](https://deltares.github.io/iMOD-Documentation/news_posts/2025-11-11_imod_python_stable_release.html) 🎂"
     type: primary
     position: below-navbar
 
