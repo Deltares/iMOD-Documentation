@@ -12,15 +12,6 @@
     ]
   },
   {
-    "listing": "/tutorial.html",
-    "items": [
-      "/tutorial_Abbeyfeale.html",
-      "/tutorial_wq.html",
-      "tutorial_Hondsrug.html",
-      "tutorial_Netherlands_mesh.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/introduction.html",
@@ -29,7 +20,17 @@
       "/python.html",
       "/coupler.html",
       "/tutorial.html",
+      "/roadmap.html",
       "/practical.html"
+    ]
+  },
+  {
+    "listing": "/tutorial.html",
+    "items": [
+      "/tutorial_Abbeyfeale.html",
+      "/tutorial_wq.html",
+      "tutorial_Hondsrug.html",
+      "tutorial_Netherlands_mesh.html"
     ]
   },
   {
