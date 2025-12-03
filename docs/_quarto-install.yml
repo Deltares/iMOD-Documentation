@@ -6,7 +6,6 @@ book:
   chapters:
     - index.qmd
     - viewer_install_msi.qmd
-    - deltaforge_install.qmd
 
 format:
   pdf:

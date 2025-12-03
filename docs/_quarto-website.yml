@@ -24,6 +24,8 @@ website:
         href: news.qmd
       - text: "Tutorials"
         href: tutorial.qmd
+      - text: "Roadmap"
+        href: roadmap.qmd
       - text: "About"
         href: about.qmd
       - text: "Practical tips"
@@ -63,7 +65,6 @@ website:
       contents:
         - href: python.qmd
         - href: python_install.qmd
-        - href: deltaforge_install.qmd
         - href: python_getting_started.qmd
 
     - id: coupler

@@ -15,7 +15,6 @@ book:
     - part: python.qmd
       chapters:
         - python_install.qmd
-        - deltaforge_install.qmd
         - python_getting_started.qmd
     - part: coupler.qmd
       chapters:
