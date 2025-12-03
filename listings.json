@@ -1,14 +1,14 @@
 [
   {
-    "listing": "/index.html",
+    "listing": "/practical.html",
     "items": [
-      "/introduction.html",
-      "/news.html",
-      "/viewer.html",
-      "/python.html",
-      "/coupler.html",
-      "/tutorial.html",
-      "/practical.html"
+      "/practical_cookiecutter.html",
+      "/practical_git_dvc.html",
+      "/practical_snakemake.html",
+      "/practical_messy_data.html",
+      "/practical_parallel.html",
+      "/practical_powershell.html",
+      "/practical_look_like_a_pro.html"
     ]
   },
   {
@@ -21,15 +21,15 @@
     ]
   },
   {
-    "listing": "/practical.html",
+    "listing": "/index.html",
     "items": [
-      "/practical_cookiecutter.html",
-      "/practical_git_dvc.html",
-      "/practical_snakemake.html",
-      "/practical_messy_data.html",
-      "/practical_parallel.html",
-      "/practical_powershell.html",
-      "/practical_look_like_a_pro.html"
+      "/introduction.html",
+      "/news.html",
+      "/viewer.html",
+      "/python.html",
+      "/coupler.html",
+      "/tutorial.html",
+      "/practical.html"
     ]
   },
   {

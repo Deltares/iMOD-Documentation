@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -162,8 +196,8 @@ ul.task-list li input[type="checkbox"] {
         </a>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="b0d01bb7a8e847484a78cc4e23bea160" class="alert alert-primary hidden"><i class="bi bi-megaphone quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>🎂 <a href="./news_posts/2025-11-11_imod_python_stable_release.html">iMOD Python 1.0.0 is released.</a> 🎂</p>
+  <div id="quarto-announcement" data-announcement-id="b32c498ddf9b62a51b2c2cd8df3f3180" class="alert alert-primary hidden"><i class="bi bi-megaphone quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>🎂 <a href="https://deltares.github.io/iMOD-Documentation/news_posts/2025-11-11_imod_python_stable_release.html">iMOD Python 1.0.0 is released.</a> 🎂</p>
 </div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
@@ -186,12 +220,6 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./deltaforge_install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Python with Deltaforge</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./python_getting_started.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Getting started</span></a>
   </div>
@@ -201,8 +229,30 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-imod" id="toc-why-imod" class="nav-link active" data-scroll-target="#why-imod">Why <code>imod</code>?</a>
+  <ul class="collapse">
+  <li><a href="#easily-create-grid-based-model-packages" id="toc-easily-create-grid-based-model-packages" class="nav-link" data-scroll-target="#easily-create-grid-based-model-packages">1. Easily create grid-based model packages</a></li>
+  <li><a href="#assign-wells-based-on-data-at-hand-instead-of-the-model-grid" id="toc-assign-wells-based-on-data-at-hand-instead-of-the-model-grid" class="nav-link" data-scroll-target="#assign-wells-based-on-data-at-hand-instead-of-the-model-grid">2. Assign wells based on data at hand, instead of the model grid</a></li>
+  <li><a href="#utilities-to-assign-2d-river-grids-to-3d-model-layers" id="toc-utilities-to-assign-2d-river-grids-to-3d-model-layers" class="nav-link" data-scroll-target="#utilities-to-assign-2d-river-grids-to-3d-model-layers">3. Utilities to assign 2D river grids to 3D model layers</a></li>
+  <li><a href="#create-stress-periods-based-on-times-assigned-to-boundary-conditions" id="toc-create-stress-periods-based-on-times-assigned-to-boundary-conditions" class="nav-link" data-scroll-target="#create-stress-periods-based-on-times-assigned-to-boundary-conditions">4. Create stress periods based on times assigned to boundary conditions</a></li>
+  <li><a href="#regridding-modflow-6-models-to-different-grids" id="toc-regridding-modflow-6-models-to-different-grids" class="nav-link" data-scroll-target="#regridding-modflow-6-models-to-different-grids">5. Regridding MODFLOW 6 models to different grids</a></li>
+  <li><a href="#clip-modflow-6-models-to-a-bounding-box" id="toc-clip-modflow-6-models-to-a-bounding-box" class="nav-link" data-scroll-target="#clip-modflow-6-models-to-a-bounding-box">6. Clip MODFLOW 6 models to a bounding box</a></li>
+  <li><a href="#performant-writing-of-modflow-6-models" id="toc-performant-writing-of-modflow-6-models" class="nav-link" data-scroll-target="#performant-writing-of-modflow-6-models">7. Performant writing of MODFLOW 6 models</a></li>
+  <li><a href="#import-your-imod5-models" id="toc-import-your-imod5-models" class="nav-link" data-scroll-target="#import-your-imod5-models">8. Import your iMOD5 models</a></li>
+  </ul></li>
+  <li><a href="#why-not-imod" id="toc-why-not-imod" class="nav-link" data-scroll-target="#why-not-imod">Why not <code>imod</code>?</a>
+  <ul class="collapse">
+  <li><a href="#you-want-to-make-a-small-synthetic-model" id="toc-you-want-to-make-a-small-synthetic-model" class="nav-link" data-scroll-target="#you-want-to-make-a-small-synthetic-model">1. You want to make a small, synthetic model</a></li>
+  <li><a href="#not-all-modflow-6-features-are-supported" id="toc-not-all-modflow-6-features-are-supported" class="nav-link" data-scroll-target="#not-all-modflow-6-features-are-supported">2. Not all MODFLOW 6 features are supported</a></li>
+  </ul></li>
+  <li><a href="#additional-links" id="toc-additional-links" class="nav-link" data-scroll-target="#additional-links">Additional links</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -231,18 +281,170 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The iMOD Python package is designed to help you in your MODFLOW groundwater modeling efforts. It makes it easy to go from your raw data to a fully defined MODFLOW model, with the aim to make this process reproducible. Whether you want to build a simple 2D conceptual model, or a complex 3D regional model with millions of cells, iMOD Python scales automatically by making use of <a href="https://dask.org/">dask</a>.</p>
-<p>By building on top of popular Python packages like <a href="http://xarray.pydata.org/">xarray</a>, <a href="http://pandas.pydata.org/">pandas</a>, <a href="https://rasterio.readthedocs.io/en/latest/">rasterio</a> and <a href="http://geopandas.org/">geopandas</a>, a lot of functionality comes for free.</p>
-<p>Currently we support the creation of the following MODFLOW-based models:</p>
+<p>The <code>imod</code> Python package is an open source project to make working with MODFLOW groundwater models in Python easier. It builds on top of popular packages such as <a href="http://xarray.pydata.org/">xarray</a>, <a href="http://pandas.pydata.org/">pandas</a>, <a href="http://geopandas.org/">geopandas</a>, <a href="https://dask.org/">dask</a>, and <a href="https://rasterio.readthedocs.io/en/latest/">rasterio</a> to provide a versatile toolset for working with large groundwater modeling datasets. Some of its core functionalities are:</p>
 <ul>
-<li><a href="https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model">USGS MODFLOW 6</a>, currently only the Groundwater Flow packages</li>
-<li><a href="https://oss.deltares.nl/web/imod">iMODFLOW</a></li>
+<li>Preparing and modifying data from a variety of GIS, scientific, and MODFLOW file formats;</li>
+<li>Regridding, clipping, masking, and splitting MODFLOW 6 models;</li>
+<li>Fast writing of data to MODFLOW-based models;</li>
+<li>Selecting and evaluating, e.g.&nbsp;for time series comparison or water budgets;</li>
+<li>Visualizing cross sections, time series, or 3D animations.</li>
+</ul>
+<p>We currently support the following MODFLOW-based kernels:</p>
+<ul>
+<li><a href="https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model">USGS MODFLOW 6</a>, structured (DIS) and discretization by vertices (DISV) grids only. Not all advanced stress packages are supported (only LAK and UZF)</li>
 <li><a href="https://oss.deltares.nl/web/imod">iMOD-WQ</a>, which integrates SEAWAT (density-dependent groundwater flow) and MT3DMS (multi-species reactive transport calculations)</li>
 </ul>
-<p>Documentation: <a href="https://deltares.github.io/imod-python/" class="uri">https://deltares.github.io/imod-python/</a> This documentation includes a section "How do I" which can be used for common data conversions in imod-python or xarray. This section will be regular updated based on the different questions of users.</p>
+<p>Development currently focuses on supporting more MODFLOW 6 functionalities. iMOD-WQ has been sunset and will no longer be developed.</p>
+<section id="why-imod" class="level1">
+<h1>Why <code>imod</code>?</h1>
+<section id="easily-create-grid-based-model-packages" class="level2">
+<h2 class="anchored" data-anchor-id="easily-create-grid-based-model-packages">1. Easily create grid-based model packages</h2>
+<p>Seamlessly integrate your GIS rasters or meshes with MODFLOW 6, by using <a href="http://xarray.pydata.org/">xarray</a> and <a href="https://deltares.github.io/xugrid/">xugrid</a> arrays, for structured and unstructured grids, respectively, to create grid-based model packages.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> imod</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Open Geotiff with elevation data as xarray DataArray</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>elevation <span class="op">=</span> imod.rasterio.<span class="bu">open</span>(<span class="st">"elevation.tif"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create idomain grid</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>layer_template <span class="op">=</span> xr.DataArray([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], dims<span class="op">=</span>(<span class="st">'layer'</span>,), coords<span class="op">=</span>{<span class="st">'layer'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]})</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>idomain <span class="op">=</span> layer_template <span class="op">*</span> xr.ones_like(elevation).astype(<span class="bu">int</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute bottom elevations of model layers</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>layer_thickness <span class="op">=</span> xr.DataArray([<span class="fl">10.0</span>, <span class="fl">20.0</span>, <span class="fl">10.0</span>], dims<span class="op">=</span>(<span class="st">'layer'</span>,), coords<span class="op">=</span>{<span class="st">'layer'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]})</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>bottom <span class="op">=</span> elevation <span class="op">-</span> layer_thickness.cumsum(dim<span class="op">=</span><span class="st">'layer'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Create MODFLOW 6 DIS package</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>dis_pkg <span class="op">=</span> imod.mf6.StructuredDiscretization(</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    idomain<span class="op">=</span>idomain, top<span class="op">=</span>elevation, bottom<span class="op">=</span>bottom.transpose(<span class="st">"layer"</span>, <span class="st">"y"</span>, <span class="st">"x"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="assign-wells-based-on-data-at-hand-instead-of-the-model-grid" class="level2">
+<h2 class="anchored" data-anchor-id="assign-wells-based-on-data-at-hand-instead-of-the-model-grid">2. Assign wells based on data at hand, instead of the model grid</h2>
+<p>Assign wells based on x, y coordinates and filter screen depths, instead of layer, row and column:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify well locations</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> [<span class="fl">150_200.0</span>, <span class="fl">160_800.0</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> [<span class="fl">450_300.0</span>, <span class="fl">460_200.0</span>]</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify well screen depths</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>screen_top <span class="op">=</span> [<span class="fl">0.0</span>, <span class="fl">0.0</span>]</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>screen_bottom <span class="op">=</span> [<span class="op">-</span><span class="fl">4.0</span>, <span class="op">-</span><span class="fl">10.0</span>]</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify flow rate, which changes over time.</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>weltimes <span class="op">=</span> pd.date_range(<span class="st">"2000-01-01"</span>, <span class="st">"2000-01-03"</span>, freq<span class="op">=</span><span class="st">"2D"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>well_rates_period1 <span class="op">=</span> [<span class="fl">0.5</span>, <span class="fl">1.0</span>]</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>well_rates_period2 <span class="op">=</span>  [<span class="fl">2.5</span>, <span class="fl">3.0</span>]</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>rate <span class="op">=</span> xr.DataArray([well_rates_period1, well_rates_period2], coords<span class="op">=</span>{<span class="st">"time"</span>: weltimes}, dims<span class="op">=</span>(<span class="st">"time"</span>,<span class="st">"index"</span>))</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Now construct the Well package</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>wel_pkg <span class="op">=</span> imod.mf6.Well(x<span class="op">=</span>x, y<span class="op">=</span>y, rate<span class="op">=</span>rate, screen_top<span class="op">=</span>screen_top, screen_bottom<span class="op">=</span>screen_bottom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>iMOD Python will take care of the rest and assign the wells to the correct model layers upon writing the model. It will furthermore distribute well rates based on transmissivities. To verify how wells will be assigned to MODFLOW 6 cells before writing the entire simulation, you can use the following command:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Wells have been distributed across two model layers based on screen depths.</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>wel_mf6_pkg <span class="op">=</span> wel_pkg.to_mf6(idomain, top, bottom, k<span class="op">=</span><span class="fl">1.0</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wel_mf6_pkg[<span class="st">"cellid"</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Well rates have been distributed based on screen overlap</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(wel_mf6_pkg[<span class="st">"rate"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="utilities-to-assign-2d-river-grids-to-3d-model-layers" class="level2">
+<h2 class="anchored" data-anchor-id="utilities-to-assign-2d-river-grids-to-3d-model-layers">3. Utilities to assign 2D river grids to 3D model layers</h2>
+<p>A common problem in groundwater modeling is to assign 2D river or drain grids to 3D model layers. iMOD Python has utilities to do this, supporting all kinds of different methods. Furthermore, it can help you distribute the conductance across layers.</p>
+<p><a href="https://deltares.github.io/imod-python/user-guide/09-topsystem.html">See examples here</a></p>
+</section>
+<section id="create-stress-periods-based-on-times-assigned-to-boundary-conditions" class="level2">
+<h2 class="anchored" data-anchor-id="create-stress-periods-based-on-times-assigned-to-boundary-conditions">4. Create stress periods based on times assigned to boundary conditions</h2>
+<p>MODFLOW 6 requires that all stress periods are defined in the time discretization package. However, usually boundary conditions are defined at inconsistent times. iMOD Python can help you to create a time discretization package that is consistent, based on all the unique times assigned to the boundary conditions.</p>
+<p><a href="https://deltares.github.io/imod-python/user-guide/07-time-discretization.html">See further explanation here</a></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First add the packages to the simulation. </span><span class="al">NOTE</span><span class="co">: To get a functional model,</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># more packages are needed than these two.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>simulation <span class="op">=</span> imod.mf6.Modflow6Simulation(<span class="st">"example"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"gwf"</span>] <span class="op">=</span> imod.mf6.GroundwaterFlowModel()</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"gwf"</span>][<span class="st">"dis"</span>] <span class="op">=</span> dis_pkg</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>simulation[<span class="st">"gwf"</span>][<span class="st">"wel"</span>] <span class="op">=</span> wel_pkg</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a time discretization based on the times assigned to the packages.</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify the end time of the simulation as one of the additional_times</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>simulation.create_time_discretization(additional_times<span class="op">=</span>[<span class="st">"2000-01-07"</span>])</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Note that timesteps in well package are also inserted in the time</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># discretization</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(simulation[<span class="st">"time_discretization"</span>].dataset)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="regridding-modflow-6-models-to-different-grids" class="level2">
+<h2 class="anchored" data-anchor-id="regridding-modflow-6-models-to-different-grids">5. Regridding MODFLOW 6 models to different grids</h2>
+<p>Regrid MODFLOW 6 models to different grids, even from structured to unstructured grids. iMOD Python takes care of properly scaling the input parameters. You can also configure scaling methods yourself for each input parameter, for example when you want to upscale drainage elevations with the minimum instead of the average.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sim_regridded <span class="op">=</span> simulation.regrid_like(new_unstructured_grid)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that discretization has converted to VerticesDiscretization (DISV)</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sim_regridded[<span class="st">"gwf"</span>][<span class="st">"dis"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://deltares.github.io/imod-python/user-guide/08-regridding.html">See further explanation here</a></p>
+</section>
+<section id="clip-modflow-6-models-to-a-bounding-box" class="level2">
+<h2 class="anchored" data-anchor-id="clip-modflow-6-models-to-a-bounding-box">6. Clip MODFLOW 6 models to a bounding box</h2>
+<p>To reduce the size of your model, you can clip it to a bounding box. This is useful for example when you want to create a smaller model for testing purposes.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sim_clipped <span class="op">=</span> simulation.clip_box(x_min<span class="op">=</span><span class="dv">125_000</span>, x_max<span class="op">=</span><span class="dv">175_000</span>, y_min<span class="op">=</span><span class="dv">425_000</span>, y_max<span class="op">=</span><span class="dv">475_000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can even provide states for the model, which will be set on the model boundaries of the clipped model.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a grid of zeros, which will be used to</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># set as heads at the boundaries of clipped parts.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>head_for_boundary <span class="op">=</span> xr.zeros_like(idomain, dtype<span class="op">=</span><span class="bu">float</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>states_for_boundary <span class="op">=</span> {<span class="st">"gwf"</span>: head_for_boundary}</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>sim_clipped <span class="op">=</span> simulation.clip_box(</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    x_min<span class="op">=</span><span class="dv">125_000</span>, x_max<span class="op">=</span><span class="dv">175_000</span>, y_min<span class="op">=</span><span class="dv">425_000</span>, y_max<span class="op">=</span><span class="dv">475_000</span>, states_for_boundary<span class="op">=</span>states_for_boundary</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Notice that a Constant Head (CHD) package has been created for the clipped</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># model.</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sim_clipped[<span class="st">"gwf"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="performant-writing-of-modflow-6-models" class="level2">
+<h2 class="anchored" data-anchor-id="performant-writing-of-modflow-6-models">7. Performant writing of MODFLOW 6 models</h2>
+<p>iMOD Python efficiently writes MODFLOW 6 models to disk, especially large models. Tests we have conducted for the Dutch National Groundwater Model (LHM) show that iMOD Python can write a model with 21.84 million cells 5 to 60 times faster (for respectively 1 and 365 stress periods) than the alternative <a href="https://flopy.readthedocs.io/en/latest/">Flopy</a> package. Furthermore <code>imod</code> can even write models that are larger than the available memory, using <a href="https://dask.org/">dask</a> arrays.</p>
+<p><em>NOTE:</em> iMOD developers work alongside the Flopy development team and contribute to both projects.</p>
+</section>
+<section id="import-your-imod5-models" class="level2">
+<h2 class="anchored" data-anchor-id="import-your-imod5-models">8. Import your iMOD5 models</h2>
+<p>Models made with <a href="https://oss.deltares.nl/web/imod">iMOD5</a> can be imported into iMOD Python, provided that they are defined in a projectfile.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Open projectfile data</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>imod5_data, period_data <span class="op">=</span> imod.formats.prj.open_projectfile_data(<span class="st">"path/to/projectfile.prj"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Specify times for the simulation, this will be used to resample iMOD5 wells</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># to and to set the time discretization</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>times <span class="op">=</span> [np.datetime64(<span class="st">"2000-01-01"</span>), np.datetime64(<span class="st">"2000-01-02"</span>), np.datetime64(<span class="st">"2000-01-03"</span>)]</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a simulation object</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>simulation <span class="op">=</span> imod.mf6.Modflow6Simulation.from_imod5_data(imod5_data, period_data, times)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="https://deltares.github.io/imod-python/faq/imod5_backwards_compatibility.html">See this page for a full list of supported iMO5 functionalities.</a></p>
+</section>
+</section>
+<section id="why-not-imod" class="level1">
+<h1>Why not <code>imod</code>?</h1>
+<section id="you-want-to-make-a-small-synthetic-model" class="level2">
+<h2 class="anchored" data-anchor-id="you-want-to-make-a-small-synthetic-model">1. You want to make a small, synthetic model</h2>
+<p>If you are not interested in deriving models from spatial data, but just want to allocate boundary conditions based on layer, row, column numbers, or create a model of a 2D cross-section: You are better off using <a href="https://flopy.readthedocs.io/en/latest/">Flopy</a>. If you want to complexify this model with a lot of stress periods and run into slow writing speeds, consider using <code>imod</code> for performance.</p>
+</section>
+<section id="not-all-modflow-6-features-are-supported" class="level2">
+<h2 class="anchored" data-anchor-id="not-all-modflow-6-features-are-supported">2. Not all MODFLOW 6 features are supported</h2>
+<p>Currently, we don't support the following MODFLOW 6 features:</p>
+<ul>
+<li>timeseries files</li>
+<li>DISU package</li>
+<li>Groundwater Energy Model (GWE)</li>
+<li>Streamflow routing (SFR) package (<a href="https://github.com/Deltares/imod-python/pull/1497">in development</a>)</li>
+<li>Ghost Node Correction (GNC) package</li>
+<li>Multi-aquifer well (MAW) package</li>
+<li>Water mover (MVR) package</li>
+<li>Particle tracking (PRT)</li>
+</ul>
+<p>Most of these features can be implemented with some effort, but we have not prioritized them yet. The exceptions are the DISU package and the timeseries files, which would require significant work to our backend. As a result, we will likely not support these two features in the foreseeable future. If you need any of the other features, feel free to open an issue on our GitHub page.</p>
+</section>
+</section>
+<section id="additional-links" class="level1">
+<h1>Additional links</h1>
+<p>Documentation: <a href="https://deltares.github.io/imod-python" class="uri">https://deltares.github.io/imod-python</a></p>
 <p>Source code: <a href="https://github.com/Deltares/imod-python" class="uri">https://github.com/Deltares/imod-python</a></p>
+<p>Issues: <a href="https://github.com/Deltares/imod-python/issues" class="uri">https://github.com/Deltares/imod-python/issues</a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
