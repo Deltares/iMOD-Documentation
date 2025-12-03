@@ -128,7 +128,7 @@ flowchart TB
   end
   subgraph 2024 
   L
-  YZ{{iMOD Python 1.0 Beta version released. iMOD Coupler supports coupling to Ribasim}}
+  YZ{{iMOD Python 1.0 Beta version released. <br/> iMOD Coupler supports coupling to Ribasim}}
   end
   L --> M{iMOD Suite}
   subgraph 2025
