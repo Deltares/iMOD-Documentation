@@ -10,6 +10,7 @@ listing:
         - python.qmd
         - coupler.qmd
         - tutorial.qmd
+        - roadmap.qmd
         - practical.qmd
     sort: "index"
 ---

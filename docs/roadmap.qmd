@@ -1,0 +1,31 @@
+---
+title: "{{< fa regular fa-map >}} Roadmap"
+image: figures/logo/iMOD.svg
+description: Our plans for the iMOD Suite.
+index: "7"
+---
+
+# Planned
+
+The following things are planned for 2026.
+
+|   Component  | Description |
+|--------------|-------------|
+| iMOD Coupler | Add parallel support |
+| iMOD Coupler | Unconfined coupling MODFLOW6 - Unsaturated Zone |
+| iMOD Suite   | Finish successor of MetaSWAP for unsaturated zone |
+| iMOD Suite   | Support Dutch community (NHI) transitioning from iMOD5 to iMOD Suite |
+
+# Wishlist
+
+These things are not planned yet, but are on our radar. These will be
+prioritized in consultation with iMOD Community (& MODFLOW development team for
+things in MODFLOW 6), and based on available funding.
+
+|   Component  | Description |
+|--------------|-------------|
+| iMOD Python  | Readers and writers for iMOD5's ISG format |
+| MODFLOW 6    | Output control for output per layer |
+| MODFLOW 6    | XT3D by connection |
+| iMOD Python  | Interface similar to iMOD Batch |
+| iMOD Python  | Export data to VTK |

@@ -24,6 +24,8 @@ website:
         href: news.qmd
       - text: "Tutorials"
         href: tutorial.qmd
+      - text: "Roadmap"
+        href: roadmap.qmd
       - text: "About"
         href: about.qmd
       - text: "Practical tips"
