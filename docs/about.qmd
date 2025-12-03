@@ -169,6 +169,14 @@ page.
 
 ![](news_posts/images/2025-03-27.jpg)
 
+2024-11: Deltares Campus, Delft
+
+![](figures/about/training-delft-2024.jpg)
+
+2023-11: Deltares Campus, Delft
+
+![](figures/about/training-delft-2023.jpg)
+
 2023-02: National University of Singapore, Singapore
 
 ![](figures/about/training-singapore.jpg)
