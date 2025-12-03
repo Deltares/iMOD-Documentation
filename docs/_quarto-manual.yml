@@ -11,7 +11,6 @@ book:
         - viewer_install.qmd
         - viewer_install_msi.qmd
         - qgis_user_manual.qmd
-        - 3dviewer_user_manual.qmd
         - viewer_known_issues.qmd
     - part: python.qmd
       chapters:
@@ -35,7 +34,6 @@ book:
     - part: tutorial.qmd
       chapters:
         - tutorial_Abbeyfeale.qmd
-        - tutorial_Dommel.qmd
         - tutorial_wq.qmd
         - tutorial_Hondsrug.ipynb
         - tutorial_Netherlands_mesh.ipynb

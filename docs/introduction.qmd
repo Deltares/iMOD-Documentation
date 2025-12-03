@@ -32,13 +32,9 @@ the latest developments in the data science ecosystem, by utilizing:
 The iMOD Suite offers different modules which support 
 modelling with MODFLOW 6 (including unstructured meshes):
 
-1. **iMOD Viewer**: The iMOD Viewer consist of a standalone 3D viewer and a
-QGIS plugin. The [iMOD QGIS Plugin](qgis_user_manual.qmd) allows visualisation
-of model input and output with tools for cross-sections, timeseries and link to
-the 3D viewer. It supports structured NetCDF, UGRID and IPF files. And the
-[iMOD 3D Viewer](3dviewer_user_manual.qmd) for interactive 3D visualisation of
-unstructured input and output. Supports UGRID file format and IPF borelog
-files.
+1. **iMOD QGIS plugin**: The [iMOD QGIS Plugin](qgis_user_manual.qmd) allows visualisation
+of model input and output with tools for cross-sections, timeseries. It supports
+structured NetCDF, UGRID and IPF files.
 
 1. **iMOD Python**: A Python package to support MODFLOW groundwater
 modeling. It makes it easy to go from your raw data to a fully defined MODFLOW
@@ -54,7 +50,7 @@ model.](https://gitlab.com/deltares/imod/nhi-fresh-salt)
 ](figures/index/NHI-zz_cross-section.png)
 
 ![The chlorine concentrations computed by the NHI-fresh-salt model for the
-province of Zeeland, plotted in the new iMOD 3D viewer. The top layer is made
+province of Zeeland, plotted in a prototype iMOD 3D viewer. The top layer is made
 partly transparent, creating the pretty mist effect in the creek ridges.
 ](figures/index/NHI-zz_3d_viewer.png)
 
@@ -82,7 +78,7 @@ components and supported MODFLOW6 packages.
 | scripted 2D plot           | iMOD Python                                       | iMOD Batch                                        |
 | interactive 2D plot        | iMOD QGIS plugin (& QGIS)                         | iMOD GUI                                          |
 | scripted 3D plot           | iMOD Python                                       |                                                   |
-| interactive 3D plot        | iMOD 3D Viewer                                    | iMOD GUI                                          |
+| interactive 3D plot        | iMOD 3D Viewer (discontinued)                     | iMOD GUI                                          |
 
 : Comparison between iMOD Suite & iMOD 5 {#tbl-iMOD-comparison}
 

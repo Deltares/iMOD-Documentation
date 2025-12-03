@@ -1,5 +1,9 @@
 ---
 title: About
+format:
+  html:
+    mermaid:
+      theme: neutral
 bibliography: references/scientific_papers.bib
 nocite: |
   @*
@@ -20,7 +24,6 @@ individual components. You can raise issues, or suggest changes, here.
 -   [iMOD Documentation
     Github](https://github.com/Deltares/iMOD-Documentation)
 -   [iMOD QGIS plugin Github](https://github.com/Deltares/imod-qgis)
--   [iMOD 3D Viewer Github](https://github.com/Deltares/imod-gui)
 -   [iMOD Python Github](https://github.com/Deltares/imod-python)
 
 
@@ -53,9 +56,10 @@ For example, Python has a larger ecosystem, allowing users to easily
 incorporate all kinds of packages into their workflows.
 
 Therefore, in 2021, the **iMOD Suite** was released. This suite consists of a
-Python package, a QGIS plugin, and a 3D viewer. It therefore supports
-reproducible workflows for unstructured groundwater models and relies more on
-standard filetypes such as NetCDF, UGRID, and shapefiles.
+Python package, a QGIS plugin, and a 3D viewer. (The latter which was
+discontinued in 2025, as the team's resources were too scarce to maintain it.)
+It therefore supports reproducible workflows for unstructured groundwater models
+and relies more on standard filetypes such as NetCDF, UGRID, and shapefiles.
 
 The classic iMOD GUI and its batch functionality is consolidated under the name
 **iMOD 5**, and will be maintained for the coming years. During this transition
@@ -77,12 +81,12 @@ flowchart TB
   A --> B{iMOD 2.0}
   subgraph 2014
   B
-  Y{{Fortran code \n available as open source}}
+  Y{{Fortran code <br/> available as open source}}
   end
   B --> C{iMOD 3.0}
   subgraph 2015
   C
-  Z{{Executables freely \n available}}
+  Z{{Executables freely <br/> available}}
   end
   C --> D{iMOD 4.0}
   subgraph 2017
@@ -92,18 +96,18 @@ flowchart TB
   D --> E{iMOD 5.0}
   subgraph 2019
   E
-  XY{{iMOD Water Quality \n and MODFLOW6}}
+  XY{{iMOD Water Quality <br/> and MODFLOW6}}
   end
   E --> F{iMOD 5.2}
   subgraph 2020
   F
-  XZ{{BMI coupling \n Modflow6-MetaSWAP}}
+  XZ{{BMI coupling <br/> Modflow6-MetaSWAP}}
   end
   F --> G{iMOD Suite}
   F --> H{iMOD 5.3}
   subgraph 2021
   G
-  YX{{Tooling in Python, QGIS \n C++. Unstructured grids}}
+  YX{{Tooling in Python, QGIS <br/> C++. Unstructured grids}}
   end
   subgraph 2021 
   H
@@ -115,8 +119,23 @@ flowchart TB
   end
   subgraph 2023 
   J
-  YY{{Model input validation, \n CPT plotting in QGIS, \n Backwards \n compatibility iMOD 5}}
+  YY{{Model input validation, <br/> CPT plotting in QGIS, <br/> Backwards <br/> compatibility iMOD 5}}
   end
+  I --> K{iMOD 5.6}
+  J --> L{iMOD Suite}
+  subgraph 2024
+  K
+  end
+  subgraph 2024 
+  L
+  YZ{{iMOD Python 1.0 Beta version released. iMOD Coupler supports coupling to Ribasim}}
+  end
+  L --> M{iMOD Suite}
+  subgraph 2025
+  M
+  ZX{{iMOD Python 1.0.0 stable release.}}
+  end
+
 ```
 
 ## Trainings
