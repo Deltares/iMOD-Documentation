@@ -128,7 +128,7 @@ flowchart TB
   end
   subgraph 2024 
   L
-  YZ{{iMOD Python 1.0 Beta version released. iMOD Coupler supports coupling to Ribasim}}
+  YZ{{iMOD Python 1.0 Beta version released. <br/> iMOD Coupler supports coupling to Ribasim}}
   end
   L --> M{iMOD Suite}
   subgraph 2025
@@ -149,16 +149,6 @@ announced on the [Delft Software Days
 website](https://softwaredays.deltares.nl/) and via the iMOD mailing list, so
 keep an eye out on those.
 
-In 2021, the Delft Software Days were not held in person but recorded as
-webinars, which can be viewed online. Note that due to privacy settings, you
-might need follow the link below the video to view it on the Deltares Vimeo
-page.
-
-```{=html}
-<iframe src="https://player.vimeo.com/video/651111537?h=53d277cee4" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/651111537">iMOD User Day 2021</a> from <a href="https://vimeo.com/deltares">Deltares</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-```
-
 ### Past trainings iMOD Suite
 
 2025-11: Deltares Campus, Delft
@@ -168,6 +158,14 @@ page.
 2025-03: Hamburg Wasser, Hamburg
 
 ![](news_posts/images/2025-03-27.jpg)
+
+2024-11: Deltares Campus, Delft
+
+![](figures/about/training-delft-2024.jpg)
+
+2023-11: Deltares Campus, Delft
+
+![](figures/about/training-delft-2023.jpg)
 
 2023-02: National University of Singapore, Singapore
 
