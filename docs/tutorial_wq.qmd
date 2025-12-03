@@ -1,7 +1,7 @@
 ---
 title: Conceptual fresh-salt model
 image: figures/tutorial/wq/cross-section.png
-description: 'Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer'
+description: 'Components: iMOD Python, iMOD WQ, QGIS plugin'
 ---
 
 ## Description
