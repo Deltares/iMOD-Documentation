@@ -65,7 +65,6 @@ website:
       contents:
         - href: python.qmd
         - href: python_install.qmd
-        - href: deltaforge_install.qmd
         - href: python_getting_started.qmd
 
     - id: coupler
