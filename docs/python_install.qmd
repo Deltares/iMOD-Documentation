@@ -2,13 +2,5 @@
 title: Install
 ---
 
-The recommended way of installing iMOD Python is by running the Deltaforge
-installer. [Read the Deltaforge installation instructions here.](deltaforge_install.qmd)
-
-For other ways to install iMOD Python, [see its documentation.](
+To install iMOD Python, [see its installation instructions.](
 https://deltares.github.io/imod-python/installation.html)
-
-iMOD Python has no point release schedule, but instead has a \"rolling
-release\", where the package is frequently updated. For the quickest access to
-the latest changes, do a [development
-install.](https://deltares.github.io/imod-python/installation.html#installing-the-latest-development-version)
