@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer">
+<meta name="description" content="Components: iMOD Python, iMOD WQ, QGIS plugin">
 
 <title>Conceptual fresh-salt model – iMOD Suite</title>
 <style>
@@ -66,7 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./tutorial_Hondsrug.html" rel="next">
-<link href="./tutorial_Dommel.html" rel="prev">
+<link href="./tutorial_Abbeyfeale.html" rel="prev">
 <link href="./_static/iMOD-doc-logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="_static/styles.css">
 <meta property="og:title" content="Conceptual fresh-salt model – iMOD Suite">
-<meta property="og:description" content="Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer">
+<meta property="og:description" content="Components: iMOD Python, iMOD WQ, QGIS plugin">
 <meta property="og:image" content="figures/tutorial/wq/cross-section.png">
 <meta property="og:site_name" content="iMOD Suite">
 </head>
@@ -146,7 +146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
         <li>
     <a class="dropdown-item" href="./viewer.html">
- <span class="dropdown-text">iMOD Viewer 🧭</span></a>
+ <span class="dropdown-text">iMOD QGIS plugin 🧭</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -221,12 +221,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tutorial_Dommel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Dommel</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./tutorial_wq.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Conceptual fresh-salt model</span></a>
   </div>
@@ -258,7 +252,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#running-the-model" id="toc-running-the-model" class="nav-link" data-scroll-target="#running-the-model">Running the model</a></li>
   <li><a href="#convert-output-data" id="toc-convert-output-data" class="nav-link" data-scroll-target="#convert-output-data">Convert output data</a></li>
   <li><a href="#viewing-the-results-in-qgis" id="toc-viewing-the-results-in-qgis" class="nav-link" data-scroll-target="#viewing-the-results-in-qgis">Viewing the results in QGIS</a></li>
-  <li><a href="#viewing-the-results-in-the-imod-3d-viewer" id="toc-viewing-the-results-in-the-imod-3d-viewer" class="nav-link" data-scroll-target="#viewing-the-results-in-the-imod-3d-viewer">Viewing the results in the iMOD 3D Viewer</a></li>
   <li><a href="#concluding" id="toc-concluding" class="nav-link" data-scroll-target="#concluding">Concluding</a></li>
   </ul>
 </nav>
@@ -273,7 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div>
   <div class="description">
-    Components: iMOD Python, iMOD WQ, QGIS plugin, 3D Viewer
+    Components: iMOD Python, iMOD WQ, QGIS plugin
   </div>
 </div>
 
@@ -299,7 +292,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Running the model in a terminal with iMOD-WQ</li>
 <li>Use iMOD-python to post-process the model output (IDF) to a data format supported by QGIS (UGRID)</li>
 <li>Viewing a cross-section in iMOD QGIS plugin</li>
-<li>Use the plugin to view the results in the iMOD 3D viewer</li>
 </ol>
 </section>
 <section id="creating-a-model" class="level2">
@@ -505,23 +497,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 </section>
-<section id="viewing-the-results-in-the-imod-3d-viewer" class="level2">
-<h2 class="anchored" data-anchor-id="viewing-the-results-in-the-imod-3d-viewer">Viewing the results in the iMOD 3D Viewer</h2>
-<p>As a final step we will look at the results in the iMOD 3D Viewer. Click the 3D viewer symbol <img src="figures/qgis/icons/3d-viewer.png" width="30" height="30" alt="3d-viewer"> in QGIS, which will open up the 3D viewer widget of the iMOD plugin.</p>
-<p>First, click the <em>Draw Extent</em> button to draw an extent to be plotted. This can be very useful for large datasets, to only look at a smaller zone of the data.</p>
-<p>Second, click <em>Start iMOD 3D viewer</em> to start the iMOD 3D viewer. Third, click <em>Load mesh data</em> to load the mesh you selected in the QGIS widget to be opened in the 3D viewer.</p>
-<p>Fourth, to plot the data, under the <em>Imported files</em>, expand the data selection tree, and under <em>Layered datasets</em>, selecting <em>conc</em>.</p>
-<p>Finally, you can migrate the colormap you used in QGIS by clicking <em>Load legend</em>.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/tutorial/wq/3d_viewer.png" class="img-fluid figure-img"></p>
-<figcaption>If you followed the instructions, you should see this.</figcaption>
-</figure>
-</div>
-</section>
 <section id="concluding" class="level2">
 <h2 class="anchored" data-anchor-id="concluding">Concluding</h2>
-<p>In short, we wrote model input with iMOD-python, ran a model with iMOD-WQ, converted its output to UGRID with iMOD-python, and viewed the results in QGIS and the iMOD 3D viewer.</p>
+<p>In short, we wrote model input with iMOD-python, ran a model with iMOD-WQ, converted its output to UGRID with iMOD-python, and viewed the results in QGIS.</p>
 
 
 </section>
@@ -949,8 +927,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tutorial_Dommel.html" class="pagination-link" aria-label="Dommel">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Dommel</span>
+      <a href="./tutorial_Abbeyfeale.html" class="pagination-link" aria-label="Abbeyfeale">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Abbeyfeale</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

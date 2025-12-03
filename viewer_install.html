@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Install iMOD Viewer – iMOD Suite</title>
+<title>Install iMOD QGIS Plugin – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./viewer_install_msi.html" rel="next">
+<link href="./viewer_install_msi.qmd" rel="next">
 <link href="./viewer.html" rel="prev">
 <link href="./_static/iMOD-doc-logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="_static/styles.css">
-<meta property="og:title" content="Install iMOD Viewer – iMOD Suite">
+<meta property="og:title" content="Install iMOD QGIS Plugin – iMOD Suite">
 <meta property="og:description" content="">
 <meta property="og:site_name" content="iMOD Suite">
 </head>
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
         <li>
     <a class="dropdown-item" href="./viewer.html">
- <span class="dropdown-text">iMOD Viewer 🧭</span></a>
+ <span class="dropdown-text">iMOD QGIS plugin 🧭</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -156,7 +156,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./viewer_install.html">Install iMOD Viewer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./viewer_install.html">Install iMOD QGIS Plugin</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -174,31 +174,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"> iMOD Viewer</span></a>
+ <span class="menu-text"> iMOD QGIS plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer_install.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Install iMOD Viewer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
+ <span class="menu-text">Install iMOD QGIS Plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">QGIS Plugin User Manual</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3D Viewer User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -225,11 +213,10 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description"><span class="header-section-number">1</span> Description</a></li>
   <li><a href="#sec-install_QGIS" id="toc-sec-install_QGIS" class="nav-link" data-scroll-target="#sec-install_QGIS"><span class="header-section-number">2</span> Installing QGIS</a></li>
-  <li><a href="#installing-the-imod-viewer" id="toc-installing-the-imod-viewer" class="nav-link" data-scroll-target="#installing-the-imod-viewer"><span class="header-section-number">3</span> Installing the iMOD Viewer</a>
+  <li><a href="#installing-the-imod-qgis-plugin" id="toc-installing-the-imod-qgis-plugin" class="nav-link" data-scroll-target="#installing-the-imod-qgis-plugin"><span class="header-section-number">3</span> Installing the iMOD QGIS plugin</a>
   <ul class="collapse">
-  <li><a href="#sec-Deltares_setup" id="toc-sec-Deltares_setup" class="nav-link" data-scroll-target="#sec-Deltares_setup"><span class="header-section-number">3.1</span> (Option 1) Install with the Deltares setup</a></li>
-  <li><a href="#sec-plugin_repository" id="toc-sec-plugin_repository" class="nav-link" data-scroll-target="#sec-plugin_repository"><span class="header-section-number">3.2</span> (Option 2) Installing from the QGIS plugin repository</a></li>
-  <li><a href="#sec-manual_install" id="toc-sec-manual_install" class="nav-link" data-scroll-target="#sec-manual_install"><span class="header-section-number">3.3</span> (Option 3) Manually download and copy the iMOD QGIS plugin</a></li>
+  <li><a href="#sec-plugin_repository" id="toc-sec-plugin_repository" class="nav-link" data-scroll-target="#sec-plugin_repository"><span class="header-section-number">3.1</span> (Option 1) Installing from the QGIS plugin repository (Recommended)</a></li>
+  <li><a href="#sec-manual_install" id="toc-sec-manual_install" class="nav-link" data-scroll-target="#sec-manual_install"><span class="header-section-number">3.2</span> (Option 2) Manually download and copy the iMOD QGIS plugin</a></li>
   </ul></li>
   <li><a href="#sec-system-wide" id="toc-sec-system-wide" class="nav-link" data-scroll-target="#sec-system-wide"><span class="header-section-number">4</span> Advanced: Installing the QGIS plugin system-wide</a>
   <ul class="collapse">
@@ -244,7 +231,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Install iMOD Viewer</h1>
+<h1 class="title">Install iMOD QGIS Plugin</h1>
 </div>
 
 
@@ -263,29 +250,22 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="description" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="description"><span class="header-section-number">1</span> Description</h2>
-<p>For the complete iMOD viewer (QGIS plugin and 3D viewer) can be installed using the Deltares installer. A working QGIS is needed before installing the iMOD viewer. It is also possible to install the QGIS plugin using the QGIS plugin repository. This installation is without the 3D viewer.</p>
-<p>The different ways to install the QGIS plugin are described in <a href="#sec-Deltares_setup" class="quarto-xref">Section&nbsp;3.1</a>, <a href="#sec-plugin_repository" class="quarto-xref">Section&nbsp;3.2</a>, and <a href="#sec-manual_install" class="quarto-xref">Section&nbsp;3.3</a>. Each of these, however, require the user to install QGIS. To install the QGIS plugin, we recommend running the iMOD Viewer installer (<a href="#sec-Deltares_setup" class="quarto-xref">Section&nbsp;3.1</a>), which will both install the iMOD 3D viewer, as well as the iMOD QGIS plugin.</p>
+<p>The different ways to install the QGIS plugin are described in <a href="#sec-plugin_repository" class="quarto-xref">Section&nbsp;3.1</a> and <a href="#sec-manual_install" class="quarto-xref">Section&nbsp;3.2</a>. Each of these, however, require the user to install QGIS.</p>
 </section>
 <section id="sec-install_QGIS" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sec-install_QGIS"><span class="header-section-number">2</span> Installing QGIS</h2>
 <p>You can download the standalone QGIS setup [on the QGIS website] (https://qgis.org/en/site/forusers/download.html). We recommend downloading a QGIS version &gt;= 3.28 here. After downloading the QGIS setup, run it.</p>
 <p>This installs a user installation of QGIS, which is sufficient in most cases. For a system wide installation, see <a href="#sec-system-wide" class="quarto-xref">Section&nbsp;4</a>.</p>
 </section>
-<section id="installing-the-imod-viewer" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="installing-the-imod-viewer"><span class="header-section-number">3</span> Installing the iMOD Viewer</h2>
-<p>The different options to install the iMOD Viewer are listed below. The iMOD Viewer consists of the iMOD QGIS plugin and iMOD 3D viewer.</p>
-<section id="sec-Deltares_setup" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="sec-Deltares_setup"><span class="header-section-number">3.1</span> (Option 1) Install with the Deltares setup</h3>
-<p>Run the .msi you can download <a href="https://download.deltares.nl/imod-suite/">on the Deltares download portal</a>.</p>
-<p>Follow the installation instructions for <a href="./viewer_install_msi.html">the viewer install</a>, and make sure to do a <em>Complete</em> install.</p>
-</section>
-<section id="sec-plugin_repository" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="sec-plugin_repository"><span class="header-section-number">3.2</span> (Option 2) Installing from the QGIS plugin repository</h3>
+<section id="installing-the-imod-qgis-plugin" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="installing-the-imod-qgis-plugin"><span class="header-section-number">3</span> Installing the iMOD QGIS plugin</h2>
+<p>The different options to install the iMOD QGIS plugin are listed below..</p>
+<section id="sec-plugin_repository" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sec-plugin_repository"><span class="header-section-number">3.1</span> (Option 1) Installing from the QGIS plugin repository (Recommended)</h3>
 <p>In QGIS, navigate to <em>Plugins &gt; Manage and Install Plugins &gt; All</em>. In the search bar, type: “<em>iMOD</em>”. Select the iMOD plugin, and click <em>“Install”</em>.</p>
-<p>This does not install the iMOD 3D Viewer; so for 3D viewing functionality, follow the instructions in <a href="#sec-Deltares_setup" class="quarto-xref">Section&nbsp;3.1</a>, but instead select a <em>Minimal</em> install.</p>
 </section>
-<section id="sec-manual_install" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="sec-manual_install"><span class="header-section-number">3.3</span> (Option 3) Manually download and copy the iMOD QGIS plugin</h3>
+<section id="sec-manual_install" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="sec-manual_install"><span class="header-section-number">3.2</span> (Option 2) Manually download and copy the iMOD QGIS plugin</h3>
 <p>Download the iMOD QGIS plugin code from the [Github page](https://github.com/Deltares/imod-qgis]</p>
 <p>Unpack the zip files, and copy the <code>imodqgis</code> folder to your QGIS plugin directory. This is probably located in your Appdata folder. In windows it is something such as: <code>c:\Users\%USER%\AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins</code></p>
 <p>If you cannot find the folder, follow [these instructions] (https://gis.stackexchange.com/a/274312&gt;).</p>
@@ -775,13 +755,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./viewer.html" class="pagination-link" aria-label="{{< fa solid binoculars >}} iMOD Viewer">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</span>
+      <a href="./viewer.html" class="pagination-link" aria-label="{{< fa solid compass >}} iMOD QGIS plugin">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><i class="fa-solid fa-compass" aria-label="compass"></i> iMOD QGIS plugin</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./viewer_install_msi.html" class="pagination-link" aria-label="Install iMOD Viewer with the Deltares setup">
-        <span class="nav-page-text">Install iMOD Viewer with the Deltares setup</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./viewer_install_msi.qmd" class="pagination-link" aria-label="">
+        <span class="nav-page-text"></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

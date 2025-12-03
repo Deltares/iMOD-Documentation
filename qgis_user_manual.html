@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./3dviewer_user_manual.html" rel="next">
-<link href="./viewer_install_msi.html" rel="prev">
+<link href="./viewer_known_issues.html" rel="next">
+<link href="./viewer_install_msi.qmd" rel="prev">
 <link href="./_static/iMOD-doc-logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
         <li>
     <a class="dropdown-item" href="./viewer.html">
- <span class="dropdown-text">iMOD Viewer 🧭</span></a>
+ <span class="dropdown-text">iMOD QGIS plugin 🧭</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -174,31 +174,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"> iMOD Viewer</span></a>
+ <span class="menu-text"> iMOD QGIS plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Viewer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
+ <span class="menu-text">Install iMOD QGIS Plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">QGIS Plugin User Manual</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3D Viewer User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,10 +216,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#functionality" id="toc-functionality" class="nav-link" data-scroll-target="#functionality">Functionality</a>
   <ul class="collapse">
   <li><a href="#ipf-reader-open-ipf" id="toc-ipf-reader-open-ipf" class="nav-link" data-scroll-target="#ipf-reader-open-ipf"><img src="figures/qgis/icons/ipf-reader.png" width="40" height="40" alt="ipf-reader"> Open IPF</a></li>
-  <li><a href="#d-viewer-3d-viewer" id="toc-d-viewer-3d-viewer" class="nav-link" data-scroll-target="#d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</a></li>
   <li><a href="#time-series-time-series" id="toc-time-series-time-series" class="nav-link" data-scroll-target="#time-series-time-series"><img src="figures/qgis/icons/time-series.png" width="40" height="40" alt="time-series"> Time Series</a></li>
   <li><a href="#cross-section-cross-section" id="toc-cross-section-cross-section" class="nav-link" data-scroll-target="#cross-section-cross-section"><img src="figures/qgis/icons/cross-section.png" width="40" height="40" alt="cross-section"> Cross-section</a></li>
   <li><a href="#nhi-data-add-nhi-data" id="toc-nhi-data-add-nhi-data" class="nav-link" data-scroll-target="#nhi-data-add-nhi-data"><img src="figures/qgis/icons/NHI-portal.png" width="40" height="40" alt="nhi-data"> Add NHI-data</a></li>
+  <li><a href="#d-viewer-3d-viewer" id="toc-d-viewer-3d-viewer" class="nav-link" data-scroll-target="#d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -299,10 +287,10 @@ ul.task-list li input[type="checkbox"] {
 <p>The QGIS plugin currently consists of five widgets, of which the functionality will be described in the next section:</p>
 <ul>
 <li>Open IPF</li>
-<li>3D Viewer</li>
 <li>Time Series</li>
 <li>Cross section</li>
 <li>Add NHI data</li>
+<li>3D Viewer (Discontinued)</li>
 </ul>
 <section id="ipf-reader-open-ipf" class="level3">
 <h3 class="anchored" data-anchor-id="ipf-reader-open-ipf"><img src="figures/qgis/icons/ipf-reader.png" width="40" height="40" alt="ipf-reader"> Open IPF</h3>
@@ -335,56 +323,6 @@ Warning
 <p><img src="figures/qgis/temporal-controller.png" class="img-fluid figure-img"></p>
 <figcaption>The temporal controller panel and map canvas of QGIS. The temporal controller panel is opened by clicking the clock in the "map navigation" toolbar.</figcaption>
 </figure>
-</div>
-</section>
-<section id="d-viewer-3d-viewer" class="level3">
-<h3 class="anchored" data-anchor-id="d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</h3>
-<p>The 3D viewer widget creates a connection between QGIS and the iMOD 3D viewer. It allows you to make selections in QGIS and forward them to the 3D viewer. Note that there are two perquisites for the iMOD viewer to correctly render mesh data:</p>
-<ol type="1">
-<li>The mesh data needs to be stored in a UGRID file</li>
-<li>Vertical axis is stored as variables <code>top_layer_*</code> and <code>bottom_layer_*</code>. The data belonging to each layer follows the following format <code>head_layer_*</code>, e.g.&nbsp;for a variable <code>head</code>.</li>
-</ol>
-<p>This means that not all data that can be loaded in QGIS as mesh can be viewed in the 3D viewer. Currently only UGRID meshes and IPF borelog files are supported.</p>
-<ul>
-<li>Use the selection box at the top to select the mesh layer/ipf file you want to inspect in the 3D viewer.</li>
-<li>The "Extent" group allows the user to manually set the bounding box by editing the numbers under "North", "East", "South", and "West", and more:
-<ul>
-<li>The "Current Layer Extent" button sets the bounding box to the extent of the layer selected in the QGIS explorer.</li>
-<li>The "Calculate from Layer" box allows you to select a dataset loaded in the QGIS explorer to calculate the extent from.</li>
-<li>"Map canvas extent" sets the bounding box to the map canvas</li>
-</ul></li>
-<li>The "Select" group contains a set of buttons to spatially select data to be forwarded to the 3D viewer
-<ul>
-<li>The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwarded to the 3D viewer to draw a fence diagram. Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.</li>
-<li>The "Clear fence diagram" button clears all lines from the map canvas</li>
-<li>The "Draw extent" buttons allows you to click and drag a box that allows you to set a bounding box. The iMOD viewer will only load the data within this boundary box, which can be useful when exploring specific areas in large datasets. Drawing an bounding box will update the "Extent" widget. Right-click to stop drawing the extent.</li>
-</ul></li>
-<li>The "View" group contains a set of buttons to interact with the 3D viewer
-<ul>
-<li>"Start iMOD viewer" starts the iMOD viewer and immediately loads the data selected in the widget.</li>
-<li>"Load mesh data" remove previous data from viewer and load new mesh data in it.</li>
-<li>"Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer and renders a fence diagram.</li>
-<li>"Load legend" transfers legend in the QGIS map layer to fence diagram and/or mesh data in the 3D viewer for the selected variable in the QGIS map canvas.</li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/qgis/3d-viewer.png" class="img-fluid figure-img"></p>
-<figcaption>The 3D viewer widget. It will be opened on the right-hand side of the screen.</figcaption>
-</figure>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The 3D Viewer widget does not forward any data to the iMOD 3D viewer, it only forwards the path to the data to load, and a command how to load it. As of now, the widget does not understand changes made by the user in the 3D viewer. It only supports "one-way traffic" towards the viewer.</p>
-</div>
 </div>
 </section>
 <section id="time-series-time-series" class="level3">
@@ -525,6 +463,69 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <p>Experience has shown that sometimes these services are hard to reach and data cannot be loaded.</p>
+</div>
+</div>
+</section>
+<section id="d-viewer-3d-viewer" class="level3">
+<h3 class="anchored" data-anchor-id="d-viewer-3d-viewer"><img src="figures/qgis/icons/3d-viewer.png" width="40" height="40" alt="3d-viewer"> 3D Viewer</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The 3D viewer is discontinued. This section is left in the documentation as people might encounter the 3D widget in the plugin.</p>
+</div>
+</div>
+<p>The 3D viewer widget creates a connection between QGIS and the iMOD 3D viewer. It allows you to make selections in QGIS and forward them to the 3D viewer. Note that there are two perquisites for the iMOD viewer to correctly render mesh data:</p>
+<ol type="1">
+<li>The mesh data needs to be stored in a UGRID file</li>
+<li>Vertical axis is stored as variables <code>top_layer_*</code> and <code>bottom_layer_*</code>. The data belonging to each layer follows the following format <code>head_layer_*</code>, e.g.&nbsp;for a variable <code>head</code>.</li>
+</ol>
+<p>This means that not all data that can be loaded in QGIS as mesh can be viewed in the 3D viewer. Currently only UGRID meshes and IPF borelog files are supported.</p>
+<ul>
+<li>Use the selection box at the top to select the mesh layer/ipf file you want to inspect in the 3D viewer.</li>
+<li>The "Extent" group allows the user to manually set the bounding box by editing the numbers under "North", "East", "South", and "West", and more:
+<ul>
+<li>The "Current Layer Extent" button sets the bounding box to the extent of the layer selected in the QGIS explorer.</li>
+<li>The "Calculate from Layer" box allows you to select a dataset loaded in the QGIS explorer to calculate the extent from.</li>
+<li>"Map canvas extent" sets the bounding box to the map canvas</li>
+</ul></li>
+<li>The "Select" group contains a set of buttons to spatially select data to be forwarded to the 3D viewer
+<ul>
+<li>The "Draw fence diagram" button allows to draw lines on the map canvas which can be forwarded to the 3D viewer to draw a fence diagram. Press the button to start drawing mode. Left-click to start drawing a line; right-click to stop drawing the line.</li>
+<li>The "Clear fence diagram" button clears all lines from the map canvas</li>
+<li>The "Draw extent" buttons allows you to click and drag a box that allows you to set a bounding box. The iMOD viewer will only load the data within this boundary box, which can be useful when exploring specific areas in large datasets. Drawing an bounding box will update the "Extent" widget. Right-click to stop drawing the extent.</li>
+</ul></li>
+<li>The "View" group contains a set of buttons to interact with the 3D viewer
+<ul>
+<li>"Start iMOD viewer" starts the iMOD viewer and immediately loads the data selected in the widget.</li>
+<li>"Load mesh data" remove previous data from viewer and load new mesh data in it.</li>
+<li>"Load fence diagram" loads the lines drawn with "Draw fence diagram" to the viewer and renders a fence diagram.</li>
+<li>"Load legend" transfers legend in the QGIS map layer to fence diagram and/or mesh data in the 3D viewer for the selected variable in the QGIS map canvas.</li>
+</ul></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/qgis/3d-viewer.png" class="img-fluid figure-img"></p>
+<figcaption>The 3D viewer widget. It will be opened on the right-hand side of the screen.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The 3D Viewer widget does not forward any data to the iMOD 3D viewer, it only forwards the path to the data to load, and a command how to load it. As of now, the widget does not understand changes made by the user in the 3D viewer. It only supports "one-way traffic" towards the viewer.</p>
 </div>
 </div>
 
@@ -955,13 +956,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./viewer_install_msi.html" class="pagination-link" aria-label="Install iMOD Viewer with the Deltares setup">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Install iMOD Viewer with the Deltares setup</span>
+      <a href="./viewer_install_msi.qmd" class="pagination-link" aria-label="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./3dviewer_user_manual.html" class="pagination-link" aria-label="3D Viewer User Manual">
-        <span class="nav-page-text">3D Viewer User Manual</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./viewer_known_issues.html" class="pagination-link" aria-label="Known Issues">
+        <span class="nav-page-text">Known Issues</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

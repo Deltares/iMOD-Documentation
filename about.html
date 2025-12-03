@@ -87,6 +87,7 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<meta name="mermaid-theme" content="neutral">
 <script src="site_libs/quarto-diagram/mermaid.min.js"></script>
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
@@ -129,7 +130,7 @@ div.csl-indent {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
         <li>
     <a class="dropdown-item" href="./viewer.html">
- <span class="dropdown-text">iMOD Viewer 🧭</span></a>
+ <span class="dropdown-text">iMOD QGIS plugin 🧭</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -232,7 +233,6 @@ div.csl-indent {
 <ul>
 <li><a href="https://github.com/Deltares/iMOD-Documentation">iMOD Documentation Github</a></li>
 <li><a href="https://github.com/Deltares/imod-qgis">iMOD QGIS plugin Github</a></li>
-<li><a href="https://github.com/Deltares/imod-gui">iMOD 3D Viewer Github</a></li>
 <li><a href="https://github.com/Deltares/imod-python">iMOD Python Github</a></li>
 </ul>
 </section>
@@ -244,7 +244,7 @@ div.csl-indent {
 <li><p>With the release of Modflow 6, computations on unstructured grids were possible. This created a demand for supporting all types of unstructured grids. iMOD, however, could not support these grids (except multi-model structured subgrids).</p></li>
 <li><p>It was difficult to connect iMOD to the ever changing software and data science ecosystem, because of the use of Fortran and iMOD’s custom data formats. For example, Python has a larger ecosystem, allowing users to easily incorporate all kinds of packages into their workflows.</p></li>
 </ul>
-<p>Therefore, in 2021, the <strong>iMOD Suite</strong> was released. This suite consists of a Python package, a QGIS plugin, and a 3D viewer. It therefore supports reproducible workflows for unstructured groundwater models and relies more on standard filetypes such as NetCDF, UGRID, and shapefiles.</p>
+<p>Therefore, in 2021, the <strong>iMOD Suite</strong> was released. This suite consists of a Python package, a QGIS plugin, and a 3D viewer. (The latter which was discontinued in 2025, as the team’s resources were too scarce to maintain it.) It therefore supports reproducible workflows for unstructured groundwater models and relies more on standard filetypes such as NetCDF, UGRID, and shapefiles.</p>
 <p>The classic iMOD GUI and its batch functionality is consolidated under the name <strong>iMOD 5</strong>, and will be maintained for the coming years. During this transition period it is easy to use iMOD 5 in combination with iMOD Suite. New developments will land in iMOD Suite.</p>
 <!---
 FUTURE: Picture can be replaced with a timeline https://mermaid.js.org/syntax/timeline.html
@@ -264,12 +264,12 @@ When quarto is updated with a more recent mermaid version.
   A --&gt; B{iMOD 2.0}
   subgraph 2014
   B
-  Y{{Fortran code \n available as open source}}
+  Y{{Fortran code &lt;br/&gt; available as open source}}
   end
   B --&gt; C{iMOD 3.0}
   subgraph 2015
   C
-  Z{{Executables freely \n available}}
+  Z{{Executables freely &lt;br/&gt; available}}
   end
   C --&gt; D{iMOD 4.0}
   subgraph 2017
@@ -279,18 +279,18 @@ When quarto is updated with a more recent mermaid version.
   D --&gt; E{iMOD 5.0}
   subgraph 2019
   E
-  XY{{iMOD Water Quality \n and MODFLOW6}}
+  XY{{iMOD Water Quality &lt;br/&gt; and MODFLOW6}}
   end
   E --&gt; F{iMOD 5.2}
   subgraph 2020
   F
-  XZ{{BMI coupling \n Modflow6-MetaSWAP}}
+  XZ{{BMI coupling &lt;br/&gt; Modflow6-MetaSWAP}}
   end
   F --&gt; G{iMOD Suite}
   F --&gt; H{iMOD 5.3}
   subgraph 2021
   G
-  YX{{Tooling in Python, QGIS \n C++. Unstructured grids}}
+  YX{{Tooling in Python, QGIS &lt;br/&gt; C++. Unstructured grids}}
   end
   subgraph 2021 
   H
@@ -302,8 +302,23 @@ When quarto is updated with a more recent mermaid version.
   end
   subgraph 2023 
   J
-  YY{{Model input validation, \n CPT plotting in QGIS, \n Backwards \n compatibility iMOD 5}}
+  YY{{Model input validation, &lt;br/&gt; CPT plotting in QGIS, &lt;br/&gt; Backwards &lt;br/&gt; compatibility iMOD 5}}
   end
+  I --&gt; K{iMOD 5.6}
+  J --&gt; L{iMOD Suite}
+  subgraph 2024
+  K
+  end
+  subgraph 2024 
+  L
+  YZ{{iMOD Python 1.0 Beta version released. iMOD Coupler supports coupling to Ribasim}}
+  end
+  L --&gt; M{iMOD Suite}
+  subgraph 2025
+  M
+  ZX{{iMOD Python 1.0.0 stable release.}}
+  end
+
 </pre>
 </div>
 <p></p></figure><p></p>

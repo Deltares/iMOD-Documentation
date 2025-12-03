@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Visualization of unstructured grids in GIS and 3D.">
+<meta name="description" content="Visualization of unstructured grids in GIS">
 
-<title> iMOD Viewer – iMOD Suite</title>
+<title> iMOD QGIS plugin – iMOD Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,8 +74,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="_static/styles.css">
-<meta property="og:title" content=" iMOD Viewer – iMOD Suite">
-<meta property="og:description" content="Visualization of unstructured grids in GIS and 3D.">
+<meta property="og:title" content=" iMOD QGIS plugin – iMOD Suite">
+<meta property="og:description" content="Visualization of unstructured grids in GIS">
 <meta property="og:image" content="figures/logo/iMOD-Qgis.svg">
 <meta property="og:site_name" content="iMOD Suite">
 </head>
@@ -111,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="dropdown-menu" aria-labelledby="nav-menu-components">    
         <li>
     <a class="dropdown-item" href="./viewer.html">
- <span class="dropdown-text">iMOD Viewer 🧭</span></a>
+ <span class="dropdown-text">iMOD QGIS plugin 🧭</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./python.html">
@@ -157,7 +157,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./viewer.html">{{&lt; fa solid binoculars &gt;}} iMOD Viewer</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./viewer.html">{{&lt; fa solid compass &gt;}} iMOD QGIS plugin</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -175,31 +175,19 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"> iMOD Viewer</span></a>
+ <span class="menu-text"> iMOD QGIS plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./viewer_install.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Viewer</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./viewer_install_msi.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Install iMOD Viewer with the Deltares setup</span></a>
+ <span class="menu-text">Install iMOD QGIS Plugin</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./qgis_user_manual.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">QGIS Plugin User Manual</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./3dviewer_user_manual.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">3D Viewer User Manual</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -227,12 +215,12 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><i class="fa-solid fa-binoculars" aria-label="binoculars"></i> iMOD Viewer</h1>
+<h1 class="title"><i class="fa-solid fa-compass" aria-label="compass"></i> iMOD QGIS plugin</h1>
 </div>
 
 <div>
   <div class="description">
-    Visualization of unstructured grids in GIS and 3D.
+    Visualization of unstructured grids in GIS
   </div>
 </div>
 
@@ -249,14 +237,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The iMOD Viewer consist of a standalone 3D viewer and a QGIS plugin.</p>
-<ul>
-<li><p>The iMOD 3D Viewer is a 3D viewer for grids and datasets. It supports IDF files, UGRID files and Grb.disu files that contain an unstructured layered grid.<br>
-The 3D Viewer also supports viewing some non-grid objects like IPF files and Shapefiles.</p></li>
-<li><p>The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS.<br>
-Its primary components are visualization of timeseries, both at points as well as on an unstructured grid, cross-section visualization, including borelogs, and connecting to the 3D Viewer.</p>
-<p><img src="figures/viewer/example-dommel.png" class="img-fluid"></p></li>
-</ul>
+<p>The iMOD QGIS plugin aids exploring 4D geospatial data in QGIS. Its primary components are visualization of timeseries, both at points as well as on an unstructured grid, cross-section visualization, including borelogs.</p>
+<p><img src="figures/index/NHI-zz_cross-section.png" class="img-fluid"></p>
 
 
 
@@ -685,8 +667,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./viewer_install.html" class="pagination-link" aria-label="Install iMOD Viewer">
-        <span class="nav-page-text">Install iMOD Viewer</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./viewer_install.html" class="pagination-link" aria-label="Install iMOD QGIS Plugin">
+        <span class="nav-page-text">Install iMOD QGIS Plugin</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
