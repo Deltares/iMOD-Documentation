@@ -1,3 +1,5 @@
+[![badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deltares/iMOD-Documentation/main/docs/_static/badge_deltares.json)](https://www.deltares.nl/en)
+
 # iMOD Suite Documentation
 
 [The iMOD Suite documentation is generated here.](https://deltares.github.io/iMOD-Documentation)
