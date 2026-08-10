@@ -29,6 +29,7 @@ primod = "*"
 quarto = "*"
 quartodoc = "*"
 rioxarray = "*"
+griffe = "<2.0" # Until this Quartodoc issue is fixed: https://github.com/machow/quartodoc/issues/423
 
 [target.linux-64.dependencies]
 # Install Modflow 6 on linux to render examples on CI.

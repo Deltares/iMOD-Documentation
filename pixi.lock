@@ -409,9 +409,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-1.1.4-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-base-1.1.4-pyha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopy-2.5.0-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffecli-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffelib-2.1.0-pyhcf101f3_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-1.15.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h2-4.4.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/hpack-4.2.0-pyhd8ed1ab_0.conda
@@ -620,9 +618,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-1.1.4-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-base-1.1.4-pyha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopy-2.5.0-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffecli-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffelib-2.1.0-pyhcf101f3_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-1.15.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h2-4.4.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/hpack-4.2.0-pyhd8ed1ab_0.conda
@@ -1098,9 +1094,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-1.1.4-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopandas-base-1.1.4-pyha770c72_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/geopy-2.5.0-pyhd8ed1ab_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffecli-2.1.0-pyhcf101f3_0.conda
-      - conda: https://conda.anaconda.org/conda-forge/noarch/griffelib-2.1.0-pyhcf101f3_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/noarch/griffe-1.15.0-pyhd8ed1ab_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/h2-4.4.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/hpack-4.2.0-pyhd8ed1ab_0.conda
@@ -7806,40 +7800,16 @@ packages:
   run_exports: {}
   size: 75234
   timestamp: 1783906700588
-- conda: https://conda.anaconda.org/conda-forge/noarch/griffe-2.1.0-pyhcf101f3_0.conda
-  sha256: a404195f4a49ead87755bc538712930cc09243c27733be12430f4ecd66a591e6
-  md5: 79252b7fc849e1533fb7ffa50bae0bbb
+- conda: https://conda.anaconda.org/conda-forge/noarch/griffe-1.15.0-pyhd8ed1ab_0.conda
+  sha256: 7a42213d6a6dae486c56a835a107fc8704eabf686a2b95adde009e06848426cd
+  md5: 0bc57a76679376b93a489824aa08c294
   depends:
-  - python >=3.10
-  - griffelib >=2.1.0,<2.1.1.0a0
-  - griffecli >=2.1.0,<2.1.1.0a0
-  - python
-  license: ISC
-  run_exports: {}
-  size: 16825
-  timestamp: 1782020642659
-- conda: https://conda.anaconda.org/conda-forge/noarch/griffecli-2.1.0-pyhcf101f3_0.conda
-  sha256: f660efd63aff029fc6780a29d5ab6ed5cb3e1dbb1878e28adf4665e51ba48a35
-  md5: 8580247eda2de40b47d5e74f35918770
-  depends:
-  - python >=3.10
   - colorama >=0.4
-  - griffelib >=2.1.0,<2.1.1.0a0
-  - python
-  license: ISC
-  run_exports: {}
-  size: 19443
-  timestamp: 1782020642659
-- conda: https://conda.anaconda.org/conda-forge/noarch/griffelib-2.1.0-pyhcf101f3_0.conda
-  sha256: 1d3f13a28507e903ec8236b95162b76caee6823159f706ba0ea79f31e71f47ba
-  md5: ba69047bf6dd5dea12bec87f6769b874
-  depends:
   - python >=3.10
-  - python
   license: ISC
   run_exports: {}
-  size: 117094
-  timestamp: 1782020642659
+  size: 114576
+  timestamp: 1762806629967
 - conda: https://conda.anaconda.org/conda-forge/noarch/h11-0.16.0-pyhcf101f3_1.conda
   sha256: 96cac6573fd35ae151f4d6979bab6fbc90cb6b1fb99054ba19eb075da9822fcb
   md5: b8993c19b0c32a2f7b66cbb58ca27069
