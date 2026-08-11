@@ -1,6 +1,9 @@
 # Based on: https://tarleb.com/posts/quarto-with-gh-pages/
 name: Publish Website
 
+permissions:
+  actions: write
+  contents: read
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
