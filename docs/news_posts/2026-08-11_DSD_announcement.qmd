@@ -1,0 +1,30 @@
+---
+title: "Announcing the iMOD User Day 2026"
+description: "Announcement of the iMOD User Day at the Delft Software Days 2026"
+author: "Joeri van Engelen"
+date: "2026-08-11"
+image: ../figures/about/training-delft-2025.jpg
+---
+
+The iMOD team is excited to announce that on Thursday 19 November 2026 we will
+organize a day at the Delft Software Days (DSD) dedicated to iMOD and MODFLOW6.
+The day will be filled with presentations, demos, discussions, and training
+about the latest developments in iMOD and MODFLOW6, as well as their
+applications in groundwater modeling.
+
+There will be parallel sessions in the afternoon so you can choose whether you
+want to attend a tutorial, demo, or discussion session. Don't forget to register
+separately for these parallel events. The day will be concluded with a hydrology
+dinner (for which you also need to register separately).
+
+[You can find more information about the event and register for free at the DSD
+website](https://softwaredays.deltares.nl/-/hydrology-software-days-day-4-imod-suite-and-modflow-6-2026)
+
+This day is part of the Hydrology Software week, which is a week-long event
+organized by Deltares dedicated to our hydrological software products. [So make
+sure to check out the other days as well
+here.](https://softwaredays.deltares.nl/program?session-topic=iwrm&startDate=16-11-2026)
+We especially would like to highlight the Friday 20th of November, which will be
+a full day of Advanced MODFLOW6 training, organized by the MODFLOW6 team. [You
+can register for that
+here.](https://softwaredays.deltares.nl/-/hydrology-software-days-day-5-modflow-6-advanced-training-2026)
