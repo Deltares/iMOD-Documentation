@@ -10,7 +10,7 @@ The iMOD team is excited to announce that on Thursday 19 November 2026 we will
 organize a day at the Delft Software Days (DSD) dedicated to iMOD and MODFLOW6.
 The day will be filled with presentations, demo's, discussions, and training
 about the latest developments in iMOD and MODFLOW6, as well as their
-applications in groundwater modeling. 
+applications in groundwater modeling.
 
 There will be parallel sessions in the afternoon so you can choose whether you
 want to attend tutorial, demo, or discussion sessions. Don't forget to subscribe
