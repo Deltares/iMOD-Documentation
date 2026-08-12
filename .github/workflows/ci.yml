@@ -3,7 +3,7 @@ name: Publish Website
 
 permissions:
   actions: write
-  contents: read
+  contents: write
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
