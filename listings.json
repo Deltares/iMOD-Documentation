@@ -1,17 +1,5 @@
 [
   {
-    "listing": "/practical.html",
-    "items": [
-      "/practical_cookiecutter.html",
-      "/practical_git_dvc.html",
-      "/practical_snakemake.html",
-      "/practical_messy_data.html",
-      "/practical_parallel.html",
-      "/practical_powershell.html",
-      "/practical_look_like_a_pro.html"
-    ]
-  },
-  {
     "listing": "/index.html",
     "items": [
       "/introduction.html",
@@ -34,8 +22,22 @@
     ]
   },
   {
+    "listing": "/practical.html",
+    "items": [
+      "/practical_cookiecutter.html",
+      "/practical_git_dvc.html",
+      "/practical_snakemake.html",
+      "/practical_messy_data.html",
+      "/practical_parallel.html",
+      "/practical_powershell.html",
+      "/practical_look_like_a_pro.html"
+    ]
+  },
+  {
     "listing": "/news.html",
     "items": [
+      "/news_posts/2026-08-11_DSD_announcement.html",
+      "/news_posts/2026-08-10_imod_python_1_1_release.html",
       "/news_posts/2025-11-20_DSD.html",
       "/news_posts/2025-11-11_imod_python_stable_release.html",
       "/news_posts/2025-03-27_Hamburg.html"
