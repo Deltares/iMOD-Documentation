@@ -34,3 +34,6 @@ This doesn't end the work with the NHI collaboration, as we are still working on
 implementing some remaining iMOD5 features, like the sprinkling from IPF files.
 But since so many things have been fixed and improved, we decided to release
 this version now.
+
+Find out how to install iMOD Python 1.1.0 in the [installation
+instructions](https://deltares.github.io/imod-python/installation.html).
