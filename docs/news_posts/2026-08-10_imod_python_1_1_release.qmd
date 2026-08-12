@@ -28,8 +28,7 @@ collaboration with the "Kernteam Transitie NHI" 🤝.
 For the NHI collaboration, we furthermore developed a tool to help with the
 transition from iMOD5 to MODFLOW 6, which has a similar interface as iMOD5's
 iMOD BATCH "RUNFILE" function. [It can be found here and is a useful aid to
-transition from iMOD5 model to iMOD
-Python](https://github.com/Deltares/iMOD-Suite-transition-regional-models)
+transition from an iMOD5 model to iMOD Python.](https://github.com/Deltares/iMOD-Suite-transition-regional-models)
 
 This doesn't end the work with the NHI collaboration, as we are still working on
 implementing some remaining iMOD5 features, like the sprinkling from IPF files.
