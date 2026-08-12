@@ -22,7 +22,7 @@ collaboration with the "Kernteam Transitie NHI" 🤝.
   [imod.mf6.Modflow6Simulation.mask_all_models()](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.mask_all_models.html)
   and
   [imod.mf6.Modflow6Simulation.clip_box()](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.clip_box.html)
-  to consider a package empty if its first times step is all nodata. This can
+  to consider a package empty if its first time step is all nodata. This can
   increase performance a lot when working with models with many timesteps.
 
 For the NHI collaboration, we furthermore developed a tool to help with the
