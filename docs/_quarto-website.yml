@@ -41,7 +41,10 @@ website:
     # news_posts/2025-11-11_imod_python_stable_release.qmd does not work here
     # for all pages, as qmd files within news_posts do need a folder upward and
     # globpath with ** does not work. So we hardcode the link here.
-    content: "🎂 [iMOD Python 1.1.0 is released.](https://deltares.github.io/iMOD-Documentation/news_posts/2026-08-10_imod_python_1_1_release.html) 🎂"
+    content: "🎂 [iMOD Python 1.1.0 is
+      released.](https://deltares.github.io/iMOD-Documentation/news_posts/2026-08-10_imod_python_1_1_release.html)
+      🎂 [Also check out the iMOD Day at the Delft Software Days
+      2026](https://deltares.github.io/iMOD-Documentation/news_posts/2026-08-11_DSD_announcement.html)"
     type: primary
     position: below-navbar
 
