@@ -22,6 +22,7 @@ docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends-on 
 ] }
 
 [dependencies]
+python = "3.14.*"
 imod = ">=1.1"
 jupyterlab = "*"
 pre-commit = "*"
