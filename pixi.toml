@@ -22,14 +22,15 @@ docs = { cmd = "export QUARTO_PYTHON=python && quarto preview docs", depends-on 
 ] }
 
 [dependencies]
-imod = ">=0.17.1"
-numpy = "<2"
+python = "3.14.*"
+imod = ">=1.1"
 jupyterlab = "*"
 pre-commit = "*"
 primod = "*"
 quarto = "*"
 quartodoc = "*"
-rioxarray = ">=0.15.5,<0.16"
+rioxarray = "*"
+griffe = "<2.0" # Until this Quartodoc issue is fixed: https://github.com/machow/quartodoc/issues/423
 
 [target.linux-64.dependencies]
 # Install Modflow 6 on linux to render examples on CI.

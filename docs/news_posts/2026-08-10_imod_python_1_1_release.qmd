@@ -1,0 +1,36 @@
+---
+title: "iMOD Python 1.1.0"
+description: "iMOD Python 1.1.0 is released 🎂"
+author: "Joeri van Engelen"
+date: "2026-08-10"
+image: ../figures/logo/iMOD-python.svg
+---
+
+We are happy to announce the release of iMOD Python 1.1.0 🎉. The focus of this
+release was to improve the functionality to work with existing iMOD5 models, in
+collaboration with the "Kernteam Transitie NHI" 🤝.
+
+🛠️ This release fixes over 20 bugs and contains new improvements 🛠️, including:
+
+- Directly regridding iMOD5 databases into MODFLOW 6 simulations with the new
+  ``target_grid`` argument in
+  [``imod.mf6.Modflow6Simulation.from_imod5_data()``](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.from_imod5_data.html).
+- Added
+  [imod.mf6.HorizontalFlowBarrierResistance.from_imod5_data()](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.HorizontalFlowBarrierResistance.from_imod5_data.html)
+  to load barriers from 3D GEN files.
+- Added ``ignore_time_purge_empty`` argument to
+  [imod.mf6.Modflow6Simulation.mask_all_models()](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.mask_all_models.html)
+  and
+  [imod.mf6.Modflow6Simulation.clip_box()](https://deltares.github.io/imod-python/api/generated/mf6/imod.mf6.Modflow6Simulation.clip_box.html)
+  to consider a package empty if its first time step is all nodata. This can
+  increase performance a lot when working with models with many timesteps.
+
+For the NHI collaboration, we furthermore developed a tool to help with the
+transition from iMOD5 to MODFLOW 6, which has a similar interface as iMOD5's
+iMOD BATCH "RUNFILE" function. [It can be found here and is a useful aid to
+transition from an iMOD5 model to iMOD Python.](https://github.com/Deltares/iMOD-Suite-transition-regional-models)
+
+This doesn't end the work with the NHI collaboration, as we are still working on
+implementing some remaining iMOD5 features, like the sprinkling from IPF files.
+But since so many things have been fixed and improved, we decided to release
+this version now.

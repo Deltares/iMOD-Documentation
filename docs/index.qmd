@@ -15,6 +15,8 @@ listing:
     sort: "index"
 ---
 
+[![badge](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Deltares/iMOD-Documentation/main/docs/_static/badge_deltares.json)](https://www.deltares.nl/en)
+
 The iMOD Suite offers different modules which support modelling with
 MODFLOW 6 (including unstructured meshes):
 
